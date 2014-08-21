@@ -172,7 +172,7 @@ function quizFinished()
 		// Tell them they didn't get them all right, then redirect
 		// Do this in a better way, probably with JQuery fade in or something
 		clearCookie();
-		alert("You didn't get all the questions right, going back to the beginning of this section.");
+		alert("You didn't get all the questions right; you will be redirected to the beginning of this section.");
 		
 		deleteCookie("curSlide"); // Make sure they go back to the first slide.
 		var newNum = 1;
