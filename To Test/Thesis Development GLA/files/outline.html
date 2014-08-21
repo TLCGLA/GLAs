@@ -1,0 +1,1019 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 14">
+<link id=Main-File rel=Main-File href="../ThesisDevelopment.html">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.html');" id=PPTL1><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.html');" id=PPTL2>WHAT IS A THESIS
+  STATEMENT?</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A thesis statement is a one or two sentence summary of your argument
+       placed near the beginning of the essay.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.html');" id=PPTL3>WHY SHOULD YOUR ESSAY
+  HAVE A THESIS STATEMENT?</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>It defines the purpose of your essay for yourself and the reader.</li>
+   <li>It improves the organization of ideas in your essay.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0004.html');" id=PPTL4>THE THESIS STATEMENT IS
+  THE GUIDE FOR YOUR ESSAY</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>A strong thesis will guide you to writing the information necessary to
+       proving your point.<span style='mso-spacerun:yes'>  </span>All
+       information in the essay should contribute to proving the thesis.<span
+       style='mso-spacerun:yes'>  </span>If the information does not help
+       support the thesis, it should be removed from the essay.</li>
+   <br>
+   <br>
+   <li>As you work your way through a draft, refer back to the thesis
+       frequently.<span style='mso-spacerun:yes'>  </span>Ask yourself:</li>
+   <li>What does my reader need to learn to accept my thesis statement?</li>
+   <li>What is the best order for presenting my information?</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0005.html');" id=PPTL5>HOW TO GENERATE A
+  THESIS STATEMENT IF THE TOPIC IS ASSIGNED</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Step 1:<span style='mso-spacerun:yes'>  </span>Turn the assignment into
+       a question.<span style='mso-spacerun:yes'>  </span>For example:</li>
+   <li>Assignment:<span style='mso-spacerun:yes'>  </span>Write an essay on the
+       effects of cell phone use on modern society.</li>
+   <li>Question:<span style='mso-spacerun:yes'>  </span>How have cell phones
+       affected modern society?</li>
+   <br>
+   <br>
+   <li>Step 2:<span style='mso-spacerun:yes'>  </span>Compose one or two
+       sentences answering that question.<span style='mso-spacerun:yes'> 
+       </span>For example:</li>
+   <li>Answer:<span style='mso-spacerun:yes'>  </span>Face-to-face interaction
+       has been replaced by interaction with phones, making social relations
+       more impersonal.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0006.html');" id=PPTL6>HOW TO GENERATE A
+  THESIS STATEMENT IF THE TOPIC IS NOT ASSIGNED</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Step 1:<span style='mso-spacerun:yes'>  </span>Think of a question you
+       would like to answer in your essay.</li>
+   <li>Step 2:<span style='mso-spacerun:yes'>  </span><span
+       style='mso-spacerun:yes'> </span>Write a one or two sentence answer for
+       the question.<span style='mso-spacerun:yes'>  </span>This is your thesis
+       statement.</li>
+   <br>
+   <br>
+   <li>Keep in mind the following:</li>
+   <li>Choose a topic that could be debated.<span style='mso-spacerun:yes'> 
+       </span>If you pick a topic about which no one disagrees, you don’t have
+       anything to defend in your essay.</li>
+   <li>Stick to only one main idea</li>
+   <li>State your position on the subject by ensuring that you answer the
+       question that you asked.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0008.html');" id=PPTL7>THESIS STATEMENT
+  CRITERIA:</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A strong thesis statement accomplishes the following:</li>
+   <li>It summarizes the whole essay in one sentence</li>
+   <li>	The thesis should provide a preview for the essay.<span
+       style='mso-spacerun:yes'>  </span>Let readers know what 	they will read
+       about.</li>
+   <li>It predicts, controls, and obligates</li>
+   <li>	The thesis is a guide.<span style='mso-spacerun:yes'>  </span>Use it to
+       help you construct a logical argument.</li>
+   <li>It makes a unified claim that is debatable (readers may disagree) or
+       that needs to be proved (readers need convincing).</li>
+   <li>	The thesis should have some controversy.<span
+       style='mso-spacerun:yes'>  </span>If all readers agree about a 	topic,
+       there is little point in writing about it.</li>
+   <li>It should be narrow and specific.</li>
+   <li>	The thesis should provide a clear picture of the point you plan to make
+       in 	an essay.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0007.html');" id=PPTL8>HOW TO CHECK IF YOU
+  HAVE A STRONG THESIS STATEMENT</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>Does the thesis provide a preview for the essay?</li>
+   <li>Can it be used to guide your ideas?</li>
+   <li>Does it make a controversial claim?</li>
+   <li>Is it narrow and specific?</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0027.html');" id=PPTL9>DEVELOP A THESIS</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Topic:<span style='mso-spacerun:yes'>  </span>Studying foreign language
+       in a community college</li>
+   <br>
+   <br>
+   <li>Attempt 1:<span style='mso-spacerun:yes'>  </span>This paper will
+       discuss foreign language studies in community college.</li>
+   <li>Doesn’t give a clear picture of what the paper will be about</li>
+   <li>Too broad and vague to support effectively</li>
+   <br>
+   <br>
+   <li>Attempt 2:<span style='mso-spacerun:yes'>  </span>There are many
+       benefits and drawbacks to studying a foreign language in community
+       college.</li>
+   <li>Doesn’t make a controversial claim about the topic</li>
+   <li>Doesn’t give a clear picture of what the paper will be about</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0026.html');" id=PPTL10>EFFECTIVE THESIS</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Community college students should be required to study a foreign
+       language for at least one year because it will prepare them to compete
+       in a global marketplace.</li>
+   <br>
+   <br>
+   <li>Evaluation:</li>
+   <li>This thesis gives readers a clear picture of what the paper will be
+       about.</li>
+   <li>The writer can use the thesis to guide him/her while constructing the
+       paper.</li>
+   <li>The thesis makes a debatable claim; not everyone will agree that
+       students should be required to study a foreign language.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0009.html');" id=PPTL11>UNIFYING CLAIM</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A good thesis includes a unifying claim and may—or may not—include
+       subtopics.</li>
+   <br>
+   <br>
+   <li>A unifying claim is the overall assertion or idea of your thesis and of
+       your paper, which you’ll back up with support and specific evidence in
+       the body of your essay.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0010.html');" id=PPTL12>RELATING YOUR CLAIM TO
+  YOUR SUBTOPICS</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Depending on the nature of the writing assignment, you may be asked to
+       include specific subtopics in your thesis statement.</li>
+   <br>
+   <br>
+   <li>Subtopics are smaller topics within your overall focus.<span
+       style='mso-spacerun:yes'>  </span>If you are writing a thesis statement
+       with subtopics, most of the time limiting them to three works best.<span
+       style='mso-spacerun:yes'>  </span>However, including subtopics does not
+       mean you do not need a claim. It must be clear to the reader how your
+       subtopics are related.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0011.html');" id=PPTL13>EXAMPLE OF THESIS WITH
+  SUBTOPICS—<br>
+    BUT MISSING A UNIFYING CLAIM</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>“Twenty-somethings” today like to eat, shop, and play video games.</li>
+   <br>
+   <br>
+   <li>(Saying merely that “twenty-somethings” like certain activities is not a
+       strong enough idea to make the relationship between those activities
+       clear).</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0012.html');" id=PPTL14>EVALUATION</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>This is a weak thesis statement<span style='mso-spacerun:yes'> 
+       </span>because if the subtopics were taken away all that remains is the
+       idea of “twenty-somethings” liking something!<span
+       style='mso-spacerun:yes'>  </span>This is not a claim it is possible to
+       disagree with, nor is it one that would need proof, since most people
+       like something.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0013.html');" id=PPTL15>EXAMPLE OF THESIS WITH
+  SUBTOPICS RELATED BY A UNIFYING CLAIM</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Because of the media’s influence, “twenty-somethings” of today are
+       sophisticated consumers of fashion, food, and technology.</li>
+   <br>
+   <br>
+   <li>(The unifying claim here is that the media has made “twenty-somethings”
+       sophisticated consumers.)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0014.html');" id=PPTL16>EVALUATION:</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The second thesis could stand on its own without the subtopics if
+       necessary or desired.<span style='mso-spacerun:yes'>  </span>Readers
+       would also be able to disagree and argue that teens have always been
+       more willing to try new things simply because they are young and
+       adaptable, and that we should not give so much power to the media in
+       forming theories about people.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0015.html');" id=PPTL17>SUBTOPICS SHOULD
+  PREDICT YOUR TOPIC SENTENCES</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>If you do specify subtopics in your thesis statement, you’ll most likely
+       need to use them in each topic sentence of your essay.<span
+       style='mso-spacerun:yes'>  </span>A topic sentence is usually the first
+       or second sentence of one of your body paragraphs.<span
+       style='mso-spacerun:yes'>  </span>A strong topic sentence will repeat
+       the claim made by the thesis and relate it to the appropriate subtopic,
+       thereby stating the main idea of the paragraph.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0016.html');" id=PPTL18>EXAMPLE OF TOPIC
+  SENTENCE THAT REPEATS THE THESIS CLAIM AND RELATES IT TO THE SUBTOPIC:</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <br>
+   <li>Television and the movies have made sushi a surprisingly coveted meal
+       for young adults with disposable income.</li>
+   <br>
+   <br>
+   <li>(This topic sentence relates to the overall claim of the successful
+       example thesis because it states the media’s influence and addresses the
+       first subtopic, which is food.<span style='mso-spacerun:yes'> 
+       </span>The paragraph could then be developed with examples of television
+       and movie references to sushi.)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0025.html');" id=PPTL19>A SAMPLE THESIS
+  STRUCTURE:<br>
+    ALTHOUGH…BECAUSE</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>One way to structure a thesis is to use an “Although…because” structure.</li>
+   <li>Begin with “Although,” which is a counterargument for your topic</li>
+   <li>Then, state your claim</li>
+   <li>Finally, add “because” to explain your reasons</li>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0018.html');" id=PPTL20><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0017.html');" id=PPTL21>A THESIS CANNOT BE A
+  FRAGMENT</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>It must be expressed in a complete sentence.</li>
+   <br>
+   <br>
+   <li>NO:<span style='mso-spacerun:yes'>  </span>How life is in the Salem
+       Housing project.</li>
+   <br>
+   <br>
+   <li>YES:<span style='mso-spacerun:yes'>  </span>The Salem Housing project
+       damages the residents’ psychological well-being through the bars on the
+       windows, thin walls, and crowded conditions.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0019.html');" id=PPTL22>A THESIS TYPICALLY
+  SHOULD NOT BE IN THE FORM OF A QUESTION</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>Often the answer to that question may function as the thesis.</li>
+   <br>
+   <br>
+   <li>NO:<span style='mso-spacerun:yes'>  </span>Should eighteen year olds
+       have the right to drink alcohol?</li>
+   <li>YES:<span style='mso-spacerun:yes'>  </span>Eighteen year olds should
+       have the right to drink alcohol; they have similar rights, like voting
+       and enlisting in the military, that shows society’s confidence in their
+       maturity.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0020.html');" id=PPTL23>A THESIS SHOULD NOT
+  INCLUDE PHRASES THAT INDICATE PERSONAL OPINION SUCH AS “I THINK”</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <br>
+   <li>They weaken the statement.</li>
+   <br>
+   <br>
+   <li>NO:<span style='mso-spacerun:yes'>  </span>In my opinion, advertising
+       sugary cereal to children contributes to childhood obesity.</li>
+   <br>
+   <br>
+   <li>YES:<span style='mso-spacerun:yes'>  </span>Advertising sugary cereal to
+       children contributes to childhood obesity.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0029.html');" id=PPTL24>A THESIS SHOULD NOT
+  SIMPLY ANNOUNCE A TOPIC</a></font></div>
+  <div id=PPTC24 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>Instead, you should share your argument about that topic.</li>
+   <br>
+   <br>
+   <li>NO:<span style='mso-spacerun:yes'>  </span>This paper will discuss
+       shootings on college campuses.</li>
+   <br>
+   <br>
+   <li>YES:<span style='mso-spacerun:yes'>  </span>In order to prevent
+       shootings, college campuses should implement random searches to stop
+       students from bringing firearms to campus.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0028.html');" id=PPTL25>A THESIS SHOULD NOT BE
+  A STATEMENT OF FACT.</a></font></div>
+  <div id=PPTC25 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>Instead, it should make a debatable argument.</li>
+   <br>
+   <br>
+   <li>NO:<span style='mso-spacerun:yes'>  </span>Facebook is a highly popular
+       social media platform.</li>
+   <br>
+   <br>
+   <li>YES:<span style='mso-spacerun:yes'>  </span>Facebook should take
+       decisive action to prevent bullying among its users under 18.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0021.html');" id=PPTL26>A THESIS SHOULD NOT
+  CONTAIN ELEMENTS THAT ARE NOT CLEARLY RELATED</a></font></div>
+  <div id=PPTC26 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>NO:<span style='mso-spacerun:yes'>  </span>All novelists seek the truth;
+       therefore, some novelists appear to be good psychologists.</li>
+   <br>
+   <br>
+   <li>YES:<span style='mso-spacerun:yes'>  </span>In their attempt to probe
+       human nature, many novelists appear to be good psychologists.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0022.html');" id=PPTL27>A THESIS SHOULD NOT BE
+  EXPRESSED IN VAGUE LANGUAGE.</a></font></div>
+  <div id=PPTC27 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>NO:<span style='mso-spacerun:yes'>  </span>Bad things have resulted from
+       religion being taught in the classroom.</li>
+   <br>
+   <br>
+   <li>YES:<span style='mso-spacerun:yes'>  </span>Religion as a part of the
+       school curriculum should be avoided because a person’s religious beliefs
+       are highly personal and require individual commitment.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>28</font></div>
+  </td>
+  <td>
+  <div id=PPTP28 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0023.html');" id=PPTL28>A THESIS SHOULD NOT BE
+  EXPRESSED IN MUDDLED OR INCOHERENT LANGUAGE</a></font></div>
+  <div id=PPTC28 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>NO:<span style='mso-spacerun:yes'>  </span>Because body dysmorphia,
+       anorexia nervosa, bulimia, and fat shaming are common among adolescents,
+       the global media is complicit by glorifying enhanced (airbrushed and
+       photoshopped) images of emaciated models.</li>
+   <br>
+   <br>
+   <li>YES:<span style='mso-spacerun:yes'>  </span>With their reliance on
+       perfect, skinny models, the global media bear some responsibility for
+       body image issues among adolescents.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>29</font></div>
+  </td>
+  <td>
+  <div id=PPTP29 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0024.html');" id=PPTL29>A THESIS SHOULD NOT BE
+  WRITTEN IN OVERLY FIGURATIVE LANGUAGE.</a></font></div>
+  <div id=PPTC29 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>NO:<span style='mso-spacerun:yes'>  </span>Obstetricians should be
+       trained to cut the Gordian knot when deciding to perform a Caesarian
+       section.</li>
+   <br>
+   <br>
+   <li>YES:<span style='mso-spacerun:yes'>  </span>Obstetricians should be
+       trained to make a swift decision when deciding to perform a Caesarian
+       section.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>30</font></div>
+  </td>
+  <td>
+  <div id=PPTP30 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0030.html');" id=PPTL30>IF YOU LIKED THIS
+  LESSON AND WOULD LIKE MORE INFORMATION, CONSIDER ATTENDING:</a></font></div>
+  <div id=PPTC30 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>Outlining your Essay</li>
+   <li>How to Start an Essay</li>
+   <li>Paragraph Structure</li>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <li>Why should you come back?</li>
+   <li>Students completing Supplemental Learning Activities had a
+       10%&nbsp;higher success rate across the disciplines, a 21% higher
+       success rate in Math, and a 49% higher success rate in English courses.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master15.html></a><a href=master15.xml></a><a
+href=preview.wmf></a><a href=master27.html></a><a href=master27.xml></a><a
+href=master28.html></a><a href=master28.xml></a><a href=master29.html></a><a
+href=master29.xml></a><a href=master30.html></a><a href=master30.xml></a><a
+href=pres.xml></a><a href=slide0001.html></a><a href="master27_image001.png"></a><a
+href="master27_image002.png"></a><a href="slide0001_image003.png"></a><a
+href="slide0001_image004.png"></a><a href="slide0001_image005.jpg"></a><a
+href=slide0002.html></a><a href="master15_image006.png"></a><a
+href=slide0003.html></a><a href=slide0004.html></a><a href=slide0005.html></a><a
+href=slide0006.html></a><a href=slide0008.html></a><a href=slide0007.html></a><a
+href=slide0027.html></a><a href=slide0026.html></a><a href=slide0009.html></a><a
+href=slide0010.html></a><a href=slide0011.html></a><a href=slide0012.html></a><a
+href=slide0013.html></a><a href=slide0014.html></a><a href=slide0015.html></a><a
+href=slide0016.html></a><a href=slide0025.html></a><a
+href="slide0025_image007.png"></a><a href=slide0018.html></a><a
+href="master28_image008.png"></a><a href="slide0018_image009.png"></a><a
+href=slide0017.html></a><a href=slide0019.html></a><a href=slide0020.html></a><a
+href=slide0029.html></a><a href=slide0028.html></a><a href=slide0021.html></a><a
+href=slide0022.html></a><a href=slide0023.html></a><a href=slide0024.html></a><a
+href=slide0030.html></a><a href="slide0030_image010.jpg"></a><a
+href="slide0030_image011.png"></a><a href="master15_stylesheet.css"></a><a
+href="master27_stylesheet.css"></a><a href="master28_stylesheet.css"></a><a
+href="master29_stylesheet.css"></a><a href="master30_stylesheet.css"></a><a
+href=script.js></a><a href="../ThesisDevelopment.html"></a><a
+href=fullscreen.html></a><a href=buttons.gif></a><a href=frame.html></a><a
+href=outline.html></a></div>
+
+</body>
+
+</html>
