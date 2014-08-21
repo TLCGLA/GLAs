@@ -1,0 +1,1022 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 14">
+<link id=Main-File rel=Main-File href="../PreReading.html">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.html');" id=PPTL1>Pre-Reading:<br>
+    Preparing Yourself to Read</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.html');" id=PPTL2>Agenda:<span
+  style='mso-spacerun:yes'>  </span>This workshop will cover…</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Motivation and Attitude for Reading</li>
+   <li>Creating an Effective Reading Environment</li>
+   <li>Parts of a Reading</li>
+   <li>Surveying a Reading</li>
+   <li>Asking Pre-Reading Questions</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.html');" id=PPTL3>What is Pre-reading?</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Pre-reading is the first stage of the reading process</li>
+   <li>It includes all the preparation that you do before reading a text</li>
+   <li>Pre-reading helps you…</li>
+   <ul>
+    <li>Make connections to the knowledge you already have about a topic</li>
+    <li>Understand your reading task better</li>
+    <li>Get your bearings in a text</li>
+    <li>Determine your purpose for reading</li>
+    <li>Learn and remember the material better</li>
+    <br>
+    <br>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0007.html');" id=PPTL4>Common Misconceptions</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Reading is a skill I have or I don’t.</li>
+   <li>I already learned how to read in elementary school.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0010.html');" id=PPTL5>Habits of Weak Readers</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>People who struggle with reading have a few habits in common</li>
+   <li>They start without preparation</li>
+   <li>They read without knowing why they are reading</li>
+   <li>They read without thinking about how to approach the text</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0004.html');" id=PPTL6>Motivation and Attitude</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Before beginning your reading, consider your purpose.<span
+       style='mso-spacerun:yes'>  </span>What do you want to learn from this
+       reading?<span style='mso-spacerun:yes'>  </span>How will this impact
+       your life or your studies?</li>
+   <li>Even if you consider a subject boring, try to find an aspect of the
+       subject that is interesting or useful to you.<span
+       style='mso-spacerun:yes'>  </span>Or, you can think about the skills
+       you’re learning, like how to approach a challenging text.</li>
+   <li>This will help you develop intrinsic motivation (you are motivated to
+       learn a subject because you want to know the information).</li>
+   <li>Intrinsic motivation will help you learn the information better and stay
+       more engaged.</li>
+   <li>Approaching the reading with a positive attitude will give you a better
+       reading experience!</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0008.html');" id=PPTL7>Ways to Motivate
+  Yourself</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Think about how the topic of the reading affects you personally</li>
+   <li>Involve yourself with the reading by arguing for or against what the
+       writer is saying</li>
+   <li>Remind yourself that you need to do well in order to get good grades, a
+       degree, and a good job</li>
+   <li>Consider ways that the material will help you in your career or your
+       life</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0009.html');" id=PPTL8>Example:<span
+  style='mso-spacerun:yes'>  </span>Finding a Personal Connection</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Bruce is a business major who is excited to start his career.<span
+       style='mso-spacerun:yes'>  </span>In fact, he would prefer to take only
+       business classes so he could begin that career more quickly.</li>
+   <li></li>
+   <li>This semester, Bruce is taking Psychology 101:<span
+       style='mso-spacerun:yes'>  </span>Introduction to Psychology as part of
+       his Social and Behavioral Science general education requirements.</li>
+   <br>
+   <br>
+   <li>He is struggling with the reading because he doesn’t see how the
+       material is relevant to him.</li>
+   <br>
+   <br>
+   <li>One day, though, an important idea occurs to him:<span
+       style='mso-spacerun:yes'>  </span>As a future businessperson, it will be
+       important for him to know how the human mind works.<span
+       style='mso-spacerun:yes'>  </span>He may be able to use that information
+       to persuade investors to invest in his business or clients to purchase
+       his products.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0031.html');" id=PPTL9>The Deadly Reading Coma</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Students find themselves in the reading coma when they drift off while
+       reading for class.<span style='mso-spacerun:yes'>  </span>They remember
+       little of what they read.</li>
+   <li>The reading coma may prevent students from doing well on tests and
+       papers.</li>
+   <li>The reading coma wastes your time because it forces you to reread the
+       material.</li>
+   <li>Set yourself up for success by having a good attitude and creating an
+       effective reading environment for yourself.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0005.html');" id=PPTL10>Creating an Effective
+  Reading Environment</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Your physical environment affects your reading</li>
+   <li>Create an environment for yourself where you are comfortable, alert, and
+       free from distractions.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0006.html');" id=PPTL11>Effective Reading
+  Environment Do’s and Don’ts</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0011.html');" id=PPTL12>Parts of a Reading</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Before beginning a reading, it is important to familiarize yourself with
+       the different parts of the text.</li>
+   <li>Knowing the structure of the text will help you follow the content
+       better.</li>
+   <li>In addition, you’ll be able to find the tools the text provides for you
+       and locate the sections you should focus most on.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0012.html');" id=PPTL13>Textbook</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Most textbooks have standard sections that you can use to help you find
+       the information you need.<span style='mso-spacerun:yes'>  </span>Before
+       you begin reading, you should familiarize yourself with these sections</li>
+   <li>Table of Contents</li>
+   <li>Chapters</li>
+   <li>Glossary</li>
+   <li>References/Notes</li>
+   <li>Index</li>
+   <li>Appendix or Appendices</li>
+   <li>Sample test questions (sometimes integrated into individual chapters)</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0017.html');" id=PPTL14>Table of Contents</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A list of the parts of a book organized in the order in which the parts appear</li>
+   <li>Can be divided into major sections or parts</li>
+   <li>May be brief, listing only chapter titles</li>
+   <li>May be more detailed, including the different headings and subheadings
+       in the chapter.</li>
+   <li>Use the Table of Contents (TOC) to help you find the section you need.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0013.html');" id=PPTL15>Textbook Chapter</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>One section of the textbook devoted to a particular topic</li>
+   <li>May be divided into subtopics</li>
+   <li>Could include:</li>
+   <ul>
+    <li>Summary of the chapter’s main points (could appear at the beginning or
+        end of the chapter)</li>
+    <li>Learning Objectives</li>
+    <li>Key vocabulary</li>
+    <li>Call-out Boxes</li>
+    <li>Visual aids (photographs, diagrams, charts, etc.)</li>
+    <li>Sample assignments</li>
+    <li>Sample quiz questions</li>
+   </ul>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0018.html');" id=PPTL16>Glossary</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>An alphabetized list of key vocabulary for a particular textbook</li>
+   <li>Usually found near the end of the book</li>
+   <li>Use to find definitions and help prepare for exams</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0019.html');" id=PPTL17>References/Notes</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A list of the author’s sources</li>
+   <li>Sometimes provides details about those sources</li>
+   <li>Use the references/notes to find additional information about the
+       topic.<span style='mso-spacerun:yes'>  </span>Often, these sources are
+       more detailed and specific than the information found in the textbook.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0020.html');" id=PPTL18>Index</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>An alphabetized list of the textbook’s topics</li>
+   <li>Includes page numbers</li>
+   <li>Subtopics may be indented</li>
+   <li>Sometimes the index is divided into specific sections</li>
+   <li>Use the index to help you find the specific topic you need more
+       information about; the topic may appear in multiple chapters.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0021.html');" id=PPTL19>Appendix or Appendices</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Information that isn’t strictly necessary for understanding the main
+       body of writing</li>
+   <li>Additional information for interested readers</li>
+   <li>Helpful resources</li>
+   <li>May contain:</li>
+   <ul>
+    <li>Assistance with grammar or citation</li>
+    <li>Tangential information</li>
+    <li>A summary of raw data</li>
+    <li>Details of the method behind the work</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0022.html');" id=PPTL20>Sample Test Questions</a></font></div>
+  <div id=PPTC20 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Some textbooks will include sample test questions.</li>
+   <li>These may be in a separate section at the end of the book, or they may
+       be integrated into individual chapters.</li>
+   <li>Use the questions to help you study for tests or quizzes.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0014.html');" id=PPTL21>Journal Articles</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Journal articles are scholarly works that are usually peer reviewed by
+       experts.</li>
+   <li>They contain specific, researched information on particular topics.</li>
+   <li>They can be accessed through the COC library databases.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0023.html');" id=PPTL22>Typical Parts of a
+  Journal Article</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Abstract:<span style='mso-spacerun:yes'>  </span>Summary of the
+       article.<span style='mso-spacerun:yes'>  </span>Read the abstract to
+       decide if the information in the article will be useful to you.</li>
+   <li>Introduction:<span style='mso-spacerun:yes'>  </span>Provides background
+       information on the topic and introduces the authors’ ideas.</li>
+   <li>Literature Review:<span style='mso-spacerun:yes'>  </span>A summary of
+       past research or publications on the topic.</li>
+   <li>Method:<span style='mso-spacerun:yes'>  </span>If the article describes
+       an experiment, the method section will explain how the experiment was
+       conducted.</li>
+   <li>Results:<span style='mso-spacerun:yes'>  </span>Details the results of
+       the experiment. Depending on your purpose, you may not need to read the
+       Method and Results sections.</li>
+   <li>Discussion:<span style='mso-spacerun:yes'>  </span>Explains what the
+       authors learned from conducting their experiment.<span
+       style='mso-spacerun:yes'>  </span>This is one of the most important
+       sections in a journal article.</li>
+   <li>Conclusion:<span style='mso-spacerun:yes'>  </span>Sums up the main
+       ideas in an article.<span style='mso-spacerun:yes'>  </span>May suggest
+       areas for further research.</li>
+   <li>References:<span style='mso-spacerun:yes'>  </span>Lists the works cited
+       in the article.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0016.html');" id=PPTL23>Handbooks</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Handbooks provide important information about writing, spelling/grammar,
+       formatting, and citing.</li>
+   <li>College students should have at least one handbook to help them write
+       research papers.</li>
+   <li>Usually, handbooks will shade the sides of pages used for citation to
+       make the information easy to find.</li>
+   <li>Handbooks also use multiple tables of contents to organize different
+       sections.</li>
+   <li>Handbooks can be challenging to use at first. Ask your instructor or a
+       tutor for help using a handbook well.</li>
+   <br>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0024.html');" id=PPTL24>Surveying a Reading</a></font></div>
+  <div id=PPTC24 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Before you begin to read, you should survey the assigned reading.</li>
+   <li>Look through the reading to see what it is about and develop questions
+       about the topic.</li>
+   <li>This will help improve your understanding of the reading and keep you
+       engaged with the topic.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0026.html');" id=PPTL25>How to Survey:<br>
+    What should you look for?</a></font></div>
+  <div id=PPTC25 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Flip through the reading.<span style='mso-spacerun:yes'>  </span>What
+       catches your attention?<span style='mso-spacerun:yes'>  </span>What do
+       you think will be important about this reading?</li>
+   <li>Read the title.<span style='mso-spacerun:yes'>  </span>Then, rewrite it
+       in your own way.<span style='mso-spacerun:yes'>  </span>What do you
+       think the title means?</li>
+   <li>Read the abstract or summary (if one is available).<span
+       style='mso-spacerun:yes'>  </span>What do you think the reading will be
+       about?</li>
+   <li>Make a list of the section headers.<span style='mso-spacerun:yes'> 
+       </span>What section(s) do you think will be the most important?<span
+       style='mso-spacerun:yes'>  </span>Why?</li>
+   <li>Look at the pictures.<span style='mso-spacerun:yes'>  </span>What images
+       do these pictures contain?<span style='mso-spacerun:yes'>  </span>Why do
+       you think the authors included these pictures?</li>
+   <li>Read the tables/charts/visuals.<span style='mso-spacerun:yes'>  </span>What
+       information does they present?<span style='mso-spacerun:yes'> 
+       </span>Why do you think the authors included them?</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0025.html');" id=PPTL26>Ask Pre-Reading
+  Questions</a></font></div>
+  <div id=PPTC26 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Now that you have surveyed the text, ask yourself pre-reading questions.</li>
+   <li>As you read, search for the answers to those questions.</li>
+   <li>Sample pre-reading questions may:</li>
+   <ul>
+    <li>Ask about your current knowledge.<span style='mso-spacerun:yes'> 
+        </span>What do you already know about the topic?</li>
+    <li>Make predictions.<span style='mso-spacerun:yes'>  </span>Where do you
+        think the reading is going?</li>
+    <li>Turn section headers into questions.<span style='mso-spacerun:yes'> 
+        </span>What will the section be about?</li>
+    <li>Link to your class or assignment.<span style='mso-spacerun:yes'> 
+        </span>Why did the instructor assign the reading?<span
+        style='mso-spacerun:yes'>  </span>What are you meant to learn from
+        reading it?</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0032.html');" id=PPTL27>Importance of
+  Predicting</a></font></div>
+  <div id=PPTC27 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When you predict where a text is going, you are doing three different
+       things:</li>
+   <ul>
+    <li>Remembering what you already know about a topic</li>
+    <li>Thinking about the new information that you’re reading</li>
+    <li>Projecting what might logically follow the new information</li>
+   </ul>
+   <li>This helps you learn more effectively and remember the information
+       longer</li>
+   <li>It also helps you learn how certain texts work.<span
+       style='mso-spacerun:yes'>  </span>If you practice predicting journal
+       articles, for example, you’ll learn more about how journal articles
+       function.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>28</font></div>
+  </td>
+  <td>
+  <div id=PPTP28 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0033.html');" id=PPTL28>How to Predict</a></font></div>
+  <div id=PPTC28 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Develop predictions based on the content of the reading</li>
+   <li>Use text signals that show how ideas relate to one another</li>
+   <ul>
+    <li>Punctuation</li>
+    <li>Transition words:<span style='mso-spacerun:yes'>  </span>however,
+        including, in other words, for example</li>
+    <li>Visual text features:<span style='mso-spacerun:yes'>  </span>subtitles,
+        bullets, highlighted vocabulary</li>
+   </ul>
+   <li>Periodically, pause to ask:<span style='mso-spacerun:yes'>  </span>How
+       are my predictions doing?</li>
+   <ul>
+    <li>Pause after completing sections of the text</li>
+    <li>Ask if your predictions about that section were correct.</li>
+    <li>Make predictions about the upcoming section.</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>29</font></div>
+  </td>
+  <td>
+  <div id=PPTP29 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0027.html');" id=PPTL29>Now you’re ready to
+  read!</a></font></div>
+  <div id=PPTC29 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>After completing these steps, you are prepared to read your assigned
+       chapter or article.</li>
+   <li>You will be a more critical, focused, engaged reader.</li>
+   <li>This will help you do better on tests, papers, or projects.</li>
+   <li>Plus, you’ll retain the information longer!</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>30</font></div>
+  </td>
+  <td>
+  <div id=PPTP30 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0030.html');" id=PPTL30>If you liked this
+  lesson and would like more information, consider attending:</a></font></div>
+  <div id=PPTC30 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Annotation</li>
+   <li>Online Research</li>
+   <li>Note-Taking</li>
+   <br>
+   <br>
+   <br>
+   <li>Why should you come back?</li>
+   <li>Students completing Supplemental Learning Activities had a
+       10%&nbsp;higher success rate across the disciplines, a 21% higher
+       success rate in Math, and a 49% higher success rate in English courses.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master03.html></a><a href=master03.xml></a><a
+href=preview.wmf></a><a href=master23.html></a><a href=master23.xml></a><a
+href=master24.html></a><a href=master24.xml></a><a href=master25.html></a><a
+href=master25.xml></a><a href=pres.xml></a><a href=slide0001.html></a><a
+href="master03_image001.png"></a><a href="slide0001_image002.jpg"></a><a
+href=slide0002.html></a><a href=slide0003.html></a><a href=slide0007.html></a><a
+href="slide0007_image003.png"></a><a href=slide0010.html></a><a
+href="slide0010_image004.png"></a><a href=slide0004.html></a><a
+href=slide0008.html></a><a href=slide0009.html></a><a href=slide0031.html></a><a
+href=slide0005.html></a><a href=slide0006.html></a><a
+href="slide0006_image005.png"></a><a href=slide0011.html></a><a
+href=slide0012.html></a><a href=slide0017.html></a><a
+href="slide0017_image006.png"></a><a href="slide0017_image007.png"></a><a
+href="slide0017_image008.png"></a><a href="slide0017_image009.png"></a><a
+href=slide0013.html></a><a href=slide0018.html></a><a
+href="slide0018_image010.png"></a><a href="slide0018_image011.png"></a><a
+href=slide0019.html></a><a href="slide0019_image012.png"></a><a
+href="slide0019_image013.png"></a><a href=slide0020.html></a><a
+href="slide0020_image014.png"></a><a href="slide0020_image015.png"></a><a
+href=slide0021.html></a><a href="slide0021_image016.png"></a><a
+href="slide0021_image017.png"></a><a href=slide0022.html></a><a
+href="slide0022_image018.png"></a><a href="slide0022_image019.png"></a><a
+href=slide0014.html></a><a href=slide0023.html></a><a href=slide0016.html></a><a
+href=slide0024.html></a><a href=slide0026.html></a><a href=slide0025.html></a><a
+href=slide0032.html></a><a href=slide0033.html></a><a href=slide0027.html></a><a
+href=slide0030.html></a><a href="slide0030_image020.jpg"></a><a
+href=master01.html></a><a href="master03_stylesheet.css"></a><a
+href="master23_stylesheet.css"></a><a href="master24_stylesheet.css"></a><a
+href="master25_stylesheet.css"></a><a href=script.js></a><a
+href="../PreReading.html"></a><a href=fullscreen.html></a><a
+href="notes_flag.gif"></a><a href=buttons.gif></a><a href=frame.html></a><a
+href=outline.html></a></div>
+
+</body>
+
+</html>
