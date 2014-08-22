@@ -1,0 +1,1225 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 14">
+<link id=Main-File rel=Main-File href="../Pronouns.html">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.html');" id=PPTL1>PRONOUNS</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0109.html');" id=PPTL2>Agenda</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>This workshop will cover…</li>
+   <li>Part 1:</li>
+   <li>Subject pronoun</li>
+   <li>Object pronoun</li>
+   <li>Possessive pronoun</li>
+   <li>Reflexive pronoun</li>
+   <br>
+   <br>
+   <li>Part 2:</li>
+   <li>Relative pronoun</li>
+   <li>Indefinite pronoun</li>
+   <li>Demonstrative pronoun</li>
+   <li>Interrogative pronoun</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0110.html');" id=PPTL3>PART 1:<br>
+    SUBJECT, OBJECT, REFLEXIVE, AND POSSESSIVE PRONOUNS</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.html');" id=PPTL4>Nouns</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <ul>
+    <li>Read the following sentences:</li>
+    <br>
+    <br>
+    <li>Colleges are for students. Valencia has a good college.</li>
+    <li>Mother made us some waffles for breakfast.</li>
+    <li>Mr. Smith is a marine biologist. He knows diving.</li>
+   </ul>
+   <li>What do you see? Names of people, names of places, names of things,
+       names of<span style='mso-spacerun:yes'>  </span>actions.</li>
+   <li>Well, these are all nouns. Now look at some more noun words:<br>
+              <br>
+              People: 		Harry, Jane, Mr. Smith</li>
+   <li>Places: 		Valencia, Los Angeles</li>
+   <li>Things: 		college, waffles, phones</li>
+   <li>Actions: 	skiing, swimming, reading</li>
+   <li><span style='mso-spacerun:yes'> </span>Ideas: 		truth, beauty, democracy</li>
+   <li></li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0035.html');" id=PPTL5>Reading without
+  Pronouns</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Now read this:</li>
+   <li>Harry is a student from Australia. Harry is planning to visit Harry’s
+       parents after ten years. Harry did not see Harry’s parents in ten years.
+       Harry’s parents will be happy to see Harry.</li>
+   <br>
+   <br>
+   <li>How did the reading sound? Funny? Odd? Why?</li>
+   <li>It is because the same nouns are repeated over and over again.</li>
+   <br>
+   <br>
+   <li>Without pronouns, the nouns will have to be repeated over and over
+       again, making the reading sound strange.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0036.html');" id=PPTL6>Replace Nouns with
+  Pronouns</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0027.html');" id=PPTL7>Pronouns : Singular</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Singular pronouns replace singular nouns:</li>
+   <li>Please meet Hina. She is a business student. This is her first semester
+       in America.</li>
+   <li>‘She’ refers to Hina (one person).</li>
+   <li>‘This’ refers to the current year (the present year).</li>
+   <br>
+   <br>
+   <li>Singular pronouns: I, you, he, she, it, this, that, who, whom, etc.</li>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0046.html');" id=PPTL8>Pronouns: Plural</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Plural pronouns replace plural nouns:</li>
+   <li>Look at Mark and James. They are going to close the library now. Tina
+       and I are working on a project, but we must leave.</li>
+   <li>‘They’ refers to Mark and James (two people).</li>
+   <li>‘We’ refers to Tina and I (two people).</li>
+   <br>
+   <br>
+   <li>Plural pronouns: We, you, they, these, those, who, whom, etc.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0008.html');" id=PPTL9>8 TYPES OF PRONOUNS</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Subject pronouns</li>
+   <li>Object pronouns</li>
+   <li>Possessive pronouns</li>
+   <li>Reflexive pronouns</li>
+   <li>Relative pronouns</li>
+   <li>Indefinite pronouns</li>
+   <li>Demonstrative pronouns</li>
+   <li>Interrogative pronouns</li>
+   <li>This workshop will cover each of these pronoun types.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0039.html');" id=PPTL10>Subject Pronouns</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When a noun is the subject of a sentence, replace it with a subject
+       pronoun.</li>
+   <br>
+   <br>
+   <li>Sample:</li>
+   <li>Tesla is an American car.<span style='mso-spacerun:yes'>  </span>Tesla
+       runs on electricity, and Tesla was first introduced in 2008. Ever since,
+       Tesla has gained popularity among its buyers.</li>
+   <br>
+   <br>
+   <li>“Tesla” is the subject in all the sentences. It needs to be replaced by
+       the subject pronoun “it.”</li>
+   <br>
+   <br>
+   <li>Sample with Pronouns:</li>
+   <li>Tesla is an American car. It runs on electricity, and it was first
+       introduced in 2008. Ever since, it has gained popularity among its
+       buyers.</li>
+   <br>
+   <br>
+   <li>Some subject pronouns are: I, you, he, she, it, we, &amp; they.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0040.html');" id=PPTL11>Subject Pronouns</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When a plural noun is the subject of a sentence, replace it with a plural
+       subject pronoun.</li>
+   <br>
+   <br>
+   <li>Sample:</li>
+   <li>Orville and Wilbur Wright are two brothers. Orville and Wilbur Wright
+       are inventors of the first airplanes. Scientists followed what Orville
+       and Wilbur Wright <span style='mso-spacerun:yes'> </span>had done for
+       their successful aircraft.</li>
+   <br>
+   <br>
+   <li>“Orville and Wilbur Wright” are plural nouns. They are the subjects in
+       the sentences. They need to be replaced by the plural pronoun “they.”</li>
+   <br>
+   <br>
+   <li>Sample with Pronouns:</li>
+   <li>Orville and Wilbur Wright are two brothers. They are inventors of the
+       first airplanes. Scientists followed what they had done for their
+       successful aircraft.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0041.html');" id=PPTL12>Object<span
+  style='mso-spacerun:yes'>  </span>Pronouns</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When a noun is an object replace it with an object pronoun.</li>
+   <br>
+   <br>
+   <li>Sample:</li>
+   <li>Peter ate an apple. He liked it so much that he asked for one more, but
+       his mother gave him two.</li>
+   <br>
+   <br>
+   <li>“It”<span style='mso-spacerun:yes'>  </span>refers to “an apple,” which
+       is in the object position in the first sentence.</li>
+   <li>“Him” refers to “Peter” which is in the object position in the second
+       sentence.</li>
+   <li>Instead of saying “he liked an apple,” we say “he liked it,” and instead
+       of saying “his mother gave Peter” we say “his mother gave him.”</li>
+   <br>
+   <br>
+   <li>Some object pronouns are:<span style='mso-spacerun:yes'>  </span>me,
+       you, him, her, it, us, them, etc.</li>
+   <br>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0047.html');" id=PPTL13>Object Pronouns</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0113.html');" id=PPTL14>Important Pronoun
+  Rules!</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>Don’t mix up subject and object pronouns –</li>
+   <li>My brother and me went to visit our grandparent – wrong!</li>
+   <li>My brother and I went to visit our grandparents – correct!</li>
+   <br>
+   <br>
+   <li>When one of the subjects is I, place it after the other noun or pronoun.</li>
+   <li>I and my sister went to see the zoo – wrong!</li>
+   <li>My sister and I<span style='mso-spacerun:yes'>  </span>went to see the
+       zoo – correct!</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0042.html');" id=PPTL15>Possessive Pronouns</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Possessive pronouns show ownership. That means, they indicate that the
+       noun belongs to them.</li>
+   <br>
+   <br>
+   <li>For example, if you own a car, you possess it.<span
+       style='mso-spacerun:yes'>  </span>It is yours and belongs to you.<span
+       style='mso-spacerun:yes'>  </span>This is also true for more abstract
+       concepts, like friendship.<span style='mso-spacerun:yes'> 
+       </span>Grammatically speaking, it is possible to possess someone’s
+       friendship.</li>
+   <br>
+   <br>
+   <li>Some possessive pronouns are: mine, yours, his, hers, ours, theirs, etc.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0045.html');" id=PPTL16>Possessive Pronouns</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>What do you own? Do you own any clothes? If yes, the clothes are yours.</li>
+   <br>
+   <br>
+   <li>Samples:</li>
+   <li>I live in a large house. I bought this house when I moved to California
+       in 2000. The house is mine.</li>
+   <li>You love to drive luxury cars. That new red Ferrari is yours.</li>
+   <li>We all live on this earth. The earth is ours. Let’s preserve it.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0051.html');" id=PPTL17>Possessive Pronouns</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Let’s look at possessive pronouns in another way. Read the following:</li>
+   <br>
+   <br>
+   <li>Tom opened the fridge and began to eat from a lunch bag. When I saw
+       that, I cried, “ That is my lunch. Yours is in the other fridge!”</li>
+   <br>
+   <br>
+   <li>“Yours” refers to Tom’s lunch bag.</li>
+   <br>
+   <br>
+   <li>Mine is a life of constant struggle, but yours is easy-going.</li>
+   <li>“Mine” refers to my life.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0052.html');" id=PPTL18>Reflexive Pronouns</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When the subject and the object of a sentence are the same, you need a
+       reflexive pronoun.</li>
+   <br>
+   <br>
+   <li>Some reflexive pronouns are: myself, yourself (singular), himself,
+       herself, itself, yourselves (plural), ourselves, &amp; themselves.</li>
+   <br>
+   <br>
+   <li>Samples:</li>
+   <li>I saw myself in the mirror.</li>
+   <li>Our<span style='mso-spacerun:yes'>  </span>students managed themselves
+       well in the inter-college quiz.</li>
+   <li>Tom hurt himself while skateboarding.</li>
+   <br>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0086.html');" id=PPTL19>Reflexive Pronouns</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>In each example, the subjects and the objects are all the same.</li>
+   <br>
+   <br>
+   <li>I saw myself in the mirror.</li>
+   <li>		Whom did I see? I saw “I” but we don’t say that. We 	must use a
+       reflexive pronoun.</li>
+   <br>
+   <br>
+   <li>Our students managed themselves well in the inter-college quiz.</li>
+   <li>		Whom did the students manage well? They managed 	“the students” well. We
+       must use a reflexive pronoun.</li>
+   <br>
+   <br>
+   <li>Tom hurt himself while skateboarding.</li>
+   <li>	Whom did Tom hurt? Tom hurt Tom, so we must use the 	reflexive pronoun
+       “himself.”</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0082.html');" id=PPTL20>Reflexive Pronouns</a></font></div>
+  <div id=PPTC20 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Reflexive pronouns can also give emphasis to the noun when they are
+       placed next to the noun. This is a more advanced use but also a good
+       one.</li>
+   <br>
+   <br>
+   <li>Sample:</li>
+   <li>The students themselves admitted to cheating on the test.</li>
+   <br>
+   <br>
+   <li>You could still say: The students admitted to cheating on the test.</li>
+   <br>
+   <br>
+   <li>Adding the reflexive pronoun simply EMPHASIZES<span
+       style='mso-spacerun:yes'>  </span>the subject and makes it stronger.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0083.html');" id=PPTL21>Reflexive Pronouns
+  with ‘by’</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When the preposition ‘by’ is used before a reflexive pronoun, it means
+       “alone.”</li>
+   <br>
+   <br>
+   <li>For example:<span style='mso-spacerun:yes'>  </span>By myself, by
+       yourself, by herself, by itself, by themselves, by ourselves,<span
+       style='mso-spacerun:yes'>  </span>etc.</li>
+   <br>
+   <br>
+   <li>Samples:</li>
+   <li>The girls said they could clean the room by themselves. They did not
+       need any help.</li>
+   <li>“I want to be by myself; I need some privacy.”</li>
+   <br>
+   <br>
+   <li>“By themselves” suggests “they can do the job alone without anybody’s
+       help.”</li>
+   <li>“By myself” suggests “I want to be alone.”</li>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0084.html');" id=PPTL22>Reflexive Pronouns:
+  Common Mistakes</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Watch out for mistakes. The following sentences are wrong. Can you
+       figure out why?</li>
+   <br>
+   <br>
+   <li>A man injured hisself while trying to fix a TV antenna.</li>
+   <li>We decided among ourself to form a study group.</li>
+   <li>My neighbors mostly live by themself. They rarely have guests.</li>
+   <br>
+   <br>
+   <li>Go to the next slide for an explanation.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0087.html');" id=PPTL23>Reflexive Pronouns: Correcting
+  Common Mistakes</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li><span style='mso-spacerun:yes'> </span>“Hisself” is a common error.<span
+       style='mso-spacerun:yes'>  </span>Correct it by writing “himself.”</li>
+   <li>Corrected:<span style='mso-spacerun:yes'>  </span>A man injured himself while
+       trying to fix a TV antenna.</li>
+   <br>
+   <br>
+   <li>“Ourself” and “themself,” are mistakes because they are trying to be
+       singular when they must be plural.<span style='mso-spacerun:yes'> 
+       </span>Correct them by writing “ourselves” or “themselves.”</li>
+   <li>Corrected:</li>
+   <li>We decided among ourselves to form a study group.</li>
+   <li>My neighbors mostly live by themselves. They rarely have guests.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0111.html');" id=PPTL24>PART 2:<br>
+    RELATIVE, INDEFINITE, DEMONSTRATIVE, AND INTERROGATIVE PRONOUNS</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0091.html');" id=PPTL25><br>
+    Relative Pronoun<br>
+    Background Knowledge</a></font></div>
+  <div id=PPTC25 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A relative clause (adjective clause) is a dependent clause. It gives
+       information about a noun.</li>
+   <br>
+   <br>
+   <li>Since it is a dependent clause, it cannot stand alone.<span
+       style='mso-spacerun:yes'>  </span>A relative clause begins with words
+       like who, which, that, etc.</li>
+   <br>
+   <br>
+   <li>Sample:</li>
+   <li>I got an A on the essay that I turned in last week.</li>
+   <br>
+   <br>
+   <li>“That I turned in last week” is a relative clause. It gives information
+       about the “essay.”</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0092.html');" id=PPTL26>Relative Pronouns</a></font></div>
+  <div id=PPTC26 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Relative pronouns start relative (adjective) clauses.</li>
+   <li>Sample:</li>
+   <li>The lady who was talking to me last night was my new neighbor. She told
+       me something that I didn’t believe. She said she remembered her past
+       life, which she spent in a jungle of Indonesia.</li>
+   <br>
+   <br>
+   <li>“Who” (a relative pronoun) starts a relative clause. It is a relative
+       clause because it has a subject and a verb, and it gives information
+       about a noun, “the lady.”</li>
+   <li>“That” (a relative pronoun) starts another relative clause. It gives
+       information about “something” (what the lady told me).</li>
+   <li>“Which” (a relative pronoun) starts yet another relative clause and
+       gives information about the “past life” (of the lady).</li>
+   <li>Some relative pronouns are: who, whom, whose, that, which, whoever,
+       whichever, etc.</li>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0094.html');" id=PPTL27>Relative
+  Pronouns:<span style='mso-spacerun:yes'>  </span>Subject and Object</a></font></div>
+  <div id=PPTC27 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Sample:</li>
+   <li>This is the man whom I told you about.<span style='mso-spacerun:yes'> 
+       </span>He is the only person I know who can run two marathons in a
+       month.</li>
+   <br>
+   <br>
+   <li>The first relative pronoun you see underlined is “whom”</li>
+   <li>The second relative pronoun you see underlined is “who”</li>
+   <br>
+   <br>
+   <li>Do you know the difference?</li>
+   <li>One acts as an object and one acts as a subject.</li>
+   <br>
+   <br>
+   <li>Let’s go over those sentences again; this time think about subjects and
+       objects.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>28</font></div>
+  </td>
+  <td>
+  <div id=PPTP28 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0095.html');" id=PPTL28>Relative
+  Pronouns:<span style='mso-spacerun:yes'>  </span>Who vs. Whom</a></font></div>
+  <div id=PPTC28 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>This is the man whom I told you about.</li>
+   <li>“Whom” is in the object position.<span style='mso-spacerun:yes'> 
+       </span>One way to know this for sure is to rewrite the sentence as, “I
+       told you about him.”<span style='mso-spacerun:yes'>  </span>Since “him”
+       is an object pronoun, I know I must use “whom” here.</li>
+   <br>
+   <br>
+   <li>He is the only person I know who can run two marathons in a month.</li>
+   <li>“Who” is in the subject position.<span style='mso-spacerun:yes'> 
+       </span>One way to know this for sure is to rewrite the sentence as, “He
+       can run two marathons in a month.”<span style='mso-spacerun:yes'> 
+       </span>Since “he” is a subject pronoun, I know I must use “who” here.</li>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>29</font></div>
+  </td>
+  <td>
+  <div id=PPTP29 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0097.html');" id=PPTL29>Relative
+  Pronouns:<span style='mso-spacerun:yes'>  </span>Possessive</a></font></div>
+  <div id=PPTC29 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Samples:</li>
+   <li>The lady whose house we bought was a strange person. She could tell
+       about your past life just by looking at you.</li>
+   <br>
+   <br>
+   <li>The student whose homework you copied hadn’t been to any classes, so you
+       got everything wrong!</li>
+   <br>
+   <br>
+   <li>“Whose” starts a relative clause and it is a possessive pronoun.<span
+       style='mso-spacerun:yes'>  </span>In the first sentence, “whose” refers
+       to the lady. In the second, “whose” refers to the student.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>30</font></div>
+  </td>
+  <td>
+  <div id=PPTP30 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0100.html');" id=PPTL30>Indefinite Pronouns</a></font></div>
+  <div id=PPTC30 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Indefinite pronouns replace indefinite or unspecific nouns.</li>
+   <li>Sample:</li>
+   <li>That chocolate brownie was delicious. Can I have another? Any will do.</li>
+   <br>
+   <br>
+   <li>“Another” and “any” do not mean any particular brownie. They mean
+       unspecific pieces of brownies.</li>
+   <br>
+   <br>
+   <li>Some indefinite pronouns are: all, another, anything, nobody, nothing,
+       something, etc.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>31</font></div>
+  </td>
+  <td>
+  <div id=PPTP31 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0101.html');" id=PPTL31>Demonstrative Pronouns</a></font></div>
+  <div id=PPTC31 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Demonstrative pronouns replace definite or specific nouns.</li>
+   <br>
+   <br>
+   <li>Now read the following and see how the meaning changes from the previous
+       sample:</li>
+   <br>
+   <br>
+   <li>These chocolate brownies are delicious. Please give me this one, too. I
+       don’t want that one; it’s broken.</li>
+   <br>
+   <br>
+   <li>In the above sentence, these,” “this,” and “that” indicate particular
+       brownies.</li>
+   <br>
+   <br>
+   <li>The demonstrative pronouns are:<span style='mso-spacerun:yes'>  </span>this,
+       these, that, those</li>
+   <br>
+   <br>
+   <li>You probably already know:</li>
+   <li>“This” and “these” refer to nearby things</li>
+   <li>“That” and “those” refer to things that are further away</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>32</font></div>
+  </td>
+  <td>
+  <div id=PPTP32 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0104.html');" id=PPTL32>Interrogative Pronouns</a></font></div>
+  <div id=PPTC32 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Interrogative pronouns start questions about people or things.</li>
+   <br>
+   <br>
+   <li>Samples:</li>
+   <li>Who wants to go home early today?</li>
+   <li>What do you have in your big bag?</li>
+   <li>Which restaurant would you suggest for good Thai food?</li>
+   <br>
+   <br>
+   <li>Some interrogative pronouns are: what, who, whom, which, whose, etc.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>33</font></div>
+  </td>
+  <td>
+  <div id=PPTP33 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0105.html');" id=PPTL33>Interrogative Pronouns</a></font></div>
+  <div id=PPTC33 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Read the below statements.<span style='mso-spacerun:yes'>  </span>How
+       could you change them to questions using interrogative pronouns?</li>
+   <li>I want to learn Spanish.</li>
+   <li>This scarf is mine.</li>
+   <li>I gave the letter to the man who sat on a big sofa.</li>
+   <br>
+   <br>
+   <li>Go to the next slide to see if you got them right.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>34</font></div>
+  </td>
+  <td>
+  <div id=PPTP34 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0106.html');" id=PPTL34>Interrogative Pronouns</a></font></div>
+  <div id=PPTC34 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>These are the questions:</li>
+   <br>
+   <br>
+   <li>Who wants to learn Spanish?</li>
+   <li>Whose scarf is this?</li>
+   <li>To whom did you give the letter?</li>
+   <br>
+   <br>
+   <li>Did you get them all correct? Even the last one? Because it is “give
+       something to someone,” you have to keep the preposition “to” even when
+       you replace the object.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>35</font></div>
+  </td>
+  <td>
+  <div id=PPTP35 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0112.html');" id=PPTL35>If you liked this
+  lesson and would like more information, consider attending:</a></font></div>
+  <div id=PPTC35 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Comma Splices</li>
+   <li>Vocabulary Building</li>
+   <li>Cultural Expectations 1, 2, or 3</li>
+   <br>
+   <br>
+   <br>
+   <br>
+   <li>Why should you come back?</li>
+   <li>Students completing Supplemental Learning Activities had a
+       10%&nbsp;higher success rate across the disciplines, a 21% higher
+       success rate in Math, and a 49% higher success rate in English courses.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master51.html></a><a href=master51.xml></a><a
+href=preview.wmf></a><a href="master51_image001.jpg"></a><a href=pres.xml></a><a
+href=slide0001.html></a><a href="master51_background.png"></a><a
+href="master51_image002.png"></a><a href="slide0001_image003.jpg"></a><a
+href=slide0109.html></a><a href=slide0110.html></a><a href=slide0002.html></a><a
+href=slide0035.html></a><a href=slide0036.html></a><a
+href="slide0036_image004.png"></a><a href=slide0027.html></a><a
+href=slide0046.html></a><a href=slide0008.html></a><a href=slide0039.html></a><a
+href=slide0040.html></a><a href=slide0041.html></a><a href=slide0047.html></a><a
+href="slide0047_image005.png"></a><a href=slide0113.html></a><a
+href=slide0042.html></a><a href=slide0045.html></a><a href=slide0051.html></a><a
+href=slide0052.html></a><a href=slide0086.html></a><a href=slide0082.html></a><a
+href=slide0083.html></a><a href=slide0084.html></a><a href=slide0087.html></a><a
+href=slide0111.html></a><a href=slide0091.html></a><a href=slide0092.html></a><a
+href=slide0094.html></a><a href=slide0095.html></a><a href=slide0097.html></a><a
+href=slide0100.html></a><a href=slide0101.html></a><a href=slide0104.html></a><a
+href=slide0105.html></a><a href=slide0106.html></a><a href=slide0112.html></a><a
+href="slide0112_image006.jpg"></a><a href="slide0112_image007.png"></a><a
+href=master01.html></a><a href="master51_stylesheet.css"></a><a href=script.js></a><a
+href="../Pronouns.html"></a><a href=fullscreen.html></a><a href=buttons.gif></a><a
+href=frame.html></a><a href=outline.html></a></div>
+
+</body>
+
+</html>
