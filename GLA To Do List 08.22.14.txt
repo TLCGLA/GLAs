@@ -1,14 +1,9 @@
 Analyzing Literary Quotes
 -needs quiz (drag and drop), otherwise ready for testing
 
-Pronouns
--ready to test
-
-Study Skills
--ready to test
-
 Test Taking
 -Renumbering script not working, unable to renumber manually because of black screen on slides. Needs work
+   -Check issue on Github for the reason and solution to this.
 
 Vocabulary Building
 -Slides need some format fixes, otherwise ready for testing (slides 7, 29, 30, 32) 
