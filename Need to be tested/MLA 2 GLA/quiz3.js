@@ -1,0 +1,15 @@
+function loadPage()
+{
+	// addQuestion(Question, Answer1, Answer2, Answer3, Answer4, CorrectAnswer [not 0-indexed])
+	curPage = "quiz3.html";
+	curQuiz=3;
+	
+	addQuestion("Which answer removes words from an original passage properly?", "John Cloud states, \"for those of us who do start to think...there are more alternative grocers than ever\" (243).", "John Cloud states, \"for those of us who do start to think [there are more alternative grocers than ever]\" (243).", "John Cloud states, \"...for those of us who do start to think there are more alternative grocers than ever\" (243).", "John Cloud states, \"for those of us who do start to think there are more alternative grocers than ever...\" (243).", 1);
+	addQuestion("Which answer adds words to an original passage properly?", "Michael Pollan points out that \"at first blush, this subsidy (Bush's $190 million farm bill) might look like a handout for farmers\" (238).", "Michael Pollan points out that \"at first blush, this subsidy ...Bush's $190 million farm bill... might look like a handout for farmers\"  (238).", "Michael Pollan points out that \"at first blush, this subsidy <Bush's $190 million farm bill> might look like a handout for farmers\" (238).", "Michael Pollan points out that \"at first blush, this subsidy [Bush's $190 million farm bill] might look like a handout for farmers\" (238).", 4);
+	addQuestion("Which answer uses a passage that already included quotation marks properly?", "Jared Diamond explains that \"the term \"global warming\" is a misnomer\" (275).", "Jared Diamond explains that \"the term 'global warming' is a misnomer\" (275).", "Jared Diamond explains that \"the term \"'global warming'\" is a misnomer\" (275).", "Jared Diamond explains that \"the term [\"global warming\"] is a misnomer\" (275).", 2);
+	addQuestion("Which answer uses a quote that an author has already quoted properly?  (Note:  the quote comes from an online source without page numbers.)", "Dr. Irving Zucker states, \"there's incredible inertia among people when it comes to change, and the vast majority of people doing biological research are going to think this is a huge inconvenience\" (qtd. in Rabin).", "Dr. Irving Zucker states, \"there's incredible inertia among people when it comes to change, and the vast majority of people doing biological research are going to think this is a huge inconvenience\" (Zucker qtd. in Rabin).", "Dr. Irving Zucker states, \"'there's incredible inertia among people when it comes to change, and the vast majority of people doing biological research are going to think this is a huge inconvenience'\" (Rabin).", "Dr. Irving Zucker states, \"there's incredible inertia among people when it comes to change, and the vast majority of people doing biological research are going to think this is a huge inconvenience\" [qtd. in Rabin].", 1);
+	
+	
+	//----------------------------------------------------------
+	display();
+}

@@ -1,0 +1,24 @@
+#test, .quiz {
+	text-align: left;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#buttons {
+	margin-bottom: 100px;
+}
+
+.link {
+	text-decoration: none;
+	color: #000;
+}
+
+.selected, .link:hover{
+	text-decoration: underline;
+	color: #4400ff;
+	background-color: #efefef;
+}
+
+.questionContainer{
+	
+}

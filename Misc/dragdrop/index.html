@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery UI Droppable - Default functionality</title>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+<script src="quizTemplate.js"></script>
+<link rel="stylesheet" href="http://code.jqueryui.com/resources/demos/style.css">
+<style>
+#draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+#droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+
+#wrapper
+{
+	margin: 0 auto;
+	width: 1000px;
+	display:table;
+}
+
+#question-column, #answer-column
+{
+	display: table-cell;
+	border: 1px solid black;
+	width: 400px;
+	height: 600px;
+	padding-top: 50px;
+	vertical-align: top;
+}
+
+.question
+{
+	cursor: pointer;
+	border: 1px solid #ccc;
+	width: 100px;
+}
+
+.answer
+{
+	border: 1px dashed #ccc;
+	margin: 5px;
+	height: 100px;
+}
+
+.highlight
+{
+	border: 1px solid #ff4433;
+	margin: 5px;
+	height: 100px;
+}
+
+.row
+{
+	display: table-row;
+}
+
+.tcol
+{
+	display: table-column;
+}
+
+</style>
+<script>
+
+var answers = new Array();
+
+$(function() {
+	$( ".draggable" ).draggable();
+	
+	$( ".droppable" ).droppable({
+		 drop: function( event, ui ) {
+			$( this )
+			.removeClass("answer")
+			.addClass("highlight")
+			.find("p")
+			.html(" ");
+			answers.push($(this).attr("id"));
+		},
+		out: function(event, ui) {
+			$(this)
+			.removeClass("highlight")
+			.addClass("answer")
+			.find("p")
+			.html("Drop here");
+		}
+	});
+	
+	$(".btn")
+	.button()
+	.click(function(e){
+		e.preventDefault();
+		
+		var str = "";
+		for(var x in answers)
+		{
+			str = str + answers[x] + ", ";
+		}
+		alert(str);
+	});
+});
+</script>
+</head>
+<body>
+
+<div id="wrapper">
+
+	<div id="question-column" class="question">
+	
+		<div id="question">
+			<h2>Sort the numbers in order:</h2>
+			<button class="btn">Submit</button>
+		</div>
+	
+		<div id="a1" class="draggable question">
+			<p>One</p>
+		</div>
+		
+		<div id="a2" class="draggable question">
+			<p>Two</p>
+		</div>
+		
+		<div id="a3" class="draggable question">
+			<p>Three</p>
+		</div>
+		
+		<div id="a4" class="draggable question">
+			<p>Four</p>
+		</div>
+		
+		<div id="a5" class="draggable question">
+			<p>Five</p>
+		</div>
+		
+		<div id="a6" class="draggable question">
+			<p>Six</p>
+		</div>
+		
+	</div>
+	
+	<div id="answer-column" class="answer">
+		<div id="a1" class="droppable answer">
+			<p>Drop here</p>
+		</div>
+		<div id="a2" class="droppable answer">
+			<p>Drop here</p>
+		</div>
+		<div id="a3" class="droppable answer">
+			<p>Drop here</p>
+		</div>
+		<div id="a4" class="droppable answer">
+			<p>Drop here</p>
+		</div>
+		<div id="a5" class="droppable answer">
+			<p>Drop here</p>
+		</div>
+		<div id="a6" class="droppable answer">
+			<p>Drop here</p>
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,889 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 14">
+<link id=Main-File rel=Main-File href="../notetaking.html">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.html');" id=PPTL1>NOTE-TAKING</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0028.html');" id=PPTL2>DID YOU KNOW…?</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>99% of college students take notes during lectures</li>
+   <br>
+   <br>
+   <li>HOWEVER…</li>
+   <li>The typical student records less than 40% of the lecture’s content in
+       their notes</li>
+   <li>Only 47% review their notes later</li>
+   <li>Only 29% edit their notes later by adding, deleting, or reorganizing
+       information</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.html');" id=PPTL3>WHY IS IT IMPORTANT TO
+  TAKE GOOD NOTES?</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Good notes will…</li>
+   <li>Keep you actively listening to lectures</li>
+   <li>Provide a record of the lecture for later use</li>
+   <li>Allow you to organize and structure information</li>
+   <li>Help you remember information</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.html');" id=PPTL4>LEARNING TO TAKE GOOD
+  NOTES</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Use a note-taking system</li>
+   <li>Develop note-taking skills</li>
+   <ul>
+    <li>Active listening</li>
+    <li>Organization</li>
+    <br>
+    <br>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0016.html');" id=PPTL5>WHY IS IT IMPORTANT TO
+  LISTEN ACTIVELY?</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>There is a big difference between the speed we speak (125-175 words per
+       minute) and the speed we listen (450 words per minute).<span
+       style='mso-spacerun:yes'>    </span>This means we only use 25% of our
+       mental capacity to listen.</li>
+   <br>
+   <br>
+   <li>After listening to a lecture, the average person has heard and
+       understood about 50% of what was said.<span style='mso-spacerun:yes'> 
+       </span>Within 48 hours, they forget about half of that.<span
+       style='mso-spacerun:yes'>  </span>This means we only comprehend about
+       25% of what we hear.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0017.html');" id=PPTL6>WHAT IS ACTIVE
+  LISTENING?</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A series of techniques designed to help students avoid distractions and
+       focus fully on a lecture or presentation.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0018.html');" id=PPTL7>HOW DO I LISTEN
+  ACTIVELY?</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0019.html');" id=PPTL8>WHEN ACTIVELY
+  LISTENING, USE THE FOLLOWING CUES TO RECOGNIZE WHEN THE SPEAKER IS MAKING AN
+  IMPORTANT POINT:</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Pausing</li>
+   <li>Giving Examples</li>
+   <li>Repeating him/herself</li>
+   <li>Repeating the Textbook</li>
+   <li>Increasing volume/changing pitch</li>
+   <li>Taking more time in one area</li>
+   <li>Adding activities or worksheets</li>
+   <li>Using body language</li>
+   <li>Writing on the board</li>
+   <li>Using direct statements (this is important) or signal words
+       (significant, most)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0004.html');" id=PPTL9>PRE-REFLECTION:<span
+  style='mso-spacerun:yes'>  </span>STOP HERE FOR A MOMENT AND ANSWER A FEW
+  QUESTIONS ON YOUR HANDOUT:</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>What do you already know about taking notes?</li>
+   <li>What methods do you usually use?</li>
+   <li>What challenges do you sometimes face when taking notes?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0020.html');" id=PPTL10>NOTE TAKING SYSTEMS</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Cornell</li>
+   <li>Outlining</li>
+   <li>Mapping</li>
+   <li>Charting</li>
+   <li>Parallel Note-Taking</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0005.html');" id=PPTL11>CORNELL NOTES</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Cornell notes are a specific system for organizing notes.</li>
+   <li>Cornell notes have three parts:</li>
+   <ul>
+    <li>A left column with cues (questions, key words)</li>
+    <li>A right column with information from the lecture</li>
+    <li>A summary section at the bottom</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0006.html');" id=PPTL12>GETTING STARTED WITH
+  CORNELL</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>To begin, make a line or fold in your paper about 2 or 3 inches from the
+       left margin</li>
+   <li>Label your notes at the top of the page with the class, date, and topic
+       of the lecture</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0007.html');" id=PPTL13>DURING CLASS</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>During class, write down information from the lecture on the right side
+       of the page</li>
+   <li>When the instructor moves to a new topic, skip a few lines</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0008.html');" id=PPTL14>CUES</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>As soon after class as possible, write questions and/or key terms in the
+       left column that describe the information in the right column</li>
+   <li>You may have time to do some of this in class, but be sure to review and
+       expand after class</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0009.html');" id=PPTL15>SUMMARY</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>After class, draw a line across the bottom of your notes</li>
+   <li>Reread your notes and write a few sentences that summarize the content
+       of the lecture below the line</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0021.html');" id=PPTL16>OUTLINING NOTES</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>An outline is an organized list</li>
+   <li>Main points to the left margin</li>
+   <li>Sub-points indented below the main point</li>
+   <li>For lecture notes, no need to use Roman numerals, letters, or numbers</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0022.html');" id=PPTL17>OUTLINE EXAMPLE</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0023.html');" id=PPTL18>MAPPING</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Focuses on the relationship between topics</li>
+   <li>Graphic representation, so it’s good for visual learners</li>
+   <li>Can incorporate color and images easily</li>
+   <li>Students can also use their traditional lecture notes to create maps
+       after a lecture</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0024.html');" id=PPTL19>MAPPING EXAMPLE</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0025.html');" id=PPTL20>CHARTING</a></font></div>
+  <div id=PPTC20 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Create a table with labeled columns</li>
+   <li>Fill in the table as class progresses</li>
+   <li>Useful for dates or key terms</li>
+   <li>Helps to differentiate information by category</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0026.html');" id=PPTL21>CHARTING EXAMPLE</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0029.html');" id=PPTL22>PARALLEL NOTE-TAKING</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Instructors often provide e-support for lectures, such as PowerPoint
+       presentations, lecture notes, or handouts.</li>
+   <li>If possible, print these support documents before the lecture.</li>
+   <li>As your instructor lectures, take notes directly on the document.</li>
+   <li>You can combine this technique with other note-taking techniques like
+       the Cornell system.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0011.html');" id=PPTL23>TIPS FOR TAKING
+  NOTES:<br>
+    BEFORE THE LECTURE</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Come to class prepared (paper, pens, assigned reading completed)</li>
+   <li>Review notes from the previous lecture</li>
+   <li>Eliminate distractions</li>
+   <li>Sit where you can see and hear easily</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0027.html');" id=PPTL24>TIPS FOR TAKING
+  NOTES:<br>
+    DURING THE LECTURE</a></font></div>
+  <div id=PPTC24 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Write down the title of the lecture, the name of the course, and the
+       date</li>
+   <li>Pay attention to the class agenda/outline</li>
+   <li>Don’t try to write down every word—use phrases rather than sentences and
+       abbreviate whenever you can</li>
+   <li>Pay attention to the summary at the end of the lecture</li>
+   <li>At the end of the lecture, ask questions to clarify any points you don’t
+       understand</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0012.html');" id=PPTL25>COMMON SYMBOLS AND
+  ABBREVIATIONS</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0013.html');" id=PPTL26>USING YOUR NOTES FOR
+  REVIEW</a></font></div>
+  <div id=PPTC26 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>First, reread your notes</li>
+   <ul>
+    <li>Try to fill in any blanks</li>
+    <li>Identify key words and main ideas</li>
+    <li>Make connections between info from the textbook and the lecture notes</li>
+   </ul>
+   <li>Then, use notes to prepare for assignments and exams</li>
+   <ul>
+    <li>Review periodically to avoid cramming for an exam</li>
+    <li>Quiz yourself</li>
+    <li>Create flashcards or concept maps</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0030.html');" id=PPTL27>IF YOU LIKED THIS LESSON
+  AND WOULD LIKE MORE INFORMATION, CONSIDER ATTENDING:</a></font></div>
+  <div id=PPTC27 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Outlining Your Essay</li>
+   <li>Outlining Readings</li>
+   <li>Reading Textbooks</li>
+   <li>Test Taking Strategies</li>
+   <br>
+   <br>
+   <br>
+   <li>Why should you come back?</li>
+   <li>Students completing Supplemental Learning Activities had a
+       10%&nbsp;higher success rate across the disciplines, a 21% higher
+       success rate in Math, and a 49% higher success rate in English courses.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>28</font></div>
+  </td>
+  <td>
+  <div id=PPTP28 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0014.html');" id=PPTL28>PRACTICE:<span
+  style='mso-spacerun:yes'>  </span>TAKING NOTES FROM A LECTURE</a></font></div>
+  <div id=PPTC28 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When you are ready, click on the button to start the lecture.</li>
+   <li>Use one of the different note taking systems to take notes during the
+       lecture.</li>
+   <ul>
+    <li>Cornell</li>
+    <li>Outlining</li>
+    <li>Mapping</li>
+    <li>Charting</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>29</font></div>
+  </td>
+  <td>
+  <div id=PPTP29 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0015.html');" id=PPTL29>YOU HAVE COMPLETED THE
+  FIRST STEP OF THE GLA.</a></font></div>
+  <div id=PPTC29 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The next step is to apply what you have learned by completing the
+       handout exercises and reviewing your work with a tutor.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master39.html></a><a href=master39.xml></a><a
+href=preview.wmf></a><a href="master39_image001.jpg"></a><a
+href="master39_image002.png"></a><a href=master51.html></a><a
+href=master51.xml></a><a href="master51_image003.png"></a><a
+href="master51_image004.png"></a><a href=master52.html></a><a
+href=master52.xml></a><a href="master52_image005.png"></a><a
+href=master53.html></a><a href=master53.xml></a><a href=master54.html></a><a
+href=master54.xml></a><a href="master54_image006.png"></a><a
+href=master55.html></a><a href=master55.xml></a><a href="master55_image007.png"></a><a
+href=master56.html></a><a href=master56.xml></a><a href=master02.html></a><a
+href=pres.xml></a><a href=slide0001.html></a><a href="master53_background.png"></a><a
+href="master53_image008.png"></a><a href="master53_image009.png"></a><a
+href="slide0001_image010.jpg"></a><a href=slide0028.html></a><a
+href="master39_background.png"></a><a href="master39_image011.png"></a><a
+href="master39_image012.png"></a><a href="master39_image013.png"></a><a
+href="master39_image014.png"></a><a href="slide0028_image015.jpg"></a><a
+href="slide0028_image016.png"></a><a href=slide0002.html></a><a
+href="slide0002_image017.png"></a><a href="slide0002_image018.jpg"></a><a
+href="slide0002_image019.png"></a><a href=slide0003.html></a><a
+href="slide0003_image020.png"></a><a href="slide0003_image021.jpg"></a><a
+href="slide0003_image022.png"></a><a href=slide0016.html></a><a
+href="slide0016_image023.jpg"></a><a href="slide0016_image024.png"></a><a
+href=slide0017.html></a><a href="slide0017_image025.jpg"></a><a
+href="slide0017_image026.png"></a><a href=slide0018.html></a><a
+href="slide0018_image027.png"></a><a href=slide0019.html></a><a
+href="slide0019_image028.jpg"></a><a href=slide0004.html></a><a
+href="slide0004_image029.jpg"></a><a href=slide0020.html></a><a
+href="slide0020_image030.jpg"></a><a href="slide0020_image031.png"></a><a
+href=slide0005.html></a><a href="slide0005_image032.png"></a><a
+href=slide0006.html></a><a href="slide0006_image033.jpg"></a><a
+href=slide0007.html></a><a href="slide0007_image034.jpg"></a><a
+href=slide0008.html></a><a href="slide0008_image035.jpg"></a><a
+href="slide0008_image036.png"></a><a href=slide0009.html></a><a
+href="slide0009_image037.jpg"></a><a href="slide0009_image038.png"></a><a
+href=slide0021.html></a><a href="slide0021_image039.jpg"></a><a
+href="slide0021_image040.png"></a><a href=slide0022.html></a><a
+href="slide0022_image041.png"></a><a href="slide0022_image042.png"></a><a
+href="slide0022_image043.png"></a><a href="slide0022_image044.png"></a><a
+href=slide0023.html></a><a href="slide0023_image045.jpg"></a><a
+href="slide0023_image046.png"></a><a href=slide0024.html></a><a
+href="slide0024_image047.png"></a><a href=slide0025.html></a><a
+href="slide0025_image048.jpg"></a><a href=slide0026.html></a><a
+href="slide0026_image049.gif"></a><a href="slide0026_image050.png"></a><a
+href=slide0029.html></a><a href="slide0029_image051.jpg"></a><a
+href="slide0029_image052.png"></a><a href=slide0011.html></a><a
+href="slide0011_image053.jpg"></a><a href="slide0011_image054.png"></a><a
+href=slide0027.html></a><a href="slide0027_image055.jpg"></a><a
+href="slide0027_image056.png"></a><a href=slide0012.html></a><a
+href="slide0012_image057.png"></a><a href=slide0013.html></a><a
+href="slide0013_image058.png"></a><a href=slide0030.html></a><a
+href="slide0030_image059.jpg"></a><a href="slide0030_image060.png"></a><a
+href=slide0014.html></a><a href=slide0015.html></a><a
+href="master39_stylesheet.css"></a><a href="master51_stylesheet.css"></a><a
+href="master52_stylesheet.css"></a><a href="master53_stylesheet.css"></a><a
+href="master54_stylesheet.css"></a><a href="master55_stylesheet.css"></a><a
+href="master56_stylesheet.css"></a><a href=script.js></a><a
+href="../notetaking.html"></a><a href=fullscreen.html></a><a href=buttons.gif></a><a
+href=frame.html></a><a href=outline.html></a></div>
+
+</body>
+
+</html>
