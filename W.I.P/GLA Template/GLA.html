@@ -39,34 +39,39 @@ function updatePage()
 		curSlide = parseInt(cook);
 	}
 	
+	if(getCookie("curSlide") >= MAX_SLIDE)
+	{
+		alert("Error in slide number. Resetting to the beginning of the GLA.");
+		clearCookies();
+		window.location="GLA.html";
+		return;
+	}
+	
 	if(getCookie("cont1") == "") // We haven't been specified to continue after quiz 1
 	{
-		if(curSlide == 13)
+		if(curSlide >= 13)
 		{
 			window.location="quiz1.html";
 		}
 	}
 	if(getCookie("cont2") == "") // We haven't been specified to continue after quiz 2
 	{
-		if(curSlide == 20)
+		if(curSlide >= 20)
 		{
 			window.location="quiz2.html";
 		}
 	}
 	if(getCookie("cont3") == "") // We haven't been specified to continue after quiz 3
 	{
-		if(curSlide == 33)
+		if(curSlide >= 33)
 		{
 			window.location="quiz3.html";
 		}
-	}	
-	if(getCookie("curSlide") == 36)
+	}
+	if(getCookie("curSlide") == MAX_SLIDE)
 	{
 		alert("Congratulations! You finished the GLA!");
-		deleteCookie("curSlide");
-		deleteCookie("cont1");
-		deleteCookie("cont2");
-		deleteCookie("cont3");
+		clearCookies();
 		window.location="GLA.html";
 	}
 	
@@ -80,6 +85,13 @@ function updatePage()
 	document.getElementById("slideNum").innerHTML = curSlide + "/" + MAX_SLIDE;
 }
 
+function clearCookies()
+{
+	deleteCookie("curSlide");
+	deleteCookie("cont1");
+	deleteCookie("cont2");
+	deleteCookie("cont3");
+}
 function windowClosed()
 {
 	//alert("I'm closing");
