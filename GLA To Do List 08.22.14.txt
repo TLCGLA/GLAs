@@ -1,6 +1,3 @@
 Analyzing Literary Quotes
 -needs quiz (drag and drop), otherwise ready for testing
 
-Test Taking
--Renumbering script not working, unable to renumber manually because of black screen on slides. Needs work
-   -Check issue on Github for the reason and solution to this. 
