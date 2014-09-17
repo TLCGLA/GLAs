@@ -1,3 +1,5 @@
+ // quizTemplate version: 1.1
+
 var quizAnswerKey = new Array();
 var quizQuestions = new Array();
 var quizAnswers = new Array();
@@ -17,9 +19,19 @@ function display()
 	{
 		correct = parseInt(getCookie("correct"));
 	}
+	if(getCookie("submitted") != "")
+	{
+		alert("Your answers have been graded. When you're ready to continue with the GLA, click continue again.");
+	}
 	
 	for(var i = 0; i < quizQuestions.length; ++i) // i = Question number
 	{
+		//prevents undefined data from being printed out!
+		if(typeof quizQuestions[i] === "undefined")
+		{
+			break;
+		}
+	
 		document.getElementById("quiz").innerHTML += "<div class=\"questionContainer\"><h3>" + quizQuestions[i] + "</h3>";
 		
 		for(var j = 0; j < quizAnswers[i].length; j++) // j = Answer number
@@ -31,22 +43,22 @@ function display()
 			// Loads questions already answered
 			if(getCookie(i) != "")
 			{
-				if(parseInt(getCookie(i)) == j)
+				if(parseInt(getCookie(i)) == j) // If their selected answer is this one.
 				{
-					if(answered !== curQuestionId)
+					if(answered !== curQuestionId) 
 					{
 						prefix = "<span class='selected'>";
 						postfix = "</span>";
 					}
 					else
 					{
-						if(parseInt(getCookie(i)) == quizAnswerKey[i])
+						if(parseInt(getCookie(i)) == quizAnswerKey[i]) // If they got the question right
 						{
 							
 							prefix = "<font color='green'>";
 							postfix = "</font>";
 						}
-						else
+						else // If they got it wrong
 						{
 							prefix = "<font color='red'>";
 							postfix = "</font>";
@@ -54,11 +66,12 @@ function display()
 					}
 				}
 			}
-			if(quizAnswers[i][j] !== "")
+			
+			if(quizAnswers[i][j] !== "") //fix for questions that have fewer than n answers
 			{
-				document.getElementById("quiz").innerHTML += "<a href='javascript:void(0)' class='link' id='" + i + "," + j + "' onClick='answerQuestion(\"" + i + "," + j + "\")'>" + prefix + (j+1) + ") " + quizAnswers[i][j] + postfix + "</a>";
-				document.getElementById("quiz").innerHTML += "<br></div>";
-				document.getElementById("quiz").innerHTML += "</div>";//closes questionContainer div
+			  document.getElementById("quiz").innerHTML += "<a href='javascript:void(0)' class='link' id='" + i + "," + j + "' onClick='answerQuestion(\"" + i + "," + j + "\")'>" + prefix + (j+1) + ") " + quizAnswers[i][j] + postfix + "</a>";
+			  document.getElementById("quiz").innerHTML += "<br></div>";
+			  document.getElementById("quiz").innerHTML += "</div>";//closes questionContainer div
 			}
 		}
 	}
@@ -78,11 +91,24 @@ function display()
 	debug();
 }
 
+function displayDraggable()
+{
+	//output draggable element containing answer to question
+	
+	
+	//add enough droppable areas for the answers to go
+}
+
 function answerQuestion(answer)
 {
 	var a = answer.split(","); // Answers are determined by 'question,answer'.
 	var question=a[0];
 	var ans=parseInt(a[1]);
+	
+	if(Object.prototype.toString.call(quizAnswerKey[curQuestionId]) === "[object Array]")
+	{
+		//if the question has multiple answers 
+	}
 	
 	if(getCookie(question) == "") // The question hasn't been answered yet
 	{
@@ -200,6 +226,53 @@ function addQuestion(question, answer1, answer2, answer3, answer4, correctAnswer
 	quizAnswers[curQuestionId][3] = answer4;
 	quizAnswerKey[curQuestionId] = correctAnswer-1;
 	curQuestionId++; // Keep track of the total number of questions
+}
+
+//Add question with with n answers
+function addQuestions(info)
+{
+
+	for(var x in info)
+	{
+	
+		if(typeof info[x] === "undefined")
+		{
+			break;
+		}
+	
+		//store question into question array
+		quizQuestions[curQuestionId] = info[x].question;
+		
+		//put answers into quizAnswers arrays
+		//creates new array if quizAnswers[curQuestionId] is undefined for some reason
+		if(typeof quizAnswers[curQuestionId] === "undefined")
+		{
+			quizAnswers[curQuestionId] = new Array();
+		}
+		
+		//store answers into array
+		for(var i in info[x].answers)
+		{
+			quizAnswers[curQuestionId][i] = info[x].answers[i];
+		}
+		
+		//determine whether multiple answers are allowed, if so store answer in answer key as an array
+		if(info[x].hasMultipleAnswers)
+		{
+			quizAnswerKey[curQuestionId] = new Array();
+			for(var y in info[x].correctAnswer)
+			{
+				quizAnswerKey[curQuestionId][y] = info[x].correctAnswer[y]-1;
+			}
+		}
+		else
+		{
+			//store quizAnswerKey
+			quizAnswerKey[curQuestionId] = info[x].correctAnswer-1;
+		}
+		
+		curQuestionId++;
+	}
 }
 
 function showCookies()

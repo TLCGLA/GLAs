@@ -1,3 +1,5 @@
+// quizTemplate version: 1.12
+
 var quizAnswerKey = new Array();
 var quizQuestions = new Array();
 var quizAnswers = new Array();
@@ -37,22 +39,22 @@ function display()
 			// Loads questions already answered
 			if(getCookie(i) != "")
 			{
-				if(parseInt(getCookie(i)) == j)
+				if(parseInt(getCookie(i)) == j) // If their selected answer is this one.
 				{
-					if(answered !== curQuestionId)
+					if(answered !== curQuestionId) 
 					{
 						prefix = "<span class='selected'>";
 						postfix = "</span>";
 					}
 					else
 					{
-						if(parseInt(getCookie(i)) == quizAnswerKey[i])
+						if(parseInt(getCookie(i)) == quizAnswerKey[i]) // If they got the question right
 						{
 							
 							prefix = "<font color='green'>";
 							postfix = "</font>";
 						}
-						else
+						else // If they got it wrong
 						{
 							prefix = "<font color='red'>";
 							postfix = "</font>";
@@ -75,12 +77,13 @@ function display()
 	if(answered == curQuestionId)
 	{
 		document.getElementById("buttons").innerHTML = '<input type="button" value="Continue" onClick="quizFinished();" />';
+		alert("Your answers have been graded. When you're ready to continue with the GLA, click continue again.");
 		setCookie("submitted", 1, 1);
-		//quizFinished();
 	}
 	else
 	{
 		document.getElementById("buttons").innerHTML = '<input type="button" id="sub" value="Submit Quiz" onClick="location.reload();" />';
+		
 	}
 	debug();
 }
