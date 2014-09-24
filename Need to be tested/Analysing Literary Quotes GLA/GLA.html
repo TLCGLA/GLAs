@@ -47,6 +47,13 @@ function updatePage()
 		}
 	}
 	
+	if(getCookie("cont2") == "")
+	{
+		if(curSlide == 28)
+		{
+		window.location="quiz2.html";
+		}
+	}
 	
 	if(getCookie("curSlide") == MAX_SLIDE + 1)
 	{

@@ -1,4 +1,4 @@
- // quizTemplate version: 1.1
+// quizTemplate version: 1.12
 
 var quizAnswerKey = new Array();
 var quizQuestions = new Array();
@@ -18,10 +18,6 @@ function display()
 	if(correct == 0 && getCookie("correct") != "")
 	{
 		correct = parseInt(getCookie("correct"));
-	}
-	if(getCookie("submitted") != "")
-	{
-		alert("Your answers have been graded. When you're ready to continue with the GLA, click continue again.");
 	}
 	
 	for(var i = 0; i < quizQuestions.length; ++i) // i = Question number
@@ -81,12 +77,13 @@ function display()
 	if(answered == curQuestionId)
 	{
 		document.getElementById("buttons").innerHTML = '<input type="button" value="Continue" onClick="quizFinished();" />';
+		alert("Your answers have been graded. When you're ready to continue with the GLA, click continue again.");
 		setCookie("submitted", 1, 1);
-		//quizFinished();
 	}
 	else
 	{
 		document.getElementById("buttons").innerHTML = '<input type="button" id="sub" value="Submit Quiz" onClick="location.reload();" />';
+		
 	}
 	debug();
 }
