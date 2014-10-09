@@ -39,7 +39,28 @@ function updatePage()
 		curSlide = parseInt(cook);
 	}
 	
-		
+	if(getCookie("cont1") == "") // We haven't been specified to continue after quiz 1
+	{
+		if(curSlide == 10)
+		{
+			window.location="quiz1.html";
+		}
+	}
+	if(getCookie("cont2") == "") // We haven't been specified to continue after quiz 2
+	{
+		if(curSlide == 19)
+		{
+			window.location="quiz2.html";
+		}
+	}
+	if(getCookie("cont3") == "") // We haven't been specified to continue after quiz 3
+	{
+		if(curSlide == 29)
+		{
+			window.location="quiz3.html";
+		}
+	}
+	
 	if(getCookie("curSlide") == MAX_SLIDE + 1)
 	{
 		alert("Congratulations! You finished the GLA!");

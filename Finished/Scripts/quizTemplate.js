@@ -1,4 +1,4 @@
-// quizTemplate version: 1.12
+// quizTemplate version: 1.20
 
 var quizAnswerKey = new Array();
 var quizQuestions = new Array();
@@ -186,20 +186,8 @@ function quizFinished()
 		alert("You didn't get all the questions right, going back to the beginning of this section.");
 		
 		deleteCookie("curSlide"); // Make sure they go back to the first slide.
-		var newNum = 1;
-		if(curQuiz == 1)
-		{
-			newNum = 1;
-		}
-		else if(curQuiz == 2)
-		{
-			newNum = 13;
-		}
-		else if(curQuiz == 3)
-		{
-			newNum = 20;
-		}
-		setCookie("curSlide", newNum);
+		
+		setCookie("curSlide", curQuizRedirect);
 		deleteCookie("cont" + curQuiz);
 		window.location="GLA.html";
 	}

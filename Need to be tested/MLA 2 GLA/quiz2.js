@@ -3,7 +3,7 @@ function loadPage()
 	// addQuestion(Question, Answer1, Answer2, Answer3, Answer4, CorrectAnswer [not 0-indexed])
 	curPage = "quiz2.html";
 	curQuiz = 2;
-	
+	curQuizRedirect=24;
 	addQuestion("Click on the types of works that should have an italicized title.", "Short Stories, Long Poem, Book Title, Film", "Musical Album, Long Poem, Book Title, Film", "Musical Album, Short Poem, Episode of a Television Show, Book Title", "Short Stories, Musical Album, Episode of a Television Show, Book Title", 2);
 	addQuestion("Click on the correct in-text citation for a long poem.", "4.6.56-57", "(4.6.56-57)", "IV.6.56-57", "(lines 56-57)", 2);	
 	addQuestion("Click on the correct in-text citation for the first time a writer quotes from a short poem.", "9-10", "(lines ix-x)", "(9-10)", "(lines 9-10)", 4);

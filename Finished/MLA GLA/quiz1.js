@@ -3,7 +3,7 @@ function loadPage()
 	// addQuestion(Question, Answer1, Answer2, Answer3, Answer4, CorrectAnswer [not 0-indexed])
 	curPage = "quiz1.html";
 	curQuiz=1;
-	
+	curQuizRedirect=1;
 	addQuestion("What does MLA stand for?", "Modern literature association", "Mobile language agency", "Multicultural literature agency", "Modern language association", 4);
 	addQuestion("Where can you find information to help use MLA formatting?", "The learning center (TLC)", "College of the canyons library", "A handbook like rules for writers", "All of the above", 4);
 	addQuestion("When formatting a document in MLA style, how wide should your margins be?", "One inch on all four sides", "1 1/4 inches on all four sides", "Whatever my computer is set to ", "One inch on the top and bottom of the page; one and a half inches on the left and right sides", 1);
