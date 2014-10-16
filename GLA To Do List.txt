@@ -2,7 +2,6 @@ Analyzing Literary Quotes
 -needs quiz (drag and drop), otherwise ready for testing
 
 Quizzes
-Online Research
 
 New GLAs
 Reading Strategies
