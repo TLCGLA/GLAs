@@ -3,7 +3,7 @@ function loadPage()
 	// addQuestion(Question, Answer1, Answer2, Answer3, Answer4, CorrectAnswer [not 0-indexed])
 	curPage = "quiz1.html";
 	curQuiz=1;
-	curQuizRedirect=10;
+	curQuizRedirect=1;
 	
 	addQuestion("COMPLETE the statements correctly by clicking on the answers.<br>A thesis statement is...", "the first paragraph of an essay.", "an introduction to the essay.", "a one or two sentence summary of the essay's argument.", "an illustration of the main point of the essay.", 3);
 	addQuestion("COMPLETE the statements correctly by clicking on the answers.<br>The purpose of the thesis statement is to...", "introduce the pros and cons of the argument.", "define the objective of the essay.", "give an example of the topic discussed in the essay.", "describe the supporting research used in the essay.", 2);
