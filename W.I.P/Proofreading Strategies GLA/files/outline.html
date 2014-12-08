@@ -1,0 +1,774 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 14">
+<link id=Main-File rel=Main-File href="../Proofreading%20Strategies.html">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.html');" id=PPTL1>PROOFREADING STRATEGIES</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>“Keep clam and proofread”</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.html');" id=PPTL2>AGENDA</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>This workshop will answer the following questions:</li>
+   <li><span style='mso-spacerun:yes'>  </span>What is proofreading?</li>
+   <li><span style='mso-spacerun:yes'>  </span>How do I proofread?</li>
+   <li><span style='mso-spacerun:yes'>  </span>Why is proofreading important?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.html');" id=PPTL3>WHAT IS PROOFREADING?</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li><span style='mso-spacerun:yes'>  </span>Proofreading is one of the final
+       stages of the writing process.</li>
+   <li><span style='mso-spacerun:yes'> </span><span
+       style='mso-spacerun:yes'> </span>It is the process of carefully checking
+       and assignment to look for spelling, grammar, and formatting errors.</li>
+   <li><span style='mso-spacerun:yes'> </span><span
+       style='mso-spacerun:yes'> </span>Students should save enough time before
+       an assignment is due to proofread carefully</li>
+   <li><span style='mso-spacerun:yes'> </span><span
+       style='mso-spacerun:yes'> </span>If an assignment is submitted with
+       errors, it damages the student’s credibility as a writer.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0004.html');" id=PPTL4>HOW DO I PROOFREAD?</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0005.html');" id=PPTL5>STRATEGY 1:<span
+  style='mso-spacerun:yes'>  </span>TIME</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Give yourself some distance from your assignment.</li>
+   <li>Once you’ve created a draft you’re happy with, leave the draft alone for
+       a few hours (or better yet, a full day) before proofreading.</li>
+   <li>This means it’s very important to avoid procrastination.<span
+       style='mso-spacerun:yes'>  </span>If you finish your assignment right
+       before it is due, there won’t be enough time to proofread well.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0006.html');" id=PPTL6>STRATEGY 2:<span
+  style='mso-spacerun:yes'>  </span>DON’T RELY ON SPELL CHECKERS</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Spell checkers may miss words that are used incorrectly, even if they
+       are real words.</li>
+   <li>For example, it will mark the word “thought” as correct even if the
+       writer meant “though.”</li>
+   <br>
+   <br>
+   <li>Are all of the below words spelled correctly?</li>
+   <li>I have to do a through job on my lab report because I defiantly want to
+       do well.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0007.html');" id=PPTL7>STRATEGY 3:<span
+  style='mso-spacerun:yes'>  </span>USE YOUR RESOURCES</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Use your resources, such as dictionaries and handbooks.</li>
+   <li>They can help you find the correct spelling or identify grammar errors.</li>
+   <br>
+   <br>
+   <li>Where would you look to find out if you should use “its” or “it’s” in
+       the below sentence?</li>
+   <li>I dropped my phone yesterday.<span style='mso-spacerun:yes'> 
+       </span>Now, (its/it’s) screen is cracked.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0008.html');" id=PPTL8>STRATEGY 4:<span
+  style='mso-spacerun:yes'>  </span>USE SEARCH FUNCTION</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Use your computer’s search function to find errors that you know you
+       make.</li>
+   <ul>
+    <li>PC:<span style='mso-spacerun:yes'>  </span>Ctrl+f</li>
+    <li>Mac:<span style='mso-spacerun:yes'>  </span>Command+f</li>
+   </ul>
+   <li>For example, if you struggle with there/they’re/their, you can search
+       each of those words to check that you’ve used them correctly.</li>
+   <br>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0009.html');" id=PPTL9>STRATEGY 5:<span
+  style='mso-spacerun:yes'>  </span>READ OUT LOUD</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Read your assignment out loud, or ask a friend to read it to you.</li>
+   <li>Listen carefully for errors or awkward-sounding sentences</li>
+   <br>
+   <br>
+   <li>Let’s read the below sentence out loud:</li>
+   <li>I smelled the oysters coming down the stairs for dinner.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0010.html');" id=PPTL10>STRATEGY 6:<span
+  style='mso-spacerun:yes'>  </span>PRINT</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Print out your assignment.<span style='mso-spacerun:yes'>  </span>Often,
+       it is easier to find errors on a printed copy of the work.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0011.html');" id=PPTL11>STRATEGY 7:<span
+  style='mso-spacerun:yes'>  </span>READ WITH A RULER</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Normally, when we read our eyes skim over the page.<span
+       style='mso-spacerun:yes'>  </span>We read too quickly, which means that
+       we miss errors.</li>
+   <li>Read with a ruler or piece of paper under each line of text.</li>
+   <li>This will force your eyes to slow down and focus on one line at a time.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0012.html');" id=PPTL12>STRATEGY 8:<span
+  style='mso-spacerun:yes'>  </span>READ BACKWARDS</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>This is another strategy that will help you slow down your reading.</li>
+   <li>When we read our own work, we know the content very well.<span
+       style='mso-spacerun:yes'>  </span>We may read what we expect to see on
+       the page rather than what’s really there.</li>
+   <li>Read the assignment backwards, sentence by sentence.</li>
+   <li>This requires you to focus on the spelling and grammar of one sentence
+       at a time.</li>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0013.html');" id=PPTL13>STRATEGY 9:<span
+  style='mso-spacerun:yes'>  </span>KNOW YOUR MISTAKES</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>As writers, we tend to make the same mistakes over and over.</li>
+   <li>Check for mistakes you know you make.</li>
+   <li>If you struggle with comma splices, for example, read the assignment
+       looking specifically for comma splices.</li>
+   <br>
+   <br>
+   <li>If you need help with grammar, see a TLC tutor or help yourself to a
+       handout.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0014.html');" id=PPTL14>STRATEGY 10:<span
+  style='mso-spacerun:yes'>  </span>REVIEW CITATIONS</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Review your citations to make sure they are correct.</li>
+   <li>Be sure you know what citation style (MLA, APA, Chicago, etc.) you’re
+       required to use.<span style='mso-spacerun:yes'>  </span>Check your
+       assignment or syllabus; if no style is listed, contact your instructor.</li>
+   <li>Correct citations are an essential step in avoiding plagiarism.<span
+       style='mso-spacerun:yes'>  </span>It is important that they are
+       accurate.</li>
+   <li>If you need additional help or materials on citation, visit The Learning
+       Center!</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0015.html');" id=PPTL15>STRATEGY 11:<span
+  style='mso-spacerun:yes'>  </span>FACT CHECK</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Double check facts, figures, dates, and quotes to make sure they are
+       correct.</li>
+   <li>Your readers rely on you to provide accurate information; in addition,
+       you may lose points on the assignment if the facts are incorrect.</li>
+   <br>
+   <br>
+   <li>Let’s check the facts in the below statement:</li>
+   <li>The two major political parties in the United States are Republicans and
+       Democracy.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0016.html');" id=PPTL16>STRATEGY 12:<span
+  style='mso-spacerun:yes'>  </span>ACADEMIC TONE</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Be sure your tone is academically appropriate.</li>
+   <li>Most college instructors look for a degree of formality from their
+       students.</li>
+   <li>A quick way to make your writing more formal is to remove the pronouns
+       “you” and “I” as well as contractions like “can’t” or “we’re.”</li>
+   <br>
+   <br>
+   <li>Let’s make the below sentence more academically appropriate:</li>
+   <li>College students should bring your books to class.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0017.html');" id=PPTL17>STRATEGY 13:<span
+  style='mso-spacerun:yes'>  </span>PROOFREAD MORE THAN ONCE</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Be prepared to proofread more than once.</li>
+   <li>Look for one or two types of problems at a time.</li>
+   <li>This is another great reason to avoid procrastination.<span
+       style='mso-spacerun:yes'>  </span>Students need time to proofread their
+       work well.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0018.html');" id=PPTL18>WHY IS PROOFREADING
+  IMPORTANT?</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0019.html');" id=PPTL19>WHEN PEOPLE DON’T
+  PROOFREAD, THEY EMBARRASS THEMSELVES</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0020.html');" id=PPTL20>WHEN PEOPLE DON’T
+  PROOFREAD, THEY MAY NOT GET A JOB</a></font></div>
+  <div id=PPTC20 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Employers will often choose not to interview candidates with errors on
+       their resumes.</li>
+   <li>Employers want candidates who can represent the company well.</li>
+   <li>This means that they candidate must show that they can represent
+       themselves well by proofreading carefully.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0021.html');" id=PPTL21>WHEN PEOPLE DON’T
+  PROOFREAD, THEIR BUSINESSES CAN LOSE MONEY</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>An Italian airline accidentally priced a flight from Toronto to Cyprus
+       at $39, not $3,900.<span style='mso-spacerun:yes'>  </span>The airline
+       lost $7.72 million due to their error.</li>
+   <li>The Australian Parliament gift shop created mugs celebrating Barack
+       Obama’s visit to Australia, but spelled his name “Barrack.”<span
+       style='mso-spacerun:yes'>  </span>They lost $2,000 in revenue due to the
+       spelling error.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0022.html');" id=PPTL22>IF YOU LIKED THIS
+  LESSON AND WOULD LIKE MORE INFORMATION, CONSIDER ATTENDING:</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Fragments</li>
+   <li>Run-On Sentences</li>
+   <li>Citation Workshops</li>
+   <ul>
+    <li>MLA 1 or MLA 2</li>
+    <li>APA 1 or APA 2</li>
+   </ul>
+   <br>
+   <li>Why should you come back?</li>
+   <li>Students completing Supplemental Learning Activities had a
+       10%&nbsp;higher success rate across the disciplines, a 21% higher
+       success rate in Math, and a 49% higher success rate in English courses.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master16.html></a><a href=master16.xml></a><a
+href=preview.wmf></a><a href=master28.html></a><a href=master28.xml></a><a
+href=master29.html></a><a href=master29.xml></a><a href=master30.html></a><a
+href=master30.xml></a><a href=master31.html></a><a href=master31.xml></a><a
+href=pres.xml></a><a href=slide0001.html></a><a href="master28_image001.png"></a><a
+href=slide0002.html></a><a href="master16_image002.png"></a><a
+href=slide0003.html></a><a href=slide0004.html></a><a
+href="master29_image003.png"></a><a href=slide0005.html></a><a
+href=slide0006.html></a><a href=slide0007.html></a><a href=slide0008.html></a><a
+href=slide0009.html></a><a href=slide0010.html></a><a href=slide0011.html></a><a
+href=slide0012.html></a><a href=slide0013.html></a><a href=slide0014.html></a><a
+href=slide0015.html></a><a href=slide0016.html></a><a href=slide0017.html></a><a
+href=slide0018.html></a><a href=slide0019.html></a><a
+href="slide0019_image004.png"></a><a href="slide0019_image005.png"></a><a
+href="slide0019_image006.jpg"></a><a href="slide0019_image007.png"></a><a
+href=slide0020.html></a><a href="slide0020_image008.png"></a><a
+href=slide0021.html></a><a href="slide0021_image009.png"></a><a
+href="slide0021_image010.png"></a><a href=slide0022.html></a><a
+href="slide0022_image011.jpg"></a><a href="slide0022_image012.png"></a><a
+href="master16_stylesheet.css"></a><a href="master28_stylesheet.css"></a><a
+href="master29_stylesheet.css"></a><a href="master30_stylesheet.css"></a><a
+href="master31_stylesheet.css"></a><a href=script.js></a><a
+href="../Proofreading%20Strategies.html"></a><a href=fullscreen.html></a><a
+href=buttons.gif></a><a href=frame.html></a><a href=outline.html></a></div>
+
+</body>
+
+</html>
