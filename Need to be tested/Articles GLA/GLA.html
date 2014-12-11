@@ -12,7 +12,7 @@ var MIN_SLIDE;
 var curSlide;
 function loadPage()
 {
-	MAX_SLIDE=36; // Needs to be 1 higher than the actual slide number to account for displaying the last slide of the GLA
+	MAX_SLIDE=31; // Needs to be 1 higher than the actual slide number to account for displaying the last slide of the GLA
 	MIN_SLIDE=1;
 	curSlide=1;
 	//document.getElementById("slides").src="files\\slide0001.htm";
@@ -50,7 +50,7 @@ function updatePage()
 		return;
 	}
 	
-	if(getCookie("cont1") == "") // We haven't been specified to continue after quiz 1
+	/*if(getCookie("cont1") == "") // We haven't been specified to continue after quiz 1
 	{
 		if(curSlide >= 13)
 		{
@@ -70,7 +70,7 @@ function updatePage()
 		{
 			window.location="quiz3.html";
 		}
-	}
+	}*/
 	if(getCookie("curSlide") == MAX_SLIDE)
 	{
 		alert("Congratulations! You finished the GLA!");
@@ -83,7 +83,7 @@ function updatePage()
 		str += curSlide;
 	else
 		str += "0" + curSlide;
-	document.getElementById("slides").src="files\\slide00" + str + ".htm";
+	document.getElementById("slides").src="files\\slide00" + str + ".html";
 	
 	document.getElementById("slideNum").innerHTML = curSlide + "/" + MAX_SLIDE;
 }
@@ -148,7 +148,7 @@ $(function(){
 			</div>
 		
 			<div id="main">
-				<iframe id="slides" width="750" height="565" scrolling="no" src="files\\slide0001.htm" frameborder="0"></iframe>
+				<iframe id="slides" width="750" height="565" scrolling="no" src="files\\slide0001.html" frameborder="0"></iframe>
 				<div id='slideNum'></div>
 			</div>
 
