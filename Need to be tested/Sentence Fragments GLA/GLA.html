@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type='text/javascript' src='cookies.js'></script>
+<script type='text/javascript' src='jquery.js'></script>
+<script type='text/javascript'>
+
+// GLA Template Version: 1.3
+
+var MAX_SLIDE;
+var MIN_SLIDE;
+var curSlide;
+function loadPage()
+{
+	MAX_SLIDE=28; // Needs to be 1 higher than the actual slide number to account for displaying the last slide of the GLA
+	MIN_SLIDE=1;
+	curSlide=1;
+	//document.getElementById("slides").src="files\\slide0001.html";
+	updatePage();
+
+}
+function changeSlide(chg)
+{
+	
+	if(curSlide >= MIN_SLIDE && curSlide <= MAX_SLIDE)
+	{
+		curSlide += chg;
+		if(curSlide < MIN_SLIDE)
+			curSlide = MIN_SLIDE;
+				
+		setCookie("curSlide", curSlide, 1);
+		updatePage();
+	}
+	
+}
+function updatePage()
+{
+	var cook = getCookie("curSlide");
+	
+	if(cook != "" && parseInt(cook) != curSlide) // The cookie takes priority over the internal variable, which could cause some problems
+	{
+		curSlide = parseInt(cook);
+	}
+	
+	if(getCookie("curSlide") > MAX_SLIDE)
+	{
+		alert("Error in slide number. Resetting to the beginning of the GLA.");
+		clearCookies();
+		window.location="GLA.html";
+		return;
+	}
+	
+	if(getCookie("curSlide") == MAX_SLIDE)
+	{
+		alert("Congratulations! You finished the GLA!");
+		clearCookies();
+		window.location="GLA.html";
+	}
+	
+	var str = "";
+	if(curSlide >= 10)
+		str += curSlide;
+	else
+		str += "0" + curSlide;
+	document.getElementById("slides").src="files\\slide00" + str + ".html";
+	
+	document.getElementById("slideNum").innerHTML = curSlide + "/" + MAX_SLIDE;
+}
+
+function clearCookies()
+{
+	deleteCookie("curSlide");
+	deleteCookie("cont1");
+	deleteCookie("cont2");
+	deleteCookie("cont3");
+}
+function windowClosed()
+{
+	//alert("I'm closing");
+}
+
+$(function(){
+  $(document).bind("keypress", function(e){
+    var code = e.keyCode || e.which;
+	if(code == 37) 
+	{
+      changeSlide(-1);
+	}
+	
+	if(code == 39) 
+	{
+	  changeSlide(1);
+	}
+  });
+  
+  $("#left").bind("click", function(){
+	changeSlide(-1);
+  });
+  
+  $("#right").bind("click", function() {
+    changeSlide(1);
+  });
+});
+</script>
+<title>MLA GLA</title>
+<link href="reset.css" rel="stylesheet" type="text/css">
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body onload="loadPage();" onbeforeunload="windowClosed();">
+
+<header>
+	<div id="headerimg">
+		<img src="images/footer_img.jpg" />
+	</div>
+</header>
+
+<div id="wrapper">
+
+	<div id="main-table">
+		
+		<div class="row">
+			<div id="left">
+				<div class="button">
+					<!--<a href='javascript:void(0)' onclick="changeSlide(-1);">&nbsp;</a>-->
+				
+				</div>
+			</div>
+		
+			<div id="main">
+				<iframe id="slides" width="750" height="565" scrolling="no" src="files\\slide0001.html" frameborder="0"></iframe>
+				<div id='slideNum'></div>
+			</div>
+
+			<div id="right">
+				<!--<a href='javascript:void(0)' onclick="changeSlide(1);">Next Slide</a>-->
+				<div class="button"></div>
+			</div>
+		</div>
+		
+	</div>
+	
+</div>
+</body>
+</html>
