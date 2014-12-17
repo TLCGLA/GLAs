@@ -4,11 +4,13 @@ function loadPage()
 	curPage = "quiz3.html";
 	curQuiz=3;
 	
-	addQuestion("Which answer removes words from an original passage properly?", "John Cloud states, \"for those of us who do start to think...there are more alternative grocers than ever\" (243).", "John Cloud states, \"for those of us who do start to think [there are more alternative grocers than ever]\" (243).", "John Cloud states, \"...for those of us who do start to think there are more alternative grocers than ever\" (243).", "John Cloud states, \"for those of us who do start to think there are more alternative grocers than ever...\" (243).", 1);
-	addQuestion("Which answer adds words to an original passage properly?", "Michael Pollan points out that \"at first blush, this subsidy (Bush's $190 million farm bill) might look like a handout for farmers\" (238).", "Michael Pollan points out that \"at first blush, this subsidy ...Bush's $190 million farm bill... might look like a handout for farmers\"  (238).", "Michael Pollan points out that \"at first blush, this subsidy <Bush's $190 million farm bill> might look like a handout for farmers\" (238).", "Michael Pollan points out that \"at first blush, this subsidy [Bush's $190 million farm bill] might look like a handout for farmers\" (238).", 4);
-	addQuestion("Which answer uses a passage that already included quotation marks properly?", "Jared Diamond explains that \"the term \"global warming\" is a misnomer\" (275).", "Jared Diamond explains that \"the term 'global warming' is a misnomer\" (275).", "Jared Diamond explains that \"the term \"'global warming'\" is a misnomer\" (275).", "Jared Diamond explains that \"the term [\"global warming\"] is a misnomer\" (275).", 2);
-	addQuestion("Which answer uses a quote that an author has already quoted properly?  (Note:  the quote comes from an online source without page numbers.)", "Dr. Irving Zucker states, \"there's incredible inertia among people when it comes to change, and the vast majority of people doing biological research are going to think this is a huge inconvenience\" (qtd. in Rabin).", "Dr. Irving Zucker states, \"there's incredible inertia among people when it comes to change, and the vast majority of people doing biological research are going to think this is a huge inconvenience\" (Zucker qtd. in Rabin).", "Dr. Irving Zucker states, \"'there's incredible inertia among people when it comes to change, and the vast majority of people doing biological research are going to think this is a huge inconvenience'\" (Rabin).", "Dr. Irving Zucker states, \"there's incredible inertia among people when it comes to change, and the vast majority of people doing biological research are going to think this is a huge inconvenience\" [qtd. in Rabin].", 1);
-	
+	addQuestion("Students can use a handbook for help citing properly.", "T", "F", "", "", 1);
+	addQuestion("When surveying a reading, students should read every word of the chapter from beginning to end.", "T", "F", "", "", 2);
+	addQuestion("When surveying a reading, students should read the abstract or summary before reading the chapter.", "T", "F", "", "", 1);
+	addQuestion("Pre-reading questions require students to think about what they already know about a topic.", "T", "F", "", "", 1);
+	addQuestion("Pre-reading questions help students learn the definition for difficult vocabulary words.", "T", "F", "", "", 2);
+	addQuestion("Students should avoid making predictions about a text because it will confuse them.", "T", "F", "", "", 2);
+	addQuestion("Transition words like however and for example help students make predictions.", "T", "F", "", "", 1);
 	
 	//----------------------------------------------------------
 	display();

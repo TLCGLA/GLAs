@@ -4,34 +4,14 @@ function loadPage()
 	curPage = "quiz3.html";
 	curQuiz=3;
 	curQuizRedirect=20;
-	addQuestion("The below source is a book by a single author. Which of the citations are correct?<br>Title: The genius in All of Us<br>Author: David Shrenk<br>Medium: Print<br>Year: 2010<br>Publisher: Anchor Books<br>City: New York<br>", "David Shenk. \"The Genius in All of Us.\" Anchor Books: New York, Print. 2010.", "Shenk, David. <i>The Genius in All of Us.</i> Print. 2010: New York, Anchor Books.", "Shenk, David.  <i>The Genius in All of Us.</i> Anchor Books, 2010.", "Shenk, David.  <i>The Genius in All of Us.</i> New York: Anchor Books, 2010. Print.", 4);
-	addQuestion("The below source is a work in an anthology. Which of the citations are correct?<br>Poem Title: Flame<br>Poem Author: Jayne Cortez<br>Anthology Title: The Oxford Anthology of African-American Poetry<br>Anthology Editor: Arnold Ramersad and Hilary Herbold<br>Page Numbers: 3<br>Medium: Print<br>Publisher: Oxford University Press<br>City: New York<br>Year: 2006<br>", "Ramersad, Arnold and Hilary Herbold, Eds. <i>The Oxford Anthology of African American Poetry</i>. \"Flame\" by Jayne Cortez, pg. 3. New York: Oxford University Press, 2006. Print.", "Cortez, Jayne. \"Flame.\" <i>The Oxford Anthology of African-American Poetry</i>. Ed. Arnold Ramersad and Hilary Herbold. New York: Oxford University Press, 2006. 3. Print.", "Cortes, Jayne. \"Flame.\" New York: Oxford University Press, 2006. Print.", "Ramersad,  Arnold and Hilary Herbold, Eds. <i>The Oxford Anthology of African American Poetry</i>. New York: Oxford University Press, 2006. Print.", 2);
-	addQuestion("The below source is a complete website. Which of the citations are correct?<br>Title of Website: human Research<br>Author: Humane Research Council<br>Update: 2011<br>Sponsor of Site: HRC Sites<br>Medium: Web<br>Date of Access: 24 March 2014<br>URL: http://www.humanresearch.org/<br>", "http://www.humanresearch.org/", "Humane Research Council. <i>Humane Research</i>. 2011. Web. 24 March 2014.", "Humane Research Council. <i>Humane Research</i>. HRC Sites. 2011. Web. 24 March 2014.", "Humane Research Council. <i>Humane Research</i>. Web. http://www.humanresearch.org/", 3);
-	addQuestion("The below source is an article from a website.  Which of the citations is correct?<br>Authors: Andrew Jacobs and Ian Johnson.<br>Title of Article: Pollution Killed 7 Million People Worldwide in 2012, Report Finds<br>Title of Website: New York Times<br>Sponsor: The New York Times Company<br>Update: 25 March 2014<br>Medium: Web<br>Date of Access: 26 March 2014 <br>URL: http://www.nytimes.com/2014/03/26/world/pollution-killed-7-million-people-worldwide-in-2012-report-finds.html?ref=science&_r=0<br>", "http://www.nytimes.com/2014/03/26/world/pollution-killed-7-million-people-worldwide-in-2012-report-finds.html?ref=science&_r=0", "Jacobs, Andrew and Ian Johnson.  \"Pollution Killed 7 Million People Worldwide in 2012, Report Finds.\"  <i>New York Times</i>.  The New York Times Company, 25 March.2014.  Web.  26 Mar. 2014", "Jacobs, Andrew and Johnson, Ian.  <i>Pollution Killed 7 Million People Worldwide in 2012, Report Finds</i>.  New York Times, 25 March.2014.<br>&nbsphttp://www.nytimes.com/2014/03/26/world/pollution-killed-7-million-people-worldwide-in-2012-report-finds.html?ref=science&_r=0", "Jacobs, Andrew and Ian Johnson.  \"Pollution Killed 7 Million People Worldwide in 2012, Report Finds.\"  New York Times.  25 March.2014.  Web.", 2);
-	addQuestion("The below source is an online video.  Which one of the citations is correct?<br>Author:  Temple Grandin<br>Video Title:  \"The World Needs All Kinds of Minds\"<br>Title of Website:  TED<br>Sponsor:  TED<br>Update:  February 2010<br>Medium:  Web<br>Date of Access:  26 March 2014<br>URL: http://www.ted.com/talks/temple_grandin_the_world_needs_all_kinds_of_minds<br>", "http://www.ted.com/talks/temple_grandin_the_world_needs_all_kinds_of_minds", "Grandin, Temple.  \"The World Needs All Kinds of Minds.\"  TED.  Web.  26 Mar.2014. <br>&nbsphttp://www.ted.com/talks/temple_grandin_the_world_needs_all_kinds_of_minds", "Temple Grandin.  \"The World Needs All Kinds of Minds.\"  TED.  Web, Feb. 2010.  .26 Mar. 2014.", "Grandin, Temple. \"The World Needs All Kinds of Minds.\" <i>TED</i>. TED, Feb. 2010. Web. 26 Mar. 2014", 4);
-	addQuestion("The below source is a journal article from an online database. Which of the citations is correct?<br>Author: Tharina Guse<br>Title of Article: Enhancing Lives: A Positive Psychology Agenda for Hypnotherapy<br>Title of Journal: South African Journal of Psychology<br>Volume: 42<br>Issue: 2<br>Date: June 2012<br>Pages: 214-223<br>Database Name: Academic Search Premier<br>Medium: Web<br>Date of Access: 26 Mar. 2014<br>", "Guse, Tharina. \"Enhancing Lives: A Positive Psychology Agenda for Hypnotherapy.\" <i>South African Journal of Psychology</i>. 42.2 (June 2012): 214-223. <i>Academic Search Premier</i>. Web. 26 Mar. 2014.", "Guse, Tharina. \"Enhancing Lives: A Positive Psychology Agenda for Hypnotherapy.\" <i>South African Journal of Psychology.</i> 42.2 (June 2012): 214-223.", "Tharina Guse. \"Enhancing Lives: A Positive Psychology Agenda for Hypnotherapy.\" <i>Academic Search Premier</i>. Web. 26 Mar. 2014.", "Tharina Guse. \"Enhancing Lives: A Positive Psychology Agenda for Hypnotherapy.\" <i>South African Journal of Psychology</i>. 42.2 (June 2012): 214-223. <i>Academic Search Premier</i>. Web. 26 Mar. 2014.", 1);
 	
-	/*
-	var questions = new Array();
-
-	questions[0] = new Object;
-	questions[0].question = "The below source is a journal article from an online database. Which of the citations is correct?<br>Author: Tharina Guse<br>Title of Article: Enhancing Lives: A Positive Psychology Agenda for Hypnotherapy<br>Title of Journal: South African Journal of Psychology<br>Volume: 42<br>Issue: 2<br>Date: June 2012<br>Pages: 214-223<br>Database Name: Academic Search Premier<br>Medium: Web<br>Date of Access: 26 Mar. 2014<br>";
-	questions[0].answers = new Array("Guse, Tharina. \"Enhancing Lives: A Positive Psychology Agenda for Hypnotherapy.\" <i>South African Journal of Psychology</i>. 42.2 (June 2012): 214-223. <i>Academic Search Premier</i>. Web. 26 Mar. 2014.", 
-"Guse, Tharina. \"Enhancing Lives: A Positive Psychology Agenda for Hypnotherapy.\" <i>South African Journal of Psychology.</i> 42.2 (June 2012): 214-223.", 
-"Tharina Guse. \"Enhancing Lives: A Positive Psychology Agenda for Hypnotherapy.\" <i>Academic Search Premier</i>. Web. 26 Mar. 2014.", 
-"Tharina Guse. \"Enhancing Lives: A Positive Psychology Agenda for Hypnotherapy.\" <i>South African Journal of Psychology</i>. 42.2 (June 2012): 214-223. <i>Academic Search Premier</i>. Web. 26 Mar. 2014.");
-	questions[0].correctAnswer = 1;
-	//questions[0].hasMultipleAnswers = false;
+	addQuestion("Outlines can be used as study guides for exams.", "T", "F", "", "", 1);
+	addQuestion("Outlines are organized lists.", "T", "F", "", "", 1);
+	addQuestion("Outlines never have indentations.", "T", "F", "", "", 2);
+	addQuestion("When outlining a textbook chapter, you can ignore the chapter title.", "T", "F", "", "", 2);
+	addQuestion("Do not include vocabulary and definitions in an outline.", "T", "F", "", "", 2);
+	addQuestion("Outlines should use parallel structure.", "T", "F", "", "", 1);
 	
-	questions[1] = new Object;
-	questions[1].question = "College question:";
-	questions[1].answers = new Array("Answer one", "answer two", "three", "fourth", "Fifth", "SIXTH!");
-	questions[1].correctAnswer = 3;
-	//questions[1].correctAnswer = new Array(1, 2, 6);
-	//questions[1].hasMultipleAnswers = true;
-	
-	addQuestions(questions);
-	*/
 	//----------------------------------------------------------
 	display();
 }

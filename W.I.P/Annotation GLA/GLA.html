@@ -50,7 +50,7 @@ function updatePage()
 		return;
 	}
 	
-	/*if(getCookie("cont1") == "") // We haven't been specified to continue after quiz 1
+	if(getCookie("cont1") == "") // We haven't been specified to continue after quiz 1
 	{
 		if(curSlide >= 8)
 		{
@@ -77,7 +77,7 @@ function updatePage()
 		{
 			window.location="quiz4.html"; 
 		}
-	}*/
+	}
 	if(getCookie("curSlide") == MAX_SLIDE)
 	{
 		alert("Congratulations! You finished the GLA!");
