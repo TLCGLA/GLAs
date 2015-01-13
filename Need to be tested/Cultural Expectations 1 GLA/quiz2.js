@@ -3,7 +3,7 @@ function loadPage()
 	// addQuestion(Question, Answer1, Answer2, Answer3, Answer4, CorrectAnswer [not 0-indexed])
 	curPage = "quiz2.html";
 	curQuiz = 2;
-	curQuizRedirect=10;
+	curQuizRedirect=11;
 	
 	addQuestion("Professors in the United States will only lecture.", "True", "False", "", "", 2);
 	addQuestion("Participating in class discussions may count towards your grade.", "True", "False", "", "", 1);
