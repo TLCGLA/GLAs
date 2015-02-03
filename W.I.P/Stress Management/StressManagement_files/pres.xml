@@ -1,0 +1,57 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <p:presentation sizeof="screen" gridspacingx="49152" gridspacingy="49152"
+  subsetembed="1">
+  <p:master id="52" slidesn="1C09781,8F794A40" type="main" href="master52.html"
+   xmlhref="master52.xml" template="Candybar" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="148" slidesn="1C09781,8F794A40" type="main"
+   href="master148.html" xmlhref="master148.xml" template="1_Candybar"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="1" slidesn="76AF37,A9483080" type="notes" href="master01.html"
+   layout="notes" slots="header,dateTime,slideImage,body,footer,slideNumber"/>
+  <p:master id="2" slidesn="1CA6296,BDB3BCD0" type="handout"
+   href="master02.html" layout="handout"
+   slots="header,dateTime,footer,slideNumber"/>
+  <p:slide id="1" slidesn="76AF1F,DAAC600" href="slide0001.html"/>
+  <p:slide id="2" slidesn="76AF1F,5498BB80" href="slide0002.html"/>
+  <p:slide id="3" slidesn="76AF20,F1A82400" href="slide0003.html"/>
+  <p:slide id="4" slidesn="76AF39,21FBBC80" href="slide0004.html"/>
+  <p:slide id="5" slidesn="76AF39,232CE980" href="slide0005.html"/>
+  <p:slide id="6" slidesn="76AF39,258F4380" href="slide0006.html"/>
+  <p:slide id="7" slidesn="76AF39,27590700" href="slide0007.html"/>
+  <p:slide id="20" slidesn="1CA622F,74DB3B30" href="slide0020.html"/>
+  <p:slide id="21" slidesn="1CA6281,9029C440" href="slide0021.html"/>
+  <p:slide id="8" slidesn="76AF4C,254C7380" href="slide0008.html"/>
+  <p:slide id="22" slidesn="1CA6285,C3BB60D0" href="slide0022.html"/>
+  <p:slide id="24" slidesn="1CA628D,477BD8D0" href="slide0024.html"/>
+  <p:slide id="10" slidesn="76AF4D,D99AC980" href="slide0010.html"/>
+  <p:slide id="23" slidesn="1CA628C,EEB4F2E0" href="slide0023.html"/>
+  <p:slide id="12" slidesn="76AF75,41183F80" href="slide0012.html"/>
+  <p:slide id="11" slidesn="76AF73,5AB88780" href="slide0011.html"/>
+  <p:slide id="13" slidesn="76AF7A,A3C00A00" href="slide0013.html"/>
+  <p:slide id="25" slidesn="1CA634D,5FF19560" href="slide0025.html"/>
+  <p:slide id="14" slidesn="76AF80,1089D300" href="slide0014.html"/>
+  <p:slide id="26" slidesn="1CA6357,220E5670" href="slide0026.html"/>
+  <p:viewstate type="slideView" hideoutlineicons="t"/>
+  <p:tag name="___PPT2001" type="binary" datasize="68" dataoffset="6"/>
+  <p:tag name="___PPTMAC11" type="binary" datasize="17042" dataoffset="7"/>
+  <p:kinsoku language="Japanese" level="levelOne"/>
+  <p:headersfooters nouserdate="t" nofooter="t" noheader="t" nodate="t"
+   todaydate="t"/>
+  <p:headersfooters notes="t" nouserdate="t" nofooter="t" noheader="t"
+   nodate="t" todaydate="t"/>
+  <p:pptdocumentsettings framecolors="WhiteTextOnBlack" hideslideanimation="t"
+   browsersupport="v4"/>
+ </p:presentation>
+ <o:shapedefaults v:ext="edit" spidmax="36870">
+  <o:colormenu v:ext="edit" shadowcolor="black"/>
+ </o:shapedefaults></xml>
