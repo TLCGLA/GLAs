@@ -26,9 +26,10 @@ namespace MLAScriptStrip
 
                 slide = "slide" + slide;
                 string[] lines = null;
+                string ext = (File.Exists(slide + ".html") ? ".html" : ".htm");
+                string file = slide + ext;
                 try
                 {
-                    string file = slide + ".html";
                     lines = File.ReadAllLines(file, Encoding.Default);
                     Console.WriteLine("Parsing slide #" + i);
                     int toRemove = Array.FindIndex<string>(lines, element => element.StartsWith("if( !IsNts() ) Redirect( \"PPTSld\" );", StringComparison.Ordinal));

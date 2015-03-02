@@ -13,7 +13,20 @@ namespace GLARenumberSlides
         {
             List<string> slideHtmls = new List<string>();
 
-            string top = "outline.html";
+            string ext = ".html";
+            string top = "outline" + ext;
+
+            if (!File.Exists(top))
+            {
+                ext = ".htm";
+                top = "outline" + ext;
+                if (!File.Exists(top))
+                {
+                    Console.WriteLine("Outline.html and outline.htm not found. Quitting.");
+                    Console.ReadKey();
+                    return;
+                }
+            }
 
             string[] lines = null;
             lines = File.ReadAllLines(top);
@@ -34,10 +47,11 @@ namespace GLARenumberSlides
                     parse = "000" + parse;
 
                 string html = lines[index + 1].Trim();
-                html = html.Substring(html.IndexOf("GoToSld('") + 9, 14).Trim();
+                int last = (ext.Equals(".html") ? 14 : 13);
+                html = html.Substring(html.IndexOf("GoToSld('") + 9, last).Trim();
                 slideHtmls.Add(html);
 
-                string ren = "slide" + parse + ".html";
+                string ren = "slide" + parse + ext;
                 File.Copy(html, "rename/" + ren, true);
 
                 Console.WriteLine("Copied " + html + " to /rename/" + ren);

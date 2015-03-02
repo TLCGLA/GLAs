@@ -461,3 +461,75 @@ a:active
 	{color:#009DD9 !important;}
 a:visited
 	{color:#85DFD0 !important;}
+@font-face
+	{font-family:Calibri;
+	font-style:normal;
+	font-weight:normal;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font004.eot");}
+@font-face
+	{font-family:Calibri;
+	font-style:normal;
+	font-weight:bold;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font005.eot");}
+@font-face
+	{font-family:Calibri;
+	font-style:italic;
+	font-weight:normal;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font006.eot");}
+@font-face
+	{font-family:Calibri;
+	font-style:italic;
+	font-weight:bold;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font007.eot");}
+@font-face
+	{font-family:"Wingdings 3";
+	font-style:normal;
+	font-weight:normal;
+	mso-font-charset:2;
+	mso-font-format:4;
+	mso-generic-font-family:18;
+	src:url("font008.eot");}
+@font-face
+	{font-family:"Trebuchet MS";
+	font-style:normal;
+	font-weight:normal;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font012.eot");}
+@font-face
+	{font-family:"Trebuchet MS";
+	font-style:normal;
+	font-weight:bold;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font013.eot");}
+@font-face
+	{font-family:"Trebuchet MS";
+	font-style:italic;
+	font-weight:normal;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font014.eot");}
+@font-face
+	{font-family:"Trebuchet MS";
+	font-style:italic;
+	font-weight:bold;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font015.eot");}
