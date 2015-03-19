@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type='text/javascript' src='cookies.js'></script>
-<script type='text/javascript' src='jquery.js'></script>
+<script type='text/javascript' src='../Scripts/cookies.js'></script>
+<script type='text/javascript' src='../Scripts/jquery.js'></script>
 <script type='text/javascript'>
+
+// GLA Template Version: 1.31
+
 var MAX_SLIDE;
 var MIN_SLIDE;
 var curSlide;
 function loadPage()
 {
-	MAX_SLIDE=52;
+	MAX_SLIDE=52; // Needs to be 1 higher than the actual slide number to account for displaying the last slide of the GLA
 	MIN_SLIDE=1;
 	curSlide=1;
 	//document.getElementById("slides").src="files\\slide0001.htm";
 	updatePage();
-	
 }
 function changeSlide(chg)
 {
@@ -39,10 +41,19 @@ function updatePage()
 		curSlide = parseInt(cook);
 	}
 	
-	if(getCookie("curSlide") == MAX_SLIDE+1)
+	if(getCookie("curSlide") > MAX_SLIDE)
+	{
+		alert("Error in slide number. Resetting to the beginning of the GLA.");
+		clearCookies();
+		window.location="GLA.html";
+		return;
+	}
+	
+	
+	if(getCookie("curSlide") == MAX_SLIDE)
 	{
 		alert("Congratulations! You finished the GLA!");
-		deleteCookie("curSlide");
+		clearCookies();
 		window.location="GLA.html";
 	}
 	
@@ -56,23 +67,45 @@ function updatePage()
 	document.getElementById("slideNum").innerHTML = curSlide + "/" + MAX_SLIDE;
 }
 
+function clearCookies()
+{
+	deleteCookie("curSlide");
+	deleteCookie("cont1");
+	deleteCookie("cont2");
+	deleteCookie("cont3");
+}
 function windowClosed()
 {
 	//alert("I'm closing");
 }
 
-/*$(function(){
-  $("#left").keyup(function(){
-    changeSlide(-1);
+$(function(){
+  $(document).bind("keypress", function(e){
+    var code = e.keyCode || e.which;
+	if(code == 37) 
+	{
+      changeSlide(-1);
+	}
+	
+	if(code == 39) 
+	{
+	  changeSlide(1);
+	}
+  });
+  
+  $("#left").bind("click", function(){
+	changeSlide(-1);
+  });
+  
+  $("#right").bind("click", function() {
+    changeSlide(1);
   });
 });
-*/
 </script>
 <title>Pre-Writing Strategies GLA</title>
 <link href="reset.css" rel="stylesheet" type="text/css">
 <link href="styles.css" rel="stylesheet" type="text/css">
 </head>
-
 <body onload="loadPage();" onbeforeunload="windowClosed();">
 
 <header>
@@ -87,20 +120,20 @@ function windowClosed()
 		
 		<div class="row">
 			<div id="left">
-				<div class="button" onclick ="changeSlide(-1);">
+				<div class="button">
 					<!--<a href='javascript:void(0)' onclick="changeSlide(-1);">&nbsp;</a>-->
 				
 				</div>
 			</div>
 		
 			<div id="main">
-				<iframe id="slides" width="755" height="424" scrolling="no" src="files\\slide0001.html" frameborder="0"></iframe>
+				<iframe id="slides" width="750" height="423" scrolling="no" src="files\\slide0001.htm" frameborder="0"></iframe>
 				<div id='slideNum'></div>
 			</div>
 
 			<div id="right">
 				<!--<a href='javascript:void(0)' onclick="changeSlide(1);">Next Slide</a>-->
-				<div class="button" onclick="changeSlide(1);"></div>
+				<div class="button"></div>
 			</div>
 		</div>
 		
