@@ -1,0 +1,511 @@
+body
+	{width:755px;
+	height:566px;}
+.TB
+	{mso-special-format:nobullet•;}
+.T
+	{text-align:left;
+	font-family:Arial;
+	mso-ascii-font-family:Calibri;
+	mso-bidi-font-family:Arial;
+	mso-hansi-font-family:Calibri;
+	color:white;
+	mso-color-index:1;
+	font-size:320%;
+	mso-line-spacing:"90 0 0";}
+.BB
+	{mso-special-format:bullet•;
+	mso-bullet-image:"image099\.png";}
+.B
+	{text-align:left;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	color:white;
+	mso-color-index:1;
+	font-size:213%;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:250;}
+.B1B
+	{mso-special-format:bullet–;
+	mso-bullet-image:"image100\.png";}
+.B1
+	{text-align:left;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	color:white;
+	mso-color-index:1;
+	font-size:186%;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:576;
+	mso-text-indent-alt:326;}
+.B2B
+	{mso-special-format:bullet•;
+	mso-bullet-image:"image100\.png";}
+.B2
+	{text-align:left;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	color:white;
+	mso-color-index:1;
+	font-size:160%;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:793;}
+.B3B
+	{mso-special-format:bullet–;
+	mso-bullet-image:"image100\.png";}
+.B3
+	{text-align:left;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	color:white;
+	mso-color-index:1;
+	font-size:160%;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:1011;
+	mso-text-indent-alt:793;}
+.B4B
+	{mso-special-format:bullet»;
+	mso-bullet-image:"image100\.png";}
+.B4
+	{text-align:left;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	color:white;
+	mso-color-index:1;
+	font-size:160%;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:1223;
+	mso-text-indent-alt:1011;}
+.NB
+	{mso-special-format:nobullet•;}
+.N
+	{text-align:left;
+	font-family:"Times New Roman";
+	mso-ascii-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	layout-flow:vertical;
+	color:black;
+	mso-color-index:1;
+	font-size:106%;}
+.N1B
+	{mso-special-format:nobullet•;}
+.N1
+	{text-align:left;
+	font-family:"Times New Roman";
+	mso-ascii-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	layout-flow:vertical;
+	color:black;
+	mso-color-index:1;
+	font-size:106%;}
+.N2B
+	{mso-special-format:nobullet•;}
+.N2
+	{text-align:left;
+	font-family:"Times New Roman";
+	mso-ascii-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	layout-flow:vertical;
+	color:black;
+	mso-color-index:1;
+	font-size:106%;}
+.N3B
+	{mso-special-format:nobullet•;}
+.N3
+	{text-align:left;
+	font-family:"Times New Roman";
+	mso-ascii-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	layout-flow:vertical;
+	color:black;
+	mso-color-index:1;
+	font-size:106%;}
+.N4N
+	{mso-special-format:nobullet•;}
+.N4
+	{text-align:left;
+	font-family:"Times New Roman";
+	mso-ascii-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	layout-flow:vertical;
+	color:black;
+	mso-color-index:1;
+	font-size:106%;}
+.OB
+	{mso-special-format:nobullet•;}
+.O
+	{text-align:left;
+	font-family:"Times New Roman";
+	mso-ascii-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	color:white;
+	mso-color-index:1;
+	font-size:160%;}
+.O1B
+	{mso-special-format:nobullet•;}
+.O1
+	{text-align:left;
+	font-family:"Times New Roman";
+	mso-ascii-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	color:white;
+	mso-color-index:1;
+	font-size:160%;}
+.O2
+	{font-family:"Times New Roman";
+	mso-ascii-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	font-size:160%;}
+.O3
+	{font-family:"Times New Roman";
+	mso-ascii-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	font-size:160%;}
+.O4
+	{font-family:"Times New Roman";
+	mso-ascii-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	font-size:160%;}
+.CBB
+	{mso-special-format:nobullet•;
+	mso-bullet-image:"image099\.png";}
+.CB
+	{text-align:center;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	color:white;
+	mso-color-index:1;
+	font-size:213%;
+	mso-line-spacing:"90 20 0";}
+.CB1B
+	{mso-special-format:nobullet–;
+	mso-bullet-image:"image100\.png";}
+.CB1
+	{font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:326;
+	mso-text-indent-alt:326;}
+.CB2B
+	{mso-special-format:nobullet•;
+	mso-bullet-image:"image100\.png";}
+.CB2
+	{font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	mso-line-spacing:"90 20 0";}
+.CB3B
+	{mso-special-format:nobullet–;
+	mso-bullet-image:"image100\.png";}
+.CB3
+	{font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	font-size:160%;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:793;
+	mso-text-indent-alt:793;}
+.CB4B
+	{mso-special-format:nobullet»;
+	mso-bullet-image:"image100\.png";}
+.CB4
+	{font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	font-size:160%;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:1011;
+	mso-text-indent-alt:1011;}
+.CT
+	{text-align:left;
+	font-family:Arial;
+	mso-ascii-font-family:Calibri;
+	mso-bidi-font-family:Arial;
+	mso-hansi-font-family:Calibri;
+	color:white;
+	mso-color-index:1;
+	font-size:320%;
+	mso-line-spacing:"90 0 0";}
+.HBB
+	{mso-special-format:bullet•;
+	mso-bullet-image:"image099\.png";}
+.HB
+	{text-align:left;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	color:white;
+	mso-color-index:1;
+	font-size:186%;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:250;}
+.HB1B
+	{mso-special-format:bullet–;
+	mso-bullet-image:"image100\.png";}
+.HB1
+	{font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:576;
+	mso-text-indent-alt:326;}
+.HB2B
+	{mso-special-format:bullet•;
+	mso-bullet-image:"image100\.png";}
+.HB2
+	{font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:793;}
+.HB3B
+	{mso-special-format:bullet–;
+	mso-bullet-image:"image100\.png";}
+.HB3
+	{font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	font-size:133%;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:1011;
+	mso-text-indent-alt:793;}
+.HB4B
+	{mso-special-format:bullet»;
+	mso-bullet-image:"image100\.png";}
+.HB4
+	{font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	font-size:133%;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:1223;
+	mso-text-indent-alt:1011;}
+.QBB
+	{mso-special-format:bullet•;
+	mso-bullet-image:"image099\.png";}
+.QB
+	{font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:250;}
+.QB1B
+	{mso-special-format:bullet–;
+	mso-bullet-image:"image100\.png";}
+.QB1
+	{font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:576;
+	mso-text-indent-alt:326;}
+.QB2B
+	{mso-special-format:bullet•;
+	mso-bullet-image:"image100\.png";}
+.QB2
+	{font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:793;}
+.QB3B
+	{mso-special-format:bullet–;
+	mso-bullet-image:"image100\.png";}
+.QB3
+	{font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	font-size:120%;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:1011;
+	mso-text-indent-alt:793;}
+.QB4B
+	{mso-special-format:bullet»;
+	mso-bullet-image:"image100\.png";}
+.QB4
+	{font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	font-size:120%;
+	mso-line-spacing:"90 20 0";
+	mso-margin-left-alt:1223;
+	mso-text-indent-alt:1011;}
+.defaultB
+	{mso-special-format:nobullet•;}
+.default
+	{text-align:left;
+	font-family:"Times New Roman";
+	mso-ascii-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	font-weight:normal;
+	font-style:normal;
+	text-decoration:none;
+	text-shadow:none;
+	text-effect:none;
+	mso-fareast-hint:no;
+	layout-flow:horizontal;
+	color:white;
+	mso-color-index:1;
+	font-size:160%;
+	mso-text-raise:0%;
+	mso-line-spacing:"100 0 0";
+	mso-margin-left-alt:0;
+	mso-text-indent-alt:0;
+	mso-char-wrap:1;
+	mso-kinsoku-overflow:1;
+	direction:ltr;
+	mso-word-wrap:1;
+	mso-vertical-align-special:baseline;
+	mso-ansi-language:EN-US;}
+a:link
+	{color:#F3EB4F !important;}
+a:active
+	{color:#3497AE !important;}
+a:visited
+	{color:#7DDDFF !important;}
+@font-face
+	{font-family:"Lucida Sans Unicode";
+	font-style:normal;
+	font-weight:normal;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font004.eot");}
+@font-face
+	{font-family:Calibri;
+	font-style:normal;
+	font-weight:normal;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font012.eot");}
+@font-face
+	{font-family:Calibri;
+	font-style:normal;
+	font-weight:bold;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font013.eot");}
+@font-face
+	{font-family:Calibri;
+	font-style:italic;
+	font-weight:normal;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font014.eot");}
+@font-face
+	{font-family:Calibri;
+	font-style:italic;
+	font-weight:bold;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font015.eot");}
+@font-face
+	{font-family:"Wingdings 2";
+	font-style:normal;
+	font-weight:normal;
+	mso-font-charset:2;
+	mso-font-format:4;
+	mso-generic-font-family:18;
+	src:url("font016.eot");}
+@font-face
+	{font-family:Helvetica;
+	font-style:normal;
+	font-weight:normal;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font020.eot");}
+@font-face
+	{font-family:Helvetica;
+	font-style:normal;
+	font-weight:bold;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font021.eot");}
+@font-face
+	{font-family:Helvetica;
+	font-style:italic;
+	font-weight:normal;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font022.eot");}
+@font-face
+	{font-family:Helvetica;
+	font-style:italic;
+	font-weight:bold;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font023.eot");}
+@font-face
+	{font-family:"MS PGothic";
+	font-style:normal;
+	font-weight:normal;
+	mso-font-charset:128;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font028.eot");}
+@font-face
+	{font-family:Verdana;
+	font-style:normal;
+	font-weight:normal;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font032.eot");}
+@font-face
+	{font-family:Verdana;
+	font-style:normal;
+	font-weight:bold;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font033.eot");}
+@font-face
+	{font-family:Verdana;
+	font-style:italic;
+	font-weight:normal;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font034.eot");}
+@font-face
+	{font-family:Verdana;
+	font-style:italic;
+	font-weight:bold;
+	mso-font-charset:0;
+	mso-font-format:4;
+	mso-generic-font-family:34;
+	src:url("font035.eot");}
+@font-face
+	{font-family:"Wingdings 3";
+	font-style:normal;
+	font-weight:normal;
+	mso-font-charset:2;
+	mso-font-format:4;
+	mso-generic-font-family:18;
+	src:url("font036.eot");}

@@ -1,0 +1,960 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 14">
+<link id=Main-File rel=Main-File href="../APA1.html">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.html');" id=PPTL1>&quot;Structure and
+  Formatting&quot;</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Structure and Formatting</li>
+   <li>Guided Learning Activity</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0018.html');" id=PPTL2>&quot;Term Papers&quot;</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Term Papers</li>
+   <li>Research Reports</li>
+   <li>Empirical Studies</li>
+   <li>Literature Reviews</li>
+   <li>Theoretical Articles</li>
+   <li>Methodological Articles</li>
+   <li>Case Studies</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0022.html');" id=PPTL3><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0024.html');" id=PPTL4><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.html');" id=PPTL5>&quot;Margins&quot;</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Margins:<span style='mso-spacerun:yes'>   </span>1 inch on all sides</li>
+   <li>Font:<span style='mso-spacerun:yes'>  </span>12 Point/Times New Roman</li>
+   <li>Spacing:<span style='mso-spacerun:yes'>  </span>Double spacing</li>
+   <li>Paragraph Indentation:<span style='mso-spacerun:yes'>  </span>5 spaces</li>
+   <li>Alignment:<span style='mso-spacerun:yes'>  </span>Flush left</li>
+   <li>Page Header: Each page includes the page number and a Running Head (more
+       details on a later slide)</li>
+   <li>Pagination:<span style='mso-spacerun:yes'>  </span>Page number located
+       on upper right corner of each page (top line) beginning on the Title
+       Page</li>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0004.html');" id=PPTL6>&quot;Title page is
+  page 1&quot;</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Title page is page 1</li>
+   <li>Title of paper</li>
+   <li>Author(s) Names</li>
+   <li>Educational Institution</li>
+   <li>Each line is centered on the title page</li>
+   <li>Use uppercase and lowercase letters</li>
+   <li>Author’s notes are not required; they add contact information</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0026.html');" id=PPTL7>&quot;Page Header&quot;</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Page Header: The Running Head &amp; page number of the document are
+       located at the top of each page of your paper.</li>
+   <ul>
+    <li>The Running Head is an abbreviated title printed at the top of each
+        page of the paper.</li>
+    <li>The Running Head should be a maximum of 50 characters, appear flush
+        left in all capital letters at the top of the title page and all
+        subsequent pages.</li>
+    <li>Use the automatic functions of your word-processing program to generate
+        headers and page numbers for your paper.</li>
+   </ul>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0025.html');" id=PPTL8>&quot;Begins on page 2
+  of...&quot;</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Begins on page 2 of the paper</li>
+   <li>The Heading Abstract is centered at the top of the page. It is not
+       underlined, bolded or in quotations.</li>
+   <li>The Abstract summarizes the<span style='mso-spacerun:yes'>  </span>main
+       points of the paper</li>
+   <li>The abstract is not indented</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0006.html');" id=PPTL9>&quot;Pagination&quot;</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Pagination:<span style='mso-spacerun:yes'>  </span>Body of paper starts
+       on page 3</li>
+   <li>Title: Centered on page 3</li>
+   <li>Remember: each page includes the Running Head in all capitals</li>
+   <li>Begin the body of your paper under the title on page 3</li>
+   <br>
+   <br>
+   <br>
+   <ul>
+    <br>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0007.html');" id=PPTL10>&quot;In an APA
+  formatted paper&quot;</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>In an APA formatted paper, Headings and Subheadings are used to separate
+       sections of the paper.</li>
+   <li>For example, in an empirical paper (when the author has conducted a
+       research study), these sections may be used:</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0027.html');" id=PPTL11>&quot;Non-Empirical
+  Paper&quot;</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Non-Empirical Paper</li>
+   <br>
+   <br>
+   <li>Main Headings:</li>
+   <li>Specific headings based on material within sections of body of paper</li>
+   <br>
+   <br>
+   <br>
+   <li>Sub Headings:</li>
+   <li>May or may not be used (ask instructor)</li>
+   <br>
+   <br>
+   <li>In a non-empirical paper,<span style='mso-spacerun:yes'> 
+       </span>headings and subheadings may or may not be used, depending on the
+       topic of your paper and the paper length.</li>
+   <li>Consult with your instructor to determine whether or not headings and
+       subheadings are needed in your paper.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0028.html');" id=PPTL12>&quot;Information from
+  sources must be...&quot;</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Information from sources must be cited.<span style='mso-spacerun:yes'> 
+       </span>This acknowledges the author’s work, and allows the reader to
+       access the information in the References section of your paper</li>
+   <br>
+   <br>
+   <li>Follow the<span style='mso-spacerun:yes'>  </span>(author, date) method
+       of in-text citation. If no date is available, write (n.d.) in place of
+       the date</li>
+   <br>
+   <br>
+   <li>The author's last name and the year of publication for the source should
+       appear in the text, for example</li>
+   <li>				(Jones, 1998).</li>
+   <br>
+   <br>
+   <ul>
+    <br>
+   </ul>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0011.html');" id=PPTL13>&quot;Paraphrase – a
+  summary of...&quot;</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Paraphrase – a summary of information from a source – cite using
+       author(s) last name(s), and year of publication</li>
+   <br>
+   <br>
+   <li>Example:<span style='mso-spacerun:yes'>  </span>Children choose the same
+       foods they see their parents and friends eating<span
+       style='mso-spacerun:yes'>  </span>(Berk, 2007).</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0010.html');" id=PPTL14>&quot;Quotations with
+  less than 40...&quot;</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Quotations with less than 40 words – use quotation marks, author(s) last
+       name, year of publication, and page number</li>
+   <br>
+   <br>
+   <li>Example:<span style='mso-spacerun:yes'>  </span>“Children tend to
+       imitate the food choices of people they admire, both adults and peers”
+       (Berk, 2007, p. 220).</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0017.html');" id=PPTL15>&quot;Quotations with
+  more than 40...&quot;</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Quotations with more than 40 words – no quotation marks, block format,
+       each line indented 5 spaces, author(s) last name, year of publication</li>
+   <li>		Example:</li>
+   <li>	Though they eat less, preschoolers require a<span
+       style='mso-spacerun:yes'>   </span>high- quality diet, including the
+       same foods adults need, but in smaller amounts.<span
+       style='mso-spacerun:yes'>  </span>Fats, oils, and salt should be kept to
+       a minimum because their link to high blood pressure and heart disease in
+       adulthood (Berk, 2007, p. 220).</li>
+   <ul>
+    <br>
+    <br>
+   </ul>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0021.html');" id=PPTL16>&quot;Kesler (2003&quot;</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Kesler (2003) found that among epidemiological samples…</li>
+   <li>Early onset results in a more persistent and severe course (Kessler,
+       2003).</li>
+   <li>In 2003, Kessler’s study of epidemiological samples showed that</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0031.html');" id=PPTL17>&quot;Author’s name
+  &amp; date of...&quot;</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Author’s name &amp; date of publication in parenthesis.</li>
+   <li>In this example, two sources are cited. Notice that the writer cites
+       both of the sources using APA format: Source’s last name and date of
+       publication within the content of the paper</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0009.html');" id=PPTL18><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0012.html');" id=PPTL19><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0032.html');" id=PPTL20><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0020.html');" id=PPTL21>&quot;Used to include
+  detailed information...&quot;</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Used to include detailed information from the text, which is too
+       distracting to include in the actual body of the text (ie. List of
+       words, questionnaire used in research, details about apparatus used.)</li>
+   <li>If more than one appendix, each begins on a new page.</li>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0015.html');" id=PPTL22>&quot;Pagination&quot;</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Pagination: Starts on new page</li>
+   <li>Heading: Tables (centered)</li>
+   <li>Tables used to organize data</li>
+   <li>Not always required – ask instructor</li>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0016.html');" id=PPTL23>&quot;Pagination&quot;</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Pagination: Starts on new page</li>
+   <li>Heading: Graphs (Centered)</li>
+   <li>Used to support information in text (ie. Photograph, illustration,
+       graph)</li>
+   <li>Not always required – ask instructor</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0019.html');" id=PPTL24>&quot;Read the
+  following directions&quot;</a></font></div>
+  <div id=PPTC24 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Read the following directions, then click on the link below to start the
+       exercise.</li>
+   <li>Identify at least 2 different formatting and/or structure rules on each
+       page of the paper in the link, which are consistent with APA 6<sup>th</sup>
+       Edition.</li>
+   <li>Write them down on a piece of paper</li>
+   <li>Discuss findings with the facilitator.</li>
+   <li>Click on the link below to begin the exercise.</li>
+   <li>http://psychology.vanguard.edu/wp-content/uploads/2010/12/proposal.pdf</li>
+   <li>.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master56.html></a><a href=master56.xml></a><a
+href=preview.wmf></a><a href="master56_image001.jpg"></a><a
+href="master56_image002.png"></a><a href=master70.html></a><a
+href=master70.xml></a><a href="master70_image003.png"></a><a
+href=master111.html></a><a href=master111.xml></a><a
+href="master111_image004.png"></a><a href="master111_image005.png"></a><a
+href=master238.html></a><a href=master238.xml></a><a href=master239.html></a><a
+href=master239.xml></a><a href=master240.html></a><a href=master240.xml></a><a
+href=master241.html></a><a href=master241.xml></a><a
+href="master241_image006.png"></a><a href="master241_image007.png"></a><a
+href=master242.html></a><a href=master242.xml></a><a
+href="master242_image008.jpg"></a><a href=master243.html></a><a
+href=master243.xml></a><a href=master244.html></a><a href=master244.xml></a><a
+href="master244_image009.jpg"></a><a href=master245.html></a><a
+href=master245.xml></a><a href=master246.html></a><a href=master246.xml></a><a
+href=master247.html></a><a href=master247.xml></a><a href=master248.html></a><a
+href=master248.xml></a><a href=master249.html></a><a href=master249.xml></a><a
+href=pres.xml></a><a href=slide0001.html></a><a href="master241_image010.png"></a><a
+href="slide0001_image011.png"></a><a href=slide0018.html></a><a
+href="master111_image012.png"></a><a href="slide0018_image013.png"></a><a
+href=slide0022.html></a><a href="slide0022_image014.png"></a><a
+href="slide0022_image015.png"></a><a href="slide0022_image016.png"></a><a
+href="slide0022_image017.png"></a><a href="slide0022_image018.png"></a><a
+href=slide0024.html></a><a href="slide0024_image019.png"></a><a
+href="slide0024_image020.png"></a><a href="slide0024_image021.png"></a><a
+href="slide0024_image022.png"></a><a href="slide0024_image023.png"></a><a
+href="slide0024_image024.png"></a><a href="slide0024_image025.png"></a><a
+href="slide0024_image026.png"></a><a href=slide0002.html></a><a
+href="slide0002_image027.png"></a><a href=slide0004.html></a><a
+href="slide0004_image028.png"></a><a href="slide0004_image029.jpg"></a><a
+href="slide0004_image030.png"></a><a href="slide0004_image031.png"></a><a
+href="slide0004_image032.png"></a><a href="slide0004_image033.png"></a><a
+href="slide0004_image034.png"></a><a href="slide0004_image035.png"></a><a
+href=slide0026.html></a><a href="slide0026_image036.png"></a><a
+href="slide0026_image037.jpg"></a><a href="slide0026_image038.png"></a><a
+href="slide0026_image039.png"></a><a href="slide0026_image040.png"></a><a
+href="slide0026_image041.png"></a><a href="slide0026_image042.png"></a><a
+href=slide0025.html></a><a href="slide0025_image043.png"></a><a
+href="slide0025_image044.jpg"></a><a href="slide0025_image045.png"></a><a
+href="slide0025_image046.png"></a><a href="slide0025_image047.png"></a><a
+href="slide0025_image048.png"></a><a href="slide0025_image049.png"></a><a
+href="slide0025_image050.png"></a><a href="slide0025_image051.png"></a><a
+href=slide0006.html></a><a href="slide0006_image052.png"></a><a
+href="slide0006_image053.jpg"></a><a href="slide0006_image054.png"></a><a
+href="slide0006_image055.png"></a><a href="slide0006_image056.png"></a><a
+href="slide0006_image057.png"></a><a href="slide0006_image058.png"></a><a
+href="slide0006_image059.png"></a><a href=slide0007.html></a><a
+href="slide0007_image060.png"></a><a href=slide0027.html></a><a
+href="master243_image061.png"></a><a href="slide0027_image062.png"></a><a
+href=slide0028.html></a><a href="slide0028_image063.png"></a><a
+href="slide0028_image064.png"></a><a href="slide0028_image065.png"></a><a
+href=slide0011.html></a><a href="slide0011_image066.png"></a><a
+href=slide0010.html></a><a href="slide0010_image067.png"></a><a
+href=slide0017.html></a><a href="slide0017_image068.png"></a><a
+href=slide0021.html></a><a href="slide0021_image069.png"></a><a
+href=slide0031.html></a><a href="slide0031_image070.jpg"></a><a
+href="slide0031_image071.png"></a><a href="slide0031_image072.png"></a><a
+href="slide0031_image073.png"></a><a href="slide0031_image074.png"></a><a
+href="slide0031_image075.png"></a><a href=slide0009.html></a><a
+href="master249_image076.png"></a><a href="slide0009_image077.png"></a><a
+href="slide0009_image078.png"></a><a href=slide0012.html></a><a
+href="slide0012_image079.jpg"></a><a href="slide0012_image080.png"></a><a
+href="slide0012_image081.png"></a><a href="slide0012_image082.png"></a><a
+href="slide0012_image083.png"></a><a href="slide0012_image084.png"></a><a
+href="slide0012_image085.png"></a><a href="slide0012_image086.png"></a><a
+href="slide0012_image087.png"></a><a href=slide0032.html></a><a
+href="slide0032_image088.jpg"></a><a href="slide0032_image089.png"></a><a
+href="slide0032_image090.png"></a><a href="slide0032_image091.png"></a><a
+href="slide0032_image092.png"></a><a href="slide0032_image093.png"></a><a
+href="slide0032_image094.png"></a><a href=slide0020.html></a><a
+href="slide0020_image095.png"></a><a href=slide0015.html></a><a
+href="slide0015_image096.png"></a><a href=slide0016.html></a><a
+href="slide0016_image097.png"></a><a href=slide0019.html></a><a
+href="slide0019_image098.png"></a><a href=master01.html></a><a
+href="master56_stylesheet.css"></a><a href=image099.png></a><a
+href=image100.png></a><a href=font004.eot></a><a href=font012.eot></a><a
+href=font013.eot></a><a href=font014.eot></a><a href=font015.eot></a><a
+href=font016.eot></a><a href=font020.eot></a><a href=font021.eot></a><a
+href=font022.eot></a><a href=font023.eot></a><a href=font028.eot></a><a
+href=font032.eot></a><a href=font033.eot></a><a href=font034.eot></a><a
+href=font035.eot></a><a href=font036.eot></a><a href="master70_stylesheet.css"></a><a
+href=font004.eot></a><a href=font012.eot></a><a href=font013.eot></a><a
+href=font014.eot></a><a href=font015.eot></a><a href=font016.eot></a><a
+href=font020.eot></a><a href=font021.eot></a><a href=font022.eot></a><a
+href=font023.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font036.eot></a><a href="master111_stylesheet.css"></a><a
+href=font004.eot></a><a href=font012.eot></a><a href=font013.eot></a><a
+href=font014.eot></a><a href=font015.eot></a><a href=font016.eot></a><a
+href=font020.eot></a><a href=font021.eot></a><a href=font022.eot></a><a
+href=font023.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font036.eot></a><a href="master238_stylesheet.css"></a><a
+href=font004.eot></a><a href=font012.eot></a><a href=font013.eot></a><a
+href=font014.eot></a><a href=font015.eot></a><a href=font016.eot></a><a
+href=font020.eot></a><a href=font021.eot></a><a href=font022.eot></a><a
+href=font023.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font036.eot></a><a href="master239_stylesheet.css"></a><a
+href=font004.eot></a><a href=font012.eot></a><a href=font013.eot></a><a
+href=font014.eot></a><a href=font015.eot></a><a href=font016.eot></a><a
+href=font020.eot></a><a href=font021.eot></a><a href=font022.eot></a><a
+href=font023.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font036.eot></a><a href="master240_stylesheet.css"></a><a
+href=font004.eot></a><a href=font012.eot></a><a href=font013.eot></a><a
+href=font014.eot></a><a href=font015.eot></a><a href=font016.eot></a><a
+href=font020.eot></a><a href=font021.eot></a><a href=font022.eot></a><a
+href=font023.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font036.eot></a><a href="master241_stylesheet.css"></a><a
+href=font004.eot></a><a href=font012.eot></a><a href=font013.eot></a><a
+href=font014.eot></a><a href=font015.eot></a><a href=font016.eot></a><a
+href=font020.eot></a><a href=font021.eot></a><a href=font022.eot></a><a
+href=font023.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font036.eot></a><a href="master242_stylesheet.css"></a><a
+href=font004.eot></a><a href=font012.eot></a><a href=font013.eot></a><a
+href=font014.eot></a><a href=font015.eot></a><a href=font016.eot></a><a
+href=font020.eot></a><a href=font021.eot></a><a href=font022.eot></a><a
+href=font023.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font036.eot></a><a href="master243_stylesheet.css"></a><a
+href=font004.eot></a><a href=font012.eot></a><a href=font013.eot></a><a
+href=font014.eot></a><a href=font015.eot></a><a href=font016.eot></a><a
+href=font020.eot></a><a href=font021.eot></a><a href=font022.eot></a><a
+href=font023.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font036.eot></a><a href="master244_stylesheet.css"></a><a
+href=font004.eot></a><a href=font012.eot></a><a href=font013.eot></a><a
+href=font014.eot></a><a href=font015.eot></a><a href=font016.eot></a><a
+href=font020.eot></a><a href=font021.eot></a><a href=font022.eot></a><a
+href=font023.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font036.eot></a><a href="master245_stylesheet.css"></a><a
+href=font004.eot></a><a href=font012.eot></a><a href=font013.eot></a><a
+href=font014.eot></a><a href=font015.eot></a><a href=font016.eot></a><a
+href=font020.eot></a><a href=font021.eot></a><a href=font022.eot></a><a
+href=font023.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font036.eot></a><a href="master246_stylesheet.css"></a><a
+href=font004.eot></a><a href=font012.eot></a><a href=font013.eot></a><a
+href=font014.eot></a><a href=font015.eot></a><a href=font016.eot></a><a
+href=font020.eot></a><a href=font021.eot></a><a href=font022.eot></a><a
+href=font023.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font036.eot></a><a href="master247_stylesheet.css"></a><a
+href=font004.eot></a><a href=font012.eot></a><a href=font013.eot></a><a
+href=font014.eot></a><a href=font015.eot></a><a href=font016.eot></a><a
+href=font020.eot></a><a href=font021.eot></a><a href=font022.eot></a><a
+href=font023.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font036.eot></a><a href="master248_stylesheet.css"></a><a
+href=font004.eot></a><a href=font012.eot></a><a href=font013.eot></a><a
+href=font014.eot></a><a href=font015.eot></a><a href=font016.eot></a><a
+href=font020.eot></a><a href=font021.eot></a><a href=font022.eot></a><a
+href=font023.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font036.eot></a><a href="master249_stylesheet.css"></a><a
+href=font004.eot></a><a href=font012.eot></a><a href=font013.eot></a><a
+href=font014.eot></a><a href=font015.eot></a><a href=font016.eot></a><a
+href=font020.eot></a><a href=font021.eot></a><a href=font022.eot></a><a
+href=font023.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font036.eot></a><a href=script.js></a><a href="../APA1.html"></a><a
+href=fullscreen.html></a><a href="notes_flag.gif"></a><a href=buttons.gif></a><a
+href=frame.html></a><a href=outline.html></a></div>
+
+</body>
+
+</html>
