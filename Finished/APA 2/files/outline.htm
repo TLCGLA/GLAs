@@ -1,0 +1,1380 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 14">
+<link id=Main-File rel=Main-File href="../apa2.htm">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.htm');" id=PPTL1>&quot;Student Learning
+  Outcomes&quot;</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>Student Learning Outcomes:</li>
+   <li>By the end of the lesson, students will be able to:</li>
+   <ul>
+    <li>Quote and paraphrase material from multiple sources, using APA 6<sup>th</sup>
+        edition guidelines.</li>
+    <li>Cite material correctly using APA 6<sup>th</sup> edition guidelines.</li>
+    <li>Create a Reference page using APA 6<sup>th</sup> edition guidelines</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0042.htm');" id=PPTL2>&quot;American
+  Psychological Association&quot;</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>American Psychological Association</li>
+   <li>is the most commonly used format for manuscripts in the Social Sciences.</li>
+   <li>APA regulates</li>
+   <ul>
+    <li>Style</li>
+    <li>In text Citations</li>
+    <li>References</li>
+    <li>A list of all sources used</li>
+   </ul>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0043.htm');" id=PPTL3>&quot;Term Papers&quot;</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Term Papers</li>
+   <li>Research Reports</li>
+   <li>Empirical Studies</li>
+   <li>Literature Reviews</li>
+   <li>Theoretical Articles</li>
+   <li>Methodological Articles</li>
+   <li>Case Studies</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0044.htm');" id=PPTL4>&quot;Information from
+  sources must be...&quot;</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Information from sources must be cited.<span style='mso-spacerun:yes'> 
+       </span>This acknowledges the author’s work, and allows the reader to
+       access the information in the References section of your paper</li>
+   <br>
+   <br>
+   <li>Follow the<span style='mso-spacerun:yes'>  </span>(author, date) method
+       of in-text citation. If no date is available, write (n.d.) in place of
+       the date</li>
+   <br>
+   <br>
+   <li>The author's last name and the year of publication for the source should
+       appear in the text, for example</li>
+   <li>				(Jones, 1998).</li>
+   <br>
+   <br>
+   <ul>
+    <br>
+   </ul>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0045.htm');" id=PPTL5>&quot;Three key points
+  in APA...&quot;</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Three key points in APA citations</li>
+   <li>Use author, date format whenever possible.</li>
+   <li>If the source is quoted, you MUST include the page or paragraph number.</li>
+   <li>If author’s name is not available, use the title of the document in
+       place of the author’s name</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0046.htm');" id=PPTL6>&quot;Three types of
+  text citations&quot;</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Three types of text citations:</li>
+   <br>
+   <br>
+   <ul>
+    <li>Paraphrase (summary)</li>
+    <br>
+    <br>
+    <li>Short Quote = less than 40 words</li>
+    <br>
+    <br>
+    <li>Long Quote= more than 40 words</li>
+   </ul>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0047.htm');" id=PPTL7>&quot;A paraphrase is
+  material from...&quot;</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A paraphrase is material from a source which has been summarized in your
+       own words.</li>
+   <br>
+   <br>
+   <li>All paraphrases must be cited, using the author’s last name and year of
+       publication.</li>
+   <br>
+   <br>
+   <li>No page number is required.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0010.htm');" id=PPTL8>&quot;If the author’s
+  name is...&quot;</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>If the author’s name is a part of the sentence structure, the year
+       follows the author’s names in parenthesis.<span
+       style='mso-spacerun:yes'>  </span>Quotation marks are not included.</li>
+   <br>
+   <br>
+   <li>Example:</li>
+   <br>
+   <br>
+   <br>
+   <li>	Berk (2007) found that children begin to play organized games with
+       rules, once they reach school-age.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0011.htm');" id=PPTL9>&quot;When the author’s
+  name is...&quot;</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When the author’s name is not part of the sentence structure
+       (parenthetical citation), the author’s name and year of publication are
+       included at the end of the citation, in parenthesis. Quotation marks are
+       not included.</li>
+   <br>
+   <br>
+   <li>Example:</li>
+   <li>	Studies conducted found that children begin to use organized play and
+       games with rules at school-age (Berk, 2007).</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0058.htm');" id=PPTL10>&quot;If the author’s
+  name is...&quot;</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>If the author’s name is part of the sentence, place only the year of
+       publication in parentheses.</li>
+   <ul>
+    <li>Example:</li>
+    <li>	Berk (2007) found that children begin to play organized games with
+        rules, once they reach school-age.</li>
+    <br>
+    <br>
+   </ul>
+   <li>When the author’s name is not part of the sentence, place both the name
+       and the year, separated by a comma, in parentheses</li>
+   <ul>
+    <li>Example:</li>
+    <li>	Studies conducted found that children begin to use organized play and
+        games with rules at school-age (Berk, 2007).</li>
+    <ul>
+     <ul>
+      <br>
+      <br>
+     </ul>
+    </ul>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.htm');" id=PPTL11>&quot;A direct quote is
+  information...&quot;</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A direct quote is information included in a paper, which is taken
+       directly from the source.</li>
+   <ul>
+    <br>
+    <br>
+   </ul>
+   <li>Short quotes = less than 40 words</li>
+   <ul>
+    <li>Enclosed within quotation marks</li>
+    <li>Cited using the author’s last name, year of publication, and page
+        number (or paragraph number, if page number is not available.)</li>
+   </ul>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0004.htm');" id=PPTL12>&quot;“Reading makes
+  use of...&quot;</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>“Reading makes use of many skills at once, taxing all aspects of our
+       information-processing systems” (Berk, 2007, p. 306).</li>
+   <br>
+   <br>
+   <br>
+   <li>Research has shown that “mathematics teaching in elementary school
+       builds on and greatly enriches children’s informal knowledge of number
+       concepts and counting” (Berk, 2007, p. 307).</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0013.htm');" id=PPTL13>&quot;Quotes over 40
+  words must...&quot;</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Quotes over 40 words must be block formatted.</li>
+   <li>Quotation marks are not used.<span style='mso-spacerun:yes'>  </span>The
+       entire block quote is indented five spaces, and double-spaced.</li>
+   <li>Example:</li>
+   <li>	Berk (2007) found the following to be true:</li>
+   <li>		<span style='mso-spacerun:yes'>  </span>We have seen that middle
+       childhood brings 		<span style='mso-spacerun:yes'>  </span>major
+       advances in perspective taking, the 		<span style='mso-spacerun:yes'> 
+       </span>	<span style='mso-spacerun:yes'>  </span>capacity to imagine what
+       other people may be 	<span style='mso-spacerun:yes'>  </span>	<span
+       style='mso-spacerun:yes'>  </span>thinking and feeling.<span
+       style='mso-spacerun:yes'>  </span>These changes support 	<span
+       style='mso-spacerun:yes'>  </span>	<span style='mso-spacerun:yes'> 
+       </span>self-self esteem,<span style='mso-spacerun:yes'> 
+       </span>understanding of others, and a 	<span style='mso-spacerun:yes'>  
+       </span>	<span style='mso-spacerun:yes'>   </span>wide variety of social
+       skills. (p. 336)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0017.htm');" id=PPTL14><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0048.htm');" id=PPTL15>&quot;When citing an electronic
+  document&quot;</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When citing an electronic document, whenever possible, cite it in the
+       author-date style.</li>
+   <li>If electronic source lacks page numbers, locate and identify paragraph
+       number or paragraph heading</li>
+   <br>
+   <br>
+   <li>Example:</li>
+   <li>Recent research has yielded similar results (Smith, 1997, para. 6).</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0056.htm');" id=PPTL16>&quot;When the author’s
+  name is...&quot;</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When the author’s name is designated as “Anonymous” cite in text the
+       word Anonymous followed by a comma and the date.</li>
+   <li>Example:</li>
+   <li><span style='mso-spacerun:yes'>   </span>(Anonymous, 1998)</li>
+   <br>
+   <br>
+   <li>In the Reference list, an anonymous work is alphabetized by the word
+       Anonymous as the author with the remaining publication data</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0050.htm');" id=PPTL17>&quot;When a work has
+  no...&quot;</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When a work has no identified author, cite the title of the reference
+       and the year. If it is a long title, use the first few words</li>
+   <ul>
+    <li>Use quotation marks around the title of an article, a chapter or a
+        webpage</li>
+    <li>Italicize the title of a journal, a book, a brochure or a report.</li>
+   </ul>
+   <br>
+   <li>Examples</li>
+   <ul>
+    <li>Recent research reveals (“Six Sites Meet,” 2006) significantly…</li>
+    <ul>
+     <li>Full publication title is “Six sites meet for comprehensive anti-gang
+         initiative conference.” Notice the title was shortened for the in text
+         citation because the title was long</li>
+    </ul>
+    <br>
+    <li>The book College Bound Seniors (2008) asserts that…</li>
+   </ul>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0051.htm');" id=PPTL18>&quot;Because there is
+  no author...&quot;</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Because there is no author listed for these sources, use the title in
+       place of the author’s name in the citation and on the References page,
+       in alphabetical order.</li>
+   <ul>
+    <br>
+    <br>
+   </ul>
+   <li>Examples</li>
+   <ul>
+    <li>Recent research reveals (“Six Sites Meet,” 2006) significantly…</li>
+    <li>The book College Bound Seniors (2008) asserts that…</li>
+   </ul>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0059.htm');" id=PPTL19>&quot;Because there is
+  no author...&quot;</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Because there is no author listed for these sources, use the title in
+       place of the author’s name in the citation and on the References page,
+       in alphabetical order.</li>
+   <ul>
+    <br>
+    <br>
+   </ul>
+   <li>Examples</li>
+   <ul>
+    <li>Recent research reveals (“Six Sites Meet,” 2006) significantly…</li>
+    <li>The book College Bound Seniors (2008) asserts that…</li>
+   </ul>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0038.htm');" id=PPTL20><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0027.htm');" id=PPTL21>&quot;Use the paragraph
+  to write...&quot;</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li><span style='mso-spacerun:yes'> </span>Use the paragraph to write and
+       cite a paraphrase.</li>
+   <br>
+   <br>
+   <li>When snacking, children often reach for the closest food at hand.<span
+       style='mso-spacerun:yes'>  </span>If your cupboard has cookies in it,
+       that is probably what your child will eat.<span
+       style='mso-spacerun:yes'>  </span>However, if there are healthier items
+       in the refrigerator or on the kitchen table, your youngster will become
+       accustomed to snacking on these foods.</li>
+   <li>Note:<span style='mso-spacerun:yes'>  </span>Source information:<span
+       style='mso-spacerun:yes'>  </span>Caring for your school-age child; Ages
+       5 – 12.<span style='mso-spacerun:yes'>  </span>Revised in 1995.<span
+       style='mso-spacerun:yes'>  </span>Page 90.<span
+       style='mso-spacerun:yes'>  </span>Author, Edward L. Schor, MD.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0028.htm');" id=PPTL22>&quot;Children will
+  choose the foods...&quot;</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Children will choose the foods that are available to them.<span
+       style='mso-spacerun:yes'>  </span>If you reduce unhealthy foods, and
+       choose more nutritious options of food in your home, they are more
+       likely to choose healthier snacks (Schor, 1995).</li>
+   <br>
+   <br>
+   <li>Based on studies, Schor (1995) found that children will choose the foods
+       that are available to them.<span style='mso-spacerun:yes'>  </span>If
+       you reduce unhealthy foods, and choose more nutritious options of food
+       in your home, they are more likely to choose healthier snacks.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0025.htm');" id=PPTL23>&quot;Write a short
+  quote using...&quot;</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Write a short quote using the following paragraph, and cite it.<span
+       style='mso-spacerun:yes'>  </span>Start at beginning.</li>
+   <br>
+   <br>
+   <li>When snacking, children often reach for the closest food at hand.<span
+       style='mso-spacerun:yes'>  </span>If your cupboard has cookies in it,
+       that is probably what your child will eat.<span
+       style='mso-spacerun:yes'>  </span>However, if there are healthier items
+       in the refrigerator or on the kitchen table, your youngster will become
+       accustomed to snacking on these foods.</li>
+   <li>Note:<span style='mso-spacerun:yes'>  </span>Source information:<span
+       style='mso-spacerun:yes'>  </span>Caring for your school-age child; Ages
+       5 – 12.<span style='mso-spacerun:yes'>  </span>Revised in 1995.<span
+       style='mso-spacerun:yes'>  </span>Page 90.<span
+       style='mso-spacerun:yes'>  </span>Author, Edward L. Schor, MD.)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0029.htm');" id=PPTL24>&quot;“When snacking&quot;</a></font></div>
+  <div id=PPTC24 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>“When snacking, children often reach for the closest food at hand.<span
+       style='mso-spacerun:yes'>  </span>If your cupboard has cookies in it,
+       that is probably what your child will eat” (Schor, 1995, p. 90).</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0018.htm');" id=PPTL25>&quot;References cited
+  throughout text are...&quot;</a></font></div>
+  <div id=PPTC25 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>References cited throughout text are listed in alphabetical order by
+       author’s last name on a new page following the text.</li>
+   <ul>
+    <li>Hanging indentation is used for all references.</li>
+    <li>Entire reference page is double-spaced</li>
+    <ul>
+     <br>
+     <br>
+    </ul>
+   </ul>
+   <li>Center the title References at the top of the page</li>
+   <ul>
+    <li>Do not bold, underline, or use quotation marks for the title.</li>
+   </ul>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0052.htm');" id=PPTL26>&quot;APA reference
+  format always follows...&quot;</a></font></div>
+  <div id=PPTC26 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>APA reference format always follows this basic formula regardless of the
+       type of source.</li>
+   <br>
+   <br>
+   <li>References Formula</li>
+   <li>Author(s) Last Name, First Initial. (Year of Publication). 	Title,
+       	Publication Data.</li>
+   <ul>
+    <li>Author (s) last names, include ALL authors as they are listed</li>
+    <li>Year of publication--if no date is available, write (n.d)</li>
+    <li>Title of the book or title of the article</li>
+    <li>Publication data = where do I locate the source material? For example: Book
+        publishing company information, full website address, journal name,
+        newspaper name, magazine name or include issue and page numbers for
+        journals, newspapers<span style='mso-spacerun:yes'>  </span>and
+        magazines</li>
+   </ul>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0019.htm');" id=PPTL27>&quot;Journal article
+  with DOI&quot;</a></font></div>
+  <div id=PPTC27 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>Journal article with DOI:</li>
+   <li>Murzynski, J., &amp; Degelman, D. (1996). Body language</li>
+   <li>	<span style='mso-spacerun:yes'>    </span>of women and judgments of
+       vulnerability to sexual</li>
+   <li>		assault. Journal of Applied Social Psychology, 26,</li>
+   <li>	<span style='mso-spacerun:yes'>    </span>1617-1626.<span
+       style='mso-spacerun:yes'> 
+       </span>doi:10.1111/j.1559-	1816.1996.tb00088.x</li>
+   <br>
+   <br>
+   <li>Journal article without DOI:</li>
+   <li>Koenig, H. G. (1990). Research on religion and mental</li>
+   <li>	<span style='mso-spacerun:yes'>    </span>health in later life: A
+       review and commentary. 	Journal of Geriatric Psychiatry, 23, 23-53.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>28</font></div>
+  </td>
+  <td>
+  <div id=PPTP28 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0020.htm');" id=PPTL28>&quot;Journal article
+  without DOI&quot;</a></font></div>
+  <div id=PPTC28 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Journal article without DOI, retrieved online</li>
+   <ul>
+    <li>[Note: For articles retrieved from databases, include the URL of
+        the&nbsp;journal home page. Database information is not needed. Do not
+        include the date of retrieval.]:</li>
+   </ul>
+   <br>
+   <li>Aldridge, D. (1991). Spirituality, healing and medicine. British Journal
+       of General Practice, 41, 425-427.<span style='mso-spacerun:yes'> 
+       </span>Retrieved from 	<span style='mso-spacerun:yes'>   
+       </span>http://www.rcgp.org.uk/publications/bjgp.aspx</li>
+   <br>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>29</font></div>
+  </td>
+  <td>
+  <div id=PPTP29 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0021.htm');" id=PPTL29>&quot;Book&quot;</a></font></div>
+  <div id=PPTC29 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Book:</li>
+   <li>Paloutzian, R. F. (1996). Invitation to the psychology of religion (2nd
+       ed.). Boston: Allyn and Bacon.</li>
+   <br>
+   <br>
+   <li>Informally published Web document:</li>
+   <li>Degelman, D. (2009). APA style essentials. Retrieved</li>
+   <li>	<span style='mso-spacerun:yes'>    </span>from
+       http://www.vanguard.edu/faculty 	/ddegelman/detail.aspx?doc_id=796</li>
+   <br>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>30</font></div>
+  </td>
+  <td>
+  <div id=PPTP30 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0040.htm');" id=PPTL30>&quot;Informally
+  published Web document (...&quot;</a></font></div>
+  <div id=PPTC30 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>Informally published Web document (no date):</li>
+   <li>Nielsen, M. E. (n.d.). Notable people in psychology of</li>
+   <li>	<span style='mso-spacerun:yes'>    </span>religion. Retrieved from<span
+       style='mso-spacerun:yes'>  </span>	<span style='mso-spacerun:yes'>   
+       </span>		http://www.psywww.com/psyrelig/psyrelpr.ht	m</li>
+   <br>
+   <br>
+   <li>Informally published Web document (no author, no date):</li>
+   <li>Gender and society. (n.d.). Retrieved from</li>
+   <li>	<span style='mso-spacerun:yes'>   
+       </span>http://www.trinity.edu/~mkearl/gender.html</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>31</font></div>
+  </td>
+  <td>
+  <div id=PPTP31 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0022.htm');" id=PPTL31>&quot;8&quot;</a></font></div>
+  <div id=PPTC31 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>8.	Abstract from secondary database:</li>
+   <li>Garrity, K., &amp; Degelman, D. (1990). Effect of server</li>
+   <li>	<span style='mso-spacerun:yes'>    </span>introduction on restaurant
+       tipping. Journal of 	Applied Social Psychology, 20, 168-172. 	Abstract
+       retrieved from PsycINFO database.</li>
+   <br>
+   <br>
+   <li>Article or chapter in an edited book:</li>
+   <li>Shea, J. D. (1992). Religion and sexual adjustment. In J. F. Schumaker
+       (Ed.), Religion and mental health (pp. 70-84). New York: Oxford
+       University Press.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>32</font></div>
+  </td>
+  <td>
+  <div id=PPTP32 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0023.htm');" id=PPTL32>&quot;Diagnostic and
+  Statistical Manual of...&quot;</a></font></div>
+  <div id=PPTC32 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>Diagnostic and Statistical Manual of Mental Disorders:</li>
+   <li>American Psychiatric Association. (2000).</li>
+   <li>	<span style='mso-spacerun:yes'>   </span>Diagnostic and statistical
+       manual of 	mental<span style='mso-spacerun:yes'>  </span>disorders (4th
+       ed., text rev.). 	Washington, DC: Author.</li>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>33</font></div>
+  </td>
+  <td>
+  <div id=PPTP33 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0055.htm');" id=PPTL33><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>34</font></div>
+  </td>
+  <td>
+  <div id=PPTP34 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0053.htm');" id=PPTL34>&quot;Book--Kornblum&quot;</a></font></div>
+  <div id=PPTC34 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Book--Kornblum, William 2003--Sociology in a changing worldWadsworth
+       publisher New York</li>
+   <li>Chapter in an edited book--Chapter authors: Lydia Molm &amp; Karianne
+       Sue Cook,Year: 1995, chapter titled: Social exchange and exchange
+       networks, pages: 209-235, Book title: Sociological perspectives on
+       social psychology</li>
+   <li>	Edited by: Karianne Sue Cook and Gregory Allen Fine and<span
+       style='mso-spacerun:yes'>  </span>Jerry Samuel House Publisher is Allyn
+       and Bacon/ Boston</li>
+   <li>Journal Article--South, Sammie, Spitze, Gertrude, &amp; Abercrombie,
+       Helen 1985, Women's Employment, Time Expenditure, and Divorce, Journal
+       of Family Issues vol 6 iss 1, pg 307-329</li>
+   <li>&nbsp;From the library Proquest database of journal articles</li>
+   <li>	Schoen, Ron, Natalie Marial Astone, Karen Rothert, Nancy Standish,
+       and<span style='mso-spacerun:yes'>  </span>Kim Young<span
+       style='mso-spacerun:yes'>  </span>Women’s Employment, Marital Happiness,
+       and Divorce 2002.<span style='mso-spacerun:yes'>  </span>Social
+       Forces<span style='mso-spacerun:yes'>  </span>volume 81 issue# 2 pages
+       643-662.</li>
+   <li>Magazine Article--Hatchett, B. (2010, March 9).<span
+       style='mso-spacerun:yes'>  </span>The New Marriage.<span
+       style='mso-spacerun:yes'>  </span>Time volume<span
+       style='mso-spacerun:yes'>  </span>135<span style='mso-spacerun:yes'> 
+       </span>pages 28 through 31</li>
+   <li>From a website--2010<span style='mso-spacerun:yes'>   </span>Franco,
+       Arlene Ann, &amp; Jonathan Bartholemew<span style='mso-spacerun:yes'>   
+       </span>The downside of divorce,<span style='mso-spacerun:yes'> 
+       </span>From the website:<span style='mso-spacerun:yes'>  </span>Divorce
+       Rights for Dads. Retrieved from
+       http://www.divorceddads.com/divorcerightsfordadsjournal/2010/downside/</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>35</font></div>
+  </td>
+  <td>
+  <div id=PPTP35 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0054.htm');" id=PPTL35><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>36</font></div>
+  </td>
+  <td>
+  <div id=PPTP36 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0037.htm');" id=PPTL36><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>37</font></div>
+  </td>
+  <td>
+  <div id=PPTP37 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0039.htm');" id=PPTL37>&quot;American
+  Psychological Association (2009...&quot;</a></font></div>
+  <div id=PPTC37 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>American Psychological Association (2009).<span
+       style='mso-spacerun:yes'>  </span>The Basics of APA style</li>
+   <li><span style='mso-spacerun:yes'>         </span>tutorial.<span
+       style='mso-spacerun:yes'>  </span>Retreived from
+       	http://www.apastyle.org/learn/tutorials/basics-tutorial.aspx</li>
+   <br>
+   <br>
+   <li>American Psychological Association (2010). Publication Manual<span
+       style='mso-spacerun:yes'>  </span>of the American<span
+       style='mso-spacerun:yes'>      </span>	Psychological Association (6<sup>th</sup>
+       ed), 	Washington, DC: Author</li>
+   <br>
+   <br>
+   <li>Berk, L. (2007).<span style='mso-spacerun:yes'>  </span>Development
+       through the lifespan</li>
+   <li><span style='mso-spacerun:yes'>     </span>	(4<sup>th</sup> ed.).<span
+       style='mso-spacerun:yes'>  </span>Boston:<span
+       style='mso-spacerun:yes'>  </span>Allyn and Bacon.</li>
+   <br>
+   <br>
+   <li>Degelman, D. (2009). APA style essentials. 	Retrieved from</li>
+   <li><span style='mso-spacerun:yes'>    </span>	
+       http://www.vanguard.edu/faculty/ddegelman/d</li>
+   <li><span style='mso-spacerun:yes'>     </span>	etail.aspx?doc_id=796</li>
+   <br>
+   <br>
+   <li>Purdue Online Writing Lab (2010). Retrieved from
+       	http://owl.english.purdue.edu/owl/resource/560/03/</li>
+   <br>
+   <br>
+   <br>
+   <li>Schor, E. (1995).<span style='mso-spacerun:yes'>  </span>Caring for your
+       school-age child; ages 5-12.<span style='mso-spacerun:yes'>  </span>New</li>
+   <li><span style='mso-spacerun:yes'>     </span>	York:<span
+       style='mso-spacerun:yes'>  </span>Bantam Books.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master64.htm></a><a href=master64.xml></a><a
+href=preview.wmf></a><a href="master64_image001.png"></a><a
+href="master64_image002.png"></a><a href=master76.htm></a><a href=master76.xml></a><a
+href="master76_image003.png"></a><a href="master76_image004.png"></a><a
+href=master77.htm></a><a href=master77.xml></a><a href="master77_image005.jpg"></a><a
+href=master78.htm></a><a href=master78.xml></a><a href=master79.htm></a><a
+href=master79.xml></a><a href="master79_image006.jpg"></a><a href=master80.htm></a><a
+href=master80.xml></a><a href=master81.htm></a><a href=master81.xml></a><a
+href=master82.htm></a><a href=master82.xml></a><a href=master02.htm></a><a
+href=pres.xml></a><a href=slide0001.htm></a><a href="master76_image007.png"></a><a
+href="slide0001_image008.png"></a><a href=slide0042.htm></a><a
+href="master64_image009.png"></a><a href="slide0042_image010.png"></a><a
+href="slide0042_image011.jpg"></a><a href="slide0042_image012.png"></a><a
+href=slide0043.htm></a><a href="slide0043_image013.png"></a><a
+href=slide0044.htm></a><a href="slide0044_image014.png"></a><a
+href="slide0044_image015.png"></a><a href="slide0044_image016.png"></a><a
+href=slide0045.htm></a><a href="slide0045_image017.png"></a><a
+href=slide0046.htm></a><a href=slide0047.htm></a><a
+href="slide0047_image018.png"></a><a href=slide0010.htm></a><a
+href="slide0010_image019.png"></a><a href="slide0010_image020.png"></a><a
+href="slide0010_image021.png"></a><a href=slide0011.htm></a><a
+href="slide0011_image022.png"></a><a href="slide0011_image023.png"></a><a
+href=slide0058.htm></a><a href="slide0058_image024.png"></a><a
+href=slide0003.htm></a><a href="slide0003_image025.png"></a><a
+href=slide0004.htm></a><a href="slide0004_image026.png"></a><a
+href="slide0004_image027.png"></a><a href="slide0004_image028.png"></a><a
+href="slide0004_image029.png"></a><a href="slide0004_image030.png"></a><a
+href="slide0004_image031.png"></a><a href="slide0004_image032.png"></a><a
+href=slide0013.htm></a><a href="slide0013_image033.png"></a><a
+href="slide0013_image034.png"></a><a href="slide0013_image035.png"></a><a
+href=slide0017.htm></a><a href="slide0017_image036.png"></a><a
+href="slide0017_image037.emz"></a><a href=oledata.mso></a><a
+href="slide0017_image038.png"></a><a href="slide0017_image039.png"></a><a
+href="slide0017_image040.png"></a><a href=slide0048.htm></a><a
+href="slide0048_image041.png"></a><a href=slide0056.htm></a><a
+href="slide0056_image042.png"></a><a href=slide0050.htm></a><a
+href="slide0050_image043.png"></a><a href="slide0050_image044.png"></a><a
+href="slide0050_image045.png"></a><a href="slide0050_image046.png"></a><a
+href=slide0051.htm></a><a href="slide0051_image047.png"></a><a
+href="slide0051_image048.png"></a><a href="slide0051_image049.png"></a><a
+href="slide0051_image050.png"></a><a href=slide0059.htm></a><a
+href="slide0059_image051.png"></a><a href="slide0059_image052.png"></a><a
+href="slide0059_image053.png"></a><a href="slide0059_image054.png"></a><a
+href="slide0059_image055.png"></a><a href=slide0038.htm></a><a
+href="slide0038_image056.png"></a><a href=slide0027.htm></a><a
+href="slide0027_image057.png"></a><a href=slide0028.htm></a><a
+href="slide0028_image058.png"></a><a href=slide0025.htm></a><a
+href="slide0025_image059.png"></a><a href=slide0029.htm></a><a
+href="slide0029_image060.png"></a><a href=slide0018.htm></a><a
+href="slide0018_image061.png"></a><a href=slide0052.htm></a><a
+href="slide0052_image062.png"></a><a href="slide0052_image063.png"></a><a
+href="slide0052_image064.png"></a><a href="slide0052_image065.png"></a><a
+href=slide0019.htm></a><a href="slide0019_image066.png"></a><a
+href=slide0020.htm></a><a href="slide0020_image067.png"></a><a
+href=slide0021.htm></a><a href=slide0040.htm></a><a href=slide0022.htm></a><a
+href=slide0023.htm></a><a href=slide0055.htm></a><a href=slide0053.htm></a><a
+href="slide0053_image068.png"></a><a href=slide0054.htm></a><a
+href="slide0054_image069.png"></a><a href="slide0054_image070.png"></a><a
+href="slide0054_image071.png"></a><a href=slide0037.htm></a><a
+href="slide0037_image072.png"></a><a href=slide0039.htm></a><a
+href="slide0039_image073.png"></a><a href=master01.htm></a><a
+href="master64_stylesheet.css"></a><a href=font004.eot></a><a href=font008.eot></a><a
+href=font012.eot></a><a href=font013.eot></a><a href=font014.eot></a><a
+href=font015.eot></a><a href=font024.eot></a><a href=font028.eot></a><a
+href=font032.eot></a><a href=font033.eot></a><a href=font034.eot></a><a
+href=font035.eot></a><a href=font040.eot></a><a href="master76_stylesheet.css"></a><a
+href=font004.eot></a><a href=font008.eot></a><a href=font012.eot></a><a
+href=font013.eot></a><a href=font014.eot></a><a href=font015.eot></a><a
+href=font024.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font040.eot></a><a href="master77_stylesheet.css"></a><a href=font004.eot></a><a
+href=font008.eot></a><a href=font012.eot></a><a href=font013.eot></a><a
+href=font014.eot></a><a href=font015.eot></a><a href=font024.eot></a><a
+href=font028.eot></a><a href=font032.eot></a><a href=font033.eot></a><a
+href=font034.eot></a><a href=font035.eot></a><a href=font040.eot></a><a
+href="master78_stylesheet.css"></a><a href=font004.eot></a><a href=font008.eot></a><a
+href=font012.eot></a><a href=font013.eot></a><a href=font014.eot></a><a
+href=font015.eot></a><a href=font024.eot></a><a href=font028.eot></a><a
+href=font032.eot></a><a href=font033.eot></a><a href=font034.eot></a><a
+href=font035.eot></a><a href=font040.eot></a><a href="master79_stylesheet.css"></a><a
+href=font004.eot></a><a href=font008.eot></a><a href=font012.eot></a><a
+href=font013.eot></a><a href=font014.eot></a><a href=font015.eot></a><a
+href=font024.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font040.eot></a><a href="master80_stylesheet.css"></a><a href=font004.eot></a><a
+href=font008.eot></a><a href=font012.eot></a><a href=font013.eot></a><a
+href=font014.eot></a><a href=font015.eot></a><a href=font024.eot></a><a
+href=font028.eot></a><a href=font032.eot></a><a href=font033.eot></a><a
+href=font034.eot></a><a href=font035.eot></a><a href=font040.eot></a><a
+href="master81_stylesheet.css"></a><a href=font004.eot></a><a href=font008.eot></a><a
+href=font012.eot></a><a href=font013.eot></a><a href=font014.eot></a><a
+href=font015.eot></a><a href=font024.eot></a><a href=font028.eot></a><a
+href=font032.eot></a><a href=font033.eot></a><a href=font034.eot></a><a
+href=font035.eot></a><a href=font040.eot></a><a href="master82_stylesheet.css"></a><a
+href=font004.eot></a><a href=font008.eot></a><a href=font012.eot></a><a
+href=font013.eot></a><a href=font014.eot></a><a href=font015.eot></a><a
+href=font024.eot></a><a href=font028.eot></a><a href=font032.eot></a><a
+href=font033.eot></a><a href=font034.eot></a><a href=font035.eot></a><a
+href=font040.eot></a><a href=script.js></a><a href="../apa2.htm"></a><a
+href=fullscreen.htm></a><a href="notes_flag.gif"></a><a href=buttons.gif></a><a
+href=frame.htm></a><a href=outline.htm></a></div>
+
+</body>
+
+</html>
