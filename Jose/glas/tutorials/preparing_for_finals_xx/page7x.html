@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 5;
+$(".button1").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click') .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"}) 
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	if (i == x) {$('.button1').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click')  .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+	$(this).css ({"color": "red", "font-weight": "normal"})
+ 
+	});
+ 
+});
+ 
+ 
+</script>
+<style type="text/css"> 
+
+
+#questions {width: 100%; margin-bottom: 10px;}
+.item {padding-left: 10px; width: 100%; line-height: 20px;}
+.right, .wrong {cursor: pointer;}
+.right:hover, .wrong:hover {background: #ccc;}
+.letter {margin-right: 10px;}
+.turnedOff {margin-right: 10px;color: gray}
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	Answer the questions correctly. After you get all the correct answers, a 
+	button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page8.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table  width="100%" border="0">
+	<tr>
+	<td width="80%" valign="top"><div class="exercise_instructions">
+		Identify the <font class="correct_number">BEST ANSWERS</font> by clicking on them.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	</table>
+	<table width="100%" border="0"><tr><td width="80%">
+	<table id="questions">
+	<tr><td><div class="number">1.</div></td>
+	<td><div class="item">According to the presentation, how do you keep your study plan on a human scale?<br>
+	<span class="letter">a.</span><span class="wrong">taking a break from studying every two hours<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">talking to a counselor about your situation<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">studying in groups for support<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="right">accounting for your feelings<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	
+	<table id="questions">
+	<tr><td><div class="number">2.</div></td>
+	<td><div class="item">According to the presentation, what should you avoid when coming up with a study plan?<br>
+	<span class="letter">a.</span><span class="wrong">planning to study with someone less well prepared than you<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">thinking that past failures will be repeated<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">relying on a study group to help you pass<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="right">relying on wishful thinking<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">3.</div></td>
+	<td><div class="item">According to the presentation, what can you do with scrap paper?<br>
+ 	<span class="letter">a.</span><span class="right">test yourself<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">write questions<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">list dates and names to memorize later<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">write keywords or formulas over and over to learn them<span id="feedback"></span> </span>
+	</div></td></tr> 
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">4.</div></td>
+	<td><div class="item">According to the presentation, what should you consider when deciding to join a study group?<br>
+ 	<span class="letter">a.</span><span class="wrong">whether the group will meet frequently enough to be effective<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">whether the group will be able to divide the work among its members<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="right">whether all the members are going to work equally hard<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">whether the group has a suitable quiet place to meet<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">5.</div></td>
+	<td><div class="item">According to the presentation, how can instructors be a resource for your study plan?<br>
+ 	<span class="letter">a.</span><span class="right">you can ask them all the questions you have before studying<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">you can ask them what to focus on for the exam<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">they can tell you whether the exam will be easy or hard<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">they can meet with you during office hours<span id="feedback"></span> </span>
+	</div></td></tr> 
+	</table>
+	</td>
+	
+	<td align="center"><div id="counter" class="background_score"></div></td>
+	</tr></table>
+	
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

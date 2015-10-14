@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 5;
+$(".button1").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click') .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"}) 
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	if (i == x) {$('.button1').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click')  .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+	$(this).css ({"color": "red", "font-weight": "normal"})
+ 
+	});
+ 
+});
+ 
+ 
+</script>
+<style type="text/css"> 
+
+
+#questions {width: 100%; margin-bottom: 10px;}
+.item {padding-left: 10px; width: 100%; line-height: 20px;}
+.right, .wrong {cursor: pointer;}
+.right:hover, .wrong:hover {background: #ccc;}
+.letter {margin-right: 10px;}
+.turnedOff {margin-right: 10px;color: gray}
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	Answer the questions correctly. After you get all the correct answers, a 
+	button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page12.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table  width="100%" border="0">
+	<tr>
+	<td width="80%" valign="top"><div class="exercise_instructions">
+		Identify the <font class="correct_number">CORRECT</font> answers by clicking on them.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	</table>
+	<table width="100%" border="0"><tr><td width="80%">
+	<table id="questions">
+	<tr><td><div class="number">1.</div></td>
+	<td><div class="item">Introducing someone else's thoughts in your own words is called...<br>
+	<span class="letter">a.</span><span class="wrong">illustrating<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">outlining<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">quoting<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">concluding<span id="feedback"></span> </span><br>
+	<span class="letter">e.</span><span class="right">paraphrasing<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+
+	<table id="questions">
+	<tr><td><div class="number">2.</div></td>
+	<td><div class="item">When you want to present information briefly, you can use...<br>
+ 	<span class="letter">a.</span><span class="wrong">citations<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">quotations<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">signal phrases<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="right">paraphrasing<span id="feedback"></span> </span><br>
+	<span class="letter">e.</span><span class="wrong">topic sentences<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+
+	<table id="questions">
+	<tr><td><div class="number">3.</div></td>
+	<td><div class="item">When using your own words to express others' ideas, any word you borrow directly from the source should be...<br>
+ 	<span class="letter">a.</span><span class="wrong">underlined<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="right">in quotation marks<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">in italics<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">well-blended within the sentence<span id="feedback"></span> </span><br>
+	<span class="letter">e.</span><span class="wrong">dropped into the text<span id="feedback"></span> </span>
+	</div></td></tr> 
+	</table>
+	
+	
+	
+	<table id="questions">
+	<tr><td><div class="number">4.</div></td>
+	<td><div class="item">Presenting several main ideas in your own words is called...<br>
+ 	<span class="letter">a.</span><span class="wrong">paraphrasing<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">listing works cited<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">citing<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="right">summarizing<span id="feedback"></span> </span><br>
+	<span class="letter">e.</span><span class="wrong">quoting<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+
+	<table id="questions">
+	<tr><td><div class="number">5.</div></td>
+	<td><div class="item">To give an overview of the material, you can...<br>
+ 	<span class="letter">a.</span><span class="wrong">cite your source<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">use signal phrases<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">use topic sentences<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">paraphrase<span id="feedback"></span> </span><br>
+	<span class="letter">e.</span><span class="right">summarize<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+
+
+	</td>
+	
+	<td align="center"><div id="counter" class="background_score"></div></td>
+	</tr></table>
+	
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

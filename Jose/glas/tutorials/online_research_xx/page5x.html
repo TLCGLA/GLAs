@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+
+<script type="text/javascript"> 
+$(document).ready(function(){
+		var i = 0;
+		var x = 4;
+$(".button1").css ('visibility', 'hidden');
+  $('.right').click(function(){
+
+  		i--;
+		$("#counter") .html (i);
+		$(this).css ('background-color' ,'#FFE6E6').animate({'top' : '+=200px', 'opacity' : '0'},"slow");
+
+
+  });
+  $('.wrong').click(function(){
+
+		i++;
+		$("#counter") .html (i);
+		$(this).css ('background-color' ,'#DAE6F0') .animate({'top' : '+=200px', 'opacity' : '0'},"slow");
+		if (i == x) {$('.button1').css ('visibility', 'visible')};
+
+  });
+});
+</script>
+ 
+ 
+
+
+
+<style>
+.right, .wrong {
+position: relative;
+cursor: pointer;
+
+}
+.right:hover, .wrong:hover {background: #ccc;}
+.item {padding-left: 20px; width: 700px; line-height: 25px; }
+
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	Some of the statements below are incorrect.  Can you identify them? After you get all the right answers, a button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page6x.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table width="100%" border="0">
+	<tr>
+	<td valign="top" width="80%"><div class="exercise_instructions">
+		Delete the <font class="correct_number">INCORRECT</font> statements by clicking on them.</div>
+	</td>
+	<td><div class="your_score"><br>Your Score:</div></td>
+	</tr>
+	<tr>
+	<td valign="top" width="80%">
+ 		<table class="questions_table">
+			<tr><td><div class="number">1.</div></td><td><div class="item"><span class="wrong">Google is the best resource for online research.</span></div></td></tr>
+			<tr><td><div class="number">2.</div></td><td><div class="item"><span class="wrong">You can only access library databases on campus.</span></div></td></tr>
+			<tr><td><div class="number">3.</div></td><td><div class="item"><span class="right">Online databases can be either general or specialized.</span></div></td></tr>
+			<tr><td><div class="number">4.</div></td><td><div class="item"><span class="wrong">Sources from online databases need to be carefully evaluated for reliability.</span></div></td></tr>
+			<tr><td><div class="number">5.</div></td><td><div class="item"><span class="wrong">Wikipedia is a reliable academic source.</span></div></td></tr>
+			<tr><td><div class="number">6.</div></td><td><div class="item"><span class="right">Google provides a way to search only scholarly sources.</span></div></td></tr>
+			<tr><td><div class="number">7.</div></td><td><div class="item"><span class="right">Sources found through internet research need to be carefully evaluated for reliability.</span></div></td></tr>
+			
+		</table>
+ 	</td>
+	<td align="center">
+		<div id="counter" class="background_score"></div> 
+	</td>
+	</tr>
+	</table>
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

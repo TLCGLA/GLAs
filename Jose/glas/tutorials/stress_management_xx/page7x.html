@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 5;
+$(".button1").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click') .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"}) 
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	if (i == x) {$('.button1').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click')  .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+	$(this).css ({"color": "red", "font-weight": "normal"})
+ 
+	});
+ 
+});
+ 
+ 
+</script>
+<style type="text/css"> 
+
+
+#questions {width: 100%; margin-bottom: 10px;}
+.item {padding-left: 10px; width: 100%; line-height: 20px;}
+.right, .wrong {cursor: pointer;}
+.right:hover, .wrong:hover {background: #ccc;}
+.letter {margin-right: 10px;}
+.turnedOff {margin-right: 10px;color: gray}
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	Match each example of how to handle stress to one of four kinds of stress tips you have seen so far in the presentation. After you get all the correct answers, a 
+	button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page8.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table  width="100%" border="0">
+	<tr>
+	<td width="80%" valign="top"><div class="exercise_instructions">
+		<font class="correct_number">MATCH</font> the example with its associated stress tip by clicking on the right answer.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	</table>
+	<table width="100%" border="0"><tr><td width="80%">
+	<table id="questions">
+	<tr><td><div class="number">1.</div></td>
+	<td><div class="item">Divide tasks into smaller steps<br>
+	<span class="letter">a.</span><span class="wrong">Time management<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="right">Goal setting<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">Money management<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">Emotional support<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	
+
+	<table id="questions">
+	<tr><td><div class="number">2.</div></td>
+	<td><div class="item">Separate true needs from perceived needs<br>
+	<span class="letter">a.</span><span class="wrong">Time management<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">Goal setting<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="right">Money management<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">Emotional support<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	
+	<table id="questions">
+	<tr><td><div class="number">3.</div></td>
+	<td><div class="item">Identify your peak energy levels<br>
+	<span class="letter">a.</span><span class="right">Time management<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">Goal setting<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">Money management<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">Emotional support<span id="feedback"></span> </span>
+	</div></td></tr> 
+	</table>
+
+	
+	<table id="questions">
+	<tr><td><div class="number">4.</div></td>
+	<td><div class="item">Identify your behavior patterns<br>
+	<span class="letter">a.</span><span class="wrong">Time management<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">Goal setting<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">Money management<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="right">Emotional support<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+
+	
+	<table id="questions">
+	<tr><td><div class="number">5.</div></td>
+	<td><div class="item">Share your feelings<br>
+	<span class="letter">a.</span><span class="wrong">Time management<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="right">Goal setting<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">Money management<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">Emotional support<span id="feedback"></span> </span>
+	</div></td></tr> 
+	</table>
+	
+	</td>
+	
+	<td align="center"><div id="counter" class="background_score"></div></td>
+	</tr></table>
+	
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

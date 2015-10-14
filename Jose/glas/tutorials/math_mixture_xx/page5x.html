@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 4;
+$(".button1").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click') .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"}) 
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	if (i == x) {$('.button1').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click')  .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+	$(this).css ({"color": "red", "font-weight": "normal"})
+ 
+	});
+ 
+});
+ 
+ 
+</script>
+<style type="text/css"> 
+
+
+#questions {width: 100%; margin-bottom: 10px;}
+.item {padding-left: 10px; width: 100%; line-height: 20px;}
+.right, .wrong {cursor: pointer;}
+.right:hover, .wrong:hover {background: #ccc;}
+.letter {margin-right: 10px;}
+.turnedOff {margin-right: 10px;color: gray}
+.math_problem{padding: 10px; margin-bottom: 10px; margin-top: 10px; width: 100%; background-color: white; border: 1px solid #ccc;}
+
+
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	Answer the questions correctly. After you get all the correct answers, a 
+	button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page6.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table  width="100%" border="0">
+	<tr>
+	<td width="80%" valign="top"><div class="exercise_instructions">
+		Identify the <font class="correct_number">CORRECT</font> answers by clicking on them.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	</table>
+	<table width="100%" border="0"><tr><td width="80%">
+	<table id="questions">
+	<tr><td><div class="number">1.</div></td>
+	<td><div class="item">To compute the volume of alcohol in 4 liters of wine with 9% alcohol in it, we would write...<br>
+	<span class="letter">a.</span><span class="wrong">4 X 0.9<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">4 X 9%<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="right">4 X 0.09<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">4 X 0.009%<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	
+	<table id="questions">
+	<tr><td><div class="number">2.</div></td>
+	<td><div class="item">To figure out how many ounces of gold there are in a 10 ounce bracelet with 5% gold, we would write...<br>
+ 	<span class="letter">a.</span><span class="wrong">10 X 0.005<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="right">10 X 0.05<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">10 X 5%<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">5 X 100 X 10<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">3.</div></td>
+	<td><div class="item">To find out how many gallons of oil leaked into a 200 gallon water storage tank with 2% oil in it, we would write...<br>
+ 	<span class="letter">a.</span><span class="right">200 X 0.02<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">200 X 0.002<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">200 X 0.2%<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">200/2 X 100<span id="feedback"></span> </span>
+	</div></td></tr> 
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">4.</div></td>
+	<td><div class="item">To know how many liters of oxygen are in a 10 liter scuba tank with 3% oxigen in it, we would write...<br>
+ 	<span class="letter">a.</span><span class="wrong">10 X 3%<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">10 X 3 X 100<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">10 X 3 <span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="right">10 X 0.03<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+
+	</td>
+	
+	<td align="center"><div id="counter" class="background_score"></div></td>
+	</tr></table>
+	
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

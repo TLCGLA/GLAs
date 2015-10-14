@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script> 
+$(document).ready(function(){
+		var i = 0;
+		var x = 6;
+$(".button1").css ('visibility', 'hidden');
+ 
+$(".wrong").click(function(){
+   $(this).unbind('click')
+   $(this).css ({"color": "red", "font-weight": "normal"})
+   $(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+   $(".triangle").animate({"bottom": "-=15px"}, "fast");
+ 
+});
+ 
+$(".right").click(function(){
+	$(this).unbind('click')
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"})
+  	$(".triangle").animate({"bottom": "+=15px"}, "fast");
+  i++;
+  	if (i == x) {$('.button1').css ('visibility', 'visible')};
+});
+ 
+});
+</script>
+
+
+
+<style>
+.right, .wrong {cursor: pointer; padding-left: 40px; margin-bottom: 10px;text-indent: -30px ; width: 750px;}
+.right:hover, .wrong:hover {background: #ccc;}
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	Some of the citations below have errors and some are correct.  Can you find the correct citations?    After you get all the right answers, 
+	a button will appear on the top right corner.  Click on the button to continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page10.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table width="100%" border="0">
+	<tr>
+	<td valign="top" width="80%"><div class="exercise_instructions">
+		Identify the <font class="correct_number">CORRECT</font> citations by clicking on them.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	<tr>
+	<td valign="top" width="80%">
+ 		<table id="questions">
+		<tr><td><div class="number">1.</div></td><td><div class="wrong">Armstrong, Mark. "The Politics of Money." <i>Money and Society.</i> Ed. John Lewis. Boston: Bedford,<br> 2012. 38-42. Print.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">2.</div></td><td><div class="right">Calloway, Louise. Forgetting Tomorrow. <i>Cultural Memory in America.</i> Ed. Jennifer Brezina. Los <br>Angeles: Routledge, 1998. 15-38. Print.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">3.</div></td><td><div class="right">Linderman, Anna. "Ecology in The Plains." Revising Native American History. Ed. Arnold Woodsworth.<br> New York: Holt, 1988. 56-102. Print.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">4.</div></td><td><div class="right">Stewart, Ian. "The Language of Mathematics." <i>Thinking in Numbers.</i> Carl Thompson. Seattle: Penguin,<br> 2002. 77-92. Print.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">5.</div></td><td><div class="wrong">Holloway, Alicia. "Poverty Among Plenty." <i>Government and Social Policy.</i> Ed. Garrett Hooper. New York:<br> Bedford, 2011. 88-102. Print.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">6.</div></td><td><div class="wrong">Small, Meredith. "Imagined Pain." <i>Culture, Health, and Society.</i> Ed. Cecil Rhodes. Boston: McGraw-Hill,<br> 2006. 38-42. Print.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">7.</div></td><td><div class="right">Kirkland, Linda. "Humor in the White House." <i>The Reagan White House.</i> Ed. Smith, Alice. Los Angeles: <br>Bedford, 2012. 55-78. Print.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">8.</div></td><td><div class="right">Somoza, Joseph. "Closet Culture." <i>Gay Culture in the United States.</i> Ed. Jay Andrews. San Francisco: <br>New Age, 1978. 38 Print.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">9.</div></td><td><div class="right">Dettwyler, Angela. "Dancing on Graves." <i>The Art of Dying in the Middle Ages.</i> Ed. Richard Spradley.<br> Boston: Routledge, 2012. Print.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">10.</div></td><td><div class="wrong">Angeloni, Steve. "Giving Birth to the Future." <i>Time Constraints.</i> Ed. Erik Knudsen. Los Angeles:<br> Waveland, 2002. 42-81. Print.<span id="feedback"></span></div></td></tr>	
+		</table>
+ 	</td>
+	
+
+
+
+
+
+	<td align="center">
+		<div class="progress2">
+ 		<table>
+		<tr>
+		<td><div class="triangle_spacer"></div>
+                  <div class="triangle"><img src="../../images/triangle2.png"></div></td>
+		<td><div class="progress_bar2"> 
+                    <div class="progress_bar_text2">+10<br>
+                      +8<br>
+                      +6<br>
+                      +4<br>
+                      +2<br>
+                      &nbsp;0<br>
+                      -2<br>
+                      -4<br>
+                      -6<br>
+                      -8<br>
+                      -10</div>
+                  </div></td>
+		</tr>
+		</table>
+		</div>
+	</td>
+	</tr>
+	</table>
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

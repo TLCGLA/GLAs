@@ -1,0 +1,263 @@
+<!DOCTYPE HTML> <html>
+<meta http-equiv="X-UA-Compatible" content="IE-9" /><title>Guided Learning Activities</title>
+<link href="../styles.css" rel="stylesheet" type="text/css" />
+
+
+
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript" src="../jquery.min.js"></script>
+<script type="text/javascript" src="../jquery-ui.min.js"></script>
+
+
+
+<style>
+
+.makeMeDraggable {width: 50px; height: 20px; border: 1px solid #ccc; display: inline-block; text-align: center; margin: 2px;}
+.ui-draggable-dragging { -moz-box-shadow: 10px 10px 5px #888;-webkit-box-shadow: 10px 10px 5px #888;box-shadow: 10px 10px 5px #888;}
+.notDraggable {width: 50px; height: 20px; border: 1px solid #ccc; display: inline-block; text-align: center; margin: 2px; cursor: none;}
+.number {width: 30px; text-align: right; font-size: 16px; font-weight: bold; background-color:#FFC680; border: 1px solid #ccc; padding-right: 4px; padding-left: 7px;}
+.title {font-weight: bold; font-size: 18px; margin-bottom: 10px; border-bottom: 3px solid #FFA500;}
+.question {width: 650px; font-size: 16px; float: left;}
+.makeMeDroppable {width: 50px; height: 20px; background: #F8F8F8; border: 1px solid black;  float: left;  margin-left: 2px; margin-right: 2px;}
+#dragContainer {border: 1px solid grey; background: #F8F8F8;}
+#counter {height: 100px; width: 100px; font-size: 50px; border: 1px solid #ccc; background-color:#FFC680; padding-top: 30px; text-align: center;}
+
+#authoritative:hover {cursor: move;}
+#notAuthoritative:hover {cursor: move;}
+
+</style>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+		var i = 0;
+		var x = 7;
+		
+$(".button").css ('visibility', 'hidden');
+
+$( init );
+ 
+function init() {
+  $('.makeMeDraggable').draggable({ 
+  snap: '.makeMeDroppable', 
+  snapMode: 'inner', 
+  snapTolerance: 20,
+  opacity: '0.6', 
+  stack : '.makeMeDraggable',
+  containment: '#wrapper', 
+  revert: 'invalid',
+  });
+  $('.makeMeDroppable').droppable( {
+   drop: handleDropEvent
+  } );
+}
+ 
+function handleDropEvent( event, ui ) {
+  	var dragID = ui.draggable.attr('id');
+	var dropID = $(this).attr('id');
+	$(this).droppable( "option", "disabled", true );
+	if (dropID == dragID) {
+	i++;
+	$("#counter") .html (i);
+	if (i == x) {$('.button').css ('visibility', 'visible')};
+	$(ui.draggable).draggable('disable').removeClass('.makeMeDraggable').addClass('notDraggable');
+	}
+	
+	else {
+	i--;
+	$("#counter") .html (i);	
+	$(ui.draggable).draggable('disable').removeClass('.makeMeDraggable').addClass('notDraggable').css ('background-color' ,'#FFB2B2');
+	
+	} 
+  
+}
+ 
+});
+
+</script>
+
+
+
+</head>
+
+<body>
+
+<table width="100%" align="center" border="0">
+<tr bgcolor="#273872"><td></td><td width="960"><!-- header -->
+<div class="header">
+  		<div style="float: left; height: 73px;"><img src="../images/coc_logo1.gif" alt="College of the Canyons"  />
+      <img src="../images/coc_logo2.gif" alt="College of the Canyons" /> 
+	  </div>
+	  <div style="float: right;"><h1 class="h1_title">Guided Learning 
+		Activities</h1></div>
+ 
+ </div>
+ <!-- end header -->
+
+</td><td></td></tr>
+<tr><td colspan="3"> <div class="gradient_horizontal" style="height:3px; break:left;"></div></td></tr>
+
+<tr><td colspan="3"> 
+
+<table width="960" align="center" border="0"> <!-- 960 px is the standard width for 1024 x 768 screens; use 90% otherwise -->
+<tr><td align="center" 0%">
+
+ 
+ <!-- page starts here -->
+<div class="page">
+
+<!-- top section starts here -->
+
+<div class="gla_top_section">
+<h1 class="h1_blue">Comprehension Questions</h1>
+
+<h1 class="h1_gray" style="padding-top: 10px;">Instructions:</h1>
+       
+<table width="100%" border="0">
+<tr><td><div style="padding-right: 10px;">
+Some of the sources below are authoritative and some are not authoritative.  Can you sort them out?  Label the two 
+kinds of sources by clicking on the authoritative (A) and not authoritative (Not A)
+boxes and dragging them to the gray boxes next to each 
+source.  You can watch your progress on the score box to the right of the statements. 
+
+You will earn one point for each correct answer and lose one point for each incorrect answer. Correct 
+answers will turn <font color="blue">blue</font>, while incorrect answers will turn <font color="red">red</font>. 
+After you get at least seven of the eight answers correctly, 
+ a button will appear on the top right corner.  Click on the button to 
+continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 
+
+
+
+
+
+
+
+
+
+<br><br>
+</div></td>
+
+<td><div class="gradient_horizontal" style="height: 38px; text-align: center; padding: 10px; margin-bottom: 5px;">
+
+<form method="link" action="page3xx.htm" style="display:  inline; float: right;">
+                                      <input type="submit" class="button" style="height: 35px;" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+                                    </form>
+</div></td>
+</tr>
+</table>
+</div>
+<!-- end top section --> 
+
+
+<!-- begin wrapper lower section -->
+<div style="margin-top: 30px; padding:10px; border: 1px solid #ccc; background-color: white;">
+ 
+				  	
+<!-- table wrapping lower section contents -->
+
+
+
+
+
+<table width="100%" border="0">
+
+<tr><td>
+	<div><span style="float: left; width: 750px;"><h1 class="title">Authoritative or Not Authoritative? <br><span style="font-size: 16px; font-weight: normal;">Click and drag the "A" (Authoritative) and "Not A" (Not Authoritative) boxes to the gray boxes below.</span></h1></span></div>
+	</td>
+	<td><span style="float: right;  padding-right: 45px;"><h1 class="title">Your score</h1></span></div>
+	</td></tr>
+<tr> 
+<td valign="top" id="wrapper">
+
+
+<table id="questions_table" border=0 width="100%" style="padding-right: 20px;"> 
+
+<tr><td colspan=3 id="dragContainer">
+			<div style="text-align: center"><span class="makeMeDraggable" id="authoritative" style="background: #FFF8DC">A</span><span class="makeMeDraggable" id="authoritative" style="background: #FFF8DC">A</span><span class="makeMeDraggable" id="authoritative" style="background: #FFF8DC">A</span><span class="makeMeDraggable" id="authoritative" style="background: #FFF8DC">A</span><span class="makeMeDraggable" id="authoritative" style="background: #FFF8DC">A</span>
+			<span class="makeMeDraggable" id="notAuthoritative" style="background: #E9F2E9">Not A</span><span class="makeMeDraggable" id="notAuthoritative" style="background: #E9F2E9">Not A</span><span class="makeMeDraggable" id="notAuthoritative" style="background: #E9F2E9">Not A</span><span class="makeMeDraggable" id="notAuthoritative" style="background: #E9F2E9">Not A</span><span class="makeMeDraggable" id="notAuthoritative" style="background: #E9F2E9">Not A</span>
+			</div>
+</td></tr>
+
+<tr><td colspan=3 height="10px"></td></tr> <!--spacer-->
+
+<tr><td><div class="number">1.</div></td>
+	<td class="question">Evaluating Online Sources: owl.english.purdue.edu</td>
+	<td>
+<span class="makeMeDroppable" id="authoritative">
+	</td></tr>
+
+
+<tr><td><div class="number">2.</div></td>
+	<td class="question">The Great American Blog: http://www.foxnews.com/on-air/hannity/blog/</td>
+	<td>
+<span class="makeMeDroppable" id="notAuthoritative">
+	</td></tr>	
+
+	
+<tr><td><div class="number">3.</div></td>
+	<td class="question">Internet Research: half.com/textbooks</td>
+	<td>
+<span class="makeMeDroppable" id="notAuthoritative">
+	</td></tr>
+<tr><td><div class="number">4.</div></td>
+	<td class="question">Britannica Online Encyclopedia: www.britannica.com</td>
+	<td>
+<span class="makeMeDroppable" id="authoritative">
+	</td></tr>	
+<tr><td><div class="number">5.</div></td>
+	<td class="question">Research: http://en.wikipedia.org/wiki/Research</td>
+	<td>
+<span class="makeMeDroppable" id="notAuthoritative">
+	</td></tr>
+<tr><td><div class="number">6.</div></td>
+	<td class="question">Facebook.com</td>
+	<td>
+<span class="makeMeDroppable" id="notAuthoritative"></span>
+	</td></tr>
+	<tr><td><div class="number">7.</div></td>
+	<td class="question">College Success Tips: www.canyons.edu</td>
+	<td>
+<span class="makeMeDroppable" id="authoritative">
+	</td></tr>
+
+<tr><td><div class="number">8.</div></td>
+	<td class="question">Census Bureau Homepage: www.census.gov</td>
+	<td>
+<span class="makeMeDroppable" id="authoritative">
+	</td></tr>
+
+</table>
+
+
+
+
+</td>
+
+<td width="102">
+<div id="counter" class="box-shadow" style="display: block; float: right;  margin-right: 40px;"></div> 
+
+<div style="margin-top: 40px; display: block; break: left; float: right;  margin-right: 40px; width: 90px; text-align: center; float: right;"><span class="h1_blue" style="font-size: 20px;">Maximum points: 8</span></div> 
+			
+					
+				
+
+
+</div>
+<!-- end wrapper lower section -->
+</div>
+<!-- end page -->
+</td>
+</tr>
+</table>
+
+</td></tr>
+</table>  <!-- end big wrapper table-->
+
+
+	
+
+</body>
+</html>

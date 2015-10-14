@@ -1,0 +1,310 @@
+<!DOCTYPE htm PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtm1/DTD/xhtm1-transitional.dtd">
+<htm xmlns="http://www.w3.org/1999/xhtm">
+<head>
+<meta http-equiv="Content-Type" content="text/htm; charset=UTF-8" />
+<title>Guided Learning Activities</title>
+<link href="../styles.css" rel="stylesheet" type="text/css" />
+<!--[if gte IE 6]><link href="css/iefixes.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<style type="text/css">
+#border {
+
+border: 2px solid  #BFBFBF;
+}
+
+.viewer_header {
+	border-style: solid; 
+	background-color:white; 
+	border-width: 1px;	
+	border-color: #BFBFBF; 
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	/*padding-bottom: 10px;
+	height: 265px;*/
+	width: 305px; 
+}
+
+.fadecontentwrapper{ /* Total width: 350px+5px+5px=360px Read relative width relations for the other two containers below! */
+position: relative;
+/* width: 500px; */
+height: 380px; /* Set height to be able to contain height of largest content shown*/
+/* border: 1px solid  #BFBFBF;*/
+overflow: hidden;
+}
+
+.fadecontent{ /*style for each fade content DIV within wrapper. Total width: 330px+10px+10px=350px (".fadecontentwrapper" width minus its padding and borders, if any) */
+position: absolute;
+background: white;
+visibility: hidden;
+}
+
+.fadecontenttoggler{ /*style for DIV used to contain toggler links. */
+/* width: 500px; */
+height: 20px;
+overflow: hidden;
+padding-bottom: 8px;
+padding-top: 5px;
+background-color: #E8E8E8;
+}
+
+.fadecontenttoggler a{ /*style for every navigational link within toggler */
+text-decoration: none;
+padding: 0 5px;
+display: block;
+}
+
+.fadecontenttoggler a:hover{
+color: #0D408D;
+}
+
+.fadecontenttoggler a.toc{ /*style for individual toggler links (page 1, page 2, etc). ".toc" class auto generated! */
+}
+
+.fadecontenttoggler a.prev{ /*style for "prev" and "next" toggler links. ".prev" and ".next" classes auto generated! */
+color:  black;
+float: left;
+padding-left: 10px;
+}
+
+.fadecontenttoggler a.next{ /*style for "prev" and "next" toggler links. ".prev" and ".next" classes auto generated! */
+color:  black;
+float: right;
+padding-right: 10px;
+}
+
+.fadecontenttoggler a.prev:hover, .fadecontenttoggler a.next:hover{
+color: #0D408D;
+/*background: #C03021; */
+}
+
+.fadecontenttoggler a.selected{ /*style for selected page's toggler link. ".selected" class auto generated! */
+/* background: #C03021; */
+color: #C03021;
+}
+
+
+</style>
+<script type="text/javascript" src="../jquery.js"></script>
+
+<script type="text/javascript" src="../content_viewer/contentfader.js">
+
+/***********************************************
+
+* Fade In Content Viewer script- by JavaScript Kit (www.javascriptkit.com)
+* This notice must stay intact for usage
+* Visit JavaScript Kit at http://www.javascriptkit.com/ for this script and 100s more
+***********************************************/
+
+</script>
+
+
+
+</head>
+
+<body>
+
+<table width="960" align="center" border="0">
+<tr><td align="center" height="100%">
+<!-- header -->
+<div class="header">
+  		<div style="float: left;"><img src="../images/coc_logo1.gif" alt="College of the Canyons" width="80" height="73" />
+      <img src="../images/coc_logo2.gif" alt="College of the Canyons" width="134" height="73" /></a> 
+	  </div>
+	  <div style="float: right;"><h1 class="gla_header">Guided Learning Activities</h1></div>
+ </div>
+ <!-- end header -->
+ 
+ <!-- page starts here -->
+<div class="page">
+
+<!-- top section starts here -->
+
+<div class="gla_top_section">
+<h1 class="h1_blue_dark">Step One</h1>
+
+<h1 class="h1_gray">Presentation: Understanding Ideas not Directly Stated</h1>
+Watch the PowerPoint presentation on inferences and answer the questions in it.
+
+<div style="padding-top:20px; padding-bottom: 10px;"><h1 class="h1_gray">Moving through the Guided Learning Activity</h1>
+          The Guided Learning Activity is divided in sections, separated by questions. 
+          You must answer the questions to proceed from one section to the next.  The progress bar below will indicate 
+		  your location in the workshop.</div>
+
+<!-- progress bar -->
+<div>
+            
+            <table border="0" width="100%">
+			<tr> 
+                <td><div style="float: left; width: 387px; text-align: right;"><img src="../images/triangle.png" /></div></td>
+                </tr>
+			 <tr> 
+                <td><div style="float: left; border: 1px solid gray; color: gray; height: 6px; background-color: white; width: 99.8%;">
+				<div class="blue_bar" style="width: 380px;"></div>
+				</div>
+				</td>
+              </tr>
+			  <tr><td>
+			  <div class="border_bar">
+			  	 <div class="progress_bar" style="padding-left: 50px; width: 110px;">Introduction</div>
+				<div class="progress_bar" style="float: left; width: 30px; text-align: center;">|</div>
+			  	<div class="progress_bar" style="padding-left: 20px; padding-right: 4px; font-weight: bold;">Step 1: </div>
+			  	<div class="progress_bar" style="width: 320px;">Presentation: Understanding Ideas not Directly Stated</div>
+
+				<div class="progress_bar" style="float: left; width: 30px; text-align: center;">|</div>
+			  	<div class="progress_bar" style="padding-left: 20px; padding-right: 4px; font-weight: bold;">Step 2: </div>
+			  	 <div class="progress_bar">Exercises: Complete Handouts with Tutor</div>
+			  </div>
+			  </td></tr>			  
+			  </table>
+</div>
+<!-- end progress bar -->
+</div>
+<!-- end top section --> 
+
+<!-- begin wrapper lower section -->
+<div>
+  
+				  	
+<!-- table wrapping lower section contents -->
+<table width="100%" border="0">
+<tr>
+<td>
+<div class="border_gray" style="padding:5px;"><!-- background-color: #E8E8E8; -->
+           
+       
+                  <div id="whatsnew" class="fadecontentwrapper"> 
+                    <div class="fadecontent"> 
+                      <table>
+                        <tr> 
+                          <td><img src="PPT_commas_and_quotations/Slide1.png"></td>
+                          <td width="5px;"></td>
+                          <td bgcolor="#D5E6E1"><div style="text-align:left; font-size: 22px; padding: 10px;">
+                          The presentation you are about to watch will ask you to answer some questions in the handouts.  
+                          <br> <br>
+                          At the appropriate time, the presentation will instruct you to stop and complete one of the handout exercises. 
+                          <br> <br>
+                              Remember to ask a tutor if you have any questions. 
+                            </div></td>
+                        </tr>
+                      </table>
+                    </div>
+
+
+              <div class="fadecontent"><img src="PPT_commas_and_quotations/Slide2.png"></div>
+              <div class="fadecontent"><img src="PPT_commas_and_quotations/Slide3.png"></div>
+              <div class="fadecontent"><img src="PPT_commas_and_quotations/Slide4.png"></div>
+           
+					<div class="fadecontent"> 
+                      <table>
+                        <tr> 
+                          <td><img src="PPT_commas_and_quotations/Slide5.png"></td>
+                          <td width="5px;"></td>
+                          <td bgcolor="#FFE3D7"><div style="text-align:left; font-size: 22px; padding-left: 10px; padding-top: 150px;">
+ 									Please write your answer in Box 1 of the worksheet.
+                            </div></td>
+                        </tr>
+                      </table>
+                    </div>
+              
+
+                <div class="fadecontent"> 
+                      <table>
+                        <tr> 
+                          <td><img src="PPT_commas_and_quotations/Slide6.png"></td>
+                          <td width="5px;"></td>
+                          <td bgcolor="#D5E6E1" height="375" width="100%"><div style="width: 392px;">
+ 									
+                            </div></td>
+                        </tr>
+                      </table>
+                    </div>
+              <div class="fadecontent"> 
+                      <table>
+                        <tr> 
+                          <td><img src="PPT_commas_and_quotations/Slide7.png"></td>
+                          <td width="5px;"></td>
+                          <td bgcolor="#FFE3D7"><div style="text-align:left; font-size: 22px; padding-left: 10px; padding-top: 150px;">
+ 									Please write your answer in Box 2 of the worksheet.
+                            </div></td>
+                        </tr>
+                      </table>
+                    </div>
+              <div class="fadecontent"><img src="PPT_commas_and_quotations/Slide8.png"></div>
+              <div class="fadecontent"><img src="PPT_commas_and_quotations/Slide9.png"></div>
+              <div class="fadecontent"><img src="PPT_commas_and_quotations/Slide10.png"></div>
+              <div class="fadecontent"><img src="PPT_commas_and_quotations/Slide11.png"></div>
+              <div class="fadecontent"><img src="PPT_commas_and_quotations/Slide12.png"></div>
+              <div class="fadecontent"><img src="PPT_commas_and_quotations/Slide13.png"></div>  
+				  <div class="fadecontent"><img src="PPT_commas_and_quotations/Slide14.png"></div>
+              <div class="fadecontent"><img src="PPT_commas_and_quotations/Slide15.png"></div>
+              <div class="fadecontent"><img src="PPT_commas_and_quotations/Slide16.png"></div>
+              
+              <div class="fadecontent"> 
+                    <table>
+                    <tr>
+                    		<td>
+                      	<table width="500px" height="375px" background="../images/Questions/questions.png">
+                        	<tr><td height="300"></td></tr>
+                        	<tr> 
+                          	<td valign="top" align="center"> <div style="padding-left: 20px;"> 
+                              <form method="link" action="page3x.htm">
+                                <input type="submit" class="button" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enter the Questions Page &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+                              </form></div>
+                            </td>
+                      	</table>
+                      	</td>
+                      <td width="5px;"></td>
+                      <td bgcolor="#D5E6E1" height="375" width="100%"><div style="width: 392px;"></div></td>                      
+                      </tr>
+                      </table>
+                  </div>
+               </div>
+					<div style="height: 4px;"></div> <!-- this is my spacer div -->
+					<div id="whatnewstoggler" class="fadecontenttoggler" >
+					<a href="#" class="prev"><input type="BUTTON" class="button" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Prev &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></a>
+					<a href="#" class="next"><input type="BUTTON" class="button" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></a>
+					</div>
+
+
+
+</div> <!-- end border gray div-->
+</td>
+
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+</div>
+<!-- end wrapper lower section -->
+</div>
+<!-- end page -->
+</td></tr>
+</table>
+
+ 
+
+		
+
+
+<script type="text/javascript">
+//SYNTAX: fadecontentviewer.init("maincontainer_id", "content_classname", "togglercontainer_id", selectedindex, fadespeed_miliseconds)
+fadecontentviewer.init("whatsnew", "fadecontent", "whatnewstoggler", 0, 400)
+</script>  
+
+
+
+	  
+	  
+
+		
+
+</body>
+</html>

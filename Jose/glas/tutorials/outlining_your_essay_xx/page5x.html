@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<link href="../../css/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.8.16.custom.min.js"></script>
+<script>
+	$(function() {
+		$( "#accordion" ).accordion();
+	});
+</script>
+<script> 
+$(document).ready(function(){
+		var i = 0;
+		var x = 12;
+$(".button1").css ('visibility', 'hidden');
+ 
+$(".wrong").click(function(){
+   $(this).unbind('click')
+   $(this).siblings () .unbind ('click') .css ("cursor" , "none")
+   $(this).css ({"color": "red", "font-weight": "normal"})
+   $(this).siblings("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+   $(".triangle").animate({"bottom": "-=12px"}, "fast");
+ 
+});
+ 
+$(".right").click(function(){
+	$(this).unbind('click')
+	$(this).siblings () .unbind ('click') .css ("cursor" , "none")
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	$(this).siblings("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"})
+  	$(".triangle").animate({"bottom": "+=12px"}, "fast");
+  i++;
+  	if (i == x) {$('.button1').css ('visibility', 'visible')};
+});
+ 
+});
+</script>
+
+
+
+<style>
+.slider {font-size: 10px; height: 80px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px; padding-right: 2px;}
+.slider_font {font-size: 12px; color: #0D408D;}
+.right, .wrong {cursor: pointer; padding-left: 10px; padding-right: 10px; display: inline; border: 1px solid #ccc; background-color: #dcdcdc; }
+.right:hover, .wrong:hover {background: #ccc;}
+.item {padding-left: 10px; width: 850px; line-height: 25px; }
+.column {width: 600px; text-align: left; margin-right: 20px;}
+.passage {width: 100%; font-size: 14px; font-weight: bold; color: #0D408D; border-bottom: 2px solid #0D408D;  padding-top: 2px; margin-bottom: 2px;}
+.bar_spacer {margin-bottom: 6px; margin-top: 6px;}
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	The passages below contain main and support ideas.  Can you find them?  After you get all the right answers, 
+	a button will appear on the top right corner.  Click on the button to continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page6.html"></a></td>
+	</tr>
+	</table>
+</div>
+<div id="accordion">
+	<h3><a href="#"><font class="slider_font">Passage #1</font> <font style="font-size: 10px; padding-left: 8px;">(from Nicholas Kristof, "Our Gas Guzzlers, Our Lives")</font></a></h3>
+	<div class="slider">My win-a-trip journey with a student and a teacher has taken us to Burundi, which the World Bank"™s latest report shows to be the poorest country in the world.  
+	People in Burundi have an annual average income of $100, nearly one child in five dies before the age of five, and life expectancy is 45.
+	</div>	
+	<h3><a href="#"><font class="slider_font">Passage #2 </font> <font style="font-size: 10px; padding-left: 8px;">(from Jonathan Rauch, "Will Frankenfood Save the Planet?")</font></a></h3>
+	<div class="slider">Organic farming  . . . uses no artificial fertilizer, but it does use a lot of manure, which can pollute water and contaminate food.  Traditional farmers may use less herbicide, but they also do more ploughing, with all the ensuing environmental complications.  Low-input agriculture uses fewer chemicals but more land.  The point is not that farming is an environmental crime, but that there is no escaping the pressure it puts on the planet.
+	</div>
+	<h3><a href="#"><font class="slider_font">Passage #3 </font> <font style="font-size: 10px; padding-left: 8px;">(from Rachel Carson, "The Obligation to Endure")</font></a></h3>
+	<div class="slider">Under primitive agricultural conditions the farmer had few insect problems.  These arose with the intensification of agriculture"”the devotion of immense acreages to a single crop.  Such a system set the stage for explosive increases in specific insect populations.  Single-crop farming does not take advantage of the principles by which nature works; it is agriculture as an engineer might conceive it to be.  Nature has introduced great variety into the landscape, but man has displayed a passion for simplifying it.  Thus he undoes the built-in checks and balances by which nature holds the species within bounds.  One important natural check is a limit on the amount of suitable habitat for each species.  Obviously, then, an insect that lives on wheat can build up its population to much higher levels on a farm devoted to wheat than on one in which wheat is intermingled with other crops to which the insect is not adapted.
+	</div>
+</div>
+<br>
+
+<div class="exercise">
+	<table width="100%" border="0">
+	<tr>
+	<td valign="top" width="80%"><div class="exercise_instructions">
+		Indicate whether the following notes refer to <font class="correct_number">MAIN or SUPPORT</font> ideas by clicking on "main" or "support".</div>
+	</td>
+	<td><div class="your_score"><br>Your Score:</div></td>
+	</tr>
+	<tr>
+	<td valign="top" width="80%">
+ 		<table class="questions_table">
+		<tr><td colspan="2"><div class="passage">Notes on passage #1</div></td></tr>
+		<tr><td><div class="number">1.</div></td><td><div class="item"><span class="column">1 child/5 dies B4 five</span><span class="wrong">main</span> / <span class="right">support</span> <span id="feedback"></span></div></td>		</tr>
+		<tr><td><div class="number">2.</div></td><td><div class="item"><span class="column">Burundi: poorest country in world</span><span class="right">main</span> / <span class="wrong">support</span> <span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">3.</div></td><td><div class="item"><span class="column">Income = $300/yr</span><span class="wrong">main</span> / <span class="right">support</span><span id="feedback"></span></div></td></tr>
+		<tr><td colspan="2"><div class="passage">Notes on passage #2</div></td></tr>
+		<tr><td><div class="number">4.</div></td><td><div class="item"><span class="column">Manure > water/food pollution</span><span class="wrong">main</span> / <span class="right">support</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">5.</div></td><td><div class="item"><span class="column">Low-input agriculture</span><span class="wrong">main</span> / <span class="right">support</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">6.</div></td><td><div class="item"><span class="column">Traditional farmers</span><span class="wrong">main</span> / <span class="right">support</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">7.</div></td><td><div class="item"><span class="column">Farming (various types) > pressure on planet</span><span class="right">main</span> / <span class="wrong">support</span><span id="feedback"></span></div></td></tr>
+		<tr><td colspan="2"><div class="passage">Notes on passage #3</div></td></tr>
+		<tr><td><div class="number">8.</div></td><td><div class="item"><span class="column">S-C not based on natural checks that keep species in bounds</span><span class="wrong">main</span> / <span class="right">support</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">9.</div></td><td><div class="item"><span class="column">Single-crop farming > increase in insect pop.</span><span class="right">main</span> / <span class="wrong">support</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">10.</div></td><td><div class="item"><span class="column">Nature = limit on amt. of suitable habit for a species</span><span class="wrong">main</span> / <span class="right">support</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">11.</div></td><td><div class="item"><span class="column">Oversimplification of habitat > fewer checks</span><span class="wrong">main</span> / <span class="right">support</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">12.</div></td><td><div class="item"><span class="column">Wheat-eating insects increase in pop.</span><span class="wrong">main</span> / <span class="right">support</span><span id="feedback"></span></div></td></tr>
+				
+		</table>
+ 	</td>
+	<td align="center">
+		<div class="progress2">
+ 		<table>
+		<tr>
+		<td><div class="triangle_spacer"></div>
+                  <div class="triangle"><img src="../../images/triangle2.png"></div></td>
+		<td><div class="progress_bar2"> 
+                    <div class="progress_bar_text2"> 
+                      <div class="bar_spacer">+12</div>
+                      <div class="bar_spacer">+6</div>
+                      <div class="bar_spacer">+4</div>
+                      <div class="bar_spacer">+2</div>
+                      <div class="bar_spacer">&nbsp;0</div>
+                      <div class="bar_spacer">-2</div>
+                      <div class="bar_spacer">-4</div>
+                      <div class="bar_spacer">-6</div>
+                      <div class="bar_spacer">-12</div>
+                    </div>
+                  </div></td>
+		</tr>
+		</table>
+		</div>
+	</td>
+	</tr>
+	</table>
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+
+<script>
+$(document).ready(function(){
+	var i = 0;
+	var x = 8;
+	
+	$(".button1").css ('visibility', 'hidden');
+	
+	$(".right") .click (function(){
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none")
+	$(this).siblings("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"})
+	$(this).siblings ("span") .unbind ('click')  .attr ("class" , "turnedOff")
+  		i++;
+		$("#counter") .html (i);
+		if (i == x) {$('.button1').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none")
+	$(this).siblings("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+	$(this).siblings ("span") .unbind ('click')  .attr ("class" , "turnedOff")
+	});
+
+});
+
+
+</script>
+ 
+ 
+
+
+
+<style>
+.right, .wrong {cursor: pointer; margin-left: 5px;}
+.right:hover, .wrong:hover {background: #ccc;}
+.turnedOff {color: gray; margin-left: 5px;}
+.item {width: 700px;}
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	Can you find the subjects in the following sentences? 
+Select the correct answers by clicking on them. After you get at all the right answers, a 
+	button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page6x.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table width="100%" border="0">
+	<tr>
+	<td valign="top" width="80%"><div class="exercise_instructions">
+		Identify the <font class="correct_number">SUBJECTS</font> by clicking on them.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	<tr>
+	<td valign="top" width="80%">
+	
+	
+	<table class="questions_table">
+	<tr><td><div class="number">&nbsp;1.</div></td><td><div class="item">
+		<span class="right">My friends</span><span class="wrong">don't</span><span class="wrong">want</span><span class="wrong">to see</span>
+		<span class="wrong">that</span><span class="wrong">movie.</span>		
+		<span id="feedback"></span></div></td></tr>
+		
+	<tr><td><div class="number">&nbsp;2.</div></td><td><div class="item">
+		<span class="right">We</span><span class="wrong">quickly</span><span class="wrong">ran</span>
+		<span class="wrong">to see</span><span class="wrong">him</span><span class="wrong">after</span>
+		<span class="wrong">the accident.</span>
+		<span id="feedback"></span></div></td></tr>
+
+	<tr><td><div class="number">&nbsp;3.</div></td><td><div class="item">
+		<span class="right">Running</span><span class="wrong">is</span>
+		<span class="wrong">a</span><span class="wrong">very</span>
+		<span class="wrong">popular</span><span class="wrong">sport.</span>
+		<span id="feedback"></span></div></td></tr>
+
+	<tr><td><div class="number">&nbsp;4.</div></td><td><div class="item">
+	<span class="right">Alex and Susan</span><span class="wrong">bought</span>
+	<span class="wrong">me</span><span class="wrong">a</span>
+	<span class="wrong">huge</span><span class="wrong">cake</span>
+	<span class="wrong">for</span><span class="wrong">my</span><span class="wrong">birthday.</span>
+	<span id="feedback"></span></div></td></tr>
+
+	<tr><td><div class="number">&nbsp;5.</div></td><td><div class="item">
+		<span class="right">Their car</span><span class="wrong">had</span>
+		<span class="wrong">broken down</span><span class="wrong">in</span>
+		<span class="wrong">the</span><span class="wrong">middle</span>
+		<span class="wrong">of</span><span class="wrong">nowhere.</span>
+		<span id="feedback"></span></div></td></tr>
+
+	<tr><td><div class="number">&nbsp;6.</div></td><td><div class="item">
+		<span class="wrong">Sometimes</span>
+		<span class="right">people</span><span class="wrong">do</span>
+		<span class="wrong">strange</span><span class="wrong">things.</span>
+		<span id="feedback"></span></div></td></tr>
+
+	<tr><td><div class="number">&nbsp;7.</div></td><td><div class="item">
+		<span class="wrong">On Sundays,</span>
+		<span class="right">her family</span><span class="wrong">liked</span>
+		<span class="wrong">to visit</span><span class="wrong">aunt Gertrude.</span>
+
+		<span id="feedback"></span></div></td></tr>
+		
+	<tr><td><div class="number">&nbsp;8.</div></td><td><div class="item">
+		<span class="right">That factory</span>
+		<span class="wrong">stopped</span><span class="wrong">making</span>
+		<span class="wrong">cars</span><span class="wrong">last year.</span>
+		<span id="feedback"></span></div></td></tr>
+
+	</table>
+ 
+ 	</td>
+	<td align="center">
+		<div id="counter" class="background_score"></div> 
+	</td>
+	</tr>
+	</table>
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

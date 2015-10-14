@@ -1,0 +1,136 @@
+
+
+@charset "UTF-8";
+* {
+	padding: 0;
+	margin: 0;
+}
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input,hr {margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6, pre, code, address, caption, cite, code, em, strong, th {font-size:1em; font-weight:normal; font-style:normal;}
+ul,ol {list-style:none;}
+fieldset,img,hr {border:none;}
+caption,th {text-align:left;}
+/* table {border-collapse:collapse; border-spacing:0;} Note: border-collapse cancels shadow in Explorer*/
+table {border-spacing:0; border-collapse: collapse;}
+td {vertical-align:top;}
+img {border: 0;}
+input {cursor: pointer;}
+div {font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, Georgia, sans-serif; line-height: 1.5;} /* line-height:25px; */
+
+
+/* PAGE STYLES */
+
+body {background-color: #E5E5E5;} 
+a{font-weight: bold; color: #0D408D;}
+a:hover {font-weight: bold; color: #0b60a9;}
+.page {margin-top: 10px; background-color: #E5E5E5;  text-align: left; clear: left;}
+.header {height: 73px; background-color: #273872;} 
+.headerline {border-bottom: 2px solid; border-color: #BFBFBF; margin-bottom: 20px;}
+.top_section {padding-bottom: 20px;}
+.vertline {border-left: 1px solid; border-color: #BFBFBF;}
+.hover {background: #ccc}
+
+.h1_blue {font: 36px "Helvetica Neue", Helvetica, Arial, Georgia, sans-serif; color: #0D408D; letter-spacing: 2px;}
+.h1_gray {font:  24px "Helvetica Neue", Helvetica, Arial, Georgia, sans-serif;color: #5c8a8a; letter-spacing: 1px;}
+.h1_title {font: 42px "Helvetica Neue", Helvetica, Arial, Georgia, sans-serif; color: white; letter-spacing: 3px; padding-top: 23px;}
+
+
+.gradient_horizontal {
+	background: #cccccc; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CCCCCC', endColorstr='#999999'); /* for IE */
+	background: -webkit-gradient(linear, center top, center bottom, from(#CCCCCC), to(#999999)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,#CCCCCC,#999999); /* for firefox 3.6+ */ 
+}
+
+
+.gradient_vertical {
+	background: #F0F0F0 ; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CCCCCC', endColorstr='#999999  '); /* for IE */
+	background: -webkit-gradient(linear, center left, center right, from(#CCCCCC), to(#999999  )); /* for webkit browsers */
+	background: -moz-linear-gradient(left,#CCCCCC,#999999  ); /* for firefox 3.6+ */ 
+}
+
+.gradient_vertical2 {
+	background: #F0F0F0 ; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F2F2F2', endColorstr='#D9D9D9  '); /* for IE */
+	background: -webkit-gradient(linear, center left, center right, from(#F2F2F2), to(#D9D9D9)); /* for webkit browsers */
+	background: -moz-linear-gradient(left,#F2F2F2,#D9D9D9); /* for firefox 3.6+ */ 
+}
+
+.box-shadow {
+-moz-box-shadow: 10px 10px 5px #888;
+-webkit-box-shadow: 10px 10px 5px #888;
+box-shadow: 10px 10px 5px #888;
+}
+
+
+
+
+/* BUTTON STYLES */
+.button {
+	font: bold 12px "Helvetica Neue", Helvetica, Arial, Georgia, sans-serif;
+	padding:0 .5em;
+	height:2.0833em;
+	border:1px solid #ccc;
+	color:#000;
+	background:#CCCCCC; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC'); /* for IE */
+	background: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#CCCCCC)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,#FFFFFF,#CCCCCC); /* for firefox 3.6+ */ 
+}
+
+.button:hover{border-color:#999;background:#f3f3f3;background-image:-moz-linear-gradient(top,#ffffff,#ebebeb);background-image:-webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#ebebeb));filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#ffffff,endColorStr=#ebebeb);outline:0;-moz-box-shadow:0 0 3px #999;-webkit-box-shadow:0 0 3px #999;box-shadow:0 0 3px #999}
+
+
+.button2 {
+	font: bold 12px "Helvetica Neue", Helvetica, Arial, Georgia, sans-serif;
+	padding:0 .5em;
+	height:2.0833em;
+	border:1px solid #ccc;
+	color:#000;
+	background:#CCCCCC; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC'); /* for IE */
+	background: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#CCCCCC)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,#FFFFFF,#CCCCCC); /* for firefox 3.6+ */ 
+}
+
+.button2:hover{border-color:#999;background:#f3f3f3;background-image:-moz-linear-gradient(top,#ffffff,#ebebeb);background-image:-webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#ebebeb));filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#ffffff,endColorStr=#ebebeb);outline:0;-moz-box-shadow:0 0 3px #999;-webkit-box-shadow:0 0 3px #999;box-shadow:0 0 3px #999}
+
+/* PROGRESS BAR STYLES */
+.progress_bar {padding-top: 15px}
+.border_bar {  
+	border-top: 1px solid #d8d8d8; 
+	border-bottom: 2px solid #d8d8d8; 
+	border-left: 1px solid #d8d8d8; 
+	border-right: 2px solid #d8d8d8; 
+	padding-top: 1px; 
+	height: 15px;
+	background:#CCCCCC; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC'); /* for IE */
+	background: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#CCCCCC)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,#FFFFFF,#CCCCCC); /* for firefox 3.6+ */ 
+
+}
+.bar_text {font: 12px Helvetica, Arial, Georgia, sans-serif; *font-size:small; float: left;}
+
+.blue_bar {
+	height: 6px;
+	background:#669999; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CCCCCC', endColorstr='#669999'); /* for IE */
+	background: -webkit-gradient(linear, center top, center bottom, from(#CCCCCC), to(#669999)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,#CCCCCC,#669999); /* for firefox 3.6+ */ 
+}
+
+/*IMAGE ROTATOR FOR ENTRY PAGE */
+#rotating-item-wrapper {
+	position: relative;
+	width: 450px;
+	height: 338px;
+	border: 1px solid #ccc;
+}
+.rotating-item {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+}

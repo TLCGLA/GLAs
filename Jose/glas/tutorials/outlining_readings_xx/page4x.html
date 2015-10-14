@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script> 
+$(document).ready(function(){
+ 
+	//Hide (Collapse) the toggle containers on load
+	$(".toggle_container").hide(); 
+ 
+	//Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
+	$("div.trigger").click(function(){
+		$(this).toggleClass("active").next().slideToggle("slow");
+		return false; //Prevent the browser jump to the link anchor
+	});
+ 
+});
+</script>
+
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 8;
+$(".button1").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click')  .addClass ("turnedOff")
+	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"}) 
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	if (i == x) {$('.button1').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click')  .addClass ("turnedOff")
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+	$(this).css ({"color": "red", "font-weight": "normal"})
+ 
+	});
+ 
+});
+ 
+ 
+</script>
+
+<style type="text/css"> 
+.toggle_container {
+	margin: 0 0 5px;
+	padding: 0;
+	border-width: 1px;
+	border-color: #BFBFBF;
+	background-color: #f0f0f0;
+	overflow: hidden;
+	clear: both;
+}
+.toggle_container .block {
+	padding: 20px; /*--Padding of Container--*/
+}
+.button_css {
+	font: bold 12px "Helvetica Neue", Helvetica, Arial, Georgia, sans-serif;
+	padding:0 .5em;
+	height:2.0833em;
+	border:1px solid #ccc;
+	color:#000;
+	background:#CCCCCC; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC'); /* for IE */
+	background: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#CCCCCC)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,#FFFFFF,#CCCCCC); /* for firefox 3.6+ */ 
+}
+ 
+.button_css:hover{
+	border-color:#999;
+	background:#f3f3f3;
+	background-image:-moz-linear-gradient(top,#ffffff,#ebebeb);
+	background-image:-webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#ebebeb));
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#ffffff,endColorStr=#ebebeb);
+	outline:0;-moz-box-shadow:0 0 3px #999;-webkit-box-shadow:0 0 3px #999;box-shadow:0 0 3px #999;
+	}
+.trigger {
+		padding: 5px;
+		border: 1px solid #BFBFBF;
+		background-color: white;
+		/* border-bottom: 2px solid #BFBFBF;*/ 
+
+		}
+#questions {margin-bottom: 10px; }
+#questions2 {margin-bottom: 3px;}
+.column1 {width: 180px;}
+.column2 {padding-right: 20px;}
+.item {padding-left: 10px; width: 850px;}
+.right, .wrong {cursor: pointer;}
+.right:hover, .wrong:hover {background: #ccc;}
+.letter {padding-right: 10px;}
+.turnedOff {color: gray}
+.text_box {width: 90%; border: 1px solid #BFBFBF; background-color: #f0f0f0; padding: 5px;"}
+.block p {margin-bottom: 20px;}
+</style>
+
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	Read the following passage and answer the questions below. After you get at least 8 correct answers, a button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page5.html"></a></td>
+	</tr>
+	</table>
+</div>
+<div class="trigger">
+<span style="padding-right: 20px;"><strong>Reading:</strong> Click on the buttons to view the text.</span>
+<a href="#"><input type="button" class="button_css"  value="Show" style="width: 80px;"></a>
+<a href="#"><input type="button" class="button_css"  value="Hide" style="width: 80px;"></a>
+</div>
+
+<div class="toggle_container">
+	<div class="block">
+<p>Effective writing involves making conscious choices with words. When you prepare to sit down to write your first draft, 
+you likely have already completed some freewriting exercises, chosen your topic, developed your thesis statement, written 
+an outline, and even selected your sources. When it is time to write your first draft, start to consider which words to use 
+to best convey your ideas to the reader.</p>
+
+<p>
+Some writers are picky about word choice as they start drafting. They may practice some specific strategies, such as using 
+a dictionary and thesaurus, using words and phrases with proper connotations, and avoiding slang, clich&eacute;s, and overly general words.
+Once you understand these tricks of the trade, you can move ahead confidently in writing your assignment. Remember, the skill 
+and accuracy of your word choice is a major factor in developing your writing style. Precise selection of your words will help 
+you be more clearly understood --in both writing and speaking.</p>
+
+<p><u>Using a Dictionary and Thesaurus</u></p>
+<p>Even professional writers need help with the meanings, spellings, pronunciations, and uses of particular words. In fact, they rely on dictionaries to help them write better. No one knows every word in the English language and their multiple uses and meanings, so all writers, from novices to professionals, can benefit from the use of dictionaries.
+</p>
+<p>Most dictionaries provide the following information:
+          <ul>
+            <li><u>Spelling.</u> How the word and its different forms are spelled.</li>
+            <li><u>Pronunciation.</u> How to say the word.</li>
+            <li><u>Part of speech.</u> The function of the word.</li>
+            <li><u>Definition.</u> The meaning of the word.</li>
+            <li><u>Synonyms.</u> Words that have similar meanings.</li>
+            <li><u>Etymology.</u> The history of the word.</li>
+          </ul>
+          </p>
+<p></p>
+<p>(adapted fromcatalog.flatworldknowledge.com)</p>
+
+	</div>
+</div>
+<br>
+<div class="exercise">
+	<table width="100%" border="0">
+	
+	<tr>
+	<td valign="top" width="80%"><div class="exercise_instructions">Select the <font class="correct_number">CORRECT</font> answers by clicking on them.</div>
+	</td>
+	<td class="column2"><div class="your_score">Your Score:</div></td>
+	</tr>
+	<tr><td valign="top" width="80%">
+ 		<table id="questions" border=0>
+		<tr><td><div class="number">1.</div></td><td>
+		<div class="item">Identify the topic sentence of the first paragraph. What is the paragraph about?<br>
+		<span class="letter">a.</span><span class="wrong">writing resources <span id="feedback"></span></span><br>
+		<span class="letter">b.</span><span class="right">word choice <span id="feedback"></span></span><br>
+		<span class="letter">c.</span><span class="wrong">your first draft <span id="feedback"></span></span><br>
+		<span class="letter">d.</span><span class="wrong">writing <span id="feedback"></span></span>
+		</div>
+		</td></tr></table>	
+
+		<table id="questions" border=0>
+		<tr><td><div class="number">2.</div></td><td>
+		<div class="item">One of the subtopics related to word choice strategies in the second paragraph is...<br>
+		<span class="letter">a.</span><span class="wrong">pronunciation <span id="feedback"></span></span><br>
+		<span class="letter">b.</span><span class="wrong">etymology <span id="feedback"></span></span><br>
+		<span class="letter">c.</span><span class="wrong">choosing a topic <span id="feedback"></span></span><br>
+		<span class="letter">d.</span><span class="right">avoiding slang <span id="feedback"></span></span>
+		</div>
+		</td></tr></table>
+		
+
+		<table id="questions" border=0>
+		<tr><td><div class="number">3.</div></td><td>
+		<div class="item">One of the following sentences is the conclusion of the passage.  Can you find it?<span id="feedback"></span></span><br>
+		<span class="letter">a.</span><span class="wrong">Some writers are picky about word choice as they start drafting.<span id="feedback"></span></span><br>
+		<span class="letter">b.</span><span class="wrong">Remember, the skill and accuracy of your word choice is a major factor in developing your writing style.<span id="feedback"></span></span><br>
+		<span class="letter">c.</span><span class="right">Precise selection of your words will help you be more clearly understood --in both writing and speaking.<span id="feedback"></span></span><br>
+		<span class="letter">d.</span><span class="wrong">Even professional writers need help with the meanings, spellings, pronunciations, and uses of particular words.<span id="feedback"></span></span>
+		</div>
+		</td></tr></table>
+		
+
+		<table id="questions" border=0>
+		<tr><td><div class="number">4.</div></td><td>
+		<div class="item">How will a dictionary and thesaurus help you improve your word choice? In the paragraph below, select the sentence related 
+		to this point by clicking on it.
+		<p class="text_box">
+		<span class="right">Even professional writers need help with the meanings, spellings, pronunciations, and uses of particular words.</span>
+		<span class="wrong">In fact, they rely on dictionaries to help them write better. </span>
+		<span class="wrong">No one knows every word in the English language and their multiple uses and meanings, so all writers, from novices 
+		to professionals, can benefit from the use of dictionaries.</span>
+		</p>
+		</div></td></tr></table>
+
+		<table id="questions" border=0>
+		<tr><td><div class="number">5.</div></td>
+		<td><div class="item">Look at the list at the end of the passage and look for keywords.  Then, click on one word from each definition 
+		that will remind you of each meaning.<br>
+			<table id="questions2">
+			<tr><td class="column1"><span class="letter">a.</span><span>Spelling:</span></td>
+			<td>
+			<span class="wrong column2">history<span id="feedback"></span></span>
+			<span class="wrong column2">similar<span id="feedback"></span></span>	
+			<span class="wrong column2">say<span id="feedback"></span></span>
+			<span class="wrong column2">function<span id="feedback"></span></span>
+			<span class="wrong column2">meaning<span id="feedback"></span></span>
+			<span class="right column2">spell<span id="feedback"></span></span> 
+			</td>
+			</tr></table>
+		
+			<table id="questions2"><tr>
+			<td class="column1"><span class="letter">b.</span><span>Pronunciation:</span></td>
+			<td>
+			<span class="wrong column2">history<span id="feedback"></span></span>
+			<span class="wrong column2">similar<span id="feedback"></span></span>
+			<span class="right column2">say<span id="feedback"></span></span>
+			<span class="wrong column2">function<span id="feedback"></span></span>
+			<span class="wrong column2">meaning<span id="feedback"></span></span>
+			<span class="wrong column2">spell<span id="feedback"></span></span>
+			</td>
+			</tr></table>
+		
+			<table id="questions2">
+			<tr><td class="column1"><span class="letter">c.</span><span>Part of speech:</span></td>
+			<td>
+			<span class="wrong column2">history<span id="feedback"></span></span>
+			<span class="wrong column2">similar<span id="feedback"></span></span>
+			<span class="wrong column2">say<span id="feedback"></span></span>
+			<span class="right column2">function<span id="feedback"></span></span>
+			<span class="wrong column2">meaning<span id="feedback"></span></span>
+			<span class="wrong column2">spell<span id="feedback"></span></span>
+			</td>
+			</tr></table>
+		
+			<table id="questions2">
+			<tr><td class="column1"><span class="letter">d.</span><span>Definition:</span></td>
+			<td>
+			<span class="wrong column2">history<span id="feedback"></span></span>
+			<span class="wrong column2">similar<span id="feedback"></span></span>
+			<span class="wrong column2">say<span id="feedback"></span></span>
+			<span class="wrong column2">function<span id="feedback"></span></span>
+			<span class="right column2">meaning<span id="feedback"></span></span>
+			<span class="wrong column2">spell<span id="feedback"></span></span>
+			</td>
+			</tr></table>
+	
+			<table id="questions2">
+			<tr><td class="column1"><span class="letter">e.</span><span>Synonyms:</span></td>
+			<td>
+			<span class="wrong column2">history<span id="feedback"></span></span>
+			<span class="right column2">similar<span id="feedback"></span></span>	
+			<span class="wrong column2">say<span id="feedback"></span></span>
+			<span class="wrong column2">function<span id="feedback"></span></span>
+			<span class="wrong column2">meaning<span id="feedback"></span></span>
+			<span class="wrong column2">spell<span id="feedback"></span></span>
+			</td>
+			</tr></table>
+	
+			<table id="questions2">
+			<tr><td class="column1"><span class="letter">f.</span><span>Etymology:</span></td>
+			<td>
+			<span class="right column2">history<span id="feedback"></span></span>
+			<span class="wrong column2">similar<span id="feedback"></span></span>	
+			<span class="wrong column2">say<span id="feedback"></span></span>
+			<span class="wrong column2">function<span id="feedback"></span></span>
+			<span class="wrong column2">meaning<span id="feedback"></span></span>
+			<span class="wrong column2">spell<span id="feedback"></span></span>
+			</td>
+			</tr></table>
+	</div></td></tr></table>
+	</td>
+	<td align="center">
+		<div id="counter" class="background_score"></div> 
+	</td>
+	</tr>
+	</table>
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

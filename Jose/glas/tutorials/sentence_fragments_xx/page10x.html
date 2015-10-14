@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 7;
+$(".button1").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"}) 
+	if (i == x) {$('.button1').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).css ({"color": "red", "font-weight": "normal"})
+ 	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+	});
+ 
+});
+ 
+ 
+</script>
+
+
+<style>
+.right, .wrong {cursor: pointer; padding-left: 10px; width: 700px;}
+.right:hover, .wrong:hover {background: #ccc;}
+ 
+
+
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	Some of the sentences below have coordinating conjunctions.  Can you find them?   After you get at all the right answers, a 
+	button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page11.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table width="100%" border="0">
+	<tr>
+	<td valign="top" width="80%"><div class="exercise_instructions">
+		Identify the <font class="correct_number">SENTENCES WITH COORDINATING CONJUNCTIONS</font> by clicking on them.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	<tr>
+	<td valign="top" width="80%">
+ 		<table class="questions_table">
+		<tr><td><div class="number">1.</div></td><td>
+		<div class="wrong">They discussed the problem while driving home.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">2.</div></td><td>
+		<div class="right">I had to fire him, for he was not trustworthy.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">3.</div></td><td>
+		<div class="wrong">The company fired him as a result of his error.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">4.</div></td><td>
+		<div class="right">The government raised taxes, and gave the money to corporations.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">5.</div></td><td>
+		<div class="right">Carlos wanted to go, but he had to study.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">6.</div></td><td>
+		<div class="wrong">We completed the assingment, then we made copies.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">7.</div></td><td>
+		<div class="wrong">I wanted to buy it, however, it was too expensive for me.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">8.</div></td><td>
+		<div class="right">Neither borrow, nor lend money to avoid problems.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">9.</div></td><td>
+		<div class="wrong">They had to move as a result of the economic situation.<span id="feedback"></span></div></td></tr>	
+		<tr><td><div class="number">10.</div></td><td>
+		<div class="right">We either walked, or went for a swim in the mornings.<span id="feedback"></span></div></td></tr>
+				<tr><td><div class="number">11.</div></td><td>
+		<div class="right">The door was closed, so we left a note.<span id="feedback"></span></div></td></tr>
+				<tr><td><div class="number">12.</div></td><td>
+		<div class="right">I wanted to believe Mark, yet something told me he was lying.<span id="feedback"></span></div></td></tr>
+		</table>
+ 	</td>
+	<td align="center">
+		<div id="counter" class="background_score"></div> 
+	</td>
+	</tr>
+	</table>
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>
