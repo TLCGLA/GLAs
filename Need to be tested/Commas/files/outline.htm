@@ -1,0 +1,989 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 14">
+<link id=Main-File rel=Main-File href="../comma.htm">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.htm');" id=PPTL1>COMMA USE</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The Learning Center</li>
+   <li>College of the Canyons</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.htm');" id=PPTL2>AGENDA</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>This workshop will cover the six different uses of the comma:</li>
+   <li>To create a list</li>
+   <li>To join two sentences with a conjunction</li>
+   <li>To introduce information and quotations</li>
+   <li>To interrupt the flow of a sentence</li>
+   <li>To use with some adjectives</li>
+   <li>To use with dates, numbers, titles, etc.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0007.htm');" id=PPTL3>MYTH BUSTING</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>You may have been told to add a comma to a sentence whenever you
+       pause.<span style='mso-spacerun:yes'>  </span>This technique is not the
+       most effective.</li>
+   <li>Different people pause in different places when they speak out
+       loud.<span style='mso-spacerun:yes'>  </span>Does this mean we all have
+       our own comma rules?</li>
+   <li>Of course not!</li>
+   <li>Instead of trying to find the places you pause, learn the correct rules
+       for comma use.<span style='mso-spacerun:yes'>  </span>This will help you
+       properly place a comma every time!</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.htm');" id=PPTL4>USE 1:<span
+  style='mso-spacerun:yes'>  </span>TO CREATE A LIST</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0006.htm');" id=PPTL5>WHEN TO USE A COMMA IN A
+  LIST</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Use a comma when listing three or more things in a series.</li>
+   <li>Examples:</li>
+   <li>Maddie made a quick to-do list in her head.<span
+       style='mso-spacerun:yes'>  </span>She has to go to school, print out her
+       paper, and read a chapter in the next fifteen minutes!</li>
+   <li>Jerry just signed his first record deal.<span style='mso-spacerun:yes'> 
+       </span>He’s already thinking about his future projects: touring Asia
+       with his band, making a multimillion dollar music video, and performing
+       a duet with Taylor Swift at the Grammys.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0008.htm');" id=PPTL6>DO NOT USE A COMMA IF
+  YOUR LIST ONLY HAS TWO ITEMS</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Example:</li>
+   <li>Chris ordered his pizza with mushrooms and extra cheese.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0009.htm');" id=PPTL7>OXFORD COMMA</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Grammar enthusiasts debate whether or not we should use the Oxford Comma
+       (the comma before “and” in a list).</li>
+   <li>Often, the Oxford Comma ensures that a sentence’s meaning is clear.</li>
+   <li>Example:</li>
+   <li>Without Oxford Comma:<span style='mso-spacerun:yes'>  </span>Highlights
+       of Cara’s global tour include meeting the Queen’s head butler, a world
+       class cliff diver and an enthusiastic interpretive dancer.</li>
+   <li>With Oxford Comma:<span style='mso-spacerun:yes'>  </span>Highlights of
+       Cara’s global tour include meeting the Queen’s head butler, a world
+       class cliff diver, and an enthusiastic interpretive dancer.</li>
+   <li>Without the Oxford comma, it isn’t clear that we’re discussing three
+       different people.<span style='mso-spacerun:yes'>  </span>Instead, it
+       sounds like the butler is also a cliff diver and dancer.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0011.htm');" id=PPTL8>USE 2:<span
+  style='mso-spacerun:yes'>  </span>TO JOIN TWO SENTENCES WITH A CONJUNCTION</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0012.htm');" id=PPTL9>TO USE A COMMA AS A
+  JOINER</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Use a comma and a coordinating conjunction to join two simple sentences.</li>
+   <li>Each of the sentences must have a subject and a verb.</li>
+   <li>Each of the sentences must make sense on its own</li>
+   <li>The coordinating conjunctions are:</li>
+   <ul>
+    <li>For</li>
+    <li>And</li>
+    <li>Nor</li>
+    <li>But</li>
+    <li>Or<br>
+                Yet</li>
+    <li>So</li>
+   </ul>
+   <li>You can remember them with the acronym FANBOYS</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0013.htm');" id=PPTL10>EXAMPLES</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Jorge was convinced the house was haunted, but no one else ever saw the
+       ghost.</li>
+   <li>Mei’s mother thought she should study abroad for a semester, but Mei was
+       nervous about being away from home for so long.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0014.htm');" id=PPTL11>THE COMMA SPLICE</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Comma splices occur when writers use only a comma to connect two
+       sentences.<span style='mso-spacerun:yes'>  </span>This is a grammatical
+       error.<span style='mso-spacerun:yes'>  </span>You must use both a comma
+       and a FANBOYS to connect the sentences.</li>
+   <br>
+   <br>
+   <li>Incorrect:<span style='mso-spacerun:yes'>  </span>Walter was concerned
+       about his health care, he was worried about what would happen to his
+       family if he got sick.</li>
+   <li>Correct:<span style='mso-spacerun:yes'>  </span>Walter was concerned
+       about his health care, and he was worried about what would happen to his
+       family if he got sick.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0032.htm');" id=PPTL12>CHECK FOR UNDERSTANDING
+  #1</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 2 of your handout, complete the first check for understanding.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0016.htm');" id=PPTL13>USE 3:<span
+  style='mso-spacerun:yes'>  </span>TO INTRODUCE INFORMATION AND QUOTATIONS</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0017.htm');" id=PPTL14>USE A COMMA FOR
+  INTRODUCTORY CLAUSES</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Use a comma after an introductory clause.<span
+       style='mso-spacerun:yes'>  </span>An introductory clause is a dependent
+       clause that provide background information for the rest of the sentence.</li>
+   <li>Introductory clauses start with adverbs like: after, although, as,
+       because, before, if, since, though, until, when, etc.</li>
+   <li>Examples:</li>
+   <li>Before going to The Learning Center, you must get a student ID card.</li>
+   <li>If you are a vegetarian, you can make the sauce without meat.</li>
+   <li>Note:<span style='mso-spacerun:yes'>  </span>If the dependent clause
+       comes at the end of the sentence, you don’t need a comma.</li>
+   <li>Example:<span style='mso-spacerun:yes'>  </span>You must getting a
+       student ID card before going to The Learning Center.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0021.htm');" id=PPTL15>USE A COMMA FOR
+  INTRODUCTORY PHRASES</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Use a comma after an introductory phrase.<span
+       style='mso-spacerun:yes'>  </span>An introductory phrase is not a
+       complete clause, but still provides background information for the rest
+       of the sentence.</li>
+   <li>Introductory phrases do not have a subject or verb that are different
+       from the main sentence.</li>
+   <br>
+   <br>
+   <li>Examples:</li>
+   <li>To prepare for a speech, it is important to practice in front of friends
+       or family.</li>
+   <li>A curious child who loves staring at the stars, Mario dreams of becoming
+       an astronaut when he grows up.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0020.htm');" id=PPTL16>USE A COMMA FOR
+  INTRODUCTORY WORDS</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Sometimes, we use single words to help make the transition from one
+       sentence to the next.<span style='mso-spacerun:yes'>  </span>Use a comma
+       after those words</li>
+   <li>Introductory words include:<span style='mso-spacerun:yes'> 
+       </span>however, still, furthermore, and meanwhile</li>
+   <li>Examples:</li>
+   <li>Meanwhile, the police were already tracking the bank robber’s getaway
+       vehicle.</li>
+   <li>Furthermore, changing to native, drought-tolerant landscaping may
+       attract birds and butterflies to your garden.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0019.htm');" id=PPTL17>USE A COMMA TO
+  INTRODUCE QUOTATIONS</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Use a comma between a signal phrase and a quote</li>
+   <li>Examples:</li>
+   <li>A famous ad campaign that began in the 1990’s asked, “Got milk?”</li>
+   <li>“Brevity is the soul of wit,” declared Polonius.</li>
+   <br>
+   <br>
+   <li>Don’t use a comma if the quotation is introduced with “that.”</li>
+   <li>Example:<span style='mso-spacerun:yes'>  </span>The driver the officer
+       pulled over claimed that “the speed limit wasn’t posted anywhere.”</li>
+   <br>
+   <br>
+   <li>Don’t use a comma if the quote ends with a question mark or explanation
+       point.</li>
+   <li>Example:<span style='mso-spacerun:yes'>  </span>“We’re getting married!”
+       Bethany squealed with glee.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0023.htm');" id=PPTL18>USE 4:<span
+  style='mso-spacerun:yes'>  </span>TO INTERRUPT THE FLOW OF THE SENTENCE</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0024.htm');" id=PPTL19>A MID-SENTENCE
+  INTERRUPTION</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Use TWO commas with words and phrases that interrupt the flow of the
+       sentence or provide additional information.</li>
+   <br>
+   <br>
+   <li>Examples:</li>
+   <li>Gilroy, located in central California, holds a garlic festival every
+       year.</li>
+   <li>Lorena, a strong writer, gets nervous when she has to read her work out
+       loud.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0025.htm');" id=PPTL20>AN INTERRUPTER AT THE
+  END OF A SENTENCE</a></font></div>
+  <div id=PPTC20 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When the interruption comes at the end of the sentence, use only one
+       comma.</li>
+   <br>
+   <br>
+   <li>Examples:</li>
+   <li>Roman couldn’t wait to visit Sarah, his best friend from elementary
+       school.</li>
+   <li>Leila visited the zoo to see the California condors, an endangered
+       species.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0026.htm');" id=PPTL21>WHEN NOT TO USE A COMMA</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Don’t use commas if the sentence loses important meaning when you take
+       out the interrupter.</li>
+   <li>Incorrect:<span style='mso-spacerun:yes'>  </span>The drunk driver, who
+       hit me, should lose his license.</li>
+   <li>Correct:<span style='mso-spacerun:yes'>  </span>The drunk driver who hit
+       me should lose his license.</li>
+   <br>
+   <br>
+   <li>Don’t use a comma to separate the subject from its verb.</li>
+   <li>Incorrect:<span style='mso-spacerun:yes'>  </span>The girl who always
+       wears blue, has chicken pox and will be absent all week.</li>
+   <li>Correct:<span style='mso-spacerun:yes'>  </span>The girl who always
+       wears blue has chicken pox and will be absent all week.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0033.htm');" id=PPTL22>CHECK FOR UNDERSTANDING
+  #2</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 4 of your handout, complete the second check for understanding.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0028.htm');" id=PPTL23>USE 5:<span
+  style='mso-spacerun:yes'>  </span>TO USE WITH SOME ADJECTIVES</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0029.htm');" id=PPTL24>WHEN ADJECTIVES CAN
+  SWITCH</a></font></div>
+  <div id=PPTC24 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>If you can switch the order of two adjectives without changing the
+       meaning, you need to use a comma.</li>
+   <br>
+   <br>
+   <li>Examples:</li>
+   <li>The brown recluse spider is a terrifying, deadly arachnid.</li>
+   <li>The brown recluse spider is a deadly, terrifying arachnid.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0030.htm');" id=PPTL25>WHEN ADJECTIVES CAN’T
+  SWITCH</a></font></div>
+  <div id=PPTC25 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>If you cannot switch the order of the adjectives, you do not need a
+       comma.</li>
+   <br>
+   <br>
+   <li>Incorrect:<span style='mso-spacerun:yes'>  </span>The hot, pink
+       legwarmers were the perfect final touch for Shelly’s ‘80’s party
+       costume.</li>
+   <li>Correct:<span style='mso-spacerun:yes'>  </span>The hot pink legwarmers
+       were the perfect final touch for Shelly’s ‘80’s party costume.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0031.htm');" id=PPTL26>USE 6:<span
+  style='mso-spacerun:yes'>  </span>TO USE WITH DATES, NUMBERS, TITLES, ETC.</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0035.htm');" id=PPTL27>IN DATES</a></font></div>
+  <div id=PPTC27 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Use a comma between the day of the month and the year.</li>
+   <br>
+   <br>
+   <li>Example:</li>
+   <li>February 14, 2010</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>28</font></div>
+  </td>
+  <td>
+  <div id=PPTP28 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0038.htm');" id=PPTL28>IN NUMBERS</a></font></div>
+  <div id=PPTC28 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Use a comma between every three digits before the decimal point.</li>
+   <li>Example: <span style='mso-spacerun:yes'> </span>I’d like to sell my car
+       for $10,403.</li>
+   <br>
+   <br>
+   <li>Note:<span style='mso-spacerun:yes'>  </span>You don’t have to use a
+       comma for years.</li>
+   <li>Example:<span style='mso-spacerun:yes'>  </span>I bought the car in
+       2009.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>29</font></div>
+  </td>
+  <td>
+  <div id=PPTP29 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0036.htm');" id=PPTL29>IN PLACE NAMES</a></font></div>
+  <div id=PPTC29 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Use a comma between the city and state</li>
+   <li>Example:<span style='mso-spacerun:yes'>  </span>College of the Canyons
+       is located in Valencia, CA.</li>
+   <br>
+   <br>
+   <li>Use a comma between the city and country</li>
+   <li>Example:<span style='mso-spacerun:yes'>  </span>Iris plans to study in
+       Rome, Italy this summer.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>30</font></div>
+  </td>
+  <td>
+  <div id=PPTP30 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0037.htm');" id=PPTL30>IN TITLES</a></font></div>
+  <div id=PPTC30 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Use a comma between a person’s name and their title (if the title
+       appears at the end of his/her name).</li>
+   <br>
+   <br>
+   <li>Examples:</li>
+   <li>My favorite TV doctor is Doogie Howser, MD.</li>
+   <li>I look forward to the day I can sign my name Cameron Jones, PhD.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>31</font></div>
+  </td>
+  <td>
+  <div id=PPTP31 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0034.htm');" id=PPTL31>CHECK FOR UNDERSTANDING
+  #3</a></font></div>
+  <div id=PPTC31 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 5 of your handout, complete the third check for understanding.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>32</font></div>
+  </td>
+  <td>
+  <div id=PPTP32 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0039.htm');" id=PPTL32>IF YOU LIKED THIS
+  LESSON AND WOULD LIKE MORE INFORMATION, CONSIDER ATTENDING:</a></font></div>
+  <div id=PPTC32 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Comma Splices</li>
+   <li>Run-Ons</li>
+   <li>Proofreading</li>
+   <br>
+   <br>
+   <br>
+   <li>Why should you come back?</li>
+   <li>Students completing Supplemental Learning Activities had a
+       10%&nbsp;higher success rate across the disciplines, a 21% higher
+       success rate in Math, and a 49% higher success rate in English courses.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>33</font></div>
+  </td>
+  <td>
+  <div id=PPTP33 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0004.htm');" id=PPTL33>ACTIVITY AND REFLECTION</a></font></div>
+  <div id=PPTC33 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Complete the Activity and Reflection that starts on page 5 of your
+       handout.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master15.htm></a><a href=master15.xml></a><a
+href=preview.wmf></a><a href=master27.htm></a><a href=master27.xml></a><a
+href=master28.htm></a><a href=master28.xml></a><a href=master29.htm></a><a
+href=master29.xml></a><a href=pres.xml></a><a href=slide0001.htm></a><a
+href="master27_image001.png"></a><a href="slide0001_image002.jpg"></a><a
+href=slide0002.htm></a><a href="master15_image003.png"></a><a
+href=slide0007.htm></a><a href=slide0003.htm></a><a href=slide0006.htm></a><a
+href=slide0008.htm></a><a href=slide0009.htm></a><a href=slide0011.htm></a><a
+href=slide0012.htm></a><a href=slide0013.htm></a><a href=slide0014.htm></a><a
+href=slide0032.htm></a><a href=slide0016.htm></a><a href=slide0017.htm></a><a
+href=slide0021.htm></a><a href=slide0020.htm></a><a href=slide0019.htm></a><a
+href=slide0023.htm></a><a href=slide0024.htm></a><a href=slide0025.htm></a><a
+href=slide0026.htm></a><a href=slide0033.htm></a><a href=slide0028.htm></a><a
+href=slide0029.htm></a><a href=slide0030.htm></a><a href=slide0031.htm></a><a
+href=slide0035.htm></a><a href=slide0038.htm></a><a href=slide0036.htm></a><a
+href=slide0037.htm></a><a href=slide0034.htm></a><a href=slide0039.htm></a><a
+href="slide0039_image004.jpg"></a><a href=slide0004.htm></a><a
+href="master15_stylesheet.css"></a><a href=font004.eot></a><a href=font005.eot></a><a
+href=font006.eot></a><a href=font007.eot></a><a href="master27_stylesheet.css"></a><a
+href=font004.eot></a><a href=font005.eot></a><a href=font006.eot></a><a
+href=font007.eot></a><a href="master28_stylesheet.css"></a><a href=font004.eot></a><a
+href=font005.eot></a><a href=font006.eot></a><a href=font007.eot></a><a
+href="master29_stylesheet.css"></a><a href=font004.eot></a><a href=font005.eot></a><a
+href=font006.eot></a><a href=font007.eot></a><a href=script.js></a><a
+href="../comma.htm"></a><a href=fullscreen.htm></a><a href=buttons.gif></a><a
+href=frame.htm></a><a href=outline.htm></a></div>
+
+</body>
+
+</html>
