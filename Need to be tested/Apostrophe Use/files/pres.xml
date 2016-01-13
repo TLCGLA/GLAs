@@ -1,0 +1,101 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <p:presentation sizeof="custom" slidesizex="7680" gridspacingx="49152"
+  gridspacingy="49152" subsetembed="1">
+  <p:master id="27" slidesn="0,0" type="main" href="master27.htm"
+   xmlhref="master27.xml" template="Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="39" slidesn="0,0" type="main" href="master39.htm"
+   xmlhref="master39.xml" template="1_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="40" slidesn="0,0" type="main" href="master40.htm"
+   xmlhref="master40.xml" template="2_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="41" slidesn="0,0" type="main" href="master41.htm"
+   xmlhref="master41.xml" template="3_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="42" slidesn="0,0" type="main" href="master42.htm"
+   xmlhref="master42.xml" template="4_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="43" slidesn="0,0" type="main" href="master43.htm"
+   xmlhref="master43.xml" template="5_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="44" slidesn="0,0" type="main" href="master44.htm"
+   xmlhref="master44.xml" template="6_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="45" slidesn="0,0" type="main" href="master45.htm"
+   xmlhref="master45.xml" template="7_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="46" slidesn="0,0" type="main" href="master46.htm"
+   xmlhref="master46.xml" template="8_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="47" slidesn="0,0" type="main" href="master47.htm"
+   xmlhref="master47.xml" template="9_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:slide id="1" slidesn="0,0" href="slide0001.htm" masterhref="master39.htm"/>
+  <p:slide id="2" slidesn="0,0" href="slide0002.htm" masterhref="master40.htm"/>
+  <p:slide id="3" slidesn="0,0" href="slide0003.htm" masterhref="master41.htm"/>
+  <p:slide id="4" slidesn="0,0" href="slide0004.htm" masterhref="master40.htm"/>
+  <p:slide id="6" slidesn="0,0" href="slide0006.htm" masterhref="master42.htm"/>
+  <p:slide id="5" slidesn="0,0" href="slide0005.htm" masterhref="master40.htm"/>
+  <p:slide id="7" slidesn="0,0" href="slide0007.htm" masterhref="master40.htm"/>
+  <p:slide id="9" slidesn="0,0" href="slide0009.htm" masterhref="master40.htm"/>
+  <p:slide id="10" slidesn="0,0" href="slide0010.htm" masterhref="master40.htm"/>
+  <p:slide id="8" slidesn="0,0" href="slide0008.htm" masterhref="master40.htm"/>
+  <p:slide id="11" slidesn="0,0" href="slide0011.htm" masterhref="master40.htm"/>
+  <p:slide id="12" slidesn="0,0" href="slide0012.htm" masterhref="master40.htm"/>
+  <p:slide id="13" slidesn="0,0" href="slide0013.htm" masterhref="master40.htm"/>
+  <p:slide id="14" slidesn="0,0" href="slide0014.htm" masterhref="master41.htm"/>
+  <p:slide id="15" slidesn="0,0" href="slide0015.htm" masterhref="master40.htm"/>
+  <p:slide id="16" slidesn="0,0" href="slide0016.htm" masterhref="master40.htm"/>
+  <p:slide id="17" slidesn="0,0" href="slide0017.htm" masterhref="master40.htm"/>
+  <p:slide id="18" slidesn="0,0" href="slide0018.htm" masterhref="master40.htm"/>
+  <p:slide id="19" slidesn="0,0" href="slide0019.htm" masterhref="master40.htm"/>
+  <p:slide id="20" slidesn="0,0" href="slide0020.htm" masterhref="master40.htm"/>
+  <p:slide id="21" slidesn="0,0" href="slide0021.htm" masterhref="master40.htm"/>
+  <p:slide id="22" slidesn="0,0" href="slide0022.htm" masterhref="master40.htm"/>
+  <p:slide id="23" slidesn="0,0" href="slide0023.htm" masterhref="master40.htm"/>
+  <p:slide id="24" slidesn="0,0" href="slide0024.htm" masterhref="master40.htm"/>
+  <p:slide id="25" slidesn="0,0" href="slide0025.htm" masterhref="master40.htm"/>
+  <p:slide id="26" slidesn="0,0" href="slide0026.htm" masterhref="master40.htm"/>
+  <p:slide id="27" slidesn="0,0" href="slide0027.htm" masterhref="master40.htm"/>
+  <p:viewstate type="slideView" nosnaptogrid="t" notestextscale="1"
+   restoredleft="150" restoredtop="946" horizbarstate="2" manualadjustleft="t"
+   hideoutlineicons="t"/>
+  <p:pptdocumentsettings framecolors="WhiteTextOnBlack" hideslideanimation="t"
+   browsersupport="v4"/>
+ </p:presentation>
+ <o:shapedefaults v:ext="edit" spidmax="37892"/>
+</xml>
