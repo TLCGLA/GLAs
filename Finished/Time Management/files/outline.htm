@@ -1,0 +1,1549 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 14">
+<link id=Main-File rel=Main-File href="../TimeManagementGLA.htm">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.htm');" id=PPTL1>TIME MANAGEMENT</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>College of the Canyons</li>
+   <li>The Learning Center</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.htm');" id=PPTL2>Agenda</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>This workshop will cover…</li>
+   <li>Goal Setting</li>
+   <li>Prioritizing</li>
+   <li>Multitasking</li>
+   <li>Procrastination</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0036.htm');" id=PPTL3>Objectives</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Students will develop time management strategies to help them complete
+       tasks successfully.</li>
+   <li>Students will explain how to avoid the pitfalls of poor time management.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0004.htm');" id=PPTL4>Pre-Workshop Activity</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 1 of your handout, answer the Pre-Workshop Activity questions.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0005.htm');" id=PPTL5>Time Management
+  Overview:<span style='mso-spacerun:yes'>  </span>How Much Time Do We Have?</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Everyone has 24 hours a day, 7 days a week.</li>
+   <li>This makes a budget of 168 hours each week.</li>
+   <li>168 hours may seem like a lot of time.<span style='mso-spacerun:yes'> 
+       </span>BUT…</li>
+   <ul>
+    <li>If you sleep 8 hours a day (56 hours a week), you have 112 hours left</li>
+    <li>And, if you are taking 12 units (about 12 hours a week),<span
+        style='mso-spacerun:yes'>  </span>you have 100 hours left</li>
+    <li>And, if you are studying sufficiently for your classes (3 hours per
+        unit or 36 hours), you have 64 hours left.</li>
+    <li>This leaves only 64 hours for everything else you have to do,
+        including:</li>
+    <ul>
+     <li>Eating</li>
+     <li>Going to work</li>
+     <li>Commuting</li>
+     <li>Exercising / Attending Athletic Practice</li>
+     <li>Showering and Personal Grooming</li>
+    </ul>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0007.htm');" id=PPTL6>Why is time management
+  important for college students?</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>College has a much less rigid schedule than high school; first time
+       college students must adapt to increased responsibility in managing
+       their time.</li>
+   <li>According to the University at Buffalo’s counseling office, about 25% of
+       students become chronic procrastinators.</li>
+   <li>It almost always takes twice as long to complete a task as what we
+       originally thought it would take.<span style='mso-spacerun:yes'> 
+       </span>This means chronic procrastinators will often run out of time or
+       complete tasks poorly.</li>
+   <li>Poor time management leads to lower academic performance and increased
+       risk of dropping out.</li>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0008.htm');" id=PPTL7>PART 1:<span
+  style='mso-spacerun:yes'>  </span>SETTING GOALS</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0009.htm');" id=PPTL8>Activity 1</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 2 of your handout, make a list of the top five ways you spend
+       your time.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0010.htm');" id=PPTL9>What is a goal?</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Many students come to college with dreams of what they want to be or do
+       in the future.</li>
+   <li>In order to make those dreams come true, we have to develop goals.</li>
+   <li>Goals are reality-based; they consider the real steps that we need to
+       take in order to achieve our dreams.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0011.htm');" id=PPTL10>How to Set Goals</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Start with your dreams.<span style='mso-spacerun:yes'>  </span>In your
+       perfect world, what will you be or do in the future?</li>
+   <li>Then, work to refine your dreams to make them realistic goals.<span
+       style='mso-spacerun:yes'>  </span>Use the acronym FOCUS to help you.</li>
+   <ul>
+    <li>Fit:<span style='mso-spacerun:yes'>  </span>Your goal must fit your
+        values, your character, and who you are as a person.<span
+        style='mso-spacerun:yes'>  </span>If you are uncomfortable with
+        conflict, for example, you may not want to be a courtroom lawyer.</li>
+    <li>Ownership:<span style='mso-spacerun:yes'>  </span>Your goal should be
+        one that you pick for yourself.<span style='mso-spacerun:yes'> 
+        </span>It should make you excited about your future!</li>
+    <li>Concreteness:<span style='mso-spacerun:yes'>  </span>You should be able
+        to describe your goal in specific detail.<span
+        style='mso-spacerun:yes'>  </span>“To run faster” isn’t very
+        concrete.<span style='mso-spacerun:yes'>  </span>Instead, try:<span
+        style='mso-spacerun:yes'>  </span>“to run a five minute mile by June
+        1.”</li>
+    <li>Usefulness:<span style='mso-spacerun:yes'>  </span>Goals should serve a
+        useful purpose towards helping you achieve your dream.<span
+        style='mso-spacerun:yes'>  </span>If you hope to work in international
+        business, for example, you should start learning another language now.</li>
+    <li>Stretch:<span style='mso-spacerun:yes'>  </span>Select goals that
+        stretch your current abilities.<span style='mso-spacerun:yes'> 
+        </span>Challenge yourself!</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0013.htm');" id=PPTL11>Activity 2</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 3 of your handout, set a goal for yourself.<span
+       style='mso-spacerun:yes'>  </span>The goal should be based on your
+       dreams for the future and use FOCUS.</li>
+   <li>Remember, FOCUS stands for:</li>
+   <li>Fit</li>
+   <li>Ownership</li>
+   <li>Concreteness</li>
+   <li>Usefulness</li>
+   <li>Stretch</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0012.htm');" id=PPTL12>Distinguish Between
+  Long and Short Term Goals</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The goal you create using FOCUS is most likely your long term goal.<span
+       style='mso-spacerun:yes'>  </span>It will help you achieve your dreams.</li>
+   <li>You should also develop short term goals.<span
+       style='mso-spacerun:yes'>  </span>Short term goals are intermediate
+       steps towards achieving your long term goals.</li>
+   <li>For example, if your long term goal is to own your own restaurant, you
+       may have to meet some of the following short term goals:</li>
+   <ul>
+    <li>Take cooking classes to learn how to cook well and safely</li>
+    <li>Gain experience working in restaurants or with catering companies</li>
+    <li>Network with restaurant owners</li>
+    <li>Take business classes to learn how to start and market your own
+        business</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0014.htm');" id=PPTL13>Activity 3</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Review the list you made in Activity 1 on page 2 of your handout.<span
+       style='mso-spacerun:yes'>  </span>Do these activities help you achieve
+       your goal (Activity 2)?<span style='mso-spacerun:yes'>  </span>Put a
+       check mark next to the activities that do help you achieve your goal.</li>
+   <li>Then, set a challenge for yourself (Activity 3 on page 3).<span
+       style='mso-spacerun:yes'>  </span>What is one thing you can do today to
+       help you move closer to your goal?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0015.htm');" id=PPTL14>PART 2:<span
+  style='mso-spacerun:yes'>  </span>PRIORITIZING</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0022.htm');" id=PPTL15>Importance of
+  Prioritizing</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>One key aspect of time management is developing priorities.</li>
+   <li>In other words, you must develop a system for deciding which tasks to
+       complete in what order.</li>
+   <li>In order to prioritize well, we must:</li>
+   <ul>
+    <li>Break large projects into smaller tasks</li>
+    <li>Determine how important each task is</li>
+    <li>Create realistic To Do lists with deadlines</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0016.htm');" id=PPTL16>Breaking Down Tasks</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>In the previous section, we looked at ways to break down long-term goals
+       into short-term goals.</li>
+   <li>In this section, we’ll work on breaking down large projects into smaller
+       tasks.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0017.htm');" id=PPTL17>Major Projects</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>As a college student, you will be asked to complete major projects.</li>
+   <li>These projects will require you to spend a great deal of time and
+       energy.</li>
+   <li>In order to complete the projects well, you should plan to break them up
+       into smaller tasks.</li>
+   <li>This will allow you to spread work out over a long period of time.<span
+       style='mso-spacerun:yes'>  </span>You’ll be able to do a better job, be
+       less stressed out, and avoid procrastination.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0018.htm');" id=PPTL18>Sample:<span
+  style='mso-spacerun:yes'>  </span>5 Page Research Paper</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Your English 101 teacher has assigned a five page research paper on fast
+       food.<span style='mso-spacerun:yes'>  </span>In order to complete the
+       paper successfully, you may have to complete the following tasks:</li>
+   <li>Research and note taking</li>
+   <li>Draft outline</li>
+   <li>First draft</li>
+   <li>Review with a tutor</li>
+   <li>Make a Works Cited page</li>
+   <li>Revise paper</li>
+   <li>Format in MLA style</li>
+   <li>Proofread paper</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0019.htm');" id=PPTL19>Sample continued</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Since there are so many steps to completing a five page paper, you
+       shouldn’t plan to complete all steps at once.</li>
+   <li>Instead, break the work up over time.<span style='mso-spacerun:yes'> 
+       </span>This means you should plan to start work on major projects early.</li>
+   <li>This way, you can devote sufficient time and thought to your work.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0020.htm');" id=PPTL20>Activity 4</a></font></div>
+  <div id=PPTC20 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 4 of your handout, practice breaking down a large project into
+       smaller tasks.<span style='mso-spacerun:yes'>  </span>Imagine that you
+       have to study for a history midterm that covers 5 chapters.<span
+       style='mso-spacerun:yes'>  </span>The test will include 25 multiple
+       choice questions and one essay question.<span style='mso-spacerun:yes'> 
+       </span>What steps will you have to complete to prepare for your midterm?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0023.htm');" id=PPTL21>Analyzing Tasks</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>In the previous slides, we worked on breaking a major project into
+       smaller tasks.</li>
+   <li>However, major projects aren’t the only kinds of tasks you will have to
+       complete.</li>
+   <li>College students will face a wide variety of tasks, including homework,
+       work, chores, family obligations, etc.</li>
+   <li>You need to develop a system to decide what tasks to complete in what
+       order.</li>
+   <li>One system is determining how important tasks are and how urgent tasks
+       are.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0025.htm');" id=PPTL22>Activity 5</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 4 of your handout, make a list of all tasks you have to complete
+       this week (including non-school tasks).</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0024.htm');" id=PPTL23>Urgent</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Urgent tasks are those that need to be completed quickly.</li>
+   <li>They are often unexpected problems</li>
+   <li>Urgent tasks cause stress and make us feel like we are in constant
+       crisis mode.</li>
+   <li>They can also be dictated by someone else’s agenda; for example, it
+       might feel urgent to respond to a text message from a best friend, even
+       if responding interferes with your agenda.</li>
+   <li>Ideally, we should manage our time to prevent tasks from becoming
+       urgent.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0026.htm');" id=PPTL24>Important</a></font></div>
+  <div id=PPTC24 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Important tasks are ones that link directly to our future goals.</li>
+   <li>It is vital to complete these tasks.</li>
+   <li>Often, it is also fulfilling to complete these tasks; in other words, we
+       enjoy the important tasks.</li>
+   <li>Important tasks also include planning for the future.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0027.htm');" id=PPTL25>Let’s put it together</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0028.htm');" id=PPTL26>Sample Tasks on the
+  Grid</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0029.htm');" id=PPTL27>Activity 6</a></font></div>
+  <div id=PPTC27 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 6 of your handout, analyze your own tasks.<span
+       style='mso-spacerun:yes'>  </span>Use the list you made in Activity
+       5.<span style='mso-spacerun:yes'>  </span>Then, decide how urgent and
+       important each of those tasks are.<span style='mso-spacerun:yes'> 
+       </span>Place the tasks in the appropriate square.</li>
+   <br>
+   <br>
+   <li>Then, reflect.<span style='mso-spacerun:yes'>  </span>How can you spend
+       more time on tasks in the Important/Not Urgent box?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>28</font></div>
+  </td>
+  <td>
+  <div id=PPTP28 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0030.htm');" id=PPTL28>Scheduling</a></font></div>
+  <div id=PPTC28 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>In this section so far, we’ve worked on identifying the tasks we have to
+       complete and understanding which are the most important.</li>
+   <li>Once we have this information, we can create realistic schedules with
+       deadlines to help us successfully complete all our tasks.</li>
+   <br>
+   <br>
+   <li>Note:<span style='mso-spacerun:yes'>  </span>Make sure you’re keeping
+       track of your schedule on a calendar.<span style='mso-spacerun:yes'> 
+       </span>This can be paper or electronic—find the system that works best
+       for you!</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>29</font></div>
+  </td>
+  <td>
+  <div id=PPTP29 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0032.htm');" id=PPTL29>Scheduling Projects</a></font></div>
+  <div id=PPTC29 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>In previous slides, we discussed the importance of breaking down major
+       projects into smaller tasks.</li>
+   <li>Then, we used the Urgent/Important system to help prioritize tasks.</li>
+   <li>Now, work on scheduling the different tasks within your projects.</li>
+   <li>Once you’ve developed realistic deadlines for the different tasks in the
+       project, include them on your schedule.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>30</font></div>
+  </td>
+  <td>
+  <div id=PPTP30 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0033.htm');" id=PPTL30>Sample: 5 Page Research
+  Paper</a></font></div>
+  <div id=PPTC30 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>In a previous slide, we looked at the different tasks a student may need
+       to complete a research paper.</li>
+   <li>You will see the same tasks below.<span style='mso-spacerun:yes'> 
+       </span>This time, the student has included deadlines for
+       him/herself.<span style='mso-spacerun:yes'>  </span>The final draft of
+       the paper is due on December 8.</li>
+   <li>Research and note taking:<span style='mso-spacerun:yes'>  </span>Nov. 25</li>
+   <li>Draft outline:<span style='mso-spacerun:yes'>  </span>Nov. 28</li>
+   <li>First draft:<span style='mso-spacerun:yes'>  </span>Dec. 1</li>
+   <li>Review with a tutor:<span style='mso-spacerun:yes'>  </span>Dec. 3</li>
+   <li>Make a Works Cited page:<span style='mso-spacerun:yes'>  </span>Dec. 3</li>
+   <li>Revise paper:<span style='mso-spacerun:yes'>  </span>Dec. 4</li>
+   <li>Format in MLA style:<span style='mso-spacerun:yes'>  </span>Dec. 6</li>
+   <li>Proofread paper:<span style='mso-spacerun:yes'>  </span>Dec. 6</li>
+   <li>Note:<span style='mso-spacerun:yes'>  </span>The student plans to finish
+       proofreading on Dec. 6, two days before the paper is due.<span
+       style='mso-spacerun:yes'>  </span>S/he has built a buffer just in case
+       s/he runs behind.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>31</font></div>
+  </td>
+  <td>
+  <div id=PPTP31 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0031.htm');" id=PPTL31>Daily Lists</a></font></div>
+  <div id=PPTC31 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Planning major projects takes many days.</li>
+   <li>In addition to those projects, we have other duties to complete.</li>
+   <li>We can keep track of those duties by making daily To Do lists.</li>
+   <li>This will help you remember your tasks.</li>
+   <li>In addition, you can feel a sense of satisfaction when you cross off an
+       item.</li>
+   <li>You can write your To Do list on paper or electronically; just be sure
+       to write down the tasks you have to complete.</li>
+   <li>Make your To Do list part of your daily routine.<span
+       style='mso-spacerun:yes'>  </span>It will help you accomplish your
+       goals!</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>32</font></div>
+  </td>
+  <td>
+  <div id=PPTP32 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0034.htm');" id=PPTL32>Activity 7</a></font></div>
+  <div id=PPTC32 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 7 of your handout, make a list of all the tasks you have to
+       complete today.<span style='mso-spacerun:yes'>  </span>This will become
+       your To Do list for the day.</li>
+   <li>Then reflect.<span style='mso-spacerun:yes'>  </span>Answer the
+       following question:<span style='mso-spacerun:yes'>  </span>Is your To Do
+       list realistic?<span style='mso-spacerun:yes'>  </span>In other words,
+       can you accomplish all of these tasks today?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>33</font></div>
+  </td>
+  <td>
+  <div id=PPTP33 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0035.htm');" id=PPTL33>PART 3:<span
+  style='mso-spacerun:yes'>  </span>MULTITASKING</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>34</font></div>
+  </td>
+  <td>
+  <div id=PPTP34 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0037.htm');" id=PPTL34>What is Multitasking?</a></font></div>
+  <div id=PPTC34 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When we multitask, we believe that we are completing multiple tasks
+       simultaneously.</li>
+   <li>We evolved to multitask during hunter/gatherer days so early humans
+       could (for example) stalk prey and keep their eyes on their group of
+       hunters.</li>
+   <li>Many students believe that multitasking is a great way to work (or, it
+       is their preferred way to work).</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>35</font></div>
+  </td>
+  <td>
+  <div id=PPTP35 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0038.htm');" id=PPTL35>Studies on Multitasking</a></font></div>
+  <div id=PPTC35 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>In an experiment involving 62 undergraduate students taking a principles
+       of accounting course, half of the cohort was allowed to text during a
+       lecture and half had their phones turned off. After the lecture both
+       groups took the same quiz and the students who did not text scored
+       significantly higher on the quiz.</li>
+   <br>
+   <br>
+   <li>Students taking a general psychology course were asked to read a 3,828
+       word passage on a computer. One group used instant messaging before they
+       started reading, another group used instant messaging while they were
+       reading and a third group read without instant messaging. The group that
+       used instant messaging while they read took between 22 and 59% longer to
+       read the passage than students in the other two groups.<span
+       style='mso-spacerun:yes'>  </span>That was after the time spent instant
+       messaging was subtracted from the reading times.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>36</font></div>
+  </td>
+  <td>
+  <div id=PPTP36 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0039.htm');" id=PPTL36>Effects of Multitasking</a></font></div>
+  <div id=PPTC36 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Today’s students are highly likely to multitask, especially through
+       technology</li>
+   <li>In fact, one large survey found that 80 percent of college students
+       admit to texting during class; 15 percent say they send 11 or more texts
+       in a single class period.</li>
+   <li>The problem is that students overestimate their ability to pay attention
+       to more than one thing at once.<span style='mso-spacerun:yes'> 
+       </span>They believe they can listen to their professor and send a text
+       message, but the vast majority can’t do both effectively.</li>
+   <li>When students multitask, they generally experience the following
+       effects:</li>
+   <ul>
+    <li>Assignments take longer</li>
+    <li>The mental fatigue of starting and stopping a task leads to more
+        mistakes</li>
+    <li>Students are less likely to remember the material well.</li>
+    <li>Students are more likely to get lower grades.</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>37</font></div>
+  </td>
+  <td>
+  <div id=PPTP37 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0040.htm');" id=PPTL37>Switching Costs</a></font></div>
+  <div id=PPTC37 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>What is the problem with multitasking?</li>
+   <li>For one, we don’t actually do two or more complex tasks at the same
+       time.<span style='mso-spacerun:yes'>  </span>Rather, we switch rapidly
+       back and forth between those tasks.</li>
+   <li>When we switch tasks, we experience two different switch costs.</li>
+   <ul>
+    <li>We take time to adjust to the new mental task</li>
+    <li>We carry over aspects of the previous mental task</li>
+   </ul>
+   <li>In other words, we lose time whenever we switch between tasks.<span
+       style='mso-spacerun:yes'>  </span>(The more complex the task, the more
+       time we lose.)</li>
+   <li>The amount of time we lose may seem small, but it adds up quickly
+       (sometimes as much as 40% of a person’s productive time).</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>38</font></div>
+  </td>
+  <td>
+  <div id=PPTP38 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0041.htm');" id=PPTL38>Overcoming Multitasking
+  Habits</a></font></div>
+  <div id=PPTC38 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Schedule tech breaks or other breaks for yourself</li>
+   <li>Turn off electronics when working</li>
+   <li>Avoid opening multiple tabs on the computer</li>
+   <li>Set aside specific times for checking email and other online accounts</li>
+   <li>Find methods for avoiding interruptions (like working alone in the
+       library)</li>
+   <li>Reset your natural rhythm during the day by taking a short walk outside
+       or opening a window</li>
+   <li>When you are interrupted by something important, resist the urge to
+       multitask.<span style='mso-spacerun:yes'>  </span>Before switching to a
+       new task, make note of your place in your current task so you can pick
+       it up again easily</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>39</font></div>
+  </td>
+  <td>
+  <div id=PPTP39 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0042.htm');" id=PPTL39>Activity 8</a></font></div>
+  <div id=PPTC39 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Click this link to watch a short video.<span style='mso-spacerun:yes'> 
+       </span>The video shows Arthur Benjamin’s speech, “Teach Statistics
+       before Calculus.”<span style='mso-spacerun:yes'>  </span>However, it
+       also simulates multitasking by including interruptions.<span
+       style='mso-spacerun:yes'>  </span>As you watch, try to stay focused on
+       Benjamin’s speech.</li>
+   <br>
+   <br>
+   <li>Then, you will take a short quiz on Benjamin’s speech.<span
+       style='mso-spacerun:yes'>  </span>The quiz is on page 9 of your handout.</li>
+   <br>
+   <br>
+   <li>Finally, reflect on your experience.<span style='mso-spacerun:yes'> 
+       </span>How did the distractions in the video affect your understanding
+       of Benjamin’s ideas?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>40</font></div>
+  </td>
+  <td>
+  <div id=PPTP40 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0043.htm');" id=PPTL40>PART 4:<span
+  style='mso-spacerun:yes'>  </span>PROCRASTINATION</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>41</font></div>
+  </td>
+  <td>
+  <div id=PPTP41 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0045.htm');" id=PPTL41>What is
+  procrastination?</a></font></div>
+  <div id=PPTC41 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Researchers define procrastination as:<span style='mso-spacerun:yes'> 
+       </span>“needlessly delaying tasks to the point of experiencing
+       subjective discomfort.”</li>
+   <li>In other words, procrastination means we put off tasks for no good
+       reason; in addition, putting off the task makes us uncomfortable.</li>
+   <li>70% of college students admit to procrastinating on their assignments.</li>
+   <li>The problem is that procrastination leads students to make mistakes or
+       to not meet their full potential on assignments.</li>
+   <li>Keep in mind that college students often have multiple assignments due
+       at once.<span style='mso-spacerun:yes'>  </span>(Just think of finals
+       week!)<span style='mso-spacerun:yes'>  </span>Procrastinating on
+       multiple assignments can be disastrous.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>42</font></div>
+  </td>
+  <td>
+  <div id=PPTP42 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0046.htm');" id=PPTL42>Why do people
+  procrastinate?</a></font></div>
+  <div id=PPTC42 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Chronic procrastinators have made procrastination a lifestyle that
+       affects all aspects of their lives.<span style='mso-spacerun:yes'> 
+       </span>They don’t only procrastinate on school work—they pay bills or
+       file income tax returns late.</li>
+   <li>In the US, we don’t treat procrastination as a national problem.<span
+       style='mso-spacerun:yes'>  </span>We don’t really take it seriously, and
+       we don’t call people on their excuses (even if we don’t believe them).</li>
+   <li>Procrastinators may lie to themselves.<span style='mso-spacerun:yes'> 
+       </span>They’ll say, for example, “I work best under pressure.”<span
+       style='mso-spacerun:yes'>  </span>In fact, most people don’t work best
+       under pressure and most major assignments require time, thought, and
+       effort in order to do well.<span style='mso-spacerun:yes'> 
+       </span>Unfortunately, procrastinators are squandering one of their
+       important resources:<span style='mso-spacerun:yes'>  </span>time.</li>
+   <li>Procrastinators actively look for distractions (like checking email).</li>
+   <li>Some procrastinators fear failure (or fear success), and procrastinate
+       to avoid facing the consequences of completing their work.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>43</font></div>
+  </td>
+  <td>
+  <div id=PPTP43 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0047.htm');" id=PPTL43>The Planning Fallacy</a></font></div>
+  <div id=PPTC43 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Some people procrastinate because they fall into the planning fallacy,
+       which is:</li>
+   <li>They underestimate how long it will take to complete a task.</li>
+   <li>They do not take into account how long it has taken to complete a
+       similar task in the past.</li>
+   <li>They plan for everything to go smoothly.<span style='mso-spacerun:yes'> 
+       </span>In other words, they don’t save any time for unforeseen
+       circumstances (like a computer crashing or changing a flat tire).</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>44</font></div>
+  </td>
+  <td>
+  <div id=PPTP44 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0050.htm');" id=PPTL44>How do you know if you
+  are procrastinating?</a></font></div>
+  <div id=PPTC44 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>You might be procrastinating if…</li>
+   <li>You spend most of your time on low priority tasks</li>
+   <li>You start a high priority tasks and stop almost immediately for a
+       distraction (like getting a cup of coffee)</li>
+   <li>You leave an item on your To Do list for a long time, even though you
+       know it’s important.</li>
+   <li>You regularly agree to do unimportant tasks that others give you rather
+       than completing your own important tasks.</li>
+   <li>You wait for the right mood or the right time to complete a task.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>45</font></div>
+  </td>
+  <td>
+  <div id=PPTP45 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0051.htm');" id=PPTL45>Activity 9</a></font></div>
+  <div id=PPTC45 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 10 of your handout, complete the “Are You a Procrastinator?”
+       quiz and review your results.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>46</font></div>
+  </td>
+  <td>
+  <div id=PPTP46 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0048.htm');" id=PPTL46>Addressing
+  Procrastination:<span style='mso-spacerun:yes'>  </span>Breaking Bad Habits</a></font></div>
+  <div id=PPTC46 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>One way to begin addressing procrastination is to work on breaking bad
+       habits.</li>
+   <li>Breaking a bad habit is difficult because a habit has become part of our
+       cognitive script; in other words, we engage in habits unconsciously and
+       automatically.</li>
+   <li>Breaking bad habits takes time; on average, you need to engage in an
+       alternative behavior for 66 days for it to become a habit.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>47</font></div>
+  </td>
+  <td>
+  <div id=PPTP47 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0049.htm');" id=PPTL47>Strategies for Breaking
+  Bad Habits</a></font></div>
+  <div id=PPTC47 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Create a plan.<span style='mso-spacerun:yes'>  </span>Set a clear,
+       measurable goal for yourself that you can divide into smaller
+       tasks.<span style='mso-spacerun:yes'>  </span>The tasks should have
+       deadlines that you can incorporate onto your calendar or To Do lists.</li>
+   <li>Develop Self-Discipline and Self-Awareness.<span
+       style='mso-spacerun:yes'>  </span>Watch yourself constantly to avoid
+       slip-ups in breaking the bad habit.<span style='mso-spacerun:yes'> 
+       </span>Remind yourself why you want to break that habit in the first
+       place.</li>
+   <li>Choose the right approach.<span style='mso-spacerun:yes'>  </span>Some
+       people prefer to quit a behavior all at once.<span
+       style='mso-spacerun:yes'>  </span>Others prefer to limit the behavior
+       slowly over time.<span style='mso-spacerun:yes'>  </span>Use the method
+       that works best for you.</li>
+   <li>Put obstacles in place.<span style='mso-spacerun:yes'>  </span>Make it
+       more difficult to engage in the bad habit.<span
+       style='mso-spacerun:yes'>  </span>For example, you can turn the wifi off
+       on your computer while working on projects for school.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>48</font></div>
+  </td>
+  <td>
+  <div id=PPTP48 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0052.htm');" id=PPTL48>Strategies to Avoid
+  Procrastination</a></font></div>
+  <div id=PPTC48 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>We just looked at some general information to help us avoid bad habits.</li>
+   <li>Now, we’ll look at some strategies to help us avoid procrastination
+       specifically.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>49</font></div>
+  </td>
+  <td>
+  <div id=PPTP49 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0053.htm');" id=PPTL49>Avoiding
+  Procrastination</a></font></div>
+  <div id=PPTC49 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Keep track of your excuses.<span style='mso-spacerun:yes'>  </span>Write
+       down your excuses consistently; this will help you recognize them for
+       what they are.</li>
+   <li>Break down.<span style='mso-spacerun:yes'>  </span>Break your project
+       into smaller tasks.<span style='mso-spacerun:yes'>  </span>Facing the
+       smaller tasks is less overwhelming than trying to do a whole project all
+       at once.</li>
+   <li>Trick yourself.<span style='mso-spacerun:yes'>  </span>If you feel like
+       procrastinating, trick yourself by starting a small part of a larger
+       project.<span style='mso-spacerun:yes'>  </span>Just getting started on
+       the project will put you into the mindset for working.</li>
+   <li>Resolve issues.<span style='mso-spacerun:yes'>  </span>If there is
+       something that’s making it difficult for you to concentrate (like your
+       desk is messy), take care of it.<span style='mso-spacerun:yes'> 
+       </span>That way, you can focus on your work.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>50</font></div>
+  </td>
+  <td>
+  <div id=PPTP50 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0054.htm');" id=PPTL50>Avoiding
+  Procrastination</a></font></div>
+  <div id=PPTC50 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Get real.<span style='mso-spacerun:yes'>  </span>Set realistic (rather
+       than optimistic) goals for yourself.<span style='mso-spacerun:yes'> 
+       </span>Start keeping track of how long tasks take you.<span
+       style='mso-spacerun:yes'>  </span>In the future, you’ll be better
+       informed of the actual amount of time you need to complete tasks.</li>
+   <li>Think positively.<span style='mso-spacerun:yes'>  </span>Don’t imagine
+       everything that can go wrong for your project.<span
+       style='mso-spacerun:yes'>  </span>Instead, think about getting the
+       project completed well and on time.</li>
+   <li>Make a deal with yourself.<span style='mso-spacerun:yes'> 
+       </span>Clearly articulate what you hope to accomplish that day—even if
+       it is only fifteen minutes of work to get started on a project.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>51</font></div>
+  </td>
+  <td>
+  <div id=PPTP51 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0055.htm');" id=PPTL51>Avoiding
+  Procrastination</a></font></div>
+  <div id=PPTC51 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Overcome fear.<span style='mso-spacerun:yes'>  </span>We often
+       procrastinate because we’re afraid of failing.<span
+       style='mso-spacerun:yes'>  </span>Face your fears and work on the task
+       anyway (even if it is scary).</li>
+   <li>Get tough.<span style='mso-spacerun:yes'>  </span>Force yourself to
+       focus on the tasks that are high priorities, even if they aren’t fun.</li>
+   <li>Reward yourself.<span style='mso-spacerun:yes'>  </span>Give yourself
+       reasonable rewards (like going to the gym or texting your best friend)
+       for completing tasks.<span style='mso-spacerun:yes'>    </span>Celebrate
+       your accomplishments to help you build up motivation for future
+       projects.</li>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>52</font></div>
+  </td>
+  <td>
+  <div id=PPTP52 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0056.htm');" id=PPTL52>Conclusion</a></font></div>
+  <div id=PPTC52 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>After completing this workshop, you should know:</li>
+   <li>How to set goals to help you achieve your dreams</li>
+   <li>How to break down projects and prioritize tasks in order to complete
+       your work on time</li>
+   <li>How to overcome the urge to multitask</li>
+   <li>How to overcome the urge to procrastinate</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>53</font></div>
+  </td>
+  <td>
+  <div id=PPTP53 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0058.htm');" id=PPTL53>If you liked this
+  lesson and would like to learn more, consider attending:</a></font></div>
+  <div id=PPTC53 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Stress Management</li>
+   <li>Test-Taking Strategies</li>
+   <li>Preparing for Finals</li>
+   <br>
+   <br>
+   <br>
+   <li>Why should you come back?</li>
+   <li>Students completing Supplemental Learning Activities had a
+       10%&nbsp;higher success rate across the disciplines, a 21% higher
+       success rate in Math, and a 49% higher success rate in English courses.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>54</font></div>
+  </td>
+  <td>
+  <div id=PPTP54 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0059.htm');" id=PPTL54>Activity and
+  Self-Reflection</a></font></div>
+  <div id=PPTC54 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Complete Activity 10 and the Self-Reflection that start on page 12 of
+       your handout.</li>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master15.htm></a><a href=master15.xml></a><a
+href=preview.wmf></a><a href=master27.htm></a><a href=master27.xml></a><a
+href=master28.htm></a><a href=master28.xml></a><a href=master29.htm></a><a
+href=master29.xml></a><a href=master30.htm></a><a href=master30.xml></a><a
+href=pres.xml></a><a href=slide0002.htm></a><a href="master27_image001.png"></a><a
+href="master27_image002.png"></a><a href="master27_image003.png"></a><a
+href="slide0002_image004.jpg"></a><a href="slide0002_image005.png"></a><a
+href=slide0003.htm></a><a href="master15_image006.png"></a><a
+href="master15_image007.png"></a><a href=slide0036.htm></a><a
+href=slide0004.htm></a><a href=slide0005.htm></a><a href=slide0007.htm></a><a
+href=slide0008.htm></a><a href="master28_image008.png"></a><a
+href="master28_image009.png"></a><a href="master28_image010.png"></a><a
+href=slide0009.htm></a><a href=slide0010.htm></a><a href=slide0011.htm></a><a
+href=slide0013.htm></a><a href=slide0012.htm></a><a href=slide0014.htm></a><a
+href=slide0015.htm></a><a href=slide0022.htm></a><a href=slide0016.htm></a><a
+href=slide0017.htm></a><a href=slide0018.htm></a><a href=slide0019.htm></a><a
+href=slide0020.htm></a><a href=slide0023.htm></a><a href=slide0025.htm></a><a
+href=slide0024.htm></a><a href=slide0026.htm></a><a href=slide0027.htm></a><a
+href="slide0027_image011.png"></a><a href=slide0028.htm></a><a
+href="slide0028_image012.png"></a><a href=slide0029.htm></a><a
+href=slide0030.htm></a><a href=slide0032.htm></a><a href=slide0033.htm></a><a
+href=slide0031.htm></a><a href=slide0034.htm></a><a href=slide0035.htm></a><a
+href=slide0037.htm></a><a href=slide0038.htm></a><a href=slide0039.htm></a><a
+href=slide0040.htm></a><a href=slide0041.htm></a><a href=slide0042.htm></a><a
+href=slide0043.htm></a><a href=slide0045.htm></a><a href=slide0046.htm></a><a
+href=slide0047.htm></a><a href=slide0050.htm></a><a href=slide0051.htm></a><a
+href=slide0048.htm></a><a href=slide0049.htm></a><a href=slide0052.htm></a><a
+href=slide0053.htm></a><a href=slide0054.htm></a><a href=slide0055.htm></a><a
+href=slide0056.htm></a><a href=slide0058.htm></a><a
+href="slide0058_image013.jpg"></a><a href="slide0058_image014.png"></a><a
+href=slide0059.htm></a><a href=master01.htm></a><a
+href="master15_stylesheet.css"></a><a href="master27_stylesheet.css"></a><a
+href="master28_stylesheet.css"></a><a href="master29_stylesheet.css"></a><a
+href="master30_stylesheet.css"></a><a href=script.js></a><a
+href="../TimeManagementGLA.htm"></a><a href=fullscreen.htm></a><a
+href="notes_flag.gif"></a><a href=buttons.gif></a><a href=frame.htm></a><a
+href=outline.htm></a></div>
+
+</body>
+
+</html>
