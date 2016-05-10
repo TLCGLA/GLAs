@@ -1,0 +1,1264 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 14">
+<link id=Main-File rel=Main-File href="../CulturalExpectations.htm">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.htm');" id=PPTL1>Cultural Expectations 1:
+  <br>
+    American Classrooms</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Welcome to one and all!</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0035.htm');" id=PPTL2>Agenda</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>This workshop will cover…</li>
+   <li>U.S. College Classroom Expectations</li>
+   <li>Role of the Professor</li>
+   <li>Grades</li>
+   <li>Active Participation</li>
+   <li>Seeking Help</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0060.htm');" id=PPTL3>Objectives</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>By the end of this workshop, students will…</li>
+   <li>Compare and contrast three to five college and classroom expectations
+       from their own culture with those from America.</li>
+   <li>Explain how they can meet at least one of the American college
+       expectations.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0036.htm');" id=PPTL4>Part 1:<br>
+    U.S. College Classroom Expectations</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.htm');" id=PPTL5>American School System
+  at a Glance</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Nursery School / Pre-K (3-4 years old)</li>
+   <li>Kindergarten and Elementary School (5-10 years old)</li>
+   <li>Middle School (11-13 years old)</li>
+   <li>High School (14-17 years old)</li>
+   <li>Community College / Undergraduate Programs (18 years &amp; older)</li>
+   <li>Master’s Programs or Professional Schools</li>
+   <li>Doctoral Programs</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0021.htm');" id=PPTL6>Classrooms are Diverse</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>American college classrooms are highly diverse in terms of age, gender,
+       race, language, ethnicity, and culture.</li>
+   <li>For example, at COC in 2015-2016, we had 20,303 students.</li>
+   <ul>
+    <li>45.8% Female and 54.2% Male</li>
+    <li>44.9% Latino, 36.7% White, 8.9% Asian, and 4.6% African American</li>
+    <li>37.8% of students are over 25</li>
+   </ul>
+   <li>Although this may be uncomfortable at first, you have the benefit of
+       interacting with a wide variety of people.</li>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0023.htm');" id=PPTL7>Classes Are Similar in
+  Levels</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Although your class is diverse in terms of age, gender, race, etc., the
+       students are at very similar learning levels.</li>
+   <li>They are placed in the class either through placement tests or
+       performance in previous classes.</li>
+   <li>Since you are all at the same level, the professor can meet the
+       students’ needs.</li>
+   <li>The students can work as a team to understand the material better.</li>
+   <li>Note:<span style='mso-spacerun:yes'>  </span>Many disciplines, like ESL
+       or math, have multiple levels for their classes.<span
+       style='mso-spacerun:yes'>  </span>Be sure to talk to your counselor to
+       find out what your next class will be.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0042.htm');" id=PPTL8>Personal Responsibility
+  and Initiative</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>In an American classroom, you are expected to take personal
+       responsibility for your work.<span style='mso-spacerun:yes'> 
+       </span>This means:</li>
+   <ul>
+    <li>Reading and studying extensively outside of the classroom.<span
+        style='mso-spacerun:yes'>  </span>Plan to spend about nine hours a week
+        studying for a three unit class.</li>
+    <li>Coming to class prepared to work.<span style='mso-spacerun:yes'> 
+        </span>Bring your notebook, pen/pencil, any required readings for the
+        day, and any other materials your professor requires.</li>
+    <li>Knowing and following the policies in the syllabus.</li>
+    <li>Asking the instructor questions when you don’t understand the material.</li>
+   </ul>
+   <li>In America, people expect you to ask for help. This may sound strange,
+       but that is the system, so to get the best education you can, you have
+       to find help when you need it (more on Seeking Help in Part 5).</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0025.htm');" id=PPTL9>Syllabus</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>On the first day of class, you will receive a Syllabus, which is an
+       outline for the class.<span style='mso-spacerun:yes'>  </span>The
+       syllabus is an important document that explains exactly what is expected
+       of you over the course of the semester.<span style='mso-spacerun:yes'> 
+       </span>Plan to review the syllabus frequently.</li>
+   <li>You can expect to see the following components in most syllabi:</li>
+   <li>Required Books</li>
+   <li>List of Assignments</li>
+   <li>Grading Policy</li>
+   <li>Attendance/Drop policy</li>
+   <li>Academic Integrity Policy</li>
+   <li>Office Hours/Location</li>
+   <li>Instructor’s Contact Information</li>
+   <li>Disability Accommodations</li>
+   <li>Student Learning Outcomes</li>
+   <li>Assignment/Reading Calendar (this could also be a separate handout)</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0043.htm');" id=PPTL10>Using the Syllabus</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Instructors expect students to be familiar with the policies listed in
+       the syllabus.<span style='mso-spacerun:yes'>  </span>They often do a
+       great deal of work to make sure all their policies are clear to their
+       students.</li>
+   <li>If there is anything on the syllabus you don’t understand, ask the
+       professor.</li>
+   <li>Bring your syllabus to class.</li>
+   <li>Review the syllabus periodically.</li>
+   <li>Check the syllabus before asking a question about course policies.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0026.htm');" id=PPTL11>Academic Integrity in
+  the Classroom</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Your syllabus may include information on cheating and plagiarism.<span
+       style='mso-spacerun:yes'>  </span>It is extremely important that you
+       understand what counts as cheating and plagiarism.<span
+       style='mso-spacerun:yes'>  </span>American colleges take plagiarism very
+       seriously; you do not want to have a plagiarism incident on your
+       academic record.</li>
+   <li>Different countries or schools may have a different understanding of
+       plagiarism.</li>
+   <li>In the U.S. college system, we avoid plagiarism by accurately citing all
+       of our sources.<span style='mso-spacerun:yes'>  </span>“Citing” means
+       giving credit to the person who wrote the original source.<span
+       style='mso-spacerun:yes'>  </span>You can ask your professor or a TLC
+       tutor for help learning how to cite.</li>
+   <li>You may also want to take a workshop on Avoiding Plagiarism or one of
+       the citation techniques (MLA or APA).<span style='mso-spacerun:yes'> 
+       </span>TLC provides handouts on other citation styles.</li>
+   <li>Your handout includes COC’s Academic Integrity policy.<span
+       style='mso-spacerun:yes'>  </span>It explains what counts as plagiarism
+       at COC.<span style='mso-spacerun:yes'>  </span>If you need help
+       understanding the policy, ask your professor or a TLC tutor.</li>
+   <li>If you have any questions about plagiarism, cheating, or academic
+       integrity, ask your instructor or a TLC tutor for help.<span
+       style='mso-spacerun:yes'>  </span>They are happy to help you!</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0062.htm');" id=PPTL12>Activity 1</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Go to page 3 in your worksheet to complete Activity 1.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0037.htm');" id=PPTL13>Part 2:<br>
+    Role of the Professor</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0044.htm');" id=PPTL14>What Can You Expect
+  from Your Professor?</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>In many countries, professors are respected because they keep a distance
+       from their students.<span style='mso-spacerun:yes'>  </span>Students are
+       expected to listen to a professor and speak very little.<span
+       style='mso-spacerun:yes'>  </span>The practice of asking questions may
+       be discouraged.</li>
+   <li>The same is not necessarily true in American college classrooms.<span
+       style='mso-spacerun:yes'>  </span>While some professors are very formal,
+       many prefer a more casual, interactive relationship with their students.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0059.htm');" id=PPTL15>What Else Can You
+  Expect from Your Professor?</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>You can expect to see a variety of teaching techniques, including
+       lectures, class discussions, team activities, PowerPoint presentations,
+       etc.</li>
+   <li>Professors will expect you to participate in student-centered learning activities.</li>
+   <li>Professors will expect you to ask questions if you do not understand a
+       topic.<span style='mso-spacerun:yes'>  </span>In the United States,
+       asking questions is not a sign of disrespect.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0045.htm');" id=PPTL16>Class Discussions</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Although professors may lead a class discussion, they will usually not
+       dominate the discussion.</li>
+   <li>They will expect students to participate by expressing their opinions
+       and responding to their classmates.</li>
+   <li>Throughout this process, it is important to be respectful to all the
+       students.<span style='mso-spacerun:yes'>  </span>You do not have to
+       agree with your classmates, but you do need to reply to them politely.</li>
+   <li>To prepare for a class discussion, be sure to read any assigned
+       readings.<span style='mso-spacerun:yes'>  </span>Come to class with
+       questions or important points that you want to discuss.</li>
+   <li>For many instructors, discussions are an important part of class
+       participation.<span style='mso-spacerun:yes'>  </span>In order to get a
+       good grade, you should be prepared to contribute to the class
+       discussion.<span style='mso-spacerun:yes'>  </span>Instructors have
+       different ways of grading your participation.<span
+       style='mso-spacerun:yes'>  </span>Be sure to ask your professors how you
+       can earn credit for participating.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0027.htm');" id=PPTL17>Student-Centered
+  Learning</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Most professors in the United States will use some aspect of
+       student-centered learning. This means the class might have some or all
+       of the following:</li>
+   <ul>
+    <li>Debates</li>
+    <li>Discussions</li>
+    <li>Analyses of problems</li>
+    <li>Group work</li>
+    <li>Pair work</li>
+   </ul>
+   <li>It also means that the professor may not always lecture. You should not
+       expect to simply sit and listen.</li>
+   <li>You should expect to talk and participate.</li>
+   <li>These activities are a vital part of an American education.<span
+       style='mso-spacerun:yes'>  </span>They allow you to work with the
+       material, your professor, and your classmates.</li>
+   <li>Learning material this way will help you remember and use the material
+       later in life (either on a test, in a paper, or in your career).</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0046.htm');" id=PPTL18>Communicating with Your
+  Professor</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Your professors will expect you to communicate with them, especially if
+       you are having trouble in the class.<span style='mso-spacerun:yes'> 
+       </span>Be active in your own education by communicating with professors.</li>
+   <li>Usually, your professor will let you know what to call him or her.<span
+       style='mso-spacerun:yes'>  </span>Don’t be surprised if a professor asks
+       you to use his/her first name.<span style='mso-spacerun:yes'>  </span>If
+       the professor doesn’t tell you what to call him/her, use the title
+       Professor and his/her last name.</li>
+   <li>Find out which communication channel your professor prefers.<span
+       style='mso-spacerun:yes'>  </span>Some professors prefer to use email,
+       and others like to meet with students in person.</li>
+   <li>Visiting a professor’s office hours is a wonderful way to get to know
+       your professor.<span style='mso-spacerun:yes'>  </span>Professors reserve
+       time (called “office hours”) to meet with their students outside of the
+       classroom.<span style='mso-spacerun:yes'>  </span>You can get answers to
+       your specific questions or advice on your assignments.<span
+       style='mso-spacerun:yes'>  </span>Knowing your professor on a one-on-one
+       basis can help in the future if you need to ask for a letter of
+       recommendation.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0047.htm');" id=PPTL19>Professor’s Role in
+  Grading</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Most instructors in American colleges will agree that grades are earned,
+       not given.</li>
+   <li>This means that you as a student have a great deal of control over your grade.<span
+       style='mso-spacerun:yes'>  </span>If you do good work, you will earn a
+       good grade.</li>
+   <li>When it comes to grading, think of your professor as an evaluator.<span
+       style='mso-spacerun:yes'>  </span>She or he will judge your work based
+       on certain criteria (like your mastery of the course material) and
+       assign you an appropriate grade.</li>
+   <li>Do not think of grades as an opportunity for negotiation.<span
+       style='mso-spacerun:yes'>  </span>Professors won’t just give you a
+       higher grade.</li>
+   <li>On the other hand, if you don’t understand your grade or believe your
+       professor may have made a mistake, you should contact them.</li>
+   <li>Professors are usually very clear about grading in the course syllabus.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0038.htm');" id=PPTL20>Part 3:<br>
+    Grades</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0018.htm');" id=PPTL21>Grades</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Getting good grades is vital to student success.<span
+       style='mso-spacerun:yes'>  </span>Get a good start from the beginning of
+       the semester!</li>
+   <li>Participation counts. Students sometimes receive grades for
+       participating in class discussions. In order to earn a good
+       participation grade, be sure to contribute to class discussions.</li>
+   <li>Review the comments on your papers closely.<span
+       style='mso-spacerun:yes'>  </span>Make sure you understand what they
+       mean.<span style='mso-spacerun:yes'>  </span>Then, learn how to correct
+       any problems.<span style='mso-spacerun:yes'>  </span>For example, some
+       professors will write “cs” on your paper to show that that you have a
+       comma splice. It is your responsibility to learn how to correct a comma
+       splice.</li>
+   <li>Also, if you cannot read your instructor’s writing, be sure to ask the
+       instructor what the writing says.</li>
+   <li>A few basic tips for improving grades – plan, practice, revise, and
+       proofread. Ask for help when you need it!</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0019.htm');" id=PPTL22>Understanding Grades</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Grade Chart</li>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <li>Your syllabus will show how your grades are distributed among
+       assignments.<span style='mso-spacerun:yes'>  </span>Review this section
+       of your syllabus frequently.</li>
+   <li>Keep track of your grades so you know where you stand in the class.</li>
+   <li>Some instructors will use a point system.<span
+       style='mso-spacerun:yes'>  </span>This means each assignment is worth a
+       certain amount of points.<span style='mso-spacerun:yes'>  </span>At the
+       end of the semester, the instructor will add up all of your points and
+       find your percentage based on the total points for the class.</li>
+   <li>Other instructors will use a weighted system.<span
+       style='mso-spacerun:yes'>  </span>Each assignment will be worth a
+       certain percentage of your final grade.</li>
+   <li>If you have questions about how your instructor calculates your grade,
+       contact him or her.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0063.htm');" id=PPTL23>Activity 2</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Go to page 4 in your worksheet to complete Activity 2.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0039.htm');" id=PPTL24>Part 4:<span
+  style='mso-spacerun:yes'>  </span><br>
+    Active Participation</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0030.htm');" id=PPTL25>Expectations</a></font></div>
+  <div id=PPTC25 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Professors in American colleges expect you to be an active participant
+       in class.</li>
+   <li><span style='mso-spacerun:yes'> </span>This means speaking frequently.</li>
+   <li>You may participate in class discussions, team activities, or peer
+       review.</li>
+   <li>Don’t be too shy to speak.<span style='mso-spacerun:yes'>  </span>The
+       more you practice engaging in these activities, the more comfortable you
+       will feel.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0013.htm');" id=PPTL26>Opportunities to
+  Participate</a></font></div>
+  <div id=PPTC26 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Class activities are done in pairs, in groups, or alone, so you ought to
+       be confident while sharing your views.</li>
+   <li>In a full-class discussion, be sure to raise your hand to indicate that
+       you want to speak.</li>
+   <li>When you work with a study group, you have the opportunity to discuss
+       the material with your peers and prepare for exams.<span
+       style='mso-spacerun:yes'>  </span>This can be a very helpful strategy.</li>
+   <li>The Learning Center (TLC) provides many opportunities for working on
+       team projects, such as study rooms and tutors.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0048.htm');" id=PPTL27>Finding Good Team
+  Members</a></font></div>
+  <div id=PPTC27 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>One way to improve your chances of success is to find good team members
+       to work with.<span style='mso-spacerun:yes'>  </span>Consider the
+       following:</li>
+   <li>Find a diverse group (different sexes, ethnicities, and ages) because
+       each member will bring his/her own perspective to the team.</li>
+   <li>Find team members who can do things that you can’t.<span
+       style='mso-spacerun:yes'>  </span>This will allow you to broaden your
+       skill set.<span style='mso-spacerun:yes'>  </span>You can also teach
+       them the skills that you know.</li>
+   <li>Find one responsible person to be the team leader (this could be
+       you!).<span style='mso-spacerun:yes'>  </span>That person should make
+       sure that the team is on track to completing the assignment
+       successfully.</li>
+   <li>Avoid working with your close friends.<span style='mso-spacerun:yes'> 
+       </span>Sometimes, working with friends can be distracting.<span
+       style='mso-spacerun:yes'>  </span>Instead, work with people you get
+       along with that will stay focused on the assignment.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>28</font></div>
+  </td>
+  <td>
+  <div id=PPTP28 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0040.htm');" id=PPTL28>Part 5:<span
+  style='mso-spacerun:yes'>  </span>Seeking Help</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>29</font></div>
+  </td>
+  <td>
+  <div id=PPTP29 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0049.htm');" id=PPTL29>Resources</a></font></div>
+  <div id=PPTC29 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>American colleges expect their students to take initiative when they
+       need help.<span style='mso-spacerun:yes'>  </span>In other words, you
+       are responsible for seeking out help.</li>
+   <li>The good news is that College of the Canyons provides a wide variety of
+       resources to help you succeed in your classes.<span
+       style='mso-spacerun:yes'>  </span>Be sure to take advantage of these
+       resources!</li>
+   <li>Your handout includes web links for the services discussed in this
+       section.<span style='mso-spacerun:yes'>  </span>You can get more
+       information about resources in the Cultural Expectations 2 workshop.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>30</font></div>
+  </td>
+  <td>
+  <div id=PPTP30 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0058.htm');" id=PPTL30>Office Hours</a></font></div>
+  <div id=PPTC30 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>College professors hold office hours.<span style='mso-spacerun:yes'> 
+       </span>Office hours are times outside of class when students can meet
+       with their professors one-on-one.</li>
+   <li>Use this time to ask individual questions, seek help on an assignment,
+       or discuss personal situations with a professor (like making
+       arrangements to take an exam in TLC instead of the classroom).</li>
+   <li>Your professor may want you to make an appointment before visiting
+       office hours.<span style='mso-spacerun:yes'>  </span>Be sure to email or
+       speak to him/her after class regarding appointments.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>31</font></div>
+  </td>
+  <td>
+  <div id=PPTP31 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0050.htm');" id=PPTL31>The Learning Center</a></font></div>
+  <div id=PPTC31 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The Learning Center (TLC) provides a variety of resources for students,
+       including:</li>
+   <li>Tutoring in writing, math, computers and some subjects</li>
+   <li>Computer lab</li>
+   <li>Test proctoring services</li>
+   <li>Group study rooms</li>
+   <li>To learn more about TLC, watch this video.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>32</font></div>
+  </td>
+  <td>
+  <div id=PPTP32 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0051.htm');" id=PPTL32>Library</a></font></div>
+  <div id=PPTC32 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The library provides a variety of research resources to help you.<span
+       style='mso-spacerun:yes'>  </span>These include:</li>
+   <li>Wide selection of books</li>
+   <li>Online databases and eBooks</li>
+   <li>Study spaces</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>33</font></div>
+  </td>
+  <td>
+  <div id=PPTP33 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0052.htm');" id=PPTL33>ASG Computer Lab</a></font></div>
+  <div id=PPTC33 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The ASG Computer Lab provides free computer resources for students who
+       pay their Student Support Fee.<span style='mso-spacerun:yes'>  </span>It
+       is located in Student Center 124 on the Valencia Campus.</li>
+   <li>Services include:</li>
+   <li>PC and Mac Computers</li>
+   <li>Copy Machine and Scanner</li>
+   <li>Free printing!<span style='mso-spacerun:yes'>  </span>(15 pages per day)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>34</font></div>
+  </td>
+  <td>
+  <div id=PPTP34 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0053.htm');" id=PPTL34>Counseling</a></font></div>
+  <div id=PPTC34 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The Counseling department can help you develop your Educational Plan and
+       prepare for your goals (career certificate, Associate’s Degree, or
+       transfer).</li>
+   <li>Counseling takes place in a one-on-one session and may involve a
+       discussion of goals or college success skills.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>35</font></div>
+  </td>
+  <td>
+  <div id=PPTP35 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0056.htm');" id=PPTL35>International Students
+  Program</a></font></div>
+  <div id=PPTC35 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The International Students Program can help international students meet
+       their educational goals.<span style='mso-spacerun:yes'>  </span>They
+       provide:</li>
+   <li>Academic counseling</li>
+   <li>Information about employment</li>
+   <li>Help completing government paperwork related to student visas</li>
+   <li>Help preparing to transfer to a 4 year university</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>36</font></div>
+  </td>
+  <td>
+  <div id=PPTP36 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0054.htm');" id=PPTL36>Disabled Students
+  Program and Services (DSPS)</a></font></div>
+  <div id=PPTC36 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>DSPS provides services for students with disabilities.<span
+       style='mso-spacerun:yes'>  </span>If you have been diagnosed with a
+       disability, be sure to register with DSPS.<span
+       style='mso-spacerun:yes'>  </span>DSPS provides the following
+       accommodations for eligible students:</li>
+   <li>Assistive Technology</li>
+   <li>High Tech Center Lab</li>
+   <li>Shared Notes</li>
+   <li>Sign Language Interpreter</li>
+   <li>Recorded Lectures</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>37</font></div>
+  </td>
+  <td>
+  <div id=PPTP37 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0055.htm');" id=PPTL37>Student Health and
+  Wellness Center</a></font></div>
+  <div id=PPTC37 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The Student Health and Wellness Center provides confidential physical
+       and mental health services to help students succeed.<span
+       style='mso-spacerun:yes'>  </span>Most of these services are free.<span
+       style='mso-spacerun:yes'>  </span>They include:</li>
+   <li>First aid</li>
+   <li>Prescription Medication</li>
+   <li>Vaccinations</li>
+   <li>Personal Counseling</li>
+   <li>Men’s &amp; Women’s Clinic</li>
+   <li>Nutrition Counseling</li>
+   <li>Tobacco Cessation Counseling</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>38</font></div>
+  </td>
+  <td>
+  <div id=PPTP38 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0064.htm');" id=PPTL38>Activity 3</a></font></div>
+  <div id=PPTC38 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Go to page 6 in your worksheet to complete Activity 3.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>39</font></div>
+  </td>
+  <td>
+  <div id=PPTP39 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0057.htm');" id=PPTL39>If you liked this
+  lesson and would like more information, consider attending:</a></font></div>
+  <div id=PPTC39 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Cultural Expectations 2 and 3</li>
+   <li>MLA 1 and 2</li>
+   <li>APA 1 and 2</li>
+   <br>
+   <br>
+   <li>Why should you come back?</li>
+   <li>Students completing Supplemental Learning Activities had a
+       10%&nbsp;higher success rate across the disciplines, a 21% higher
+       success rate in Math, and a 49% higher success rate in English courses.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>40</font></div>
+  </td>
+  <td>
+  <div id=PPTP40 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0061.htm');" id=PPTL40>Activity 4 and
+  Self-Reflection</a></font></div>
+  <div id=PPTC40 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Complete Activity 4 and the Self-Reflection on pages 6 and 7 of your
+       worksheet.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master15.htm></a><a href=master15.xml></a><a
+href=preview.wmf></a><a href=master33.htm></a><a href=master33.xml></a><a
+href=master34.htm></a><a href=master34.xml></a><a href=master35.htm></a><a
+href=master35.xml></a><a href=master36.htm></a><a href=master36.xml></a><a
+href=pres.xml></a><a href=slide0001.htm></a><a href="master33_image001.png"></a><a
+href="slide0001_image002.jpg"></a><a href=slide0035.htm></a><a
+href="master34_image003.png"></a><a href=slide0060.htm></a><a
+href=slide0036.htm></a><a href="master15_image004.png"></a><a
+href=slide0002.htm></a><a href=slide0021.htm></a><a href=slide0023.htm></a><a
+href=slide0042.htm></a><a href=slide0025.htm></a><a href=slide0043.htm></a><a
+href=slide0026.htm></a><a href=slide0062.htm></a><a href=slide0037.htm></a><a
+href=slide0044.htm></a><a href=slide0059.htm></a><a href=slide0045.htm></a><a
+href=slide0027.htm></a><a href=slide0046.htm></a><a href=slide0047.htm></a><a
+href=slide0038.htm></a><a href=slide0018.htm></a><a href=slide0019.htm></a><a
+href="slide0019_image005.png"></a><a href=slide0063.htm></a><a
+href=slide0039.htm></a><a href=slide0030.htm></a><a href=slide0013.htm></a><a
+href=slide0048.htm></a><a href=slide0040.htm></a><a href=slide0049.htm></a><a
+href=slide0058.htm></a><a href=slide0050.htm></a><a href=slide0051.htm></a><a
+href=slide0052.htm></a><a href=slide0053.htm></a><a href=slide0056.htm></a><a
+href=slide0054.htm></a><a href=slide0055.htm></a><a href=slide0064.htm></a><a
+href=slide0057.htm></a><a href="slide0057_image006.jpg"></a><a
+href="slide0057_image007.png"></a><a href=slide0061.htm></a><a
+href=master01.htm></a><a href="master15_stylesheet.css"></a><a
+href="master33_stylesheet.css"></a><a href="master34_stylesheet.css"></a><a
+href="master35_stylesheet.css"></a><a href="master36_stylesheet.css"></a><a
+href=script.js></a><a href=fullscreen.htm></a><a href="notes_flag.gif"></a><a
+href=buttons.gif></a><a href=frame.htm></a><a href=outline.htm></a><a
+href=filelist.xml></a><a href=master15.htm></a><a href=master15.xml></a><a
+href=preview.wmf></a><a href=master33.htm></a><a href=master33.xml></a><a
+href=master34.htm></a><a href=master34.xml></a><a href=master35.htm></a><a
+href=master35.xml></a><a href=master36.htm></a><a href=master36.xml></a><a
+href=pres.xml></a><a href=slide0001.htm></a><a href="master33_image001.png"></a><a
+href="slide0001_image002.jpg"></a><a href=slide0035.htm></a><a
+href="master34_image003.png"></a><a href=slide0060.htm></a><a
+href=slide0036.htm></a><a href="master15_image004.png"></a><a
+href=slide0002.htm></a><a href=slide0021.htm></a><a href=slide0023.htm></a><a
+href=slide0042.htm></a><a href=slide0025.htm></a><a href=slide0043.htm></a><a
+href=slide0026.htm></a><a href=slide0062.htm></a><a href=slide0037.htm></a><a
+href=slide0044.htm></a><a href=slide0059.htm></a><a href=slide0045.htm></a><a
+href=slide0027.htm></a><a href=slide0046.htm></a><a href=slide0047.htm></a><a
+href=slide0038.htm></a><a href=slide0018.htm></a><a href=slide0019.htm></a><a
+href="slide0019_image005.png"></a><a href=slide0063.htm></a><a
+href=slide0039.htm></a><a href=slide0030.htm></a><a href=slide0013.htm></a><a
+href=slide0048.htm></a><a href=slide0040.htm></a><a href=slide0049.htm></a><a
+href=slide0058.htm></a><a href=slide0050.htm></a><a href=slide0051.htm></a><a
+href=slide0052.htm></a><a href=slide0053.htm></a><a href=slide0056.htm></a><a
+href=slide0054.htm></a><a href=slide0055.htm></a><a href=slide0064.htm></a><a
+href=slide0057.htm></a><a href="slide0057_image006.jpg"></a><a
+href="slide0057_image007.png"></a><a href=slide0061.htm></a><a
+href=master01.htm></a><a href="master15_stylesheet.css"></a><a
+href="master33_stylesheet.css"></a><a href="master34_stylesheet.css"></a><a
+href="master35_stylesheet.css"></a><a href="master36_stylesheet.css"></a><a
+href=script.js></a><a href="../CulturalExpectations.htm"></a><a
+href=fullscreen.htm></a><a href="notes_flag.gif"></a><a href=buttons.gif></a><a
+href=frame.htm></a><a href=outline.htm></a></div>
+
+</body>
+
+</html>
