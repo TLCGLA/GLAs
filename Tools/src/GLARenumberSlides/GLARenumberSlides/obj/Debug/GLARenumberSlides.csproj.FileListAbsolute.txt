@@ -1,6 +1,0 @@
-c:\users\student-tlc\documents\visual studio 2012\Projects\GLARenumberSlides\GLARenumberSlides\bin\Debug\GLARenumberSlides.exe.config
-c:\users\student-tlc\documents\visual studio 2012\Projects\GLARenumberSlides\GLARenumberSlides\bin\Debug\GLARenumberSlides.exe
-c:\users\student-tlc\documents\visual studio 2012\Projects\GLARenumberSlides\GLARenumberSlides\bin\Debug\GLARenumberSlides.pdb
-c:\users\student-tlc\documents\visual studio 2012\Projects\GLARenumberSlides\GLARenumberSlides\obj\Debug\GLARenumberSlides.csprojResolveAssemblyReference.cache
-c:\users\student-tlc\documents\visual studio 2012\Projects\GLARenumberSlides\GLARenumberSlides\obj\Debug\GLARenumberSlides.exe
-c:\users\student-tlc\documents\visual studio 2012\Projects\GLARenumberSlides\GLARenumberSlides\obj\Debug\GLARenumberSlides.pdb
