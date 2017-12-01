@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD html 4.01 Transitional//EN">
+<html>
+<head>
+<title>spa workshop</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+<style type="text/css">
+
+div {
+	font-family: sans-serif, Arial, Times New Roman, Times, serif;
+	font-size: 32px;
+}
+
+</style>
+</head>
+
+<body  link="#000066" alink="#000066" vlink="#000066">
+
+
+<!-- this is the common top menu -->
+
+<!--Page Header -->
+
+<table align="center" width="900">
+<tr>
+      <td align="center"><br><div><font size="+5" color=#990000>More "e" to "i" Practice</font></div></td>
+</tr>
+<tr><td colspan="2"><hr color=#990000></td></tr></tr>
+</table>
+<!-- this is the content table -->
+
+
+<table align="center" width="900" cellspacing="1"  cellpadding="10" border="0" bgcolor="#FFFFF0">
+<tr><td><div>
+
+
+<font size="+3" color="#EE871B"><center><strong>Form questions with the clues given and interview another student</strong></center></font><br>
+
+Hint: Remember the "<strong><font color="#5522B9">e</font></strong>" to "<strong><font color="#5522B9">i</font></strong>" stem change!<br>
+<br>
+
+<table align"center">
+<tr><td width="3" align="right" valign="top"><div>1.&nbsp;</div></td>
+<td><div>&iquest;D&oacute;nde s<strong><font color="#5522B9">e</font></strong>rvir / ellos / comida de Cuba?</div> (servir / to server)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>2.&nbsp;</div></td>
+<td><div>&iquest;P<strong><font color="#5522B9">e</font></strong>dir / t&uacute; / alcohol / cafeter&iacute;a?</div> (pedir / to ask for)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>3.&nbsp;</div></td>
+<td><div>&iquest;Rep<strong><font color="#5522B9">e</font></strong>tir / tu profesora / preguntas / ex&aacute;menes? </div> (repetir / to repeat)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>4.&nbsp;</div></td>
+<td><div>&iquest;Qu&eacute; p<strong><font color="#5522B9">e</font></strong>dir / t&uacute; / en / biblioteca?</div> (pedir / to ask for)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>5.&nbsp;</div></td>
+<td><div>&iquest;S<strong><font color="#5522B9">e</font></strong>rvir / ellos / pasta / en / librer&iacute;a?</div> (servir / to serve)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>6.&nbsp;</div></td>
+<td><div>&iquest;Rep<strong><font color="#5522B9">e</font></strong>tir / t&uacute; / mucho / clases?</div> (repetir / to repeat)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>7.&nbsp;</div></td>
+<td><div>&iquest;pref<strong><font color="#5522B9">e</font></strong>rir / t&uacute; / clases / noche?</div>(preferir / to prefer)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>8.&nbsp;</div></td>
+<td><div>&iquest;Qu&eacute; p<strong><font color="#5522B9">e</font></strong>dir / profesora / en / clase?</div> (pedir / to ask for)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>9.&nbsp;</div></td>
+<td><div>&iquest;S<strong><font color="#5522B9">e</font></strong>rvir / profesora / caf&eacute; / en / clase?</div> (servir / to serve)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>10.&nbsp;</div></td>
+<td><div>&iquest;P<strong><font color="#5522B9">e</font></strong>dir / nosotros / ex&aacute;menes / f&aacute;cil?</div> (pedir / to ask for)</td></tr>
+</table>
+
+
+
+</div></td></tr>
+
+
+
+
+
+
+
+<tr><td align="right"><div><font size="3" color="#5E00FF"><a href="quiz.html">Take a quiz</a></font></div></td></tr>
+
+
+
+ 
+</table>
+  
+
+</body>
+</html>

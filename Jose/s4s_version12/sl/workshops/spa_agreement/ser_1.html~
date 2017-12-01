@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD html 4.01 Transitional//EN">
+<html>
+<head>
+<title>spa workshop</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+<style type="text/css">
+
+div {
+	font-family: sans-serif, Arial, Times New Roman, Times, serif;
+	font-size: 18px;
+}
+
+</style>
+</head>
+
+<body  link="#000066" alink="#000066" vlink="#000066">
+
+
+<!-- this is the common top menu -->
+
+<!--Page Header -->
+
+<table align="center" width="900">
+<tr>
+      <td align="center"><br><div><font size="+5" color=#990000>The verb "ser"</font></div></td>
+</tr>
+<tr><td colspan="2"><hr color=#990000></td></tr></tr>
+</table>
+<!-- this is the content table -->
+
+
+<table align="center" width="900" cellspacing="1"  cellpadding="10" border="0" bgcolor="#FFFFF0">
+<tr>
+<td><div>
+      
+<font size="+3" color=#990000>In English</font><font size="+3">, one of the uses of the verb "to be" 
+is to describe people or things, like when you say "She is tall".<br><br> 
+
+<font size="+3" color=#990000>In Spanish</font><font size="+3">, the verb "to be" ("ser") is also used for 
+many things, including descriptions.  Let's look at some:<br>
+
+<table width="850" bgcolor=#A6DDDD align="center">
+<tr>
+<td width=15% valign="top"><div><font size="+3">I<br>You<br>He/She<br>We<br>you (all)<br>They</font></div></td>
+<td width=8% valign="top"><div><font size="+3" color="#1E0880"><strong>am<br>are<br>is<br>are<br>are<br>are</strong></font></div></td>
+<td width=20% valign="top"><div><font size="+3">tall<br>tall<br>tall<br>tall<br>tall<br>tall</font></div></td>
+<td width=22% valign="top"><div><font size="+3">Yo<br>T&uacute; / Usted<br>&Eacute;l / Ella<br>Nosotros/as<br>Ustedes<br>Ellos / Ellas</font></div></td>
+<td width=18% valign="top"><div><font size="+3" color="#1E0880"><strong>soy<br>eres / es<br>es<br>somos<br>son<br>son</strong></font></div></td>
+<td valign="top"><div><font size="+3">alto/a<br>alto/a<br>alto/a<br>altos/as<br>altos/as<br>altos/as</font></div></td>
+
+</tr>
+</table>
+<br>
+Notice that the verb "ser" changes according to each person.  <br><br>
+
+Why is this?<br><br>
+<font size="+4" color="#EE871B">Verbs must agree!</font> 
+
+</font>
+<font size="3" color="#5E00FF"><a href="ser_2.html">Learn more.</a></font>
+
+</div>
+<br>
+</td>
+
+</tr>
+ 
+ </table>
+  
+
+</body>
+</html>

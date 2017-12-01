@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 4;
+$(".button1").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click') .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"}) 
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	if (i == x) {$('.button1').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click')  .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+	$(this).css ({"color": "red", "font-weight": "normal"})
+ 
+	});
+ 
+});
+ 
+ 
+</script>
+<style type="text/css"> 
+
+
+#questions {width: 100%; margin-bottom: 10px;}
+.item {padding-left: 10px; width: 100%;}
+.right, .wrong {cursor: pointer; width: 600px;}
+.right:hover, .wrong:hover {background: #ccc;}
+.letter {margin-right: 10px;}
+.turnedOff {margin-right: 10px;color: gray;}
+
+
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	All the citations below are missing a key component.  Can you find the missing part?  After you get all the correct answers, a 
+	button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page6.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table  width="100%" border="0">
+	<tr>
+	<td width="80%" valign="top"><div class="exercise_instructions">
+		<font class="correct_number">Complete the citations  CORRECTLY</font> by clicking on the missing part.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	</table>
+	<table width="100%" border="0"><tr><td width="80%">
+	<table id="questions">
+	<tr><td><div class="number">1.</div></td>
+	<td><div class="item">According to the Sierra Club, "Global warming emissions from the transportation sector can be 
+	reduced by increasing the production and use of clean, highly efficient vehicles powered by sustainable 
+	low carbon fuels and electricity, and by better design in communities to include accessible and convenient 
+	alternatives to driving" ________________ <br>
+	<span class="letter">a.</span><span class="right">(Sierra Club)<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">(Sierra Club, 2001)<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">(Sierra Club, pg. 26)<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">(Sierra Club, 2001, pg. 26)<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	
+	<table id="questions">
+	<tr><td><div class="number">2.</div></td>
+	<td><div class="item">The National Oceanic and Atmospheric Administration says that it "has completed implementation of the 
+	final phase of a nine year, $180 million contract by installing the newest generation of IBM supercomputers 
+	for weather and climate prediction" ________________ <br>
+ 	<span class="letter">a.</span><span class="wrong">(United States, pg. 26)<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">(pg. 26)<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">(United States, 2001, pg. 26)<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">(United States, 2001)<span id="feedback"></span> </span><br>
+	<span class="letter">e.</span><span class="right">(United States)<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">3.</div></td>
+	<td><div class="item">As a writer for Time magazine states, "For years, global warming was discussed 
+	as a threat in the distant future.  Now it is increasingly regarded as a clear, 
+	observable fact.   This sudden shift means that all of us must start thinking about the many 
+	ways global warming will affect us, our loved ones, our property, and our economic 
+	prospects.  We must think, and then adapt accordingly" ________________ <br>
+ 	<span class="letter">a.</span><span class="wrong">(Hertsgaard, pg. 26)<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">(pg. 26)<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="right">(Hertsgaard)<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">(Hertsgaard, 2001)<span id="feedback"></span> </span><br>
+	<span class="letter">e.</span><span class="right">(Hertsgaard, 2001, pg. 26)<span id="feedback"></span></span>
+	</div></td></tr> 
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">4.</div></td>
+	<td><div class="item">In her book, Big Green Purse, author and environmentalist Diane MacEachern writes, "As a consumer, 
+	you can make the biggest difference to air quality in the way you use energy and in the products you buy 
+	that have been produced in the least energy-intensive way" ________________ <br>
+ 	<span class="letter">a.</span><span class="wrong">(MacEachern)<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="right">(21)<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="right">(MacEachern, 2001)<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">(MacEachern, 2001, pg 21)<span id="feedback"></span> </span><br>
+	<span class="letter">e.</span><span class="right" >(MacEachern, pg. 26)<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	</td>
+	
+	<td align="center"><div id="counter" class="background_score"></div></td>
+	</tr></table>
+	
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

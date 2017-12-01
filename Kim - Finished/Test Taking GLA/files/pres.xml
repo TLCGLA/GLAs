@@ -1,0 +1,542 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <p:presentation sizeof="custom" slidesizex="6400" slidesizey="4800"
+  gridspacingx="49152" gridspacingy="49152" subsetembed="1">
+  <p:master id="3" slidesn="0,0" type="main" href="master03.html"
+   xmlhref="master03.xml"
+   template="Title &amp; Bullets - Photo Quarter Swoop Lower Right"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="4" slidesn="0,0" type="main" href="master04.html"
+   xmlhref="master04.xml"
+   template="Title &amp; Bullets - Photo Quarter Circle Upper Left"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="5" slidesn="0,0" type="main" href="master05.html"
+   xmlhref="master05.xml"
+   template="Title - Photo Curved Swoop Connector Upper  Double"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="6" slidesn="0,0" type="main" href="master06.html"
+   xmlhref="master06.xml"
+   template="Title - Photo Quarter Circle Connector Bottom" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="7" slidesn="0,0" type="main" href="master07.html"
+   xmlhref="master07.xml" template="Title - Photo Two Portrait"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="8" slidesn="0,0" type="main" href="master08.html"
+   xmlhref="master08.xml"
+   template="Title &amp; Bullets - Photo Quarter Circle Lower Left"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="9" slidesn="0,0" type="main" href="master09.html"
+   xmlhref="master09.xml" template="Blank" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="10" slidesn="0,0" type="main" href="master10.html"
+   xmlhref="master10.xml" template="Title &amp; Bullets - Photo Round Left"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="11" slidesn="0,0" type="main" href="master11.html"
+   xmlhref="master11.xml" template="Title - Photo Half Circle Connector"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="12" slidesn="0,0" type="main" href="master12.html"
+   xmlhref="master12.xml" template="1_Blank" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="13" slidesn="0,0" type="main" href="master13.html"
+   xmlhref="master13.xml" template="Bullets" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="14" slidesn="0,0" type="main" href="master14.html"
+   xmlhref="master14.xml" template="2_Blank" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="15" slidesn="0,0" type="main" href="master15.html"
+   xmlhref="master15.xml" template="Blank copy" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="16" slidesn="0,0" type="main" href="master16.html"
+   xmlhref="master16.xml" template="Blank copy 1" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="17" slidesn="0,0" type="main" href="master17.html"
+   xmlhref="master17.xml" template="Blank copy 2" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="18" slidesn="0,0" type="main" href="master18.html"
+   xmlhref="master18.xml" template="Blank copy 3" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="19" slidesn="0,0" type="main" href="master19.html"
+   xmlhref="master19.xml" template="Title &amp; Subtitles" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="20" slidesn="0,0" type="main" href="master20.html"
+   xmlhref="master20.xml" template="Title &amp; Bullets" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="21" slidesn="0,0" type="main" href="master21.html"
+   xmlhref="master21.xml" template="Title Top" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="22" slidesn="0,0" type="main" href="master22.html"
+   xmlhref="master22.xml" template="1_Bullets" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="23" slidesn="0,0" type="main" href="master23.html"
+   xmlhref="master23.xml" template="Title, Bullets &amp; Photo"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="24" slidesn="0,0" type="main" href="master24.html"
+   xmlhref="master24.xml" template="Title Centre" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="25" slidesn="0,0" type="main" href="master25.html"
+   xmlhref="master25.xml" template="Title &amp; Bullets - Right"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="26" slidesn="0,0" type="main" href="master26.html"
+   xmlhref="master26.xml" template="Title &amp; Bullets - Left"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="27" slidesn="0,0" type="main" href="master27.html"
+   xmlhref="master27.xml" template="Complimentary" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="28" slidesn="0,0" type="main" href="master28.html"
+   xmlhref="master28.xml" template="Title &amp; Bullets - Photo Portrait Left"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="29" slidesn="0,0" type="main" href="master29.html"
+   xmlhref="master29.xml" template="Title &amp; Text - Photo Landsacape Left"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="30" slidesn="0,0" type="main" href="master30.html"
+   xmlhref="master30.xml" template="1_Title &amp; Bullets" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="31" slidesn="0,0" type="main" href="master31.html"
+   xmlhref="master31.xml" template="Title &amp; Bullets - Photo Oval Left"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="32" slidesn="0,0" type="main" href="master32.html"
+   xmlhref="master32.xml" template="1_Title &amp; Bullets - Right"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="33" slidesn="0,0" type="main" href="master33.html"
+   xmlhref="master33.xml"
+   template="Title &amp; Bullets - Photo Quarter Swoop Lower Left"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="34" slidesn="0,0" type="main" href="master34.html"
+   xmlhref="master34.xml" template="Title &amp; Subtitle" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="35" slidesn="0,0" type="main" href="master35.html"
+   xmlhref="master35.xml"
+   template="Title - Photo Straight Swoop Connector Upper " layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="36" slidesn="0,0" type="main" href="master36.html"
+   xmlhref="master36.xml" template="Title - Photo Curved Swoop Connector Upper"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="37" slidesn="0,0" type="main" href="master37.html"
+   xmlhref="master37.xml"
+   template="Title &amp; Text - Photo Swoop Lower Right Double"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="38" slidesn="0,0" type="main" href="master38.html"
+   xmlhref="master38.xml"
+   template="Title &amp; Text - Photo Swoop Lower Left Double"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="39" slidesn="0,0" type="main" href="master39.html"
+   xmlhref="master39.xml"
+   template="Title &amp; Text - Photo Quarter Swoop Lower Right Triple"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="40" slidesn="0,0" type="main" href="master40.html"
+   xmlhref="master40.xml"
+   template="Title &amp; Text - Photo Quarter Swoop Lower Left Triple"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="41" slidesn="0,0" type="main" href="master41.html"
+   xmlhref="master41.xml"
+   template="Title &amp; Bullets - Photo Quarter Swoop Lower Right Double"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="42" slidesn="0,0" type="main" href="master42.html"
+   xmlhref="master42.xml"
+   template="Title &amp; Bullets - Photo Quarter Swoop Lower Left Double"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="43" slidesn="0,0" type="main" href="master43.html"
+   xmlhref="master43.xml" template="Photo - Horizontal" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="44" slidesn="0,0" type="main" href="master44.html"
+   xmlhref="master44.xml"
+   template="Title - Photo Straight Swoop Connector Upper  Double"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="45" slidesn="0,0" type="main" href="master45.html"
+   xmlhref="master45.xml"
+   template="Title &amp; Bullets - Photo Quarter Circle Lower Right"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="46" slidesn="0,0" type="main" href="master46.html"
+   xmlhref="master46.xml" template="1_Title &amp; Bullets - Left"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="47" slidesn="0,0" type="main" href="master47.html"
+   xmlhref="master47.xml"
+   template="Title &amp; Bullets - Photo Quarter Circle Upper Right"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="48" slidesn="0,0" type="main" href="master48.html"
+   xmlhref="master48.xml" template="Title - Center" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="49" slidesn="0,0" type="main" href="master49.html"
+   xmlhref="master49.xml"
+   template="Title - Photo Quarter Circle Connector Upper" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="50" slidesn="0,0" type="main" href="master50.html"
+   xmlhref="master50.xml" template="Photo - Vertical" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="51" slidesn="0,0" type="main" href="master51.html"
+   xmlhref="master51.xml"
+   template="Title &amp; Bullets - Photo Quarter Circle Straight Connector Right"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="52" slidesn="0,0" type="main" href="master52.html"
+   xmlhref="master52.xml"
+   template="Title &amp; Bullets - Photo Quarter Circle Straight Connector Left"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="53" slidesn="0,0" type="main" href="master53.html"
+   xmlhref="master53.xml"
+   template="Title &amp; Bullets - Photo Quarter Circle Upper Right Double"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="54" slidesn="0,0" type="main" href="master54.html"
+   xmlhref="master54.xml"
+   template="Title &amp; Bullets - Photo Quarter Circle Lower Right Double"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="55" slidesn="0,0" type="main" href="master55.html"
+   xmlhref="master55.xml"
+   template="Title &amp; Bullets - Photo Quarter Circle Upper Left Double"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="56" slidesn="0,0" type="main" href="master56.html"
+   xmlhref="master56.xml"
+   template="Title &amp; Bullets - Photo Quarter Circle Lower Left Double"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="57" slidesn="0,0" type="main" href="master57.html"
+   xmlhref="master57.xml" template="Title &amp; Bullets - Photo Half Round Right"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="58" slidesn="0,0" type="main" href="master58.html"
+   xmlhref="master58.xml" template="Title - Top" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="59" slidesn="0,0" type="main" href="master59.html"
+   xmlhref="master59.xml" template="Title &amp; Bullets - Photo Half Round Left"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="60" slidesn="0,0" type="main" href="master60.html"
+   xmlhref="master60.xml" template="Title &amp; Bullets - Photo Tall Arc Right"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="61" slidesn="0,0" type="main" href="master61.html"
+   xmlhref="master61.xml" template="Title &amp; Bullets - Half Photo Arc Right"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="62" slidesn="0,0" type="main" href="master62.html"
+   xmlhref="master62.xml" template="Title &amp; Bullets - Photo Tall Arc Left"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="63" slidesn="0,0" type="main" href="master63.html"
+   xmlhref="master63.xml" template="Title &amp; Bullets - Half Photo Arc Left"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="64" slidesn="0,0" type="main" href="master64.html"
+   xmlhref="master64.xml"
+   template="Title &amp; Bullets - Photo Tall Arc Right Reverse"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="65" slidesn="0,0" type="main" href="master65.html"
+   xmlhref="master65.xml"
+   template="Title &amp; Bullets - Photo Half Arc Right Reverse"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="66" slidesn="0,0" type="main" href="master66.html"
+   xmlhref="master66.xml"
+   template="Title &amp; Bullets - Photo Tall Arc Left Reverse"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="67" slidesn="0,0" type="main" href="master67.html"
+   xmlhref="master67.xml"
+   template="Title &amp; Bullets - Photo Half Arc Left Reverse"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="68" slidesn="0,0" type="main" href="master68.html"
+   xmlhref="master68.xml" template="Title &amp; Bullets - Circles Left"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="69" slidesn="0,0" type="main" href="master69.html"
+   xmlhref="master69.xml" template="Title &amp; Bullets - Squares Left"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="70" slidesn="0,0" type="main" href="master70.html"
+   xmlhref="master70.xml"
+   template="1_Title - Photo Curved Swoop Connector Upper" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="71" slidesn="0,0" type="main" href="master71.html"
+   xmlhref="master71.xml" template="2_Title &amp; Bullets" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="72" slidesn="0,0" type="main" href="master72.html"
+   xmlhref="master72.xml" template="Title - Top copy 3" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="73" slidesn="0,0" type="main" href="master73.html"
+   xmlhref="master73.xml" template="White Box" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="74" slidesn="0,0" type="main" href="master74.html"
+   xmlhref="master74.xml" template="Extras Background copy 5"
+   layout="title_body" slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="75" slidesn="0,0" type="main" href="master75.html"
+   xmlhref="master75.xml" template="2_Bullets" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="76" slidesn="0,0" type="main" href="master76.html"
+   xmlhref="master76.xml" template="3_Blank" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="77" slidesn="0,0" type="main" href="master77.html"
+   xmlhref="master77.xml" template="Title - Top copy" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:slide id="40" slidesn="0,0" href="slide0040.html"/>
+  <p:slide id="5" slidesn="0,0" href="slide0005.html" masterhref="master04.html"/>
+  <p:slide id="2" slidesn="0,0" href="slide0002.html" masterhref="master05.html"/>
+  <p:slide id="7" slidesn="0,0" href="slide0007.html" masterhref="master04.html"/>
+  <p:slide id="43" slidesn="0,0" href="slide0043.html"
+   masterhref="master06.html"/>
+  <p:slide id="47" slidesn="0,0" href="slide0047.html"
+   masterhref="master07.html"/>
+  <p:slide id="35" slidesn="0,0" href="slide0035.html"
+   masterhref="master08.html"/>
+  <p:slide id="6" slidesn="0,0" href="slide0006.html" masterhref="master09.html"/>
+  <p:slide id="50" slidesn="0,0" href="slide0050.html"
+   masterhref="master10.html"/>
+  <p:slide id="8" slidesn="0,0" href="slide0008.html" masterhref="master06.html"/>
+  <p:slide id="52" slidesn="0,0" href="slide0052.html"
+   masterhref="master06.html"/>
+  <p:slide id="11" slidesn="0,0" href="slide0011.html"
+   masterhref="master06.html"/>
+  <p:slide id="32" slidesn="0,0" href="slide0032.html"
+   masterhref="master06.html"/>
+  <p:slide id="13" slidesn="0,0" href="slide0013.html"
+   masterhref="master06.html"/>
+  <p:slide id="14" slidesn="0,0" href="slide0014.html"
+   masterhref="master06.html"/>
+  <p:slide id="1" slidesn="0,0" href="slide0001.html" masterhref="master11.html"/>
+  <p:slide id="10" slidesn="0,0" href="slide0010.html"
+   masterhref="master06.html"/>
+  <p:slide id="34" slidesn="0,0" href="slide0034.html"
+   masterhref="master06.html"/>
+  <p:slide id="3" slidesn="0,0" href="slide0003.html" masterhref="master06.html"/>
+  <p:slide id="18" slidesn="0,0" href="slide0018.html"
+   masterhref="master11.html"/>
+  <p:slide id="9" slidesn="0,0" href="slide0009.html" masterhref="master06.html"/>
+  <p:slide id="15" slidesn="0,0" href="slide0015.html"
+   masterhref="master06.html"/>
+  <p:slide id="16" slidesn="0,0" href="slide0016.html"
+   masterhref="master06.html"/>
+  <p:slide id="17" slidesn="0,0" href="slide0017.html"
+   masterhref="master09.html" overridemasteranimations="t"/>
+  <p:slide id="36" slidesn="0,0" href="slide0036.html"
+   masterhref="master08.html"/>
+  <p:slide id="12" slidesn="0,0" href="slide0012.html"
+   masterhref="master06.html"/>
+  <p:viewstate type="slideView" hideoutlineicons="t"/>
+  <p:tag name="___PPTMAC11" type="binary" datasize="9660" dataoffset="1"/>
+  <p:tag name="___PPT2001" type="binary" datasize="68" dataoffset="2"/>
+  <p:kinsoku language="Japanese" level="levelOne"/>
+  <p:headersfooters nouserdate="t" nofooter="t" noheader="t" nodate="t"
+   todaydate="t"/>
+  <p:headersfooters notes="t" nouserdate="t" nofooter="t" noheader="t"
+   nodate="t" todaydate="t"/>
+  <p:pptdocumentsettings framecolors="WhiteTextOnBlack" hideslideanimation="t"
+   browsersupport="v4"/>
+ </p:presentation>
+ <o:shapedefaults v:ext="edit" spidmax="95239">
+  <v:fill type="tile"/>
+  <v:stroke weight="2pt"/>
+ </o:shapedefaults></xml>

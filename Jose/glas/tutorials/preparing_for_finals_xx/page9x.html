@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 5;
+$(".button1").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click') .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"}) 
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	if (i == x) {$('.button1').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click')  .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+	$(this).css ({"color": "red", "font-weight": "normal"})
+ 
+	});
+ 
+});
+ 
+ 
+</script>
+<style type="text/css"> 
+
+
+#questions {width: 100%; margin-bottom: 10px;}
+.item {padding-left: 10px; width: 100%; line-height: 20px;}
+.right, .wrong {cursor: pointer;}
+.right:hover, .wrong:hover {background: #ccc;}
+.letter {margin-right: 10px;}
+.turnedOff {margin-right: 10px;color: gray}
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	Answer the questions correctly. After you get all the correct answers, a 
+	button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page10.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table  width="100%" border="0">
+	<tr>
+	<td width="80%" valign="top"><div class="exercise_instructions">
+		Identify the <font class="correct_number">BEST ANSWERS</font> by clicking on them.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	</table>
+	<table width="100%" border="0"><tr><td width="80%">
+	<table id="questions">
+	<tr><td><div class="number">1.</div></td>
+	<td><div class="item">According to the presentation, what is the most important thing to do when preparing for an exam?<br>
+	<span class="letter">a.</span><span class="wrong">to ensure that there's a support system to keep you motivated<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">to have a positive mindset<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="right">to start early<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">to have all the material resources ready<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	
+	<table id="questions">
+	<tr><td><div class="number">2.</div></td>
+	<td><div class="item">According to the presentation, what should you do when reading to make outlines?<br>
+	<span class="letter">a.</span><span class="wrong">compare the reading with your classnotes, looking for gaps in your notes<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">circle key words, dates, and names<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">write down questions to ask the instructor<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="right">process the information as you read<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">3.</div></td>
+	<td><div class="item">According to the presentation, how can you avoid the Superman/Superwoman syndrome?<br>
+ 	<span class="letter">a.</span><span class="right">by asking for help<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">by not studying for a long time without breaks<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">by rewarding yourself each time you meet a study goal<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">by wanting to do it all yourself instead to splitting the work with a study partner<span id="feedback"></span> </span>
+	</div></td></tr> 
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">4.</div></td>
+	<td><div class="item">According to the presentation, what is the standard way to condense information into an outline?<br>
+ 	<span class="letter">a.</span><span class="wrong">turning each paragraph in the reading into a single sentence in the outline<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">scanning the textbook for ideas and listing them in the outline<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="right">using the headings in the book as a ready-made outline<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">listing in the outline everything the instructor emphasized in class<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">5.</div></td>
+	<td><div class="item">According to the presentation, how can an outline help you in an exam?<br>
+ 	<span class="letter">a.</span><span class="right">the outline is a ready-made guideline to organize ideas in your answers<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">you can take the outline with you and go over it quickly before taking the exam<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">the outline can give you a big picture sense of what the exam is about<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">you can use it after the exam to get a sense of how well you did<span id="feedback"></span> </span>
+	</div></td></tr> 
+	</table>
+	</td>
+	
+	<td align="center"><div id="counter" class="background_score"></div></td>
+	</tr></table>
+	
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

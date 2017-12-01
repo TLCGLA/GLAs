@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD html 4.01 Transitional//EN">
+<html>
+<head>
+<title>spa workshop</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+<style type="text/css">
+
+div {
+	font-family: sans-serif, Arial, Times New Roman, Times, serif;
+	font-size: 32px;
+}
+
+</style>
+</head>
+
+<body  link="#000066" alink="#000066" vlink="#000066">
+
+
+<!-- this is the common top menu -->
+
+<!--Page Header -->
+
+<table align="center" width="900">
+<tr>
+      <td align="center"><br><div><font size="+5" color=#990000>Practice</font></div></td>
+</tr>
+<tr><td colspan="2"><hr color=#990000></td></tr></tr>
+</table>
+<!-- this is the content table -->
+
+
+<table align="center" width="900" cellspacing="0"  cellpadding="0" border="0" bgcolor="#FFFFF0">
+<tr><td><div>
+
+<font size="+3" color="#EE871B"><center><strong>Can you figure out what these sentences mean?</strong></center></font>
+
+<table>
+<tr><td width="3" align="right" valign="top"><div>1.&nbsp;</div></td>
+<td><div>Marta <font color="#5522B9">se despierta</font> a las cuatro.</div> (despertarse / to wake up)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>2.&nbsp;</div></td>
+<td><div>Yo <font color="#5522B9">me maquillo</font> en el ba&ntilde;o.</div> (maquillarse / to put on makeup)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>3.&nbsp;</div></td>
+<td><div>Ellos <font color="#5522B9">se duermen</font> en la clase.</div> (dormirse / to fall asleep)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>4.&nbsp;</div></td>
+<td><div>Ricardo <font color="#5522B9">se ducha</font> en la noche.</div> (ducharse / to shower)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>5.&nbsp;</div></td>
+<td><div>Antonio no <font color="#5522B9">se ba&ntilde;a </font> en la ma&ntilde;ana.</div> (ba&ntilde;arse / to bathe)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>6.&nbsp;</div></td>
+<td><div>Nosotros no <font color="#5522B9">nos ponemos</font> ropa formal.</div> (ponerse / to put on)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>7.&nbsp;</div></td>
+<td><div>T&uacute; <font color="#5522B9">te vistes</font> con la ropa de tu madre.</div>(vestirse / to get dressed)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>8.&nbsp;</div></td>
+<td><div>&iquest;<font color="#5522B9">Se afeita</font> usted en la ma&ntilde;ana?</div> (afeitarse / to shave)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>9.&nbsp;</div></td>
+<td><div>Ellas <font color="#5522B9">se acuestan</font> a las diez.</div> (acostarse / to go to bed)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>10.&nbsp;</div></td>
+<td><div>&iquest;<font color="#5522B9">Te vistes </font> t&uacute; r&aacute;pidamente en la ma&ntilde;ana?</div> (vestirse / to get dressed)</td></tr>
+</table>
+<br>
+
+<br>
+</div></td></tr>
+
+<tr><td align="right"><div><font size="3" color="#5E00FF"><a href="verbs_8.html">More practice</a></font></div></td></tr>
+
+
+
+ 
+</table>
+  
+
+</body>
+</html>

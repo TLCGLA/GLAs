@@ -1,0 +1,206 @@
+<!DOCTYPE HTML> <html>
+<meta http-equiv="X-UA-Compatible" content="IE-9" /><title>Guided Learning Activities</title>
+<link href="../css/styles.css" rel="stylesheet" type="text/css" />
+
+
+<!-- source: http://www.dhtmlgoodies.com/index.html?whichScript=drag-drop-quiz -->
+	<style type="text/css">
+
+/* PROGRESS BAR STYLES */
+.border_bar {  
+	border: 1px solid  #424242; 
+	padding: 10px;
+ 	height: 420px;
+	width: 160px;
+	background:#CCCCCC; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC'); /* for IE */
+	background: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#CCCCCC)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,#FFFFFF,#CCCCCC); /* for firefox 3.6+ */ 
+
+}
+.progress_bar {float: left;}
+
+.blue_bar {
+	height: 406px;
+	width: 6px;
+	background:#669999; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CCCCCC', endColorstr='#669999'); /* for IE */
+	background: -webkit-gradient(linear, left, right, from(#CCCCCC), to(#669999)); /* for webkit browsers */
+	background: -moz-linear-gradient(left,#CCCCCC,#669999); /* for firefox 3.6+ */ 
+}
+
+
+/* OTHER STYLES */
+.triangle {position:relative;}
+.right, .wrong {
+position: relative;
+font-size: 16px; 
+border-width: 1px;	
+border-style: solid; 
+border-color: #696969; 
+background-color: #ccc; 
+font-weight: bold; 
+padding-left: 5px; 
+padding-right: 5px;
+padding-bottom: 5px;
+padding-top: 5px;
+margin-left: 2px;
+margin-right: 2px;
+cursor: pointer;
+
+}
+
+.bar {display: block; height: 48px; text-align: left; font-size: 14px; font-weight: bold;}
+.bar_title {text-align: right; padding-right: 5px; font-size: 14px; font-weight: bold;}
+.number { text-align: right;  float: left; font-size: 16px; font-weight: bold; background-color:#FFC680; padding-left: 5px; padding-right: 4px; border: 1px solid #ccc;}
+.questions {border: 1px solid #ccc;	padding: 20px; background-color:#FFF; height: 100%; }
+.answer {padding-left: 30px; font-size: 16px; padding-top: 3px;}
+.title {font-weight: bold; font-size: 18px; margin-bottom: 10px; border-bottom: 3px solid #FFA500;}
+#counter {height: 100px; width: 100px; font-size: 50px; border: 1px solid #ccc; background-color:#FFC680; padding-top: 30px; text-align: center;}
+</style>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+<!-- big wrapper table -->
+<table width="100%" align="center" border="0">
+<tr bgcolor="#273872"><td></td><td width="960"><!-- header -->
+<div class="header">
+  		<div style="float: left; height: 73px;"><img src="../images/coc_logo1.gif" alt="College of the Canyons"  />
+      <img src="../images/coc_logo2.gif" alt="College of the Canyons" /> 
+	  </div>
+	  <div style="float: right;"><h1 class="h1_title">Guided Learning 
+		Activities</h1></div>
+ 
+ </div>
+ <!-- end header -->
+
+</td><td></td></tr>
+<tr><td colspan="3"> <div class="gradient_horizontal" style="height:3px; break:left;"></div></td></tr>
+
+<tr><td colspan="3"> 
+
+<table width="960" align="center" border="0"> <!-- 960 px is the standard width for 1024 x 768 screens; use 90% otherwise -->
+<tr><td align="center" height="100%">
+ 
+ <!-- page starts here -->
+<div class="page">
+
+<!-- top section starts here -->
+
+<div class="gla_top_section">
+<h1 class="h1_blue">Comprehension Questions</h1>
+
+<h1 class="h1_gray" style="padding-top: 10px;">Instructions:</h1>
+       
+
+			
+			
+<table width="100%" border="0">
+<tr><td><div style="padding-right: 10px;">The sentences below have too many commas. 
+                        Can you find the incorrect ones? Delete the unnecessary 
+                        commas by clicking on them. If you make a correct choice, the small gray boxes will turn <font color="blue">blue</font> and the counter 
+will show that you earned a point.  When you make an incorrect choice, the small gray boxes will turn <font color="red">red</font> 
+and the counter will subtract a point from your score.
+						There are 7 cases of incorrect comma use, so the 
+                        maximum points you can earn is 7. You will earn one point for each correct answer and lose one point 
+for each incorrect answer.  After you get the six right answers, a button will appear on the top right corner.  Click on the button to 
+continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page.</div></td>
+
+<td ><div class="gradient_horizontal" style="height: 38px; text-align: center; padding: 10px; margin-bottom: 5px;">
+
+<form method="link" action="page9x.htm" style="display:  inline; float: right;">
+                                      <input type="submit" class="button" style="height: 35px;" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+                                    </form>
+
+</div></td>
+</tr>
+</table>	</div>		
+<!-- end top section --> 
+
+<!-- begin wrapper lower section -->
+<div class="questions" style="padding-top: 25px; margin-top: 20px; height: 400px;" >
+<table width="100%" border="0">
+<tr><td colspan="2"><div><span style="float: left"><h1 class="title">Delete the <span class="h1_blue" style="font-size: 20px;">7 UNNECESSARY</span> commas by clicking on them.</h1></span>
+<span style="float: right; padding-right: 45px; text-align: center;"><h1 class="title">Your score</h1></span>
+</div></td></tr>
+
+<tr><td width="800">
+
+<table border="0" id="questions_table" width="100%">
+<tr><td height="40"><div class="number">1.</div><div class="answer">Both <span class="wrong">,</span> the Los Angeles Lakers <span class="wrong">,</span>  
+and the Los Angeles Sparks<span class="wrong">,</span> wear purple <span class="wrong">,</span> and gold uniforms.</div></td></tr>
+<tr><td height="40"><div class="number">2.</div><div class="answer">The Sparks <span class="right">,</span> the Lakers <span class="right">,</span> 
+and the Clippers <span class="wrong">,</span> all play at Staples Center.</div></td></tr>
+<tr><td height="40"><div class="number">3.</div><div class="answer">Jane is <span class="wrong">,</span> either watching the game with her friends 
+<span class="right">,</span> 
+enjoying it with her family at home <span class="right">,</span> or sitting in Staples Center <span class="wrong">,</span> with her boyfriend.</div></td></tr>
+</table>
+
+
+</td><td>
+
+
+<table width="100%"><tr>
+<td width="102">
+<div id="counter" class="box-shadow" style="display: block; float: right;  margin-right: 40px;"></div> 
+
+<div style="margin-top: 40px; display: block; break: left; float: right;  margin-right: 40px; width: 100px; text-align: center;"><span class="h1_blue" style="font-size: 20px;">Maximum points: 7</span></div> 
+</td>
+</tr>
+</table>
+</td></tr></table>
+
+
+
+</div>
+				  	
+
+
+</div>
+<!-- end wrapper lower section -->
+</div>
+<!-- end page -->
+</td></tr>
+</table>
+
+ </td></tr>
+</table>  <!-- end big wrapper table-->
+
+<script type="text/javascript"> 
+$(document).ready(function(){
+		var i = 0;
+		var x = 6;
+$(".button").css ('visibility', 'hidden');
+  $('.right').click(function(){
+
+  		i--;
+		$("#counter") .html (i);
+		$(this).css ('background-color' ,'red').animate({'top' : '+=200px', 'opacity' : '0'},"slow");
+  	
+  });
+  $('.wrong').click(function(){
+
+		i++;
+		$("#counter") .html (i);
+		$(this).css ('background-color' ,'blue') .animate({'top' : '+=200px', 'opacity' : '0'},"slow");
+			if (i == x) {$('.button').css ('visibility', 'visible')};
+  });
+});
+</script>
+
+
+</body>
+</html>

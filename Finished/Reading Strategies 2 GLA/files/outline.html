@@ -1,0 +1,1388 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 14">
+<link id=Main-File rel=Main-File href="../Reading%20Strategies%202.html">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.html');" id=PPTL1>Reading Strategies,
+  Part 2</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.html');" id=PPTL2>Agenda</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>This workshop will provide you with active reading strategies that will
+       help you stay engaged and comprehend readings better.<span
+       style='mso-spacerun:yes'>  </span>It provides more advanced topics than
+       those presented in Reading Strategies, Part 1.</li>
+   <br>
+   <br>
+   <li>We will cover the following topics:</li>
+   <li>What it Says / What it Means / What it Does</li>
+   <li>CAASE:<span style='mso-spacerun:yes'>  </span>Comprehend, Apply,
+       Analyze, Synthesize, Evaluate</li>
+   <li>Improving Memory</li>
+   <li>What Strong Readers Do</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.html');" id=PPTL3>What is active reading?</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Active reading occurs when we read with purpose.<span
+       style='mso-spacerun:yes'>  </span>In other words, our goal is to learn
+       the material (not just finish the pages) and connect that material to
+       our needs.</li>
+   <br>
+   <br>
+   <li>We know that we’re reading actively when we are:</li>
+   <li>Interacting with the reading (previewing the material, taking notes,
+       predicting, etc.)</li>
+   <li>Critically thinking about the author’s ideas</li>
+   <li>Considering our own ideas as we read</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0004.html');" id=PPTL4>Why should students
+  read actively?</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When students read actively, they…</li>
+   <li>Are better prepared for college-level work</li>
+   <li>Retain information longer</li>
+   <li>Find it easier to use/review the information</li>
+   <li>Use their time well and avoid the reading coma</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0006.html');" id=PPTL5>Strategy 1:<span
+  style='mso-spacerun:yes'>  </span>What it Says / What it Means / What it Does</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0033.html');" id=PPTL6>What it Says / What it
+  Means / What it Does</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>This strategy asks you to approach a reading from three different
+       angles.<span style='mso-spacerun:yes'>  </span>When reading, try to
+       figure out:</li>
+   <li>What it Says:<span style='mso-spacerun:yes'>  </span>Summarize the
+       reading</li>
+   <li>What it Means:<span style='mso-spacerun:yes'>  </span>Analyze the
+       reading</li>
+   <li>What it Does:<span style='mso-spacerun:yes'>  </span>Explain the
+       function of different parts of a reading</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0034.html');" id=PPTL7>What it Says</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>After each paragraph, determine what a reading says.<span
+       style='mso-spacerun:yes'>  </span>In other words, you should be able to
+       explain what the paragraph is about to someone who hasn’t read it.</li>
+   <li>This step will improve your comprehension of the reading.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0035.html');" id=PPTL8>Sample:<span
+  style='mso-spacerun:yes'>  </span>What it Says</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>College athletics use too much of a school’s budget.<span
+       style='mso-spacerun:yes'>  </span>Critics of college athletic programs
+       believe that the quality of the college’s academic programs have
+       suffered to help pay for the athletic programs.</li>
+   <li>Summary of the Text</li>
+   <li>“College athletics programs have become more harmful than beneficial to
+       colleges and universities, critics say. The increasing diversion of
+       resources and attention to such programs, they contend, has come at the
+       expense of the academic mission of most schools, which have gradually
+       lowered admissions standards and tolerated poor academic achievement for
+       the sake of successful athletics programs.”</li>
+   <li>Source:<span style='mso-spacerun:yes'>  </span>“Do College Athletics
+       Play a Valuable Role in Higher Education?”</li>
+   <li>Original Text</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0036.html');" id=PPTL9>What it Means</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>After summarizing the paragraph (figuring out what it says), determine
+       what the paragraph means.<span style='mso-spacerun:yes'>  </span>In
+       other words, you should analyze the text.</li>
+   <li>To figure out what it means, try the following:</li>
+   <li>Suspend judgment.<span style='mso-spacerun:yes'>  </span>Don’t
+       immediately react to the writer’s ideas.<span style='mso-spacerun:yes'> 
+       </span>Instead, work on comprehending those ideas first.</li>
+   <li>Divide the text into parts and determine how those parts are
+       related.<span style='mso-spacerun:yes'>  </span>To do this well, you
+       must pay attention to detail.</li>
+   <li>Determine the writer’s values, assumptions, and unstated ideas.<span
+       style='mso-spacerun:yes'>  </span>What does the writer think or imply
+       without stating it directly?</li>
+   <li>Look for patterns, such as the repetition of ideas, contrasting ideas,
+       and anomalies (ideas that don’t seem to fit).</li>
+   <li>Experiment.<span style='mso-spacerun:yes'>  </span>You will have to ask
+       yourself questions and try out different ideas as you work on your
+       analysis.<span style='mso-spacerun:yes'>  </span>Your analysis will
+       evolve as you continue to work on the text.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0037.html');" id=PPTL10>Sample:<span
+  style='mso-spacerun:yes'>  </span>What it Means</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Athletics and academics are set up as enemies</li>
+   <li>Writer privileges academic performance over athletics</li>
+   <li>Assumes that money should be spent on the “academic mission” of the
+       school</li>
+   <li>Assumes that spending money on the academic mission will ensure that
+       high academic standards will be achieved</li>
+   <li>Overall, the writer of the passage assumes that academics and athletics
+       cannot exist in harmony; to spend money on one is to take away money
+       from the other.</li>
+   <li>Analysis of the Text</li>
+   <li>“College athletics programs have become more harmful than beneficial to
+       colleges and universities, critics say. The increasing diversion of
+       resources and attention to such programs, they contend, has come at the
+       expense of the academic mission of most schools, which have gradually
+       lowered admissions standards and tolerated poor academic achievement for
+       the sake of successful athletics programs.”</li>
+   <li>Source:<span style='mso-spacerun:yes'>  </span>“Do College Athletics
+       Play a Valuable Role in Higher Education?”</li>
+   <li>Original Text</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0038.html');" id=PPTL11>What it Does</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>After analyzing the paragraph (figuring out what it means), determine
+       what the paragraph’s role in the entire reading is.<span
+       style='mso-spacerun:yes'>  </span>Why might the writer have included
+       this paragraph?<span style='mso-spacerun:yes'>  </span>How does it
+       contribute to his/her argument?</li>
+   <li>To figure out what it does, try the following:</li>
+   <li>Think of the paragraph as part of a whole text.<span
+       style='mso-spacerun:yes'>  </span>How does it relate to the rest of the
+       reading?</li>
+   <li>Think about structure.<span style='mso-spacerun:yes'>  </span>Why is the
+       paragraph placed where it is in the whole reading?</li>
+   <li>Examine the writer’s strategies.<span style='mso-spacerun:yes'> 
+       </span>How does s/he make an argument?</li>
+   <li>Evaluate the quality of the argument.<span style='mso-spacerun:yes'> 
+       </span>Is it logically sound?</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0039.html');" id=PPTL12>Sample:<span
+  style='mso-spacerun:yes'>  </span>What it Does</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>This paragraph is at the beginning of a section in the article called
+       “Critics Say Athletics Conflicts with Academic Goals”</li>
+   <li>Introduces the arguments that critics of athletics programs make</li>
+   <li>Cause/Effect argument:<span style='mso-spacerun:yes'>  </span>Spending
+       less money on academic leads the school to admitting less qualified
+       students and lower academic achievement standards.</li>
+   <li>This paragraph doesn’t include evidence, but it is at the beginning of a
+       section.<span style='mso-spacerun:yes'>  </span>If the writer doesn’t
+       include evidence soon, I will be able to question the validity of
+       his/her argument.</li>
+   <li>Function of the Text</li>
+   <li>“College athletics programs have become more harmful than beneficial to
+       colleges and universities, critics say. The increasing diversion of
+       resources and attention to such programs, they contend, has come at the
+       expense of the academic mission of most schools, which have gradually
+       lowered admissions standards and tolerated poor academic achievement for
+       the sake of successful athletics programs.”</li>
+   <li>Source:<span style='mso-spacerun:yes'>  </span>“Do College Athletics
+       Play a Valuable Role in Higher Education?”</li>
+   <li>Original Text</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0041.html');" id=PPTL13>Use What it Says /
+  What it Means / What it Does Strategically</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>By examining a text from all three angles, you will have a very strong
+       understanding of the reading.<span style='mso-spacerun:yes'> 
+       </span>You’ll be well prepared to argue for or against the author’s
+       ideas.<span style='mso-spacerun:yes'>  </span>You may even be able to
+       use your notes from this strategy to start building a paper.</li>
+   <li>Do keep in mind that the sample used in the previous slides was very
+       detailed.<span style='mso-spacerun:yes'>  </span>You may not have to be
+       as detailed when reading each paragraph in an assigned text.</li>
+   <li>This strategy works well for a text that you have to read very closely
+       and respond to in detail.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0040.html');" id=PPTL14>Activity 1:<span
+  style='mso-spacerun:yes'>  </span>What it Says, What it Means, What it Does</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 2 of your handout, read the short paragraph.</li>
+   <li>It is from the same article (“Do College Athletics Play a Valuable Role
+       in Higher Education?”).<span style='mso-spacerun:yes'>  </span>However,
+       it expresses the opposing argument.</li>
+   <li>It is the first paragraph in a section called “Supporters Applaud
+       Athletics’ Values”</li>
+   <li>After reading the paragraph, write down:</li>
+   <ul>
+    <li>What it Says</li>
+    <li>What it Means</li>
+    <li>What it Does</li>
+   </ul>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0042.html');" id=PPTL15>Strategy 2:<span
+  style='mso-spacerun:yes'>  </span>CAASE:<span style='mso-spacerun:yes'> 
+  </span>Comprehend, Apply, Analyze, Synthesize, Evaluate</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0043.html');" id=PPTL16>What is CAASE?</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>CAASE is an active reading strategy that asks you to use the information
+       from a reading in a variety of ways.<span style='mso-spacerun:yes'> 
+       </span>Each of the steps is more cognitively challenging than the next;
+       by using the information in challenging ways, you will learn it better
+       and be able to retain it longer.</li>
+   <li>You may see some similarities with What it Says / What it Means / What
+       it Does.<span style='mso-spacerun:yes'>  </span>Most of the time, you
+       won’t need to use both strategies for the same reading.<span
+       style='mso-spacerun:yes'>  </span>Instead, choose the strategy that
+       works best for you and fits the assignment.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0044.html');" id=PPTL17>What does CAASE stand
+  for?</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Comprehend what you read</li>
+   <li>Apply the knowledge from the reading</li>
+   <li>Analyze what you read for accuracy and credibility</li>
+   <li>Synthesize what you read from multiple sources</li>
+   <li>Evaluate what you read so you can make good decisions</li>
+   <br>
+   <br>
+   <li>Let’s look at each step separately!</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0045.html');" id=PPTL18>Comprehend</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When you comprehend a text, you have grasped the meaning of the material
+       and can explain it to someone else.<span style='mso-spacerun:yes'> 
+       </span>Ask yourself the following questions to make sure that you comprehend
+       a text:</li>
+   <li>What is the text about?</li>
+   <li>Why is it relevant (to your assignment, your class, your future career,
+       or your life)?</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0046.html');" id=PPTL19>Sample:<span
+  style='mso-spacerun:yes'>  </span>Comprehend</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>What is the text about?</li>
+   <li>The text is about social anxiety disorder, which people suffer if they
+       are afraid of talking or being around other people.<span
+       style='mso-spacerun:yes'>  </span>They don’t like the idea that others
+       can be judging them.</li>
+   <li>Why is it relevant?</li>
+   <li>It is relevant because the entire chapter is on psychological disorders,
+       which we’ll be tested on next week.</li>
+   <li>Comprehending the Text</li>
+   <li>“Social anxiety disorder involves a fear of interacting with others or
+       being in a social situation and is one of the most common phobias people
+       experience.<span style='mso-spacerun:yes'>  </span>People with social
+       anxiety disorder are afraid of being evaluated in some negative way by
+       others, so they tend to avoid situations that could lead to something
+       embarrassing or humiliating.<span style='mso-spacerun:yes'>  </span>They
+       are very self-conscious as a result” (547).</li>
+   <br>
+   <br>
+   <li>Source:</li>
+   <li>Ciccarelli, Saundra and J. Noland White.</li>
+   <li>	Psychology.<span style='mso-spacerun:yes'>  </span>4<sup>th</sup>
+       Custom Ed for COC.<span style='mso-spacerun:yes'>  </span>Upper 	Saddle
+       River:<span style='mso-spacerun:yes'>  </span>Pearson, 2014.<span
+       style='mso-spacerun:yes'>  </span>Print.</li>
+   <li>Original Text</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0047.html');" id=PPTL20>Apply</a></font></div>
+  <div id=PPTC20 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>To apply the information in the text, you should be able to use the
+       material in new situations.<span style='mso-spacerun:yes'>  </span>For
+       example, you might apply a rule (like a traffic law) to a particular
+       situation (a driver that is pulled over by a police officer).</li>
+   <li>You may ask yourself some of the following questions to show you can apply
+       the information in a text:</li>
+   <li>Can I think of an example of the concept in the text?</li>
+   <li>How might I use this concept in my education, life, or career?</li>
+   <li>In the case of our psychology example, how might I diagnose a patient
+       with social anxiety disorder?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0048.html');" id=PPTL21>Sample:<span
+  style='mso-spacerun:yes'>  </span>Apply</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Can I think of an example of someone with social anxiety disorder?</li>
+   <li>One of my classmates had to give a speech in psychology.<span
+       style='mso-spacerun:yes'>  </span>She was so nervous that she could
+       barely express her ideas to the class.<span style='mso-spacerun:yes'> 
+       </span>She finished quickly and almost ran back to her seat.</li>
+   <li>How might I diagnose a patient with social anxiety disorder?</li>
+   <li>I would ask the patient how s/he feels in social situations.<span
+       style='mso-spacerun:yes'>  </span>I would ask if s/he feels judged.<span
+       style='mso-spacerun:yes'>  </span>I would ask if s/he ever feels stage
+       fright or fear of public speaking.</li>
+   <li>Applying the Concepts</li>
+   <li>“Social anxiety disorder involves a fear of interacting with others or
+       being in a social situation and is one of the most common phobias people
+       experience.<span style='mso-spacerun:yes'>  </span>People with social
+       anxiety disorder are afraid of being evaluated in some negative way by
+       others, so they tend to avoid situations that could lead to something
+       embarrassing or humiliating.<span style='mso-spacerun:yes'>  </span>They
+       are very self-conscious as a result” (547).</li>
+   <br>
+   <br>
+   <li>Source:</li>
+   <li>Ciccarelli, Saundra and J. Noland White.</li>
+   <li>	Psychology.<span style='mso-spacerun:yes'>  </span>4<sup>th</sup>
+       Custom Ed for COC.<span style='mso-spacerun:yes'>  </span>Upper 	Saddle
+       River:<span style='mso-spacerun:yes'>  </span>Pearson, 2014.<span
+       style='mso-spacerun:yes'>  </span>Print.</li>
+   <li>Original Text</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0049.html');" id=PPTL22>Analyze</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>We’ve covered some aspects of analysis when discussing “What it
+       Means.”<span style='mso-spacerun:yes'>  </span>For the CAASE strategy,
+       you should be analyzing for accuracy and credibility.<span
+       style='mso-spacerun:yes'>  </span>This will involve:</li>
+   <li>Fact checking.<span style='mso-spacerun:yes'>  </span>Is the author’s
+       information correct?</li>
+   <li>Examining dates.<span style='mso-spacerun:yes'>  </span>Is the author’s
+       information recent enough to be useful?</li>
+   <li>Questioning credibility.<span style='mso-spacerun:yes'>  </span>Is the
+       author an expert in the subject?<span style='mso-spacerun:yes'> 
+       </span>Can readers trust what s/he has to say?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0050.html');" id=PPTL23>Sample:<span
+  style='mso-spacerun:yes'>  </span>Analyze</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Is the authors’ information correct?</li>
+   <li>The American Psychiatric Association (APA) defines social anxiety
+       disorder as:<span style='mso-spacerun:yes'>  </span>“Significant anxiety
+       and discomfort about being embarrassed or looked down on in social or
+       performance situations. Common examples are public speaking, meeting
+       people, or using public restrooms.”<span style='mso-spacerun:yes'> 
+       </span>The definition is very close to the definition used in the
+       textbook.</li>
+   <br>
+   <br>
+   <li>Analyzing for Accuracy and Credibility</li>
+   <li>“Social anxiety disorder involves a fear of interacting with others or
+       being in a social situation and is one of the most common phobias people
+       experience.<span style='mso-spacerun:yes'>  </span>People with social
+       anxiety disorder are afraid of being evaluated in some negative way by
+       others, so they tend to avoid situations that could lead to something
+       embarrassing or humiliating.<span style='mso-spacerun:yes'>  </span>They
+       are very self-conscious as a result” (547).</li>
+   <br>
+   <br>
+   <li>Source:</li>
+   <li>Ciccarelli, Saundra and J. Noland White.</li>
+   <li>	Psychology.<span style='mso-spacerun:yes'>  </span>4<sup>th</sup>
+       Custom Ed for COC.<span style='mso-spacerun:yes'>  </span>Upper 	Saddle
+       River:<span style='mso-spacerun:yes'>  </span>Pearson, 2014.<span
+       style='mso-spacerun:yes'>  </span>Print.</li>
+   <li>Original Text</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0051.html');" id=PPTL24>Synthesize</a></font></div>
+  <div id=PPTC24 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Integrate the new information that you have just read into your
+       knowledge of the topic.<span style='mso-spacerun:yes'>  </span>This
+       could come from your past experiences, your other reading assignments,
+       your previous classes, etc.</li>
+   <br>
+   <br>
+   <li>Then, consider:</li>
+   <li>How does the new information relate to what I already knew?</li>
+   <li>What conclusions can you draw based on the new information?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0052.html');" id=PPTL25>Sample:<span
+  style='mso-spacerun:yes'>  </span>Synthesize</a></font></div>
+  <div id=PPTC25 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>How does the new information relate to what I already knew?</li>
+   <li>I already knew that some people are shy or afraid to speak in
+       public.<span style='mso-spacerun:yes'>  </span>Many people are afraid to
+       be judged by others.<span style='mso-spacerun:yes'>  </span>I thought
+       that these behaviors were just part of personality—some people are shy,
+       and some people aren’t.<span style='mso-spacerun:yes'>  </span>However,
+       the book shows that some shy people suffer from a disorder.<span
+       style='mso-spacerun:yes'>  </span>I wonder if this means that they can’t
+       help their behavior or feelings?<span style='mso-spacerun:yes'> 
+       </span>Can social anxiety disorder be treated?<span
+       style='mso-spacerun:yes'>  </span>I should do more reading on this
+       disorder.</li>
+   <li>Synthesizing with Prior Knowledge</li>
+   <li>“Social anxiety disorder involves a fear of interacting with others or
+       being in a social situation and is one of the most common phobias people
+       experience.<span style='mso-spacerun:yes'>  </span>People with social
+       anxiety disorder are afraid of being evaluated in some negative way by
+       others, so they tend to avoid situations that could lead to something
+       embarrassing or humiliating.<span style='mso-spacerun:yes'>  </span>They
+       are very self-conscious as a result” (547).</li>
+   <br>
+   <br>
+   <li>Source:</li>
+   <li>Ciccarelli, Saundra and J. Noland White.</li>
+   <li>	Psychology.<span style='mso-spacerun:yes'>  </span>4<sup>th</sup>
+       Custom Ed for COC.<span style='mso-spacerun:yes'>  </span>Upper 	Saddle
+       River:<span style='mso-spacerun:yes'>  </span>Pearson, 2014.<span
+       style='mso-spacerun:yes'>  </span>Print.</li>
+   <li>Original Text</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0053.html');" id=PPTL26>Evaluate</a></font></div>
+  <div id=PPTC26 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Use the information you gained from the reading to make decisions or
+       judgments.<span style='mso-spacerun:yes'>  </span>You can also use the
+       information to consider the implications of your decisions.</li>
+   <li>You might ask yourself:</li>
+   <li>Can I determine the best rationale, plan, solution, given the
+       information?</li>
+   <li>What would happen if I do X?</li>
+   <li>In the case of our psychology example, we could try to determine if a
+       particular person has social anxiety disorder.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0054.html');" id=PPTL27>Sample:<span
+  style='mso-spacerun:yes'>  </span>Evaluate</a></font></div>
+  <div id=PPTC27 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Do I have social anxiety disorder?</li>
+   <li>First, I could examine the symptoms of social anxiety disorder.<span
+       style='mso-spacerun:yes'>  </span>Then, I would decide if I exhibit
+       those symptoms or not.<span style='mso-spacerun:yes'>  </span>Finally,
+       if I do exhibit those symptoms, I could choose to see a counselor to
+       help me learn to manage those symptoms better.</li>
+   <li>Evaluating to Make a Decision</li>
+   <li>“Social anxiety disorder involves a fear of interacting with others or
+       being in a social situation and is one of the most common phobias people
+       experience.<span style='mso-spacerun:yes'>  </span>People with social
+       anxiety disorder are afraid of being evaluated in some negative way by
+       others, so they tend to avoid situations that could lead to something
+       embarrassing or humiliating.<span style='mso-spacerun:yes'>  </span>They
+       are very self-conscious as a result” (547).</li>
+   <br>
+   <br>
+   <li>Source:</li>
+   <li>Ciccarelli, Saundra and J. Noland White.</li>
+   <li>	Psychology.<span style='mso-spacerun:yes'>  </span>4<sup>th</sup>
+       Custom Ed for COC.<span style='mso-spacerun:yes'>  </span>Upper 	Saddle
+       River:<span style='mso-spacerun:yes'>  </span>Pearson, 2014.<span
+       style='mso-spacerun:yes'>  </span>Print.</li>
+   <li>Original Text</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>28</font></div>
+  </td>
+  <td>
+  <div id=PPTP28 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0055.html');" id=PPTL28>Use CAASE
+  Strategically</a></font></div>
+  <div id=PPTC28 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>CAASE works very well for a research assignment because it asks you to
+       fact check, consider the author’s credibility, and synthesize the
+       reading with other sources.</li>
+   <li>Consider using CAASE for a research project; it can help you do anything
+       from evaluating a website to creating a literature review.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>29</font></div>
+  </td>
+  <td>
+  <div id=PPTP29 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0056.html');" id=PPTL29>Activity 2:<span
+  style='mso-spacerun:yes'>  </span>CAASE</a></font></div>
+  <div id=PPTC29 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 3 of your handout, read the short passage called “The Camera and
+       the Close-Up.”</li>
+   <li>Then, use the CAASE strategy on that reading.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>30</font></div>
+  </td>
+  <td>
+  <div id=PPTP30 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0057.html');" id=PPTL30>Strategy 3:<span
+  style='mso-spacerun:yes'>  </span>Improving Memory</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>31</font></div>
+  </td>
+  <td>
+  <div id=PPTP31 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0059.html');" id=PPTL31>To Remember, We Must
+  Understand</a></font></div>
+  <div id=PPTC31 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>In order to remember the material that you read, you must first
+       understand that material.</li>
+   <li>This is why we began the workshop with comprehension strategies—if you
+       don’t comprehend the material, you won’t be able to remember it well.</li>
+   <li>Once you understand the material, you can apply several memory
+       strategies to help you remember it better.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>32</font></div>
+  </td>
+  <td>
+  <div id=PPTP32 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0058.html');" id=PPTL32>General Memory
+  Strategies</a></font></div>
+  <div id=PPTC32 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Recite the information or write it several times.</li>
+   <li>Break up large segments of information into smaller, easier to recall
+       units.</li>
+   <li>Create Acronyms:<span style='mso-spacerun:yes'>  </span>Write short
+       letter combinations to help you remember key concepts.</li>
+   <ul>
+    <li>Example:<span style='mso-spacerun:yes'>  </span>PEMDAS will help you
+        remember the order of operations in math, which is:<span
+        style='mso-spacerun:yes'>  </span>Parentheses, Exponents,
+        Multiplication, Division, Addition, and Subtraction.</li>
+   </ul>
+   <li>Test Yourself:<span style='mso-spacerun:yes'>  </span>Write short
+       quizzes for so you can evaluate how well you’ve learned the information.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>33</font></div>
+  </td>
+  <td>
+  <div id=PPTP33 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0060.html');" id=PPTL33>Memory Strategy:<span
+  style='mso-spacerun:yes'>  </span>Make Connections</a></font></div>
+  <div id=PPTC33 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>You are more likely to remember information if you can relate it to
+       something you already know or have experienced yourself.<span
+       style='mso-spacerun:yes'>  </span>When reading new material, try making
+       connections to remember it better, such as:</li>
+   <li>Personalize the information by relating it to you.</li>
+   <li>Associate the information to other ideas.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>34</font></div>
+  </td>
+  <td>
+  <div id=PPTP34 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0061.html');" id=PPTL34>Memory Strategy:<span
+  style='mso-spacerun:yes'>  </span>Use Visuals</a></font></div>
+  <div id=PPTC34 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Sometimes, it is helpful to use visual techniques to help us understand
+       or remember material better. Turning the information into a picture
+       makes it easier to remember.</li>
+   <br>
+   <br>
+   <li>Create a chart with the information.</li>
+   <li>Visualize the information in your mind.</li>
+   <li>Create a drawing of the information.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>35</font></div>
+  </td>
+  <td>
+  <div id=PPTP35 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0062.html');" id=PPTL35>Activity 3:<span
+  style='mso-spacerun:yes'>  </span>Memory Strategies</a></font></div>
+  <div id=PPTC35 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 6 of your handout, read the short passage called “The SMART Way
+       to Trim Expenses.”</li>
+   <li>Then, test yourself.<span style='mso-spacerun:yes'>  </span>Write and
+       answer three test questions about the passage.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>36</font></div>
+  </td>
+  <td>
+  <div id=PPTP36 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0063.html');" id=PPTL36>Strategy 4:<span
+  style='mso-spacerun:yes'>  </span>What Strong Readers Do</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>37</font></div>
+  </td>
+  <td>
+  <div id=PPTP37 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0065.html');" id=PPTL37>Use a Toolbox</a></font></div>
+  <div id=PPTC37 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Strong readers have a variety of strategies available in their mental
+       toolbox.<span style='mso-spacerun:yes'>  </span>By practicing, they know
+       which strategies work best in which situations.</li>
+   <br>
+   <br>
+   <li>As you gain more and more reading experience, you will develop your own
+       toolbox of strategies.<span style='mso-spacerun:yes'>  </span>In
+       addition, you will learn which strategies to activate at which time.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>38</font></div>
+  </td>
+  <td>
+  <div id=PPTP38 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0066.html');" id=PPTL38>Know Your Purpose</a></font></div>
+  <div id=PPTC38 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Strong readers know why they are reading and what they want to get out
+       of the reading assignment.<span style='mso-spacerun:yes'>  </span>As you
+       read, consider the questions:</li>
+   <li>How might this reading relate to choice of career?</li>
+   <li>How does this reading relate to your class?</li>
+   <li>Will you be tested on this material?<span style='mso-spacerun:yes'> 
+       </span>Asked to write an essay?<span style='mso-spacerun:yes'> 
+       </span>Asked to discuss it in class?</li>
+   <br>
+   <br>
+   <li>If strong readers are asked to prepare a reading for discussion, they
+       may look for the controversial aspects of the reading and consider
+       discussion questions in advance.<span style='mso-spacerun:yes'> 
+       </span>In contrast, if strong readers are asked to prepare a reading for
+       a quiz, they may spend more time trying to memorize terms and anticipate
+       possible quiz questions.<span style='mso-spacerun:yes'>  </span>They can
+       alter their strategies based on their purpose.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>39</font></div>
+  </td>
+  <td>
+  <div id=PPTP39 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0064.html');" id=PPTL39>Chunk</a></font></div>
+  <div id=PPTC39 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A strong reader chunks a reading by breaking down a text into meaningful
+       segments.<span style='mso-spacerun:yes'>  </span>This can help them make
+       sure they understand the text well.<span style='mso-spacerun:yes'> 
+       </span>If they do not understand the text well, chunking the test will
+       help readers identify the portion they are struggling with.</li>
+   <li>Strong readers are able to explain the meaning of the different chunks
+       in their own words, which helps them understand the overall meaning of
+       the text better.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>40</font></div>
+  </td>
+  <td>
+  <div id=PPTP40 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0068.html');" id=PPTL40>Know When You Need
+  More Background Information</a></font></div>
+  <div id=PPTC40 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Some texts you read will assume that you already have some knowledge
+       about a topic.<span style='mso-spacerun:yes'>  </span>Strong readers can
+       recognize when they lack that knowledge.<span style='mso-spacerun:yes'> 
+       </span>They respond by doing background research to help them understand
+       the text better.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>41</font></div>
+  </td>
+  <td>
+  <div id=PPTP41 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0067.html');" id=PPTL41>Review the Text</a></font></div>
+  <div id=PPTC41 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Periodically, stop reading to determine:</li>
+   <ul>
+    <li>What do I know?</li>
+    <li>What do I think I know?</li>
+    <li>What has changed about what I thought I knew?</li>
+   </ul>
+   <li>Write summaries in your own words</li>
+   <li>Teach what you’ve learned to someone else</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>42</font></div>
+  </td>
+  <td>
+  <div id=PPTP42 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0069.html');" id=PPTL42>Activity 4:<span
+  style='mso-spacerun:yes'>  </span>What Strong Readers Do</a></font></div>
+  <div id=PPTC42 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Imagine that you are assigned to lead a class discussion on parenting
+       for your Child Development class.</li>
+   <li>To prepare, read the short excerpt from The Narcissism Epidemic on page
+       8 of your handout.<span style='mso-spacerun:yes'>  </span>Take notes on
+       the passage as you read.</li>
+   <li>Once you are finish reading, write three open-ended discussion questions
+       that you could ask your classmates.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>43</font></div>
+  </td>
+  <td>
+  <div id=PPTP43 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0032.html');" id=PPTL43>If you liked this
+  lesson and would like more information, consider attending:</a></font></div>
+  <div id=PPTC43 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Pre-Reading</li>
+   <li>Annotation</li>
+   <li>Reading Strategies 1</li>
+   <br>
+   <br>
+   <br>
+   <br>
+   <li>Why should you come back?</li>
+   <li>Students completing Supplemental Learning Activities had a
+       10%&nbsp;higher success rate across the disciplines, a 21% higher
+       success rate in Math, and a 49% higher success rate in English courses.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master03.html></a><a href=master03.xml></a><a
+href=preview.wmf></a><a href=master23.html></a><a href=master23.xml></a><a
+href=master24.html></a><a href=master24.xml></a><a href=master25.html></a><a
+href=master25.xml></a><a href=pres.xml></a><a href=slide0001.html></a><a
+href="master23_image001.png"></a><a href=slide0002.html></a><a
+href="master03_image002.png"></a><a href=slide0003.html></a><a
+href=slide0004.html></a><a href=slide0006.html></a><a href=slide0033.html></a><a
+href=slide0034.html></a><a href=slide0035.html></a><a href=slide0036.html></a><a
+href=slide0037.html></a><a href=slide0038.html></a><a href=slide0039.html></a><a
+href=slide0041.html></a><a href=slide0040.html></a><a href=slide0042.html></a><a
+href=slide0043.html></a><a href=slide0044.html></a><a href=slide0045.html></a><a
+href=slide0046.html></a><a href=slide0047.html></a><a href=slide0048.html></a><a
+href=slide0049.html></a><a href=slide0050.html></a><a href=slide0051.html></a><a
+href=slide0052.html></a><a href=slide0053.html></a><a href=slide0054.html></a><a
+href=slide0055.html></a><a href=slide0056.html></a><a href=slide0057.html></a><a
+href=slide0059.html></a><a href=slide0058.html></a><a href=slide0060.html></a><a
+href=slide0061.html></a><a href=slide0062.html></a><a href=slide0063.html></a><a
+href=slide0065.html></a><a href=slide0066.html></a><a href=slide0064.html></a><a
+href=slide0068.html></a><a href=slide0067.html></a><a href=slide0069.html></a><a
+href=slide0032.html></a><a href="slide0032_image003.jpg"></a><a
+href=master01.html></a><a href="master03_stylesheet.css"></a><a
+href="master23_stylesheet.css"></a><a href="master24_stylesheet.css"></a><a
+href="master25_stylesheet.css"></a><a href=script.js></a><a
+href="../Reading%20Strategies%202.html"></a><a href=fullscreen.html></a><a
+href="notes_flag.gif"></a><a href=buttons.gif></a><a href=frame.html></a><a
+href=outline.html></a></div>
+
+</body>
+
+</html>

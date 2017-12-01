@@ -1,0 +1,1508 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 14">
+<link id=Main-File rel=Main-File href="../Essay%20Structure%201.htm">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.htm');" id=PPTL1>Essay Structure 1:<br>
+    Fundamentals of Essay Structure</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>COLLEGE OF THE CANYONS</li>
+   <li>THE LEARNING CENTER</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.htm');" id=PPTL2>Agenda</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>This workshop will cover…</li>
+   <ul>
+    <li>Overview of Essay Structure</li>
+    <li>Introductions</li>
+    <li>Body Paragraphs</li>
+    <li>Conclusions</li>
+    <li>Developing Academic Discretion</li>
+    <br>
+    <br>
+    <li>Note:<span style='mso-spacerun:yes'>  </span>Your handout includes
+        additional information that you can use to structure your essays.</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.htm');" id=PPTL3>Part 1:<br>
+    Overview of Essay Structure</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0065.htm');" id=PPTL4>Survey Question 1</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Write your answer on page 1 of the handout.</li>
+   <li>How many paragraphs do essays have?</li>
+   <li>A.<span style='mso-spacerun:yes'>  </span>3</li>
+   <li>B.<span style='mso-spacerun:yes'>  </span>5</li>
+   <li>C.<span style='mso-spacerun:yes'>  </span>7</li>
+   <li>D.<span style='mso-spacerun:yes'>  </span>As many as they need</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0066.htm');" id=PPTL5>Survey Question 1
+  Explanation</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The correct answer is D: As many as they need.</li>
+   <li>Essays can be written in a wide variety of formats and lengths.<span
+       style='mso-spacerun:yes'>  </span>While the five paragraph essay is a
+       common form, it doesn’t work for every situation.<span
+       style='mso-spacerun:yes'>  </span>In most cases, it is best to plan to
+       write as many paragraphs as you need to prove your point and meet your
+       page length requirement.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0005.htm');" id=PPTL6>What is essay structure?</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The term “essay structure” describes the standard way that essays are
+       organized.<span style='mso-spacerun:yes'>  </span>The main components of
+       an essay are:</li>
+   <li>1.<span style='mso-spacerun:yes'>  </span>Introduction</li>
+   <li>2.<span style='mso-spacerun:yes'>  </span>Body Paragraphs</li>
+   <li>3.<span style='mso-spacerun:yes'>  </span>Conclusion</li>
+   <br>
+   <br>
+   <li>Most academic essays will also include a title and a Works Cited or
+       Reference page.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0006.htm');" id=PPTL7>What is the purpose of
+  using essay structure?</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <ul>
+    <li>Essay structure helps us organize our ideas.</li>
+    <li>It provides a useful format for us to present our ideas in an academic
+        setting.</li>
+    <li>The structure is easy for readers to follow.</li>
+    <li>It matches other communication types, like reports and emails.</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0007.htm');" id=PPTL8>What is the role of the
+  writer in an academic essay?</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Academic readers expect writers to thoroughly explain their ideas in an
+       organized fashion.</li>
+   <br>
+   <br>
+   <li>When you’re writing an essay, it may help to think of yourself as a tour
+       guide.</li>
+   <li>First, tell your readers what you are going to tell them.</li>
+   <li>Then, tell readers the information they need.</li>
+   <li>Finally, remind readers what you told them.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0008.htm');" id=PPTL9>Will I ever need to do
+  this after college is over?</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>After college is over, you may or may not find yourself writing academic
+       essays.</li>
+   <li>What you will be doing is communicating with other people.<span
+       style='mso-spacerun:yes'>  </span>The fundamental essay structure of
+       introduction, body, conclusion is a clear, well-organized way to
+       communicate.</li>
+   <li>You will use intro/body/conclusion when you…</li>
+   <ul>
+    <li>Write an email</li>
+    <li>Make a presentation</li>
+    <li>Write a letter of application for a job, a transfer admission, or a
+        scholarship</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0010.htm');" id=PPTL10>Part 2:<br>
+    Introductions</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0013.htm');" id=PPTL11>Survey Question 2</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Write your answer on page 2 of your handout.</li>
+   <li>Why do essays include introductions?</li>
+   <li>A.<span style='mso-spacerun:yes'>  </span>Because English teachers said
+       so.</li>
+   <li>B.<span style='mso-spacerun:yes'>  </span>To familiarize readers with
+       the essay topic.</li>
+   <li>C.<span style='mso-spacerun:yes'>  </span>To make sure essays have
+       enough paragraphs.</li>
+   <li>D.<span style='mso-spacerun:yes'>  </span>Tradition (we’ve always
+       written essays with introductions).</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0067.htm');" id=PPTL12>Survey Question 2
+  Explanation</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The correct answer is B:<span style='mso-spacerun:yes'>  </span>To
+       familiarize readers with the essay topic.</li>
+   <li>The introduction has a very specific purpose.<span
+       style='mso-spacerun:yes'>  </span>It helps readers learn the basic
+       background of a topic before being introduced to your argument.<span
+       style='mso-spacerun:yes'>  </span>When writing the introduction, imagine
+       that you’re writing to an intelligent but uninformed audience.<span
+       style='mso-spacerun:yes'>  </span>What do they need to know in order to
+       understand your point?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0011.htm');" id=PPTL13>Why write an
+  introduction?</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The introduction of an essay introduces readers to the ideas you’re
+       going to share.<span style='mso-spacerun:yes'>  </span>Readers need some
+       background information from you to help them understand your topic.</li>
+   <li>The introduction fulfills several purposes:</li>
+   <ul>
+    <li>Identifying your topic</li>
+    <li>Providing background information</li>
+    <li>Encouraging readers to be interested in your topic</li>
+    <li>Sharing your argument about the topic</li>
+    <li>Providing readers an idea of who you are as a writer</li>
+    <br>
+    <br>
+   </ul>
+   <li>Note:<span style='mso-spacerun:yes'>  </span>You don’t have to write the
+       introduction first.<span style='mso-spacerun:yes'>  </span>Sometimes, it
+       works better to write the body of the essay first and then go back to
+       the introduction.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0012.htm');" id=PPTL14>Tone</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Imagine walking into a party where you don’t know anyone.<span
+       style='mso-spacerun:yes'>  </span>When you walk in, do you say, “Hi, my
+       name is X, and we should stop teaching Physical Education in elementary
+       schools?”</li>
+   <li>Probably not.</li>
+   <li>We understand that we can’t present our argument so blatantly
+       immediately after meeting someone.<span style='mso-spacerun:yes'> 
+       </span>Instead, we work up to the argument by getting to know people
+       first.</li>
+   <li>The same is true in an essay.<span style='mso-spacerun:yes'> 
+       </span>Generally, it works well to begin an essay with a gentle
+       tone.<span style='mso-spacerun:yes'>  </span>This helps readers trust
+       you more and get used to your ideas.<span style='mso-spacerun:yes'> 
+       </span>Your tone can grow stronger the further you progress in your
+       paper.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0014.htm');" id=PPTL15>What goes in an
+  introduction?</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Typically, academic essay introductions include:</li>
+   <li>1.<span style='mso-spacerun:yes'>  </span>Attention Grabber (optional)</li>
+   <li>2.<span style='mso-spacerun:yes'>  </span>Background Information</li>
+   <li>3.<span style='mso-spacerun:yes'>  </span>Thesis</li>
+   <li>Of course, this may change based on assignment and the subject you’re
+       studying.<span style='mso-spacerun:yes'>  </span>(Scientific lab
+       reports, for example, won’t include an attention grabber.)<span
+       style='mso-spacerun:yes'>  </span>If you have questions about your
+       particular assignment, talk to your instructor or to a TLC tutor.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0016.htm');" id=PPTL16>Attention Grabber</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>An attention grabber, or hook, is designed to capture your reader’s
+       attention.<span style='mso-spacerun:yes'>  </span>You should make your
+       readers excited about reading your work and increase their interest in
+       your topic.</li>
+   <li>Attention grabbers are usually not a required part of a writing
+       assignment.<span style='mso-spacerun:yes'>  </span>However, they can
+       make your (and your readers’) experience of the essay more fun!</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0015.htm');" id=PPTL17>Discussion Question</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Answer the discussion question on page 3 of the handout.</li>
+   <li>Select one of the below attention grabbers and give it a score.</li>
+   <br>
+   <br>
+   <br>
+   <li>Why did you give it the score that you did?</li>
+   <li>A.<span style='mso-spacerun:yes'>  </span>The drought is a big problem
+       in California today.</li>
+   <li>B.<span style='mso-spacerun:yes'>  </span>Have you ever wondered how the
+       California drought began?</li>
+   <li>C.<span style='mso-spacerun:yes'>  </span>Dictionary.com defines drought
+       as, “a period of dry weather, especially a long one that is injurious to
+       crops.”</li>
+   <li>Be prepared to discuss your answer with a tutor.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0017.htm');" id=PPTL18>Attention Grabber Do’s
+  and Don’ts</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <ul>
+    <li>Write overly broad statements</li>
+    <li>Use cliché ideas and strategies</li>
+   </ul>
+   <br>
+   <li>DON’T</li>
+   <ul>
+    <li>Be creative and interesting</li>
+    <li>Be appropriate to the topic</li>
+    <li>Be appropriate to the subject you’re studying</li>
+    <li>Make sure the attention grabber leads smoothly into your essay</li>
+   </ul>
+   <br>
+   <li>DO</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0022.htm');" id=PPTL19>Background Information</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Use the introduction as an opportunity to educate your readers.<span
+       style='mso-spacerun:yes'>  </span>Give them any background information
+       they will need to understand your ideas.</li>
+   <li>It may help to imagine that you’re writing to an intelligent but
+       uninformed person—perhaps a college student who is not in class with
+       you.<span style='mso-spacerun:yes'>  </span>What would that person need
+       to know to understand your topic?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0023.htm');" id=PPTL20>What information might
+  appear in the introduction?</a></font></div>
+  <div id=PPTC20 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Definitions of Key Concepts</li>
+   <li>Theoretical Foundations</li>
+   <li>Historical Background</li>
+   <li>Plot Summary (for a literature or film analysis)</li>
+   <li>An overall narrowing of the topic from a general perspective to a more
+       specific one</li>
+   <li>Answers to the reporter’s questions, which are:<span
+       style='mso-spacerun:yes'>  </span>Who?, What?, When?, Where?, Why?, and
+       How?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0024.htm');" id=PPTL21>How much is too much?</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Avoid providing too much background information because you risk losing
+       your readers’ attention.</li>
+   <li>Save specific facts, statistics, and details for the body of the essay
+       where you can discuss them in depth.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0025.htm');" id=PPTL22>Thesis</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Often, your thesis will appear at the end of the introduction.<span
+       style='mso-spacerun:yes'>  </span>This placement gives you a chance to
+       gently introduce readers to your topic before sharing your argument with
+       them.</li>
+   <li>The thesis is the main argument you plan to make in your paper.<span
+       style='mso-spacerun:yes'>  </span>It is the most important sentence or
+       two in the essay.</li>
+   <li>A good thesis will:</li>
+   <ul>
+    <li>Answer the question on the essay prompt</li>
+    <li>Be debatable</li>
+    <li>Be clear</li>
+    <li>Be specific</li>
+    <li>Provide a preview of the rest of the essay</li>
+    <br>
+    <br>
+    <li>Note:<span style='mso-spacerun:yes'>  </span>For more information on
+        thesis statements, consider attending the Thesis Development workshop
+        or Guided Learning Activity.</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0026.htm');" id=PPTL23>Activity 1:<span
+  style='mso-spacerun:yes'>  </span>Introduction “Peer Review”</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 5 of your handout, read the sample introduction.<span
+       style='mso-spacerun:yes'>  </span>Imagine that it is written by one of
+       your classmates.</li>
+   <li>After reading the introduction, give the writer some feedback.<span
+       style='mso-spacerun:yes'>  </span>What three changes should the writer
+       make to improve the introduction?</li>
+   <li>Be prepared to discuss your answers with a tutor.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0027.htm');" id=PPTL24>Part 3:<br>
+    Body Paragraphs</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0028.htm');" id=PPTL25>Survey Question 3</a></font></div>
+  <div id=PPTC25 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Write your answer on page 5 of your handout.</li>
+   <li>What is the purpose of body paragraphs?</li>
+   <li>A.<span style='mso-spacerun:yes'>  </span>To explain the writer’s ideas
+       in detail</li>
+   <li>B.<span style='mso-spacerun:yes'>  </span>To be exactly eight sentences
+       long</li>
+   <li>C.<span style='mso-spacerun:yes'>  </span>To take up space</li>
+   <li>D.<span style='mso-spacerun:yes'>  </span>To fill with researched
+       information from outside sources</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0068.htm');" id=PPTL26>Survey Question 3
+  Explanation</a></font></div>
+  <div id=PPTC26 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The correct answer is A: To explain the writer’s ideas in detail.</li>
+   <li>The purpose of body paragraphs is to help readers learn about the
+       writer’s ideas.<span style='mso-spacerun:yes'>  </span>They should
+       provide specific details and evidence to convince the readers.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0029.htm');" id=PPTL27>What are body
+  paragraphs?</a></font></div>
+  <div id=PPTC27 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Body paragraphs make up the middle of a writing project.<span
+       style='mso-spacerun:yes'>  </span>They explain the writer’s ideas in
+       detail and support those ideas with specific details and evidence.</li>
+   <br>
+   <br>
+   <li>How many body paragraphs do you need?</li>
+   <li>As many as it takes to explain your ideas thoroughly and meet the page
+       length requirement of your assignment.<span style='mso-spacerun:yes'> 
+       </span>Focus more on the quality of your writing than on the number of
+       paragraphs required.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>28</font></div>
+  </td>
+  <td>
+  <div id=PPTP28 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0030.htm');" id=PPTL28>Body Paragraph
+  Considerations</a></font></div>
+  <div id=PPTC28 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Coherence:<span style='mso-spacerun:yes'>  </span>All the paragraphs
+       should relate to each other and to your thesis statement.<span
+       style='mso-spacerun:yes'>  </span>They should stick (cohere) together.</li>
+   <li>Organization: Put your body paragraphs in an order that makes sense to
+       your readers.</li>
+   <li>Readability: Readers often have trouble focusing on long
+       paragraphs.<span style='mso-spacerun:yes'>  </span>Consider breaking
+       apart long paragraphs so readers can follow your ideas better.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>29</font></div>
+  </td>
+  <td>
+  <div id=PPTP29 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0035.htm');" id=PPTL29>Criteria for a Strong
+  Body Paragraph</a></font></div>
+  <div id=PPTC29 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A strong body paragraph will do the following:</li>
+   <ul>
+    <li>Support your thesis</li>
+    <li>Discuss one main idea</li>
+    <li>Use specific, detailed language</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>30</font></div>
+  </td>
+  <td>
+  <div id=PPTP30 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0032.htm');" id=PPTL30>Some Types of Body
+  Paragraphs</a></font></div>
+  <div id=PPTC30 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Body Paragraphs can fulfill several different functions, including:</li>
+   <ul>
+    <li>Thoroughly explaining a reason that supports the writer’s thesis</li>
+    <li>Presenting a counterargument and/or refuting a counterargument</li>
+    <li>Comparing or contrasting ideas</li>
+    <li>Providing relevant background information</li>
+    <li>Explaining a step in a process</li>
+    <li>Analyzing a key example that supports the thesis</li>
+    <br>
+    <br>
+   </ul>
+   <li>For more information, consider attending Essay Structure 2:<span
+       style='mso-spacerun:yes'>  </span>Making the Modes of Writing Work for
+       You.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>31</font></div>
+  </td>
+  <td>
+  <div id=PPTP31 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0031.htm');" id=PPTL31>What can a body
+  paragraph include?</a></font></div>
+  <div id=PPTC31 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A body paragraph may include some (or all) of the below elements.<span
+       style='mso-spacerun:yes'>  </span>Your paragraph may or may not need
+       these elements depending on the type of assignment you’re working on or
+       the subject you’re studying.<span style='mso-spacerun:yes'>  </span>If
+       you have questions, be sure to ask your instructor or a TLC tutor for
+       help.</li>
+   <br>
+   <br>
+   <ul>
+    <li>Topic Sentence that connects to the thesis and reflects the subject of
+        the entire paragraph.</li>
+    <li>Topic sentence development:<span style='mso-spacerun:yes'> 
+        </span>additional details or description about the topic sentence.</li>
+    <li>Evidence:<span style='mso-spacerun:yes'>  </span>quotes, statistics,
+        examples, illustrations, etc. from reputable sources.</li>
+    <li>Commentary on the Evidence:<span style='mso-spacerun:yes'>  </span>show
+        readers how the evidence supports your argument.</li>
+    <li>Connections back to the thesis statement:<span
+        style='mso-spacerun:yes'>  </span>show readers how the entire paragraph
+        supports your argument.</li>
+    <li>Transitional words or phrases:<span style='mso-spacerun:yes'> 
+        </span>help readers make connections between your ideas.</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>32</font></div>
+  </td>
+  <td>
+  <div id=PPTP32 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0034.htm');" id=PPTL32>Transitional Words and
+  Phrases</a></font></div>
+  <div id=PPTC32 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Transitions are words and phrases that show how two ideas are
+       connected.<span style='mso-spacerun:yes'>  </span>Using transitions will
+       help readers follow your ideas better.</li>
+   <li>You can use transitions within or between paragraphs.<span
+       style='mso-spacerun:yes'>  </span>Be careful not to over-use
+       transitions.<span style='mso-spacerun:yes'>  </span>You don’t need one
+       in every sentence.</li>
+   <li>Some common transitions include:</li>
+   <ul>
+    <li>In addition</li>
+    <li>For example</li>
+    <li>Although</li>
+    <li>In fact</li>
+   </ul>
+   <li>For more examples, follow the link on your handout.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>33</font></div>
+  </td>
+  <td>
+  <div id=PPTP33 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0037.htm');" id=PPTL33>A quick note about
+  citation</a></font></div>
+  <div id=PPTC33 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Body paragraphs frequently use outside sources to help support their
+       points.<span style='mso-spacerun:yes'>  </span>Be sure to cite those
+       sources properly using the format required by your instructor.</li>
+   <li>TLC offers workshops and/or handouts on a variety of citation styles.</li>
+   <li>We at TLC are happy to help you work on accurate citations!<span
+       style='mso-spacerun:yes'>  </span>Don’t underestimate the importance of
+       citation; failure to cite properly is considered plagiarism.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>34</font></div>
+  </td>
+  <td>
+  <div id=PPTP34 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0038.htm');" id=PPTL34>Activity 2:<span
+  style='mso-spacerun:yes'>  </span>Body Paragraph “Peer Review”</a></font></div>
+  <div id=PPTC34 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 7 of your handout, read the sample body paragraph.<span
+       style='mso-spacerun:yes'>  </span>Imagine that it is written by one of
+       your classmates.</li>
+   <li>After reading the body paragraph, give the writer some feedback.<span
+       style='mso-spacerun:yes'>  </span>What three changes should the writer
+       make to improve the body paragraph?</li>
+   <li>Be prepared to discuss your answers with a tutor.</li>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>35</font></div>
+  </td>
+  <td>
+  <div id=PPTP35 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0039.htm');" id=PPTL35>Part 4:<span
+  style='mso-spacerun:yes'>  </span>Conclusions</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>36</font></div>
+  </td>
+  <td>
+  <div id=PPTP36 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0040.htm');" id=PPTL36>Survey Question 4</a></font></div>
+  <div id=PPTC36 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Write your answer on page 7 of your handout.</li>
+   <li>How similar should the introduction and conclusion be?</li>
+   <li>A.<span style='mso-spacerun:yes'>  </span>100% similar:<span
+       style='mso-spacerun:yes'>  </span>Just copy the introduction and paste
+       it at the end of the essay.</li>
+   <li>B.<span style='mso-spacerun:yes'>  </span>90% similar:<span
+       style='mso-spacerun:yes'>  </span>Reword some of the introduction, but
+       it’s OK to keep many key phrases.</li>
+   <li>C.<span style='mso-spacerun:yes'>  </span>20% similar:<span
+       style='mso-spacerun:yes'>  </span>While there may be some similarities
+       with the introduction, the conclusion is mostly original material and
+       tone.</li>
+   <li>D.<span style='mso-spacerun:yes'>  </span>0% similar:<span
+       style='mso-spacerun:yes'>  </span>The conclusion and introduction have
+       nothing to do with each other.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>37</font></div>
+  </td>
+  <td>
+  <div id=PPTP37 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0069.htm');" id=PPTL37>Survey Question 4
+  Explanation</a></font></div>
+  <div id=PPTC37 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The correct answer is C:<span style='mso-spacerun:yes'>  </span>20%
+       similar.</li>
+   <li>The introduction and conclusions should share some ideas—after all, they
+       are from the same paper.<span style='mso-spacerun:yes'>  </span>However,
+       the tone of the conclusion is quite different.<span
+       style='mso-spacerun:yes'>  </span>Savvy writers use the conclusion to
+       urge action and remind readers why the topic is important.</li>
+   <li>Avoid copying or rewriting the introduction.<span
+       style='mso-spacerun:yes'>  </span>Instead, use the conclusion to make a
+       strong final impression on your readers.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>38</font></div>
+  </td>
+  <td>
+  <div id=PPTP38 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0041.htm');" id=PPTL38>What is the purpose of
+  the conclusion?</a></font></div>
+  <div id=PPTC38 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The conclusion is your final word on a topic.<span
+       style='mso-spacerun:yes'>  </span>It gives you the opportunity to remind
+       readers about key points in your argument AND emphasize the significance
+       of your argument.</li>
+   <li>The conclusion should answer the question, “so what?”<span
+       style='mso-spacerun:yes'>  </span>In other words, tell readers why your
+       topic is important.</li>
+   <li>Audiences remember the last thing they read best.<span
+       style='mso-spacerun:yes'>  </span>This means that it is very important
+       to have a strong conclusion so you make a positive, lasting impression
+       on the reader.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>39</font></div>
+  </td>
+  <td>
+  <div id=PPTP39 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0042.htm');" id=PPTL39>Tone</a></font></div>
+  <div id=PPTC39 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>If we’ve done a good job in our essays, by the conclusion, the reader
+       has learned about our topic and trusts our credibility.</li>
+   <li>This means that the conclusion can be stronger in tone than the
+       introduction.</li>
+   <li>You can also use the conclusion to urge action.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>40</font></div>
+  </td>
+  <td>
+  <div id=PPTP40 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0049.htm');" id=PPTL40>Avoid the following</a></font></div>
+  <div id=PPTC40 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Too much summary</li>
+   <li>Repeating word-for-word from the intro</li>
+   <li>Phrases like “in conclusion” or “to sum up”</li>
+   <li>Adding new information that isn’t discussed in the body</li>
+   <br>
+   <br>
+   <li>Note:<span style='mso-spacerun:yes'>  </span>Examples of stylistic
+       techniques you can use to enhance your conclusions are available in the
+       handout.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>41</font></div>
+  </td>
+  <td>
+  <div id=PPTP41 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0050.htm');" id=PPTL41>Final Tip</a></font></div>
+  <div id=PPTC41 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Proofread meticulously.<span style='mso-spacerun:yes'>  </span>This is
+       your last chance to make a good impression on your reader!</li>
+   <li>Noone want to reed a conclusion ful of speling errorrs;</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>42</font></div>
+  </td>
+  <td>
+  <div id=PPTP42 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0051.htm');" id=PPTL42>Activity 3:<span
+  style='mso-spacerun:yes'>  </span>Conclusion “Peer Review”</a></font></div>
+  <div id=PPTC42 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>On page 9 of your handout, read the sample conclusion.<span
+       style='mso-spacerun:yes'>  </span>Imagine that it is written by one of
+       your classmates.</li>
+   <li>After reading the conclusion, give the writer some feedback.<span
+       style='mso-spacerun:yes'>  </span>What three changes should the writer
+       make to improve the conclusion?</li>
+   <li>Be prepared to discuss your answers with a tutor.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>43</font></div>
+  </td>
+  <td>
+  <div id=PPTP43 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0052.htm');" id=PPTL43>Part 5:<span
+  style='mso-spacerun:yes'>  </span>Developing Academic Discretion</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>44</font></div>
+  </td>
+  <td>
+  <div id=PPTP44 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0053.htm');" id=PPTL44>Survey Question 5</a></font></div>
+  <div id=PPTC44 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Write your answer on page 9 of your handout.</li>
+   <li>True or False:<span style='mso-spacerun:yes'>  </span>Students can
+       develop their own strategies for ensuring that they structure their
+       writing effectively.</li>
+   <li>A.<span style='mso-spacerun:yes'>  </span>True</li>
+   <li>B.<span style='mso-spacerun:yes'>  </span>False</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>45</font></div>
+  </td>
+  <td>
+  <div id=PPTP45 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0070.htm');" id=PPTL45>Survey Question 5
+  Explanation</a></font></div>
+  <div id=PPTC45 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The correct answer is True:<span style='mso-spacerun:yes'> 
+       </span>Students can develop their own strategies for ensuring that they
+       structure their writing effectively.</li>
+   <li>Every writing assignment is a little bit different.<span
+       style='mso-spacerun:yes'>  </span>In order to meet the needs of
+       different assignments, students should learn to alter their strategies.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>46</font></div>
+  </td>
+  <td>
+  <div id=PPTP46 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0054.htm');" id=PPTL46>What is Academic
+  Discretion?</a></font></div>
+  <div id=PPTC46 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>As a college student, you should develop your academic discretion.</li>
+   <li>Academic Discretion will allow you to critically think about writing
+       assignments and determine the best strategies for approaching that
+       assignment.</li>
+   <li>As you work on your assignment, think about your purpose, the assignment
+       requirements, the message you plan to convey, and the readers’
+       needs.<span style='mso-spacerun:yes'>  </span>Use these factors to help
+       you structure and organize your work.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>47</font></div>
+  </td>
+  <td>
+  <div id=PPTP47 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0055.htm');" id=PPTL47>Beyond Formulas</a></font></div>
+  <div id=PPTC47 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>You may be used to writing within specific formulas for your school
+       assignments.<span style='mso-spacerun:yes'>  </span>One of the most
+       common is the Five Paragraph Essay (also known as the Jane Schaffer
+       method).</li>
+   <li>These formulas may be helpful for beginning writers.<span
+       style='mso-spacerun:yes'>  </span>However, as you progress and your
+       assignments grow more complex (and longer), these formulas are not as
+       effective.</li>
+   <li>Eventually, you can start working outside of these formulas.</li>
+   <li>Work on meeting the assignment requirements rather than counting
+       paragraphs and sentences.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>48</font></div>
+  </td>
+  <td>
+  <div id=PPTP48 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0059.htm');" id=PPTL48>Assignment Requirements</a></font></div>
+  <div id=PPTC48 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When working on your paper, review the assignment requirements
+       frequently.<span style='mso-spacerun:yes'>  </span>Use them to help make
+       sure that your paper is structured effectively.</li>
+   <li>Examples:</li>
+   <ul>
+    <li>If you are writing a 10 page paper, you should know that you need more
+        than five paragraphs.</li>
+    <li>If you are writing a compare/contrast paper, you should know that you
+        need to discuss at least two main subjects.</li>
+    <li>If you are writing a formal lab report for your chemistry class, you
+        should know that your language should be clear, specific, and
+        scientifically appropriate.</li>
+   </ul>
+   <li>Your assignment will give you clues as to how to approach the
+       writing.<span style='mso-spacerun:yes'>  </span>If you need help
+       interpreting those clues, talk to your instructor or a TLC tutor.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>49</font></div>
+  </td>
+  <td>
+  <div id=PPTP49 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0060.htm');" id=PPTL49>Guided Learning
+  Activity Conclusion</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>50</font></div>
+  </td>
+  <td>
+  <div id=PPTP50 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0061.htm');" id=PPTL50>What you should know
+  about Essay Structure now</a></font></div>
+  <div id=PPTC50 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The Introduction / Body / Conclusion format is useful in many
+       communication situations.</li>
+   <li>Introductions should ease your readers into your topic and argument.</li>
+   <li>Body paragraphs should explain your ideas in detail and support them
+       with evidence.</li>
+   <li>Conclusions should remind readers of important ideas and answer the
+       question “so what?”</li>
+   <li>As a college student, you should develop your academic discretion to
+       make sure you are communicating effectively.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>51</font></div>
+  </td>
+  <td>
+  <div id=PPTP51 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0062.htm');" id=PPTL51>If you liked this
+  lesson and want more information, consider attending:</a></font></div>
+  <div id=PPTC51 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <ul>
+    <li>Prewriting</li>
+    <li>Revision Strategies</li>
+    <li>Timed Writing</li>
+   </ul>
+   <li>Why should you come back?</li>
+   <li>Students completing Supplemental Learning Activities had a
+       10%&nbsp;higher success rate across the disciplines, a 21% higher
+       success rate in Math, and a 49% higher success rate in English courses.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>52</font></div>
+  </td>
+  <td>
+  <div id=PPTP52 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0063.htm');" id=PPTL52>Reflection</a></font></div>
+  <div id=PPTC52 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Please complete the reflection on page 10 of your handout.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master03.htm></a><a href=master03.xml></a><a
+href=preview.wmf></a><a href=master17.htm></a><a href=master17.xml></a><a
+href=master18.htm></a><a href=master18.xml></a><a href=master19.htm></a><a
+href=master19.xml></a><a href=master20.htm></a><a href=master20.xml></a><a
+href=master21.htm></a><a href=master21.xml></a><a href=master22.htm></a><a
+href=master22.xml></a><a href=pres.xml></a><a href=slide0001.htm></a><a
+href="master17_image001.png"></a><a href="master17_image002.png"></a><a
+href="slide0001_image003.jpg"></a><a href=slide0002.htm></a><a
+href="master03_image004.png"></a><a href="master03_image005.png"></a><a
+href=slide0003.htm></a><a href="master18_image006.png"></a><a
+href="master18_image007.png"></a><a href=slide0065.htm></a><a
+href=slide0066.htm></a><a href=slide0005.htm></a><a href=slide0006.htm></a><a
+href=slide0007.htm></a><a href=slide0008.htm></a><a href=slide0010.htm></a><a
+href=slide0013.htm></a><a href=slide0067.htm></a><a href=slide0011.htm></a><a
+href=slide0012.htm></a><a href=slide0014.htm></a><a href=slide0016.htm></a><a
+href=slide0015.htm></a><a href="slide0015_image008.png"></a><a
+href=slide0017.htm></a><a href="slide0017_image009.png"></a><a
+href=slide0022.htm></a><a href=slide0023.htm></a><a href=slide0024.htm></a><a
+href=slide0025.htm></a><a href=slide0026.htm></a><a href=slide0027.htm></a><a
+href=slide0028.htm></a><a href=slide0068.htm></a><a href=slide0029.htm></a><a
+href=slide0030.htm></a><a href=slide0035.htm></a><a href=slide0032.htm></a><a
+href=slide0031.htm></a><a href=slide0034.htm></a><a href=slide0037.htm></a><a
+href=slide0038.htm></a><a href=slide0039.htm></a><a href=slide0040.htm></a><a
+href=slide0069.htm></a><a href=slide0041.htm></a><a href=slide0042.htm></a><a
+href=slide0049.htm></a><a href=slide0050.htm></a><a href=slide0051.htm></a><a
+href=slide0052.htm></a><a href=slide0053.htm></a><a href=slide0070.htm></a><a
+href=slide0054.htm></a><a href=slide0055.htm></a><a href=slide0059.htm></a><a
+href=slide0060.htm></a><a href=slide0061.htm></a><a href=slide0062.htm></a><a
+href="slide0062_image010.jpg"></a><a href=slide0063.htm></a><a
+href="master03_stylesheet.css"></a><a href="master17_stylesheet.css"></a><a
+href="master18_stylesheet.css"></a><a href="master19_stylesheet.css"></a><a
+href="master20_stylesheet.css"></a><a href="master21_stylesheet.css"></a><a
+href="master22_stylesheet.css"></a><a href=script.js></a><a
+href="../Essay%20Structure%201.htm"></a><a href=fullscreen.htm></a><a
+href=buttons.gif></a><a href=frame.htm></a><a href=outline.htm></a></div>
+
+</body>
+
+</html>

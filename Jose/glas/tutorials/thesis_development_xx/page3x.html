@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 4;
+$(".button1").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click') .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"}) 
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	if (i == x) {$('.button1').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click')  .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+	$(this).css ({"color": "red", "font-weight": "normal"})
+ 
+	});
+ 
+});
+ 
+ 
+</script>
+<style type="text/css"> 
+
+
+#questions {width: 100%; margin-bottom: 10px;}
+.item {padding-left: 10px; width: 100%; line-height: 20px;}
+.right, .wrong {cursor: pointer;}
+.right:hover, .wrong:hover {background: #ccc;}
+.letter {margin-right: 10px;}
+.turnedOff {margin-right: 10px;color: gray}
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	Complete the following statements correctly. After you get all the correct answers, a 
+	button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page4.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table  width="100%" border="0">
+	<tr>
+	<td width="80%" valign="top"><div class="exercise_instructions">
+		<font class="correct_number">COMPLETE</font> the statements correctly by clicking on the answers.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	</table>
+	<table width="100%" border="0"><tr><td width="80%">
+	<table id="questions">
+	<tr><td><div class="number">1.</div></td>
+	<td><div class="item">A thesis statement is...<br>
+	<span class="letter">a.</span><span class="wrong">the first paragraph of an essay.<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">an introduction to the essay.<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="right">a one or two sentence summary of the essay's argument.<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">an illustration of the main point of the essay.<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+
+	<table id="questions">
+	<tr><td><div class="number">2.</div></td>
+	<td><div class="item">The purpose of the thesis statement is to...<br>
+	<span class="letter">a.</span><span class="wrong">introduce the pros and cons of the argument.<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="right">define the objective of the essay.<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">give an example of the topic discussed in the essay.<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">describe the supporting research used in the essay.<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	
+
+	<table id="questions">
+	<tr><td><div class="number">3.</div></td>
+	<td><div class="item">Without a strong thesis statement, your essay...<br>
+	<span class="letter">a.</span><span class="right">may wander off topic.<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">may lack sufficient supporting information.<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">is incomplete.<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">will not have an adequate introduction.<span id="feedback"></span> </span>
+	</div></td></tr> 
+	</table>
+
+	<table id="questions">
+	<tr><td><div class="number">4.</div></td>
+	<td><div class="item">To generate a thesis statement you should...<br>
+	<span class="letter">a.</span><span class="wrong">come up with as many ideas as possible.<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">ask your professor for possible topics.<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="right">turn the assignment into a question.<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">write a draft of your essay.<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+
+
+	</td>
+	
+	<td align="center"><div id="counter" class="background_score"></div></td>
+	</tr></table>
+	
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

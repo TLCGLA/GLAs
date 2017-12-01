@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD html 4.01 Transitional//EN">
+<html>
+<head>
+<title>spa workshop</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+<style type="text/css">
+
+div {
+	font-family: sans-serif, Arial, Times New Roman, Times, serif;
+	font-size: 32px;
+}
+
+</style>
+</head>
+
+<body  link="#000066" alink="#000066" vlink="#000066">
+
+
+<!-- this is the common top menu -->
+
+<!--Page Header -->
+
+<table align="center" width="900">
+<tr>
+      <td align="center"><br><div><font size="+5" color=#990000>More "er" Verb Practice</font></div></td>
+</tr>
+<tr><td colspan="2"><hr color=#990000></td></tr></tr>
+</table>
+<!-- this is the content table -->
+
+
+<table align="center" width="900" cellspacing="0"  cellpadding="0" border="0" bgcolor="#FFFFF0">
+<tr><td><div>
+
+<font size="+3" color="#EE871B"><center>Create 5 sentences with the clues given.</center></font>
+
+<table align"center">
+<table>
+<tr><td width="3" align="right" valign="top"><div>1.&nbsp;</div></td>
+<td><div>Nosotros / abrir / libros / clase</div> (abrir / to open)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>2.&nbsp;</div></td>
+<td><div>Ustedes / aprender / espa&ntilde;ol / universidad</div> (aprender / to learn)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>3.&nbsp;</div></td>
+<td><div>Ellas / asistir a / clase / tarde </div> (asistir a / to attend)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>4.&nbsp;</div></td>
+<td><div>Nuestro hermano / no beber / alcohol</div> (beber / to drink)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>5.&nbsp;</div></td>
+<td><div>T&uacute; / correr / con / Teresa / el parque</div> (correr / to run)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>6.&nbsp;</div></td>
+<td><div>Juan y Alicia / no comprender / libro de texto</div> (comprender / to understand)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>7.&nbsp;</div></td>
+<td><div>Yo / vender / mi / libros / usado</div>(vender / to sell)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>8.&nbsp;</div></td>
+<td><div>Los estudiantes / escribir / tarea</div> (escribir / to write)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>9.&nbsp;</div></td>
+<td><div>Yo / leer / mi / notas / biblioteca</div> (leer / to read)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>10.&nbsp;</div></td>
+<td><div>Usted / vivir / con / su / padres</div> (vivir / to live)</td></tr>
+</table>
+
+<table align="center" cellpadding=2" bgcolor="#D7EBD7">
+<tr>
+<td><div>yo</div></td><td><div><font color="#0A14C4"><strong><u>o &nbsp;</u></strong></font></div></td>
+<td width="100">&nbsp;</td>
+<td><div>nosotros / nosotras</div></td><td><div><font color="#0A14C4"><strong><u>emos / imos</u></strong></font></div></td></tr>
+<tr>
+<td><div>t&uacute;</div></td><td><div><font color="#0A14C4"><strong><u>es</u></strong></font></div></td>
+<td width="100">&nbsp;</td>
+<td><div>vosotros</div></td><td><div><font color="#0A14C4"><strong><u>&eacute;is </u></strong></font></div></td></tr>
+
+<tr>
+<td valign="bottom"><div>&eacute;l / ella / usted</div></td>
+<td valign="bottom"><div><font color="#0A14C4"><strong><u>e &nbsp;</u></strong></font></div></td>
+<td width="100">&nbsp;</td>
+<td valign="bottom"><div>ellos / ellas / ustedes </div></td><td><div><font color="#0A14C4"><strong><u>en </u></strong></font></div></td>
+<br>
+</tr>
+</table>
+
+
+
+
+</div></td></tr>
+
+<tr><td align="right"><div><font size="3" color="#5E00FF"><a href="assessment.html">Take a quiz</a></font></div></td></tr>
+
+
+ 
+</table>
+  
+
+</body>
+</html>

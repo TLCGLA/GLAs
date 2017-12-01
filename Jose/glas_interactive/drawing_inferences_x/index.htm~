@@ -1,0 +1,205 @@
+<!DOCTYPE htm PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtm1/DTD/xhtm1-transitional.dtd">
+<htm xmlns="http://www.w3.org/1999/xhtm">
+<head>
+<meta http-equiv="Content-Type" content="text/htm; charset=UTF-8" />
+<title>Guided Learning Activities</title>
+<link href="../styles.css" rel="stylesheet" type="text/css" />
+<!--[if gte IE 6]><link href="css/iefixes.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<style type="text/css">
+
+
+.viewer_header {
+	border-style: solid; 
+	background-color:white; 
+	border-width: 1px;	
+	border-color: #BFBFBF; 
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	/*padding-bottom: 10px;
+	height: 265px;*/
+	width: 305px; 
+		}
+.fadecontentwrapper{ /* Total width: 350px+5px+5px=360px Read relative width relations for the other two containers below! */
+position: relative;
+width: 450px;
+height: 338px;  /*Set height to be able to contain height of largest content shown*/
+border: 1px solid  #BFBFBF; 
+overflow: hidden;
+}
+
+.fadecontent{ /*style for each fade content DIV within wrapper. Total width: 330px+10px+10px=350px (".fadecontentwrapper" width minus its padding and borders, if any) */
+position: absolute;
+background: white;
+/*padding: 10px; */
+visibility: hidden;
+width: 450px;
+}
+
+.fadecontenttoggler{ /*style for DIV used to contain toggler links. */
+
+height: 20px;
+/* border: 1px solid #555555; */
+overflow: hidden;
+padding-bottom: 8px;
+padding-top: 5px;
+//background-color: #E8E8E8;
+}
+
+
+
+.fadecontenttoggler a{ /*style for every navigational link within toggler */
+text-decoration: none;
+padding: 0 5px;
+display: block;
+
+}
+
+.fadecontenttoggler a:hover{
+/*background: #C03021; */
+color: #0D408D;
+}
+
+.fadecontenttoggler a.toc{ /*style for individual toggler links (page 1, page 2, etc). ".toc" class auto generated! */
+}
+
+.fadecontenttoggler a.prev{ /*style for "prev" and "next" toggler links. ".prev" and ".next" classes auto generated! */
+color:  black;
+/* float: left; */
+}
+
+.fadecontenttoggler a.next{ /*style for "prev" and "next" toggler links. ".prev" and ".next" classes auto generated! */
+color:  black;
+float: right;
+/*padding-right: 20px; */
+}
+
+.fadecontenttoggler a.prev:hover, .fadecontenttoggler a.next:hover{
+color: #0D408D;
+/*background: #C03021; */
+}
+
+.fadecontenttoggler a.selected{ /*style for selected page's toggler link. ".selected" class auto generated! */
+/* background: #C03021; */
+color: #C03021;
+}
+
+
+</style>
+
+<script type="text/javascript" src="../jquery.js"></script>
+
+<script type="text/javascript" src="../content_viewer/contentfader.js">
+
+/***********************************************
+
+* Fade In Content Viewer script- by JavaScript Kit (www.javascriptkit.com)
+* This notice must stay intact for usage
+* Visit JavaScript Kit at http://www.javascriptkit.com/ for this script and 100s more
+***********************************************/
+
+</script>
+
+</head>
+
+<body>
+
+<table width="960" align="center" border="0"> <!-- 960 px is the standard width for 1024 x 768 screens; use 90% otherwise -->
+<tr><td align="center" height="100%">
+<!-- header -->
+<div class="header">
+  		<div style="float: left;"><img src="../images/coc_logo1.gif" alt="College of the Canyons" width="80" height="73" />
+      <img src="../images/coc_logo2.gif" alt="College of the Canyons" width="134" height="73" /></a> 
+	  </div>
+	  <div style="float: right;"><h1 class="gla_header">Guided Learning Activities</h1></div>
+ </div>
+ <!-- end header -->
+<div class="page">
+ 			<h1 class="h1_blue_dark">Drawing Inferences</h1>
+		<div style="padding-bottom: 20px; padding-top: 10px;">
+            <h1 class="h1_gray">Introduction</h1> 
+Most of your courses involve reading texts—course syllabi, handouts, essays, and textbook chapters.  
+Even visual media, such as films, are considered “texts” to be read and understood by the viewer.   
+But not all of the ideas in a text are stated directly.  You must often “read between the lines” to 
+interpret what an author is  saying.  That is, you need to make inferences, and this requires your own 
+participation as much as the author’s.  To make reasonable inferences, you not only need to carefully 
+observe the details in the text, but you need to contribute your own knowledge and experiences.  But how 
+do you know which inferences are “reasonable” and which ones are not?  This workshop will help you make 
+reasonable inferences. 
+
+		</div>
+           
+
+<!-- wrapper lower section -->
+<div style="margin-top: 10px;">
+		
+	<table width="100%" border="0">
+			<tr><td> 
+					<div class="border_gray" style="margin-bottom: 10px; padding: 10px;"><h1 class="h1_gray">Student Learning Outcomes</h1>
+						By the end of this activity, you should be able to:
+	                	<ul style="position: relative; list-style-type: square; padding-left: 15px;	padding-top: 5px;">
+		<li>Distinguish between “reasonable inferences” (plausible) and “unreasonable inferences” (contradictory or unfounded)</li>
+		<li>Identify the key components of reading for inferences</li>
+		<li>Apply the above skills to various aspects of written and visual texts</li>
+
+
+                    	</ul>
+					</div>
+				<div>
+				<h1 class="h1_gray" style="padding-top: 20px;">Preparation for the Guided Learning Activity</h1>
+                    Before you start, you'll need to make sure you that have 
+                      the handouts for this activity and the Supplemental Learning 
+                      Workbook. If you don't, ask a tutor to help you. <br>
+
+			
+					<h1 class="h1_gray" style="padding-top: 20px;">Begin the Activity</h1> Once you have all the 
+                    needed materials, you may procede to the activity by clicking 
+                    on the button below.<br><br>  <strong>If at any time you need help, please ask a tutor.</strong> 
+					<a href="page2.htm">Click here to begin.</a>
+					</div>
+			</td>
+			<td width="2%"></td>
+			<td width="470" height="400"><div class="border_gray" style="padding: 10px; float: right;">
+				
+				<h1 class="h1_gray">Did you know?</h1>
+		          <div id="whatsnew" class="fadecontentwrapper"> 
+                    <div class="fadecontent"><img src="../images/did_you_know/Slide1.png" /></div>
+                    <div class="fadecontent"><img src="../images/did_you_know/Slide2.png" /></div>
+                    <div class="fadecontent"><img src="../images/did_you_know/Slide3.png" /></div>
+                  </div>
+				<div id="whatnewstoggler" class="fadecontenttoggler" style="padding-right:150px;">
+				<a href="#" class="next"><input type="BUTTON" class="button" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tell me more&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></a>
+				</div>
+		</div><!-- viewer wrapper ends here-->
+					
+		</td></tr>
+
+		
+		
+		
+		
+		</table>
+</div> <!-- end wrapper lower section -->
+	
+</div> <!-- end page -->
+</td></tr>
+</table>
+
+ 
+
+		
+
+
+<script type="text/javascript">
+//SYNTAX: fadecontentviewer.init("maincontainer_id", "content_classname", "togglercontainer_id", selectedindex, fadespeed_miliseconds)
+fadecontentviewer.init("whatsnew", "fadecontent", "whatnewstoggler", 0, 400)
+</script>  
+	  
+	  
+	  
+
+		
+
+</body>
+</html>

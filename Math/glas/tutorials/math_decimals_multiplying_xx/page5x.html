@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script> 
+$(document).ready(function(){
+		var i = 0;
+		var x = 8;
+$(".button1").css ('visibility', 'hidden');
+ 
+$(".wrong").click(function(){
+   $(this).unbind('click')
+   $(this).siblings () .unbind ('click') .css ("cursor" , "none")
+   $(this).css ({"color": "red", "font-weight": "normal"})
+   $(this).siblings("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+   $(".triangle").animate({"bottom": "-=15px"}, "fast");
+ 
+});
+ 
+$(".right").click(function(){
+	$(this).unbind('click')
+	$(this).siblings () .unbind ('click') .css ("cursor" , "none")
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	$(this).siblings("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"})
+  	$(".triangle").animate({"bottom": "+=15px"}, "fast");
+  i++;
+  	if (i == x) {$('.button1').css ('visibility', 'visible')};
+});
+ 
+});
+</script>
+
+
+
+<style>
+.right, .wrong {cursor: pointer; padding-left: 10px; padding-right: 10px; display: inline; border: 1px solid #ccc; background-color: #dcdcdc; }
+.right:hover, .wrong:hover {background: #ccc;}
+.item {padding-left: 20px; width: 700px; line-height: 25px; }
+.column {width: 450px; text-align: left; margin-right: 20px;}
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	Some of the computations have the decimal point in the wrong place and some are right.  Can you sort them out?  (Note: the only thing right or wrong is 
+	the decimal point placement.  You don't have to actually multiply the numbers to figure out if the numbers themselves are right.  Just focus on the decimal 
+	point location and apply what you just learned about where it should go.)  After you get all the right answers, 
+	a button will appear on the top right corner.  Click on the button to continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page6.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table width="100%" border="0">
+	<tr>
+	<td valign="top" width="80%"><div class="exercise_instructions">
+		Indicate whether <font class="correct_number">THE DECIMAL POINT PLACEMENT</font> is right or wrong.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	<tr>
+	<td valign="top" width="80%">
+ 		<table class="questions_table">
+		<tr><td><div class="number">1.</div></td><td><div class="item"><span class="column">6.5 x 2.25 = 14.625</span><span class="right">right</span> / <span class="wrong">wrong</span> <span id="feedback"></span></div></td>		</tr>
+		<tr><td><div class="number">2.</div></td><td><div class="item"><span class="column">4.02 x 2.2 = 8.844</span><span class="right">right</span> / <span class="wrong">wrong</span> <span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">3.</div></td><td><div class="item"><span class="column">35.22 x 2.256 = 794.5632</span><span class="wrong">right</span> / <span class="right">wrong</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">4.</div></td><td><div class="item"><span class="column">3.251 x 2.0003 = 6.5029753</span><span class="right">right</span> / <span class="wrong">wrong</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">5.</div></td><td><div class="item"><span class="column">12.2 x 5.001 = 610.122</span><span class="wrong">right</span> / <span class="right">wrong</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">6.</div></td><td><div class="item"><span class="column">4.09 x 2.1 = 8.589</span><span class="right">right</span> / <span class="wrong">wrong</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">7.</div></td><td><div class="item"><span class="column">8.273 x 5.00 = 4.13650</span><span class="wrong">right</span> / <span class="right">wrong</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">8.</div></td><td><div class="item"><span class="column">3.111 x 2.004 = 6.234444</span><span class="right">right</span> / <span class="wrong">wrong</span><span id="feedback"></span></div></td></tr>
+		
+		</table>
+ 	</td>
+	<td align="center">
+		<div class="progress2">
+ 		<table>
+		<tr>
+		<td><div class="triangle_spacer"></div>
+                  <div class="triangle"><img src="../../images/triangle2.png"></div></td>
+		<td><div class="progress_bar2"> 
+                    <div class="progress_bar_text2">+10<br>
+                      +8<br>
+                      +6<br>
+                      +4<br>
+                      +2<br>
+                      &nbsp;0<br>
+                      -2<br>
+                      -4<br>
+                      -6<br>
+                      -8<br>
+                      -10</div>
+                  </div></td>
+		</tr>
+		</table>
+		</div>
+	</td>
+	</tr>
+	</table>
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

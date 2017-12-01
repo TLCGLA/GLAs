@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD html 4.01 Transitional//EN">
+<html>
+<head>
+<title>spa workshop</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+<style type="text/css">
+
+div {
+	font-family: sans-serif, Arial, Times New Roman, Times, serif;
+	font-size: 18px;
+}
+
+</style>
+</head>
+
+<body  link="#000066" alink="#000066" vlink="#000066">
+
+
+<!-- this is the common top menu -->
+
+<!--Page Header -->
+
+<table align="center" width="900">
+<tr>
+      <td align="center"><br><div><font size="+5" color=#990000>The verb form "hay"</font></div></td>
+</tr>
+<tr><td colspan="2"><hr color=#990000></td></tr></tr>
+</table>
+<!-- this is the content table -->
+
+
+<table align="center" width="900" cellspacing="1"  cellpadding="10" border="0" bgcolor="#FFFFF0">
+<tr>
+<td><div>
+      
+<font size="+3" color=#990000>In English</font><font size="+3">, when you want to say that 
+something exists, you use "there is" or "there are", as in "There are students in the class".<br><br>
+
+
+<font size="+3" color=#990000>In Spanish</font><font size="+3">, a single verb form, <font size="+4" color="#EE871B">"hay", means 
+BOTH "there is" and "there are"</font>.<br>
+
+<table width="850" bgcolor=#F0E3A6 align="center">
+<tr>
+<td valign="top"><div><font size="+3"><font color="#1E0880"><strong>There is</strong></font> a book on the table<br>
+<font color="#1E0880"><strong>Hay</strong></font> un libro en la mesa.<BR></br></div></td></tr>
+<td valign="top"><div><font size="+3"><font color="#1E0880"><strong>There are</strong></font> some books on the table<br>
+<font color="#1E0880"><strong>Hay</strong></font> unos libros en la mesa.</div></td></tr>
+
+
+</table>
+<br>
+Note that "there is" and "there are" are only used to indicate that something exists. That's the only 
+use of "hay".<br><br>
+
+Let's continue. </font>
+<font size="3" color="#5E00FF"><a href="haber_2.html">Go to practice.</a></font>
+
+</font>
+</div>
+<br>
+</td>
+
+</tr>
+ 
+ </table>
+  
+
+</body>
+</html>

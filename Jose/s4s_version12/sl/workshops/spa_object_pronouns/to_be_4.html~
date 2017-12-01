@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD html 4.01 Transitional//EN">
+<html>
+<head>
+<title>spa workshop</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+<style type="text/css">
+
+div {
+	font-family: sans-serif, Arial, Times New Roman, Times, serif;
+	font-size: 32px;
+}
+
+</style>
+</head>
+
+<body  link="#000066" alink="#000066" vlink="#000066" bgcolor="#E6E6FA">
+
+
+<!-- this is the common top menu -->
+
+<!--Page Header -->
+
+<table align="center" width="900" height="800" cellspacing="1"  cellpadding="10" border="0" bgcolor="#FFFFF0">
+<tr>
+      <td align="center" colspan="2" valign="top" height=50><br><div><font size="+5" color=#990000>When to use "estar" (part 2)</font></div></td>
+</tr>
+<tr><td colspan="2" valign="top"><hr color=#990000></td></tr></tr>
+
+<!-- this is the content table -->
+
+
+
+<tr><td valign="top"><div>
+
+<font size="+4" color=#990000>To indicate location</font> use the verb "estar".  <br>
+<br>
+
+<table>
+
+<tr>
+<td align="left" valign="bottom" width="250"><div><img src="images/escribir1.gif" width="230" height="192" border="0" alt="library">
+</td><td><div>Laura <font color="#0A14C4"><strong>est&aacute;</strong></font> en la biblioteca. <br>
+<font size="4">("Library" is a location.)</font></div></td>
+</tr>
+<tr><td><br><br></td></tr>
+<tr>
+<td align="left" valign="bottom" width="250"><img src="images/asistir4.gif" width="219" height="192" border="0" alt="">
+</td><td><div>
+
+Antonio <font color="#0A14C4"><strong>est&aacute;</strong></font> en el parque. <br>
+<font size="4">("Park" is a location.)</font></div><br></td>
+</tr>
+
+</table>
+
+
+
+</div></td></tr>
+
+
+
+
+
+
+
+<tr><td align="right"><div><font size="3" color="#5E00FF"><a href="to_be_5.html">Let's practice</a></font></div></td></tr>
+
+
+
+ 
+</table>
+  
+
+</body>
+</html>

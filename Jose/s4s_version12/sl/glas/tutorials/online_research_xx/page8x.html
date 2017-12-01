@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script>
+
+$(document).ready(function(){
+
+	//Hide (Collapse) the toggle containers on load
+	$(".toggle_container").hide(); 
+
+	//Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
+	$("div.trigger").click(function(){
+		$(this).toggleClass("active").next().slideToggle("slow");
+		return false; //Prevent the browser jump to the link anchor
+	});
+
+});
+</script>
+
+
+
+<style>
+
+ 
+.toggle_container {
+	margin: 0 0 5px;
+	padding: 0;
+	border-width: 1px;
+	border-color: #BFBFBF;
+	background-color: #f0f0f0;
+	overflow: hidden;
+	clear: both;
+	
+}
+.toggle_container .block {
+	padding: 10px 10px 10px 10px; 
+
+}
+
+.trigger {width: 100%;}
+.option:hover {background: #A2C0DA; }
+.option {width: 100%; text-align: left; background: #DAE6F0; font-size: 14px; padding: 5px;}
+
+
+
+
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table" style="margin-bottom: -15px;">
+	<tr><td width="80%">
+	<p>Use the library databases to research a topic.  Follow the instructions below. After you are done with the exercise, click on the "Next" button <br>
+	to continue the activity.</p></td>
+ 	<td align="center"><a class="button1" href="page9.html"></a></td>
+	</tr>
+	</table>
+	<p><strong>First</strong>, access the library databases as you did before. This is how you enter the databases: Go to the library at this site: 
+<a href="http://www.canyons.edu/offices/library/" target="blank">http://www.canyons.edu/offices/library/</a>.  A new window 
+will open.  You will have to go back and forth between the two windows to complete this activity.  On the library webpage you just opened, find the button called "Research Here" on the top button bar.
+Click on it to open the research menu.  Inside that menu, you will see "Online Databases" as one of the options.  
+Click on it to open the list of databases available in the library.
+	</p>
+	
+	
+	<p><strong>Second</strong>, choose one of the following topics for your research by clicking on it and complete the activity indicated for that topic.  (Write your answers on the 
+handouts.)</p>
+
+<div class="exercise">
+<div class="trigger" >
+<a href="#"><input type="button" class="option"  value="Topic 1: Global Warming (search for statistics concerning global warming in the United States)" ></a>
+</div>
+
+<div class="toggle_container"><div class="block">Instructions: Search the database and find at least two relevant statistical charts or graphs.  Print them out or list the exact source for the information found.</div></div>
+
+<div class="trigger" >
+<a href="#"><input type="button" class="option"  value="Topic 2: Legalizing Marijuana: the debate (find an essay that presents both sides of the argument)" ></a>
+</div>
+
+<div class="toggle_container"><div class="block">Instructions: Search the database and identify and list two arguments on each side of the marijuana debate.</div></div>
+
+
+<div class="trigger" >
+<a href="#"><input type="button" class="option"  value="Topic 3: Student Right to Free Speech (search for relevant journal articles and identify one U.S. Supreme Court case that deals with this topic)" style="width=100%" ></a>
+</div>
+
+<div class="toggle_container"><div class="block">Instructions: Search the database and identify one appropriate article and name a relevant Supreme Court case (made-up example: California vs. Student Speaking Mind).</div></div>
+	
+<div class="trigger" >
+<a href="#"><input type="button" class="option"  value="Topic 4: Women in Shakespeare (find relevant journal articles)" ></a>
+</div>
+
+<div class="toggle_container"><div class="block">Instructions: Search the database and identify two appropriate articles and print out the first page, or cite the articles below in MLA format.</div></div>
+</div> <!-- end exercise -->
+
+
+
+
+
+
+</div><!-- end wrapper -->
+</body>
+</html>

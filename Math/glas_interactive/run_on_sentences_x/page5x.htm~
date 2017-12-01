@@ -1,0 +1,212 @@
+<!DOCTYPE HTML> <html>
+<meta http-equiv="X-UA-Compatible" content="IE-9" /><title>Guided Learning Activities</title>
+<link href="../css/styles.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+
+
+/* PROGRESS BAR STYLES */
+.border_bar {  
+	border: 1px solid  #424242; 
+	padding: 10px;
+ 	height: 420px;
+	width: 160px;
+	background:#CCCCCC; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC'); /* for IE */
+	background: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#CCCCCC)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,#FFFFFF,#CCCCCC); /* for firefox 3.6+ */ 
+
+}
+.progress_bar {float: left;}
+
+.blue_bar {
+	height: 406px;
+	width: 6px;
+	background:#669999; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CCCCCC', endColorstr='#669999'); /* for IE */
+	background: -webkit-gradient(linear, left, right, from(#CCCCCC), to(#669999)); /* for webkit browsers */
+	background: -moz-linear-gradient(left,#CCCCCC,#669999); /* for firefox 3.6+ */ 
+}
+
+
+/* OTHER STYLES */
+.triangle {position:relative;}
+.right, .wrong {cursor: pointer; float:left; font-size: 16px; padding-left: 10px;}
+.right:hover, .wrong:hover {background: #ccc;}
+.bar {display: block; height: 48px; text-align: left; font-size: 14px; font-weight: bold;}
+.bar_title {text-align: right; padding-right: 5px; font-size: 14px; font-weight: bold;}
+.number { text-align: right;  float: left; font-size: 16px; font-weight: bold; background-color:#FFC680; width: 30px; padding-right: 4px; border: 1px solid #ccc;}
+.questions {border: 1px solid #ccc;	padding: 20px; background-color:#FFF; height: 100%; }
+.title {font-weight: bold; font-size: 18px; margin-bottom: 10px; border-bottom: 3px solid #FFA500;}
+span {display:inline-block;}
+
+</style> 
+
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+</head>
+
+<body>
+<!-- big wrapper table -->
+<table width="100%" align="center" border="0">
+
+<tr bgcolor="#273872"><td></td><td width="960"><!-- header -->
+<div class="header">
+  		<div style="float: left; height: 73px;"><img src="../images/coc_logo1.gif" alt="College of the Canyons"  />
+      <img src="../images/coc_logo2.gif" alt="College of the Canyons" />
+      
+	  </div>
+	  <div style="float: right;"><h1 class="h1_title">Guided Learning Activities</h1></div>
+ 
+ </div>
+ <!-- end header -->
+
+</td><td></td></tr>
+<tr><td colspan="3"> <div class="gradient_horizontal" style="height:3px; break:left;"></div></td></tr>
+
+<tr><td colspan="3"> 
+
+<table width="960" align="center" border="0"> <!-- 960 px is the standard width for 1024 x 768 screens; use 90% otherwise -->
+<tr><td align="center" height="100%">
+
+<div class="page">
+<!-- top section starts here -->
+
+<div class="gla_top_section">
+
+<h1 class="h1_blue">Comprehension Questions</h1>
+
+<h1 class="h1_gray" style="padding-top: 10px;">Instructions:</h1>
+       
+</div>
+
+<table width="100%" border="0">
+<tr><td><div style="padding-right: 10px;">Some of the items below are run-on sentences.  Can you find them?  
+Identify the run-on sentences by clicking on them.  (Hint: only 5 are run-ons.) You can watch your progress on the bar to the right of the statements. 
+
+ You will earn one point for each correct answer and lose one point for each incorrect answer.  
+ After you find at least 4 right answers, a button will appear on the top right corner.  Click on the button to 
+continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. </div></td>
+
+<td ><div class="gradient_horizontal" style="height: 38px; text-align: center; padding: 10px; margin-bottom: 5px;">
+
+<form method="link" action="page6.htm" style="display:  inline; float: right;">
+<input type="submit" class="button" style="height: 35px;" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+                                    </form>
+</div></td>
+</tr>
+</table>
+<!-- end top section --> 
+		
+           
+
+<!-- wrapper lower section -->
+<div class="questions" style="padding-top: 25px; margin-top: 20px; height: 480px;" >
+<div><span style="float: left"><h1 class="title">
+Identify the <span class="h1_blue" style="font-size: 20px;"> 5 RUN-ON SENTENCES</span> by clicking on them.</h1></span>
+<span style="float: right; padding-right: 30px;"><h1 class="title">Your progress</h1></span>
+</div>
+<div  style="float: left; width: 700px; margin-top: 10px;">
+
+<table border="0">
+<tr><td height="40"><div class="number">1.</div><div class="wrong"><span id="answer">Jim studied in the Sweet Shop for his chemistry quiz. It was hard to concentrate<br> because of the noise.</span><span id="feedback"></span></div></td></tr>
+<tr><td height="40"><div class="number">2.</div><div class="right"><span id="answer">He often watched TV when there were only reruns she preferred to read instead.</span><span id="feedback"></span></div></td></tr>
+<tr><td height="40"><div class="number">3.</div><div class="right"><span id="answer">They weren't dangerous criminals they were detectives in disguise.</span><span id="feedback"></span></div></td></tr>
+<tr><td height="40"><div class="number">4.</div><div class="wrong"><span id="answer">Why should we spend money on expensive space exploration? We have enough <br>underfunded programs here on Earth.</span><span id="feedback"></span></div></td></tr>
+<tr><td height="40"><div class="number">5.</div><div class="right"><span id="answer">We can eat pizza for breakfast we can eat waffles for dinner.</span><span id="feedback"></span></div></td></tr>
+<tr><td height="40"><div class="number">6.</div><div class="wrong"><span id="answer">We cannot fly to Vegas this weekend, nor can we drive either.</span><span id="feedback"></span></div></td></tr>
+<tr><td height="40"><div class="number">7.</div><div class="wrong"><span id="answer">He does not know what he is talking about, yet everyone listens.</span><span id="feedback"></span></div></td></tr>
+<tr><td height="40"><div class="number">8.</div><div class="right"><span id="answer">I didn't know which job I wanted I felt confused.</span><span id="feedback"></span></div></td></tr>
+<tr><td height="40"><div class="number">9.</div><div class="right"><span id="answer">He enjoys walking through the country he often goes backpacking on his vacations.</span><span id="feedback"></span></div></td></tr>
+<tr><td height="40"><div class="number">10.</div><div class="wrong"><span id="answer">My professor is intelligent. I've learned a lot from her.</span><span id="feedback"></span></div></td></tr>
+
+
+</table>
+
+</div> <!-- end left hand table div-->
+
+<div class="border_bar" style="float: right; margin-top: 5px; "> <!-- begin div for progress bar --->
+
+
+<table width="120" border="0">
+	<tr><td >
+	<!-- progress bar -->
+
+	<table border="0" width="100%">
+
+	<tr> 
+	<td><div style="height: 188px;"></div><div style="float: right; width: 30px; text-align: right;"><img class="triangle" src="../images/triangle2.png" /></div></td>
+ 	<td><div style="float: left; border: 1px solid gray; color: gray; height: 406px; width: 6px; background-color: white; ">
+	<div class="blue_bar" style="width: 6px;"></div>
+	</div>
+
+	
+	<div class="bar_text" style="padding-left: 8px;">
+	<p class="bar"><span class="bar_title">Correct!</span></p>
+	<p class="bar">+</p>
+	<p class="bar">+</p>
+	<p class="bar">+</p>
+	<p class="bar">0</p>
+	<p class="bar">-</p>	
+	<p class="bar">-</p>
+	<p class="bar">-</p>
+
+	<p class="bar"><span class="bar_title">Oops!<span style="font-size: 16px;"></p>
+	
+	</div> 
+	</td>
+	</tr>			  
+	</table>
+</td></tr>
+</table>
+</div>
+<!-- end progress bar -->
+
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 4;
+$(".button").css ('visibility', 'hidden');
+
+$(".right").click(function(){
+   $(this).find ("#answer").hide ()
+   $(this).unbind('click')
+   $(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"})
+   $(".triangle").animate({"bottom": "+=35px"}, "fast");
+   i++;
+	if (i == x) {$('.button').css ('visibility', 'visible')};
+
+});
+
+$(".wrong").click(function(){
+	$(this).find ("#answer").hide ()
+	$(this).unbind('click')
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+  $(".triangle").animate({"bottom": "-=35px"}, "fast");
+    i--;
+});
+
+});
+
+</script>
+
+		
+	
+</div> <!-- end wrapper lower section -->
+	
+</div> <!-- end page -->
+
+
+ 
+</td></tr>
+</table>  <!-- end big wrapper table-->
+		
+
+  
+	  
+	  
+
+		
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD html 4.01 Transitional//EN">
+<html>
+<head>
+<title>spa workshop</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+<style type="text/css">
+
+div {
+	font-family: sans-serif, Arial, Times New Roman, Times, serif;
+	font-size: 25px;
+}
+
+</style>
+</head>
+
+<body  link="#000066" alink="#000066" vlink="#000066" bgcolor="#E6E6FA">
+
+
+<!-- this is the common top menu -->
+
+<!--Page Header -->
+
+<table align="center" width="900" height="800" cellspacing="1"  cellpadding="10" border="0" bgcolor="#FFFFF0">
+<tr>
+      <td align="center" colspan="2" valign="top" height=50><br><div><font size="+5" color=#990000>Direct Object Pronouns</font>
+      
+      <hr color=#990000>
+      </div></td>
+</tr>
+
+<!-- this is the content table -->
+
+<tr><td valign="top"><div>
+
+<font size="+4" color=#990000>In English</font> the direct object pronouns are:<br>
+
+
+
+<table align="center" cellpadding=5 bgcolor="#E0F0F5" width="850">
+<tr>
+<td><div>She sees <font color="#3915B4"><strong>me</strong></font>.<br>
+She sees <font color="#3915B4"><strong>you</strong></font>.<br>
+She sees <font color="#3915B4"><strong>him / her / it</strong></font>.<br>
+She sees <font color="#3915B4"><strong>us</strong></font>.<br>
+She sees <font color="#3915B4"><strong>you (all)</strong></font>.<br>
+She sees <font color="#3915B4"><strong>them</strong></font>.<br>
+</div></td>
+</tr>
+</table>
+<br>
+Note how they all receive the action of the verb <strong>directly</strong>. That's what makes them 
+direct object pronouns.<br>
+<br>
+<font size="+4" color=#990000>In Spanish</font> the direct object pronouns are:<br>
+
+
+<table align="center" cellpadding=5 bgcolor="#E0F0F5" width="850">
+<tr>
+<td width=50%><div>Ella <font color="#3915B4"><strong>me</strong></font> ve.<br>
+Ella <font color="#3915B4"><strong>te</strong></font> ve.<br>
+Ella <font color="#3915B4"><strong>lo / la </strong></font>ve.<br>
+Ella <font color="#3915B4"><strong>nos</strong></font> ve.<br>
+Ella <font color="#3915B4"><strong>os</strong></font> ve. <br>
+Ella <font color="#3915B4"><strong>los / las</strong></font> ve.<br>
+</div></td>
+
+<td><div>
+(for "yo")<br>
+(for "t&uacute;")<br>
+(for "usted, &eacute;l, ella")<br>
+(for "nosotros, nosotras"<br>
+(for "vosotros")<br>
+(for "ustedes, ellos, ellas")<br>
+</div></td>
+</tr>
+</table>
+<br>
+Note the word order!
+</div></td></tr>
+
+
+
+
+
+
+
+<tr><td align="right"><div><font size="3" color="#5E00FF"><a href="pronouns_3.html">Let's practice</a></font></div></td></tr>
+
+
+
+ 
+</table>
+  
+
+</body>
+</html>

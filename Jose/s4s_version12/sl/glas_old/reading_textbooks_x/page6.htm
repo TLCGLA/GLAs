@@ -1,0 +1,209 @@
+<!DOCTYPE HTML> <html>
+<meta http-equiv="X-UA-Compatible" content="IE-9" /><title>Guided Learning Activities</title>
+<link href="../css/styles.css" rel="stylesheet" type="text/css" />
+<!-- source: http://www.sohtanaka.com/web-design/examples/toggle/ -->
+
+
+<style type="text/css"> 
+
+.ex {
+background-color:#e5eecc;
+padding:7px;
+border:solid 1px #c3c3c3;
+width: 200px;
+height: 100px;
+}
+
+
+
+.toggle_container {
+	margin: 0 0 5px;
+	padding: 0;
+	border-width: 1px;
+	border-color: #BFBFBF;
+	background-color: #f0f0f0;
+	overflow: hidden;
+	clear: both;
+	
+}
+.toggle_container .block {
+	padding: 20px; /*--Padding of Container--*/
+
+}
+
+.trigger {
+		padding: 5px;
+		border-style: solid;
+		border-width: 1px;
+		border-color: #BFBFBF;
+		background-color: white;
+		/* border-bottom: 2px solid #BFBFBF;*/ 
+
+		}
+
+
+
+</style>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+
+	//Hide (Collapse) the toggle containers on load
+	$(".toggle_container").hide(); 
+
+	//Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
+	$("div.trigger").click(function(){
+		$(this).toggleClass("active").next().slideToggle("slow");
+		return false; //Prevent the browser jump to the link anchor
+	});
+
+});
+</script>
+</head>
+
+<body>
+
+<!-- big wrapper table -->
+<table width="100%" align="center" border="0">
+<tr bgcolor="#273872"><td></td><td width="960"><!-- header -->
+<div class="header">
+  		<div style="float: left; height: 73px;"><img src="../images/coc_logo1.gif" alt="College of the Canyons"  />
+      <img src="../images/coc_logo2.gif" alt="College of the Canyons" />
+      
+	  </div>
+	  <div style="float: right;"><h1 class="h1_title">Guided Learning Activities</h1></div>
+ 
+ </div>
+
+ <!-- end header -->
+
+</td><td></td></tr>
+<tr><td colspan="3"> <div class="gradient_horizontal" style="height:3px; break:left;"></div></td></tr>
+
+<tr><td colspan="3"> 
+
+<table width="960" align="center" border="0"> <!-- 960 px is the standard width for 1024 x 768 screens; use 90% otherwise -->
+<tr><td align="center" height="100%">
+ 
+ <!-- page starts here -->
+<div class="page">
+
+<!-- top section starts here -->
+
+<div class="gla_top_section">
+<h1 class="h1_blue">Step Two</h1>
+
+<h1 class="h1_gray" style="padding-top: 10px;">Complete Handouts and Meet With a Tutor</h1>
+STOP and locate a tutor to review your notes with you for Model #1 and #2.  (Please ask the tutor to stay after completing 
+this step.  You will need the tutor's help again to do the next step.)<br>
+<br>
+Now you get to practice reading aloud with a tutor.  Find the handout called "Reading Textbooks - Texts for Partner Reading" 
+and use it for this practice. (You can also view the texts on this page by clicking on "View" below.) 
+As the tutor listens to you, read the paragraphs and think aloud as you are reading and making sense of the text, 
+just as you saw in the video models. Recall the list of strategies that good readers use and try to use them.<br>
+<br>
+After completing this part, please complete the self-reflection in your handouts and review it with a tutor.
+
+
+<!-- progress bar -->
+<div>
+            <table border="0" width="100%">
+			<tr> 
+                <td><div style="float: left; width: 757px; text-align: right; height: 13px;"><img src="../images/triangle.png" /></div></td>
+                </tr>
+			 <tr> 
+                <td><div style="float: left; border: 1px solid gray; color: gray; height: 6px; background-color: white; width: 99.8%;">
+				<div class="blue_bar" style="width: 750px;"></div>
+				</div>
+				</td>
+              </tr>
+			  <tr><td>
+			  <div class="border_bar">
+			  	 <div class="bar_text" style="padding-left: 80px; width: 120px;">Introduction</div>
+				<div class="bar_text" style="float: left; width: 20px; text-align: center;">|</div>
+			  	<div class="bar_text" style="padding-left: 80px; padding-right: 4px; font-weight: bold;">Step 1: </div>
+			  	<div class="bar_text" style="width: 240px;">Presentation: Reading Strategies</div>
+
+				<div class="bar_text" style="float: left; width: 20px; text-align: center;">|</div>
+			  	<div class="bar_text" style="padding-left: 20px; padding-right: 4px; font-weight: bold;">Step 2: </div>
+			  	 <div class="bar_text">Exercises: Complete Handouts with Tutor</div>
+			  </div>
+			  </td></tr>			  
+			  </table>
+
+</div>
+<!-- end progress bar -->
+</div>
+<!-- end top section --> 
+
+<!-- begin wrapper lower section -->
+<div>
+  
+				  	
+<!-- table wrapping lower section contents -->
+<table width="100%" border="0" align="center">
+<tr><td height="20"></td></tr>
+<tr><td valign="top">
+<h1 class="h1_gray">Texts for Partner Reading</h1>
+<div class="trigger" style="line-height: 2em;">
+<a href="#"><input type="button" class="button"  class="button" value="Show" style="width: 50px;"></a>
+<a href="#"><input type="button" class="button"  value="Hide" style="width: 50px;"></a>
+<span style="padding-left: 10px;">Text #1 (Source: Geology 2nd edition by William Putnam and Ann Bradley Bassett)</span> 
+</div>
+
+<div class="toggle_container">
+	<div class="block">
+	<h1 class="h1_gray">Igneous Rocks.</h1>
+These are rocks that have solidified from a silicate melt to which the name of <em>magma</em> (to knead) is given. 
+A comparatively familiar variety of such materials is <em>lava</em>, and most of us have seen photographs of this material in the craters of volcanoes 
+or issuing as fluid streams from their flanks. Because of the high temperatures and accompanying lurid scenes associated with volcanic activity in the 
+minds of most people, the word igneous, from the Latin <em>igneus</em>, having to do with fire, is used for rocks crystallized from the cooling lava. 
+We use the same root in everyday language when we speak of the ignition system of a car. The varieties of igneous rocks that crystallize at or near 
+the surface of the earth from lava when it solidifies are commonly called <em>volcanic</em> rocks.
+	</div>
+</div>
+
+</td></tr>
+<tr><td valign="top">
+<div class="trigger" style="line-height: 2em;">
+<a href="#"><input type="button" class="button"  value="Show" style="width: 50px;"></a>
+<a href="#"><input type="button" class="button"  value="Hide" style="width: 50px;"></a>
+<span style="padding-left: 10px;">Text #2 (Source: Introduction to Motor-Behavior: A Neuropsychological Approach 2nd edition by George H. Sage)
+</span> 
+</div>
+<div class="toggle_container">
+	<div class="block">
+	<h1 class="h1_gray">Development of Depth Perception</h1>
+Whether depth perception exists as an inherent ability of the individual or whether it is developed through learning experiences has interested scholars for many years. Although there is evidence on both sides of this question, there is mounting evidence that some depth perceptual ability is inherited. Fantz (1981) reported that one-month-old infants could discriminate between solid and flat objects, even when the objects were viewed monocularly. We have already reported (in Chapter11) on experiments by Gibson and Walk (1990) with a "visual cliff" which show that the young of several species, including humans, display depth perception. These investigators demonstrated that human infants can discriminate depth as soon as they can crawl. Bower (1992) found that infants even younger have some perception of depth. He reported that infants as young as 6-8 weeks responded accurately to differences in size and distance of cubes placed before them. Thus, the infants were able to make gross distinctions between objects that were nearer versus those that were farther away from them.
+
+	</div>
+</div>
+
+</td></tr>
+
+
+
+
+
+
+
+</table>
+
+
+
+
+
+
+
+</div>
+<!-- end wrapper lower section -->
+</div>
+<!-- end page -->
+</td></tr>
+</table>
+
+	
+
+</body>
+</html>

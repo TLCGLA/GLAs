@@ -1,0 +1,6 @@
+Current version: 1.12
+
+
+---
+
+Since the quizTemplate.js file is identical across all GLAs, I moved it out of the individual folder and out into the root of each folder. I also added a version number to the files. Eventually there will only be 1 file, so the version won't be as important, but since we have 3 different files, it's important to keep it up to date as we move things around.

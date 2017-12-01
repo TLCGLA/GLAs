@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>jQuery UI Example Page</title>
+		<link type="text/css" href="css/smoothness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />	
+		<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+		<script>
+	$(function() {
+		$( ".demo button:first" ).button({
+            icons: {
+                primary: "ui-icon-locked"
+            },
+            text: false
+        }).next().button({
+            icons: {
+                primary: "ui-icon-locked"
+            }
+        }).next().button({
+            icons: {
+                primary: "ui-icon-gear",
+                secondary: "ui-icon-triangle-1-s"
+            }
+        }).next().button({
+            icons: {
+                primary: "ui-icon-gear",
+                secondary: "ui-icon-triangle-1-s"
+            },
+            text: false
+        });
+	});
+	</script>
+
+</head>
+<body>
+
+<div class="demo">
+
+<button>Button with icon only</button>
+<button>Button with icon on the left</button>
+<button>Button with two icons</button>
+<button>Button with two icons and no text</button>
+
+</div><!-- End demo -->
+
+
+
+<div class="demo-description">
+<p>Some buttons with various combinations of text and icons, here specified via metadata.</p>
+</div><!-- End demo-description -->
+	
+
+	</body>
+</html>
+
+

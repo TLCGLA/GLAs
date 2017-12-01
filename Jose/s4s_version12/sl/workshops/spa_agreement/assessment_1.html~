@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD html 4.01 Transitional//EN">
+<html>
+<head>
+<title>spa workshop</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+<style type="text/css">
+
+div {
+	font-family: sans-serif, Arial, Times New Roman, Times, serif;
+	font-size: 18px;
+}
+
+</style>
+</head>
+
+<body  link="#000066" alink="#000066" vlink="#000066">
+
+
+<!-- this is the common top menu -->
+
+<!--Page Header -->
+
+<table align="center" width="900">
+<tr>
+      <td align="center"><br><div><font size="+5" color=#990000>Self Assessment</font></div></td>
+      
+    </tr>
+<tr><td colspan="2"><hr color=#990000></td></tr></tr>
+</table>
+<!-- this is the content table -->
+<table align="center" width="900" cellspacing="1"  cellpadding="10" border="0" bgcolor="#FFFFF0">
+<tr>
+<td><div>
+      
+<font size="+3" color=#990000>Instructions: </font><font size="+3">Fill the blanks with the correct answer.<br>
+<br>
+
+<table width="100%"  border="0" cellspacing="5" align="center">
+<tr>	
+<td><div><font size="+3">1. ____ libros </font></div></td>
+<td><div><font size="+2"> (el la los las)</font></div> </td>
+</tr>
+<tr>	
+<td><div><font size="+3">2. ____ computadora</font></div> </td>
+<td><div><font size="+2"> (un una unos unas)</font></div> </td>
+</tr>
+<tr>	
+<td><div><font size="+3">3. ____ bol&iacute;grafo</font></div> </td>
+<td><div><font size="+2">(el la los las) </font></div> </td>
+</tr>
+<tr>	
+<td><div><font size="+3">4. cafeter&iacute;a ________ </font></div> </td>
+<td><div><font size="+2">(nuevo viejo feo peque&ntilde;a) </font></div> </td>
+</tr>
+<tr>	
+<td><div><font size="+3">5. libros ________ </font></div> </td>
+<td><div><font size="+2">(nuevos vieja feas peque&ntilde;o) </font></div> </td>
+</tr>
+<tr>	
+<td><div><font size="+3">6. Carlos ____ alto.</font></div> </td>
+<td><div><font size="+2">(soy eres es somos son) </font></div> </td>
+</tr>
+<tr>	
+<td><div><font size="+3">7. Teresa y yo ____ estudiantes.</font></div> </td>
+<td><div><font size="+2">(soy eres es somos son) </font></div> </td>
+</tr>
+<tr>	
+<td><div><font size="+3">8. Ellos ____ rom&aacute;nticos. </font></div> </td>
+<td><div><font size="+2">(soy eres es somos son) </font></div> </td>
+</tr>
+<tr>	
+<td><div><font size="+3">9. En la clase ____ unas sillas. </font></div> </td>
+<td><div><font size="+2">(soy eres es hay son) </font></div> </td>
+</tr>
+<tr>	
+<td><div><font size="+3">10. En la clase ____ un tel&eacute;fono. </font></div> </td>
+<td><div><font size="+2">(soy eres es hay son) </font></div> </td>
+</tr>
+</table>
+<br>
+
+<center><font size="+4" color="#EE871B">End of the Activity</font></center>
+
+</font>
+
+</div>
+<br><br>
+</td>
+
+</tr>
+ 
+ </table>
+  
+
+</body>
+</html>

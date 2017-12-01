@@ -1,0 +1,1516 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 14">
+<link id=Main-File rel=Main-File href="../MLA.htm">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0036.htm');" id=PPTL1>MLA 1:<span
+  style='mso-spacerun:yes'>  </span>IN-TEXT CITATION AND WORKS CITED</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0008.htm');" id=PPTL2>AGENDA</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>This workshop will cover…</li>
+   <li>MLA Document Format</li>
+   <li>In-Text Citation (8<sup>th</sup> Edition)</li>
+   <li>Works Cited Page (8<sup>th</sup> Edition)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0037.htm');" id=PPTL3>OBJECTIVES</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>By the end of this workshop, students will…</li>
+   <li>Use the 8<sup>th</sup> edition of MLA style to integrate cited quotes
+       into their writing</li>
+   <li>Use the 8<sup>th</sup> edition of MLA style to format their documents
+       and Works Cited pages</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.htm');" id=PPTL4>WHAT IS MLA?</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>MLA stands for Modern Language Association, which is a professional
+       association for scholars of language and literature.</li>
+   <li>The MLA sets guidelines for proper formatting and citation style.</li>
+   <li>Most classes in the Humanities, like English, will use MLA formatting.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.htm');" id=PPTL5>WHY DO WE USE MLA?</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Avoid plagiarism:<span style='mso-spacerun:yes'>  </span>Using MLA
+       citation techniques properly ensures that you will not have plagiarized
+       material in your assignment.</li>
+   <br>
+   <br>
+   <li>Build credibility:<span style='mso-spacerun:yes'>  </span>By using MLA
+       citation and formatting correctly, you show that you can meet academic
+       standards.<span style='mso-spacerun:yes'>  </span>Your readers are more
+       likely to accept your assertions if they appear in an
+       academically-correct format.</li>
+   <br>
+   <br>
+   <li>Be part of a scholarly community:<span style='mso-spacerun:yes'> 
+       </span>When citing in MLA style, you provide your readers with valuable
+       information about your source material.<span style='mso-spacerun:yes'> 
+       </span>As fellow scholars, they may choose to learn more about the
+       information you provide.<span style='mso-spacerun:yes'>  </span>Your
+       Works Cited page will become their guide to finding that material.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0004.htm');" id=PPTL6>RESOURCES</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Refer to these sources when working on your MLA formatting:</li>
+   <li>Handbooks like Rules for Writers</li>
+   <li>Textbooks, which may include info on MLA (check the appendices)</li>
+   <li>The TLC, where you can get a handout or work with a tutor</li>
+   <li>Online</li>
+   <ul>
+    <li>The MLA official website</li>
+    <li>Purdue Online Writing Lab (OWL):<span style='mso-spacerun:yes'> 
+        </span>Be sure to use the information on the 8<sup>th</sup> edition of
+        MLA citation style</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0005.htm');" id=PPTL7>PART 1:<br>
+    DOCUMENT FORMAT</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0006.htm');" id=PPTL8>FORMATTING REQUIREMENTS</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Some MLA formatting requirements apply to the entire document.<span
+       style='mso-spacerun:yes'>  </span>These are:</li>
+   <li>Margins:<span style='mso-spacerun:yes'>  </span>One inch on all four
+       sides</li>
+   <li>Spacing:<span style='mso-spacerun:yes'>  </span>Use double spacing
+       throughout the entire document.<span style='mso-spacerun:yes'> 
+       </span>Do not add extra spaces between paragraphs or sections</li>
+   <li>Font:<span style='mso-spacerun:yes'>  </span>12 point professional font
+       (Times New Roman or Calibri)</li>
+   <li>Header:<span style='mso-spacerun:yes'>  </span>Your last name and page
+       number should appear on every page in the top right hand corner.<span
+       style='mso-spacerun:yes'>  </span>The header should be half an inch from
+       the top of the page.</li>
+   <br>
+   <br>
+   <li>Note:<span style='mso-spacerun:yes'>  </span>Your instructor may have
+       specific formatting requirements.<span style='mso-spacerun:yes'> 
+       </span>Be sure to review the syllabus or assignment instructions.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0007.htm');" id=PPTL9>FORMATTING THE FIRST
+  PAGE</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Heading:<span style='mso-spacerun:yes'>  </span>In the top left corner,
+       include the following:</li>
+   <ul>
+    <li>Your Name</li>
+    <li>Instructor’s Name</li>
+    <li>Class</li>
+    <li>Date</li>
+   </ul>
+   <br>
+   <li>Title:<span style='mso-spacerun:yes'>  </span>Include the title in the
+       center of the page.<span style='mso-spacerun:yes'>  </span>Do not use italics,
+       bold, underline, or increase the font of the title.</li>
+   <li></li>
+   <li>Spacing:<span style='mso-spacerun:yes'>  </span>Do not add extra spaces
+       between the heading and title, or between the title and text.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0009.htm');" id=PPTL10>SAMPLE FIRST PAGE</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0010.htm');" id=PPTL11>SAMPLE LATER PAGE</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0011.htm');" id=PPTL12>NOT SURE HOW TO SET UP
+  THE PAGE USING MICROSOFT WORD?</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Watch this video to learn!</li>
+   <li>You can also ask for help from a TLC computer tutor.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0012.htm');" id=PPTL13>ONE MORE FORMATTING
+  NOTE:<span style='mso-spacerun:yes'>  </span><br>
+    ITALICS AND QUOTATION MARKS</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>When discussing an author’s text, the title may be in italics or “in
+       quotations.”<span style='mso-spacerun:yes'>  </span>Here’s how to decide
+       which to use:</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0038.htm');" id=PPTL14>ACTIVITY 1</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Go to page 3 in your worksheet.</li>
+   <li>Identify all the formatting errors on the document. Use the formatting
+       guidelines in your worksheet to help you.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0014.htm');" id=PPTL15>PART 2:<br>
+    IN-TEXT CITATION</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0047.htm');" id=PPTL16>GOALS</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The goal of the in-text citation is to direct your readers to your
+       sources briefly and clearly.</li>
+   <li>Your Works Cited page (part 3) will include detailed information about
+       your sources; the in-text citations should give enough information to
+       direct readers to the corresponding entry on the Works Cited page.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0013.htm');" id=PPTL17>CITING IN MLA STYLE</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>To cite a quote using MLA style, you will need to include four different
+       elements:</li>
+   <li>Quotation marks</li>
+   <li>Signal phrase</li>
+   <li>In-text citation</li>
+   <li>Works Cited page (Discussed in Part 3)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0015.htm');" id=PPTL18>STEP 1:<span
+  style='mso-spacerun:yes'>  </span>“QUOTATION MARKS”</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Quotation marks appear around any text that you did not write.</li>
+   <li>They tell the reader that another author (not you) is speaking.</li>
+   <br>
+   <br>
+   <li>Example:</li>
+   <li>“The whole concept of genetic giftedness turns out to be wildly off the
+       mark—tragically kept afloat for decades by a cascade of
+       misunderstandings and misleading metaphors.”</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0016.htm');" id=PPTL19>STEP 2:<span
+  style='mso-spacerun:yes'>  </span>SIGNAL PHRASE</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Once the original text is in “quotation marks,” add a signal phrase.</li>
+   <li>A signal phrase indicates who is speaking in the quote.</li>
+   <li>It improves flow and gives important background information for the
+       reader.</li>
+   <li>The signal phrase should provide the element that comes first in the
+       entry on the Works Cited page (usually the author’s name).</li>
+   <li>Example:</li>
+   <li>According to David Shenk, “the whole concept of genetic giftedness turns
+       out to be wildly off the mark—tragically kept afloat for decades by a
+       cascade of misunderstandings and misleading metaphors.”</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0018.htm');" id=PPTL20>POSSIBLE SIGNAL PHRASES</a></font></div>
+  <div id=PPTC20 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>You can use a wide variety of signal phrases.<span
+       style='mso-spacerun:yes'>  </span>The most common is probably “according
+       to,” but you can also use any verb that means “says.”</li>
+   <br>
+   <br>
+   <li>For example:</li>
+   <li>David Shenk states</li>
+   <li>David Shenk argues</li>
+   <li>David Shenk emphasizes</li>
+   <li>David Shenk describes</li>
+   <li>David Shenk illustrates</li>
+   <li>David Shenk notes</li>
+   <li>David Shenk suggests</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0017.htm');" id=PPTL21>STEP 3:<span
+  style='mso-spacerun:yes'>  </span>IN-TEXT CITATION</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>After the quote, include the page number in parentheses.</li>
+   <li>This allows your reader to locate your source and learn more.</li>
+   <br>
+   <br>
+   <li>Example:</li>
+   <li>According to David Shenk, “the whole concept of genetic giftedness turns
+       out to be wildly off the mark—tragically kept afloat for decades by a
+       cascade of misunderstandings and misleading metaphors” (10).</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0019.htm');" id=PPTL22>OTHER POSSIBILITIES FOR
+  IN-TEXT CITATION</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>If you do not name the author in the signal phrase, include his/her name
+       in the in-text citation.</li>
+   <ul>
+    <li>Example:<span style='mso-spacerun:yes'>  </span>(Shenk 10).</li>
+   </ul>
+   <br>
+   <li>If your work does not include page numbers (like many online sources),
+       do not provide a page number.</li>
+   <ul>
+    <li>Example:<span style='mso-spacerun:yes'>  </span>If the author is named
+        in a signal phrase…</li>
+    <li>Laura Moser describes the possible structure of a four-day school week,
+        stating, “Friday attendance will be optional, and instead of regular
+        classes, struggling students can go to tutorials and get more
+        individualized attention from teachers.”</li>
+    <br>
+    <br>
+    <li>Example:<span style='mso-spacerun:yes'>  </span>If the author is not
+        named in a signal phrase…</li>
+    <li>One proposed structure for a four-day school week is, “Friday
+        attendance will be optional, and instead of regular classes, struggling
+        students can go to tutorials and get more individualized attention from
+        teachers” (Moser).</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0039.htm');" id=PPTL23>ACTIVITY 2</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Go to page 5 on your worksheet.</li>
+   <li>Create a sentence using the quote provided.<span
+       style='mso-spacerun:yes'>  </span>The sentence should include:</li>
+   <ul>
+    <li>Quotation Marks</li>
+    <li>A Signal Phrase that Names the Author</li>
+    <li>In-Text Citation</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0021.htm');" id=PPTL24>PART 3:<br>
+    WORKS CITED PAGE</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0020.htm');" id=PPTL25>WORKS CITED</a></font></div>
+  <div id=PPTC25 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The final step to properly citing sources in MLA format is a Works Cited
+       page.</li>
+   <li>This page is an alphabetized list of all the sources you used to
+       complete your assignment.</li>
+   <li>It is also a scholarly courtesy because it helps your readers locate the
+       sources you used so they can learn more about your topic.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0048.htm');" id=PPTL26>THE PHILOSOPHY BEHIND
+  THE 8<sup>TH</sup> EDITION</a></font></div>
+  <div id=PPTC26 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>In previous editions of MLA style, students would first determine the
+       type of publication they were citing (book, online article, TV show,
+       etc.), then find the correct citation style for that source.</li>
+   <li>This system became problematic because technology moved more swiftly
+       than MLA citation updates.<span style='mso-spacerun:yes'> 
+       </span>Whenever a new technology became available (like Twitter), MLA
+       had to devise a new kind of citation.</li>
+   <li>The 8<sup>th</sup> Edition corrects this problem.<span
+       style='mso-spacerun:yes'>  </span>It provides a template of core
+       elements that most published sources will have.<span
+       style='mso-spacerun:yes'>  </span>Writers can use the template for any
+       work they plan to cite.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0049.htm');" id=PPTL27>CORE ELEMENTS</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>28</font></div>
+  </td>
+  <td>
+  <div id=PPTP28 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0050.htm');" id=PPTL28>1.<span
+  style='mso-spacerun:yes'>  </span>AUTHOR.</a></font></div>
+  <div id=PPTC28 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The author is the person primarily responsible for producing the work.</li>
+   <li>Begin your citation with the author’s name.</li>
+   <li>Use last name, first name (for the first author only)</li>
+   <li>Two authors</li>
+   <ul>
+    <li>Follow the same order that is used in the published work</li>
+    <li>Example:<span style='mso-spacerun:yes'>  </span>Dorris, Michael, and
+        Louise Erdrich.</li>
+   </ul>
+   <li>Three or more authors</li>
+   <ul>
+    <li>Use the last name, first name for the author listed first</li>
+    <li>Then, add “et al.” (meaning “and others”)</li>
+    <li>Example:<span style='mso-spacerun:yes'>  </span>Burdick, Anne, et al.</li>
+   </ul>
+   <li>Pseudonyms and User Names</li>
+   <ul>
+    <li>Use the name the way it is published</li>
+    <li>Example:<span style='mso-spacerun:yes'>  </span>@nerdist</li>
+   </ul>
+   <li>No Author name:<span style='mso-spacerun:yes'>  </span>skip directly to
+       the work’s title</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>29</font></div>
+  </td>
+  <td>
+  <div id=PPTP29 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0051.htm');" id=PPTL29>2.<span
+  style='mso-spacerun:yes'>  </span>TITLE OF SOURCE.</a></font></div>
+  <div id=PPTC29 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Provide the title in full exactly as it is found in the source.</li>
+   <li>However, you should follow standard capitalization rules.<span
+       style='mso-spacerun:yes'>  </span>You can learn more about
+       capitalization here.</li>
+   <li>Use italics or “quotation marks” depending on the type of source you’re
+       using.<span style='mso-spacerun:yes'>  </span>Use italics if the source
+       is self-contained, and use quotation marks if the source is part of a
+       larger work.<span style='mso-spacerun:yes'>  </span>(See page 2 of your
+       worksheet for more specific detail).</li>
+   <li>For short, untitled messages (like a tweet), reproduce the full text
+       instead of a title.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>30</font></div>
+  </td>
+  <td>
+  <div id=PPTP30 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0052.htm');" id=PPTL30>3. TITLE OF CONTAINER,</a></font></div>
+  <div id=PPTC30 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>If the source is part of a larger whole, that larger whole is the
+       container</li>
+   <ul>
+    <li>Examples: a journal is a container for an article and a TV show is a
+        container for a TV episode</li>
+   </ul>
+   <li>The container is crucial for locating the source; in other words,
+       readers need the name of the container in order to access your
+       information.</li>
+   <li>The title of the container is usually italicized.</li>
+   <li>It is followed by a comma because the following information describes
+       the container.</li>
+   <li>A source may have more than one container.<span
+       style='mso-spacerun:yes'>  </span>For example, a journal article from an
+       online database will have two containers (the journal and the
+       database).<span style='mso-spacerun:yes'>  </span>Or a television show on
+       a streaming service (like Netflix) will have two containers (the show
+       title and the streaming service).</li>
+   <li>If there is more than one container, complete steps 3-9 for the first
+       container.<span style='mso-spacerun:yes'>  </span>Then, repeat steps 3-9
+       for the second container.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>31</font></div>
+  </td>
+  <td>
+  <div id=PPTP31 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0053.htm');" id=PPTL31>4.<span
+  style='mso-spacerun:yes'>  </span>OTHER CONTRIBUTORS,</a></font></div>
+  <div id=PPTC31 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>This section gives you the opportunity to give credit to the other
+       people (aside from the author) who participated in creating the source.</li>
+   <li>Name these contributors if their participation is important to your
+       research.</li>
+   <ul>
+    <li>Editors of scholarly editions/anthologies and translators should always
+        be recorded because their contribution is key.</li>
+    <li>If the source has many contributors (like a film), select the ones most
+        pertinent to your discussion of that source.</li>
+   </ul>
+   <li>Precede each name with a description of the role, such as:</li>
+   <ul>
+    <li>Adapted by				Introduction by</li>
+    <li>Directed by				Narrated by</li>
+    <li>Edited by				Performance by</li>
+    <li>Illustrated by			Translated by</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>32</font></div>
+  </td>
+  <td>
+  <div id=PPTP32 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0054.htm');" id=PPTL32>5.<span
+  style='mso-spacerun:yes'>  </span>VERSION,</a></font></div>
+  <div id=PPTC32 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>If the source indicates that is a version released in more than one
+       form, identify the version in your citation.</li>
+   <li>Books:<span style='mso-spacerun:yes'>  </span>note the edition</li>
+   <li>Other media:<span style='mso-spacerun:yes'>  </span>note any special
+       version information, such as the Director’s Cut for a film</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>33</font></div>
+  </td>
+  <td>
+  <div id=PPTP33 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0055.htm');" id=PPTL33>6.<span
+  style='mso-spacerun:yes'>  </span>NUMBER,</a></font></div>
+  <div id=PPTC33 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The source may be part of a numbered sequence; provide that number to
+       help readers locate your source.</li>
+   <li>Examples:</li>
+   <ul>
+    <li>Multivolume book.<span style='mso-spacerun:yes'>  </span>Indicate the
+        volume number like this:<span style='mso-spacerun:yes'>  </span>vol. 2</li>
+    <li>Journals may have volume and issue numbers.<span
+        style='mso-spacerun:yes'>  </span>Cite like this:<span
+        style='mso-spacerun:yes'>  </span>vol. 12, no. 4</li>
+    <li>Television series have seasons and episodes.<span
+        style='mso-spacerun:yes'>  </span>Cite like this:<span
+        style='mso-spacerun:yes'>  </span>season 4, episode 10</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>34</font></div>
+  </td>
+  <td>
+  <div id=PPTP34 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0056.htm');" id=PPTL34>7.<span
+  style='mso-spacerun:yes'>  </span>PUBLISHER,</a></font></div>
+  <div id=PPTC34 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The publisher is the organization primarily responsible for producing a
+       source or making it available to the public.</li>
+   <li>Book:<span style='mso-spacerun:yes'>  </span>Look on the title or
+       copyright page for the publisher.</li>
+   <li>Film and television series:<span style='mso-spacerun:yes'> 
+       </span>Select the company that has primary responsibility for releasing
+       the source.<span style='mso-spacerun:yes'>  </span>Often,<span
+       style='mso-spacerun:yes'>  </span>Amazon has this information available
+       in Product Details.</li>
+   <li>Websites:<span style='mso-spacerun:yes'>  </span>A website may be
+       published by many types of organizations.<span
+       style='mso-spacerun:yes'>  </span>Look at the bottom of the page for a
+       copyright notice to find the name of the publisher.</li>
+   <li>Omit the publisher’s name in the following sources:<span
+       style='mso-spacerun:yes'>  </span>periodicals (journal / magazine /
+       newspaper), a self-published work, a website whose title is the same as
+       the publisher, a website not involved in producing the works it makes
+       available (like YouTube).<span style='mso-spacerun:yes'>  </span>In the
+       case of websites like YouTube, name the site as the container, not the
+       publisher.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>35</font></div>
+  </td>
+  <td>
+  <div id=PPTP35 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0057.htm');" id=PPTL35>PUBLICATION DATE,</a></font></div>
+  <div id=PPTC35 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Provide the date your source was published.</li>
+   <li>If the date was published on more than one date, use the date most
+       meaningful for your use of the source.</li>
+   <li>Write as much of the date as is available (day / month / year).</li>
+   <li>Some online sources also include a time.<span style='mso-spacerun:yes'> 
+       </span>Include that information if it is available, like this:<span
+       style='mso-spacerun:yes'>  </span>25 Apr. 2013, 10:30 p.m.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>36</font></div>
+  </td>
+  <td>
+  <div id=PPTP36 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0058.htm');" id=PPTL36>9.<span
+  style='mso-spacerun:yes'>  </span>LOCATION.</a></font></div>
+  <div id=PPTC36 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The location helps your readers find where a text is located.</li>
+   <li>Print sources (for articles in an anthology, for example):<span
+       style='mso-spacerun:yes'>  </span>Use p. for a single page or pp. for a
+       range of pages.</li>
+   <li>Online work:<span style='mso-spacerun:yes'>  </span>Use the URL if your
+       instructor requires it.</li>
+   <li>Physical object that you experienced firsthand (like a painting in a
+       museum):<span style='mso-spacerun:yes'>  </span>Use the name of the
+       place and its city.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>37</font></div>
+  </td>
+  <td>
+  <div id=PPTP37 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0060.htm');" id=PPTL37>ONE LAST NOTE ABOUT THE
+  CORE ELEMENTS</a></font></div>
+  <div id=PPTC37 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>You may not have information for all nine steps of the core
+       elements.<span style='mso-spacerun:yes'>  </span>For example, not every
+       work has other contributors (element 4).</li>
+   <li>Skip any element that does not pertain to the source you are
+       citing.<span style='mso-spacerun:yes'>  </span>So, if you cite a work
+       without other contributors (element 4), move directly from the container
+       (element 3) to the version (element 5).</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>38</font></div>
+  </td>
+  <td>
+  <div id=PPTP38 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0022.htm');" id=PPTL38>USING A HANDBOOK TO
+  CREATE A WORKS CITED PAGE</a></font></div>
+  <div id=PPTC38 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A handbook like Rules for Writers is a valuable tool in creating a
+       properly-formatted Works Cited page.</li>
+   <li>You should be able to find the MLA section of your handbook
+       quickly.<span style='mso-spacerun:yes'>  </span>Often, the margins of
+       the pages are shaded to help you find them.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>39</font></div>
+  </td>
+  <td>
+  <div id=PPTP39 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0059.htm');" id=PPTL39>SAMPLE CITATIONS</a></font></div>
+  <div id=PPTC39 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Your worksheet includes sample citations for the most common types of
+       sources.<span style='mso-spacerun:yes'>  </span>The sample citations
+       begin on page 8.</li>
+   <li>Be sure to refer to the core elements and sample citations on the
+       worksheet as you construct your own MLA-style Works Cited pages.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>40</font></div>
+  </td>
+  <td>
+  <div id=PPTP40 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0030.htm');" id=PPTL40>TO FORMAT YOUR WORKS
+  CITED PAGE</a></font></div>
+  <div id=PPTC40 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>You should still have a header that includes your last name and page
+       number.</li>
+   <li>Title the page Works Cited; do not use bold, underline, italics, or
+       “quotation marks.”</li>
+   <li>List all entries in alphabetical order.<span style='mso-spacerun:yes'> 
+       </span>Do not number entries or use bullet points.</li>
+   <li>Double space; do not include extra space between entries.</li>
+   <li>Use hanging indentation (indent all lines after the first line of an
+       entry).</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>41</font></div>
+  </td>
+  <td>
+  <div id=PPTP41 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0032.htm');" id=PPTL41>HOW TO DO HANGING
+  INDENTATION IN WORD</a></font></div>
+  <div id=PPTC41 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Highlight the citations.</li>
+   <li>Click on the box next to Paragraph.</li>
+   <li>Under Indentation, look for a box labeled Special.</li>
+   <li>Select Hanging Indentation and click OK.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>42</font></div>
+  </td>
+  <td>
+  <div id=PPTP42 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0031.htm');" id=PPTL42>SAMPLE WORKS CITED PAGE</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>43</font></div>
+  </td>
+  <td>
+  <div id=PPTP43 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0044.htm');" id=PPTL43>ACTIVITY 3</a></font></div>
+  <div id=PPTC43 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Go to page 11 in your worksheet.</li>
+   <li>Create two practice citations using information on the following slides.</li>
+   <li>Begin by gathering your information using the Core Elements template in
+       your worksheet.</li>
+   <li>Then, write out the complete citation in MLA style.</li>
+   <li></li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>44</font></div>
+  </td>
+  <td>
+  <div id=PPTP44 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0061.htm');" id=PPTL44>CITATION 1</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>45</font></div>
+  </td>
+  <td>
+  <div id=PPTP45 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0062.htm');" id=PPTL45>CITATION 1</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>46</font></div>
+  </td>
+  <td>
+  <div id=PPTP46 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0063.htm');" id=PPTL46>CITATION 1</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>47</font></div>
+  </td>
+  <td>
+  <div id=PPTP47 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0064.htm');" id=PPTL47>CITATION 1</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>48</font></div>
+  </td>
+  <td>
+  <div id=PPTP48 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0065.htm');" id=PPTL48>CREATE CITATION 1</a></font></div>
+  <div id=PPTC48 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Now that you have all the applicable elements for this source, you can
+       create your citation 1 on page 11 of your worksheet.</li>
+   <li>Note:<span style='mso-spacerun:yes'>  </span>This source doesn’t use
+       element 6.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>49</font></div>
+  </td>
+  <td>
+  <div id=PPTP49 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0066.htm');" id=PPTL49>CITATION 2</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>50</font></div>
+  </td>
+  <td>
+  <div id=PPTP50 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0067.htm');" id=PPTL50>CITATION 2</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>51</font></div>
+  </td>
+  <td>
+  <div id=PPTP51 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0068.htm');" id=PPTL51>CITATION 2</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>52</font></div>
+  </td>
+  <td>
+  <div id=PPTP52 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0069.htm');" id=PPTL52>CITATION 2</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>53</font></div>
+  </td>
+  <td>
+  <div id=PPTP53 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0070.htm');" id=PPTL53>CREATE CITATION 2</a></font></div>
+  <div id=PPTC53 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Now that you have all the applicable elements for this source, you can
+       create your citation 2 on page 12 of your worksheet.</li>
+   <li>Note:<span style='mso-spacerun:yes'>  </span>This source doesn’t use
+       elements 4, 5, and 6.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>54</font></div>
+  </td>
+  <td>
+  <div id=PPTP54 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0033.htm');" id=PPTL54>STILL CONFUSED?</a></font></div>
+  <div id=PPTC54 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>If you’re still confused, ask for help!<span style='mso-spacerun:yes'> 
+       </span>You can use your resources:</li>
+   <li>TLC Tutors</li>
+   <li>Your instructor</li>
+   <li>MLA’s website</li>
+   <br>
+   <br>
+   <li>And don’t forget to refer to your handbook!</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>55</font></div>
+  </td>
+  <td>
+  <div id=PPTP55 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0035.htm');" id=PPTL55>CAUTIONS</a></font></div>
+  <div id=PPTC55 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>MLA format does have revisions and updates every few years.<span
+       style='mso-spacerun:yes'>  </span>Make sure you’re using the most recent
+       version.</li>
+   <br>
+   <br>
+   <li>Use automatic citation generators (like easybib.com) with caution.<span
+       style='mso-spacerun:yes'>  </span>They sometimes make errors in your
+       citation.<span style='mso-spacerun:yes'>  </span>Always double check
+       their results with a handbook.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>56</font></div>
+  </td>
+  <td>
+  <div id=PPTP56 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0045.htm');" id=PPTL56>CONCLUSION</a></font></div>
+  <div id=PPTC56 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>After completing this workshop, you should know…</li>
+   <li>How to correctly format your paper using MLA style.</li>
+   <li>How to integrate MLA style in-text citations.</li>
+   <li>How to craft an MLA style Works Cited page.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>57</font></div>
+  </td>
+  <td>
+  <div id=PPTP57 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0034.htm');" id=PPTL57>IF YOU LIKED THIS
+  LESSON AND WOULD LIKE MORE INFORMATION, CONSIDER ATTENDING:</a></font></div>
+  <div id=PPTC57 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>MLA 2</li>
+   <li>Online Research</li>
+   <li>Revision Strategies</li>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <li>Why should you come back?</li>
+   <li>Students completing Supplemental Learning Activities had a
+       10%&nbsp;higher success rate across the disciplines, a 21% higher
+       success rate in Math, and a 49% higher success rate in English courses.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>58</font></div>
+  </td>
+  <td>
+  <div id=PPTP58 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0046.htm');" id=PPTL58>SELF-REFLECTION</a></font></div>
+  <div id=PPTC58 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Complete the Self-Reflection on page 13 of the handout.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master87.htm></a><a href=master87.xml></a><a
+href=preview.wmf></a><a href=master99.htm></a><a href=master99.xml></a><a
+href=master100.htm></a><a href=master100.xml></a><a href=master101.htm></a><a
+href=master101.xml></a><a href=master102.htm></a><a href=master102.xml></a><a
+href=master103.htm></a><a href=master103.xml></a><a href=master104.htm></a><a
+href=master104.xml></a><a href=master105.htm></a><a href=master105.xml></a><a
+href=master106.htm></a><a href=master106.xml></a><a href=master107.htm></a><a
+href=master107.xml></a><a href=pres.xml></a><a href=slide0036.htm></a><a
+href="master99_image001.png"></a><a href="slide0036_image002.jpg"></a><a
+href=slide0008.htm></a><a href="master100_image003.png"></a><a
+href=slide0037.htm></a><a href=slide0002.htm></a><a
+href="slide0002_image004.png"></a><a href="slide0002_image005.png"></a><a
+href=slide0003.htm></a><a href=slide0004.htm></a><a href=slide0005.htm></a><a
+href="master101_image006.png"></a><a href="master101_image007.png"></a><a
+href=slide0006.htm></a><a href=slide0007.htm></a><a href=slide0009.htm></a><a
+href="slide0009_image008.png"></a><a href="slide0009_image009.png"></a><a
+href=slide0010.htm></a><a href="slide0010_image010.png"></a><a
+href="slide0010_image011.png"></a><a href=slide0011.htm></a><a
+href="slide0011_image012.png"></a><a href="slide0011_image013.png"></a><a
+href=slide0012.htm></a><a href="slide0012_image014.png"></a><a
+href=slide0038.htm></a><a href=slide0014.htm></a><a href=slide0047.htm></a><a
+href=slide0013.htm></a><a href=slide0015.htm></a><a
+href="slide0015_image015.png"></a><a href="slide0015_image016.png"></a><a
+href=slide0016.htm></a><a href="slide0016_image017.jpg"></a><a
+href="slide0016_image018.png"></a><a href=slide0018.htm></a><a
+href=slide0017.htm></a><a href="slide0017_image019.png"></a><a
+href=slide0019.htm></a><a href=slide0039.htm></a><a href=slide0021.htm></a><a
+href=slide0020.htm></a><a href=slide0048.htm></a><a href=slide0049.htm></a><a
+href="slide0049_image020.png"></a><a href=slide0050.htm></a><a
+href=slide0051.htm></a><a href=slide0052.htm></a><a href=slide0053.htm></a><a
+href=slide0054.htm></a><a href=slide0055.htm></a><a href=slide0056.htm></a><a
+href=slide0057.htm></a><a href=slide0058.htm></a><a href=slide0060.htm></a><a
+href=slide0022.htm></a><a href="slide0022_image021.jpg"></a><a
+href=slide0059.htm></a><a href=slide0030.htm></a><a href=slide0032.htm></a><a
+href="slide0032_image022.png"></a><a href="slide0032_image023.png"></a><a
+href="slide0032_image024.png"></a><a href="slide0032_image025.png"></a><a
+href="slide0032_image026.png"></a><a href="slide0032_image027.png"></a><a
+href=slide0031.htm></a><a href="slide0031_image028.png"></a><a
+href="slide0031_image029.png"></a><a href=slide0044.htm></a><a
+href=slide0061.htm></a><a href="slide0061_image030.png"></a><a
+href="slide0061_image031.png"></a><a href=slide0062.htm></a><a
+href="slide0062_image032.png"></a><a href="slide0062_image033.png"></a><a
+href=slide0063.htm></a><a href="slide0063_image034.png"></a><a
+href="slide0063_image035.png"></a><a href=slide0064.htm></a><a
+href="slide0064_image036.png"></a><a href="slide0064_image037.png"></a><a
+href=slide0065.htm></a><a href=slide0066.htm></a><a
+href="slide0066_image038.png"></a><a href="slide0066_image039.png"></a><a
+href=slide0067.htm></a><a href="slide0067_image040.png"></a><a
+href="slide0067_image041.png"></a><a href=slide0068.htm></a><a
+href="slide0068_image042.png"></a><a href="slide0068_image043.png"></a><a
+href=slide0069.htm></a><a href="slide0069_image044.png"></a><a
+href="slide0069_image045.png"></a><a href=slide0070.htm></a><a
+href=slide0033.htm></a><a href="slide0033_image046.png"></a><a
+href="slide0033_image047.png"></a><a href=slide0035.htm></a><a
+href="slide0035_image048.jpg"></a><a href=slide0045.htm></a><a
+href=slide0034.htm></a><a href="slide0034_image049.jpg"></a><a
+href="slide0034_image050.png"></a><a href=slide0046.htm></a><a
+href=master01.htm></a><a href="master87_stylesheet.css"></a><a
+href="master99_stylesheet.css"></a><a href="master100_stylesheet.css"></a><a
+href="master101_stylesheet.css"></a><a href="master102_stylesheet.css"></a><a
+href="master103_stylesheet.css"></a><a href="master104_stylesheet.css"></a><a
+href="master105_stylesheet.css"></a><a href="master106_stylesheet.css"></a><a
+href="master107_stylesheet.css"></a><a href=script.js></a><a href="../MLA.htm"></a><a
+href=fullscreen.htm></a><a href="notes_flag.gif"></a><a href=buttons.gif></a><a
+href=frame.htm></a><a href=outline.htm></a></div>
+
+</body>
+
+</html>

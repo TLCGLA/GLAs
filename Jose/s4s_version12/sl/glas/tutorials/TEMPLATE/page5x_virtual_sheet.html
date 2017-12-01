@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 6;
+$(".button1").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"}) 
+	if (i == x) {$('.button1').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).css ({"color": "red", "font-weight": "normal"})
+ 	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+	});
+ 
+});
+ 
+ 
+</script>
+<script>
+$(document).ready(function(){
+
+ $('.makeMeDraggable').draggable({ 
+  snap: '.makeMeDroppable', 
+  snapMode: 'inner', 
+  snapTolerance: 40, 
+  opacity: '0.8',  
+  stack : '.makeMeDraggable',
+  containment: '#wrapper', 
+  revert: 'false',
+   
+  });
+
+
+
+
+});
+</script>
+
+<style>
+.makeMeDraggable {width: 600px; height: 200px; border: 1px solid black; display: inline-block; text-align: center; background-color: #F0F0F0;}
+.makeMeDraggable:hover  {cursor: move;}
+.ui-draggable-dragging { -moz-box-shadow: 10px 10px 5px #888;-webkit-box-shadow: 10px 10px 5px #888;box-shadow: 10px 10px 5px #888;}
+.right, .wrong {cursor: pointer; padding-left: 10px; width: 700px;}
+.right:hover, .wrong:hover {background: #ccc;}
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%"><p>
+	Some writing errors result from incorrect use of punctuation. 
+Use the proofreading technique of covering the text with a blank sheet of paper to find the errors in the following exercise.  (You can put a blank sheet
+of paper on top of the screen or use the virtual sheet of paper provided below the exercise.)
+	</p>
+	<p>
+	Answer the questions correctly. After you get at all the right answers, a 
+	button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. </p>
+ 	</td>
+ 	<td align="center"><a class="button1" href="page6.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table width="100%" border="0">
+	<tr>
+	<td valign="top" width="80%"><div class="exercise_instructions">
+		Identify the <font class="correct_number">SENTENCES WITH ERRORS</font> by clicking on them.</div>
+	</td>
+	<td><div class="your_score"><br>Your Score:</div></td>
+	</tr>
+	<tr>
+	<td valign="top" width="80%">
+ 		<table class="questions_table">
+		<tr><td><div class="number">1.</div></td><td>
+		<div class="right">I wanted to tell her but I couldn't.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">2.</div></td><td>
+		<div class="wrong">The road was closed, so they had to take a two hour detour.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">3.</div></td><td>
+		<div class="right">The door was locked so they couldn't get in.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">4.</div></td><td>
+		<div class="right">It was raining and none of us had brought an umbrella.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">5.</div></td><td>
+		<div class="right">My phone was not working but I managed to borrow one from a friend.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">6.</div></td><td>
+		<div class="wrong">It was my dream wedding ring, yet too expensive for me.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">7.</div></td><td>
+		<div class="wrong">They need to bring their luggage and their passports.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">8.</div></td><td>
+		<div class="right">The prisoner stopped resisting, the guards then took him to a cell.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">9.</div></td><td>
+		<div class="right">She called them, because we needed to borrow their truck for the move.<span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">10.</div></td><td>
+		<div class="wrong">The government had to intervene after the housing market bubble burst.<span id="feedback"></span></div></td></tr>	
+		</table>
+		<span class="makeMeDraggable"><div style="font-size: 18px; margin-top: 50px;">VIRTUAL BLANK SHEET OF PAPER</div>Click and drag as needed to proofread the sentences.</span>
+
+ 	</td>
+	<td align="center">
+		<div id="counter" class="background_score"></div> 
+	</td>
+	</tr>
+	</table>
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

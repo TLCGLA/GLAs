@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script> 
+$(document).ready(function(){
+		var i = 0;
+		var x = 3;
+$(".button1").css ('visibility', 'hidden');
+ 
+$(".wrong").click(function(){
+   $(this).unbind('click')
+   $(this).siblings () .unbind ('click') .css ("cursor" , "none")
+   $(this).css ({"color": "red", "font-weight": "normal"})
+   $(this).siblings("#feedback").html (" Oh! ").css ({"color": "red", "font-weight": "bold"})
+   $(".triangle").animate({"bottom": "-=15px"}, "fast");
+ 
+});
+ 
+$(".right").click(function(){
+	$(this).unbind('click')
+	$(this).siblings () .unbind ('click') .css ("cursor" , "none")
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	$(this).siblings("#feedback").html (" Great! ").css ({"color": "#0D408D", "font-weight": "bold"})
+  	$(".triangle").animate({"bottom": "+=15px"}, "fast");
+  i++;
+  	if (i == x) {$('.button1').css ('visibility', 'visible')};
+});
+ 
+});
+</script>
+
+
+
+<style>
+.right, .wrong {cursor: pointer; padding-left: 10px; padding-right: 10px; display: inline; border: 1px solid #ccc; background-color: #dcdcdc; }
+.right:hover, .wrong:hover {background: #ccc;}
+.item {padding-left: 20px; width: 700px; line-height: 25px;}
+.question {width: 500px;}
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	How good are you at time management?  Evaluate yourself by answering "yes" or "no" to 
+the questions below.  After you earn enough points, a button will appear on the top right corner.  Click on the button to continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page4.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table width="100%" border="0">
+	<tr>
+	<td valign="top" width="80%"><div class="exercise_instructions">
+		Answer the questions by clicking on the <font class="correct_number">YES OR NO</font> options.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	<tr>
+	<td valign="top" width="80%">
+ 		<table class="questions_table">
+		<tr><td><div class="number">1.</div></td><td><div class="item"><span class="question">Do you know when things are due in all your classes?</span> <span class="right">yes</span> / <span class="wrong">no</span> <span id="feedback"></span></div></td>		</tr>
+		<tr><td><div class="number">2.</div></td><td><div class="item"><span class="question">Do you deal with deadlines as they come?</span> <span class="wrong">yes</span> / <span class="right">no</span> <span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">3.</div></td><td><div class="item"><span class="question">Do you use a "to do" list?</span> <span class="right">yes</span> / <span class="wrong">no</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">4.</div></td><td><div class="item"><span class="question">Do you leave things you don't like to do for last?</span> <span class="wrong">yes</span> / <span class="right">no</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">5.</div></td><td><div class="item"><span class="question">Do you sort things according to priority?</span> <span class="right">yes</span> / <span class="wrong">no</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">6.</div></td><td><div class="item"><span class="question">Do you set a specific time aside each week to work on your classes?</span> <span class="right">yes</span> / <span class="wrong">no</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">7.</div></td><td><div class="item"><span class="question">Do you spend a lot of time surfing the net or using your phone?</span> <span class="wrong">yes</span> / <span class="right">no</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">8.</div></td><td><div class="item"><span class="question">Do you have a defined set of goals you want to achieve each semester?</span> <span class="right">yes</span> / <span class="wrong">no</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">9.</div></td><td><div class="item"><span class="question">Do you say "no" to distractions when you have to get work done?</span> <span class="right">yes</span> / <span class="wrong">no</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">10.</div></td><td><div class="item"><span class="question">Do you spend a lot of time doing things, like watching TV, that do not get you closer to meeting any of your goals?</span> <span class="wrong">yes</span> / <span class="right">no</span><span id="feedback"></span></div></td></tr>
+		
+		</table>
+ 	</td>
+	<td align="center">
+		<div class="progress2">
+ 		<table>
+		<tr>
+		<td><div class="triangle_spacer"></div>
+                  <div class="triangle"><img src="../../images/triangle2.png"></div></td>
+		<td><div class="progress_bar2"> 
+                    <div class="progress_bar_text2">+10<br>
+                      +8<br>
+                      +6<br>
+                      +4<br>
+                      +2<br>
+                      &nbsp;0<br>
+                      -2<br>
+                      -4<br>
+                      -6<br>
+                      -8<br>
+                      -10</div>
+                  </div></td>
+		</tr>
+		</table>
+		</div>
+	</td>
+	</tr>
+	</table>
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

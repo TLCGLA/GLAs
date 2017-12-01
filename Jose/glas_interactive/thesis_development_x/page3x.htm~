@@ -1,0 +1,191 @@
+<!DOCTYPE HTML> <html>
+<meta http-equiv="X-UA-Compatible" content="IE-9" /><title>Guided Learning Activities</title>
+<link href="../css/styles.css" rel="stylesheet" type="text/css" />
+
+
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+
+
+
+
+
+<style type="text/css">
+.right, .wrong {cursor: pointer}
+.right:hover, .wrong:hover {background: #ccc;}
+.number { text-align: right;  float: right; font-size: 16px; font-weight: bold; background-color:#FFC680; border: 1px solid #ccc; width: 30px; padding-right: 4px;}
+#questions_table div {float:left; font-size: 16px; margin-bottom: 8px; margin-left: 10px;}
+#questions_table span {display: inline-block;}
+#questions_table p {margin-bottom: 10px}
+.turnedOff {color: gray}
+.item {font-size: 18px}
+.title {font-weight: bold; font-size: 18px; margin-bottom: 10px; border-bottom: 3px solid #FFA500;}
+#counter {height: 100px; width: 100px; font-size: 50px; border: 1px solid #ccc; background-color:#FFC680; padding-top: 30px; text-align: center;}
+#feedback {margin-left: 20px; display: inline;}
+</style>
+
+</head>
+
+<body>
+
+<table width="100%" align="center" border="0">
+<tr bgcolor="#273872"><td></td><td width="960"><!-- header -->
+<div class="header">
+  		<div style="float: left; height: 73px;"><img src="../images/coc_logo1.gif" alt="College of the Canyons"  />
+      <img src="../images/coc_logo2.gif" alt="College of the Canyons" /> 
+	  </div>
+	  <div style="float: right;"><h1 class="h1_title">Guided Learning 
+		Activities</h1></div>
+ 
+ </div>
+ <!-- end header -->
+
+</td><td></td></tr>
+<tr><td colspan="3"> <div class="gradient_horizontal" style="height:3px; break:left;"></div></td></tr>
+
+<tr><td colspan="3"> 
+
+<table width="960" align="center" border="0"> <!-- 960 px is the standard width for 1024 x 768 screens; use 90% otherwise -->
+<tr><td align="center" 0%">
+
+ 
+ <!-- page starts here -->
+<div class="page">
+
+<!-- top section starts here -->
+
+<div class="gla_top_section">
+<h1 class="h1_blue">Comprehension Questions</h1>
+
+<h1 class="h1_gray" style="padding-top: 10px;">Instructions:</h1>
+       
+<table width="100%" border="0">
+<tr><td><div style="padding-right: 10px;">
+Complete the following statements correctly. As you select answers, the counter to the right will show how many 
+points you earned. You will earn one point for each correct answer and lose one point 
+for each incorrect answer. Correct answers will turn <font color="blue">blue</font>, while incorrect answers 
+will turn <font color="red">red</font>. After you get at least 3 correct answers out of the total of 4, a 
+button will appear on the top right corner.  Click on the button to 
+continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+
+
+</div></td>
+
+<td ><div class="gradient_horizontal" style="height: 38px; text-align: center; padding: 10px; margin-bottom: 5px;">
+
+<form method="link" action="page4.htm" style="display:  inline; float: right;">
+<input type="submit" class="button" style="height: 35px;" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+</form>
+</div></td>
+</tr>
+</table>
+</div>
+<!-- end top section --> 
+
+
+
+<!-- begin wrapper lower section -->
+<div style="margin-top: 20px; padding:10px; border: 1px solid #ccc; background-color: white;">
+ 
+				  	
+<!-- table wrapping lower section contents -->
+
+
+<table width="100%" border="0">
+
+<tr>
+<td> <div><span style="float: left"><h1 class="title">Select the correct answers by clicking on them.</h1></span>
+</div></td><td><span style="float: right;  padding-right: 45px;"><h1 class="title">Your score</h1></span></div></td></tr>
+<tr> 
+<td valign="top"  height="400px">
+
+	<table id="questions_table" border=0>
+	<tr><td height="140px"><div class="number">&nbsp;1.</div></td><td>
+	<div><span class="item">A thesis statement is...</span><br>
+	<span style="width: 20px">a.</span><span class="wrong" style="width: 700px;">the first paragraph of an essay.</span>
+	<span style="width: 20px">b.</span><span class="wrong" style="width: 700px;">an introduction to the essay.</span>
+	<span style="width: 20px">c.</span><span class="right" style="width: 700px;">a one or two sentence summary of the essay's argument.</span>
+	<span style="width: 20px">d.</span><span class="wrong" style="width: 700px;">an illustration of the main point of the essay.</span>
+	</div></td></tr>
+	<tr><td height="140px"><div class="number">&nbsp;2.</div></td><td>
+	<div><span class="item">The purpose of the thesis statement is to...</span><br>
+	<span style="width: 20px">a.</span><span class="wrong" style="width: 700px;">introduce the pros and cons of the argument.</span>
+	<span style="width: 20px">b.</span><span class="right" style="width: 700px;">define the objective of the essay.</span>
+	<span style="width: 20px">c.</span><span class="wrong" style="width: 700px;">give an example of the topic discussed in the essay.</span>
+	<span style="width: 20px">d.</span><span class="wrong" style="width: 700px;">describe the supporting research used in the essay.</span>
+	</div></td></tr>
+	<tr><td height="100px"><div class="number">&nbsp;3.</div></td><td>
+	<div><span class="item">Without a strong thesis statement, your essay...</span><br>
+	<span style="width: 20px">a.</span><span class="right" style="width: 340px;">may wander off topic.</span>
+	<span style="width: 20px">c.</span><span class="wrong" style="width: 340px;">may lack sufficient supporting information.</span>
+	<span style="width: 20px">b.</span><span class="wrong" style="width: 340px;">is incomplete.</span>
+	<span style="width: 20px">d.</span><span class="wrong" style="width: 340px;">will not have an adequate introduction.</span>
+	</div></td></tr>
+	
+	<tr><td height="100px"><div class="number">&nbsp;4.</div></td><td>
+	<div><span class="item">To generate a thesis statement you should...</span><br>
+	<span style="width: 20px">a.</span><span class="wrong" style="width: 340px;">come up with as many ideas as possible.</span>
+	<span style="width: 20px">c.</span><span class="wrong" style="width: 340px;">ask your professor for possible topics.</span>
+	<span style="width: 20px">b.</span><span class="right" style="width: 340px;">turn the assignment into a question.</span>
+	<span style="width: 20px">d.</span><span class="wrong" style="width: 340px;">write a draft of your essay.</span>
+	</div></td></tr>
+	</table>
+
+
+</td>
+<td width="102">
+<div id="counter" class="box-shadow" style="display: block; float: right;  margin-right: 40px;"></div> 
+
+<div style="margin-top: 40px; display: block; break: left; float: right;  margin-right: 40px; width: 100px; text-align: center; float: right;">
+<span class="h1_blue" style="font-size: 20px;">Maximum points: 4</span></div> 
+</td>
+</tr>
+
+
+</table>
+				
+					
+				
+
+
+</div>
+<!-- end wrapper lower section -->
+</div>
+<!-- end page -->
+</td></tr>
+</table>
+
+ </td></tr>
+</table>  <!-- end big wrapper table-->
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 3;
+$(".button").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click') .attr ("class" , "turnedOff") 
+	$(this).css ({"color": "#0D408D", "font-weight": "bold"})
+	if (i == x) {$('.button').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click')  .attr ("class" , "turnedOff")
+	$(this).css ({"color": "red", "font-weight": "bold"})
+
+	});
+
+});
+
+
+</script>
+
+	
+
+</body>
+</html>

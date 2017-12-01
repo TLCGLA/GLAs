@@ -1,0 +1,234 @@
+<!DOCTYPE HTML> <html>
+<meta http-equiv="X-UA-Compatible" content="IE-9" /><title>Guided Learning Activities</title>
+<link href="../css/styles.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+
+
+/* PROGRESS BAR STYLES */
+.border_bar {  
+	border: 1px solid  #424242; 
+	padding: 10px;
+ 	height: 420px;
+	width: 160px;
+	background:#CCCCCC; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC'); /* for IE */
+	background: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#CCCCCC)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,#FFFFFF,#CCCCCC); /* for firefox 3.6+ */ 
+
+}
+
+
+.blue_bar {
+	height: 406px;
+	width: 6px;
+	background:#669999; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CCCCCC', endColorstr='#669999'); /* for IE */
+	background: -webkit-gradient(linear, left, right, from(#CCCCCC), to(#669999)); /* for webkit browsers */
+	background: -moz-linear-gradient(left,#CCCCCC,#669999); /* for firefox 3.6+ */ 
+}
+
+
+/* OTHER STYLES */
+.triangle {position:relative;}
+.right, .wrong {cursor: pointer; float:left; font-size: 12px; padding-bottom: 10px; clear: both;}
+.right:hover, .wrong:hover {background: #ccc;}
+.bar {display: block; height: 48px; text-align: left; font-size: 14px; font-weight: bold;}
+.bar_title {text-align: right; padding-right: 5px; font-size: 14px; font-weight: bold;}
+.questions {border: 1px solid #ccc;	padding: 20px; background-color:#FFF; height: 100%; }
+.title {font-weight: bold; font-size: 18px; margin-bottom: 10px; border-bottom: 3px solid #FFA500;}
+#cornell td {padding-top: 10px; padding-left: 10px; padding-right: 10px;}	
+span {display:inline-block;}
+
+</style> 
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+</head>
+
+<body>
+<!-- big wrapper table -->
+<table width="100%" align="center" border="0">
+
+<tr bgcolor="#273872"><td></td><td width="960"><!-- header -->
+<div class="header">
+  		<div style="float: left; height: 73px;"><img src="../images/coc_logo1.gif" alt="College of the Canyons"  />
+      <img src="../images/coc_logo2.gif" alt="College of the Canyons" />
+      
+	  </div>
+	  <div style="float: right;"><h1 class="h1_title">Guided Learning Activities</h1></div>
+ 
+ </div>
+ <!-- end header -->
+
+</td><td></td></tr>
+<tr><td colspan="3"> <div class="gradient_horizontal" style="height:3px; break:left;"></div></td></tr>
+
+<tr><td colspan="3"> 
+
+<table width="960" align="center" border="0"> <!-- 960 px is the standard width for 1024 x 768 screens; use 90% otherwise -->
+<tr><td align="center" height="100%">
+
+<div class="page">
+<!-- top section starts here -->
+
+<div class="gla_top_section">
+
+<h1 class="h1_blue">Comprehension Questions</h1>
+
+<h1 class="h1_gray" style="padding-top: 10px;">Instructions:</h1>
+       
+</div>
+
+<table width="100%" border="0">
+<tr><td><div style="padding-right: 10px;">The Cornell notes below have entries in the wrong sections.  For example, entries that should be 
+on the left column are on the right one or things that belong in the bottom section are on the lecture notes section.  
+Can you find the mistakes?  Get rid of the errors by clicking on the entries that are in the wrong section.  
+You can watch your progress on the bar to the right. 
+
+
+
+You will earn one point for each correct answer and lose one point 
+for each incorrect answer.  After you find four incorrect entries, a button will appear on the top right corner.  Click on the button to 
+continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. </div></td>
+
+<td ><div class="gradient_horizontal" style="height: 38px; text-align: center; padding: 10px; margin-bottom: 5px;">
+
+<form method="link" action="page4.htm" style="display:  inline; float: right;">
+                                      <input type="submit" class="button" style="height: 35px;" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+                                    </form>
+</div></td>
+</tr>
+</table>
+<!-- end top section --> 
+		
+           
+
+<!-- wrapper lower section -->
+<div class="questions" style="padding-top: 25px; margin-top: 20px; height: 490px;" >
+<div><span style="float: left"><h1 class="title">Delete the <span class="h1_blue" style="font-size: 20px;">4 entries in the WRONG section</span> by clicking on them.</h1></span>
+<span style="float: right;  padding-right: 30px;"><h1 class="title">Your progress</h1></span>
+</div>
+<div  style="float: left; width: 720px; margin-top: 10px;">
+
+<table border="1" width="100%" id="cornell">
+
+<tr height="30">
+<td colspan="2" width="100%"><div style="font-size: 12px; padding-bottom: 10px;">
+History 111<br>
+2/15/12<br>
+Before First Contact<br></div>
+</td></tr>
+<tr height="248">
+<td width="20%">
+<div class="right"><span id="answer">What formed identity?</span><span id="feedback"></span></div>
+<div class="wrong"><span id="answer">As near as we can tell, Native American tribes in the 15th century 
+spoke 350 languages, encompassing several linguistic families. 200 of these languages are still spoken today. </span><span id="feedback"></span></div>
+
+
+</td>
+<td width="80%">
+<div class="wrong"><span id="answer">How many languages were spoken in North America?</span><span id="feedback"></span></div>
+<div class="right"><span id="answer">Tribal identity was very important; not a Native American identity but a tribal one.
+Each tribe's culture is different, so the cultural context (and meaning) of each tribe's literature is as well. 
+</span><span id="feedback"></span></div>
+
+<div class="right"><span id="answer">The Oral Tradition is a spoken literature as the tribes did not have written language.<br>  
+1.	Participatory: there is a back and forth with audience, the storyteller reacts to audience response and also expects responses
+</span><span id="feedback"></span></div>
+<div class="right"><span id="answer">2.	Mixing of genres " prose and poetry mixed together in the same piece. A lot of what we see as the distinctions between genres are functions of how they appear on the printed page. Poetry vs. prose vs. drama " it all blends together when read by a single speaker
+</span><span id="feedback"></span></div>
+</td>
+</tr>
+
+<tr height="120">
+<td colspan="2" width="100%">
+<div class="wrong"><span id="answer">What is Oral Tradition?</span><span id="feedback"></span></div>
+<div class="right"><span id="answer">Native America was linguistically and culturally diverse. Oral tradition was the main literary form.</span><span id="feedback"></span></div>
+<div class="wrong"><span id="answer">3.	Repetition:  helpful as a memory aid both for the storyteller and for the audience. This is a strategy commonly used as a rhetorical device in contemporary speeches (ex: MLK’s I Have a Dream or the chorus in a song).
+</span><span id="feedback"></span></div>
+
+
+ 
+</td>
+</tr>
+
+</table>
+
+</div> <!-- end left hand table div-->
+
+<div class="border_bar" style="float: right; margin-top: 10px;"> <!-- begin div for progress bar --->
+
+
+<table width="120" border="0">
+	<tr><td >
+	<!-- progress bar -->
+
+	<table border="0" width="100%">
+
+	<tr> 
+	<td><div style="height: 188px;"></div><div style="float: right; width: 30px; text-align: right;"><img class="triangle" src="../images/triangle2.png" /></div></td>
+ 	<td><div style="float: left; border: 1px solid gray; color: gray; height: 406px; width: 6px; background-color: white; ">
+	<div class="blue_bar" style="width: 6px;"></div>
+	</div>
+
+	
+	<div class="bar_text" style="padding-left: 8px;">
+	<p class="bar"><span class="bar_title">Correct!</span></p>
+	<p class="bar">+</p>
+	<p class="bar">+</p>
+	<p class="bar">+</p>
+	<p class="bar">0</p>
+	<p class="bar">-</p>	
+	<p class="bar">-</p>
+	<p class="bar">-</p>
+
+	<p class="bar"><span class="bar_title">Oops!<span style="font-size: 16px;"></p>
+	
+	</div> 
+	</td>
+	</tr>			  
+	</table>
+</td></tr>
+</table>
+</div>
+<!-- end progress bar -->
+
+<script>
+
+$(document).ready(function(){
+		var i = 0;
+		var x = 4;
+$(".button").css ('visibility', 'hidden');
+$(".wrong").click(function(){
+   $(this).find ("#answer").hide ()
+   $(this).unbind('click')
+   $(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"})
+   $(".triangle").animate({"bottom": "+=40px"}, "fast");
+      i++;
+	if (i == x) {$('.button').css ('visibility', 'visible')};
+
+});
+
+$(".right").click(function(){
+	$(this).find ("#answer").hide ()
+	$(this).unbind('click')
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+  $(".triangle").animate({"bottom": "-=40px"}, "fast");
+  i--;
+});
+
+});
+</script>
+
+		
+	
+</div> <!-- end wrapper lower section -->
+	
+</div> <!-- end page -->
+
+</td></tr>
+</table>  <!-- end big wrapper table-->
+	
+
+</body>
+</html>

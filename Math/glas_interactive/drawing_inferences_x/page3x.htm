@@ -1,0 +1,224 @@
+<!DOCTYPE HTML> <html>
+<meta http-equiv="X-UA-Compatible" content="IE-9" /><title>Guided Learning Activities</title>
+<link href="../css/styles.css" rel="stylesheet" type="text/css" />
+<!-- source: http://www.sohtanaka.com/web-design/examples/toggle/ -->
+
+
+<style type="text/css"> 
+
+.ex {
+background-color:#e5eecc;
+padding:7px;
+border:solid 1px #c3c3c3;
+width: 200px;
+height: 100px;
+}
+
+
+
+.toggle_container {
+	margin: 0 0 5px;
+	padding: 0;
+	border-width: 1px;
+	border-color: #BFBFBF;
+	background-color: #f0f0f0;
+	overflow: hidden;
+	clear: both;
+	
+}
+.toggle_container .block {
+	padding: 20px; /*--Padding of Container--*/
+
+}
+
+.trigger {
+		padding: 5px;
+		border-style: solid;
+		border-width: 1px;
+		border-color: #BFBFBF;
+		background-color: white;
+		/* border-bottom: 2px solid #BFBFBF;*/ 
+
+		}
+
+
+
+</style>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+
+	//Hide (Collapse) the toggle containers on load
+	$(".toggle_container").hide(); 
+
+	//Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
+	$("div.trigger").click(function(){
+		$(this).toggleClass("active").next().slideToggle("slow");
+		return false; //Prevent the browser jump to the link anchor
+	});
+
+});
+</script>
+</head>
+
+<body>
+
+<!-- big wrapper table -->
+<table width="100%" align="center" border="0">
+<tr bgcolor="#273872"><td></td><td width="960"><!-- header -->
+<div class="header">
+  		<div style="float: left; height: 73px;"><img src="../images/coc_logo1.gif" alt="College of the Canyons"  />
+      <img src="../images/coc_logo2.gif" alt="College of the Canyons" />
+      
+	  </div>
+	  <div style="float: right;"><h1 class="h1_title">Guided Learning Activities</h1></div>
+ 
+ </div>
+
+ <!-- end header -->
+
+</td><td></td></tr>
+<tr><td colspan="3" align="center"> <div class="gradient_horizontal" style="height:3px; break:left;"></div></td></tr>
+
+<tr><td colspan="3" align="center"> 
+
+<table width="960" align="center" border="0"> <!-- 960 px is the standard width for 1024 x 768 screens; use 90% otherwise -->
+<tr><td align="center" height="100%">
+ 
+ <!-- page starts here -->
+<div class="page">
+
+<!-- top section starts here -->
+
+<div class="gla_top_section">
+<h1 class="h1_blue">Comprehension Questions</h1>
+
+<h1 class="h1_gray" style="padding-top: 10px;">Instructions:</h1>
+Based on the last picture you saw on the presentation, indicate whether the 
+following inferences are reasonable or not. Please respond by clicking &quot;Yes&quot; or 
+&quot;No&quot; for each statement.  <br><br>
+
+After you are done with the exercise, record your answers on box 3 of the 
+worksheet, so you can discuss your answers at the end with a tutor.<br>
+<br>
+
+
+<div class="trigger" style="line-height: 2em; padding-left: 15px;">
+If you need to take another look at the picture, click these buttons to <a href="#"><input type="button" class="button"  value="show" style="width: 50px;"></a> or 
+<a href="#"><input type="button" class="button"  value="hide" style="width: 50px;"></a> the image.
+</div>
+
+<div class="toggle_container">
+	<div class="block" style="text-align: center;">
+<img src="images/Slide17.jpg" width="672" height="502" border="0" alt="">	
+	</div>
+</div
+
+
+ ></div>
+<!-- end top section --> 
+
+<!-- begin wrapper lower section -->
+<div>
+  
+				  	
+<!-- table wrapping lower section contents -->
+<table width="100%" border="0" align="center">
+<tr><td height="20"></td></tr>
+<tr><td valign="top">
+<h1 class="h1_gray">Reasonable or not?</h1>
+<div class="trigger" style="line-height: 2em;">
+<a href="#"><input type="button" class="button"   value="Yes" style="width: 50px;"></a>
+<a href="#"><input type="button" class="button"  value="No" style="width: 50px;"></a>
+<span style="padding-left: 20px;">1.</span> 
+The people in the picture are victims of a flood.</div>
+
+<div class="toggle_container">
+	<div class="block">
+	<h1 class="h1_gray">The correct answer is...</h1>
+	YES: The facts in the picture support this conclusion. It is a 
+	plausible guess.
+	</div>
+</div>
+
+</td></tr>
+<tr><td valign="top">
+<div class="trigger" style="line-height: 2em;">
+<a href="#"><input type="button" class="button"  value="Yes" style="width: 50px;"></a>
+<a href="#"><input type="button" class="button"  value="No" style="width: 50px;"></a>
+<span style="padding-left: 20px;">2.</span> 
+The setting is New York City.</div>
+<div class="toggle_container">
+	<div class="block">
+	<h1 class="h1_gray">The correct answer is...</h1>
+	NO: This is not a reasonable inference. It contradicts the facts in 
+	the picture and what we know about New York City.
+
+	</div>
+</div>
+
+</td></tr>
+
+<tr><td valign="top">
+<div class="trigger" style="line-height: 2em;">
+<a href="#"><input type="button" class="button"  value="Yes" style="width: 50px;"></a>
+<a href="#"><input type="button" class="button"  value="No" style="width: 50px;"></a>
+<span style="padding-left: 20px;">3.</span>   
+The people in the picture are fishing.</div>
+<div class="toggle_container">
+	<div class="block">
+	<h1 class="h1_gray">The correct answer is...</h1>
+	YOU DECIDE: Is this a reasonable inference? Why or why not? Please write 
+	your answer on the worksheet.
+
+	</div>
+</div>
+
+</td></tr>
+
+<tr><td valign="top">
+<div class="trigger" style="line-height: 2em;">
+<a href="#"><input type="button" class="button"  value="Yes" style="width: 50px;"></a>
+<a href="#"><input type="button" class="button"  value="No" style="width: 50px;"></a>
+<span style="padding-left: 20px;">4.</span> 
+The people in the picture are desperate for help.</div>
+<div class="toggle_container">
+	<div class="block"> 
+	<h1 class="h1_gray">The correct answer is...</h1>
+	YOU DECIDE: Is this a reasonable inference? Why or why not? Do we have 
+	enough information to draw that conclusion?<br>
+	Please write your answer on the worksheet.<br><br>
+	
+	Once you are done with the worksheet, please click on the button below to 
+	continue.<br>
+		<div style="padding-top: 20px; tex-align: center;"><form method="link" action="page4.htm">
+		<input type="submit" class="button" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Go to the Next Section &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></form>
+		</div>
+
+	</div>
+</div>
+
+</td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+</div>
+<!-- end wrapper lower section -->
+</div>
+<!-- end page -->
+</td></tr>
+</table>
+
+	
+
+</body>
+</html>

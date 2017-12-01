@@ -1,0 +1,325 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <p:presentation sizeof="screen" notessizex="4464" notessizey="5720"
+  gridspacingx="49152" gridspacingy="49152" savewithfonts="t" subsetembed="1">
+  <p:master id="56" slidesn="0,0" type="main" href="master56.html"
+   xmlhref="master56.xml" template="Theme1" preserved="t" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="70" slidesn="0,0" type="main" href="master70.html"
+   xmlhref="master70.xml" template="White with Courier font for code slides"
+   preserved="t" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="111" slidesn="0,0" type="main" href="master111.html"
+   xmlhref="master111.xml" template="Concourse" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="238" slidesn="0,0" type="main" href="master238.html"
+   xmlhref="master238.xml" template="1_Theme1" preserved="t" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="239" slidesn="0,0" type="main" href="master239.html"
+   xmlhref="master239.xml" template="2_Theme1" preserved="t" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="240" slidesn="0,0" type="main" href="master240.html"
+   xmlhref="master240.xml" template="3_Theme1" preserved="t" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="241" slidesn="0,0" type="main" href="master241.html"
+   xmlhref="master241.xml" template="1_Concourse" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="242" slidesn="0,0" type="main" href="master242.html"
+   xmlhref="master242.xml" template="2_Concourse" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="243" slidesn="0,0" type="main" href="master243.html"
+   xmlhref="master243.xml" template="3_Concourse" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="244" slidesn="0,0" type="main" href="master244.html"
+   xmlhref="master244.xml" template="4_Concourse" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="245" slidesn="0,0" type="main" href="master245.html"
+   xmlhref="master245.xml" template="5_Concourse" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="246" slidesn="0,0" type="main" href="master246.html"
+   xmlhref="master246.xml" template="6_Concourse" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="247" slidesn="0,0" type="main" href="master247.html"
+   xmlhref="master247.xml" template="7_Concourse" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="248" slidesn="0,0" type="main" href="master248.html"
+   xmlhref="master248.xml" template="8_Concourse" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="249" slidesn="0,0" type="main" href="master249.html"
+   xmlhref="master249.xml" template="9_Concourse" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="1" slidesn="1D0EA86,F42E0BC0" type="notes" href="master01.html"
+   layout="notes" slots="header,dateTime,slideImage,body,footer,slideNumber"/>
+  <p:slide id="1" slidesn="0,0" href="slide0001.html"
+   masterhref="master241.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="18" slidesn="0,0" href="slide0018.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="22" slidesn="0,0" href="slide0022.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="24" slidesn="0,0" href="slide0024.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="2" slidesn="0,0" href="slide0002.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="4" slidesn="0,0" href="slide0004.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="26" slidesn="0,0" href="slide0026.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="25" slidesn="0,0" href="slide0025.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="6" slidesn="0,0" href="slide0006.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="7" slidesn="0,0" href="slide0007.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="27" slidesn="0,0" href="slide0027.html"
+   masterhref="master243.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="28" slidesn="0,0" href="slide0028.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="11" slidesn="0,0" href="slide0011.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="10" slidesn="0,0" href="slide0010.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="17" slidesn="0,0" href="slide0017.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="21" slidesn="0,0" href="slide0021.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="31" slidesn="0,0" href="slide0031.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="9" slidesn="0,0" href="slide0009.html"
+   masterhref="master249.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="12" slidesn="0,0" href="slide0012.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="32" slidesn="0,0" href="slide0032.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="20" slidesn="0,0" href="slide0020.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="15" slidesn="0,0" href="slide0015.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="16" slidesn="0,0" href="slide0016.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:slide id="19" slidesn="0,0" href="slide0019.html"
+   masterhref="master111.html">
+   <p:tag name="NOPREFERENCE" type="string" value="False"/>
+   <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  </p:slide>
+  <p:viewstate type="notes" restoredleft="173" restoredtop="865"
+   manualadjustleft="t" manualadjusttop="t" hideoutlineicons="t"/>
+  <p:tag name="EXPANDSHOWBAR" type="string" value="True"/>
+  <p:tag name="BULLETTYPE" type="string" value="3"/>
+  <p:tag name="RESPCOUNTERSTYLE" type="string" value="-1"/>
+  <p:tag name="INPUTSOURCE" type="string" value="1"/>
+  <p:tag name="BACKUPMAINTENANCE" type="string" value="7"/>
+  <p:tag name="ROTATIONINTERVAL" type="string" value="2"/>
+  <p:tag name="RACERSMAXDISPLAYED" type="string" value="5"/>
+  <p:tag name="TEAMSINLEADERBOARD" type="string" value="5"/>
+  <p:tag name="BUBBLEVALUEFORMAT" type="string" value="0.0"/>
+  <p:tag name="CUSTOMCELLFORECOLOR" type="string" value="-16777216"/>
+  <p:tag name="CUSTOMCELLBACKCOLOR4" type="string" value="-8355712"/>
+  <p:tag name="DISPLAYDEVICEID" type="string" value="True"/>
+  <p:tag name="GRIDSIZE" type="string" value="{Width=800, Height=600}"/>
+  <p:tag name="CHARTLABELS" type="string" value="1"/>
+  <p:tag name="PARTLISTDEFAULT" type="string" value="1"/>
+  <p:tag name="INCORRECTPOINTVALUE" type="string" value="0"/>
+  <p:tag name="AUTOADJUSTPARTRANGE" type="string" value="True"/>
+  <p:tag name="FIBNUMRESULTS" type="string" value="5"/>
+  <p:tag name="PRRESPONSE2" type="string" value="9"/>
+  <p:tag name="PRRESPONSE6" type="string" value="5"/>
+  <p:tag name="PRRESPONSE10" type="string" value="1"/>
+  <p:tag name="POWERPOINTVERSION" type="string" value="12.0"/>
+  <p:tag name="CSVFORMAT" type="string" value="0"/>
+  <p:tag name="RESPCOUNTERFORMAT" type="string" value="0"/>
+  <p:tag name="ALLOWDUPLICATES" type="string" value="False"/>
+  <p:tag name="REVIEWONLY" type="string" value="False"/>
+  <p:tag name="RACEANIMATIONSPEED" type="string" value="3"/>
+  <p:tag name="BUBBLENAMEVISIBLE" type="string" value="True"/>
+  <p:tag name="CUSTOMGRIDBACKCOLOR" type="string" value="-2830136"/>
+  <p:tag name="USESCHEMECOLORS" type="string" value="True"/>
+  <p:tag name="GRIDROTATIONINTERVAL" type="string" value="2"/>
+  <p:tag name="CHARTCOLORS" type="string" value="0"/>
+  <p:tag name="INCLUDEPPT" type="string" value="True"/>
+  <p:tag name="REALTIMEBACKUPPATH" type="string" value="(None)"/>
+  <p:tag name="FIBDISPLAYRESULTS" type="string" value="True"/>
+  <p:tag name="PRRESPONSE3" type="string" value="8"/>
+  <p:tag name="PRRESPONSE8" type="string" value="3"/>
+  <p:tag name="TPVERSION" type="string" value="2008"/>
+  <p:tag name="ANSWERNOWSTYLE" type="string" value="-1"/>
+  <p:tag name="COUNTDOWNSECONDS" type="string" value="10"/>
+  <p:tag name="AUTOADVANCE" type="string" value="False"/>
+  <p:tag name="SKIPREMAININGRACESLIDES" type="string" value="True"/>
+  <p:tag name="BUBBLEGROUPING" type="string" value="3"/>
+  <p:tag name="CUSTOMCELLBACKCOLOR3" type="string" value="-268652"/>
+  <p:tag name="AUTOSIZEGRID" type="string" value="True"/>
+  <p:tag name="INCLUDENONRESPONDERS" type="string" value="False"/>
+  <p:tag name="REALTIMEBACKUP" type="string" value="False"/>
+  <p:tag name="FIBINCLUDEOTHER" type="string" value="True"/>
+  <p:tag name="PRRESPONSE5" type="string" value="6"/>
+  <p:tag name="ALWAYSOPENPOLL" type="string" value="False"/>
+  <p:tag name="ANSWERNOWTEXT" type="string" value="Answer Now"/>
+  <p:tag name="BACKUPSESSIONS" type="string" value="True"/>
+  <p:tag name="RACEENDPOINTS" type="string" value="100"/>
+  <p:tag name="DEFAULTNUMTEAMS" type="string" value="5"/>
+  <p:tag name="DISPLAYDEVICENUMBER" type="string" value="True"/>
+  <p:tag name="RESETCHARTS" type="string" value="True"/>
+  <p:tag name="ZEROBASED" type="string" value="False"/>
+  <p:tag name="PRRESPONSE1" type="string" value="10"/>
+  <p:tag name="SHOWFLASHWARNING" type="string" value="True"/>
+  <p:tag name="COUNTDOWNSTYLE" type="string" value="-1"/>
+  <p:tag name="AUTOUPDATEALIASES" type="string" value="True"/>
+  <p:tag name="BUBBLESIZEVISIBLE" type="string" value="True"/>
+  <p:tag name="GRIDOPACITY" type="string" value="90"/>
+  <p:tag name="ALLOWUSERFEEDBACK" type="string" value="True"/>
+  <p:tag name="FIBDISPLAYKEYWORDS" type="string" value="True"/>
+  <p:tag name="SHOWBARVISIBLE" type="string" value="True"/>
+  <p:tag name="NUMRESPONSES" type="string" value="1"/>
+  <p:tag name="MAXRESPONDERS" type="string" value="5"/>
+  <p:tag name="GRIDPOSITION" type="string" value="1"/>
+  <p:tag name="CHARTSCALE" type="string" value="True"/>
+  <p:tag name="PRRESPONSE9" type="string" value="2"/>
+  <p:tag name="CHARTVALUEFORMAT" type="string" value="0%"/>
+  <p:tag name="CUSTOMCELLBACKCOLOR2" type="string" value="-13395457"/>
+  <p:tag name="CORRECTPOINTVALUE" type="string" value="1"/>
+  <p:tag name="USESECONDARYMONITOR" type="string" value="True"/>
+  <p:tag name="PARTICIPANTSINLEADERBOARD" type="string" value="5"/>
+  <p:tag name="MULTIRESPDIVISOR" type="string" value="1"/>
+  <p:tag name="SAVECSVWITHSESSION" type="string" value="True"/>
+  <p:tag name="DISPLAYNAME" type="string" value="True"/>
+  <p:tag name="PRRESPONSE7" type="string" value="4"/>
+  <p:tag name="POLLINGCYCLE" type="string" value="2"/>
+  <p:tag name="STDCHART" type="string" value="1"/>
+  <p:tag name="RESPTABLESTYLE" type="string" value="-1"/>
+  <p:tag name="CUSTOMCELLBACKCOLOR1" type="string" value="-657956"/>
+  <p:tag name="PRRESPONSE4" type="string" value="7"/>
+  <p:tag name="ADVANCEDSETTINGSVIEW" type="string" value="True"/>
+  <p:tag name="DELIMITERS" type="string" value="3.1"/>
+  <p:tag name="INCLUDESESSION" type="string" value="True"/>
+  <p:font name="Arial" charset="0" type="4"/>
+  <p:font name="Lucida Sans Unicode" charset="0" type="4" family="34"/>
+  <p:font name="Wingdings" charset="2" type="4" family="2"/>
+  <p:font name="Calibri" charset="0" type="4" family="34"/>
+  <p:font name="Wingdings 2" charset="2" type="4" family="18"/>
+  <p:font name="Helvetica" charset="0" type="4" family="34"/>
+  <p:font name="Times New Roman" charset="0" type="4" family="18"/>
+  <p:font name="ＭＳ Ｐゴシック" charset="128" type="4" family="34"/>
+  <p:font name="Verdana" charset="0" type="4" family="34"/>
+  <p:font name="Wingdings 3" charset="2" type="4" family="18"/>
+  <p:font name="Courier New" charset="0" type="4" family="49"/>
+  <p:pptdocumentsettings framecolors="WhiteTextOnBlack" hideslideanimation="t"
+   browsersupport="v4"/>
+ </p:presentation>
+ <o:shapedefaults v:ext="edit" spidmax="65541"/>
+</xml>

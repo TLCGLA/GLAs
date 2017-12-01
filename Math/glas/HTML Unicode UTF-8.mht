@@ -1,0 +1,3345 @@
+From: <Saved by Windows Internet Explorer 8>
+Subject: HTML Unicode UTF-8
+Date: Sat, 15 Feb 2014 09:45:02 -0800
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01CF2A32.99EFE180"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.6157
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01CF2A32.99EFE180
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.w3schools.com/charsets/ref_utf_math.asp
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML lang=3Den-US><HEAD><TITLE>HTML Unicode UTF-8</TITLE>
+<STYLE>A.menu_ref_utf_math {
+	FONT-WEIGHT: bold
+}
+</STYLE>
+
+<META charset=3Dutf-8>
+<META name=3Dviewport content=3Dwidth=3Ddevice-width>
+<META name=3DKeywords=20
+content=3D"HTML,CSS,XML,JavaScript,DOM,jQuery,ASP.NET,PHP,SQL,colors,tuto=
+rial,programming,development,training,learning,quiz,primer,lessons,refere=
+nce,examples,source code,demos,tips,color table,w3c,cascading style =
+sheets,active server pages,Web building,Webmaster">
+<META name=3DDescription=20
+content=3D"Free HTML CSS JavaScript DOM jQuery XML AJAX RSS ASP .NET PHP =
+SQL tutorials, references, examples for web building."><LINK=20
+rel=3Dicon type=3Dimage/x-icon href=3D"/favicon.ico">
+<SCRIPT type=3Dtext/javascript>
+  var _gaq =3D _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3855518-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga =3D document.createElement('script'); ga.type =3D =
+'text/javascript'; ga.async =3D true;
+    ga.src =3D ('https:' =3D=3D document.location.protocol ? 'https://' =
+: 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s =3D document.getElementsByTagName('script')[0]; =
+s.parentNode.insertBefore(ga, s);
+  })();
+</SCRIPT>
+
+<SCRIPT>
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=3D""
+obj.style.fontStyle=3D""
+if (obj.value=3D=3D"Search w3schools.com")
+	{obj.value=3D""}
+}
+var addr=3Ddocument.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=3Daddr;
+document.getElementById("err_form").style.display=3D"block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display=3D"none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display=3D"none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=3Ddocument.getElementById("err_url").value;
+var err_email=3Ddocument.getElementById("err_email").value;
+var err_desc=3Ddocument.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=3Dnew XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=3Dnew ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("POST","/err_sup.asp",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencode=
+d");
+xmlhttp.send("err_url=3D" + err_url + "&err_email=3D" + err_email + =
+"&err_desc=3D" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display=3D"block";
+}
+//-->
+</SCRIPT>
+
+<SCRIPT type=3Dtext/javascript>
+var googletag =3D googletag || {};
+googletag.cmd =3D googletag.cmd || [];
+(function() {
+var gads =3D document.createElement('script');
+gads.async =3D true;
+gads.type =3D 'text/javascript';
+var useSSL =3D 'https:' =3D=3D document.location.protocol;
+gads.src =3D (useSSL ? 'https:' : 'http:') +=20
+'//www.googletagservices.com/tag/js/gpt.js';
+var node =3D document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</SCRIPT>
+
+<SCRIPT type=3Dtext/javascript>
+googletag.cmd.push(function() {
+googletag.defineSlot('/16833175/BottomMediumRectangle', [300, 250], =
+'div-gpt-ad-1383210480969-0').addService(googletag.pubads());
+googletag.defineSlot('/16833175/LargePS', [[723, 280], [723, 400]], =
+'div-gpt-ad-1383210480969-1').addService(googletag.pubads());
+googletag.defineSlot('/16833175/MainLeaderboard', [728, 90], =
+'div-gpt-ad-1383210480969-2').addService(googletag.pubads());
+googletag.defineSlot('/16833175/SmallPS', [723, 170], =
+'div-gpt-ad-1383210480969-3').addService(googletag.pubads());
+googletag.defineSlot('/16833175/WideSkyScraper', [160, 600], =
+'div-gpt-ad-1383210480969-4').addService(googletag.pubads());
+googletag.pubads().setTargeting("content","charsets");
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</SCRIPT>
+
+<SCRIPT>
+  (function() {
+    var cx =3D '012971019331610648934:m2tou3_miwy';
+    var gcse =3D document.createElement('script'); gcse.type =3D =
+'text/javascript'; gcse.async =3D true;
+    gcse.src =3D (document.location.protocol =3D=3D 'https:' ? 'https:' =
+: 'http:') +
+        '//www.google.com/cse/cse.js?cx=3D' + cx;
+    var s =3D document.getElementsByTagName('script')[0]; =
+s.parentNode.insertBefore(gcse, s);
+  })();
+</SCRIPT>
+<LINK rel=3Dstylesheet type=3Dtext/css =
+href=3D"http://www.w3schools.com/stdtheme.css">
+<STYLE></STYLE>
+
+<META name=3DGENERATOR content=3D"MSHTML 8.00.6001.23562"></HEAD>
+<BODY>
+<DIV id=3Dtop>
+<DIV id=3DtopLogo><A href=3D"http://www.w3schools.com/"><IMG=20
+style=3D"BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; =
+BORDER-RIGHT: 0px"=20
+alt=3DW3Schools.com =
+src=3D"http://www.w3schools.com/images/w3logotest2.png"=20
+width=3D280 height=3D32></A></DIV></DIV>
+<DIV id=3Dtopnav>
+<DIV id=3DtopnavTut class=3Dnotranslate><A class=3Dtopnav=20
+href=3D"http://www.w3schools.com/default.asp" target=3D_top>HOME </A><A =
+class=3Dtopnav=20
+href=3D"http://www.w3schools.com/html/default.asp" target=3D_top>HTML =
+</A><A=20
+class=3Dtopnav href=3D"http://www.w3schools.com/css/default.asp" =
+target=3D_top>CSS=20
+</A><A class=3Dtopnav href=3D"http://www.w3schools.com/js/default.asp"=20
+target=3D_top>JAVASCRIPT </A><A class=3Dtopnav=20
+href=3D"http://www.w3schools.com/jquery/default.asp" =
+target=3D_top>JQUERY </A><A=20
+class=3Dtopnav href=3D"http://www.w3schools.com/xml/default.asp" =
+target=3D_top>XML=20
+</A><A class=3Dtopnav =
+href=3D"http://www.w3schools.com/aspnet/default.asp"=20
+target=3D_top>ASP.NET </A><A class=3Dtopnav=20
+href=3D"http://www.w3schools.com/php/default.asp" target=3D_top>PHP =
+</A><A=20
+class=3Dtopnav href=3D"http://www.w3schools.com/sql/default.asp" =
+target=3D_top>SQL=20
+</A><A class=3Dtopnav=20
+href=3D"http://www.w3schools.com/sitemap/sitemap_tutorials.asp"=20
+target=3D_top>MORE...</A>
+<DIV style=3D"FLOAT: right; WORD-SPACING: 0px"><A class=3Dtopnav=20
+href=3D"http://www.w3schools.com/sitemap/sitemap_references.asp"=20
+target=3D_top>REFERENCES</A><SPAN style=3D"LETTER-SPACING: 14px"> =
+|</SPAN><A=20
+class=3Dtopnav =
+href=3D"http://www.w3schools.com/sitemap/sitemap_examples.asp"=20
+target=3D_top> EXAMPLES</A><SPAN style=3D"LETTER-SPACING: 14px"> =
+|</SPAN><A=20
+class=3Dtopnav href=3D"http://www.w3schools.com/forum/default.asp" =
+target=3D_top>=20
+FORUM</A><SPAN style=3D"LETTER-SPACING: 14px"> |</SPAN><A class=3Dtopnav =
+
+href=3D"http://www.w3schools.com/about/default.asp" target=3D_top>=20
+ABOUT</A></DIV></DIV></DIV>
+<DIV id=3DbelowTopnav>
+<DIV id=3Dpage>
+<DIV>
+<DIV id=3Dleftcolumn>
+<H2 class=3Dleft><SPAN class=3Dleft_h2>HTML</SPAN> Charsets</H2><A=20
+class=3Dmenu_default =
+href=3D"http://www.w3schools.com/charsets/default.asp"=20
+target=3D_top>HTML Charsets</A> <A class=3Dmenu_ref_html_ascii=20
+href=3D"http://www.w3schools.com/charsets/ref_html_ascii.asp" =
+target=3D_top>HTML=20
+ASCII</A> <A class=3Dmenu_ref_html_ansi=20
+href=3D"http://www.w3schools.com/charsets/ref_html_ansi.asp" =
+target=3D_top>HTML=20
+ANSI</A> <A class=3Dmenu_ref_html_8859=20
+href=3D"http://www.w3schools.com/charsets/ref_html_8859.asp" =
+target=3D_top>HTML=20
+ISO-8859</A> <A class=3Dmenu_ref_html_utf8=20
+href=3D"http://www.w3schools.com/charsets/ref_html_utf8.asp" =
+target=3D_top>HTML=20
+UTF-8</A> <A class=3Dmenu_ref_html_symbols=20
+href=3D"http://www.w3schools.com/charsets/ref_html_symbols.asp" =
+target=3D_top>HTML=20
+Symbols</A> <BR>
+<H2 class=3Dleft><SPAN class=3Dleft_h2>HTML</SPAN> UTF-8</H2><A=20
+class=3Dmenu_ref_utf_basic_latin=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_basic_latin.asp"=20
+target=3D_top>Latin Basic</A> <A class=3Dmenu_ref_utf_latin1_supplement=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_latin1_supplement.asp" =
+
+target=3D_top>Latin Supplement</A> <A =
+class=3Dmenu_ref_utf_latin_extended_a=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_latin_extended_a.asp"=20
+target=3D_top>Latin Extended A</A> <A =
+class=3Dmenu_ref_utf_latin_extended_b=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_latin_extended_b.asp"=20
+target=3D_top>Latin Extended B</A> <A class=3Dmenu_ref_utf_diacritical=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_diacritical.asp"=20
+target=3D_top>Diacritical Marks</A> <A class=3Dmenu_ref_utf_greek=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_greek.asp" =
+target=3D_top>Greek and=20
+Coptic</A> <A class=3Dmenu_ref_utf_cyrillic=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_cyrillic.asp"=20
+target=3D_top>Cyrillic Basic</A> <A =
+class=3Dmenu_ref_utf_cyrillic_supplement=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_cyrillic_supplement.asp=
+"=20
+target=3D_top>Cyrillic Supplement</A> <BR>
+<H2 class=3Dleft><SPAN class=3Dleft_h2>HTML</SPAN> Symbols</H2><A=20
+class=3Dmenu_ref_utf_punctuation=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_punctuation.asp"=20
+target=3D_top>General Punctuation</A> <A class=3Dmenu_ref_utf_currency=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_currency.asp"=20
+target=3D_top>Currency Symbols</A> <A class=3Dmenu_ref_utf_letterlike=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_letterlike.asp"=20
+target=3D_top>Letterlike Symbols</A> <A class=3Dmenu_ref_utf_arrows=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_arrows.asp"=20
+target=3D_top>Arrows</A> <A class=3Dmenu_ref_utf_math=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_math.asp" =
+target=3D_top>Math=20
+Operators</A> <A class=3Dmenu_ref_utf_box=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_box.asp" =
+target=3D_top>Box=20
+Drawings</A> <A class=3Dmenu_ref_utf_block=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_block.asp" =
+target=3D_top>Block=20
+Elements</A> <A class=3Dmenu_ref_utf_geometric=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_geometric.asp"=20
+target=3D_top>Geometric Shapes</A> <A class=3Dmenu_ref_utf_symbols=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_symbols.asp" =
+target=3D_top>Misc=20
+Symbols</A> <A class=3Dmenu_ref_utf_dingbats=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_dingbats.asp"=20
+target=3D_top>Dingbats</A> <BR>
+<H2 class=3Dleft><SPAN class=3Dleft_h2>HTML</SPAN> Entities</H2><A=20
+class=3Dmenu_ref_html_entities_4=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_4.asp"=20
+target=3D_top>HTML4 Entities</A> <A class=3Dmenu_ref_html_entities_a=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_a.asp"=20
+target=3D_top>HTML5 Entities A</A> <A class=3Dmenu_ref_html_entities_b=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_b.asp"=20
+target=3D_top>HTML5 Entities B</A> <A class=3Dmenu_ref_html_entities_c=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_c.asp"=20
+target=3D_top>HTML5 Entities C</A> <A class=3Dmenu_ref_html_entities_d=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_d.asp"=20
+target=3D_top>HTML5 Entities D</A> <A class=3Dmenu_ref_html_entities_e=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_e.asp"=20
+target=3D_top>HTML5 Entities E</A> <A class=3Dmenu_ref_html_entities_f=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_f.asp"=20
+target=3D_top>HTML5 Entities F</A> <A class=3Dmenu_ref_html_entities_g=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_g.asp"=20
+target=3D_top>HTML5 Entities G</A> <A class=3Dmenu_ref_html_entities_h=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_h.asp"=20
+target=3D_top>HTML5 Entities H</A> <A class=3Dmenu_ref_html_entities_i=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_i.asp"=20
+target=3D_top>HTML5 Entities I</A> <A class=3Dmenu_ref_html_entities_j=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_j.asp"=20
+target=3D_top>HTML5 Entities J</A> <A class=3Dmenu_ref_html_entities_k=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_k.asp"=20
+target=3D_top>HTML5 Entities K</A> <A class=3Dmenu_ref_html_entities_l=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_l.asp"=20
+target=3D_top>HTML5 Entities L</A> <A class=3Dmenu_ref_html_entities_m=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_m.asp"=20
+target=3D_top>HTML5 Entities M</A> <A class=3Dmenu_ref_html_entities_n=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_n.asp"=20
+target=3D_top>HTML5 Entities N</A> <A class=3Dmenu_ref_html_entities_o=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_o.asp"=20
+target=3D_top>HTML5 Entities O</A> <A class=3Dmenu_ref_html_entities_p=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_p.asp"=20
+target=3D_top>HTML5 Entities P</A> <A class=3Dmenu_ref_html_entities_q=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_q.asp"=20
+target=3D_top>HTML5 Entities Q</A> <A class=3Dmenu_ref_html_entities_r=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_r.asp"=20
+target=3D_top>HTML5 Entities R</A> <A class=3Dmenu_ref_html_entities_s=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_s.asp"=20
+target=3D_top>HTML5 Entities S</A> <A class=3Dmenu_ref_html_entities_t=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_t.asp"=20
+target=3D_top>HTML5 Entities T</A> <A class=3Dmenu_ref_html_entities_u=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_u.asp"=20
+target=3D_top>HTML5 Entities U</A> <A class=3Dmenu_ref_html_entities_v=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_v.asp"=20
+target=3D_top>HTML5 Entities V</A> <A class=3Dmenu_ref_html_entities_w=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_w.asp"=20
+target=3D_top>HTML5 Entities W</A> <A class=3Dmenu_ref_html_entities_x=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_x.asp"=20
+target=3D_top>HTML5 Entities X</A> <A class=3Dmenu_ref_html_entities_y=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_y.asp"=20
+target=3D_top>HTML5 Entities Y</A> <A class=3Dmenu_ref_html_entities_z=20
+href=3D"http://www.w3schools.com/charsets/ref_html_entities_z.asp"=20
+target=3D_top>HTML5 Entities Z</A> </DIV>
+<DIV id=3Dmain>
+<DIV id=3DmainLeaderboard><!-- MainLeaderboard -->
+<DIV style=3D"WIDTH: 728px; FLOAT: right; HEIGHT: 90px"=20
+id=3Ddiv-gpt-ad-1383210480969-2>
+<SCRIPT type=3Dtext/javascript>googletag.cmd.push(function() { =
+googletag.display('div-gpt-ad-1383210480969-2'); });</SCRIPT>
+</DIV></DIV>
+<H1>UTF-8 <SPAN class=3Dcolor_h1>Mathematical Operators</SPAN></H1>
+<DIV class=3Dchapter>
+<DIV class=3Dprev><A class=3Dchapter=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_arrows.asp">=C2=AB =
+Previous</A></DIV>
+<DIV class=3Dnext><A class=3Dchapter=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_box.asp">Next =
+Reference=20
+=C2=BB</A></DIV></DIV>
+<HR>
+
+<H2>Range: Decimal 8704-8959. Hex 2200-22FF.</H2>
+<P>If you want any of these characters displayed in HTML, you can use =
+the HTML=20
+entity found in the table below.</P>
+<P>If the character does not have an HTML entity, you can use the =
+decimal (dec)=20
+or hexadecimal (hex) reference.</P>
+<DIV class=3Dexample>
+<H2 class=3Dexample>Example</H2>
+<DIV class=3D"example_code notranslate">&lt;p&gt;I will display=20
+&amp;sum;&lt;p&gt;<BR>&lt;p&gt;I will display =
+&amp;#8721;&lt;p&gt;<BR>&lt;p&gt;I=20
+will display &amp;#x2211;&lt;p&gt; </DIV><BR>
+<H2 class=3Dexample>Will display as:</H2>
+<DIV class=3D"example_code notranslate">I will display =E2=88=91<BR>I =
+will display =E2=88=91<BR>I=20
+will display =E2=88=91 </DIV><BR><A class=3Dtryitbtn=20
+href=3D"http://www.w3schools.com/charsets/tryit.asp?filename=3Dtryutf_sum=
+"=20
+target=3D_blank>Try it yourself =C2=BB</A> </DIV>
+<P>Not all of the entities in the table below, will display correctly in =
+all=20
+browsers.</P>
+<P>IE 11 is currently the only browser that displays all HTML5 =
+entities.</P>
+<TABLE class=3Dreference>
+  <TBODY>
+  <TR>
+    <TH style=3D"WIDTH: 7%">Char</TH>
+    <TH style=3D"WIDTH: 7%">Dec</TH>
+    <TH style=3D"WIDTH: 7%">Hex</TH>
+    <TH style=3D"WIDTH: 15%">Entity</TH>
+    <TH>Name</TH></TR>
+  <TR>
+    <TD>=E2=88=80</TD>
+    <TD>8704</TD>
+    <TD>2200</TD>
+    <TD>&amp;forall;</TD>
+    <TD>FOR ALL</TD></TR>
+  <TR>
+    <TD>=E2=88=81</TD>
+    <TD>8705</TD>
+    <TD>2201</TD>
+    <TD>&nbsp;</TD>
+    <TD>COMPLEMENT</TD></TR>
+  <TR>
+    <TD>=E2=88=82</TD>
+    <TD>8706</TD>
+    <TD>2202</TD>
+    <TD>&amp;part;</TD>
+    <TD>PARTIAL DIFFERENTIAL</TD></TR>
+  <TR>
+    <TD>=E2=88=83</TD>
+    <TD>8707</TD>
+    <TD>2203</TD>
+    <TD>&amp;exist;</TD>
+    <TD>THERE EXISTS</TD></TR>
+  <TR>
+    <TD>=E2=88=84</TD>
+    <TD>8708</TD>
+    <TD>2204</TD>
+    <TD>&nbsp;</TD>
+    <TD>THERE DOES NOT EXIST</TD></TR>
+  <TR>
+    <TD>=E2=88=85</TD>
+    <TD>8709</TD>
+    <TD>2205</TD>
+    <TD>&amp;empty;</TD>
+    <TD>EMPTY SET</TD></TR>
+  <TR>
+    <TD>=E2=88=86</TD>
+    <TD>8710</TD>
+    <TD>2206</TD>
+    <TD>&nbsp;</TD>
+    <TD>INCREMENT</TD></TR>
+  <TR>
+    <TD>=E2=88=87</TD>
+    <TD>8711</TD>
+    <TD>2207</TD>
+    <TD>&amp;nabla;</TD>
+    <TD>NABLA</TD></TR>
+  <TR>
+    <TD>=E2=88=88</TD>
+    <TD>8712</TD>
+    <TD>2208</TD>
+    <TD>&amp;isin;</TD>
+    <TD>ELEMENT OF</TD></TR>
+  <TR>
+    <TD>=E2=88=89</TD>
+    <TD>8713</TD>
+    <TD>2209</TD>
+    <TD>&amp;notin;</TD>
+    <TD>NOT AN ELEMENT OF</TD></TR>
+  <TR>
+    <TD>=E2=88=8A</TD>
+    <TD>8714</TD>
+    <TD>220A</TD>
+    <TD>&nbsp;</TD>
+    <TD>SMALL ELEMENT OF</TD></TR>
+  <TR>
+    <TD>=E2=88=8B</TD>
+    <TD>8715</TD>
+    <TD>220B</TD>
+    <TD>&amp;ni;</TD>
+    <TD>CONTAINS AS MEMBER</TD></TR>
+  <TR>
+    <TD>=E2=88=8C</TD>
+    <TD>8716</TD>
+    <TD>220C</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOES NOT CONTAIN AS MEMBER</TD></TR>
+  <TR>
+    <TD>=E2=88=8D</TD>
+    <TD>8717</TD>
+    <TD>220D</TD>
+    <TD>&nbsp;</TD>
+    <TD>SMALL CONTAINS AS MEMBER</TD></TR>
+  <TR>
+    <TD>=E2=88=8E</TD>
+    <TD>8718</TD>
+    <TD>220E</TD>
+    <TD>&nbsp;</TD>
+    <TD>END OF PROOF</TD></TR>
+  <TR>
+    <TD>=E2=88=8F</TD>
+    <TD>8719</TD>
+    <TD>220F</TD>
+    <TD>&amp;prod;</TD>
+    <TD>N-ARY PRODUCT</TD></TR>
+  <TR>
+    <TD>=E2=88=90</TD>
+    <TD>8720</TD>
+    <TD>2210</TD>
+    <TD>&nbsp;</TD>
+    <TD>N-ARY COPRODUCT</TD></TR>
+  <TR>
+    <TD>=E2=88=91</TD>
+    <TD>8721</TD>
+    <TD>2211</TD>
+    <TD>&amp;sum;</TD>
+    <TD>N-ARY SUMMATION</TD></TR>
+  <TR>
+    <TD>=E2=88=92</TD>
+    <TD>8722</TD>
+    <TD>2212</TD>
+    <TD>&amp;minus;</TD>
+    <TD>MINUS SIGN</TD></TR>
+  <TR>
+    <TD>=E2=88=93</TD>
+    <TD>8723</TD>
+    <TD>2213</TD>
+    <TD>&nbsp;</TD>
+    <TD>MINUS-OR-PLUS SIGN</TD></TR>
+  <TR>
+    <TD>=E2=88=94</TD>
+    <TD>8724</TD>
+    <TD>2214</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOT PLUS</TD></TR>
+  <TR>
+    <TD>=E2=88=95</TD>
+    <TD>8725</TD>
+    <TD>2215</TD>
+    <TD>&nbsp;</TD>
+    <TD>DIVISION SLASH</TD></TR>
+  <TR>
+    <TD>=E2=88=96</TD>
+    <TD>8726</TD>
+    <TD>2216</TD>
+    <TD>&nbsp;</TD>
+    <TD>SET MINUS</TD></TR>
+  <TR>
+    <TD>=E2=88=97</TD>
+    <TD>8727</TD>
+    <TD>2217</TD>
+    <TD>&amp;lowast;</TD>
+    <TD>ASTERISK OPERATOR</TD></TR>
+  <TR>
+    <TD>=E2=88=98</TD>
+    <TD>8728</TD>
+    <TD>2218</TD>
+    <TD>&nbsp;</TD>
+    <TD>RING OPERATOR</TD></TR>
+  <TR>
+    <TD>=E2=88=99</TD>
+    <TD>8729</TD>
+    <TD>2219</TD>
+    <TD>&nbsp;</TD>
+    <TD>BULLET OPERATOR</TD></TR>
+  <TR>
+    <TD>=E2=88=9A</TD>
+    <TD>8730</TD>
+    <TD>221A</TD>
+    <TD>&amp;radic;</TD>
+    <TD>SQUARE ROOT</TD></TR>
+  <TR>
+    <TD>=E2=88=9B</TD>
+    <TD>8731</TD>
+    <TD>221B</TD>
+    <TD>&nbsp;</TD>
+    <TD>CUBE ROOT</TD></TR>
+  <TR>
+    <TD>=E2=88=9C</TD>
+    <TD>8732</TD>
+    <TD>221C</TD>
+    <TD>&nbsp;</TD>
+    <TD>FOURTH ROOT</TD></TR>
+  <TR>
+    <TD>=E2=88=9D</TD>
+    <TD>8733</TD>
+    <TD>221D</TD>
+    <TD>&amp;prop;</TD>
+    <TD>PROPORTIONAL TO</TD></TR>
+  <TR>
+    <TD>=E2=88=9E</TD>
+    <TD>8734</TD>
+    <TD>221E</TD>
+    <TD>&amp;infin;</TD>
+    <TD>INFINITY</TD></TR>
+  <TR>
+    <TD>=E2=88=9F</TD>
+    <TD>8735</TD>
+    <TD>221F</TD>
+    <TD>&nbsp;</TD>
+    <TD>RIGHT ANGLE</TD></TR>
+  <TR>
+    <TD>=E2=88=A0</TD>
+    <TD>8736</TD>
+    <TD>2220</TD>
+    <TD>&amp;ang;</TD>
+    <TD>ANGLE</TD></TR>
+  <TR>
+    <TD>=E2=88=A1</TD>
+    <TD>8737</TD>
+    <TD>2221</TD>
+    <TD>&nbsp;</TD>
+    <TD>MEASURED ANGLE</TD></TR>
+  <TR>
+    <TD>=E2=88=A2</TD>
+    <TD>8738</TD>
+    <TD>2222</TD>
+    <TD>&nbsp;</TD>
+    <TD>SPHERICAL ANGLE</TD></TR>
+  <TR>
+    <TD>=E2=88=A3</TD>
+    <TD>8739</TD>
+    <TD>2223</TD>
+    <TD>&nbsp;</TD>
+    <TD>DIVIDES</TD></TR>
+  <TR>
+    <TD>=E2=88=A4</TD>
+    <TD>8740</TD>
+    <TD>2224</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOES NOT DIVIDE</TD></TR>
+  <TR>
+    <TD>=E2=88=A5</TD>
+    <TD>8741</TD>
+    <TD>2225</TD>
+    <TD>&nbsp;</TD>
+    <TD>PARALLEL TO</TD></TR>
+  <TR>
+    <TD>=E2=88=A6</TD>
+    <TD>8742</TD>
+    <TD>2226</TD>
+    <TD>&nbsp;</TD>
+    <TD>NOT PARALLEL TO</TD></TR>
+  <TR>
+    <TD>=E2=88=A7</TD>
+    <TD>8743</TD>
+    <TD>2227</TD>
+    <TD>&amp;and;</TD>
+    <TD>LOGICAL AND</TD></TR>
+  <TR>
+    <TD>=E2=88=A8</TD>
+    <TD>8744</TD>
+    <TD>2228</TD>
+    <TD>&amp;or;</TD>
+    <TD>LOGICAL OR</TD></TR>
+  <TR>
+    <TD>=E2=88=A9</TD>
+    <TD>8745</TD>
+    <TD>2229</TD>
+    <TD>&amp;cap;</TD>
+    <TD>INTERSECTION</TD></TR>
+  <TR>
+    <TD>=E2=88=AA</TD>
+    <TD>8746</TD>
+    <TD>222A</TD>
+    <TD>&amp;cup;</TD>
+    <TD>UNION</TD></TR>
+  <TR>
+    <TD>=E2=88=AB</TD>
+    <TD>8747</TD>
+    <TD>222B</TD>
+    <TD>&amp;int;</TD>
+    <TD>INTEGRAL</TD></TR>
+  <TR>
+    <TD>=E2=88=AC</TD>
+    <TD>8748</TD>
+    <TD>222C</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOUBLE INTEGRAL</TD></TR>
+  <TR>
+    <TD>=E2=88=AD</TD>
+    <TD>8749</TD>
+    <TD>222D</TD>
+    <TD>&nbsp;</TD>
+    <TD>TRIPLE INTEGRAL</TD></TR>
+  <TR>
+    <TD>=E2=88=AE</TD>
+    <TD>8750</TD>
+    <TD>222E</TD>
+    <TD>&nbsp;</TD>
+    <TD>CONTOUR INTEGRAL</TD></TR>
+  <TR>
+    <TD>=E2=88=AF</TD>
+    <TD>8751</TD>
+    <TD>222F</TD>
+    <TD>&nbsp;</TD>
+    <TD>SURFACE INTEGRAL</TD></TR>
+  <TR>
+    <TD>=E2=88=B0</TD>
+    <TD>8752</TD>
+    <TD>2230</TD>
+    <TD>&nbsp;</TD>
+    <TD>VOLUME INTEGRAL</TD></TR>
+  <TR>
+    <TD>=E2=88=B1</TD>
+    <TD>8753</TD>
+    <TD>2231</TD>
+    <TD>&nbsp;</TD>
+    <TD>CLOCKWISE INTEGRAL</TD></TR>
+  <TR>
+    <TD>=E2=88=B2</TD>
+    <TD>8754</TD>
+    <TD>2232</TD>
+    <TD>&nbsp;</TD>
+    <TD>CLOCKWISE CONTOUR INTEGRAL</TD></TR>
+  <TR>
+    <TD>=E2=88=B3</TD>
+    <TD>8755</TD>
+    <TD>2233</TD>
+    <TD>&nbsp;</TD>
+    <TD>ANTICLOCKWISE CONTOUR INTEGRAL</TD></TR>
+  <TR>
+    <TD>=E2=88=B4</TD>
+    <TD>8756</TD>
+    <TD>2234</TD>
+    <TD>&amp;there4;</TD>
+    <TD>THEREFORE</TD></TR>
+  <TR>
+    <TD>=E2=88=B5</TD>
+    <TD>8757</TD>
+    <TD>2235</TD>
+    <TD>&nbsp;</TD>
+    <TD>BECAUSE</TD></TR>
+  <TR>
+    <TD>=E2=88=B6</TD>
+    <TD>8758</TD>
+    <TD>2236</TD>
+    <TD>&nbsp;</TD>
+    <TD>RATIO</TD></TR>
+  <TR>
+    <TD>=E2=88=B7</TD>
+    <TD>8759</TD>
+    <TD>2237</TD>
+    <TD>&nbsp;</TD>
+    <TD>PROPORTION</TD></TR>
+  <TR>
+    <TD>=E2=88=B8</TD>
+    <TD>8760</TD>
+    <TD>2238</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOT MINUS</TD></TR>
+  <TR>
+    <TD>=E2=88=B9</TD>
+    <TD>8761</TD>
+    <TD>2239</TD>
+    <TD>&nbsp;</TD>
+    <TD>EXCESS</TD></TR>
+  <TR>
+    <TD>=E2=88=BA</TD>
+    <TD>8762</TD>
+    <TD>223A</TD>
+    <TD>&nbsp;</TD>
+    <TD>GEOMETRIC PROPORTION</TD></TR>
+  <TR>
+    <TD>=E2=88=BB</TD>
+    <TD>8763</TD>
+    <TD>223B</TD>
+    <TD>&nbsp;</TD>
+    <TD>HOMOTHETIC</TD></TR>
+  <TR>
+    <TD>=E2=88=BC</TD>
+    <TD>8764</TD>
+    <TD>223C</TD>
+    <TD>&amp;sim;</TD>
+    <TD>TILDE OPERATOR</TD></TR>
+  <TR>
+    <TD>=E2=88=BD</TD>
+    <TD>8765</TD>
+    <TD>223D</TD>
+    <TD>&nbsp;</TD>
+    <TD>REVERSED TILDE</TD></TR>
+  <TR>
+    <TD>=E2=88=BE</TD>
+    <TD>8766</TD>
+    <TD>223E</TD>
+    <TD>&nbsp;</TD>
+    <TD>INVERTED LAZY S</TD></TR>
+  <TR>
+    <TD>=E2=88=BF</TD>
+    <TD>8767</TD>
+    <TD>223F</TD>
+    <TD>&nbsp;</TD>
+    <TD>SINE WAVE</TD></TR>
+  <TR>
+    <TD>=E2=89=80</TD>
+    <TD>8768</TD>
+    <TD>2240</TD>
+    <TD>&nbsp;</TD>
+    <TD>WREATH PRODUCT</TD></TR>
+  <TR>
+    <TD>=E2=89=81</TD>
+    <TD>8769</TD>
+    <TD>2241</TD>
+    <TD>&nbsp;</TD>
+    <TD>NOT TILDE</TD></TR>
+  <TR>
+    <TD>=E2=89=82</TD>
+    <TD>8770</TD>
+    <TD>2242</TD>
+    <TD>&nbsp;</TD>
+    <TD>MINUS TILDE</TD></TR>
+  <TR>
+    <TD>=E2=89=83</TD>
+    <TD>8771</TD>
+    <TD>2243</TD>
+    <TD>&nbsp;</TD>
+    <TD>ASYMPTOTICALLY EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=84</TD>
+    <TD>8772</TD>
+    <TD>2244</TD>
+    <TD>&nbsp;</TD>
+    <TD>NOT ASYMPTOTICALLY EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=85</TD>
+    <TD>8773</TD>
+    <TD>2245</TD>
+    <TD>&amp;cong;</TD>
+    <TD>APPROXIMATELY EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=86</TD>
+    <TD>8774</TD>
+    <TD>2246</TD>
+    <TD>&nbsp;</TD>
+    <TD>APPROXIMATELY BUT NOT ACTUALLY EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=87</TD>
+    <TD>8775</TD>
+    <TD>2247</TD>
+    <TD>&nbsp;</TD>
+    <TD>NEITHER APPROXIMATELY NOR ACTUALLY EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=88</TD>
+    <TD>8776</TD>
+    <TD>2248</TD>
+    <TD>&amp;asymp;</TD>
+    <TD>ALMOST EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=89</TD>
+    <TD>8777</TD>
+    <TD>2249</TD>
+    <TD>&nbsp;</TD>
+    <TD>NOT ALMOST EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=8A</TD>
+    <TD>8778</TD>
+    <TD>224A</TD>
+    <TD>&nbsp;</TD>
+    <TD>ALMOST EQUAL OR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=8B</TD>
+    <TD>8779</TD>
+    <TD>224B</TD>
+    <TD>&nbsp;</TD>
+    <TD>TRIPLE TILDE</TD></TR>
+  <TR>
+    <TD>=E2=89=8C</TD>
+    <TD>8780</TD>
+    <TD>224C</TD>
+    <TD>&nbsp;</TD>
+    <TD>ALL EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=8D</TD>
+    <TD>8781</TD>
+    <TD>224D</TD>
+    <TD>&nbsp;</TD>
+    <TD>EQUIVALENT TO</TD></TR>
+  <TR>
+    <TD>=E2=89=8E</TD>
+    <TD>8782</TD>
+    <TD>224E</TD>
+    <TD>&nbsp;</TD>
+    <TD>GEOMETRICALLY EQUIVALENT TO</TD></TR>
+  <TR>
+    <TD>=E2=89=8F</TD>
+    <TD>8783</TD>
+    <TD>224F</TD>
+    <TD>&nbsp;</TD>
+    <TD>DIFFERENCE BETWEEN</TD></TR>
+  <TR>
+    <TD>=E2=89=90</TD>
+    <TD>8784</TD>
+    <TD>2250</TD>
+    <TD>&nbsp;</TD>
+    <TD>APPROACHES THE LIMIT</TD></TR>
+  <TR>
+    <TD>=E2=89=91</TD>
+    <TD>8785</TD>
+    <TD>2251</TD>
+    <TD>&nbsp;</TD>
+    <TD>GEOMETRICALLY EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=92</TD>
+    <TD>8786</TD>
+    <TD>2252</TD>
+    <TD>&nbsp;</TD>
+    <TD>APPROXIMATELY EQUAL TO OR THE IMAGE OF</TD></TR>
+  <TR>
+    <TD>=E2=89=93</TD>
+    <TD>8787</TD>
+    <TD>2253</TD>
+    <TD>&nbsp;</TD>
+    <TD>IMAGE OF OR APPROXIMATELY EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=94</TD>
+    <TD>8788</TD>
+    <TD>2254</TD>
+    <TD>&nbsp;</TD>
+    <TD>COLON EQUALS</TD></TR>
+  <TR>
+    <TD>=E2=89=95</TD>
+    <TD>8789</TD>
+    <TD>2255</TD>
+    <TD>&nbsp;</TD>
+    <TD>EQUALS COLON</TD></TR>
+  <TR>
+    <TD>=E2=89=96</TD>
+    <TD>8790</TD>
+    <TD>2256</TD>
+    <TD>&nbsp;</TD>
+    <TD>RING IN EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=97</TD>
+    <TD>8791</TD>
+    <TD>2257</TD>
+    <TD>&nbsp;</TD>
+    <TD>RING EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=98</TD>
+    <TD>8792</TD>
+    <TD>2258</TD>
+    <TD>&nbsp;</TD>
+    <TD>CORRESPONDS TO</TD></TR>
+  <TR>
+    <TD>=E2=89=99</TD>
+    <TD>8793</TD>
+    <TD>2259</TD>
+    <TD>&nbsp;</TD>
+    <TD>ESTIMATES</TD></TR>
+  <TR>
+    <TD>=E2=89=9A</TD>
+    <TD>8794</TD>
+    <TD>225A</TD>
+    <TD>&nbsp;</TD>
+    <TD>EQUIANGULAR TO</TD></TR>
+  <TR>
+    <TD>=E2=89=9B</TD>
+    <TD>8795</TD>
+    <TD>225B</TD>
+    <TD>&nbsp;</TD>
+    <TD>STAR EQUALS</TD></TR>
+  <TR>
+    <TD>=E2=89=9C</TD>
+    <TD>8796</TD>
+    <TD>225C</TD>
+    <TD>&nbsp;</TD>
+    <TD>DELTA EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=9D</TD>
+    <TD>8797</TD>
+    <TD>225D</TD>
+    <TD>&nbsp;</TD>
+    <TD>EQUAL TO BY DEFINITION</TD></TR>
+  <TR>
+    <TD>=E2=89=9E</TD>
+    <TD>8798</TD>
+    <TD>225E</TD>
+    <TD>&nbsp;</TD>
+    <TD>MEASURED BY</TD></TR>
+  <TR>
+    <TD>=E2=89=9F</TD>
+    <TD>8799</TD>
+    <TD>225F</TD>
+    <TD>&nbsp;</TD>
+    <TD>QUESTIONED EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=A0</TD>
+    <TD>8800</TD>
+    <TD>2260</TD>
+    <TD>&amp;ne;</TD>
+    <TD>NOT EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=A1</TD>
+    <TD>8801</TD>
+    <TD>2261</TD>
+    <TD>&amp;equiv;</TD>
+    <TD>IDENTICAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=A2</TD>
+    <TD>8802</TD>
+    <TD>2262</TD>
+    <TD>&nbsp;</TD>
+    <TD>NOT IDENTICAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=A3</TD>
+    <TD>8803</TD>
+    <TD>2263</TD>
+    <TD>&nbsp;</TD>
+    <TD>STRICTLY EQUIVALENT TO</TD></TR>
+  <TR>
+    <TD>=E2=89=A4</TD>
+    <TD>8804</TD>
+    <TD>2264</TD>
+    <TD>&amp;le;</TD>
+    <TD>LESS-THAN OR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=A5</TD>
+    <TD>8805</TD>
+    <TD>2265</TD>
+    <TD>&amp;ge;</TD>
+    <TD>GREATER-THAN OR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=A6</TD>
+    <TD>8806</TD>
+    <TD>2266</TD>
+    <TD>&nbsp;</TD>
+    <TD>LESS-THAN OVER EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=A7</TD>
+    <TD>8807</TD>
+    <TD>2267</TD>
+    <TD>&nbsp;</TD>
+    <TD>GREATER-THAN OVER EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=A8</TD>
+    <TD>8808</TD>
+    <TD>2268</TD>
+    <TD>&nbsp;</TD>
+    <TD>LESS-THAN BUT NOT EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=A9</TD>
+    <TD>8809</TD>
+    <TD>2269</TD>
+    <TD>&nbsp;</TD>
+    <TD>GREATER-THAN BUT NOT EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=AA</TD>
+    <TD>8810</TD>
+    <TD>226A</TD>
+    <TD>&nbsp;</TD>
+    <TD>MUCH LESS-THAN</TD></TR>
+  <TR>
+    <TD>=E2=89=AB</TD>
+    <TD>8811</TD>
+    <TD>226B</TD>
+    <TD>&nbsp;</TD>
+    <TD>MUCH GREATER-THAN</TD></TR>
+  <TR>
+    <TD>=E2=89=AC</TD>
+    <TD>8812</TD>
+    <TD>226C</TD>
+    <TD>&nbsp;</TD>
+    <TD>BETWEEN</TD></TR>
+  <TR>
+    <TD>=E2=89=AD</TD>
+    <TD>8813</TD>
+    <TD>226D</TD>
+    <TD>&nbsp;</TD>
+    <TD>NOT EQUIVALENT TO</TD></TR>
+  <TR>
+    <TD>=E2=89=AE</TD>
+    <TD>8814</TD>
+    <TD>226E</TD>
+    <TD>&nbsp;</TD>
+    <TD>NOT LESS-THAN</TD></TR>
+  <TR>
+    <TD>=E2=89=AF</TD>
+    <TD>8815</TD>
+    <TD>226F</TD>
+    <TD>&nbsp;</TD>
+    <TD>NOT GREATER-THAN</TD></TR>
+  <TR>
+    <TD>=E2=89=B0</TD>
+    <TD>8816</TD>
+    <TD>2270</TD>
+    <TD>&nbsp;</TD>
+    <TD>NEITHER LESS-THAN NOR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=B1</TD>
+    <TD>8817</TD>
+    <TD>2271</TD>
+    <TD>&nbsp;</TD>
+    <TD>NEITHER GREATER-THAN NOR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=B2</TD>
+    <TD>8818</TD>
+    <TD>2272</TD>
+    <TD>&nbsp;</TD>
+    <TD>LESS-THAN OR EQUIVALENT TO</TD></TR>
+  <TR>
+    <TD>=E2=89=B3</TD>
+    <TD>8819</TD>
+    <TD>2273</TD>
+    <TD>&nbsp;</TD>
+    <TD>GREATER-THAN OR EQUIVALENT TO</TD></TR>
+  <TR>
+    <TD>=E2=89=B4</TD>
+    <TD>8820</TD>
+    <TD>2274</TD>
+    <TD>&nbsp;</TD>
+    <TD>NEITHER LESS-THAN NOR EQUIVALENT TO</TD></TR>
+  <TR>
+    <TD>=E2=89=B5</TD>
+    <TD>8821</TD>
+    <TD>2275</TD>
+    <TD>&nbsp;</TD>
+    <TD>NEITHER GREATER-THAN NOR EQUIVALENT TO</TD></TR>
+  <TR>
+    <TD>=E2=89=B6</TD>
+    <TD>8822</TD>
+    <TD>2276</TD>
+    <TD>&nbsp;</TD>
+    <TD>LESS-THAN OR GREATER-THAN</TD></TR>
+  <TR>
+    <TD>=E2=89=B7</TD>
+    <TD>8823</TD>
+    <TD>2277</TD>
+    <TD>&nbsp;</TD>
+    <TD>GREATER-THAN OR LESS-THAN</TD></TR>
+  <TR>
+    <TD>=E2=89=B8</TD>
+    <TD>8824</TD>
+    <TD>2278</TD>
+    <TD>&nbsp;</TD>
+    <TD>NEITHER LESS-THAN NOR GREATER-THAN</TD></TR>
+  <TR>
+    <TD>=E2=89=B9</TD>
+    <TD>8825</TD>
+    <TD>2279</TD>
+    <TD>&nbsp;</TD>
+    <TD>NEITHER GREATER-THAN NOR LESS-THAN</TD></TR>
+  <TR>
+    <TD>=E2=89=BA</TD>
+    <TD>8826</TD>
+    <TD>227A</TD>
+    <TD>&nbsp;</TD>
+    <TD>PRECEDES</TD></TR>
+  <TR>
+    <TD>=E2=89=BB</TD>
+    <TD>8827</TD>
+    <TD>227B</TD>
+    <TD>&nbsp;</TD>
+    <TD>SUCCEEDS</TD></TR>
+  <TR>
+    <TD>=E2=89=BC</TD>
+    <TD>8828</TD>
+    <TD>227C</TD>
+    <TD>&nbsp;</TD>
+    <TD>PRECEDES OR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=BD</TD>
+    <TD>8829</TD>
+    <TD>227D</TD>
+    <TD>&nbsp;</TD>
+    <TD>SUCCEEDS OR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=89=BE</TD>
+    <TD>8830</TD>
+    <TD>227E</TD>
+    <TD>&nbsp;</TD>
+    <TD>PRECEDES OR EQUIVALENT TO</TD></TR>
+  <TR>
+    <TD>=E2=89=BF</TD>
+    <TD>8831</TD>
+    <TD>227F</TD>
+    <TD>&nbsp;</TD>
+    <TD>SUCCEEDS OR EQUIVALENT TO</TD></TR>
+  <TR>
+    <TD>=E2=8A=80</TD>
+    <TD>8832</TD>
+    <TD>2280</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOES NOT PRECEDE</TD></TR>
+  <TR>
+    <TD>=E2=8A=81</TD>
+    <TD>8833</TD>
+    <TD>2281</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOES NOT SUCCEED</TD></TR>
+  <TR>
+    <TD>=E2=8A=82</TD>
+    <TD>8834</TD>
+    <TD>2282</TD>
+    <TD>&amp;sub;</TD>
+    <TD>SUBSET OF</TD></TR>
+  <TR>
+    <TD>=E2=8A=83</TD>
+    <TD>8835</TD>
+    <TD>2283</TD>
+    <TD>&amp;sup;</TD>
+    <TD>SUPERSET OF</TD></TR>
+  <TR>
+    <TD>=E2=8A=84</TD>
+    <TD>8836</TD>
+    <TD>2284</TD>
+    <TD>&amp;nsub;</TD>
+    <TD>NOT A SUBSET OF</TD></TR>
+  <TR>
+    <TD>=E2=8A=85</TD>
+    <TD>8837</TD>
+    <TD>2285</TD>
+    <TD>&nbsp;</TD>
+    <TD>NOT A SUPERSET OF</TD></TR>
+  <TR>
+    <TD>=E2=8A=86</TD>
+    <TD>8838</TD>
+    <TD>2286</TD>
+    <TD>&amp;sube;</TD>
+    <TD>SUBSET OF OR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=8A=87</TD>
+    <TD>8839</TD>
+    <TD>2287</TD>
+    <TD>&amp;supe;</TD>
+    <TD>SUPERSET OF OR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=8A=88</TD>
+    <TD>8840</TD>
+    <TD>2288</TD>
+    <TD>&nbsp;</TD>
+    <TD>NEITHER A SUBSET OF NOR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=8A=89</TD>
+    <TD>8841</TD>
+    <TD>2289</TD>
+    <TD>&nbsp;</TD>
+    <TD>NEITHER A SUPERSET OF NOR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=8A=8A</TD>
+    <TD>8842</TD>
+    <TD>228A</TD>
+    <TD>&nbsp;</TD>
+    <TD>SUBSET OF WITH NOT EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=8A=8B</TD>
+    <TD>8843</TD>
+    <TD>228B</TD>
+    <TD>&nbsp;</TD>
+    <TD>SUPERSET OF WITH NOT EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=8A=8C</TD>
+    <TD>8844</TD>
+    <TD>228C</TD>
+    <TD>&nbsp;</TD>
+    <TD>MULTISET</TD></TR>
+  <TR>
+    <TD>=E2=8A=8D</TD>
+    <TD>8845</TD>
+    <TD>228D</TD>
+    <TD>&nbsp;</TD>
+    <TD>MULTISET MULTIPLICATION</TD></TR>
+  <TR>
+    <TD>=E2=8A=8E</TD>
+    <TD>8846</TD>
+    <TD>228E</TD>
+    <TD>&nbsp;</TD>
+    <TD>MULTISET UNION</TD></TR>
+  <TR>
+    <TD>=E2=8A=8F</TD>
+    <TD>8847</TD>
+    <TD>228F</TD>
+    <TD>&nbsp;</TD>
+    <TD>SQUARE IMAGE OF</TD></TR>
+  <TR>
+    <TD>=E2=8A=90</TD>
+    <TD>8848</TD>
+    <TD>2290</TD>
+    <TD>&nbsp;</TD>
+    <TD>SQUARE ORIGINAL OF</TD></TR>
+  <TR>
+    <TD>=E2=8A=91</TD>
+    <TD>8849</TD>
+    <TD>2291</TD>
+    <TD>&nbsp;</TD>
+    <TD>SQUARE IMAGE OF OR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=8A=92</TD>
+    <TD>8850</TD>
+    <TD>2292</TD>
+    <TD>&nbsp;</TD>
+    <TD>SQUARE ORIGINAL OF OR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=8A=93</TD>
+    <TD>8851</TD>
+    <TD>2293</TD>
+    <TD>&nbsp;</TD>
+    <TD>SQUARE CAP</TD></TR>
+  <TR>
+    <TD>=E2=8A=94</TD>
+    <TD>8852</TD>
+    <TD>2294</TD>
+    <TD>&nbsp;</TD>
+    <TD>SQUARE CUP</TD></TR>
+  <TR>
+    <TD>=E2=8A=95</TD>
+    <TD>8853</TD>
+    <TD>2295</TD>
+    <TD>&amp;oplus;</TD>
+    <TD>CIRCLED PLUS</TD></TR>
+  <TR>
+    <TD>=E2=8A=96</TD>
+    <TD>8854</TD>
+    <TD>2296</TD>
+    <TD>&nbsp;</TD>
+    <TD>CIRCLED MINUS</TD></TR>
+  <TR>
+    <TD>=E2=8A=97</TD>
+    <TD>8855</TD>
+    <TD>2297</TD>
+    <TD>&amp;otimes;</TD>
+    <TD>CIRCLED TIMES</TD></TR>
+  <TR>
+    <TD>=E2=8A=98</TD>
+    <TD>8856</TD>
+    <TD>2298</TD>
+    <TD>&nbsp;</TD>
+    <TD>CIRCLED DIVISION SLASH</TD></TR>
+  <TR>
+    <TD>=E2=8A=99</TD>
+    <TD>8857</TD>
+    <TD>2299</TD>
+    <TD>&nbsp;</TD>
+    <TD>CIRCLED DOT OPERATOR</TD></TR>
+  <TR>
+    <TD>=E2=8A=9A</TD>
+    <TD>8858</TD>
+    <TD>229A</TD>
+    <TD>&nbsp;</TD>
+    <TD>CIRCLED RING OPERATOR</TD></TR>
+  <TR>
+    <TD>=E2=8A=9B</TD>
+    <TD>8859</TD>
+    <TD>229B</TD>
+    <TD>&nbsp;</TD>
+    <TD>CIRCLED ASTERISK OPERATOR</TD></TR>
+  <TR>
+    <TD>=E2=8A=9C</TD>
+    <TD>8860</TD>
+    <TD>229C</TD>
+    <TD>&nbsp;</TD>
+    <TD>CIRCLED EQUALS</TD></TR>
+  <TR>
+    <TD>=E2=8A=9D</TD>
+    <TD>8861</TD>
+    <TD>229D</TD>
+    <TD>&nbsp;</TD>
+    <TD>CIRCLED DASH</TD></TR>
+  <TR>
+    <TD>=E2=8A=9E</TD>
+    <TD>8862</TD>
+    <TD>229E</TD>
+    <TD>&nbsp;</TD>
+    <TD>SQUARED PLUS</TD></TR>
+  <TR>
+    <TD>=E2=8A=9F</TD>
+    <TD>8863</TD>
+    <TD>229F</TD>
+    <TD>&nbsp;</TD>
+    <TD>SQUARED MINUS</TD></TR>
+  <TR>
+    <TD>=E2=8A=A0</TD>
+    <TD>8864</TD>
+    <TD>22A0</TD>
+    <TD>&nbsp;</TD>
+    <TD>SQUARED TIMES</TD></TR>
+  <TR>
+    <TD>=E2=8A=A1</TD>
+    <TD>8865</TD>
+    <TD>22A1</TD>
+    <TD>&nbsp;</TD>
+    <TD>SQUARED DOT OPERATOR</TD></TR>
+  <TR>
+    <TD>=E2=8A=A2</TD>
+    <TD>8866</TD>
+    <TD>22A2</TD>
+    <TD>&nbsp;</TD>
+    <TD>RIGHT TACK</TD></TR>
+  <TR>
+    <TD>=E2=8A=A3</TD>
+    <TD>8867</TD>
+    <TD>22A3</TD>
+    <TD>&nbsp;</TD>
+    <TD>LEFT TACK</TD></TR>
+  <TR>
+    <TD>=E2=8A=A4</TD>
+    <TD>8868</TD>
+    <TD>22A4</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOWN TACK</TD></TR>
+  <TR>
+    <TD>=E2=8A=A5</TD>
+    <TD>8869</TD>
+    <TD>22A5</TD>
+    <TD>&amp;perp;</TD>
+    <TD>UP TACK</TD></TR>
+  <TR>
+    <TD>=E2=8A=A6</TD>
+    <TD>8870</TD>
+    <TD>22A6</TD>
+    <TD>&nbsp;</TD>
+    <TD>ASSERTION</TD></TR>
+  <TR>
+    <TD>=E2=8A=A7</TD>
+    <TD>8871</TD>
+    <TD>22A7</TD>
+    <TD>&nbsp;</TD>
+    <TD>MODELS</TD></TR>
+  <TR>
+    <TD>=E2=8A=A8</TD>
+    <TD>8872</TD>
+    <TD>22A8</TD>
+    <TD>&nbsp;</TD>
+    <TD>TRUE</TD></TR>
+  <TR>
+    <TD>=E2=8A=A9</TD>
+    <TD>8873</TD>
+    <TD>22A9</TD>
+    <TD>&nbsp;</TD>
+    <TD>FORCES</TD></TR>
+  <TR>
+    <TD>=E2=8A=AA</TD>
+    <TD>8874</TD>
+    <TD>22AA</TD>
+    <TD>&nbsp;</TD>
+    <TD>TRIPLE VERTICAL BAR RIGHT TURNSTILE</TD></TR>
+  <TR>
+    <TD>=E2=8A=AB</TD>
+    <TD>8875</TD>
+    <TD>22AB</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOUBLE VERTICAL BAR DOUBLE RIGHT TURNSTILE</TD></TR>
+  <TR>
+    <TD>=E2=8A=AC</TD>
+    <TD>8876</TD>
+    <TD>22AC</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOES NOT PROVE</TD></TR>
+  <TR>
+    <TD>=E2=8A=AD</TD>
+    <TD>8877</TD>
+    <TD>22AD</TD>
+    <TD>&nbsp;</TD>
+    <TD>NOT TRUE</TD></TR>
+  <TR>
+    <TD>=E2=8A=AE</TD>
+    <TD>8878</TD>
+    <TD>22AE</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOES NOT FORCE</TD></TR>
+  <TR>
+    <TD>=E2=8A=AF</TD>
+    <TD>8879</TD>
+    <TD>22AF</TD>
+    <TD>&nbsp;</TD>
+    <TD>NEGATED DOUBLE VERTICAL BAR DOUBLE RIGHT TURNSTILE</TD></TR>
+  <TR>
+    <TD>=E2=8A=B0</TD>
+    <TD>8880</TD>
+    <TD>22B0</TD>
+    <TD>&nbsp;</TD>
+    <TD>PRECEDES UNDER RELATION</TD></TR>
+  <TR>
+    <TD>=E2=8A=B1</TD>
+    <TD>8881</TD>
+    <TD>22B1</TD>
+    <TD>&nbsp;</TD>
+    <TD>SUCCEEDS UNDER RELATION</TD></TR>
+  <TR>
+    <TD>=E2=8A=B2</TD>
+    <TD>8882</TD>
+    <TD>22B2</TD>
+    <TD>&nbsp;</TD>
+    <TD>NORMAL SUBGROUP OF</TD></TR>
+  <TR>
+    <TD>=E2=8A=B3</TD>
+    <TD>8883</TD>
+    <TD>22B3</TD>
+    <TD>&nbsp;</TD>
+    <TD>CONTAINS AS NORMAL SUBGROUP</TD></TR>
+  <TR>
+    <TD>=E2=8A=B4</TD>
+    <TD>8884</TD>
+    <TD>22B4</TD>
+    <TD>&nbsp;</TD>
+    <TD>NORMAL SUBGROUP OF OR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=8A=B5</TD>
+    <TD>8885</TD>
+    <TD>22B5</TD>
+    <TD>&nbsp;</TD>
+    <TD>CONTAINS AS NORMAL SUBGROUP OR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=8A=B6</TD>
+    <TD>8886</TD>
+    <TD>22B6</TD>
+    <TD>&nbsp;</TD>
+    <TD>ORIGINAL OF</TD></TR>
+  <TR>
+    <TD>=E2=8A=B7</TD>
+    <TD>8887</TD>
+    <TD>22B7</TD>
+    <TD>&nbsp;</TD>
+    <TD>IMAGE OF</TD></TR>
+  <TR>
+    <TD>=E2=8A=B8</TD>
+    <TD>8888</TD>
+    <TD>22B8</TD>
+    <TD>&nbsp;</TD>
+    <TD>MULTIMAP</TD></TR>
+  <TR>
+    <TD>=E2=8A=B9</TD>
+    <TD>8889</TD>
+    <TD>22B9</TD>
+    <TD>&nbsp;</TD>
+    <TD>HERMITIAN CONJUGATE MATRIX</TD></TR>
+  <TR>
+    <TD>=E2=8A=BA</TD>
+    <TD>8890</TD>
+    <TD>22BA</TD>
+    <TD>&nbsp;</TD>
+    <TD>INTERCALATE</TD></TR>
+  <TR>
+    <TD>=E2=8A=BB</TD>
+    <TD>8891</TD>
+    <TD>22BB</TD>
+    <TD>&nbsp;</TD>
+    <TD>XOR</TD></TR>
+  <TR>
+    <TD>=E2=8A=BC</TD>
+    <TD>8892</TD>
+    <TD>22BC</TD>
+    <TD>&nbsp;</TD>
+    <TD>NAND</TD></TR>
+  <TR>
+    <TD>=E2=8A=BD</TD>
+    <TD>8893</TD>
+    <TD>22BD</TD>
+    <TD>&nbsp;</TD>
+    <TD>NOR</TD></TR>
+  <TR>
+    <TD>=E2=8A=BE</TD>
+    <TD>8894</TD>
+    <TD>22BE</TD>
+    <TD>&nbsp;</TD>
+    <TD>RIGHT ANGLE WITH ARC</TD></TR>
+  <TR>
+    <TD>=E2=8A=BF</TD>
+    <TD>8895</TD>
+    <TD>22BF</TD>
+    <TD>&nbsp;</TD>
+    <TD>RIGHT TRIANGLE</TD></TR>
+  <TR>
+    <TD>=E2=8B=80</TD>
+    <TD>8896</TD>
+    <TD>22C0</TD>
+    <TD>&nbsp;</TD>
+    <TD>N-ARY LOGICAL AND</TD></TR>
+  <TR>
+    <TD>=E2=8B=81</TD>
+    <TD>8897</TD>
+    <TD>22C1</TD>
+    <TD>&nbsp;</TD>
+    <TD>N-ARY LOGICAL OR</TD></TR>
+  <TR>
+    <TD>=E2=8B=82</TD>
+    <TD>8898</TD>
+    <TD>22C2</TD>
+    <TD>&nbsp;</TD>
+    <TD>N-ARY INTERSECTION</TD></TR>
+  <TR>
+    <TD>=E2=8B=83</TD>
+    <TD>8899</TD>
+    <TD>22C3</TD>
+    <TD>&nbsp;</TD>
+    <TD>N-ARY UNION</TD></TR>
+  <TR>
+    <TD>=E2=8B=84</TD>
+    <TD>8900</TD>
+    <TD>22C4</TD>
+    <TD>&nbsp;</TD>
+    <TD>DIAMOND OPERATOR</TD></TR>
+  <TR>
+    <TD>=E2=8B=85</TD>
+    <TD>8901</TD>
+    <TD>22C5</TD>
+    <TD>&amp;sdot;</TD>
+    <TD>DOT OPERATOR</TD></TR>
+  <TR>
+    <TD>=E2=8B=86</TD>
+    <TD>8902</TD>
+    <TD>22C6</TD>
+    <TD>&nbsp;</TD>
+    <TD>STAR OPERATOR</TD></TR>
+  <TR>
+    <TD>=E2=8B=87</TD>
+    <TD>8903</TD>
+    <TD>22C7</TD>
+    <TD>&nbsp;</TD>
+    <TD>DIVISION TIMES</TD></TR>
+  <TR>
+    <TD>=E2=8B=88</TD>
+    <TD>8904</TD>
+    <TD>22C8</TD>
+    <TD>&nbsp;</TD>
+    <TD>BOWTIE</TD></TR>
+  <TR>
+    <TD>=E2=8B=89</TD>
+    <TD>8905</TD>
+    <TD>22C9</TD>
+    <TD>&nbsp;</TD>
+    <TD>LEFT NORMAL FACTOR SEMIDIRECT PRODUCT</TD></TR>
+  <TR>
+    <TD>=E2=8B=8A</TD>
+    <TD>8906</TD>
+    <TD>22CA</TD>
+    <TD>&nbsp;</TD>
+    <TD>RIGHT NORMAL FACTOR SEMIDIRECT PRODUCT</TD></TR>
+  <TR>
+    <TD>=E2=8B=8B</TD>
+    <TD>8907</TD>
+    <TD>22CB</TD>
+    <TD>&nbsp;</TD>
+    <TD>LEFT SEMIDIRECT PRODUCT</TD></TR>
+  <TR>
+    <TD>=E2=8B=8C</TD>
+    <TD>8908</TD>
+    <TD>22CC</TD>
+    <TD>&nbsp;</TD>
+    <TD>RIGHT SEMIDIRECT PRODUCT</TD></TR>
+  <TR>
+    <TD>=E2=8B=8D</TD>
+    <TD>8909</TD>
+    <TD>22CD</TD>
+    <TD>&nbsp;</TD>
+    <TD>REVERSED TILDE EQUALS</TD></TR>
+  <TR>
+    <TD>=E2=8B=8E</TD>
+    <TD>8910</TD>
+    <TD>22CE</TD>
+    <TD>&nbsp;</TD>
+    <TD>CURLY LOGICAL OR</TD></TR>
+  <TR>
+    <TD>=E2=8B=8F</TD>
+    <TD>8911</TD>
+    <TD>22CF</TD>
+    <TD>&nbsp;</TD>
+    <TD>CURLY LOGICAL AND</TD></TR>
+  <TR>
+    <TD>=E2=8B=90</TD>
+    <TD>8912</TD>
+    <TD>22D0</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOUBLE SUBSET</TD></TR>
+  <TR>
+    <TD>=E2=8B=91</TD>
+    <TD>8913</TD>
+    <TD>22D1</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOUBLE SUPERSET</TD></TR>
+  <TR>
+    <TD>=E2=8B=92</TD>
+    <TD>8914</TD>
+    <TD>22D2</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOUBLE INTERSECTION</TD></TR>
+  <TR>
+    <TD>=E2=8B=93</TD>
+    <TD>8915</TD>
+    <TD>22D3</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOUBLE UNION</TD></TR>
+  <TR>
+    <TD>=E2=8B=94</TD>
+    <TD>8916</TD>
+    <TD>22D4</TD>
+    <TD>&nbsp;</TD>
+    <TD>PITCHFORK</TD></TR>
+  <TR>
+    <TD>=E2=8B=95</TD>
+    <TD>8917</TD>
+    <TD>22D5</TD>
+    <TD>&nbsp;</TD>
+    <TD>EQUAL AND PARALLEL TO</TD></TR>
+  <TR>
+    <TD>=E2=8B=96</TD>
+    <TD>8918</TD>
+    <TD>22D6</TD>
+    <TD>&nbsp;</TD>
+    <TD>LESS-THAN WITH DOT</TD></TR>
+  <TR>
+    <TD>=E2=8B=97</TD>
+    <TD>8919</TD>
+    <TD>22D7</TD>
+    <TD>&nbsp;</TD>
+    <TD>GREATER-THAN WITH DOT</TD></TR>
+  <TR>
+    <TD>=E2=8B=98</TD>
+    <TD>8920</TD>
+    <TD>22D8</TD>
+    <TD>&nbsp;</TD>
+    <TD>VERY MUCH LESS-THAN</TD></TR>
+  <TR>
+    <TD>=E2=8B=99</TD>
+    <TD>8921</TD>
+    <TD>22D9</TD>
+    <TD>&nbsp;</TD>
+    <TD>VERY MUCH GREATER-THAN</TD></TR>
+  <TR>
+    <TD>=E2=8B=9A</TD>
+    <TD>8922</TD>
+    <TD>22DA</TD>
+    <TD>&nbsp;</TD>
+    <TD>LESS-THAN EQUAL TO OR GREATER-THAN</TD></TR>
+  <TR>
+    <TD>=E2=8B=9B</TD>
+    <TD>8923</TD>
+    <TD>22DB</TD>
+    <TD>&nbsp;</TD>
+    <TD>GREATER-THAN EQUAL TO OR LESS-THAN</TD></TR>
+  <TR>
+    <TD>=E2=8B=9C</TD>
+    <TD>8924</TD>
+    <TD>22DC</TD>
+    <TD>&nbsp;</TD>
+    <TD>EQUAL TO OR LESS-THAN</TD></TR>
+  <TR>
+    <TD>=E2=8B=9D</TD>
+    <TD>8925</TD>
+    <TD>22DD</TD>
+    <TD>&nbsp;</TD>
+    <TD>EQUAL TO OR GREATER-THAN</TD></TR>
+  <TR>
+    <TD>=E2=8B=9E</TD>
+    <TD>8926</TD>
+    <TD>22DE</TD>
+    <TD>&nbsp;</TD>
+    <TD>EQUAL TO OR PRECEDES</TD></TR>
+  <TR>
+    <TD>=E2=8B=9F</TD>
+    <TD>8927</TD>
+    <TD>22DF</TD>
+    <TD>&nbsp;</TD>
+    <TD>EQUAL TO OR SUCCEEDS</TD></TR>
+  <TR>
+    <TD>=E2=8B=A0</TD>
+    <TD>8928</TD>
+    <TD>22E0</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOES NOT PRECEDE OR EQUAL</TD></TR>
+  <TR>
+    <TD>=E2=8B=A1</TD>
+    <TD>8929</TD>
+    <TD>22E1</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOES NOT SUCCEED OR EQUAL</TD></TR>
+  <TR>
+    <TD>=E2=8B=A2</TD>
+    <TD>8930</TD>
+    <TD>22E2</TD>
+    <TD>&nbsp;</TD>
+    <TD>NOT SQUARE IMAGE OF OR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=8B=A3</TD>
+    <TD>8931</TD>
+    <TD>22E3</TD>
+    <TD>&nbsp;</TD>
+    <TD>NOT SQUARE ORIGINAL OF OR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=8B=A4</TD>
+    <TD>8932</TD>
+    <TD>22E4</TD>
+    <TD>&nbsp;</TD>
+    <TD>SQUARE IMAGE OF OR NOT EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=8B=A5</TD>
+    <TD>8933</TD>
+    <TD>22E5</TD>
+    <TD>&nbsp;</TD>
+    <TD>SQUARE ORIGINAL OF OR NOT EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=8B=A6</TD>
+    <TD>8934</TD>
+    <TD>22E6</TD>
+    <TD>&nbsp;</TD>
+    <TD>LESS-THAN BUT NOT EQUIVALENT TO</TD></TR>
+  <TR>
+    <TD>=E2=8B=A7</TD>
+    <TD>8935</TD>
+    <TD>22E7</TD>
+    <TD>&nbsp;</TD>
+    <TD>GREATER-THAN BUT NOT EQUIVALENT TO</TD></TR>
+  <TR>
+    <TD>=E2=8B=A8</TD>
+    <TD>8936</TD>
+    <TD>22E8</TD>
+    <TD>&nbsp;</TD>
+    <TD>PRECEDES BUT NOT EQUIVALENT TO</TD></TR>
+  <TR>
+    <TD>=E2=8B=A9</TD>
+    <TD>8937</TD>
+    <TD>22E9</TD>
+    <TD>&nbsp;</TD>
+    <TD>SUCCEEDS BUT NOT EQUIVALENT TO</TD></TR>
+  <TR>
+    <TD>=E2=8B=AA</TD>
+    <TD>8938</TD>
+    <TD>22EA</TD>
+    <TD>&nbsp;</TD>
+    <TD>NOT NORMAL SUBGROUP OF</TD></TR>
+  <TR>
+    <TD>=E2=8B=AB</TD>
+    <TD>8939</TD>
+    <TD>22EB</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOES NOT CONTAIN AS NORMAL SUBGROUP</TD></TR>
+  <TR>
+    <TD>=E2=8B=AC</TD>
+    <TD>8940</TD>
+    <TD>22EC</TD>
+    <TD>&nbsp;</TD>
+    <TD>NOT NORMAL SUBGROUP OF OR EQUAL TO</TD></TR>
+  <TR>
+    <TD>=E2=8B=AD</TD>
+    <TD>8941</TD>
+    <TD>22ED</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOES NOT CONTAIN AS NORMAL SUBGROUP OR EQUAL</TD></TR>
+  <TR>
+    <TD>=E2=8B=AE</TD>
+    <TD>8942</TD>
+    <TD>22EE</TD>
+    <TD>&nbsp;</TD>
+    <TD>VERTICAL ELLIPSIS</TD></TR>
+  <TR>
+    <TD>=E2=8B=AF</TD>
+    <TD>8943</TD>
+    <TD>22EF</TD>
+    <TD>&nbsp;</TD>
+    <TD>MIDLINE HORIZONTAL ELLIPSIS</TD></TR>
+  <TR>
+    <TD>=E2=8B=B0</TD>
+    <TD>8944</TD>
+    <TD>22F0</TD>
+    <TD>&nbsp;</TD>
+    <TD>UP RIGHT DIAGONAL ELLIPSIS</TD></TR>
+  <TR>
+    <TD>=E2=8B=B1</TD>
+    <TD>8945</TD>
+    <TD>22F1</TD>
+    <TD>&nbsp;</TD>
+    <TD>DOWN RIGHT DIAGONAL ELLIPSIS</TD></TR>
+  <TR>
+    <TD>=E2=8B=B2</TD>
+    <TD>8946</TD>
+    <TD>22F2</TD>
+    <TD>&nbsp;</TD>
+    <TD>ELEMENT OF WITH LONG HORIZONTAL STROKE</TD></TR>
+  <TR>
+    <TD>=E2=8B=B3</TD>
+    <TD>8947</TD>
+    <TD>22F3</TD>
+    <TD>&nbsp;</TD>
+    <TD>ELEMENT OF WITH VERTICAL BAR AT END OF HORIZONTAL =
+STROKE</TD></TR>
+  <TR>
+    <TD>=E2=8B=B4</TD>
+    <TD>8948</TD>
+    <TD>22F4</TD>
+    <TD>&nbsp;</TD>
+    <TD>SMALL ELEMENT OF WITH VERTICAL BAR AT END OF HORIZONTAL =
+STROKE</TD></TR>
+  <TR>
+    <TD>=E2=8B=B5</TD>
+    <TD>8949</TD>
+    <TD>22F5</TD>
+    <TD>&nbsp;</TD>
+    <TD>ELEMENT OF WITH DOT ABOVE</TD></TR>
+  <TR>
+    <TD>=E2=8B=B6</TD>
+    <TD>8950</TD>
+    <TD>22F6</TD>
+    <TD>&nbsp;</TD>
+    <TD>ELEMENT OF WITH OVERBAR</TD></TR>
+  <TR>
+    <TD>=E2=8B=B7</TD>
+    <TD>8951</TD>
+    <TD>22F7</TD>
+    <TD>&nbsp;</TD>
+    <TD>SMALL ELEMENT OF WITH OVERBAR</TD></TR>
+  <TR>
+    <TD>=E2=8B=B8</TD>
+    <TD>8952</TD>
+    <TD>22F8</TD>
+    <TD>&nbsp;</TD>
+    <TD>ELEMENT OF WITH UNDERBAR</TD></TR>
+  <TR>
+    <TD>=E2=8B=B9</TD>
+    <TD>8953</TD>
+    <TD>22F9</TD>
+    <TD>&nbsp;</TD>
+    <TD>ELEMENT OF WITH TWO HORIZONTAL STROKES</TD></TR>
+  <TR>
+    <TD>=E2=8B=BA</TD>
+    <TD>8954</TD>
+    <TD>22FA</TD>
+    <TD>&nbsp;</TD>
+    <TD>CONTAINS WITH LONG HORIZONTAL STROKE</TD></TR>
+  <TR>
+    <TD>=E2=8B=BB</TD>
+    <TD>8955</TD>
+    <TD>22FB</TD>
+    <TD>&nbsp;</TD>
+    <TD>CONTAINS WITH VERTICAL BAR AT END OF HORIZONTAL STROKE</TD></TR>
+  <TR>
+    <TD>=E2=8B=BC</TD>
+    <TD>8956</TD>
+    <TD>22FC</TD>
+    <TD>&nbsp;</TD>
+    <TD>SMALL CONTAINS WITH VERTICAL BAR AT END OF HORIZONTAL =
+STROKE</TD></TR>
+  <TR>
+    <TD>=E2=8B=BD</TD>
+    <TD>8957</TD>
+    <TD>22FD</TD>
+    <TD>&nbsp;</TD>
+    <TD>CONTAINS WITH OVERBAR</TD></TR>
+  <TR>
+    <TD>=E2=8B=BE</TD>
+    <TD>8958</TD>
+    <TD>22FE</TD>
+    <TD>&nbsp;</TD>
+    <TD>SMALL CONTAINS WITH OVERBAR</TD></TR>
+  <TR>
+    <TD>=E2=8B=BF</TD>
+    <TD>8959</TD>
+    <TD>22FF</TD>
+    <TD>&nbsp;</TD>
+    <TD>Z NOTATION BAG MEMBERSHIP</TD></TR></TBODY></TABLE><BR><BR>
+<DIV class=3Dchapter>
+<DIV class=3Dprev><A class=3Dchapter=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_arrows.asp">=C2=AB =
+Previous</A></DIV>
+<DIV class=3Dnext><A class=3Dchapter=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_box.asp">Next =
+Reference=20
+=C2=BB</A></DIV></DIV>
+<HR>
+<!-- SmallPS -->
+<DIV style=3D"WIDTH: 723px; DISPLAY: none" =
+id=3Ddiv-gpt-ad-1383210480969-3>
+<SCRIPT type=3Dtext/javascript>
+				googletag.cmd.push(function() { =
+googletag.display('div-gpt-ad-1383210480969-3'); });
+				</SCRIPT>
+</DIV><!-- LargePS -->
+<DIV style=3D"WIDTH: 723px; DISPLAY: none" =
+id=3Ddiv-gpt-ad-1383210480969-1>
+<SCRIPT type=3Dtext/javascript>
+				googletag.cmd.push(function() { =
+googletag.display('div-gpt-ad-1383210480969-1'); });
+				</SCRIPT>
+</DIV><!-- BottomMediumRectangle -->
+<DIV style=3D"WIDTH: 300px; HEIGHT: 250px; MARGIN-LEFT: 172px"=20
+id=3Ddiv-gpt-ad-1383210480969-0>
+<SCRIPT type=3Dtext/javascript>
+				googletag.cmd.push(function() { =
+googletag.display('div-gpt-ad-1383210480969-0'); });
+				</SCRIPT>
+</DIV>
+<DIV id=3Derr_form>
+<H2>Your suggestion:</H2>
+<P><LABEL for=3Derr_email>Your E-mail (optional):</LABEL> <INPUT =
+id=3Derr_email=20
+type=3Dtext name=3Derr_email></P>
+<P><LABEL for=3Derr_url>Page address:</LABEL> <INPUT id=3Derr_url =
+disabled type=3Dtext=20
+name=3Derr_url></P>
+<P><LABEL for=3Derr_desc>Description:</LABEL> <TEXTAREA id=3Derr_desc =
+rows=3D20 cols=3D92 name=3Derr_desc></TEXTAREA></P>
+<P class=3Dsubmit><INPUT onclick=3DsendErr() value=3DSubmit =
+type=3Dbutton></P>
+<DIV class=3Derr_close onclick=3DhideError()>Close [X]</DIV></DIV>
+<DIV id=3Derr_sent>
+<H2>Thank You For Helping Us!</H2>
+<P>Your message has been sent to W3Schools.</P>
+<DIV class=3Derr_close onclick=3DhideSent()>Close [X]</DIV></DIV></DIV>
+<DIV style=3D"CLEAR: both"></DIV></DIV></DIV>
+<DIV id=3Drightcolumn>
+<DIV id=3DsearchSection>
+<DIV id=3DsearchText>Search w3schools.com:</DIV>
+<DIV id=3DgoogleSearch>
+<DIV class=3Dgcse-search></DIV></DIV></DIV>
+<DIV id=3DtranslateSection>
+<DIV=20
+style=3D"POSITION: relative; BACKGROUND-COLOR: transparent; TOP: -7px; =
+WORD-SPACING: 3px"=20
+id=3Dgoogle_translate_element></DIV></DIV>
+<DIV class=3Drightad>
+<H2>WEB HOSTING</H2><A=20
+href=3D"http://www.lunarpages.com/id/w3schools/goto/w3schools" =
+rel=3Dnofollow=20
+target=3D_blank>Best Web Hosting</A> <A =
+href=3D"http://www.heartinternet.co.uk/"=20
+rel=3Dnofollow target=3D_blank>UK Reseller Hosting</A> <A=20
+href=3D"http://newtekdeals.com/w3schools/index.html" rel=3Dnofollow=20
+target=3D_blank>Developers Love Us</A> </DIV>
+<DIV class=3Drightad>
+<H2>WEB BUILDING</H2><A id=3Daltovatext=20
+href=3D"http://www.altova.com/ref/?s=3Dw3s_text&amp;q=3Dxmlspy" =
+rel=3Dnofollow=20
+target=3D_blank>Download XML Editor</A>
+<SCRIPT>
+			if (Math.random()<0.5)
+				{
+				x=3Ddocument.getElementById("altovatext");
+				x.innerHTML=3D"XML Editor - Free Trial!";
+				x.href=3D"http://www.altova.com/ref/?s=3Dw3s_text2&amp;q=3Dxmlspy";
+				}
+			</SCRIPT>
+ <A=20
+href=3D"http://www.wix.com/eteamhtml/400?utm_campaign=3Dma_w3schools.com&=
+amp;experiment_id=3Dma_w3schools.comlink1_400Html&amp;embed_tags=3Dcamp&a=
+mp;utm_camp=3DhOUdCO-AmAMQm__j8AM"=20
+rel=3Dnofollow target=3D_blank>FREE Website BUILDER</A> <A=20
+href=3D"http://www.wix.com/eteamhtml/400?utm_campaign=3Dma_w3schools.com&=
+amp;experiment_id=3Dma_w3schools.comlink2_400"=20
+rel=3Dnofollow target=3D_blank>FREE Website Creator</A> </DIV>
+<DIV class=3Drightad>
+<H2>W3SCHOOLS EXAMS</H2><A =
+href=3D"http://www.w3schools.com/cert/default.asp"=20
+target=3D_blank>HTML5, CSS, JavaScript, PHP, jQuery, XML, and ASP=20
+Certifications</A> </DIV>
+<DIV id=3Drightshare>
+<H2>SHARE THIS PAGE</H2>
+<DIV style=3D"MARGIN-TOP: 7px">
+<SCRIPT>
+				<!--
+				try{
+				loc=3Dlocation.pathname;
+				if (loc.toUpperCase().indexOf(".ASP")<0) loc=3Dloc+"default.asp";
+				txt=3D'<ul id=3D"sharelist">'
+				txt=3Dtxt+'<li id=3D"facebook"><a =
+href=3D"http://www.facebook.com/sharer.php?u=3Dhttp://www.w3schools.com'+=
+loc+'" target=3D"_blank" title=3D"Facebook"></a></li>';
+				txt=3Dtxt+'<li id=3D"twitter"><a =
+href=3D"http://twitter.com/home?status=3DCurrently reading =
+http://www.w3schools.com'+loc+'" target=3D"_blank" =
+title=3D"Twitter"></a></li>';
+				txt=3Dtxt+'<li id=3D"email"><a =
+href=3D"mailto:?&amp;subject=3D'+document.title+'&amp;body=3DTake%20a%20l=
+ook%20at%20this%20page%20at%20W3Schools.com:%20http://www.w3schools.com'+=
+loc+'" target=3D"_blank"  title=3D"E-mail"></a></li>';
+				txt=3Dtxt+'<li id=3D"googleplus"><a =
+href=3D"https://plus.google.com/share?url=3Dhttp://www.w3schools.com'+loc=
++'" target=3D"_blank" title=3D"Google+"></a></li>';
+				txt=3Dtxt+'<li id=3D"linkedin"><a =
+href=3D"http://www.linkedin.com/shareArticle?mini=3Dtrue&url=3Dhttp://www=
+.w3schools.com'+loc+'&source=3Dw3schools.com"  target=3D"_blank"  =
+title=3D"LinkedIn"></a></li>';
+				txt=3Dtxt+'<li id=3D"reddit"><a =
+href=3D"http://www.reddit.com/submit?url=3Dhttp://www.w3schools.com'+loc+=
+'" target=3D"_blank" title=3D"Reddit"></a></li>';
+				txt=3Dtxt+'</ul>';
+				document.write(txt);
+				}
+				catch(e) {}
+				//--></SCRIPT>
+</DIV>
+<DIV style=3D"PADDING-LEFT: 28px; PADDING-TOP: 10px">
+<SCRIPT>
+				<!--
+				document.write('<iframe =
+src=3D"//www.facebook.com/plugins/like.php?href=3Dhttp%3A%2F%2Fwww.facebo=
+ok.com%2Fw3schoolscom&amp;send=3Dfalse&amp;layout=3Dbutton_count&amp;widt=
+h=3D125&amp;show_faces=3Dfalse&amp;action=3Dlike&amp;colorscheme=3Dlight&=
+amp;font=3Dverdana&amp;height=3D21" scrolling=3D"no" frameborder=3D"0" =
+style=3D"border:none; overflow:hidden; width:125px; height:21px; " =
+allowTransparency=3D"true"></iframe>')
+				//-->
+				</SCRIPT>
+</DIV></DIV>
+<DIV style=3D"PADDING-LEFT: 1px"><!-- WideSkyScraper -->
+<DIV id=3Ddiv-gpt-ad-1383210480969-4 class=3DwideSkyscraper>
+<SCRIPT type=3Dtext/javascript>
+			googletag.cmd.push(function() { =
+googletag.display('div-gpt-ad-1383210480969-4'); });
+			</SCRIPT>
+</DIV></DIV>
+<DIV style=3D"MARGIN-TOP: 8px" class=3Drightad>
+<H2>WEB RESOURCES</H2><A =
+href=3D"http://www.w3schools.com/browsers/default.asp"=20
+target=3D_top>Web Statistics</A> <A=20
+href=3D"http://www.w3schools.com/website/web_validate.asp" =
+target=3D_top>Web=20
+Validation</A> </DIV></DIV>
+<DIV style=3D"CLEAR: both"></DIV></DIV>
+<DIV class=3Dfooter><BR>
+<TABLE id=3Dbottomlinks>
+  <TBODY>
+  <TR>
+    <TD style=3D"VERTICAL-ALIGN: top">
+      <H3>Top 10 Tutorials</H3><A=20
+      href=3D"http://www.w3schools.com/html/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> HTML Tutorial</A><BR><A=20
+      href=3D"http://www.w3schools.com/html/html5_intro.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> HTML5 Tutorial</A><BR><A=20
+      href=3D"http://www.w3schools.com/css/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> CSS Tutorial</A><BR><A=20
+      href=3D"http://www.w3schools.com/css/css3_intro.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> CSS3 Tutorial</A><BR><A=20
+      href=3D"http://www.w3schools.com/js/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> JavaScript =
+Tutorial</A><BR><A=20
+      href=3D"http://www.w3schools.com/jquery/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> jQuery Tutorial</A><BR><A=20
+      href=3D"http://www.w3schools.com/sql/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> SQL Tutorial</A><BR><A=20
+      href=3D"http://www.w3schools.com/php/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> PHP Tutorial</A><BR><A=20
+      href=3D"http://www.w3schools.com/aspnet/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> ASP.NET Tutorial</A><BR><A=20
+      href=3D"http://www.w3schools.com/xml/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> XML Tutorial</A><BR></TD>
+    <TD style=3D"VERTICAL-ALIGN: top">
+      <H3>Top 10 References</H3><A=20
+      href=3D"http://www.w3schools.com/tags/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> HTML/HTML5 =
+Reference</A><BR><A=20
+      href=3D"http://www.w3schools.com/cssref/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> CSS 1,2,3 =
+Reference</A><BR><A=20
+      =
+href=3D"http://www.w3schools.com/cssref/css3_browsersupport.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> CSS 3 Browser =
+Support</A><BR><A=20
+      href=3D"http://www.w3schools.com/jsref/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> JavaScript</A><BR><A=20
+      href=3D"http://www.w3schools.com/jsref/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> HTML DOM</A><BR><A=20
+      href=3D"http://www.w3schools.com/dom/dom_nodetype.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> XML DOM</A><BR><A=20
+      href=3D"http://www.w3schools.com/php/php_ref_array.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> PHP Reference</A><BR><A=20
+      =
+href=3D"http://www.w3schools.com/jquery/jquery_ref_selectors.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> jQuery Reference</A><BR><A=20
+      =
+href=3D"http://www.w3schools.com/aspnet/webpages_ref_classes.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> ASP.NET Reference</A><BR><A =
+
+      href=3D"http://www.w3schools.com/tags/ref_colornames.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> HTML Colors</A><BR></TD>
+    <TD style=3D"VERTICAL-ALIGN: top">
+      <H3>Top 10 Examples</H3><A=20
+      href=3D"http://www.w3schools.com/html/html_examples.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> HTML Examples</A><BR><A=20
+      href=3D"http://www.w3schools.com/css/css_examples.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> CSS Examples</A><BR><A=20
+      href=3D"http://www.w3schools.com/js/js_examples.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> JavaScript =
+Examples</A><BR><A=20
+      href=3D"http://www.w3schools.com/js/js_dom_examples.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> HTML DOM Examples</A><BR><A =
+
+      href=3D"http://www.w3schools.com/php/php_examples.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> PHP Examples</A><BR><A=20
+      href=3D"http://www.w3schools.com/jquery/jquery_examples.asp"><SPAN =
+
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> jQuery Examples</A><BR><A=20
+      href=3D"http://www.w3schools.com/xml/xml_examples.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> XML Examples</A><BR><A=20
+      href=3D"http://www.w3schools.com/dom/dom_examples.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> XML DOM Examples</A><BR><A=20
+      href=3D"http://www.w3schools.com/asp/asp_examples.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> ASP Examples</A><BR><A=20
+      href=3D"http://www.w3schools.com/svg/svg_examples.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> SVG Examples</A> </TD>
+    <TD style=3D"VERTICAL-ALIGN: top">
+      <H3>Web Certificates</H3><A=20
+      href=3D"http://www.w3schools.com/cert/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> HTML Certificate</A><BR><A=20
+      href=3D"http://www.w3schools.com/cert/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> HTML5 Certificate</A><BR><A =
+
+      href=3D"http://www.w3schools.com/cert/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> CSS Certificate</A><BR><A=20
+      href=3D"http://www.w3schools.com/cert/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> JavaScript =
+Certificate</A><BR><A=20
+      href=3D"http://www.w3schools.com/cert/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> jQuery =
+Certificate</A><BR><A=20
+      href=3D"http://www.w3schools.com/cert/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> XML Certificate</A><BR><A=20
+      href=3D"http://www.w3schools.com/cert/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> ASP Certificate</A><BR><A=20
+      href=3D"http://www.w3schools.com/cert/default.asp"><SPAN=20
+      class=3Dbottomlinksraquo>=C2=BB</SPAN> PHP =
+Certificate</A><BR></TD>
+    <TD style=3D"VERTICAL-ALIGN: top">
+      <H3>Color Picker</H3><A=20
+      href=3D"http://www.w3schools.com/tags/ref_colorpicker.asp"><IMG=20
+      style=3D"WIDTH: 80px; HEIGHT: 68px" alt=3Dcolorpicker=20
+      src=3D"http://www.w3schools.com/images/colorpicker.gif"></A>=20
+</TD></TR></TBODY></TABLE></DIV>
+<HR style=3D"HEIGHT: 5px">
+
+<DIV class=3Dfooter>
+<DIV id=3DfooterImg><A href=3D"http://www.w3schools.com/"><IMG=20
+style=3D"BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 150px; HEIGHT: =
+28px; BORDER-TOP: 0px; BORDER-RIGHT: 0px"=20
+alt=3DW3Schools.com=20
+src=3D"http://www.w3schools.com/images/w3schoolscom_gray.gif"></A> =
+</DIV>
+<DIV id=3DfooterAbout><A style=3D"WORD-SPACING: normal"=20
+onclick=3D"displayError();return false"=20
+href=3D"http://www.w3schools.com/charsets/">REPORT ERROR</A> | <A=20
+href=3D"http://www.w3schools.com/default.asp" target=3D_top>HOME</A> | =
+<A=20
+href=3D"http://www.w3schools.com/charsets/ref_utf_math.asp#top"=20
+target=3D_top>TOP</A> | <A onclick=3D"printPage();return false"=20
+href=3D"http://www.w3schools.com/charsets/" target=3D_blank>PRINT</A> | =
+<A=20
+href=3D"http://www.w3schools.com/forum/default.asp" =
+target=3D_blank>FORUM</A> | <A=20
+href=3D"http://www.w3schools.com/about/default.asp" =
+target=3D_top>ABOUT</A> | <A=20
+style=3D"WORD-SPACING: normal"=20
+href=3D"http://www.w3schools.com/about/about_advert.asp" =
+target=3D_top>ADVERTISE=20
+WITH US</A> </DIV>
+<DIV id=3DfooterText>W3Schools is optimized for learning, testing, and =
+training.=20
+Examples might be simplified to improve reading and basic understanding. =
+
+Tutorials, references, and examples are constantly reviewed to avoid =
+errors, but=20
+we cannot warrant full correctness of all content. While using this =
+site, you=20
+agree to have read and accepted our <A=20
+href=3D"http://www.w3schools.com/about/about_copyright.asp">terms of =
+use</A>, <A=20
+href=3D"http://www.w3schools.com/about/about_privacy.asp">cookie and =
+privacy=20
+policy</A>. <A=20
+href=3D"http://www.w3schools.com/about/about_copyright.asp">Copyright=20
+1999-2014</A> by Refsnes Data. All Rights Reserved.<BR><BR></DIV></DIV>
+<SCRIPT>
+function googleTranslateElementInit() {
+	new google.translate.TranslateElement({
+		pageLanguage: 'en',
+		autoDisplay: false,   =20
+		gaTrack: true,
+		layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+	}, 'google_translate_element');
+}
+
+function printPage()
+{
+content=3Ddocument.getElementById("main").innerHTML;
+head=3Ddocument.getElementsByTagName("head")[0].innerHTML;
+var myWindow=3Dwindow.open('','','');
+myWindow.document.write("<html><head>"+head+"<style>#div-gpt-ad-137950609=
+8645-3,#div-gpt-ad-1379506098645-1,#div-gpt-ad-1379506098645-0{display:no=
+ne}body{background-color:white}</style></head><body>"+content+"<p><a =
+href=3D'/about/about_copyright.asp'>Copyright 1999-2013</a> by Refsnes =
+Data. All Rights Reserved.</p></body></html>");
+myWindow.document.close();
+myWindow.print();
+}
+</SCRIPT>
+
+<SCRIPT=20
+src=3D"http://translate.google.com/translate_a/element.js?cb=3DgoogleTran=
+slateElementInit"></SCRIPT>
+</BODY></HTML>
+
+------=_NextPart_000_0000_01CF2A32.99EFE180
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://www.w3schools.com/images/w3logotest2.png
+
+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
+NIb/BBgAnLu0A7eVG9kAAAAASUVORK5CYII=
+
+------=_NextPart_000_0000_01CF2A32.99EFE180
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.w3schools.com/images/colorpicker.gif
+
+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
+
+------=_NextPart_000_0000_01CF2A32.99EFE180
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.w3schools.com/images/w3schoolscom_gray.gif
+
+R0lGODlhlgAcAOZVAKqqqrOzs/7+/s7Ozv39/crKyrKyssfHx7q6uvv7+/z8/Pr6+tXV1fX19c3N
+zfj4+LCwsPn5+fb29vPz88nJybu7u8bGxq2trb+/v9PT09DQ0MPDw7y8vLm5ufDw8LS0tLGxsczM
+zK6urunp6aurq+vr69nZ2c/Pz8TExNLS0tHR0cvLy7i4uOjo6O/v79bW1sLCwt/f3+Xl5ebm5sXF
+xd3d3b29vcjIyK+vr9vb26ysrLW1tfT09PLy8re3t8DAwMHBwdTU1Pf399zc3La2tt7e3uDg4PHx
+8e7u7tjY2L6+vuPj4+fn5+Hh4dfX1+Li4uzs7OTk5Nra2u3t7erq6v///wAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5
+BAEAAFUALAAAAACWABwAAAf/gFUtGwGFhoeIiAYBGzNVj5CRkpOUlZaXmJmam5yQIxAAoaKjpKWi
+IiWdqqusra6YMKays6EHr7e4ubqPAbS+pAgPu8PExZQGv6UXQCEnDkAXACwNxtXWub3Joh9LCZAJ
+MkQf1Nfl5pzZ2gGpVQsTC49QNj3n9faU6b8kMY9LSh9KojySQY9VghgMmhAw9mBIEEf3WuXzFYDa
+kXQ7JlQRsJCVBB8AbEQw5gIEAAsCIrISYWoHjAokRhF5UkIFKX6vJHQAgAFesZIADqRUqQpFhWij
+klQBeqqCkh2kitySgADAj46WBCzwVkkrV0gukAk1lsBnq6GPFgjhQGpJFR5E/0YBkbBgyKgPRx5F
+qKHBwYC/IVSQq+IhSd+/AyY8qBrAwYkBKWKMhDThxYEfG05AhNTjhQXMmsGKTbkghgq/f/0iodRD
+yukBDhyM0FtjBRAgK4ZMrlIjBOLff0+8cPFIwIgZLWZXyTCKhYRHBUbVeJQCgA4QFWQ8UkDBlA52
+MiYCYBKhKikSB7iWADnqgoqhLaC2z5AybNCNA2KWkioJCYtSDLQTCykbjCTAgLQQ4cEjTQxBww3e
+CLECC0RUINAjE8BABAsZeNPAfxh4oAAkJUTTmAappUCNBx8AQAIHITiwQgiKVQWCBTfQ0MsFVFQh
+RFUkwJCECi0C8EQVEvxHAv8KhvVCghFLifVWiwaEgCJiq0XyAFsAdBDjCgXMxkAoLDDgRAWhFLAQ
+CtZtcIAFJkFgwQH/ATAAhj0wQYUKI1bRgGKPjKBRAhOQQ0B3J0myRCghVFIdABoIEwlVVkXAkQmh
+TIcpACv4NEI0QFRRRCgDcNUCSzAQJqUHUmKSQy2DYQjKDnm9xRYqVbAJQQMCKIBBSAoI0INJHGD1
+CA4OSApJCxDQIISWK4jigwlM9NlCKAbcACYFDGhUhQUA4MDDJJT+wNUToeRQRQgAiKDcIzZGMIB1
+TETCWAKs3jcBMiAcsG0GC0YiQHc6bAZJDKFoEMkL6VZBAwAQPCfAr0oMtVP/BcZWgUwFGjghBQMU
+4BAKAiqYYIIG5pFigTARgFvKDgsCAcAHZkFCaU+PGBHKEFV0BwJxkGzQ7gTdidACJAT8KoIER0ip
+QHSlgKAd0mziwE4kSYRiQiSjAhDgw7tWkXRICymwU7GSiKfNKE488kANGcTNAA0xpVDFARDH+sjN
+PukMgLrsXvCuAGgaEIED1m0mwL35jhVBDEHIXQBLG2A1cOKTIAyACpE4sbPDeYv9qw1ln52x2rKI
+8MEHSImCEiVTgEJBFWNC2qfNVeFchd/qSpFmn0zoAMAGvIXiwFAzRIOCqkGhFUl5ACixgFYj1hDK
+ypJMMGutPKCJwxS5hj42/+lVmA0A2pGgbsoBERxOSgFIvhAEA/QnITQAdveATPQDnOB/jTzpW8N0
+cr0iBGF/AmkAe25QhAyAggRNiNJ9EmCCDNDPTAVQHgGawIEBCOABaAJABRzzmNkEYWQ5yIF5QpAS
+XVFjfKU73+nW9oMRyUA/ALiAdqAgCwU94gnsGQUTHgASG/hEc1urQglSFooLZKBPI9jJKETwgoUg
+ARQ0eAsooqad6nRgIVBgYigCFIGHkQIFzzpQDsdFALZgrHwg6cDteLG274mtCB2AQAdwgoQbFOCP
+f6RAEGr1CB4YQQOALMAREpABC7ygTyWgwA2O9gghmGADFcDACa62t0tmUqEDUIBEAwZgAZ5FQAUU
+AFMgU5AlGThyKEJYQgoASQFKJmAJBeAAByjQhK+Y4AYDEIYALMOAlBAgAzcIgvOqoL71cUUBDeDK
+A0JQkHIscxLXNIcAsimRtYViA+96RAt+sAO9EeWcxNifN3GwAQ0wQAMwEJlz0EnPYnDJm7KAQcbq
+yU9XWA+fsoBSPwf6CgK84AOLSIRCE2GAD6RgnwSNqCYCAQA7
+
+------=_NextPart_000_0000_01CF2A32.99EFE180
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.w3schools.com/stdtheme.css
+
+HTML {
+	OVERFLOW-Y: scroll
+}
+BODY {
+	BACKGROUND-COLOR: #f6f4f0; MARGIN: 0px; COLOR: #404040; FONT-SIZE: 13px
+}
+P {
+	LINE-HEIGHT: 130%
+}
+TD {
+	LINE-HEIGHT: 130%
+}
+UL {
+	LINE-HEIGHT: 130%
+}
+BODY {
+	FONT-FAMILY: verdana, helvetica, arial, sans-serif
+}
+P {
+	FONT-FAMILY: verdana, helvetica, arial, sans-serif
+}
+H1 {
+	FONT-FAMILY: verdana, helvetica, arial, sans-serif
+}
+H2 {
+	FONT-FAMILY: verdana, helvetica, arial, sans-serif
+}
+H3 {
+	FONT-FAMILY: verdana, helvetica, arial, sans-serif
+}
+H4 {
+	FONT-FAMILY: verdana, helvetica, arial, sans-serif
+}
+TABLE {
+	FONT-FAMILY: verdana, helvetica, arial, sans-serif
+}
+TD {
+	FONT-FAMILY: verdana, helvetica, arial, sans-serif
+}
+TH {
+	FONT-FAMILY: verdana, helvetica, arial, sans-serif
+}
+UL {
+	FONT-FAMILY: verdana, helvetica, arial, sans-serif
+}
+OL {
+	FONT-FAMILY: verdana, helvetica, arial, sans-serif
+}
+TEXTAREA {
+	FONT-FAMILY: verdana, helvetica, arial, sans-serif
+}
+INPUT {
+	FONT-FAMILY: verdana, helvetica, arial, sans-serif
+}
+IFRAME {
+	MARGIN: 0px
+}
+IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: =
+0px
+}
+TABLE {
+	FONT-SIZE: 100%
+}
+TH {
+	FONT-SIZE: 100%
+}
+TD {
+	FONT-SIZE: 100%
+}
+INPUT {
+	FONT-SIZE: 100%
+}
+TEXTAREA {
+	FONT-SIZE: 100%
+}
+H1 {
+	MARGIN-TOP: 0px; FONT-SIZE: 28px; FONT-WEIGHT: normal
+}
+H2 {
+	MARGIN-TOP: 10px; MARGIN-BOTTOM: 10px; FONT-SIZE: 22px; FONT-WEIGHT: =
+normal
+}
+H3 {
+	FONT-SIZE: 17px; FONT-WEIGHT: normal
+}
+H4 {
+	FONT-SIZE: 12px
+}
+H5 {
+	FONT-SIZE: 11px
+}
+H6 {
+	FONT-SIZE: 10px
+}
+H1 {
+	BACKGROUND-COLOR: transparent; COLOR: #000000
+}
+H2 {
+	BACKGROUND-COLOR: transparent; COLOR: #000000
+}
+H3 {
+	BACKGROUND-COLOR: transparent; COLOR: #000000
+}
+H4 {
+	BACKGROUND-COLOR: transparent; COLOR: #000000
+}
+H5 {
+	BACKGROUND-COLOR: transparent; COLOR: #000000
+}
+H6 {
+	BACKGROUND-COLOR: transparent; COLOR: #000000
+}
+#top {
+	MARGIN: auto; WIDTH: 1220px; HEIGHT: 60px
+}
+#topLogo {
+	TEXT-ALIGN: left; MARGIN-TOP: 20px; FLOAT: left; MARGIN-LEFT: 10px
+}
+#searchSection {
+	TEXT-ALIGN: left; MARGIN-TOP: 5px; HEIGHT: 60px; MARGIN-RIGHT: 0px
+}
+#searchText {
+	FONT-STYLE: italic; COLOR: #777777; FONT-SIZE: 11px; PADDING-TOP: 3px
+}
+#translateSection {
+	HEIGHT: 30px
+}
+#topnav {
+	BACKGROUND-COLOR: #d3d3d3; HEIGHT: 25px
+}
+#topnavTut {
+	BACKGROUND-COLOR: #d3d3d3; MARGIN: auto; PADDING-LEFT: 10px; WIDTH: =
+1190px; PADDING-RIGHT: 20px; HEIGHT: 20px; FONT-SIZE: 12px; =
+WORD-SPACING: 12px; PADDING-TOP: 5px
+}
+A.topnav:link {
+	COLOR: #555555; TEXT-DECORATION: none
+}
+A.topnav:visited {
+	COLOR: #555555; TEXT-DECORATION: none
+}
+A.topnav:hover {
+	COLOR: #ff4800; TEXT-DECORATION: none
+}
+A.topnav:active {
+	COLOR: #ff4800; TEXT-DECORATION: none
+}
+#topnavSpace {
+	MARGIN-LEFT: 290px
+}
+#belowTopnav {
+	MARGIN: auto; WIDTH: 1220px
+}
+#page {
+	PADDING-BOTTOM: 20px; BACKGROUND-COLOR: #ffffff; MARGIN-TOP: 10px; =
+WIDTH: 1024px; FLOAT: left; MARGIN-LEFT: 10px; PADDING-TOP: 10px; =
+box-shadow: 0px 0px 20px 3px #d3d3d3; border-radius: 4px
+}
+DIV.topLeftRectangle {
+	MARGIN-TOP: 10px; WIDTH: 170px; FLOAT: left; HEIGHT: 90px; MARGIN-LEFT: =
+10px; OVERFLOW: hidden; MARGIN-RIGHT: 4px
+}
+#mainLeaderboard {
+	MARGIN-TOP: 0px; WIDTH: 728px; MARGIN-BOTTOM: 15px; FLOAT: none; =
+HEIGHT: 90px; MARGIN-LEFT: 0px; OVERFLOW: hidden
+}
+#pageads {
+	MARGIN-BOTTOM: 10px; HEIGHT: 100px
+}
+#leftcolumn {
+	WIDTH: 170px; FLOAT: left; MARGIN-LEFT: 10px; MARGIN-RIGHT: 4px
+}
+#leftcolumn H2 {
+	COLOR: #8ac007; FONT-SIZE: 16px; FONT-WEIGHT: normal
+}
+#leftcolumn HR {
+	BACKGROUND-COLOR: #e5eecc; COLOR: #e5eecc; MARGIN-RIGHT: 20px
+}
+#leftcolumn A:link {
+	PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #ffffff; DISPLAY: block; COLOR: =
+#404040; FONT-SIZE: 13px; TEXT-DECORATION: none
+}
+#leftcolumn A:visited {
+	PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #ffffff; DISPLAY: block; COLOR: =
+#404040; FONT-SIZE: 13px; TEXT-DECORATION: none
+}
+#leftcolumn A:hover {
+	PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #ffffff; DISPLAY: block; COLOR: =
+#404040; FONT-SIZE: 13px; TEXT-DECORATION: none
+}
+#leftcolumn A:active {
+	PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #ffffff; DISPLAY: block; COLOR: =
+#404040; FONT-SIZE: 13px; TEXT-DECORATION: none
+}
+#leftcolumn A:hover {
+	BACKGROUND-COLOR: #ffffff; COLOR: #000000; TEXT-DECORATION: underline
+}
+#leftcolumn A:active {
+	BACKGROUND-COLOR: #ffffff; COLOR: #000000; TEXT-DECORATION: underline
+}
+#main {
+	PADDING-BOTTOM: 7px; PADDING-LEFT: 7px; WIDTH: 822px; PADDING-RIGHT: =
+7px; FLOAT: left; OVERFLOW: hidden; PADDING-TOP: 0px
+}
+#rightcolumn H2 {
+	MARGIN-TOP: 3px; MARGIN-BOTTOM: 2px; COLOR: #8ac007; FONT-SIZE: 13px; =
+FONT-WEIGHT: normal
+}
+#rightcolumn {
+	PADDING-LEFT: 5px; WIDTH: 160px; FLOAT: left; MARGIN-LEFT: 5px; =
+FONT-SIZE: 11px
+}
+#rightcolumn .rightad A:link {
+	DISPLAY: block; MARGIN-BOTTOM: 3px; COLOR: #555555; TEXT-DECORATION: =
+none; PADDING-TOP: 3px
+}
+#rightcolumn .rightad A:visited {
+	DISPLAY: block; MARGIN-BOTTOM: 3px; COLOR: #555555; TEXT-DECORATION: =
+none; PADDING-TOP: 3px
+}
+#rightcolumn .rightad A:hover {
+	DISPLAY: block; MARGIN-BOTTOM: 3px; COLOR: #555555; TEXT-DECORATION: =
+none; PADDING-TOP: 3px
+}
+#rightcolumn .rightad A:active {
+	DISPLAY: block; MARGIN-BOTTOM: 3px; COLOR: #555555; TEXT-DECORATION: =
+none; PADDING-TOP: 3px
+}
+#rightcolumn .rightad A:hover {
+	TEXT-DECORATION: underline
+}
+#rightcolumn .rightad A:active {
+	TEXT-DECORATION: underline
+}
+#rightcolumn .rightad {
+	BORDER-BOTTOM: #d4d4d4 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#d4d4d4 1px solid; PADDING-BOTTOM: 10px; BACKGROUND-COLOR: #ffffff; =
+PADDING-LEFT: 5px; WIDTH: 150px; PADDING-RIGHT: 5px; MARGIN-BOTTOM: 8px; =
+BORDER-TOP: #d4d4d4 1px solid; BORDER-RIGHT: #d4d4d4 1px solid; =
+PADDING-TOP: 5px; border-radius: 4px
+}
+#rightshare {
+	BORDER-BOTTOM: #d4d4d4 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#d4d4d4 1px solid; PADDING-BOTTOM: 10px; BACKGROUND-COLOR: #ffffff; =
+PADDING-LEFT: 5px; WIDTH: 150px; PADDING-RIGHT: 5px; MARGIN-BOTTOM: 8px; =
+BORDER-TOP: #d4d4d4 1px solid; BORDER-RIGHT: #d4d4d4 1px solid; =
+PADDING-TOP: 5px; border-radius: 4px
+}
+#rightshare {
+	MARGIN-TOP: 8px
+}
+#rightshare H2 {
+	MARGIN-TOP: 3px; MARGIN-BOTTOM: 2px; COLOR: #8ac007; FONT-SIZE: 13px; =
+FONT-WEIGHT: normal
+}
+#sharelist {
+	POSITION: relative; MARGIN: 0px 0px 0px 19px; HEIGHT: 16px
+}
+#sharelist LI {
+	POSITION: absolute; PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: =
+0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; TOP: 0px; LIST-STYLE-IMAGE: =
+none; PADDING-TOP: 0px
+}
+#sharelist LI {
+	DISPLAY: block; HEIGHT: 16px
+}
+#sharelist A {
+	DISPLAY: block; HEIGHT: 16px
+}
+#facebook {
+	WIDTH: 16px; BACKGROUND: url(/images/share.png) -16px 0px; LEFT: 0px
+}
+#twitter {
+	WIDTH: 16px; BACKGROUND: url(/images/share.png) -32px 0px; LEFT: 19px
+}
+#email {
+	WIDTH: 16px; BACKGROUND: url(/images/share.png) -80px 0px; LEFT: 38px
+}
+#googleplus {
+	WIDTH: 16px; BACKGROUND: url(/images/share.png) 0px 0px; LEFT: 57px
+}
+#linkedin {
+	WIDTH: 16px; BACKGROUND: url(/images/share.png) -48px 0px; LEFT: 76px
+}
+#reddit {
+	WIDTH: 16px; BACKGROUND: url(/images/share.png) -64px 0px; LEFT: 95px
+}
+DIV.wideSkyscraper {
+	MARGIN: 0px auto auto; WIDTH: 160px; HEIGHT: 600px; OVERFLOW: hidden
+}
+.footer {
+	TEXT-ALIGN: center; MARGIN: auto; PADDING-LEFT: 30px; WIDTH: 1040px; =
+PADDING-RIGHT: 150px; COLOR: #909090; FONT-SIZE: 11px
+}
+#footerImg {
+	TEXT-ALIGN: left; PADDING-LEFT: 3px; WIDTH: 200px; FLOAT: left; =
+PADDING-TOP: 11px
+}
+#footerAbout {
+	TEXT-ALIGN: right; PADDING-RIGHT: 62px; FLOAT: right; FONT-SIZE: 10px; =
+WORD-SPACING: 6px; PADDING-TOP: 19px
+}
+#footerText {
+	COLOR: #555555; CLEAR: both; MARGIN-RIGHT: 50px; PADDING-TOP: 13px
+}
+.footer A:link {
+	BACKGROUND-COLOR: transparent; COLOR: #404040; TEXT-DECORATION: none
+}
+.footer A:visited {
+	BACKGROUND-COLOR: transparent; COLOR: #404040; TEXT-DECORATION: none
+}
+.footer A:hover {
+	BACKGROUND-COLOR: transparent; COLOR: #404040; TEXT-DECORATION: =
+underline
+}
+.footer A:active {
+	BACKGROUND-COLOR: transparent; COLOR: #404040; TEXT-DECORATION: =
+underline
+}
+DIV.example {
+	BORDER-BOTTOM: #d4d4d4 1px solid; BORDER-LEFT: #d4d4d4 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #e5eecc; MARGIN: 0px; =
+PADDING-LEFT: 5px; WIDTH: auto; PADDING-RIGHT: 5px; COLOR: #000000; =
+BORDER-TOP: #d4d4d4 1px solid; BORDER-RIGHT: #d4d4d4 1px solid; =
+PADDING-TOP: 5px
+}
+DIV.example_code {
+	BORDER-BOTTOM: #d4d4d4 1px solid; BORDER-LEFT: #d4d4d4 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #ffffff; PADDING-LEFT: 5px; =
+WIDTH: auto; PADDING-RIGHT: 5px; FONT-FAMILY: "courier new"; FONT-SIZE: =
+14px; BORDER-TOP: #d4d4d4 1px solid; BORDER-RIGHT: #d4d4d4 1px solid; =
+PADDING-TOP: 5px
+}
+DIV.example_result {
+	BORDER-BOTTOM: #d4d4d4 1px solid; BORDER-LEFT: #d4d4d4 1px solid; =
+PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #ffffff; PADDING-LEFT: 4px; =
+WIDTH: auto; PADDING-RIGHT: 4px; BORDER-TOP: #d4d4d4 1px solid; =
+BORDER-RIGHT: #d4d4d4 1px solid; PADDING-TOP: 4px
+}
+DIV.code {
+	BORDER-BOTTOM: #d4d4d4 1px solid; BORDER-LEFT: #d4d4d4 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #f6f4f0; MARGIN: 0px; =
+PADDING-LEFT: 5px; WIDTH: auto; PADDING-RIGHT: 5px; COLOR: #444444; =
+BORDER-TOP: #d4d4d4 1px solid; BORDER-RIGHT: #d4d4d4 1px solid; =
+PADDING-TOP: 5px
+}
+DIV.code DIV {
+	FONT-SIZE: 14px
+}
+DIV.example_code P {
+	FONT-FAMILY: "courier new"
+}
+DIV.code P {
+	FONT-FAMILY: "courier new"
+}
+DIV.code DIV {
+	FONT-FAMILY: "courier new"
+}
+DIV.tryit_ex {
+	WIDTH: 600px; MARGIN-BOTTOM: 5px; HEIGHT: 50px; CLEAR: both
+}
+DIV.tryit_ex IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; FLOAT: left; BORDER-TOP: 0px; =
+MARGIN-RIGHT: 10px; BORDER-RIGHT: 0px
+}
+DIV.tryit_ex H2 {
+	PADDING-TOP: 5px
+}
+TABLE.lamp {
+	BORDER-BOTTOM: #d4d4d4 1px solid; BORDER-LEFT: #d4d4d4 1px solid; =
+PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; =
+BORDER-TOP: #d4d4d4 1px solid; BORDER-RIGHT: #d4d4d4 1px solid; =
+PADDING-TOP: 0px
+}
+TABLE.lamp TH {
+	PADDING-BOTTOM: 10px; BACKGROUND-COLOR: white; PADDING-LEFT: 10px; =
+PADDING-RIGHT: 5px; COLOR: #000000; PADDING-TOP: 10px
+}
+TABLE.lamp TD {
+	PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #ffffff; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 10px; PADDING-TOP: 4px
+}
+TABLE.tecspec TH {
+	BORDER-BOTTOM: #d4d4d4 1px solid; TEXT-ALIGN: left; BORDER-LEFT: =
+#d4d4d4 1px solid; PADDING-BOTTOM: 7px; PADDING-LEFT: 5px; =
+PADDING-RIGHT: 5px; VERTICAL-ALIGN: top; BORDER-TOP: #d4d4d4 1px solid; =
+BORDER-RIGHT: #d4d4d4 1px solid; PADDING-TOP: 7px
+}
+TABLE.tecspec TD {
+	BORDER-BOTTOM: #d4d4d4 1px solid; TEXT-ALIGN: left; BORDER-LEFT: =
+#d4d4d4 1px solid; PADDING-BOTTOM: 7px; PADDING-LEFT: 5px; =
+PADDING-RIGHT: 5px; VERTICAL-ALIGN: top; BORDER-TOP: #d4d4d4 1px solid; =
+BORDER-RIGHT: #d4d4d4 1px solid; PADDING-TOP: 7px
+}
+TABLE.reference {
+	WIDTH: 100%; BORDER-COLLAPSE: collapse
+}
+TABLE.tecspec {
+	WIDTH: 100%; BORDER-COLLAPSE: collapse
+}
+TABLE.reference TR.fixzebra {
+	BACKGROUND-COLOR: #f6f4f0
+}
+TABLE.reference TH {
+	BORDER-BOTTOM: #555555 1px solid; TEXT-ALIGN: left; BORDER-LEFT: =
+#555555 1px solid; PADDING-BOTTOM: 3px; BACKGROUND-COLOR: #555555; =
+PADDING-LEFT: 3px; PADDING-RIGHT: 3px; COLOR: #ffffff; VERTICAL-ALIGN: =
+top; BORDER-TOP: #555555 1px solid; BORDER-RIGHT: #555555 1px solid; =
+PADDING-TOP: 3px
+}
+TABLE.reference TH A:link {
+	COLOR: #ffffff
+}
+TABLE.reference TH A:visited {
+	COLOR: #ffffff
+}
+TABLE.reference TH A:hover {
+	COLOR: #ee872a
+}
+TABLE.reference TH A:active {
+	COLOR: #ee872a
+}
+TABLE.reference TD {
+	BORDER-BOTTOM: #d4d4d4 1px solid; BORDER-LEFT: #d4d4d4 1px solid; =
+PADDING-BOTTOM: 7px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; =
+VERTICAL-ALIGN: top; BORDER-TOP: #d4d4d4 1px solid; BORDER-RIGHT: =
+#d4d4d4 1px solid; PADDING-TOP: 7px
+}
+TABLE.reference TD.example_code {
+	VERTICAL-ALIGN: bottom
+}
+TABLE.summary {
+	BORDER-BOTTOM: #d4d4d4 1px solid; BORDER-LEFT: #d4d4d4 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #fafad2; PADDING-LEFT: 5px; =
+PADDING-RIGHT: 5px; COLOR: #555555; FONT-SIZE: 100%; BORDER-TOP: #d4d4d4 =
+1px solid; BORDER-RIGHT: #d4d4d4 1px solid; PADDING-TOP: 5px
+}
+H2.example {
+	BACKGROUND-COLOR: transparent; MARGIN-TOP: 0px; COLOR: #617f10
+}
+H2.example_head {
+	BACKGROUND-COLOR: transparent; MARGIN-TOP: 0px; COLOR: #617f10
+}
+H2.example {
+	FONT-SIZE: 14px
+}
+H2.example_head {
+	FONT-SIZE: 16px
+}
+H2.home {
+	PADDING-BOTTOM: 1px; BACKGROUND-COLOR: #ffffff; MARGIN-TOP: 0px; =
+PADDING-LEFT: 1px; MARGIN-BOTTOM: 5px; COLOR: #900b09; FONT-SIZE: 14px; =
+PADDING-TOP: 1px
+}
+H2.left {
+	PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #ffffff; MARGIN-TOP: 0px; =
+MARGIN-BOTTOM: 4px; COLOR: #404040; FONT-SIZE: 14px; FONT-WEIGHT: bold; =
+PADDING-TOP: 0px
+}
+SPAN.marked {
+	BACKGROUND-COLOR: transparent; COLOR: #e80000
+}
+SPAN.deprecated {
+	BACKGROUND-COLOR: transparent; COLOR: #e80000
+}
+DIV.tutintro {
+	MIN-HEIGHT: 132px; WIDTH: auto
+}
+DIV.tutintro IMG {
+	MARGIN-BOTTOM: 10px; FLOAT: left; MARGIN-RIGHT: 20px
+}
+DIV.tutintro P {
+	MARGIN-TOP: 0px; FONT-SIZE: 14px
+}
+P.intro {
+	BACKGROUND-COLOR: transparent; MARGIN-TOP: 10px; COLOR: #404040; =
+FONT-SIZE: 14px
+}
+PRE {
+	FONT-FAMILY: "courier new"; MARGIN-BOTTOM: 0px; MARGIN-LEFT: 0px; =
+FONT-SIZE: 13px
+}
+IMG.float {
+	FLOAT: left
+}
+IMG.navup {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 18px; HEIGHT: 22px; =
+VERTICAL-ALIGN: middle; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+HR {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BACKGROUND-COLOR: #d4d4d4; =
+HEIGHT: 1px; COLOR: #d4d4d4; CLEAR: both; BORDER-TOP: 0px; BORDER-RIGHT: =
+0px
+}
+A.example {
+	FONT-WEIGHT: bold
+}
+A:link {
+	BACKGROUND-COLOR: transparent; COLOR: #b72801
+}
+A:visited {
+	BACKGROUND-COLOR: transparent; COLOR: #b72801
+}
+A:hover {
+	BACKGROUND-COLOR: transparent; COLOR: #e97700
+}
+A:active {
+	BACKGROUND-COLOR: transparent; COLOR: #e97700
+}
+A:link {
+	BACKGROUND-COLOR: transparent; COLOR: #000000
+}
+A:visited {
+	BACKGROUND-COLOR: transparent; COLOR: #000000
+}
+A:hover {
+	BACKGROUND-COLOR: transparent; COLOR: #b72801
+}
+A:active {
+	BACKGROUND-COLOR: transparent; COLOR: #b72801
+}
+A.plain:link {
+	BACKGROUND-COLOR: transparent; COLOR: #900b09; TEXT-DECORATION: none
+}
+A.plain:visited {
+	BACKGROUND-COLOR: transparent; COLOR: #900b09; TEXT-DECORATION: none
+}
+A.plain:hover {
+	BACKGROUND-COLOR: transparent; COLOR: #ff0000; TEXT-DECORATION: =
+underline
+}
+A.plain:active {
+	BACKGROUND-COLOR: transparent; COLOR: #ff0000; TEXT-DECORATION: =
+underline
+}
+A.header:link {
+	BACKGROUND-COLOR: transparent; COLOR: black; TEXT-DECORATION: none
+}
+A.header:visited {
+	BACKGROUND-COLOR: transparent; COLOR: black; TEXT-DECORATION: none
+}
+A.header:hover {
+	BACKGROUND-COLOR: transparent; COLOR: black; TEXT-DECORATION: underline
+}
+A.header:active {
+	BACKGROUND-COLOR: transparent; COLOR: black; TEXT-DECORATION: underline
+}
+TABLE.sitemap A:link {
+	BACKGROUND-COLOR: transparent; COLOR: black; TEXT-DECORATION: none
+}
+TABLE.sitemap A:visited {
+	BACKGROUND-COLOR: transparent; COLOR: black; TEXT-DECORATION: none
+}
+TABLE.sitemap A:hover {
+	BACKGROUND-COLOR: transparent; COLOR: black; TEXT-DECORATION: underline
+}
+TABLE.sitemap A:active {
+	BACKGROUND-COLOR: transparent; COLOR: black; TEXT-DECORATION: underline
+}
+.toprect_txt A:link {
+	BACKGROUND-COLOR: transparent; COLOR: #900b09; TEXT-DECORATION: none
+}
+.toprect_txt A:visited {
+	BACKGROUND-COLOR: transparent; COLOR: #900b09; TEXT-DECORATION: none
+}
+.toprect_txt A:hover {
+	BACKGROUND-COLOR: transparent; COLOR: #ff0000; TEXT-DECORATION: =
+underline
+}
+.toprect_txt A:active {
+	BACKGROUND-COLOR: transparent; COLOR: #ff0000; TEXT-DECORATION: =
+underline
+}
+A.m_item:link {
+	BACKGROUND-COLOR: transparent; COLOR: white; TEXT-DECORATION: none
+}
+A.m_item:visited {
+	BACKGROUND-COLOR: transparent; COLOR: white; TEXT-DECORATION: none
+}
+A.m_item:hover {
+	BACKGROUND-COLOR: transparent; COLOR: white; TEXT-DECORATION: underline
+}
+A.m_item:active {
+	BACKGROUND-COLOR: transparent; COLOR: white; TEXT-DECORATION: underline
+}
+A.chapter:link {
+	BACKGROUND-COLOR: transparent; COLOR: #8ac007; TEXT-DECORATION: none
+}
+A.chapter:visited {
+	BACKGROUND-COLOR: transparent; COLOR: #8ac007; TEXT-DECORATION: none
+}
+A.chapter:hover {
+	BACKGROUND-COLOR: transparent; COLOR: #8ac007; TEXT-DECORATION: =
+underline
+}
+A.chapter:active {
+	BACKGROUND-COLOR: transparent; COLOR: #8ac007; TEXT-DECORATION: none
+}
+A.tryitbtn {
+	BORDER-BOTTOM: #aaaaaa 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#aaaaaa 1px solid; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #8ac007; =
+MARGIN-TOP: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; DISPLAY: =
+inline-block; WHITE-SPACE: nowrap; MARGIN-BOTTOM: 5px; COLOR: #ffffff; =
+MARGIN-LEFT: 5px; FONT-SIZE: 12px; BORDER-TOP: #aaaaaa 1px solid; =
+FONT-WEIGHT: bold; BORDER-RIGHT: #aaaaaa 1px solid; TEXT-DECORATION: =
+none; PADDING-TOP: 3px; border-radius: 5px
+}
+A.tryitbtn:link {
+	BORDER-BOTTOM: #aaaaaa 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#aaaaaa 1px solid; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #8ac007; =
+MARGIN-TOP: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; DISPLAY: =
+inline-block; WHITE-SPACE: nowrap; MARGIN-BOTTOM: 5px; COLOR: #ffffff; =
+MARGIN-LEFT: 5px; FONT-SIZE: 12px; BORDER-TOP: #aaaaaa 1px solid; =
+FONT-WEIGHT: bold; BORDER-RIGHT: #aaaaaa 1px solid; TEXT-DECORATION: =
+none; PADDING-TOP: 3px; border-radius: 5px
+}
+A.tryitbtn:visited {
+	BORDER-BOTTOM: #aaaaaa 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#aaaaaa 1px solid; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #8ac007; =
+MARGIN-TOP: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; DISPLAY: =
+inline-block; WHITE-SPACE: nowrap; MARGIN-BOTTOM: 5px; COLOR: #ffffff; =
+MARGIN-LEFT: 5px; FONT-SIZE: 12px; BORDER-TOP: #aaaaaa 1px solid; =
+FONT-WEIGHT: bold; BORDER-RIGHT: #aaaaaa 1px solid; TEXT-DECORATION: =
+none; PADDING-TOP: 3px; border-radius: 5px
+}
+A.showbtn {
+	BORDER-BOTTOM: #aaaaaa 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#aaaaaa 1px solid; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #8ac007; =
+MARGIN-TOP: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; DISPLAY: =
+inline-block; WHITE-SPACE: nowrap; MARGIN-BOTTOM: 5px; COLOR: #ffffff; =
+MARGIN-LEFT: 5px; FONT-SIZE: 12px; BORDER-TOP: #aaaaaa 1px solid; =
+FONT-WEIGHT: bold; BORDER-RIGHT: #aaaaaa 1px solid; TEXT-DECORATION: =
+none; PADDING-TOP: 3px; border-radius: 5px
+}
+A.showbtn:link {
+	BORDER-BOTTOM: #aaaaaa 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#aaaaaa 1px solid; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #8ac007; =
+MARGIN-TOP: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; DISPLAY: =
+inline-block; WHITE-SPACE: nowrap; MARGIN-BOTTOM: 5px; COLOR: #ffffff; =
+MARGIN-LEFT: 5px; FONT-SIZE: 12px; BORDER-TOP: #aaaaaa 1px solid; =
+FONT-WEIGHT: bold; BORDER-RIGHT: #aaaaaa 1px solid; TEXT-DECORATION: =
+none; PADDING-TOP: 3px; border-radius: 5px
+}
+A.showbtn:visited {
+	BORDER-BOTTOM: #aaaaaa 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#aaaaaa 1px solid; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #8ac007; =
+MARGIN-TOP: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; DISPLAY: =
+inline-block; WHITE-SPACE: nowrap; MARGIN-BOTTOM: 5px; COLOR: #ffffff; =
+MARGIN-LEFT: 5px; FONT-SIZE: 12px; BORDER-TOP: #aaaaaa 1px solid; =
+FONT-WEIGHT: bold; BORDER-RIGHT: #aaaaaa 1px solid; TEXT-DECORATION: =
+none; PADDING-TOP: 3px; border-radius: 5px
+}
+A.tryitbtn:hover {
+	BACKGROUND-COLOR: #ffffff; COLOR: #8ac007
+}
+A.tryitbtn:active {
+	BACKGROUND-COLOR: #ffffff; COLOR: #8ac007
+}
+A.showbtn:hover {
+	BACKGROUND-COLOR: #ffffff; COLOR: #8ac007
+}
+A.showbtn:active {
+	BACKGROUND-COLOR: #ffffff; COLOR: #8ac007
+}
+A.playitbtn {
+	BORDER-BOTTOM: #ffad33 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#ffad33 1px solid; PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #ffad33; =
+PADDING-LEFT: 10px; PADDING-RIGHT: 10px; DISPLAY: inline-block; =
+WHITE-SPACE: nowrap; COLOR: #ffffff; MARGIN-LEFT: 1px; FONT-SIZE: 11px; =
+BORDER-TOP: #ffad33 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #ffad33 =
+1px solid; TEXT-DECORATION: none; PADDING-TOP: 1px; border-radius: 5px
+}
+A.playitbtn:link {
+	BORDER-BOTTOM: #ffad33 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#ffad33 1px solid; PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #ffad33; =
+PADDING-LEFT: 10px; PADDING-RIGHT: 10px; DISPLAY: inline-block; =
+WHITE-SPACE: nowrap; COLOR: #ffffff; MARGIN-LEFT: 1px; FONT-SIZE: 11px; =
+BORDER-TOP: #ffad33 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #ffad33 =
+1px solid; TEXT-DECORATION: none; PADDING-TOP: 1px; border-radius: 5px
+}
+A.playitbtn:visited {
+	BORDER-BOTTOM: #ffad33 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#ffad33 1px solid; PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #ffad33; =
+PADDING-LEFT: 10px; PADDING-RIGHT: 10px; DISPLAY: inline-block; =
+WHITE-SPACE: nowrap; COLOR: #ffffff; MARGIN-LEFT: 1px; FONT-SIZE: 11px; =
+BORDER-TOP: #ffad33 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #ffad33 =
+1px solid; TEXT-DECORATION: none; PADDING-TOP: 1px; border-radius: 5px
+}
+A.playitbtn:hover {
+	BACKGROUND-COLOR: #ffffff; COLOR: #ffad33
+}
+A.playitbtn:active {
+	BACKGROUND-COLOR: #ffffff; COLOR: #ffad33
+}
+A.tryitbtnsyntax:link {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #8ac007; FONT-FAMILY: verdana; =
+FLOAT: right; BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px =
+solid; PADDING-TOP: 0px
+}
+A.tryitbtnsyntax:visited {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #8ac007; FONT-FAMILY: verdana; =
+FLOAT: right; BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px =
+solid; PADDING-TOP: 0px
+}
+A.tryitbtnsyntax:active {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #8ac007; FONT-FAMILY: verdana; =
+FLOAT: right; BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px =
+solid; PADDING-TOP: 0px
+}
+A.tryitbtnsyntax:hover {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #8ac007; FONT-FAMILY: verdana; =
+FLOAT: right; BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px =
+solid; PADDING-TOP: 0px
+}
+A.tryitbtnsyntax:active {
+	BACKGROUND-COLOR: #ffffff; COLOR: #8ac007
+}
+A.tryitbtnsyntax:hover {
+	BACKGROUND-COLOR: #ffffff; COLOR: #8ac007
+}
+DIV.chapter {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: auto; =
+PADDING-RIGHT: 0px; HEIGHT: 20px; FONT-SIZE: 17px; PADDING-TOP: 0px
+}
+DIV.chapter DIV.prev {
+	TEXT-ALIGN: left; WIDTH: 40%; FLOAT: left
+}
+DIV.chapter DIV.next {
+	TEXT-ALIGN: right; WIDTH: 48%; FLOAT: right
+}
+SPAN.color_h1 {
+	COLOR: #8ac007
+}
+SPAN.left_h2 {
+	COLOR: #8ac007
+}
+SPAN.new {
+	BORDER-BOTTOM: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; =
+BACKGROUND-COLOR: #8ac007; OUTLINE-STYLE: solid; OUTLINE-COLOR: #8ac007; =
+PADDING-LEFT: 1px; OUTLINE-WIDTH: 1px; PADDING-RIGHT: 1px; FLOAT: right; =
+COLOR: #ffffff; BORDER-TOP: #ffffff 1px solid; FONT-WEIGHT: bold; =
+BORDER-RIGHT: #ffffff 1px solid
+}
+.notsupported {
+	COLOR: rgb(197,128,128)
+}
+.notsupported:hover {
+	COLOR: rgb(197,128,128)
+}
+.notsupported:active {
+	COLOR: rgb(197,128,128)
+}
+.notsupported:visited {
+	COLOR: rgb(197,128,128)
+}
+.notsupported:link {
+	COLOR: rgb(197,128,128)
+}
+#err_form {
+	Z-INDEX: 1; BORDER-BOTTOM: #d4d4d4 1px solid; POSITION: relative; =
+BORDER-LEFT: #d4d4d4 1px solid; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: =
+#f6f4f0; MARGIN-TOP: 10px; PADDING-LEFT: 10px; WIDTH: auto; =
+PADDING-RIGHT: 10px; DISPLAY: none; BACKGROUND-REPEAT: repeat-x; COLOR: =
+#000000; MARGIN-LEFT: auto; BORDER-TOP: #d4d4d4 1px solid; MARGIN-RIGHT: =
+auto; BORDER-RIGHT: #d4d4d4 1px solid; PADDING-TOP: 10px
+}
+#err_sent {
+	Z-INDEX: 1; BORDER-BOTTOM: #d4d4d4 1px solid; POSITION: relative; =
+BORDER-LEFT: #d4d4d4 1px solid; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: =
+#f6f4f0; MARGIN-TOP: 10px; PADDING-LEFT: 10px; WIDTH: auto; =
+PADDING-RIGHT: 10px; DISPLAY: none; BACKGROUND-REPEAT: repeat-x; COLOR: =
+#000000; MARGIN-LEFT: auto; BORDER-TOP: #d4d4d4 1px solid; MARGIN-RIGHT: =
+auto; BORDER-RIGHT: #d4d4d4 1px solid; PADDING-TOP: 10px
+}
+#err_form H2 {
+	MARGIN-TOP: 0px
+}
+#err_sent H2 {
+	MARGIN-TOP: 0px
+}
+#err_form LABEL {
+	DISPLAY: block; MARGIN-BOTTOM: 3px
+}
+#err_form INPUT {
+	BORDER-BOTTOM: gray 1px solid; BORDER-LEFT: gray 1px solid; =
+PADDING-BOTTOM: 4px; PADDING-LEFT: 4px; WIDTH: 590px; PADDING-RIGHT: =
+4px; DISPLAY: block; HEIGHT: 16px; BORDER-TOP: gray 1px solid; =
+BORDER-RIGHT: gray 1px solid; PADDING-TOP: 4px
+}
+#err_form TEXTAREA {
+	BORDER-BOTTOM: gray 1px solid; BORDER-LEFT: gray 1px solid; =
+PADDING-BOTTOM: 4px; PADDING-LEFT: 4px; WIDTH: 590px; PADDING-RIGHT: =
+4px; DISPLAY: block; HEIGHT: 100px; BORDER-TOP: gray 1px solid; =
+BORDER-RIGHT: gray 1px solid; PADDING-TOP: 4px
+}
+#err_form .submit INPUT {
+	BORDER-BOTTOM: gray 1px solid; BORDER-LEFT: gray 1px solid; =
+PADDING-BOTTOM: 2px; PADDING-LEFT: 0px; WIDTH: 100px; PADDING-RIGHT: =
+0px; HEIGHT: 18px; BORDER-TOP: gray 1px solid; BORDER-RIGHT: gray 1px =
+solid; PADDING-TOP: 0px
+}
+.err_close {
+	POSITION: absolute; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: =
+68px; PADDING-RIGHT: 0px; TOP: 5px; CURSOR: pointer; RIGHT: 5px; =
+TEXT-DECORATION: underline; PADDING-TOP: 0px
+}
+TABLE#bottomlinks {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; WIDTH: 100%; =
+BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+#bottomlinks TD {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; =
+PADDING-RIGHT: 10px; VERTICAL-ALIGN: top; PADDING-TOP: 10px
+}
+.bottomlinksraquo {
+	COLOR: #ff4800; FONT-WEIGHT: bold
+}
+#bottomlinks H3 {
+	COLOR: #555555; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+#bottomlinks A {
+	COLOR: #555555; FONT-SIZE: 11px; TEXT-DECORATION: none
+}
+.html5badge {
+	BACKGROUND-IMAGE: url(/images/html5_badge20.png); BACKGROUND-REPEAT: =
+no-repeat; BACKGROUND-POSITION: right 50%
+}
+.expandingMenu {
+	WIDTH: 170px; OVERFLOW: hidden
+}
+.expandingMenuItem {
+	MARGIN-TOP: 1px; PADDING-LEFT: 12px; WIDTH: 158px; MARGIN-BOTTOM: 0px
+}
+.expandingMenuSelected {
+	BACKGROUND-IMAGE: url(images/minus_arrow.gif); BACKGROUND-REPEAT: =
+no-repeat; BACKGROUND-POSITION: 1px 7px
+}
+.expandingMenuNotSelected {
+	BACKGROUND-IMAGE: url(images/plus_arrow.gif); BACKGROUND-REPEAT: =
+no-repeat; BACKGROUND-POSITION: 1px 7px
+}
+#leftcolumn .expandingMenuHeader {
+	PADDING-BOTTOM: 2px; MARGIN-TOP: 1px; PADDING-LEFT: 2px; PADDING-RIGHT: =
+2px; MARGIN-BOTTOM: 0px; MARGIN-LEFT: 11px; CURSOR: pointer; =
+PADDING-TOP: 2px
+}
+#leftcolumn .expandingMenuHeader:hover {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+#leftcolumn DIV.expandingMenuSelected .expandingMenuItem {
+	PADDING-LEFT: 0px; WIDTH: 170px
+}
+DIV#google_translate_element .goog-te-gadget-simple {
+	BORDER-BOTTOM: #d9d9d9 1px solid; BORDER-LEFT: #d9d9d9 1px solid; =
+PADDING-BOTTOM: 0px; MARGIN-TOP: 2px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; HEIGHT: 25px; BORDER-TOP: #d9d9d9 1px solid; BORDER-RIGHT: #d9d9d9 =
+1px solid; PADDING-TOP: 0px
+}
+#google_translate_element A {
+	FONT-FAMILY: verdana; COLOR: #808080; FONT-SIZE: 11px
+}
+#google_translate_element A:hover {
+	COLOR: #000000
+}
+DIV.cse .gsc-control-cse {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: =
+0px; BACKGROUND-COLOR: transparent; MARGIN: 0px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; BORDER-TOP: medium none; BORDER-RIGHT: medium none; =
+PADDING-TOP: 0px
+}
+DIV.gsc-control-cse {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: =
+0px; BACKGROUND-COLOR: transparent; MARGIN: 0px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; BORDER-TOP: medium none; BORDER-RIGHT: medium none; =
+PADDING-TOP: 0px
+}
+TD.gsc-search-button INPUT.gsc-search-button {
+	BORDER-BOTTOM-COLOR: #555555; BACKGROUND-COLOR: #555555; =
+BORDER-TOP-COLOR: #555555; BORDER-RIGHT-COLOR: #555555; =
+BORDER-LEFT-COLOR: #555555
+}
+DIV.goog-te-gadget-simple {
+	WIDTH: 160px; FONT-SIZE: 11pt
+}
+IMG.goog-te-gadget-icon {
+	MARGIN-TOP: 3px
+}
+TD.gsc-search-button INPUT.gsc-search-button-v2 {
+	PADDING-BOTTOM: 6px; MARGIN-TOP: 4px; PADDING-LEFT: 8px; WIDTH: 13px; =
+PADDING-RIGHT: 8px; HEIGHT: 13px; PADDING-TOP: 6px
+}
+FORM.gsc-search-box-tools TABLE.gsc-search-box TD.gsc-input {
+	PADDING-RIGHT: 0px
+}
+TD.gsib_a {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 3px; PADDING-RIGHT: 0px; =
+PADDING-TOP: 4px
+}
+
+------=_NextPart_000_0000_01CF2A32.99EFE180
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit
+
+(function(){var =
+d=3Dwindow,e=3Ddocument,f=3D"text/javascript",g=3D"text/css",h=3D"stylesh=
+eet",k=3D"script",l=3D"link",m=3D"head",n=3D"complete",p=3D"UTF-8",q=3D".=
+";function r(b){var =
+a=3De.getElementsByTagName(m)[0];a||(a=3De.body.parentNode.appendChild(e.=
+createElement(m)));a.appendChild(b)}function _loadJs(b){var =
+a=3De.createElement(k);a.type=3Df;a.charset=3Dp;a.src=3Db;r(a)}function =
+_loadCss(b){var =
+a=3De.createElement(l);a.type=3Dg;a.rel=3Dh;a.charset=3Dp;a.href=3Db;r(a)=
+}function _isNS(b){b=3Db.split(q);for(var =
+a=3Dd,c=3D0;c<b.length;++c)if(!(a=3Da[b[c]]))return!1;return!0}function =
+_setupNS(b){b=3Db.split(q);for(var =
+a=3Dd,c=3D0;c<b.length;++c)a=3Da[b[c]]||(a[b[c]]=3D{});return a}=0A=
+d.addEventListener&&"undefined"=3D=3Dtypeof =
+e.readyState&&d.addEventListener("DOMContentLoaded",function(){e.readySta=
+te=3Dn},!1);=0A=
+if (_isNS('google.translate.Element')){return}(function(){var =
+c=3D_setupNS('google.translate._const');c._cl=3D'en';c._cuc=3D'googleTran=
+slateElementInit';c._cac=3D'';c._cam=3D'';var =
+h=3D'translate.googleapis.com';var =
+s=3D(false?'https':window.location.protocol=3D=3D'https:'?'https':'http')=
++'://';var =
+b=3Ds+h;c._pah=3Dh;c._pas=3Ds;c._pbi=3Db+'/translate_static/img/te_bk.gif=
+';c._pci=3Db+'/translate_static/img/te_ctrl3.gif';c._phf=3Dh+'/translate_=
+static/js/element/hrs.swf';c._pli=3Db+'/translate_static/img/loading.gif'=
+;c._plla=3Dh+'/translate_a/l';c._pmi=3Db+'/translate_static/img/mini_goog=
+le.png';c._ps=3Db+'/translate_static/css/translateelement.css';c._puh=3D'=
+translate.google.com';_loadCss(c._ps);_loadJs(b+'/translate_static/js/ele=
+ment/main.js');})();})();
+------=_NextPart_000_0000_01CF2A32.99EFE180--

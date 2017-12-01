@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+
+<script type="text/javascript"> 
+$(document).ready(function(){
+		var i = 0;
+		var x = 8;
+$(".button1").css ('visibility', 'hidden');
+  $('.right').click(function(){
+
+  		i++;
+		$("#counter") .html (i);
+		$(this).css ('background-color' ,'#DAE6F0').animate({'top' : '+=200px', 'opacity' : '0'},"slow");
+	    if (i == x) {$('.button1').css ('visibility', 'visible')};
+
+  });
+  $('.wrong').click(function(){
+
+		i--;
+		$("#counter") .html (i);
+		$(this).css ('background-color' ,'#FFE6E6') .animate({'top' : '+=200px', 'opacity' : '0'},"slow");
+
+
+  });
+});
+</script>
+ 
+ 
+
+
+
+<style>
+.right, .wrong {
+position: relative;
+cursor: pointer;
+
+}
+.right:hover, .wrong:hover {background: #ccc;}
+.item {padding-left: 20px; width: 700px; line-height: 25px; }
+
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%"><p>	Some writing errors result from incorrectly using words that look or sound similar, such as "it's" and "its". 
+Use the proofreading technique of running your finger along a sentence to find the errors in the following exercise.  (You can run your finger on the 
+screen or simply use the mouse cursor as your fingertip.)</p><p> After you get all the right answers, a button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. </p>
+
+ 	</td>
+ 	<td align="center"><a class="button1" href="page10x.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table width="100%" border="0">
+	<tr>
+	<td valign="top" width="80%"><div class="exercise_instructions">
+		Delete the <font class="correct_number">INCORRECT</font> statements by clicking on them.</div>
+	</td>
+	<td><div class="your_score"><br>Your Score:</div></td>
+	</tr>
+	<tr>
+	<td valign="top" width="80%">
+ 		<table class="questions_table">
+			<tr><td><div class="number">1.</div></td><td><div class="item"><span class="wrong">Her decisions affect me greatly.</span></div></td></tr>
+			<tr><td><div class="number">2.</div></td><td><div class="item"><span class="right">It is difficult to foresee the affects of that new economic policy.</span></div></td></tr>
+			<tr><td><div class="number">3.</div></td><td><div class="item"><span class="right">I always advice my students to get enough sleep before a test.</span></div></td></tr>
+			<tr><td><div class="number">4.</div></td><td><div class="item"><span class="wrong">My advice is that you avoid talking to them in the future.</span></div></td></tr>
+			<tr><td><div class="number">5.</div></td><td><div class="item"><span class="right">The computer has a virus deep inside it's operating system.</span></div></td></tr>
+			<tr><td><div class="number">6.</div></td><td><div class="item"><span class="right">They do not think its right to use their ideas in our essay.</span></div></td></tr>
+			<tr><td><div class="number">7.</div></td><td><div class="item"><span class="right">Have you brought they're things from the car?</span></div></td></tr>
+			<tr><td><div class="number">8.</div></td><td><div class="item"><span class="wrong">Perhaps their intentions were good.</span></div></td></tr>
+			<tr><td><div class="number">9.</div></td><td><div class="item"><span class="right">I washed there clothes yesterday.</span></div></td></tr>
+			<tr><td><div class="number">10.</div></td><td><div class="item"><span class="right">The suspect lead the police to the stash.</span></div></td></tr>
+			<tr><td><div class="number">11.</div></td><td><div class="item"><span class="wrong">She always wants to lead when we dance the tango.</span></div></td></tr>
+			<tr><td><div class="number">12.</div></td><td><div class="item"><span class="right">Have you brought they're things from the car?</span></div></td></tr>
+		</table>
+ 	</td>
+	<td align="center">
+		<div id="counter" class="background_score"></div> 
+	</td>
+	</tr>
+	</table>
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

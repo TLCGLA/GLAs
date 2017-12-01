@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+
+<script type="text/javascript"> 
+$(document).ready(function(){
+		var i = 0;
+		var x = 7;
+$(".button1").css ('visibility', 'hidden');
+  $('.right').click(function(){
+
+  		i--;
+		$("#counter") .html (i);
+		$(this).css ('background-color' ,'red').animate({'top' : '+=200px', 'opacity' : '0'},"slow");
+
+
+  });
+  $('.wrong').click(function(){
+
+		i++;
+		$("#counter") .html (i);
+		$(this).css ('background-color' ,'blue') .animate({'top' : '+=200px', 'opacity' : '0'},"slow");
+		if (i == x) {$('.button1').css ('visibility', 'visible')};
+
+  });
+});
+</script>
+ 
+ 
+
+
+
+<style>
+.right, .wrong {
+position: relative;
+font-size: 16px; 
+width: 20px;
+text-align: center;
+border: 1px solid #696969; 
+background-color: #ccc; 
+font-weight: bold; 
+margin-left: 4px;
+margin-right: 4px;
+cursor: pointer;
+
+}
+.right:hover, .wrong:hover {background: #ccc;}
+.item {padding-left: 20px; width: 800px; line-height: 25px; }
+
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	The sentences below have too many commas. Can you find the incorrect ones? Delete the unnecessary commas by clicking on them. 
+	After you get all the correct answers, a button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page9x.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table width="100%" border="0">
+	<tr>
+	<td valign="top" width="80%"><div class="exercise_instructions">
+		Delete the <font class="correct_number">UNNECESSARY</font> commas by clicking on them.</div>
+	</td>
+	<td><div class="your_score"><br>Your Score:</div></td>
+	</tr>
+	<tr>
+	<td valign="top" width="80%">
+ 		<table class="questions_table">
+			<tr><td><div class="number">1.</div></td><td><div class="item">Both <span class="wrong">,</span> the Los Angeles Lakers <span class="wrong">,</span> and the Angeles Sparks <span class="wrong">,</span> wear purple </span> <span class="wrong">,</span> and gold uniforms.</div></td></tr>
+			<tr><td><div class="number">2.</div></td><td><div class="item">The Sparks <span class="right">,</span> the Lakers <span class="right">,</span> and the Clippers <span class="wrong">,</span> all play at the Staples Center.</div></td></tr>
+			<tr><td><div class="number">3.</div></td><td><div class="item">Jane is <span class="wrong">,</span> either watching the game with her friends <span class="right">,</span> enjoying it with her family at home <span class="right">,</span> or sitting in Staples Center <span class="wrong">,</span> with her boyfriend.</div></td></tr>
+		</table>
+ 	</td>
+	<td align="center">
+		<div id="counter" class="background_score"></div> 
+	</td>
+	</tr>
+	</table>
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

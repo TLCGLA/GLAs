@@ -1,0 +1,1057 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 14">
+<link id=Main-File rel=Main-File href="../CulturalExpectations2.html">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.html');" id=PPTL1>Cultural Expectations
+  2:<br>
+    &nbsp; Seeking Help beyond the Classroom</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0058.html');" id=PPTL2>Agenda</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>This workshop will cover…</li>
+   <li>On-Campus Resources</li>
+   <li>Online Resources</li>
+   <li>Off-Campus Resources</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0059.html');" id=PPTL3>Part 1:<br>
+    On-Campus Resources</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0060.html');" id=PPTL4>Overview</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>College of the Canyons provides a variety of resources designed to help
+       students succeed, including:</li>
+   <li>Professors’ Office Hours</li>
+   <li>Library</li>
+   <li>The Learning Center (TLC)</li>
+   <li>Counseling</li>
+   <li>Extended Opportunity Programs and Services (EOPS)</li>
+   <li>Associated Student Government (ASG)</li>
+   <li>Job and Career Center</li>
+   <li>Student Health and Wellness Center</li>
+   <li>Clubs and Organizations</li>
+   <li>Please note:<span style='mso-spacerun:yes'>  </span>Web links for each
+       of these resources are provided in your handout.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0061.html');" id=PPTL5>Professors’ Office
+  Hours</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>College professors hold office hours so students can meet with them.</li>
+   <li>Students visit office hours to ask for help on an assignment, for help
+       understanding some of the class material, or to discuss private issues
+       with their professor (like their grade in the class).</li>
+   <li>If you have a question that will take more than 2-3 minutes for your
+       professor to answer, you should plan to meet with the professor in
+       office hours.</li>
+   <li>Learning to visit office hours is an important skill for students in the
+       United States.<span style='mso-spacerun:yes'>  </span>Professors expect
+       you to visit office hours if you need help with the class.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0062.html');" id=PPTL6>How to Visit Office
+  Hours</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Make sure you know where and when the professor holds office hours.<span
+       style='mso-spacerun:yes'>  </span>This information should be available
+       in your syllabus.</li>
+   <li>Your professor may want you to make an appointment.<span
+       style='mso-spacerun:yes'>  </span>If so, be sure to email or talk to the
+       professor before visiting office hours.</li>
+   <li>Before meeting with your professor, have a purpose.<span
+       style='mso-spacerun:yes'>  </span>What is your question?<span
+       style='mso-spacerun:yes'>  </span>What do you need help with? Write down
+       your questions before you go. That can be very helpful.</li>
+   <li>Visit office hours well before an assignment is due.<span
+       style='mso-spacerun:yes'>  </span>If you go ten minutes before it is
+       due, your professor won’t be able to help you.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0063.html');" id=PPTL7>Talking with Your
+  Instructor</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Have your questions prepared in advance.<span style='mso-spacerun:yes'> 
+       </span>Write them down so you don’t forget what you want to say.</li>
+   <li>Come prepared.<span style='mso-spacerun:yes'>  </span>Bring a pen,
+       paper, syllabus, and assignment prompt.</li>
+   <li>Be on time, especially if you’ve made an appointment outside of regular
+       office hours.</li>
+   <li>Call your instructor Professor and his/her last name unless s/he has
+       invited you to do otherwise.</li>
+   <li>Show gratitude.<span style='mso-spacerun:yes'>  </span>Thank the
+       instructor for his/her help.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0064.html');" id=PPTL8>Overcoming Fear</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Often, students seek out professor’s help because they are experiencing
+       a problem (like falling behind in their assignments).</li>
+   <li>They may feel afraid uncomfortable about the idea of talking to the
+       professor alone.</li>
+   <li>In order to succeed in college you cannot be afraid or worried; you have
+       to ask for help when you need it. If wait until the end of the semester,
+       it might be too late.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0065.html');" id=PPTL9>Library</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The library is a useful place. It has a lot of resources to help you.</li>
+   <li>It offers…</li>
+   <ul>
+    <li>Books, periodicals, reference materials, and online databases.</li>
+    <li>A variety of study spaces where you can work independently or with
+        other students.</li>
+    <li>An online class on college research skills called LMTech 100.</li>
+    <li>Guidelines for MLA and APA citation styles</li>
+   </ul>
+   <li>It is open for extensive hours for students’ convenience. When is it
+       open? You have to check because it can change. However, you can access
+       materials online as well.</li>
+   <li>The library staff are happy to help you; they will show you around if
+       you ask them.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0066.html');" id=PPTL10>Library Policies</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Anyone is welcome to use the library.<span style='mso-spacerun:yes'> 
+       </span>However, if you would like to check out books, you must use your
+       College of the Canyons student ID.</li>
+   <li>If you don’t return books or any items on time, it will cost you money!</li>
+   <li>Borrowed items are generally renewable.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0067.html');" id=PPTL11>Online Library
+  Resources</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The library provides online resources that you can access from home,
+       including:</li>
+   <li>E-books</li>
+   <li>Databases on a variety of subject areas (Encyclopedia Britannica,
+       Proquest, Academic Search Elite, etc.)</li>
+   <li>To access these resources, you will need a user name and password.<span
+       style='mso-spacerun:yes'>  </span>You can get this information from your
+       instructor or The Learning Center.</li>
+   <li>For more information about using these resources, you can take the
+       Online Research GLA.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0068.html');" id=PPTL12>The Learning Center
+  (TLC)</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The Learning Center provides a wide variety of resources to support
+       student success, including:</li>
+   <li>Free tutoring in math, English, ESL, computers, and a variety of
+       subjects</li>
+   <li>Supplemental Learning Workshops and Guided Learning Activities (like
+       this one) to help students learn about a particular topic</li>
+   <li>Study and Practice Jams led by tutors to give additional help in
+       particular classes</li>
+   <li>Computer lab</li>
+   <li>Group study areas</li>
+   <li>Test Proctoring Services</li>
+   <li>Learn more about TLC by watching this video!</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0069.html');" id=PPTL13>Study Skills
+  Development at TLC</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>At TLC, you can practice English with native speakers to help improve
+       your fluency.</li>
+   <li>You can take a variety of workshops to improve your academic skills,
+       including:</li>
+   <li>Reading</li>
+   <li>Writing</li>
+   <li>Math</li>
+   <li>Study Skills</li>
+   <li>Test Taking Strategies</li>
+   <li>Research and Citation</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0070.html');" id=PPTL14>TLC Policies</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Services are free to students enrolled at COC</li>
+   <li>No appointments necessary for tutoring</li>
+   <li>You will need your student ID card to utilize services</li>
+   <li>If you are attending a workshop or jam, arrive 10-15 minutes early to
+       sign in</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0082.html');" id=PPTL15>Counseling</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The Counseling department can help you develop your Educational Plan and
+       prepare for your goals (career certificate, Associate’s Degree, or
+       transfer).</li>
+   <li>Counseling takes place in a one-on-one session and may involve a
+       discussion of goals or college success skills.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0071.html');" id=PPTL16>Extended Opportunity
+  Programs and Services (EOPS)</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>EOPS has many helpful resources to help students with academic and
+       financial need.</li>
+   <li>Services May Include:</li>
+   <li>Orientation</li>
+   <li>Student Support Services</li>
+   <li>Counseling/Peer Advisement</li>
+   <li>Instructional Support</li>
+   <li>University Transfer</li>
+   <li>EOPS requires an application.<span style='mso-spacerun:yes'> 
+       </span>Your handout provides a link to the EOPS website where you can
+       find the application.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0072.html');" id=PPTL17>Associated Student
+  Government (ASG)</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Students can become actively involved in campus life&nbsp;and shared
+       governance of the College by serving in an&nbsp;Associated Student
+       Government&nbsp;position. The&nbsp;ASG&nbsp;is the representative voice
+       of the students at College of&nbsp;the Canyons.</li>
+   <li>ASG sponsors a variety of events, including:</li>
+   <li>Blood Drives</li>
+   <li>Film Culture Events</li>
+   <li>Open Mic Nights</li>
+   <li>Club Rush</li>
+   <li>ASG is a great way to get involved in social, cultural, and educational
+       programs at COC! By joining the community, you will have a greater
+       student experience, you will meet more people, and you will improve your
+       English.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0073.html');" id=PPTL18>Job and Career Center</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The Job and Career Center can help you with career exploration and
+       assist you in the job search process.</li>
+   <li>Services include:</li>
+   <li>Advisement meetings</li>
+   <li>Assessments</li>
+   <li>Resume development</li>
+   <li>Interview preparation</li>
+   <li>Job search assistance</li>
+   <li>My Jobs Online Database</li>
+   <li>Workshops and Events</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0075.html');" id=PPTL19>Student Health and
+  Wellness Center</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The Student Health and Wellness Center provides physical and mental
+       health resources to keep students healthy.<span
+       style='mso-spacerun:yes'>  </span>Their sources are free or low
+       cost.<span style='mso-spacerun:yes'>  </span>You do not need health
+       insurance to visit the Health Center.</li>
+   <li>Services Include:</li>
+   <li>TB Skin Tests</li>
+   <li>Prescription Medication</li>
+   <li>Vaccinations and Immunizations</li>
+   <li>Men’s &amp; Women’s Clinic</li>
+   <li>Personal Counseling</li>
+   <li>Nutrition Counseling</li>
+   <li>Tobacco Cessation Counseling</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0077.html');" id=PPTL20>Clubs and
+  Organizations</a></font></div>
+  <div id=PPTC20 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>College of the Canyons has a wide variety of clubs and
+       organizations.<span style='mso-spacerun:yes'>  </span>Joining a club is
+       a great way to meet new people who share interests with you.</li>
+   <li>Some of our campus clubs are:</li>
+   <li>Astronomy and Physics Club</li>
+   <li>Future Business Leaders of America</li>
+   <li>Gay-Straight Alliance</li>
+   <li>Student Nutrition &amp; Wellness Advocates at COC (SNAC)</li>
+   <li>If COC doesn’t have the club you want, you can start your own club!<span
+       style='mso-spacerun:yes'>  </span>Your handout has a link to the Clubs
+       and Organizations website if you’d like more information.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0078.html');" id=PPTL21>Part 2:<br>
+    Online Resources</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0079.html');" id=PPTL22>Overview</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>There are a wide variety of online resources that can help you succeed
+       as a college student.<span style='mso-spacerun:yes'>  </span>They
+       include:</li>
+   <li>Distance Learning (Online and Hybrid classes)</li>
+   <li>Online Academic Resources (like dictionaries and study aids)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0080.html');" id=PPTL23>Distance Learning</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Most American colleges and universities (including COC) provide options
+       for students to take courses online.<span style='mso-spacerun:yes'> 
+       </span>The course may be either:</li>
+   <li>100% Online:<span style='mso-spacerun:yes'>  </span>Students learn
+       through the course website and submit all work online.<span
+       style='mso-spacerun:yes'>  </span>The class is not required to meet in
+       person.<span style='mso-spacerun:yes'>  </span>Students learn at the
+       most convenient time of day or night for their schedule.</li>
+   <li>Hybrid:<span style='mso-spacerun:yes'>  </span>The course is conducted
+       partially in person and partially online.<span
+       style='mso-spacerun:yes'>  </span>The class is required to meet in
+       person, but less frequently than face-to-face classes.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0083.html');" id=PPTL24>Online Academic
+  Resources</a></font></div>
+  <div id=PPTC24 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The internet offers a wide variety of websites that help students
+       achieve.<span style='mso-spacerun:yes'>  </span>They include:</li>
+   <li>Online dictionaries</li>
+   <li>Writing and grammar assistance</li>
+   <li>Open Source textbooks</li>
+   <li>Entire courses or lectures from other universities (Open Courseware)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0084.html');" id=PPTL25>Online Dictionaries</a></font></div>
+  <div id=PPTC25 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Online dictionaries provide the definitions of words.<span
+       style='mso-spacerun:yes'>  </span>They may also include other key
+       information like:</li>
+   <li>Pronunciation Guide / Sound Recording</li>
+   <li>Plural spelling</li>
+   <li>Word Origin</li>
+   <li>Specific uses of the word</li>
+   <li>Synonyms and antonyms</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0085.html');" id=PPTL26>Writing and Grammar
+  Assistance</a></font></div>
+  <div id=PPTC26 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>There are several helpful online resources for students who need help
+       with their writing and grammar.</li>
+   <li>The Learning Center provides a variety of handouts and other helpful
+       resources that you can access online.</li>
+   <li>In addition, other colleges provide their resources for free
+       online.<span style='mso-spacerun:yes'>  </span>One of the best is the
+       Purdue Online Writing Lab (OWL).<span style='mso-spacerun:yes'> 
+       </span>A link to the OWL is in your handout.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0086.html');" id=PPTL27>Open Source Textbooks</a></font></div>
+  <div id=PPTC27 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Open source textbooks are books that are made available free online for
+       students.<span style='mso-spacerun:yes'>  </span>Professors may assign
+       the open source textbooks as a way to solve problems with traditional
+       textbooks, like price.</li>
+   <li>Students can also search for open source textbooks to provide additional
+       information on concepts they may be struggling with.</li>
+   <li>Your handout includes a link for one Open Source Textbook website.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>28</font></div>
+  </td>
+  <td>
+  <div id=PPTP28 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0087.html');" id=PPTL28>Open Courseware</a></font></div>
+  <div id=PPTC28 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Open Courseware:<span style='mso-spacerun:yes'>  </span>A college or
+       university makes its materials freely available to the public.<span
+       style='mso-spacerun:yes'>  </span>Students can listen to entire lectures
+       conducted at other colleges.<span style='mso-spacerun:yes'>  </span>Like
+       open source textbooks, open courseware can provide important information
+       about topics that you study in class.</li>
+   <li>iTunes provides many lectures through their iTunes University
+       service.<span style='mso-spacerun:yes'>  </span>Some colleges, like MIT,
+       make a wide variety of material available online.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>29</font></div>
+  </td>
+  <td>
+  <div id=PPTP29 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0088.html');" id=PPTL29>Part 3:<br>
+    Off-Campus Resources</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>30</font></div>
+  </td>
+  <td>
+  <div id=PPTP30 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0089.html');" id=PPTL30>Overview</a></font></div>
+  <div id=PPTC30 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Part of the American college experience is learning outside of the
+       classroom.<span style='mso-spacerun:yes'>  </span>Some off-campus places
+       where you can learn are:</li>
+   <li>Public libraries</li>
+   <li>Museums and Cultural Centers</li>
+   <li>Internships</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>31</font></div>
+  </td>
+  <td>
+  <div id=PPTP31 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0090.html');" id=PPTL31>Public Libraries</a></font></div>
+  <div id=PPTC31 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>U.S. public libraries are a source of books and periodicals that people
+       can access for free.</li>
+   <li>Some libraries allow users to check out e-books that can be accessed on
+       Kindle or other e-readers.</li>
+   <li>Public libraries are also a quiet place to study or work on school
+       projects.</li>
+   <li>They also offer interesting programs, like author talks or story time
+       for children.</li>
+   <li>Each library has its own hours; be sure to check the hours before
+       visiting.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>32</font></div>
+  </td>
+  <td>
+  <div id=PPTP32 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0091.html');" id=PPTL32>Museums and Cultural
+  Centers</a></font></div>
+  <div id=PPTC32 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Students in American colleges can use cultural centers like museums, art
+       galleries, gardens, and zoos to expand their outlook.</li>
+   <li>There are many cultural centers in Los Angeles to explore—you can learn
+       about everything from prehistoric life at the La Brea Tar Pits to modern
+       art at the Museum of Contemporary Art (MOCA).</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>33</font></div>
+  </td>
+  <td>
+  <div id=PPTP33 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0092.html');" id=PPTL33>Internships</a></font></div>
+  <div id=PPTC33 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Internships are limited period jobs offered to potential employees.<span
+       style='mso-spacerun:yes'>  </span>Some internships are unpaid; however,
+       students can earn units by completing an internship.</li>
+   <li>They vary in time between a week and a year.</li>
+   <li>Some internships lead to a permanent job offer.</li>
+   <li>At COC, Cooperative Work Experience Education program (CWEE) helps
+       students explore career possibilities through for-credit internships.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>34</font></div>
+  </td>
+  <td>
+  <div id=PPTP34 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0057.html');" id=PPTL34>If you liked this
+  lesson and would like more information, consider attending:</a></font></div>
+  <div id=PPTC34 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Cultural Expectations 1 and 3</li>
+   <li>Online Research</li>
+   <li>Vocabulary Building</li>
+   <br>
+   <br>
+   <li>Why should you come back?</li>
+   <li>Students completing Supplemental Learning Activities had a
+       10%&nbsp;higher success rate across the disciplines, a 21% higher
+       success rate in Math, and a 49% higher success rate in English courses.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master15.html></a><a href=master15.xml></a><a
+href=preview.wmf></a><a href=master33.html></a><a href=master33.xml></a><a
+href=master34.html></a><a href=master34.xml></a><a href=master35.html></a><a
+href=master35.xml></a><a href=master36.html></a><a href=master36.xml></a><a
+href=pres.xml></a><a href=slide0001.html></a><a href="master15_image001.png"></a><a
+href="slide0001_image002.jpg"></a><a href=slide0058.html></a><a
+href="master34_image003.png"></a><a href=slide0059.html></a><a
+href=slide0060.html></a><a href=slide0061.html></a><a href=slide0062.html></a><a
+href=slide0063.html></a><a href=slide0064.html></a><a href=slide0065.html></a><a
+href=slide0066.html></a><a href=slide0067.html></a><a href=slide0068.html></a><a
+href=slide0069.html></a><a href=slide0070.html></a><a href=slide0082.html></a><a
+href=slide0071.html></a><a href=slide0072.html></a><a href=slide0073.html></a><a
+href=slide0075.html></a><a href=slide0077.html></a><a href=slide0078.html></a><a
+href=slide0079.html></a><a href=slide0080.html></a><a href=slide0083.html></a><a
+href=slide0084.html></a><a href=slide0085.html></a><a href=slide0086.html></a><a
+href=slide0087.html></a><a href=slide0088.html></a><a href=slide0089.html></a><a
+href=slide0090.html></a><a href=slide0091.html></a><a href=slide0092.html></a><a
+href=slide0057.html></a><a href="slide0057_image004.jpg"></a><a
+href="slide0057_image005.png"></a><a href="master15_stylesheet.css"></a><a
+href="master33_stylesheet.css"></a><a href="master34_stylesheet.css"></a><a
+href="master35_stylesheet.css"></a><a href="master36_stylesheet.css"></a><a
+href=script.js></a><a href="../CulturalExpectations2.html"></a><a
+href=fullscreen.html></a><a href=buttons.gif></a><a href=frame.html></a><a
+href=outline.html></a></div>
+
+</body>
+
+</html>

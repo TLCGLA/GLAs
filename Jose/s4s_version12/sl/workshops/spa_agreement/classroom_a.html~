@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>week 1 -- classroom</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body><center>
+<table width="90%">
+<tr>
+      <td width="10%" ><font size="+3" color="#990000">The Classroom</font></td>
+
+    </tr>
+</table>
+<hr>
+<table width="90%"  border="0" cellspacing="5">
+
+   <tr>
+      <td align="center" valign="bottom"><img src="images/boligrafo.gif"><br>
+        <font size="6">bol&iacute;graf<font color="#0000FF">o</font></font> </td>
+      <td align="center" valign="bottom"><img src="images/cuaderno.jpg" width="140" height="137"><br>
+        <font size="6">cuadern<font color="#0000FF">o</font></font> </td>
+	  <td align="center" valign="bottom"><img src="images/escritorio.gif" width="230" height="208"><br>
+        <font size="6">escritori<font color="#0000FF">o</font></font></td>
+		
+      <td align="center" valign="bottom"><img src="images/diccionario.gif"><br>
+        <font size="6">diccionari<font color="#0000FF">o</font></font></td>
+    </tr>
+</table>
+<br>
+<font size="7">Nouns ending in "<font color="#0000FF">o</font>" are masculine.</font>
+</center>
+<br>
+<center>
+
+<font size="3" color="#5E00FF"><a href="classroom_b.html">Learn more.</a></font>
+
+</table></center>
+</body>
+</html>

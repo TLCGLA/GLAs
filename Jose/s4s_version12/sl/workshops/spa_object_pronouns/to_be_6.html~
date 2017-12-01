@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>spa workshop</title>
+<style type="text/css">
+
+div {
+	font-family: sans-serif, Arial, Times New Roman, Times, serif;
+	font-size: 32px;
+}
+
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_setTextOfLayer(objName,x,newText) { //v4.01
+  if ((obj=MM_findObj(objName))!=null) with (obj)
+    if (document.layers) {document.write(unescape(newText)); document.close();}
+    else innerHTML = unescape(newText);
+}
+//-->
+</script>
+</head>
+
+<body  link="#000066" alink="#000066" vlink="#000066" bgcolor="#E6E6FA">
+
+
+<!-- this is the common top menu -->
+
+<!--Page Header -->
+
+<table align="center" width="95%" cellpadding="10" border="0" bgcolor="#FFFFF0">
+<tr>
+      <td align="center"colspan="2" valign="top" height=50><br><div><font size="+5" color=#990000>Practice / "Haber" vs. "Estar"</font></div></td>
+</tr>
+<tr><td colspan="2" valign="top"><hr color=#990000></td></tr></tr>
+
+<!-- this is the content table -->
+
+
+<tr><td><div>
+
+<font size="+4" color=#990000>Instructions:</font> Complete the sentences with the correct form of "haber" or "estar".<br>
+
+
+
+<table align="center" width="100%" cellpadding="5">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td align="right" valign="top"><div>1.</div></td>
+    <td align="left"><div> Marcos ________ enfermo. <font size="5">(enfermo = sick)</font></div></td>
+    <td align="right">
+    <div id="Layer1" style="visibility:visible; width:250px; height:40px; z-index:1; background-color: #F6BA7C; layer-background-color: #FFFFCC; border: 1px none #000000; left: 603px; top: 29px;" onClick="MM_setTextOfLayer('Layer1','','<center>est&aacute;</center>')"> 
+    <div align="center"><font size="3">click for the answer</font></div>
+    </div>
+    </td>
+  </tr>
+  <tr> 
+    <td align="right" valign="top"><div>2.</div></td>
+    <td align="left"><div>Yo ________ en la biblioteca.</div></td>
+    <td align="right">
+    <div id="Layer2" style="visibility:visible; width:250px; height:40px; z-index:1; background-color: #F6BA7C; layer-background-color: #FFFFCC; border: 1px none #000000; left: 604px; top: 57px;" onClick="MM_setTextOfLayer('Layer2','','<center>estoy</center>')" > 
+    <div align="center"><font size="3">click for the answer</font></div>
+    </div>
+    </td>
+  </tr>
+  
+    <tr> 
+    <td align="right" valign="top"><div>3.</div></td>
+    <td align="left"><div>En la clase ________ diez estudiantes.</div></td>
+    <td align="right">
+    <div id="Layer3" style="visibility:visible; width:250px; height:40px; z-index:1; background-color: #F6BA7C; layer-background-color: #FFFFCC; border: 1px none #000000; left: 604px; top: 57px;" onClick="MM_setTextOfLayer('Layer3','','<center>hay</center>')" > 
+    <div align="center"><font size="3">click for the answer</font></div>
+    </div>
+    </td>
+  </tr>
+  <tr> 
+    <td align="right" valign="top"><div>4.</div></td>
+    <td align="left"><div>Nosotros ________ en la casa de Carlos.</div></td>
+    <td align="right">
+    <div id="Layer4" style="visibility:visible; width:250px; height:40px; z-index:1; background-color: #F6BA7C; layer-background-color: #FFFFCC; border: 1px none #000000; left: 604px; top: 57px;" onClick="MM_setTextOfLayer('Layer4','','<center>estamos</center>')" > 
+    <div align="center"><font size="3">click for the answer</font></div>
+    </div>
+    </td>
+  </tr>
+  <tr> 
+    <td align="right" valign="top"><div>5.</div></td>
+    <td align="left"><div>________ tres tel&eacute;fonos en la mesa.</div></td>
+    <td align="right">
+    <div id="Layer5" style="visibility:visible; width:250px; height:40px; z-index:1; background-color: #F6BA7C; layer-background-color: #FFFFCC; border: 1px none #000000; left: 604px; top: 57px;" onClick="MM_setTextOfLayer('Layer5','','<center>hay</center>')" > 
+    <div align="center"><font size="3">click for the answer</font></div>
+    </div>
+    </td>
+  </tr>
+  <tr> 
+    <td align="right" valign="top"><div>6.</div></td>
+    <td align="left"><div>Ella ________ cansada. <font size="5">(cansada = tired)</font></div></td>
+    <td align="right">
+    <div id="Layer6" style="visibility:visible; width:250px; height:40px; z-index:1; background-color: #F6BA7C; layer-background-color: #FFFFCC; border: 1px none #000000; left: 604px; top: 57px;" onClick="MM_setTextOfLayer('Layer6','','<center>est&aacute;</center>')" > 
+    <div align="center"><font size="3">click for the answer</font></div>
+    </div>
+    </td>
+  </tr>
+  <tr> 
+    <td align="right" valign="top"><div>7.</div></td>
+    <td align="left"><div>En la oficina ________ dos escritorios nuevos.</div></td>
+    <td align="right">
+    <div id="Layer7" style="visibility:visible; width:250px; height:40px; z-index:1; background-color: #F6BA7C; layer-background-color: #FFFFCC; border: 1px none #000000; left: 604px; top: 57px;" onClick="MM_setTextOfLayer('Layer7','','<center>hay</center>')" > 
+    <div align="center"><font size="3">click for the answer</font></div>
+    </div>
+    </td>
+  </tr>
+    <tr> 
+    <td align="right" valign="top"><div>8.</div></td>
+    <td align="left"><div>Ellos no ________ en la clase.</div></td>
+    <td align="right">
+    <div id="Layer8" style="visibility:visible; width:250px; height:40px; z-index:1; background-color: #F6BA7C; layer-background-color: #FFFFCC; border: 1px none #000000; left: 604px; top: 57px;" onClick="MM_setTextOfLayer('Layer8','','<center>est&aacute;n</center>')" > 
+    <div align="center"><font size="3">click for the answer</font></div>
+    </div>
+    </td>
+  </tr>
+   <tr> 
+    <td align="right" valign="top"><div>9.</div></td>
+    <td align="left"><div>Julio y Manuel ________ contentos. <font size="5">(contentos = happy)</font></div></td>
+    <td align="right">
+    <div id="Layer9" style="visibility:visible; width:250px; height:40px; z-index:1; background-color: #F6BA7C; layer-background-color: #FFFFCC; border: 1px none #000000; left: 604px; top: 57px;" onClick="MM_setTextOfLayer('Layer9','','<center>est&aacute;n</center>')" > 
+    <div align="center"><font size="3">click for the answer</font></div>
+    </div>
+    </td>
+  </tr>
+  <tr> 
+    <td align="right" valign="top"><div>10.</div></td>
+    <td align="left"><div>No ________ clase hoy. <font size="5">(hoy = today)</font></div></td>
+    <td align="right">
+    <div id="Layer10" style="visibility:visible; width:250px; height:40px; z-index:1; background-color: #F6BA7C; layer-background-color: #FFFFCC; border: 1px none #000000; left: 604px; top: 57px;" onClick="MM_setTextOfLayer('Layer10','','<center>hay</center>')" > 
+    <div align="center"><font size="3">click for the answer</font></div>
+    </div>
+    </td>
+  </tr>
+</table>
+<br>
+<table align="center" cellpadding=5 bgcolor="#E0F0F5" width="98%" border="1">
+<tr><td><div><font size="5">&nbsp;&nbsp; <font color=#990000><strong>Haber:</strong></font> <font color="#0A14C4"><strong>hay</strong></font></font></div></td>
+<td><div><font size="5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#990000><strong>Estar:</strong></font> yo <font color="#0A14C4"><strong>estoy</strong></font> /
+ t&uacute; <font color="#0A14C4"><strong>est&aacute;s</strong></font> / 
+ &eacute;l, ella, usted <font color="#0A14C4"><strong>est&aacute;</strong></font> / 
+nosotros, nosotras <font color="#0A14C4"><strong>estamos</strong></font> / 
+ellos, ellas, ustedes <font color="#0A14C4"><strong>est&aacute;n</strong></font></font></div></td></tr>
+</table>
+
+</div></td></tr>
+<tr><td align="right"><div><font size="3" color="#5E00FF"><a href="to_be_7.html">More on "to be"</a></font></div></td></tr>
+
+
+</table>
+
+</body>
+</html>

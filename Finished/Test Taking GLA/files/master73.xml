@@ -1,0 +1,56 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <p:slidetransition advancetime="0" flag="1"/>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="64"/>
+ </o:shapelayout><v:background id="_x0000_s65537" o:bwmode="white" fillcolor="white [0]">
+  <v:fill src="master09_image002.jpg" o:title="" color2="#339 [5]" recolor="t"
+   type="tile"/>
+ </v:background><p:shaperange id="_x0000_s65538">
+  <v:shapetype id="_x0000_s65538" style='position:absolute;left:40pt;top:5pt;
+   width:10in;height:111pt;visibility:visible;mso-wrap-style:square;
+   v-text-anchor:top' coordsize="21600,21600" o:master="" o:spt="1" path="m,l,21600r21600,l21600,xe"
+   filled="f" stroked="f" strokeweight="1pt">
+   <v:fill o:detectmouseclick="t"/>
+   <v:stroke joinstyle="miter" o:forcedash="t"/>
+   <v:shadow on="t" color="white [2]" offset="1.24725mm,1.24725mm"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <v:textbox inset="3pt,3pt,3pt,3pt"/>
+   <p:placeholder type="title"/>
+  </v:shapetype></p:shaperange>
+ <p:shaperange id="_x0000_s65539">
+  <v:rect id="_x0000_s65539" style='position:absolute;left:347pt;top:125pt;
+   width:105pt;height:89pt;visibility:visible;mso-wrap-style:square;
+   v-text-anchor:top' fillcolor="white [4]" stroked="f" strokeweight="2pt">
+   <v:path arrowok="t"/>
+   <v:textbox inset="0,0,0,0"/>
+  </v:rect><v:rect id="_x0000_s65540" style='position:absolute;left:370pt;
+   top:179pt;width:79.5pt;height:34pt;visibility:visible;mso-wrap-style:none;
+   v-text-anchor:top' filled="f" stroked="f" strokeweight="1pt">
+   <v:path arrowok="t"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="3pt,3pt,3pt,3pt"/>
+   <p:tag name="___PPTMAC11" type="binary" datasize="360" dataoffset="0"/>
+  </v:rect><v:shapetype id="_x0000_t5" coordsize="21600,21600" o:spt="5" adj="10800"
+   path="m@0,l,21600r21600,xe">
+   <v:stroke joinstyle="miter"/>
+   <v:formulas>
+    <v:f eqn="val #0"/>
+    <v:f eqn="prod #0 1 2"/>
+    <v:f eqn="sum @1 10800 0"/>
+   </v:formulas>
+   <v:path gradientshapeok="t" o:connecttype="custom" o:connectlocs="@0,0;@1,10800;0,21600;10800,21600;21600,21600;@2,10800"
+    textboxrect="0,10800,10800,18000;5400,10800,16200,18000;10800,10800,21600,18000;0,7200,7200,21600;7200,7200,14400,21600;14400,7200,21600,21600"/>
+   <v:handles>
+    <v:h position="#0,topLeft" xrange="0,21600"/>
+   </v:handles>
+  </v:shapetype><v:shape id="_x0000_s65541" type="#_x0000_t5" style='position:absolute;
+   left:356pt;top:188pt;width:12pt;height:6pt;visibility:visible;
+   mso-wrap-style:square;v-text-anchor:top' fillcolor="#7f7f7f" stroked="f"
+   strokeweight="2pt">
+   <v:path arrowok="t"/>
+   <v:textbox inset="0,0,0,0"/>
+  </v:shape></p:shaperange>
+</xml>

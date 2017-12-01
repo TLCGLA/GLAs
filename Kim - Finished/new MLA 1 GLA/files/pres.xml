@@ -1,0 +1,134 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <p:presentation sizeof="screen" gridspacingx="49152" gridspacingy="49152"
+  subsetembed="1">
+  <p:master id="87" slidesn="0,0" type="main" href="master87.htm"
+   xmlhref="master87.xml" template="Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="99" slidesn="0,0" type="main" href="master99.htm"
+   xmlhref="master99.xml" template="1_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="100" slidesn="0,0" type="main" href="master100.htm"
+   xmlhref="master100.xml" template="2_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="101" slidesn="0,0" type="main" href="master101.htm"
+   xmlhref="master101.xml" template="3_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="102" slidesn="0,0" type="main" href="master102.htm"
+   xmlhref="master102.xml" template="4_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="103" slidesn="0,0" type="main" href="master103.htm"
+   xmlhref="master103.xml" template="5_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="104" slidesn="0,0" type="main" href="master104.htm"
+   xmlhref="master104.xml" template="6_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="105" slidesn="0,0" type="main" href="master105.htm"
+   xmlhref="master105.xml" template="7_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="106" slidesn="0,0" type="main" href="master106.htm"
+   xmlhref="master106.xml" template="8_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="107" slidesn="0,0" type="main" href="master107.htm"
+   xmlhref="master107.xml" template="9_Dividend" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="1" slidesn="1D1BBB4,792A0780" type="notes" href="master01.htm"
+   layout="notes" slots="header,dateTime,slideImage,body,footer,slideNumber"/>
+  <p:slide id="36" slidesn="0,0" href="slide0036.htm" masterhref="master99.htm"/>
+  <p:slide id="8" slidesn="0,0" href="slide0008.htm" masterhref="master100.htm"/>
+  <p:slide id="37" slidesn="0,0" href="slide0037.htm" masterhref="master100.htm"/>
+  <p:slide id="2" slidesn="0,0" href="slide0002.htm" masterhref="master100.htm"/>
+  <p:slide id="3" slidesn="0,0" href="slide0003.htm" masterhref="master100.htm"/>
+  <p:slide id="4" slidesn="0,0" href="slide0004.htm" masterhref="master100.htm"/>
+  <p:slide id="5" slidesn="0,0" href="slide0005.htm" masterhref="master101.htm"/>
+  <p:slide id="6" slidesn="0,0" href="slide0006.htm" masterhref="master100.htm"/>
+  <p:slide id="7" slidesn="0,0" href="slide0007.htm" masterhref="master100.htm"/>
+  <p:slide id="9" slidesn="0,0" href="slide0009.htm" masterhref="master100.htm"/>
+  <p:slide id="10" slidesn="0,0" href="slide0010.htm" masterhref="master100.htm"/>
+  <p:slide id="11" slidesn="0,0" href="slide0011.htm" masterhref="master100.htm"/>
+  <p:slide id="12" slidesn="0,0" href="slide0012.htm" masterhref="master100.htm"/>
+  <p:slide id="38" slidesn="0,0" href="slide0038.htm" masterhref="master100.htm"/>
+  <p:slide id="14" slidesn="0,0" href="slide0014.htm" masterhref="master101.htm"/>
+  <p:slide id="47" slidesn="0,0" href="slide0047.htm" masterhref="master100.htm"/>
+  <p:slide id="13" slidesn="0,0" href="slide0013.htm" masterhref="master100.htm"/>
+  <p:slide id="15" slidesn="0,0" href="slide0015.htm" masterhref="master100.htm"/>
+  <p:slide id="16" slidesn="0,0" href="slide0016.htm" masterhref="master100.htm"/>
+  <p:slide id="18" slidesn="0,0" href="slide0018.htm" masterhref="master100.htm"/>
+  <p:slide id="17" slidesn="0,0" href="slide0017.htm" masterhref="master100.htm"/>
+  <p:slide id="19" slidesn="0,0" href="slide0019.htm" masterhref="master100.htm"/>
+  <p:slide id="39" slidesn="0,0" href="slide0039.htm" masterhref="master100.htm"/>
+  <p:slide id="21" slidesn="0,0" href="slide0021.htm" masterhref="master101.htm"/>
+  <p:slide id="20" slidesn="0,0" href="slide0020.htm" masterhref="master100.htm"/>
+  <p:slide id="48" slidesn="0,0" href="slide0048.htm" masterhref="master100.htm"/>
+  <p:slide id="49" slidesn="0,0" href="slide0049.htm" masterhref="master100.htm"/>
+  <p:slide id="50" slidesn="0,0" href="slide0050.htm" masterhref="master100.htm"/>
+  <p:slide id="51" slidesn="0,0" href="slide0051.htm" masterhref="master100.htm"/>
+  <p:slide id="52" slidesn="0,0" href="slide0052.htm" masterhref="master100.htm"/>
+  <p:slide id="53" slidesn="0,0" href="slide0053.htm" masterhref="master100.htm"/>
+  <p:slide id="54" slidesn="0,0" href="slide0054.htm" masterhref="master100.htm"/>
+  <p:slide id="55" slidesn="0,0" href="slide0055.htm" masterhref="master100.htm"/>
+  <p:slide id="56" slidesn="0,0" href="slide0056.htm" masterhref="master100.htm"/>
+  <p:slide id="57" slidesn="0,0" href="slide0057.htm" masterhref="master100.htm"/>
+  <p:slide id="58" slidesn="0,0" href="slide0058.htm" masterhref="master100.htm"/>
+  <p:slide id="60" slidesn="0,0" href="slide0060.htm" masterhref="master100.htm"/>
+  <p:slide id="22" slidesn="0,0" href="slide0022.htm" masterhref="master100.htm"/>
+  <p:slide id="59" slidesn="0,0" href="slide0059.htm" masterhref="master100.htm"/>
+  <p:slide id="30" slidesn="0,0" href="slide0030.htm" masterhref="master100.htm"/>
+  <p:slide id="32" slidesn="0,0" href="slide0032.htm" masterhref="master100.htm"/>
+  <p:slide id="31" slidesn="0,0" href="slide0031.htm" masterhref="master100.htm"/>
+  <p:slide id="44" slidesn="0,0" href="slide0044.htm" masterhref="master100.htm"/>
+  <p:slide id="61" slidesn="0,0" href="slide0061.htm" masterhref="master100.htm"/>
+  <p:slide id="62" slidesn="0,0" href="slide0062.htm" masterhref="master100.htm"/>
+  <p:slide id="63" slidesn="0,0" href="slide0063.htm" masterhref="master100.htm"/>
+  <p:slide id="64" slidesn="0,0" href="slide0064.htm" masterhref="master100.htm"/>
+  <p:slide id="65" slidesn="0,0" href="slide0065.htm" masterhref="master100.htm"/>
+  <p:slide id="66" slidesn="0,0" href="slide0066.htm" masterhref="master100.htm"/>
+  <p:slide id="67" slidesn="0,0" href="slide0067.htm" masterhref="master100.htm"/>
+  <p:slide id="68" slidesn="0,0" href="slide0068.htm" masterhref="master100.htm"/>
+  <p:slide id="69" slidesn="0,0" href="slide0069.htm" masterhref="master100.htm"/>
+  <p:slide id="70" slidesn="0,0" href="slide0070.htm" masterhref="master100.htm"/>
+  <p:slide id="33" slidesn="0,0" href="slide0033.htm" masterhref="master100.htm"/>
+  <p:slide id="35" slidesn="0,0" href="slide0035.htm" masterhref="master100.htm"/>
+  <p:slide id="45" slidesn="0,0" href="slide0045.htm" masterhref="master100.htm"/>
+  <p:slide id="34" slidesn="0,0" href="slide0034.htm" masterhref="master100.htm"/>
+  <p:slide id="46" slidesn="0,0" href="slide0046.htm" masterhref="master100.htm"/>
+  <p:viewstate type="slideView" notestextscale="1" restoredleft="149"
+   restoredtop="946" manualadjustleft="t" hideoutlineicons="t"/>
+  <p:slideshowsettings pencolor="rgb(255,0,0)"/>
+  <p:pptdocumentsettings framecolors="WhiteTextOnBlack" hideslideanimation="t"
+   browsersupport="v4"/>
+ </p:presentation>
+ <o:shapedefaults v:ext="edit" spidmax="71685"/>
+</xml>

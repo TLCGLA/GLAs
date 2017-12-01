@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD html 4.01 Transitional//EN">
+<html>
+<head>
+<title>spa workshop</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+<style type="text/css">
+
+div {
+	font-family: sans-serif, Arial, Times New Roman, Times, serif;
+	font-size: 32px;
+}
+
+</style>
+</head>
+
+<body  link="#000066" alink="#000066" vlink="#000066">
+
+
+<!-- this is the common top menu -->
+
+<!--Page Header -->
+
+<table align="center" width="900">
+<tr>
+      <td align="center"><br><div><font size="+5" color=#990000>"e" to "i" Practice</font></div></td>
+</tr>
+<tr><td colspan="2"><hr color=#990000></td></tr></tr>
+</table>
+<!-- this is the content table -->
+
+
+<table align="center" width="900" cellspacing="0"  cellpadding="0" border="0" bgcolor="#FFFFF0">
+<tr><td><div>
+
+<font size="+3" color="#EE871B"><center><strong>Can you figure out what these sentences mean?</strong></center></font>
+
+<table>
+<tr><td width="3" align="right" valign="top"><div>1.&nbsp;</div></td>
+<td><div>Nosotros <font color="#5522B9">pedimos</font> unos caf&eacute;s en la cafeter&iacute;a.</div> (pedir / to ask for)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>2.&nbsp;</div></td>
+<td><div>La profesora <font color="#5522B9">pide</font> la tarea.</div> (pedir / to ask for)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>3.&nbsp;</div></td>
+<td><div>Roberto <font color="#5522B9">repite</font> la pregunta.</div> (repetir / to repeat)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>4.&nbsp;</div></td>
+<td><div>La profesora <font color="#5522B9">repite</font> las instrucciones del examen.</div> (repetir / to repeat)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>5.&nbsp;</div></td>
+<td><div>&iquest;<font color="#5522B9">Sirves</font> t&uacute; comida en un restaurante?</div> (servir / to serve)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>6.&nbsp;</div></td>
+<td><div>Nosotros <font color="#5522B9">servimos</font> refrescos a nuestros amigos.</div> (servir / to serve)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>7.&nbsp;</div></td>
+<td><div>Carlos siempre <font color="#5522B9">pide</font> m&aacute;s tiempo en los ex&aacute;menes.</div>(pedir / to ask for)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>8.&nbsp;</div></td>
+<td><div>T&uacute; <font color="#5522B9">pides</font> libros en la biblioteca.</div> (pedir / to ask for)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>9.&nbsp;</div></td>
+<td><div>Nosotros <font color="#5522B9">repetimos</font> las respuestas de los ejercicios.</div> (repetir / to repeat)</td></tr>
+<tr><td width="3" align="right" valign="top"><div>10.&nbsp;</div></td>
+<td><div>La cafeter&iacute;a <font color="#5522B9">sirve</font> caf&eacute; de Colombia.</div> (servir / to serve)</td></tr>
+</table>
+<br>
+
+<br>
+</div></td></tr>
+
+<tr><td align="right"><div><font size="3" color="#5E00FF"><a href="verbs_13.html">More practice</a></font></div></td></tr>
+
+
+
+ 
+</table>
+  
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script> 
+$(document).ready(function(){
+		var i = 0;
+		var x = 8;
+$(".button1").css ('visibility', 'hidden');
+ 
+$(".wrong").click(function(){
+   $(this).unbind('click')
+   $(this).siblings () .unbind ('click') .css ("cursor" , "none")
+   $(this).css ({"color": "red", "font-weight": "normal"})
+   $(this).siblings("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+   $(".triangle").animate({"bottom": "-=15px"}, "fast");
+ 
+});
+ 
+$(".right").click(function(){
+	$(this).unbind('click')
+	$(this).siblings () .unbind ('click') .css ("cursor" , "none")
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	$(this).siblings("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"})
+  	$(".triangle").animate({"bottom": "+=15px"}, "fast");
+  i++;
+  	if (i == x) {$('.button1').css ('visibility', 'visible')};
+});
+ 
+});
+</script>
+
+
+
+<style>
+.right, .wrong {cursor: pointer; padding-left: 10px; padding-right: 10px; display: inline; border: 1px solid #ccc; background-color: #dcdcdc; }
+.right:hover, .wrong:hover {background: #ccc;}
+.item {padding-left: 20px; width: 750px; line-height: 25px; }
+.column {width: 540px; text-align: left; margin-right: 20px;}
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	According to the presentation, some of the statements below are true and some are false.  Can you sort them out?  After you get all the right answers, 
+	a button will appear on the top right corner.  Click on the button to continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page8.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table width="100%" border="0">
+	<tr>
+	<td valign="top" width="80%"><div class="exercise_instructions">
+		Indicate whether the following statements are <font class="correct_number">TRUE OR FALSE</font>.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	<tr>
+	<td valign="top" width="80%">
+ 		<table class="questions_table">
+		<tr><td><div class="number">1.</div></td><td><div class="item"><span class="column">Mathematics require that we move from the concrete into the abstract.</span><span class="right">true</span> / <span class="wrong">false</span> <span id="feedback"></span></div></td>		</tr>
+		<tr><td><div class="number">2.</div></td><td><div class="item"><span class="column">Learning math is like learning to dance.</span><span class="wrong">true</span> / <span class="right">false</span> <span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">3.</div></td><td><div class="item"><span class="column">Math anxiety has been compared to leaping over a gorge.</span><span class="right">true</span> / <span class="wrong">false</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">4.</div></td><td><div class="item"><span class="column">A social effect of math anxiety is negative peer presure.</span><span class="wrong">true</span> / <span class="right">false</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">5.</div></td><td><div class="item"><span class="column">Math anxiety affects all ethnic groups equally.</span><span class="wrong">true</span> / <span class="right">false</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">6.</div></td><td><div class="item"><span class="column">Math myths help reduce one's anxiety over poor math performance.</span><span class="right">true</span> / <span class="wrong">false</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">7.</div></td><td><div class="item"><span class="column">Without a good memory, it's difficult to do well in math.</span><span class="wrong">true</span> / <span class="right">false</span><span id="feedback"></span></div></td></tr>
+		<tr><td><div class="number">8.</div></td><td><div class="item"><span class="column">Hanging on to a math myth keeps individuals stuck in an anxiety loop.</span><span class="right">true</span> / <span class="wrong">false</span><span id="feedback"></span></div></td></tr>
+		</table>
+ 	</td>
+	<td align="center">
+		<div class="progress2">
+ 		<table>
+		<tr>
+		<td><div class="triangle_spacer"></div>
+                  <div class="triangle"><img src="../../images/triangle2.png"></div></td>
+		<td><div class="progress_bar2"> 
+                    <div class="progress_bar_text2">+10<br>
+                      +8<br>
+                      +6<br>
+                      +4<br>
+                      +2<br>
+                      &nbsp;0<br>
+                      -2<br>
+                      -4<br>
+                      -6<br>
+                      -8<br>
+                      -10</div>
+                  </div></td>
+		</tr>
+		</table>
+		</div>
+	</td>
+	</tr>
+	</table>
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

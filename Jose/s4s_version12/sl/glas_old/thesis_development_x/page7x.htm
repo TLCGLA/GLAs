@@ -1,0 +1,250 @@
+<!DOCTYPE HTML> <html>
+<meta http-equiv="X-UA-Compatible" content="IE-9" /><title>Guided Learning Activities</title>
+<link href="../css/styles.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+
+
+/* PROGRESS BAR STYLES */
+.border_bar {  
+	border: 1px solid  #424242; 
+	padding: 10px;
+ 	height: 420px;
+	width: 160px;
+	background:#CCCCCC; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC'); /* for IE */
+	background: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#CCCCCC)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,#FFFFFF,#CCCCCC); /* for firefox 3.6+ */ 
+
+}
+.progress_bar {float: left;}
+
+.blue_bar {
+	height: 406px;
+	width: 6px;
+	background:#669999; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CCCCCC', endColorstr='#669999'); /* for IE */
+	background: -webkit-gradient(linear, left, right, from(#CCCCCC), to(#669999)); /* for webkit browsers */
+	background: -moz-linear-gradient(left,#CCCCCC,#669999); /* for firefox 3.6+ */ 
+}
+
+
+/* OTHER STYLES */
+.triangle {position:relative;}
+.right, .wrong {cursor: pointer; float:left; font-size: 16px; padding-left: 10px; padding-right: 10px;}
+.right:hover, .wrong:hover {background: #ccc;}
+.item {font-size: 18px; margin-left: 50px;}
+.bar {display: block; height: 48px; text-align: left; font-size: 14px; font-weight: bold;}
+.bar_title {text-align: right; padding-right: 5px; font-size: 14px; font-weight: bold;}
+.number {width: 30px; text-align: right;  float: left; font-size: 16px; font-weight: bold; background-color:#FFC680; padding-left: 5px; padding-right: 4px; border: 1px solid #ccc;}
+.questions {border: 1px solid #ccc;	padding: 20px; background-color:#FFF; height: 100%; }
+.title {font-weight: bold; font-size: 18px; margin-bottom: 10px; border-bottom: 3px solid #FFA500;}
+.choices {margin-left: 40px;}
+.choices td {width: 300px;}
+span {display:inline-block;}
+#counter {height: 100px; width: 100px; font-size: 50px; border: 1px solid #ccc; background-color:#FFC680; padding-top: 30px; text-align: center;}
+
+</style> 
+
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+</head>
+
+<body>
+<!-- big wrapper table -->
+<table width="100%" align="center" border="0">
+
+<tr bgcolor="#273872"><td></td><td width="960"><!-- header -->
+<div class="header">
+  		<div style="float: left; height: 73px;"><img src="../images/coc_logo1.gif" alt="College of the Canyons"  />
+      <img src="../images/coc_logo2.gif" alt="College of the Canyons" />
+      
+	  </div>
+	  <div style="float: right;"><h1 class="h1_title">Guided Learning Activities</h1></div>
+ 
+ </div>
+ <!-- end header -->
+
+</td><td></td></tr>
+<tr><td colspan="3"> <div class="gradient_horizontal" style="height:3px; break:left;"></div></td></tr>
+
+<tr><td colspan="3"> 
+
+<table width="960" align="center" border="0"> <!-- 960 px is the standard width for 1024 x 768 screens; use 90% otherwise -->
+<tr><td align="center" height="100%">
+
+<div class="page">
+<!-- top section starts here -->
+
+<div class="gla_top_section">
+<h1 class="h1_blue">Comprehension Questions</h1>
+
+<h1 class="h1_gray" style="padding-top: 10px;">Instructions:</h1>
+       
+<table width="100%" border="0">
+<tr><td><div style="padding-right: 10px;">The following theses have problems.  Can you find them?
+
+
+Identify the errors by clicking on the multiple choice answers. As you select answers, the counter to the right will show how many 
+points you earned. You will earn one point for each correct answer and lose one point 
+for each incorrect answer.  Correct answers will turn <font color="blue">blue</font>, while incorrect answers will turn <font color="red">red</font>.
+
+After you identify all the correct answers, a button will appear on the top right corner.  Click on the button to 
+continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+
+</div></td>
+
+<td ><div class="gradient_horizontal" style="height: 38px; text-align: center; padding: 10px; margin-bottom: 5px;">
+
+<form method="link" action="page8.htm" style="display:  inline; float: right;">
+<input type="submit" class="button" style="height: 35px;" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+</form>
+</div></td>
+</tr>
+</table>
+</div>
+<!-- end top section --> 
+		
+           
+
+<!-- wrapper lower section -->
+<div class="questions" style="padding-top: 25px; margin-top: 15px; height: 430px;" >
+<div><span style="float: left"><h1 class="title">Identify the <span class="h1_blue" style="font-size: 20px;">WHAT IS WRONG</span> 
+with the following theses.</h1></span>
+<span style="float: right; padding-right: 45px; text-align: center;"><h1 class="title">Your score</h1></span>
+</div>
+<div  style="float: left; width: 700px; margin-top: 10px;">
+
+<table width="100%" border="0">
+<tr><td height="40"><div class="number">1.</div><div class="item">The North and South fought the Civil War for many reasons, 
+some of which were the same and some different.</div>
+
+
+<table class="choices" width="100%">
+<tr>
+<td><div class="wrong"><span id="answer">a. Missing support</span><span id="feedback"></span></div></td>
+<td><div class="wrong"><span id="answer">b. No subtopics</span><span id="feedback"></span></div></td>
+</tr>
+<tr>
+<td><div class="wrong"><span id="answer">c. Fragment</span><span id="feedback"></span></div></td>
+<td><div class="right"><span id="answer">d. No claim</span><span id="feedback"></span></div></td>
+</tr>
+</table>
+</td></tr>
+ 
+<tr><td colspan=2>&nbsp;</td></tr>
+
+<tr><td height="40"><div class="number">2.</div><div class="item">
+In Huckleberry Finn, Mark Twain develops a contrast between life on the river and life on the shore.</div>
+
+<table class="choices" width="100%">
+<tr><td><div class="wrong"><span id="answer">a. No claim</span><span id="feedback"></span></div></td>
+<td><div class="right"><span id="answer">b. Vague</span><span id="feedback"></span></div></td>
+</tr>
+<tr><td><div class="wrong"><span id="answer">c. Missing support</span><span id="feedback"></span></div></td>
+<td><div class="wrong"><span id="answer">d. No subtopics</span><span id="feedback"></span></div></td>
+</tr>
+</table>
+</td></tr>
+
+
+<tr><td colspan=2>&nbsp;</td></tr>
+
+<tr><td height="40"><div class="number">3.</div><div class="item">Americans have to do something about 
+all the different kinds of pollution, world hunger, and terrorism.<span id="feedback"></span></div>
+
+<table class="choices" width="100%">
+<tr>
+<td><div class="wrong"><span id="answer">a. No subtopics</span><span id="feedback"></span></div></td>
+<td><div class="wrong"><span id="answer">b. Missing support</span><span id="feedback"></span></div></td>
+</tr>
+<tr>
+<td><div class="wrong"><span id="answer">c. No claim</span><span id="feedback"></span></div></td>
+<td><div class="right"><span id="answer">d. Unrelated suptopics</span><span id="feedback"></span></div></td>
+</tr>
+</table>
+</td></tr>
+ 
+
+
+
+
+</table>
+
+</div> <!-- end left hand table div-->
+<table>
+<tr><td></td><td></td><td></td></tr>
+</table>
+<div style="float: right; margin-top: 10px;"> <!-- begin div for feedback counter --->
+
+
+<table width="120" border="0">
+	<tr><td >
+	<!-- progress bar -->
+
+	<table width="100%"><tr>
+
+<td width="102">
+<div id="counter" class="box-shadow" style="display: block; float: right;  margin-right: 40px;"></div> 
+
+<div style="margin-top: 40px; display: block; break: left; float: right;  margin-right: 40px; width: 100px; text-align: center;"><span class="h1_blue" style="font-size: 20px;">Maximum points: 3</span></div> 
+</td>
+</tr>
+</table>
+
+</td></tr>
+</table>
+</div>
+<!-- end progress bar -->
+
+
+<script type="text/javascript"> 
+$(document).ready(function(){
+		var i = 0;
+		var x = 3;
+$(".button").css ('visibility', 'hidden');
+
+$(".right").click(function(){
+   $(this).find ("#answer").hide ()
+   $(this).unbind('click')
+   $(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"})
+  		i++;
+		$("#counter") .html (i);
+	if (i == x) {$('.button').css ('visibility', 'visible')};
+
+});
+
+$(".wrong").click(function(){
+	$(this).find ("#answer").hide ()
+	$(this).unbind('click')
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+		i--;
+		$("#counter") .html (i);
+
+});
+
+
+
+});
+</script>
+
+		
+	
+</div> <!-- end wrapper lower section -->
+	
+</div> <!-- end page -->
+
+
+ 
+</td></tr>
+</table>  <!-- end big wrapper table-->
+		
+
+  
+	  
+	  
+
+		
+
+</body>
+</html>

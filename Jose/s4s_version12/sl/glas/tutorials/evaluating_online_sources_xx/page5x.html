@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 4;
+$(".button1").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"}) 
+	if (i == x) {$('.button1').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).css ({"color": "red", "font-weight": "normal"})
+ 	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+	});
+ 
+});
+ 
+ 
+</script>
+
+
+<style>
+.right, .wrong {cursor: pointer; padding-left: 10px; padding-right: 20px; width: 500px;}
+.right:hover, .wrong:hover {background: #ccc;}
+ 
+.link {font-size: 13px; font-weight: 400;}
+
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	Some of the sources listed in the following exercise are reliable, and some are not.  Can you find the reliable ones? 
+	After you get all the correct answers, a 
+	button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page6.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table width="100%" border="0">
+	<tr>
+	<td valign="top" width="80%"><div class="exercise_instructions">
+		Select all the <font class="correct_number">RELIABLE</font> sources by clicking on the answers.<br>  
+		<span style="font-size: 11px"><u>Note</u>: You can open 
+		each source by clicking on the URL if would like to look at the site.</span></div>
+	</td>
+	<td><div class="your_score"><br>Your Score:</div></td>
+	</tr>
+	<tr>
+	<td valign="top" width="80%">
+ 		<table class="questions_table">
+		<tr><td><div class="number">1.</div></td><td>
+		<div class="wrong">Wikipedia <span id="feedback"></span></div></td>
+		<td><a class="link" href="http://www.wikipedia.org" target="blank">www.wikipedia.org</a></td></tr>
+		<tr><td><div class="number">2.</div></td><td>
+		<div class="wrong">About.com <span id="feedback"></span></div></td>
+		<td><a class="link" href="http://www.about.com" target="blank">www.about.com</a></td>
+		</tr>
+		<tr><td><div class="number">3.</div></td><td>
+		<div class="wrong">The Great American Blog <span id="feedback"></span></div></td>
+		<td><a class="link" href="http://www.foxnews.com/on-air/hannity/blog/" target="blank">www.foxnews.com/on-air/hannity/blog/</a></td></tr>
+		
+		
+		<tr><td><div class="number">4.</div></td><td>
+		<div class="right">Census Bureau Homepage <span id="feedback"></span></div></td>
+		<td><a class="link" href="http://www.census.gov" target="blank">www.census.gov</a></td>
+		</tr>
+		<tr><td><div class="number">5.</div></td><td>
+		<div class="right">Wall Street Journal MarketWatch <span id="feedback"></span></div></td>
+		<td><a class="link" href="http://www.marketwatch.com" target="blank">www.marketwatch.com</a></td>
+		</tr>
+		<tr><td><div class="number">6.</div></td><td>
+		<div class="wrong">Infoplease.com <span id="feedback"></span></div></td>
+		<td><a class="link" href="http://www.infoplease.com" target="blank">www.infoplease.com</a></td>
+		</tr>	
+		<tr><td><div class="number">7.</div></td><td>
+		<div class="right">Britannica Online Encyclopedia <span id="feedback"></span></div></td>
+		<td><a class="link" href="http://www.britannica.com" target="blank">www.britannica.com</a></td>
+		</tr>	
+		<tr><td><div class="number">8.</div></td><td>
+		<div class="right">Evaluating Online Sources <span id="feedback"></span></div></td>
+		<td><a class="link" href="http://owl.english.purdue.edu" target="blank">owl.english.purdue.edu</a></td>
+		</tr>	
+		
+		
+		</table>
+ 	</td>
+	<td align="center">
+		<div id="counter" class="background_score"></div> 
+	</td>
+	</tr>
+	</table>
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

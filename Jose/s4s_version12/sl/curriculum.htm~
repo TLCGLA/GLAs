@@ -1,0 +1,852 @@
+﻿<!DOCTYPE htm PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtm1/DTD/xhtm1-transitional.dtd">
+<htm xmlns="http://www.w3.org/1999/xhtm">
+<head>
+<meta http-equiv="Content-Type" content="text/htm; charset=UTF-8" />
+<title>SL Curriculum</title>
+<link href="master.css" rel="stylesheet" type="text/css" />
+<!--[if gte IE 6]><link href="css/iefixes.css" rel="stylesheet" type="text/css" />
+<![endif]--></head>
+
+<body>
+<div id="wrapper">
+	<div id="coc_wrapper">
+		<div id="cocheader_left"><img src="images/header_coc_logo1.gif" alt="College of the Canyons" width="80" height="73" /><a href="http://www.canyons.edu"><img src="images/header_coc_logo2.gif" alt="College of the Canyons" width="134" height="73" /></a>
+		</div>
+	
+<div id="cocheader_right">
+
+    	
+        <div id="cocheader_toplinks">
+        	<a href="http://www.canyons.edu/offices/PIO/keyinfo/">About Canyons</a> 
+			| <a href="http://www.cccapply.org/applications/CCCApply/apply/College_of_the_Canyons.html">
+			Apply Now</a> | <a href="http://os.canyons.edu/">Register Now</a> | <a href="http://www.canyons.edu/offices/PIO/keyinfo/maps.asp">
+			Campus Maps</a>
+        </div>
+        
+        <div id="searchbox">
+
+        	<form name="SearchForm" id="searchbox_003275845762001569452:k1ryrig2xjk" action="http://www.canyons.edu/Search/CSEResults.asp" method="get">
+						<input type="hidden" value="003275845762001569452:k1ryrig2xjk" name="cx"/>
+						<input type="hidden" value="FORID:11" name="cof"/>
+						<input type="text" id="SearchField" class="form_input" value="" maxlength="255" size="20" name="q"/>
+						<input align="bottom" type="submit" class="form_button" value="Search" name="sa"/>
+			</form>
+        </div>
+    
+		<ul id="cocheader_tabs">
+		<li><a class="color_change" href="index.htm">Home</a></li>
+      <li><a class="color_change" href="curriculum.htm">Curriculum</a></li>
+		<li><a class="color_change" href="schedule.htm">Schedules</a></li>
+
+      
+    </ul>
+        
+    </div>
+</div>
+    
+<div id="CSS_top_content">
+    	<br>
+    </div>
+
+<div id="whitebox">
+    <div class="top_border">
+	  <div id="content_sidebar">
+    <p>&nbsp;</p>
+    <h1 class="h1_gray"><br />
+    </h1>
+
+      </div>
+
+
+
+<div id="content_table">
+<table width="100%" cellpadding="5">
+<tr><td><br><h1 class="h1_blue_dark">Supplemental Learning Curriculum</h1></td></tr>
+<tr><td valign="top"><div class="font">The curriculum page allows faculty to take a look at the content of the supplemental instruction offerings.
+	 To access the materials,  
+	click on the &quot;Wksp&quot; &quot;GLA&quot; or &quot;Jam&quot links next to each topic.  PowerPoints and other multimedia materials 
+	are accessed through separate links for convenience.</div>
+</td></tr>
+</table>
+
+<br><br><h1 class="h1_gray">Learning Skills</h1>
+<table width="100%" class="border_gray">
+
+<tr bgColor="#CCCCCC">
+	<td width="65"><div class="font"><strong>Wksp. ID</strong> </div></td>
+	<td><div class="font"><strong>Workshop Title</strong> </div></td>
+	<td width="120"> <div class="font"><strong>Wksp. Materials</strong> </div></td>
+	<td width="55"> <div class="font"><strong>GLA ID</strong> </div></td>
+	<td width="100"> <div class="font"><strong>GLA Materials</strong></div></td>
+	<td width="55"> <div class="font"><strong>Jam ID</strong> </div></td>
+	<td width="100"><div class="font"><strong>Jam Materials</strong></div></td>
+</tr>
+
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> LS1W </div></td>
+	<td valign="top"><div class="font"> Note Taking </div></td>
+	<td valign="top"><div class="font"> <a class="color_change" href="workshops/note_taking/Edit.Note-Taking_jose.doc">Wksp</a> &nbsp;&nbsp;<a class="color_change" href="workshops/note_taking/VIDEO_note_taking.flv">Video</a></div></td>
+	<td valign="top"><div class="font"> LS1G </div></td><td valign="top"><div class="font"> <a class="color_change" href="GLAs/note_taking/GLA_note_taking_jose.htm">GLA</a></div></td><td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> LS2W </div></td><td valign="top"><div class="font">
+ 	Reading Textbooks<!-- This workshop has a different handout for the GLA --> </div></td><td valign="top"><div class="font"> 
+ 	<a class="color_change" href="workshops/reading_textbooks/Edit.Reading.Textbooks_jose.doc">Wksp</a> &nbsp;&nbsp;<a class="color_change" href="workshops/reading_textbooks/VIDEO_reading_textbooks.wmv">Video</a> </div></td>
+	<td valign="top"><div class="font"> LS2G </div></td>
+	<td valign="top"><div class="font"> <a class="color_change" href="GLAs/reading_textbooks/GLA_reading_textbooks_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> LS3W </div></td><td valign="top"><div class="font"> Remembering 
+	What You Read </div></td><td valign="top"><div class="font"> <a class="color_change" href="workshops/remembering_what_you_read/Edit.Remembering.What.You.Read_jose.doc">Wksp</a>
+	&nbsp;&nbsp;<a class="color_change" href="workshops/remembering_what_you_read/PPT_remembering_what_you_read.ppt">PowerPoint</a> </div></td>
+	<td valign="top"><div class="font"> LS3G </div></td><td valign="top"><div class="font"> <a class="color_change" <a class="color_change" href="GLAs/remembering_what_you_read/GLA_remembering_what_you_read_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> LS4W </div></td><td valign="top"><div class="font"> Time 
+	Management </div></td><td valign="top"><div class="font"> <a class="color_change" href="workshops/time_management/Edit.Time.Management_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a class="color_change" href="workshops/time_management/PPT_time_management.pptx">PowerPoint</a> </div></td><td valign="top"><div class="font"> 
+	LS4G </div></td><td valign="top"><div class="font"> <a class="color_change" href="GLAs/time_management/GLA_time_management_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> LS5W </div></td><td valign="top"><div class="font"> Outlining 
+	Readings </div></td><td valign="top"><div class="font"> <a class="color_change" href="workshops/outlining_readings/Edit.Outlining.Readings_jose.doc">Wksp</a> </div></td>
+	<td valign="top"><div class="font"> LS5G </div></td><td valign="top"><div class="font"> <a class="color_change" href="GLAs/outlining_readings/GLA_outlining_readings_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">LS5J</div></td><td valign="top"><div class="font"><a class="color_change" href="practice_jams/outlining_readings/JAM_outlining_readings.doc">Jam</a></div></td>
+	</tr>
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> LS6W </div></td><td valign="top"><div class="font"> Online 
+	Research </div></td><td valign="top"><div class="font"> <a class="color_change" href="workshops/online_research/Edit.Online.Research_jose.doc">Wksp</a> </div></td>
+	<td valign="top"><div class="font"> LS6G </div></td><td valign="top"><div class="font"> <a class="color_change" href="GLAs/online_research/GLA_online_research_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> LS7W </div></td><td valign="top"><div class="font">Avoiding 
+	Plagiarism </div></td><td valign="top"><div class="font"> <a class="color_change" href="workshops/plagiarism/Edit.Plagiarism_jose.doc">Wksp</a>&nbsp;&nbsp;
+	<a class="color_change" href="workshops/plagiarism/PPT_plagiarism.pptx">PowerPoint</a>
+	</div></td><td valign="top"><div class="font"> LS7G </div></td><td valign="top"><div class="font"> <a class="color_change" href="GLAs/plagiarism/GLA_plagiarism_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+	
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> LS8W </div></td><td valign="top"><div class="font"> Timed Writing 
+	(In-Class Writing) </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/timed_writing/Edit.Timed.Writing_jose.doc">Wksp</a>&nbsp;&nbsp;
+	<a class="color_change" href="workshops/timed_writing/PPT_timed_writing.pptx">PowerPoint</a> </div></td>
+	<td valign="top"><div class="font"> LS8G </div></td><td valign="top"><div class="font"> <a class="color_change" href="GLAs/timed_writing/GLA_timed_writing_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">LS8J</div></td><td valign="top"><div class="font"><a class="color_change" href="practice_jams/timed_writing/JAM_timed_writing.doc">Jam</a></div></td>
+	</tr>
+
+<tr bgColor=#f1dbd6 ><td valign="top"><div class="font"> LS9W </div></td><td valign="top"><div class="font"> Outlining 
+	Your Essay </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/outlining_your_essay/Edit.Outlining.Your.Essay_jose.doc">Wksp</a>&nbsp;&nbsp;
+	<a class="color_change" href="workshops/outlining_your_essay/PPT_outlining_your_essay.ppt">PowerPoint</a> </div></td>
+	<td valign="top"><div class="font"> 
+	LS9G </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="GLAs/outlining_your_essay/GLA_outlining_your_essay_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">LS9J</div></td><td valign="top"><div class="font"><a class="color_change" href="practice_jams/outlining_your_essay/JAM_outlining_your_essay.doc">Jam</a></div></td>
+	</tr>
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> LS10W </div></td><td valign="top"><div class="font"> Evaluating 
+	Online Sources<!--this workshop has different handouts for GLAs and Workshops--> </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/evaluating_online_sources/Edit.Evaluating.Online.Sources_jose.doc">Wksp</a>&nbsp;&nbsp;
+	<a class="color_change" href="workshops/evaluating_online_sources/PPT_evaluating_online_sources.ppt">PowerPoint</a> </div></td>
+	<td valign="top"><div class="font"> 
+	LS10G </div></td><td valign="top"><div class="font"> <a class="color_change" href="GLAs/evaluating_online_sources/GLA_evaluating_online_sources_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> LS11W </div></td><td valign="top"><div class="font"> Test-Taking 
+	Strategies </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/test_taking_strategies/Edit.Test-Taking.Strategies_jose.doc">Wksp</a>&nbsp;&nbsp;
+	<a class="color_change" href="workshops/test_taking_strategies/PPT_test_taking_strategies.ppt">PowerPoint</a> </div></td>
+	<td valign="top"><div class="font"> 
+	LS11G </div></td><td valign="top"><div class="font"> <a class="color_change" href="GLAs/test_taking/GLA_test_taking_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> LS12W </div></td><td valign="top"><div class="font"> Stress 
+	Management </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/stress_management/Edit.Stress.Management_jose.doc">Wksp</a>&nbsp;&nbsp;
+	<a class="color_change" href="workshops/stress_management/PPT_stress_management.ppt">PowerPoint</a> </div></td>
+	<td valign="top"><div class="font"> 
+	LS12G </div></td>
+	<td valign="top"><div class="font"> <a class="color_change" href="GLAs/stress_management/GLA_stress_management_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> LS13W </div></td><td valign="top"><div class="font"> Preparing for 
+	Finals </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/preparing_for_finals/Edit.Preparing.for.Finals_jose.doc">Wksp</a>&nbsp;&nbsp;
+	<a class="color_change" <a class="color_change" href="workshops/preparing_for_finals/PPT_preparing_for_finals.ppt">PowerPoint</a> </div></td>
+	<td valign="top"><div class="font"> 
+	LS13G </div></td>
+	<td valign="top"><div class="font"> <a class="color_change" href="GLAs/preparing_for_finals/GLA_preparing_for_finals_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+
+
+
+
+</table>
+
+<br><br><h1 class="h1_gray">Social Sciences</h1>
+ 
+
+<table width="100%" class="border_gray">
+<tr bgColor="#CCCCCC">
+	<td width="65"><div class="font"><strong>Wksp. ID</strong> </div></td>
+	<td><div class="font"><strong>Workshop Title</strong> </div></td>
+	<td width="120"> <div class="font"><strong>Wksp. Materials</strong> </div></td>
+	<td width="55"> <div class="font"><strong>GLA ID</strong> </div></td>
+	<td width="100"> <div class="font"><strong>GLA Materials</strong></div></td>
+	<td width="55"> <div class="font"><strong>Jam ID</strong> </div></td>
+	<td width="100"><div class="font"><strong>Jam Materials</strong></div></td>
+</tr>
+
+<tr bgColor=#f1dbd6>
+	<td valign="top"><div class="font"> SOC1W </div></td><td valign="top"><div class="font"> APA Style 1 (Formatting and Structure)</div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="workshops/apa1/WKSP_APA_1_jose.doc">Wksp</a> &nbsp;
+	<a class="color_change" href="workshops/apa1/PPT_apa1_6thEdition_2011Revision.pptx">PowerPoint</a></div></td>
+	<td valign="top"><div class="font">SOC1G </div></td>
+	<td valign="top"><div class="font"> &nbsp;<a class="color_change" href="GLAs/apa1/GLA_apa_1_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+<tr bgColor=#d5e6e1>
+	<td valign="top"><div class="font"> SOC2W </div></td><td valign="top"><div class="font"> APA Style 2 (Citing & Referencing Material)</div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="workshops/apa2/WKSP_APA_2_jose.doc">Wksp</a>  &nbsp;
+	<a class="color_change" href="workshops/apa2/PPT_apa2_6thEdition.pptx">PowerPoint</a></div></td>
+	<td valign="top"><div class="font"> 
+	SOC2G </div></td><td valign="top"><div class="font"> &nbsp;<a class="color_change" href="GLAs/apa2/GLA_apa_2_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+
+</table>
+
+<br><br><h1 class="h1_gray">Mathematics</h1>
+ 
+
+<table width="100%" class="border_gray">
+
+<tr bgColor="#CCCCCC">
+	<td width="65"><div class="font"><strong>Wksp. ID</strong> </div></td>
+	<td><div class="font"><strong>Workshop Title</strong> </div></td>
+	<td width="120"> <div class="font"><strong>Wksp. Materials</strong> </div></td>
+	<td width="55"> <div class="font"><strong>GLA ID</strong> </div></td>
+	<td width="100"> <div class="font"><strong>GLA Materials</strong></div></td>
+	<td width="55"> <div class="font"><strong>Jam ID</strong> </div></td>
+	<td width="100"><div class="font"><strong>Jam Materials</strong></div></td>
+</tr>
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"><strong>MAT1W</strong></div></td>
+<td valign="top"><div class="font">&nbsp;Equations of Lines</div></td><td valign="top"><div class="font">
+	<a class="color_change" href="workshops/Math_equations_of_lines/Wksp_EquationsOfLines.docx">Wksp</a></div></td><td valign="top"><div class="font">
+		MAT1G</div></td><td valign="top"><div class="font">Plato</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>		
+		</tr>
+		
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"><strong>MAT2W</strong></div></td>
+<td valign="top"><div class="font">&nbsp;Fractions: Addition and Subtraction</div></td>
+<td valign="top"><div class="font"><a class="color_change" href="workshops/Math_fractions_addition/Wksp_fractions_addition.doc">Wksp</a></div></td>
+<td valign="top"><div class="font">MAT2G</div></td>
+<td valign="top"><div class="font">Plato</div></td>
+<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+</tr>
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"><strong>MAT3W</strong></div></td><td valign="top"><div class="font">
+	&nbsp;Order of Operations</div></td><td valign="top"><div class="font">
+	<a class="color_change" href="workshops/Math_order_of_operations/Wksp_OrderOfOperations.doc">Wksp</a></div></td>
+	<td valign="top"><div class="font">MAT3G</div></td><td valign="top"><div class="font">Plato</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+	
+	
+	
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"><strong>MAT4W</strong></div></td>
+<td valign="top"><div class="font">&nbsp;Geometry Word Problems</div></td>
+<td valign="top"><div class="font"><a class="color_change" href="workshops/Math_geometry/Wksp_geometry_word_problems.doc">Wksp</a></div></td>
+<td valign="top"><div class="font">MAT4G</div></td>
+<td valign="top"><div class="font">Plato</div></td>
+<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+</tr>
+
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"><strong>MAT5W</strong></div></td><td valign="top"><div class="font">
+	&nbsp;Uniform Motion Word Problems</div></td><td valign="top"><div class="font">
+	<a class="color_change" href="workshops/Math_uniform_motion/Wksp_uniform_motion.doc">Wksp</a></div></td>
+	<td valign="top"><div class="font">MAT5G</div></td><td valign="top"><div class="font">
+	<a class="color_change" href="GLAs/Math_uniform_motion/uniform_motion.htm"><font color="red">GLA*</font></a>
+	 &nbsp;No handout</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+	
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"><strong>MAT6W</strong></div></td>
+	<td valign="top"><div class="font">&nbsp;Exponents</div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="workshops/Math_exponents/Wksp_exponents.docx">Wksp</a></div></td>
+	<td valign="top"><div class="font">MAT6G</div></td>
+	<td valign="top"><div class="font">Plato</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"><strong>MAT7W</strong></div></td><td valign="top"><div class="font">
+	&nbsp;Graphing Linear Equations</div></td><td valign="top"><div class="font">
+	<a class="color_change" href="workshops/Math_graphing_linear_equations/Wksp_graphing_linear_equations.doc">Wksp</a></div></td>
+	<td valign="top"><div class="font">MAT7G</div></td><td valign="top"><div class="font">Plato</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+	
+<tr bgColor=#d5e6e1><td valign="top"><div class="font">MAT8W</div></td>
+	<td valign="top"><div class="font">&nbsp;Math Anxiety</div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="workshops/Math_anxiety/Wksp_math_anxiety.doc">Wksp</a>&nbsp;&nbsp;
+	<a class="color_change" href="workshops/Math_anxiety/Math_anxiety.pptx">PowerPoint</a></div></td>
+	<td valign="top"><div class="font">MAT8G</div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="GLAs/math_anxiety/GLA_math_anxiety_jose.htm"><font color=red>GLA*</font></a>
+	 &nbsp;<a class="color_change" href="workshops/Math_anxiety/GLA_math_anxiety.doc">Handout</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+	
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"><strong>MAT9W</strong></div></td><td valign="top"><div class="font">
+	&nbsp;Percent and Interest Word Problems</div></td><td valign="top"><div class="font">
+	<a class="color_change" href="workshops/Math_percent_and_interest/Wksp_percent_and_interest.doc">Wksp</a></div></td>
+	<td valign="top"><div class="font">MAT9G</div></td><td valign="top"><div class="font">
+	<a class="color_change" href="GLAs/Math_percent/percent.htm"><font color=red>GLA*</font></a></a> &nbsp;No handout</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+	
+<tr bgColor=#d5e6e1><td valign="top"><div class="font">MAT10W</div></td>
+	<td valign="top"><div class="font">&nbsp;Mixture Problems</div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="workshops/Math_mixture/Wksp_mixture_problems.doc">Wksp</a></div></td>
+	<td valign="top"><div class="font">MAT10G</div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="GLAs/Math_mixture/mixture.htm"><font color="red">GLA*</font></a> &nbsp;No handout</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"><strong>MAT11W</strong></div></td><td valign="top"><div class="font">
+	&nbsp;Scientific Notation</div></td><td valign="top"><div class="font">
+	<a class="color_change" href="workshops/Math_scientific_notation/Wksp_scientific_notation.doc">
+	Wksp</a></div></td>
+	<td valign="top"><div class="font">MAT11G</div></td><td valign="top"><div class="font">Plato</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+
+
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font">MAT12W</div></td>
+	<td valign="top"><div class="font">&nbsp;Division of Polynomials</div></td>
+	<td valign="top"><div class="font">
+	<a class="color_change" href="workshops/Math_polynomial_division/Wksp_polynomial_division.doc">
+	Wksp</a></div></td>
+	<td valign="top"><div class="font">MAT12G</div></td>
+	<td valign="top"><div class="font">Plato</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>	
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font">MAT13W</div></td><td valign="top"><div class="font">
+	&nbsp;Money Problems</div></td><td valign="top"><div class="font">
+	No Wksp offered</div></td>
+	<td valign="top"><div class="font">MAT13G</div></td><td valign="top"><div class="font"><a class="color_change" href="GLAs/Math_money/money.htm"><font color="red">GLA*</font></a>  
+	&nbsp;No handout</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+	
+<tr bgColor=#d5e6e1><td valign="top"><div class="font">MAT14W</div></td>
+	<td valign="top"><div class="font">&nbsp;Simple Interest</div></td>
+	<td valign="top"><div class="font">
+	No Wksp offered</div></td>
+	<td valign="top"><div class="font">MAT14G</div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="GLAs/Math_simple_interest/simple_interest.htm"><font color="red">
+	GLA*</font></a> &nbsp;No handout</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>	
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"><strong>MAT15W</strong></div></td><td valign="top"><div class="font">
+	&nbsp;Factoring Trinomials</div></td><td valign="top"><div class="font">
+	<a class="color_change" href="workshops/Math_factoring_trinomials/Wksp_factoring_trinomials.docx">Wksp</a></div></td>
+	<td valign="top"><div class="font">MAT15G</div></td><td valign="top"><div class="font">Plato</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>	
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"><strong>MAT16W</strong></div></td>
+	<td valign="top"><div class="font">&nbsp;Basic Logarithms</div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="workshops/Math_logarithms/Wksp_logarithms.doc">Wksp</a></div></td>
+	<td valign="top"><div class="font">MAT16G</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"><strong>MAT17W</strong></div></td><td valign="top"><div class="font">
+	&nbsp;Rational Equations</div></td><td valign="top"><div class="font"><a class="color_change" href="workshops/Math_rational_equations/Wksp_rational_equations.docx">Wksp</a></div></td>
+	<td valign="top"><div class="font">MAT17G</div></td><td valign="top"><div class="font">
+	<a class="color_change" href="GLAs/Math_rational_equations/rational_equations.htm">GLA </a>&nbsp;No 
+	handout</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>	
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font">MAT18W</div></td><td valign="top"><div class="font">
+	&nbsp;Multiplication and Div. of Rational Expressions</div></td><td valign="top"><div class="font">
+		<a class="color_change" href="workshops/Math_rational_expressions/Wksp_rational_expressions.docx">Wksp</a></div></td>
+	<td valign="top"><div class="font">MAT18G</div></td><td valign="top"><div class="font">&nbsp;
+	</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font">MAT19W</div></td><td valign="top"><div class="font">
+	&nbsp;Geometry Problems</div></td><td valign="top"><div class="font">
+		No Wksp offered</div></td>
+	<td valign="top"><div class="font">MAT19G</div></td><td valign="top"><div class="font">
+	<a class="color_change" href="GLAs/Math_geometry/geometry.htm">GLA </a>&nbsp;No handout</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>	
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"><strong>MAT20W</strong></div></td><td valign="top"><div class="font">
+	&nbsp;Operations with Integers</div></td><td valign="top"><div class="font">
+		<a class="color_change" href="workshops/Math_integers/Wksp_integers.docx">Wksp</a></div></td>
+	<td valign="top"><div class="font">MAT20G</div></td><td valign="top"><div class="font">
+	no GLA yet</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+	
+<tr bgColor=#f1dbd6><td valign="top"><div class="font">MAT21W</div></td><td valign="top"><div class="font">
+	&nbsp;Word Prob. with Systems of Lin. Eqns.</div></td><td valign="top"><div class="font">
+		No Wksp offered</div></td>
+	<td valign="top"><div class="font">MAT21G</div></td><td valign="top"><div class="font">
+	no GLA yet</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font">MAT22W</div></td><td valign="top"><div class="font">
+	&nbsp;Conversions and Dimensional Analysis</div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="workshops/Math_conversions/Wksp_conversions.docx">Wksp</a>
+	 &nbsp;&nbsp;<a class="color_change" href="workshops/Math_conversions/Dimensional_Analysis.pptx">PowerPoint</a></div></td>
+	<td valign="top"><div class="font">MAT22G</div></td><td valign="top"><div class="font">
+	<a class="color_change" href="GLAs/Math_conversions/conversions.htm">GLA</a>&nbsp; No handout</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"><strong>MAT23W</strong></div></td><td valign="top"><div class="font">
+	&nbsp;Fractions: Multiplication and Division</div></td><td valign="top"><div class="font">
+		<a class="color_change" href="workshops/Math_fractions_multiplication/Wksp_fractions_multiplication.doc">Wksp</a></div></td>
+	<td valign="top"><div class="font">MAT23G</div></td><td valign="top"><div class="font">Plato</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+</table>
+<div align="right"><font size="0.8em">*GLA has its own handouts; different from the workshop handouts.</font></div>
+
+
+
+<br><br><h1 class="h1_gray">English and Composition Skills</h1>
+<table width="100%" class="border_gray">
+<tr bgColor="#CCCCCC">
+	<td width="65"><div class="font"><strong>Wksp. ID</strong> </div></td>
+	<td><div class="font"><strong>Workshop Title</strong> </div></td>
+	<td width="120"> <div class="font"><strong>Wksp. Materials</strong> </div></td>
+	<td width="55"> <div class="font"><strong>GLA ID</strong> </div></td>
+	<td width="100"> <div class="font"><strong>GLA Materials</strong></div></td>
+	<td width="55"> <div class="font"><strong>Jam ID</strong> </div></td>
+	<td width="100"><div class="font"><strong>Jam Materials</strong></div></td>
+</tr>
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> EN1W </div></td><td valign="top"><div class="font"> Thesis 
+	Development </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/thesis_development/Edit.Thesis.Development_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a class="color_change" href="workshops/thesis_development/PPT_thesis_development.ppt">PowerPoint</a> </div></td>
+	<td valign="top"><div class="font"> EN1G </div></td>
+	<td valign="top"><div class="font"> <a class="color_change" href="GLAs/thesis_development/GLA_thesis_development_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">EN1J</div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="practice_jams/thesis_development/JAM_thesis_development.doc">Jam</a></div></td></tr>
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> EN2W </div></td><td valign="top"><div class="font"> Paragraph Structure (Source-Based Body Paragraph)</div></td>
+	<td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/paragraph_structure/Edit.Paragraph.Structure_jose.doc">Wksp</a> </div></td>
+	<td valign="top"><div class="font"> 
+	EN2G </div></td><td valign="top"><div class="font"> <a class="color_change" href="GLAs/paragraph_structure/GLA_paragraph_structure_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">EN2J</div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="practice_jams/paragraph_structure/JAM_paragraph_structure.doc">Jam</a></div></td>
+	</tr>
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> EN3W </div></td><td valign="top"><div class="font"> MLA Style 1 (Parenthetical Citations and Works Cited)</div></td>
+	<td valign="top"><div class="font"> <a class="color_change" href="workshops/mla1/Edit.MLA.Style.1_jose.doc">Wksp</a> </div></td>
+	<td valign="top"><div class="font"> EN3G </div></td>
+	<td valign="top"><div class="font"> <a class="color_change" href="GLAs/mla1/GLA_mla_1_jose.htm">GLA</div></td>
+	<td valign="top"><div class="font">EN3J</div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="practice_jams/mla1/JAM_mla1.doc">Jam</a></div></td>
+	</tr>
+	
+	
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> EN4W </div></td><td valign="top"><div class="font"> MLA Style 2 (Advanced Quoting and Citation Techniques)</div></td>
+	<td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/mla2/Edit.MLA.Style.2_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a class="color_change" href="workshops/mla2/PPT_mla2.pptx">PowerPoint</a> </div></td>
+	<td valign="top"><div class="font"> 
+	EN4G </div></td><td valign="top"><div class="font"> <a class="color_change" href="GLAs/mla2/GLA_mla_2_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td></tr>
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> EN5W </div></td><td valign="top"><div class="font"> Sentence 
+	Fragments </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/sentence_fragments/Edit.Sentence.Fragments_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a class="color_change" href="workshops/sentence_fragments/PPT_sentence_fragments.ppt">PowerPoint</a> </div></td>
+	<td valign="top"><div class="font"> 
+	EN5G </div></td><td valign="top"><div class="font"> <a class="color_change" href="GLAs/sentence_fragments/GLA_fragments_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">EN5J</div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="practice_jams/sentence_fragments/JAM_sentence_fragments.doc">Jam</a></div></td>
+	</tr>
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> EN6W </div></td><td valign="top"><div class="font"> 
+		Proofreading </div></td><td valign="top"><div class="font">
+		<a class="color_change" href="workshops/proofreading/Edit.Proofreading_jose.doc">Wksp</a>
+		 &nbsp;&nbsp;<a class="color_change" href="workshops/proofreading/PPT_proofreading.ppt">PowerPoint</a></div></td>
+		<td valign="top"><div class="font"> 
+		EN6G </div></td><td valign="top"><div class="font"> <a class="color_change" href="GLAs/proofreading/GLA_proofreading_jose.htm">GLA</a></div></td>
+		<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td></tr>
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> EN7W </div></td><td valign="top"><div class="font"> Avoiding 
+	Run-on Sentences </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/run_on_sentences/Edit.Avoiding.Run-on.Sentences_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a class="color_change" href="workshops/run_on_sentences/PPT_run_on_sentences.ppt">PowerPoint</a></div></td>
+	<td valign="top"><div class="font">EN7G </div></td>
+	<td valign="top"><div class="font"> <a class="color_change" href="GLAs/run_on_sentences/GLA_run_on_sentences_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">EN7J</div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="practice_jams/run_on_sentences/JAM_run_on_sentences.doc">Jam</a></div></td>
+	</tr>
+
+
+<tr bgColor=#d5e6e1>
+	<td valign="top"><div class="font">EN8W   </div></td>
+	<td valign="top"><div class="font">Apostrophes </div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="workshops/apostrophes/Edit.Apostrophes_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a class="color_change" href="workshops/apostrophes/PPT_apostrophe_abuse.ppt">PP1</a> / 
+	<a class="color_change" href="workshops/apostrophes/PPT_misunderstood_apostrophe.ppt">PP2</a> </div></td>
+	<td valign="top"><div class="font"> EN8G </div></td>
+	<td valign="top"><div class="font"> <a class="color_change" href="GLAs/apostrophes/GLA_apostrophes_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+
+<tr bgColor=#f1dbd6>
+	<td valign="top"><div class="font"> EN9W  </div></td><td valign="top"><div class="font"> Commas and Quotations </div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="workshops/commas_and_quotations/Edit.Commas.and.Quotations_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a class="color_change" href="workshops/commas_and_quotations/PPT_commas_and_quotations.ppt">PowerPoint</a> </div></td>
+	<td valign="top"><div class="font"> EN9G </div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="GLAs/commas_and_quotations/GLA_commas_and_quotations_jose.htm">GLA&nbsp;</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>			
+	</tr>
+
+
+<tr bgColor=#d5e6e1>
+	<td valign="top"><div class="font"> EN10W </div></td>
+	<td valign="top"><div class="font"> Vocabulary Building </div></td>
+	<td valign="top"><div class="font"> <a class="color_change" href="workshops/vocabulary_building/Edit.Vocabulary.Building_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a class="color_change" href="workshops/vocabulary_building/PPT_vocabulary_building.pptx">PowerPoint </a></div></td>
+	 <td valign="top"><div class="font"> EN10G </div></td>
+	 <td valign="top"><div class="font"> <a class="color_change" href="GLAs/vocabulary_building/GLA_vocabulary_building_jose.htm">GLA</a></div></td>
+	 <td valign="top"><div class="font">EN10J</div></td>
+	 <td valign="top"><div class="font"><a class="color_change" href="practice_jams/vocabulary_building/JAM_vocabulary_building.docx">Jam</a></div></td>
+	 </tr>
+
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> EN11W </div></td><td valign="top"><div class="font"> How to Start 
+	an Essay  </div></td>
+	<td valign="top"><div class="font"><a class="color_change" href="workshops/starting_an_essay/Edit.How.to.Start.an.Essay_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a class="color_change" href="workshops/starting_an_essay/PPT_starting_an_essay.pptx">PowerPoint</a> </div></td>
+	<td valign="top"><div class="font"> EN11G </div></td>
+	<td valign="top"><div class="font"> <a class="color_change" href="GLAs/starting_an_essay/GLA_starting_an_essay_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td></tr>
+
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> EN12W  </div></td><td valign="top"><div class="font"> Drawing 
+	Inferences </div></td>
+	<td valign="top"><div class="font"> <a class="color_change" href="workshops/drawing_inferences/Edit.Drawing.Inferences_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a class="color_change" href="workshops/drawing_inferences/PPT_drawing_inferences.pptx">PowerPoint</a> </div></td>
+	<td valign="top"><div class="font"> EN12G </div></td>
+	<td valign="top"><div class="font"> <a class="color_change" href="GLAs/drawing_inferences/GLA_drawing_inferences_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+	
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> EN13W </div></td><td valign="top"><div class="font"> 
+	Writer&#39;s Block </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/writers_block/Edit.Writer's.Block_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a class="color_change" href="workshops/writers_block/PPT_writers_block.ppt">PowerPoint</a> </div></td>
+	<td valign="top"><div class="font"> EN13G </div></td>
+	<td valign="top"><div class="font"> <a class="color_change" href="GLAs/writers_block/GLA_writers_block_jose.htm">GLA</a></div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td><td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+
+
+
+</table>
+
+
+<br><br><h1 class="h1_gray">English as a Second Language</h1>
+ 
+
+<table width="100%" class="border_gray">
+<tr bgColor="#CCCCCC">
+	<td width="65"><div class="font"><strong>Wksp. ID</strong> </div></td>
+	<td><div class="font"><strong>Workshop Title</strong> </div></td>
+	<td width="120"> <div class="font"><strong>Wksp. Materials</strong> </div></td>
+	<td width="55"> <div class="font"><strong>GLA ID</strong> </div></td>
+	<td width="100"> <div class="font"><strong>GLA Materials</strong></div></td>
+	<td width="55"> <div class="font"><strong>Jam ID</strong> </div></td>
+	<td width="100"><div class="font"><strong>Jam Materials</strong></div></td>
+</tr>
+
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> ESL1W </div></td><td valign="top"><div class="font"> ESL Cultural 
+	Expectations 1 </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/ESL_cultural_expectations_1/Cultural%20Expectations%20I%20rev.doc">
+	Wksp</a> </div></td><td valign="top"><div class="font">&nbsp; </div></td>
+	<td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	</tr>
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> ESL2W </div></td><td valign="top"><div class="font"> ESL Cultural 
+	Expectations 2 </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/ESL_cultural_expectations_2/Cultural%20Expectations%20II%20Rev.doc">
+	Wksp</a> </div></td><td valign="top"><div class="font">&nbsp; </div></td>
+	<td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> ESL3W </div></td><td valign="top"><div class="font"> ESL Grammar / 
+	Comma Splices </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/ESL_grammar_comma_splices/ESL%20Grammar%20Comma%20Splices.pdf">	Wksp</a>&nbsp;
+	<a class="color_change" href="workshops/ESL_grammar_comma_splices/ESL%20Grammar%20Comma%20Splices.ppt">	PowerPoint</a></div></td>
+	<td valign="top"><div class="font">&nbsp; </div></td>
+	<td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> ESL4W </div></td><td valign="top"><div class="font"> ESL Grammar / 
+	Commas with Subordinate Conjunctions </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/ESL_grammar_commas_subordinating_conjunctions/ESL%20Grammar%20Commas%20Subordinating%20Conjunctions.doc">
+	Wksp</a> </div></td><td valign="top"><div class="font">&nbsp; </div></td>
+	<td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> ESL5W </div></td><td valign="top"><div class="font"> ESL Grammar / 
+	Fragments </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/ESL_grammar_fragments/ESL%20Grammar%20Fragments.doc">
+	Wksp</a> </div></td><td valign="top"><div class="font">&nbsp; </div></td>
+	<td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>	
+	</tr>
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> ESL6W </div></td><td valign="top"><div class="font"> ESL Grammar / 
+	Parallelism </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/ESL_grammar_parallelism/ESL%20Grammar%20Parallelism.doc">
+	Wksp</a> </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>		
+		</tr>
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> ESL7W </div></td><td valign="top"><div class="font"> ESL Speaking 
+	Up 1 </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/ESL_speaking_up_1through3/ESL%20Speaking%20Up%20I.doc">
+	Wksp</a> </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>		
+		</tr>
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> ESL8W </div></td><td valign="top"><div class="font"> ESL Speaking 
+	Up 2 </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/ESL_speaking_up_1through3/ESL%20Speaking%20Up%20II.doc">
+	Wksp</a> </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>		
+	</tr>
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> ESL9W </div></td><td valign="top"><div class="font"> ESL Speaking 
+	Up 3 </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/ESL_speaking_up_1through3/ESL%20Speaking%20Up%20III.doc">
+	Wksp</a> </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>		
+		</tr>
+
+
+</table>
+<!-- 
+<br><br><h1 class="h1_gray">Spanish</h1>
+ 
+<table width="100%" class="border_gray">
+<tr bgColor="#CCCCCC">
+	<td width="65"><div class="font"><strong>Wksp. ID</strong> </div></td>
+	<td><div class="font"><strong>Workshop Title</strong> </div></td>
+	<td width="120"> <div class="font"><strong>Wksp. Materials</strong> </div></td>
+	<td width="55"> <div class="font"><strong>GLA ID</strong> </div></td>
+	<td width="100"> <div class="font"><strong>GLA Materials</strong></div></td>
+	<td width="55"> <div class="font"><strong>Jam ID</strong> </div></td>
+	<td width="100"><div class="font"><strong>Jam Materials</strong></div></td>
+</tr>
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> SPA1W </div></td><td valign="top"><div class="font"> Spanish: 
+	Agreement / Ser / Hay </div></td><td valign="top"><div class="font"> 
+		<a class="color_change" href="workshops/spa_agreement/index.htm">Wksp</a> </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>		
+		</tr>
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> SPA2W </div></td><td valign="top"><div class="font"> Spanish / 
+	Intro to verbs </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/spa_intro_verbs/index.htm">Wksp</a> </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>		
+		</tr>
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> SPA3W </div></td><td valign="top"><div class="font"> Spanish / 
+	Ser, estar, haber </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/spa_ser_estar_haber/index.htm">Wksp</a> </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+		</tr>
+		
+		
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> SPA4W </div></td><td valign="top"><div class="font"> Spanish / 
+	Irregular verbs </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/spa_irreg_verbs/index.htm">Wksp</a> </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+		</tr>
+		
+	<tr bgColor=#f1dbd6><td valign="top"><div class="font"> SPA5W </div></td><td valign="top"><div class="font"> Spanish / 
+		Object pronouns </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/spa_object_pronouns/index.htm">Wksp</a> </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>		
+		</tr>
+		
+	<tr bgColor=#d5e6e1><td valign="top"><div class="font"> SPA6W </div></td><td valign="top"><div class="font"> Spanish / 
+		Reflexive verbs </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/spa_reflexives/index.htm">Wksp</a> </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>		
+	</tr>
+	<tr bgColor=#f1dbd6><td valign="top"><div class="font"> SPA7W </div></td><td valign="top"><div class="font"> Spanish / 
+		Preterit </div></td><td valign="top"><div class="font"> 
+	<a class="color_change" href="workshops/spa_preterit/spa_preterit.doc">Wksp</a> </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>		
+	</tr>
+
+	<tr bgColor=#d5e6e1><td valign="top"><div class="font"> SPA8W </div></td><td valign="top"><div class="font"> Spanish / 
+		La universidad</div></td><td valign="top"><div class="font"> 
+	Wksp </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>		
+		</tr>
+		
+		
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> SPA9W </div></td><td valign="top"><div class="font"> Spanish / 
+		Las personas</div></td><td valign="top"><div class="font"> 
+	Wksp </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>		
+	</tr>
+
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> SPA10W </div></td><td valign="top"><div class="font"> 
+				Spanish / El restaurante</div></td><td valign="top"><div class="font"> 
+	Wksp </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>		
+		</tr>
+
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> SPA11W </div></td><td valign="top"><div class="font"> Spanish 
+		/ El tiempo libre</div></td><td valign="top"><div class="font"> 
+	Wksp </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>		
+		</tr>
+		
+		
+		
+		
+			<tr bgColor=#d5e6e1><td valign="top"><div class="font"> SPA12W </div></td><td valign="top"><div class="font"> 
+				Spanish / La rutina</div></td><td valign="top"><div class="font"> 
+	Wksp </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>		
+		</tr>
+		
+		
+		
+<tr bgColor=#f1dbd6><td valign="top"><div class="font"> SPA13W </div></td><td valign="top"><div class="font"> Spanish 
+		/ Las compras</div></td><td valign="top"><div class="font"> 
+	Wksp </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>		
+		</tr>
+
+		
+<tr bgColor=#d5e6e1><td valign="top"><div class="font"> SPA14W </div></td><td valign="top"><div class="font"> 
+				Spanish / Los deportes y las vacaciones</div></td><td valign="top"><div class="font"> 
+	Wksp </div></td><td valign="top"><div class="font">&nbsp; 
+		</div></td><td valign="top"><div class="font">  no GLA</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>
+	<td valign="top"><div class="font">&nbsp;</div></td>		
+		</tr>
+
+</table>
+-->
+<br>
+</div> <!--This is the end of the end of the page div -->
+      
+      
+      
+      
+      
+		</div>
+          </div>
+      	  </div> 
+
+  </div>
+
+    
+</div>
+
+<div id="footer">
+  <div id="footer_wrapper">
+    <div id="footer_text">
+      <p>Valencia campus:
+        (661) 259-7800 - 26455 Rockwell Canyon Road, Santa Clarita, CA 91355<br />
+        Canyon Country campus:
+        (661) 476-3800 - 17200 Sierra Highway, Santa Clarita, CA 91351</p>
+      <p><br />
+        Copyright © 2001-2008 by College of the Canyons. All rights reserved.<br />
+      Terms under which this service is provided to you.</p>
+    </div>
+    <a href="http://www.canyons.edu"><img src="images/header_coc_logo2.gif" alt="College of the Canyons" width="134" height="73" /></a></div>
+</div>
+</body>
+</htm>
+
+

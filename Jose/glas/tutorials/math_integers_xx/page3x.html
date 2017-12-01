@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 5;
+$(".button1").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("div") .unbind ('click') .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"}) 
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	if (i == x) {$('.button1').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("div") .unbind ('click')  .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+	$(this).css ({"color": "red", "font-weight": "normal"})
+ 
+	});
+ 
+});
+ 
+ 
+</script>
+<style type="text/css"> 
+
+
+#questions {width: 100%; margin-bottom: 10px;}
+.item {padding-left: 10px; width: 100%; line-height: 25px;}
+.letter {margin-right: 10px;}
+.turnedOff {color: gray; padding-left: 10px; width: 500px; display: inline-block;}
+.right, .wrong {cursor: pointer; padding-left: 10px; width: 500px; display: inline-block;}
+.right:hover, .wrong:hover {background: #ccc; padding-left: 10px; width: 500px; display: inline-block;}
+.division tr td {line-height: 13px; font-size: 12px; text-align: center;} 
+.division {display: inline-block;}
+.absolute {font-weight: 700; font-size: 16px;}
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	Answer the questions correctly. After you get all the correct answers, a 
+	button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page4.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table  width="100%" border="0">
+	<tr>
+	<td width="80%" valign="top"><div class="exercise_instructions">
+		Identify the  <font class="correct_number">CORRECT </font> answers by clicking on them.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	</table>
+	<table width="100%" border="0"><tr><td width="80%">
+	<table id="questions">
+	<tr><td><div class="number">1.</div></td>
+	<td><div class="item">Which of the following numbers IS NOT an integer?<br>
+	<span class="letter">a.</span><div class="wrong">-11<span id="feedback"></span> </div><br>
+	<span class="letter">b.</span><div class="wrong">0<span id="feedback"></span> </div><br>
+	<span class="letter">c.</span><div class="wrong">3<span id="feedback"></span> </div><br>
+	<span class="letter">d.</span><div class="right"><table class="division"><tr><td><u>1</u></td></tr><tr><td>4</td></tr></table><span id="feedback"></span> </div>
+	</div></td></tr>
+	</table>
+	
+	<table id="questions">
+	<tr><td><div class="number">2.</div></td>
+	<td><div class="item">The absolute value of <font class="absolute">|</font>14<font class="absolute">|</font> is...<br>
+ 	<span class="letter">a.</span><div class="wrong">-14<span id="feedback"></span> </div><br>
+	<span class="letter">b.</span><div class="right">14<span id="feedback"></span> </div><br>
+	<span class="letter">c.</span><div class="wrong">0.14<span id="feedback"></span> </div><br>
+	<span class="letter">d.</span><div class="wrong"><table class="division"><tr><td><u>1</u></td></tr><tr><td>4</td></tr></table><span id="feedback"></span> </div>
+	</div></td></tr>
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">3.</div></td>
+	<td><div class="item">The absolute value of <font class="absolute">|</font>0<font class="absolute">|</font> is...<br>
+	<span class="letter">a.</span><div class="right">0<span id="feedback"></span> </div><br>
+	<span class="letter">b.</span><div class="wrong">-0<span id="feedback"></span> </div><br>
+	<span class="letter">c.</span><div class="wrong">+0<span id="feedback"></span> </div><br>
+	<span class="letter">d.</span><div class="wrong"><table class="division"><tr><td><u>0</u></td></tr><tr><td>0</td></tr></table><span id="feedback"></span> </div>
+	</div></td></tr> 
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">4.</div></td>
+	<td><div class="item">The absolute value of <font class="absolute">|</font>-9<font class="absolute">|</font> is...<br>
+	<span class="letter">a.</span><div class="wrong"><table class="division"><tr><td>- <u>1</u></td></tr><tr><td>9</td></tr></table><span id="feedback"></span> </div><br>
+	<span class="letter">b.</span><div class="wrong">-9<span id="feedback"></span> </div><br>
+	<span class="letter">c.</span><div class="wrong">0.9<span id="feedback"></span> </div><br>
+	<span class="letter">d.</span><div class="right">9<span id="feedback"></span> </div>
+	</div></td></tr>
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">5.</div></td>
+	<td><div class="item">The absolute value of <font class="absolute">|</font>-87<font class="absolute">|</font> is...<br>
+	<span class="letter">a.</span><div class="wrong">-87<span id="feedback"></span> </div><br>
+	<span class="letter">b.</span><div class="wrong"><table class="division"><tr><td><u>1</u></td></tr><tr><td>87</td></tr></table><span id="feedback"></span> </div><br>
+	<span class="letter">c.</span><div class="right">87<span id="feedback"></span> </div><br>
+	<span class="letter">d.</span><div class="wrong">0.87<span id="feedback"></span> </div>
+	</div></td></tr> 
+	</table>
+	</td>
+	
+	<td align="center"><div id="counter" class="background_score"></div></td>
+	</tr></table>
+	
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

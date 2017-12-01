@@ -1,0 +1,6 @@
+c:\users\student-tlc\documents\visual studio 2012\Projects\MLAScriptStrip\MLAScriptStrip\bin\Debug\MLAScriptStrip.exe.config
+c:\users\student-tlc\documents\visual studio 2012\Projects\MLAScriptStrip\MLAScriptStrip\bin\Debug\MLAScriptStrip.exe
+c:\users\student-tlc\documents\visual studio 2012\Projects\MLAScriptStrip\MLAScriptStrip\bin\Debug\MLAScriptStrip.pdb
+c:\users\student-tlc\documents\visual studio 2012\Projects\MLAScriptStrip\MLAScriptStrip\obj\Debug\MLAScriptStrip.csprojResolveAssemblyReference.cache
+c:\users\student-tlc\documents\visual studio 2012\Projects\MLAScriptStrip\MLAScriptStrip\obj\Debug\MLAScriptStrip.exe
+c:\users\student-tlc\documents\visual studio 2012\Projects\MLAScriptStrip\MLAScriptStrip\obj\Debug\MLAScriptStrip.pdb

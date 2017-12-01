@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+
+<script>
+
+$(document).ready(function(){
+		var i = 0;
+		var x = 4;
+$(".button1").css ('visibility', 'hidden');
+$(".wrong").click(function(){
+	
+   $(this).find ("#answer").hide ()
+   $(this).unbind('click')
+   $(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"})
+    i++;
+	$("#counter") .html (i);
+	if (i == x) {$('.button1').css ('visibility', 'visible')};
+
+});
+
+$(".right").click(function(){
+	$(this).find ("#answer").hide ()
+	$(this).unbind('click')
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+  	i--;
+	$("#counter") .html (i);
+});
+
+});
+</script>
+
+<style>
+.right, .wrong {cursor: pointer; float:left; font-size: 12px; padding-bottom: 10px; clear: both;}
+.right:hover, .wrong:hover {background: #DCDCDC;}
+#cornell td {padding: 10px;}
+#cornell {background: #F6F6F6}
+
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	The Cornell notes below have entries in the wrong sections.  For example, entries that should be 
+on the left column are on the right one or things that belong in the bottom section are on the lecture notes section.  
+Can you find the mistakes?    After you get all the right answers, a 
+	button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page3xx.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+<table width="100%" border="0" >
+	<tr>
+	<td valign="top" width="80%"><div class="exercise_instructions">
+		Delete the entries in the <font class="correct_number">WRONG</font> section by clicking on them.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	<tr>
+	<td valign="top" width="80%">
+ 		<table border="1" width="100%" id="cornell">
+
+<tr height="30">
+<td colspan="2" width="100%" ><div style="font-size: 12px; padding-bottom: 10px;">
+History 111<br>
+2/15/12<br>
+Before First Contact<br></div>
+</td></tr>
+<tr height="248">
+<td width="20%" >
+<div class="right"><span id="answer">What formed identity?</span><span id="feedback"></span></div>
+<div class="wrong"><span id="answer">As near as we can tell, Native American tribes in the 15th century 
+spoke 350 languages, encompassing several linguistic families. 200 of these languages are still spoken today. </span><span id="feedback"></span></div>
+
+</td>
+<td width="80%">
+<div class="wrong"><span id="answer">How many languages were spoken in North America?</span><span id="feedback"></span></div>
+<div class="right"><span id="answer">Tribal identity was very important; not a Native American identity but a tribal one.
+Each tribe's culture is different, so the cultural context (and meaning) of each tribe's literature is as well. 
+</span><span id="feedback"></span></div>
+
+<div class="right"><span id="answer">The Oral Tradition is a spoken literature as the tribes did not have written language.<br>  
+1.	Participatory: there is a back and forth with audience, the storyteller reacts to audience response and also expects responses
+</span><span id="feedback"></span></div>
+<div class="right"><span id="answer">2.	Mixing of genres " prose and poetry mixed together in the same piece. A lot of what we see as the distinctions between genres are functions of how they appear on the printed page. Poetry vs. prose vs. drama " it all blends together when read by a single speaker
+</span><span id="feedback"></span></div>
+</td>
+</tr>
+
+<tr height="120">
+<td colspan="2" width="100%">
+<div class="wrong"><span id="answer">What is Oral Tradition?</span><span id="feedback"></span></div>
+<div class="right"><span id="answer">Native America was linguistically and culturally diverse. Oral tradition was the main literary form.</span><span id="feedback"></span></div>
+<div class="wrong"><span id="answer">3.	Repetition:  helpful as a memory aid both for the storyteller and for the audience. This is a strategy commonly used as a rhetorical device in contemporary speeches (ex: MLK’s I Have a Dream or the chorus in a song).
+</span><span id="feedback"></span></div>
+
+
+ 
+</td>
+</tr>
+
+</table>
+ 	</td>
+	<td align="center">
+		<div id="counter" class="background_score"></div> 
+	</td>
+	</tr>
+	</table>
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

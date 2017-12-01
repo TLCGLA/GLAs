@@ -1,0 +1,159 @@
+<!DOCTYPE HTML> <html>
+<meta http-equiv="X-UA-Compatible" content="IE-9" /><title>Guided Learning Activities</title>
+<link href="../styles.css" rel="stylesheet" type="text/css" />
+
+
+
+<script type="text/javascript" src="../jquery.js"></script>
+
+
+<style type="text/css">
+
+.right, .wrong {cursor: pointer; margin-left: 10px;}
+.right:hover, .wrong:hover {background: #ccc;}
+.number { text-align: right;  float: right; font-size: 16px; font-weight: bold; background-color:#FFC680; border: 1px solid #ccc; width: 30px; padding-right: 4px;}
+#questions_table span {float:left; font-size: 16px; margin-bottom: 8px;}
+.title {font-weight: bold; font-size: 18px; margin-bottom: 10px; border-bottom: 3px solid #FFA500;}
+#counter {height: 100px; width: 100px; font-size: 50px; border: 1px solid #ccc; background-color:#FFC680; padding-top: 30px; text-align: center;}
+#feedback {margin-left: 20px; display: inline;}
+</style>
+
+
+
+
+
+</head>
+
+<body>
+
+<table width="100%" align="center" border="0">
+<tr bgcolor="#273872"><td></td><td width="960"><!-- header -->
+<div class="header">
+  		<div style="float: left; height: 73px;"><img src="../images/coc_logo1.gif" alt="College of the Canyons"  />
+      <img src="../images/coc_logo2.gif" alt="College of the Canyons" /> 
+	  </div>
+	  <div style="float: right;"><h1 class="h1_title">Guided Learning 
+		Activities</h1></div>
+ 
+ </div>
+ <!-- end header -->
+
+</td><td></td></tr>
+<tr><td colspan="3"> <div class="gradient_horizontal" style="height:3px; break:left;"></div></td></tr>
+
+<tr><td colspan="3"> 
+
+<table width="960" align="center" border="0"> <!-- 960 px is the standard width for 1024 x 768 screens; use 90% otherwise -->
+<tr><td align="center" 0%">
+
+ 
+ <!-- page starts here -->
+<div class="page">
+
+<!-- top section starts here -->
+
+<div class="gla_top_section">
+<h1 class="h1_blue_dark">Comprehension Questions</h1>
+
+<h1 class="h1_gray" style="padding-top: 10px;">Instructions:</h1>
+       
+<table width="100%" border="0">
+<tr><td><div style="padding-right: 10px;">Some of the statements below are correct and some are incorrect.  Can you find the ones 
+that are correct?  (Tip: only 3 are correct.)  Select the 3 correct sentences from the list by clicking on them. As you select sentences, the counter to the right will show how many 
+points you earned. Each correct sentence you pick will add one point, so the maximum points you can earn is 3.  (Beware: each incorrect sentence you pick 
+by mistake will deduct one point from your score.) After you get the three right answers, a button will appear on the top right corner.  Click on the button to 
+continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page.</div></td>
+
+<td ><div class="gradient_horizontal" style="height: 38px; text-align: center; padding: 10px; margin-bottom: 5px;">
+
+<form method="link" action="page4.htm" style="display:  inline; float: right;">
+                                      <input type="submit" class="button" style="height: 35px;" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+                                    </form>
+</div></td>
+</tr>
+</table>
+</div>
+<!-- end top section --> 
+
+<!-- begin wrapper lower section -->
+<div style="margin-top: 30px; padding:10px; border: 1px solid #ccc; background-color: white;">
+ 
+				  	
+<!-- table wrapping lower section contents -->
+
+<table width="100%" border="0">
+<tr>
+<td> <div><span style="float: left"><h1 class="title">Select the <span class="h1_blue" style="font-size: 20px;">3 CORRECT</span> sentences by clicking on them.</h1></span>
+</div></td><td><span style="float: right;  padding-right: 45px;"><h1 class="title">Your score</h1></span></div></td></tr>
+<tr> 
+<td valign="top"  height="400px">
+
+	<table id="questions_table" border=0>
+	<tr><td><div class="number">&nbsp;1.</div></td><td><div><span class="wrong">Google is the best resource for online research. </span><span id="feedback"></span></div></td></tr>
+	<tr><td><div class="number">&nbsp;2.</div></td><td><div><span class="wrong">You can only access library databases on campus</span><span id="feedback"></span></div></td></tr>
+	<tr><td><div class="number">&nbsp;3.</div></td><td><div><span class="right">Online databases can be either general or specialized.</span><span id="feedback"></span></div></td></tr>
+	<tr><td><div class="number">&nbsp;4.</div></td><td><div><span class="wrong">Sources from online databases need to be carefully evaluated for reliability.</span><span id="feedback"></span></div></td></tr>
+	<tr><td><div class="number">&nbsp;5.</div></td><td><div><span class="wrong">Wikipedia is a reliable academic source.</span><span id="feedback"></span></div></td></tr>
+	<tr><td><div class="number">&nbsp;6.</div></td><td><div><span class="right">Google provides a way to search only scholarly sources.</span><span id="feedback"></span></div></td></tr>
+	<tr><td><div class="number">&nbsp;7.</div></td><td><div><span class="right">Sources found through internet research need to be carefully evaluated for reliability.</span><span id="feedback"></span></div></td></tr>
+
+	</table>
+
+
+</td>
+<td width="102">
+<div id="counter" class="box-shadow" style="display: block; float: right;  margin-right: 40px;"></div> 
+
+<div style="margin-top: 40px; display: block; break: left; float: right;  margin-right: 40px; width: 100px; text-align: center;"><span class="h1_blue" style="font-size: 20px;">Maximum points: 3</span></div> 
+</td>
+</tr>
+
+
+</table>
+				
+					
+				
+
+
+</div>
+<!-- end wrapper lower section -->
+</div>
+<!-- end page -->
+</td></tr>
+</table>
+
+ </td></tr>
+</table>  <!-- end big wrapper table-->
+<script>
+$(document).ready(function(){
+	var i = 0;
+	var x = 3;
+	
+	$(".button").css ('visibility', 'hidden');
+	
+	$(".right") .click (function(){
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none")
+	$(this).siblings("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"})
+  		i++;
+		$("#counter") .html (i);
+		if (i == x) {$('.button').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none")
+	$(this).siblings("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+
+	});
+
+});
+
+
+</script>
+
+	
+
+</body>
+</html>

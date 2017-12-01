@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>spa workshop</title>
+<style type="text/css">
+
+div {
+	font-family: sans-serif, Arial, Times New Roman, Times, serif;
+	font-size: 32px;
+}
+
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_setTextOfLayer(objName,x,newText) { //v4.01
+  if ((obj=MM_findObj(objName))!=null) with (obj)
+    if (document.layers) {document.write(unescape(newText)); document.close();}
+    else innerHTML = unescape(newText);
+}
+//-->
+</script>
+</head>
+
+<body  link="#000066" alink="#000066" vlink="#000066" bgcolor="#E6E6FA">
+
+
+<!-- this is the common top menu -->
+
+<!--Page Header -->
+
+<table align="center" width="95%" height=900 cellpadding="10" border="0" bgcolor="#FFFFF0">
+<tr>
+      <td align="center"  valign="top" height=50><br><div><font size="+5" color=#990000>Practice / Uses of "Ser" "Estar" and "Haber"</font><br>
+      <hr color=#990000>
+      </div></td>
+</tr>
+
+<!-- this is the content table -->
+
+
+<tr><td valign="top"><div>
+<font size="+4" color=#990000>Instructions:</font> <font size="5">Find why the verbs "ser", "estar", and "haber" are used in these sentences. 
+(Click on the answers.)</font><br>
+
+<table align="left" cellpadding="0" border=0>
+  <!--DWLayoutTable-->
+  <tr> 
+  <td valign="top" width=5% height=40><div>1.</div></td>
+  <td valign="top" colspan=4 height=40><div>En la biblioteca <font color="#0A14C4"><strong>hay</strong></font> muchos estudiantes.</div>
+  </td>
+  </tr>
+  
+  <tr>
+  <td width=10>&nbsp;</td>  
+  <td valign="top" width=25% height=40>
+  <div id="Layer1" style="visibility:visible; width:200px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer1','','correct')" > 
+   a.  existence</div></td>
+	<td valign="top" width=25% height=40>
+	<div id="Layer2" style="visibility:visible; width:200px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer2','','incorrect')" > 
+   b.  location</div></td>
+	<td valign="top" width=25% height=40>
+	<div id="Layer3" style="visibility:visible; width:250px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer3','','incorrect')" > 
+   c.  physical state</div></td>
+   <td valign="top" height=40>
+	<div id="Layer4" style="visibility:visible; width:250px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer4','','incorrect')" > 
+   d.  mental state</div></td>
+	</tr>
+	
+	
+   <tr> 
+  <td valign="top" width=5% height=40><div>2.</div></td>
+  <td valign="top" colspan=4 height=40><div>Los estudiantes <font color="#0A14C4"><strong>est&aacute;n</strong></font> en la biblioteca.</div>
+  </td>
+  </tr>
+  
+  <tr>
+  <td width=10>&nbsp;</td>  
+  <td valign="top" width=25% height=40>
+  <div id="Layer5" style="visibility:visible; width:200px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer5','','incorrect')" > 
+   a.  existence</div></td>
+	<td valign="top" width=25% height=40>
+	<div id="Layer6" style="visibility:visible; width:200px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer6','','correct')" > 
+   b.  location</div></td>
+	<td valign="top" width=25% height=40>
+	<div id="Layer7" style="visibility:visible; width:250px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer7','','incorrect')" > 
+   c.  description</div></td>
+   <td valign="top" height=40>
+	<div id="Layer8" style="visibility:visible; width:250px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer8','','incorrect')" > 
+   d.  identification</div></td>
+	</tr>
+	
+	<tr> 
+  <td valign="top" width=5% height=40><div>3.</div></td>
+  <td valign="top" colspan=4 height=40><div>Ellos <font color="#0A14C4"><strong>son</strong></font> inteligentes.</div>
+  </td>
+  </tr>
+	<tr>
+  <td width=10>&nbsp;</td>  
+  <td valign="top" width=25% height=40>
+  <div id="Layer9" style="visibility:visible; width:200px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer9','','incorrect')" > 
+   a.  existence</div></td>
+	<td valign="top" width=25% height=40>
+	<div id="Layer10" style="visibility:visible; width:200px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer10','','incorrect')" > 
+   b.  location</div></td>
+	<td valign="top" width=25% height=40>
+	<div id="Layer11" style="visibility:visible; width:250px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer11','','correct')" > 
+   c.  description</div></td>
+   <td valign="top" height=40>
+	<div id="Layer12" style="visibility:visible; width:250px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer12','','incorrect')" > 
+   d.  identification</div></td>
+	</tr>
+	
+	<tr> 
+  <td valign="top" width=5% height=40><div>4.</div></td>
+  <td valign="top" colspan=4 height=40><div>Carlos <font color="#0A14C4"><strong>est&aacute;</strong></font> contento.</div>
+  </td>
+  </tr>
+	<tr>
+  <td width=10>&nbsp;</td>  
+  <td valign="top" width=25% height=40>
+  <div id="Layer13" style="visibility:visible; width:200px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer13','','incorrect')" > 
+   a.  possession</div></td>
+	<td valign="top" width=25% height=40>
+	<div id="Layer14" style="visibility:visible; width:200px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer14','','correct')" > 
+   b.  state</div></td>
+	<td valign="top" width=25% height=40>
+	<div id="Layer15" style="visibility:visible; width:250px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer15','','incorrect')" > 
+   c.  description</div></td>
+   <td valign="top" height=40>
+	<div id="Layer16" style="visibility:visible; width:250px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer16','','incorrect')" > 
+   d.  identification</div></td>
+	</tr>
+	<tr> 
+  <td valign="top" width=5% height=40><div>5.</div></td>
+  <td valign="top" colspan=4 height=40><div>El libro <font color="#0A14C4"><strong>es</strong></font> de la profesora.</div>
+  </td>
+  </tr>
+	<tr>
+  <td width=10>&nbsp;</td>  
+  <td valign="top" width=25% height=40>
+  <div id="Layer17" style="visibility:visible; width:200px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer17','','incorrect')" > 
+   a.  description</div></td>
+	<td valign="top" width=25% height=40>
+	<div id="Layer18" style="visibility:visible; width:200px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer18','','incorrect')" > 
+   b.  location</div></td>
+	<td valign="top" width=25% height=40>
+	<div id="Layer19" style="visibility:visible; width:250px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer19','','incorrect')" > 
+   c.  identification</div></td>
+   <td valign="top" height=40>
+	<div id="Layer20" style="visibility:visible; width:250px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer20','','correct')" > 
+   d.  possession</div></td>
+	</tr>
+	<tr> 
+  <td valign="top" width=5% height=40><div>6.</div></td>
+  <td valign="top" colspan=4 height=40><div>En el escritorio <font color="#0A14C4"><strong>hay</strong></font> unos papeles.</div>
+  </td>
+  </tr>
+	<tr>
+  <td width=10>&nbsp;</td>  
+  <td valign="top" width=25% height=40>
+  <div id="Layer21" style="visibility:visible; width:200px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer21','','incorrect')" > 
+   a.  origin</div></td>
+	<td valign="top" width=25% height=40>
+	<div id="Layer22" style="visibility:visible; width:200px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer22','','correct')" > 
+   b.  existence</div></td>
+	<td valign="top" width=25% height=40>
+	<div id="Layer23" style="visibility:visible; width:250px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer23','','incorrect')" > 
+   c.  location</div></td>
+   <td valign="top" height=40>
+	<div id="Layer24" style="visibility:visible; width:250px; height:40px; z-index:1; border: 1px none #000000;" onClick="MM_setTextOfLayer('Layer24','','incorrect')" > 
+   d.  description</div></td>
+	</tr>
+</table>
+</div></td></tr>
+
+
+<tr><td height=50>&nbsp;</td></tr>
+
+<tr><td><div>
+
+<table align="center" cellpadding=5 bgcolor="#E0F0F5" width="98%" border="1">
+<tr><td><div><font size="5">&nbsp;&nbsp; <font color=#990000><strong>Haber:</strong></font> 
+<font color="#0A14C4"><strong>existence</strong></font></font></div></td>
+<td><div><font size="5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#990000><strong>Estar:</strong></font>
+<font color="#0A14C4"><strong>physical / mental states</strong></font>
+<td colspan=2><div>
+<font size="5"> &nbsp;&nbsp;&nbsp;<font color=#990000><strong>Ser:</strong></font>
+<font color="#0A14C4"><strong>everything else</strong></font>
+</div></td></tr>
+</table>
+</div></td></tr>
+<tr><td align="right"><div><font size="3" color="#5E00FF"><a href="to_be_10.html">More</a></font></div></td></tr>
+</table>
+
+</body>
+</html>

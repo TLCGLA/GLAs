@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>jQuery UI Example Page</title>
+		<link type="text/css" href="css/smoothness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />	
+		<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+		
+	<!-- advanced drag and drop -->
+		<style>
+	#draggable, #draggable2 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+	#droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+	</style>
+	
+	<script>
+	$(function() {
+		$( "#draggable" ).draggable({ revert: "valid" });
+		$( "#draggable2" ).draggable({ revert: "invalid" });
+
+		$( "#droppable" ).droppable({
+			activeClass: "ui-state-hover",
+			hoverClass: "ui-state-active",
+			drop: function( event, ui ) {
+				$( this )
+					.addClass( "ui-state-highlight" )
+					.find( "p" )
+						.html( "Dropped!" );
+			}
+		});
+	});
+	</script>
+
+
+
+
+	</head>
+	<body>
+	<table>
+	
+	
+	
+	<tr><td><div class="demo">ADVANCED DRAG
+	
+<div id="draggable" class="ui-widget-content">
+	<p>I revert when I'm dropped</p>
+</div>
+
+<div id="draggable2" class="ui-widget-content">
+	<p>I revert when I'm not dropped</p>
+</div>
+
+<div id="droppable" class="ui-widget-header">
+	<p>Drop me here</p>
+</div>
+
+</div><!-- End demo --></td></tr>
+	
+	</table>
+
+
+	
+	
+	</body>
+</html>
+
+

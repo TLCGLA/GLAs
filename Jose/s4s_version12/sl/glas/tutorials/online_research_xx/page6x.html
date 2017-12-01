@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 3;
+$(".button1").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click') .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"}) 
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	if (i == x) {$('.button1').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click')  .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+	$(this).css ({"color": "red", "font-weight": "normal"})
+ 
+	});
+ 
+});
+ 
+ 
+</script>
+<style type="text/css"> 
+
+
+#questions {width: 600px; margin-bottom: 10px;}
+.item {padding-left: 10px; width: 100%;}
+.right, .wrong {cursor: pointer;}
+.right:hover, .wrong:hover {background: #ccc;}
+.letter {margin-right: 10px;}
+.turnedOff {margin-right: 10px;color: gray}
+
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table" style="margin-bottom: -15px;">
+	<tr><td width="80%">
+	<p>You are now going to practice going to the library webpage and accessing the research databases.</p>
+	<p><strong>First</strong>, go to the library at this site: <a href="http://www.canyons.edu/offices/library/" target="blank">http://www.canyons.edu/offices/library/</a>.  A new window 
+	will open.  You will have to go back and forth between the two windows to complete this activity.</p>
+	</td>
+ 	<td align="center"><a class="button1" href="page7.html"></a></td>
+	</tr></table>
+	<p><strong>Second</strong>, on the library webpage you just opened, find the button called "Research Here" on the top button bar.
+	Click on it to open the research menu.  Inside that menu, you will see "Online Databases" as one of the options.  
+	Click on it to open the list of databases available in the library.</p>
+	
+	<p><strong>Third</strong>, answer the multiple choice questions below using the information contained on the online databases.
+	After you get all the right answers, a button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page.</p>
+	
+</div>
+
+<div class="exercise">
+	<table  width="100%" border="0">
+	<tr>
+	<td width="80%" valign="top"><div class="exercise_instructions">
+		Identify the <font class="correct_number">TRUE</font> statements by clicking on them.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	</table>
+	<table width="100%" border="0"><tr><td width="80%">
+	<table id="questions">
+	<tr><td><div class="number">1.</div></td>
+	<td><div class="item">Which database contains ebooks?<br>
+	<span class="letter">a.</span><span class="wrong">Scribner Writers Series<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">Learning Express Library<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">Issues and Controversies<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="right">NetLibrary<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	
+	<table id="questions">
+	<tr><td><div class="number">2.</div></td>
+	<td><div class="item">Which database does the library recommend for "most research projects"?<br>
+ 	<span class="letter">a.</span><span class="wrong">CQ Researcher<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="right">ProQuest Direct<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">Enciclopedia Britannica<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">Twaine's Authors Series<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">3.</div></td>
+	<td><div class="item">Which database is listed as a "cross-disciplinary" resource?<br>
+ 	<span class="letter">a.</span><span class="wrong">NetLibrary<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">Contemporary Authors<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">Country Watch<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="right">Daily Life Through History<span id="feedback"></span> </span>
+	</div></td></tr> 
+	</table>
+
+	</td>
+	
+	<td align="center"><div id="counter" class="background_score"></div></td>
+	</tr></table>
+	
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

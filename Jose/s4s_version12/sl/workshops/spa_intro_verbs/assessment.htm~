@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>assessment</title>
+<style type="text/css">
+
+div {
+	font-family: sans-serif, Arial, Times New Roman, Times, serif;
+	font-size: 32px;
+}
+
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_setTextOfLayer(objName,x,newText) { //v4.01
+  if ((obj=MM_findObj(objName))!=null) with (obj)
+    if (document.layers) {document.write(unescape(newText)); document.close();}
+    else innerHTML = unescape(newText);
+}
+//-->
+</script>
+</head>
+
+<body>
+
+<table align="center" width="900" cellspacing="0"  cellpadding="0" border="0" bgcolor="#FFFFF0">
+<tr><td><div>
+
+<font size="+3" color="#EE871B"><center>Can you figure out what these sentences mean?</center></font>
+
+
+<table>
+  <!--DWLayoutTable-->
+  <tr> 
+    <td align="right"><div>1.</div></td>
+    <td><div> Teresa _______________ (comprar) una computadora nueva.</div></td>
+    <td>
+    <div id="Layer1" style="visibility:visible; width:200px; height:20px; z-index:1; background-color: #FFFFCC; layer-background-color: #FFFFCC; border: 1px none #000000; left: 603px; top: 29px;" onClick="MM_setTextOfLayer('Layer1','','%3Ccenter%3Ecompr%F3%3C/center%3E')"> 
+    <div align="center"><font size="3">click for the answer</font></div>
+    </div>
+    </td>
+  </tr>
+  <tr> 
+    <td align="right"><div>2.</div></td>
+    <td><div>Teresa ______________ (vender) una computadora nueva.</div></td>
+    <td>
+    <div id="Layer2" style="visibility:visible; width:200px; height:20px; z-index:1; background-color: #FFFFCC; layer-background-color: #FFFFCC; border: 1px none #000000; left: 604px; top: 57px;" onClick="MM_setTextOfLayer('Layer2','','%3Ccenter%3Evendi%F3%3C/center%3E')" > 
+    <div align="center"><font size="3">click for the answer</font></div>
+    </div>
+    </td>
+  </tr>
+</table>
+
+
+</div></td></tr>
+</table>
+
+</body>
+</html>

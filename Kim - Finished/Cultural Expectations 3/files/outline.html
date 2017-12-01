@@ -1,0 +1,886 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 14">
+<link id=Main-File rel=Main-File href="../CulturalExpectations3.html">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.html');" id=PPTL1>Cultural Expectations
+  3:<br>
+    &nbsp; Examinations and Grades</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0058.html');" id=PPTL2>Part 1:<span
+  style='mso-spacerun:yes'>  </span>Examinations</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0059.html');" id=PPTL3>Overview</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Colleges use examinations to evaluate your understanding of a
+       subject.<span style='mso-spacerun:yes'>  </span>As a college student,
+       you will take tests on two main occasions.</li>
+   <li>Before enrolling in a class, you may have to take a placement test to
+       determine which class you should take.</li>
+   <li>During a class, you may have to take midterms, finals, or tests that the
+       professor will use to evaluate your mastery of the course material.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0060.html');" id=PPTL4>Placement Tests</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Placement tests examine students’ skill levels to determine which course
+       levels will be most effective for them.<span style='mso-spacerun:yes'> 
+       </span>Usually these tests are done for English and Mathematics.</li>
+   <li>At COC, the ESL placement test is done on the computer and assesses
+       reading and grammar.</li>
+   <li>Be sure to take placement tests seriously.<span
+       style='mso-spacerun:yes'>  </span>You don’t want to end up in a class
+       that is too easy for you—that’s a waste of your time and money!</li>
+   <li>Your handout includes more information about placement tests.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0061.html');" id=PPTL5>Class Tests</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Different classes use different numbers of tests.<span
+       style='mso-spacerun:yes'>  </span>You may see:</li>
+   <ul>
+    <li>Midterm and Final</li>
+    <li>Midterm only</li>
+    <li>Final only</li>
+    <li>Multiple tests over the course of the semester</li>
+    <li>No tests at all</li>
+   </ul>
+   <li>Be sure to review your syllabus to see how many tests you will take and
+       when they will occur.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0062.html');" id=PPTL6>Closed and Open Book
+  Tests</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Closed Book:<span style='mso-spacerun:yes'>  </span>You may not use your
+       textbook during a test.<span style='mso-spacerun:yes'>  </span>Usually,
+       these tests will include objective questions such as multiple choice and
+       true/false.<span style='mso-spacerun:yes'>  </span>These tests usually
+       check your understanding of material in the textbook or from lectures.</li>
+   <br>
+   <br>
+   <li>Open Book:<span style='mso-spacerun:yes'>  </span>You may use your
+       textbook during a test.<span style='mso-spacerun:yes'>  </span>Usually,
+       these tests include more difficult questions and test complex skills
+       like critical thinking and problem solving.<span
+       style='mso-spacerun:yes'>  </span>Answers cannot be found directly in
+       the textbook.<span style='mso-spacerun:yes'>  </span>DO NOT skip
+       studying a chapter just because you’ll be able to use your book during a
+       test.<span style='mso-spacerun:yes'>  </span>You will waste time
+       reviewing the book when you should be answering test questions.</li>
+   <br>
+   <br>
+   <li>Other:<span style='mso-spacerun:yes'>  </span>Some instructors may allow
+       you to use other resources during an exam, such as your notes.<span
+       style='mso-spacerun:yes'>  </span>Be sure to review those resources
+       thoroughly before the test.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0065.html');" id=PPTL7>What Is a Midterm?</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A midterm is an important test that occurs approximately halfway through
+       the semester.</li>
+   <li>It may be cumulative; in other words, it might cover all the material
+       you studied in the first half of the semester.</li>
+   <li>It may be worth a large proportion of your grade.<span
+       style='mso-spacerun:yes'>  </span>Some midterms are worth up to 50% of
+       your final grade for the class.</li>
+   <li>You can use your midterm to evaluate your own progress and study
+       habits.<span style='mso-spacerun:yes'>  </span>If you do poorly on a
+       midterm, talk to your professor or TLC tutor about study strategies you
+       can use to improve.</li>
+   <li>You can also use the midterm as a clue about the final.<span
+       style='mso-spacerun:yes'>  </span>Most instructors have a style of
+       testing.<span style='mso-spacerun:yes'>  </span>This means that most
+       tests are going to look similar in style (whether they are midterms or
+       finals).<span style='mso-spacerun:yes'>  </span>When preparing for
+       finals, be sure to review the midterm carefully.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0066.html');" id=PPTL8>What Is a Final?</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A final exam occurs at the end of the semester.<span
+       style='mso-spacerun:yes'>  </span>Professors use finals to evaluate your
+       understanding of the course material.</li>
+   <li>The final may be cumulative (covering all the material for the
+       semester).<span style='mso-spacerun:yes'>  </span>It may cover only the
+       material discussed after the midterm.</li>
+   <li>Finals are usually worth a large percentage of your grade.<span
+       style='mso-spacerun:yes'>  </span>The final exam could be worth more
+       than 50% of your final grade for the class.</li>
+   <li>Your instructor may give a take-home final.<span
+       style='mso-spacerun:yes'>  </span>In this case, you complete your exam
+       at home.<span style='mso-spacerun:yes'>  </span>Take-home finals my
+       include more difficult questions or require you to do additional
+       research.<span style='mso-spacerun:yes'>  </span>Be sure to give
+       yourself adequate time to complete a take-home final.</li>
+   <li>To prepare for a final, review any tests, quizzes, or midterms you have
+       taken for the class.</li>
+   <li>Your professor may also provide you with a study guide.<span
+       style='mso-spacerun:yes'>  </span>Be sure to review the material on the
+       study guide.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0064.html');" id=PPTL9>Begin Preparing at the
+  Beginning of the Semester</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Check the syllabus for test dates and put them in your calendar.<span
+       style='mso-spacerun:yes'>  </span>Make note of any days when you might
+       have multiple tests (during finals week, for example).</li>
+   <li>Take good notes throughout the course of the semester.<span
+       style='mso-spacerun:yes'>  </span>Be thorough and organized.</li>
+   <li>Review class material frequently over the course of the semester.<span
+       style='mso-spacerun:yes'>  </span>This will help you avoid cramming
+       (desperately studying all the material right before the test).</li>
+   <li>Take test preparation workshops early in the semester.<span
+       style='mso-spacerun:yes'>  </span>Test preparation workshops can help
+       you learn how to approach different types of exam questions or construct
+       an in-class essay.<span style='mso-spacerun:yes'>  </span>These
+       workshops are available in TLC (more info in your handout).</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0069.html');" id=PPTL10>Other Test
+  Preparedness Skills</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Topic Knowledge:<span style='mso-spacerun:yes'>  </span>There is no
+       substitute for knowing your subject well.<span
+       style='mso-spacerun:yes'>  </span>Over the course of the semester, do
+       your reading assignments, take notes, review frequently, and ask
+       questions when you are confused.</li>
+   <li>Time Management:<span style='mso-spacerun:yes'>  </span>Budget your time
+       carefully, especially if you are preparing for multiple tests.<span
+       style='mso-spacerun:yes'>  </span>Avoid “all-nighters” (studying all
+       night before an exam) because you will be exhausted during the test and
+       less likely to remember the material.</li>
+   <li>Seek Help:<span style='mso-spacerun:yes'>  </span>See your instructor or
+       tutors at TLC to help you prepare for exams.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0071.html');" id=PPTL11>Topic Knowledge</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>As you study for your exam, make sure you know the topic well.</li>
+   <li>Review any required readings (like the textbook)</li>
+   <li>Review class notes and other supplemental materials (like handouts,
+       journals, or previous exams or assignments)</li>
+   <li>Discuss the material with your instructor, a TLC tutor, or some
+       responsible classmates</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0072.html');" id=PPTL12>Reviewing Class Notes</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Note-taking is an important skill that you should practice over the
+       course of the semester.<span style='mso-spacerun:yes'>  </span>TLC
+       offers a note-taking GLA that can help you improve your note-taking
+       skills.</li>
+   <li>Be sure to review class notes frequently (at least once a week).<span
+       style='mso-spacerun:yes'>  </span>You should also review your notes
+       before any quizzes or exams.</li>
+   <li>Keep all of your notes, assignments, quizzes, and exams until the end of
+       the semester.<span style='mso-spacerun:yes'>  </span>You can use them to
+       study for a final.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0070.html');" id=PPTL13>Time Management</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>As you prepare for an exam, save enough time to…</li>
+   <li>Read and review the materials the test will cover.</li>
+   <li>Attend a time management or test preparation workshop.</li>
+   <li>Work with a TLC tutor to review class material or your study plan.</li>
+   <li>Take practice tests.<span style='mso-spacerun:yes'>  </span>The
+       professor may make practice test questions available to you; if not, you
+       can write your own test questions.</li>
+   <li>During the exam, develop a plan.<span style='mso-spacerun:yes'> 
+       </span>Decide how you will distribute test time so you have enough time
+       to complete each section.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0067.html');" id=PPTL14>Before an Exam, Find
+  Out…</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>What the exam will cover</li>
+   <li>How much the exam is worth</li>
+   <li>How the professor will grade the exam</li>
+   <li>What types of questions it will include</li>
+   <li>How many questions it will include</li>
+   <li>What resources you can use (if any)</li>
+   <li>What supplies you will need (Scantron, Blue Book, pen, pencil, etc.)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0068.html');" id=PPTL15>Rubrics</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A rubric is a list of criteria that a professor uses to evaluate your
+       work.<span style='mso-spacerun:yes'>  </span>In other words, it tells
+       you how a professor will grade you and what you have to do to earn the
+       grade you want.</li>
+   <li>Here’s a sample rubric for an in-class essay:</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0063.html');" id=PPTL16>Test Proctoring</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Sometimes, you may not take a test in your classroom.<span
+       style='mso-spacerun:yes'>  </span>This could occur because you’re in an
+       online class, have an accommodations letter from Disability Services, or
+       have a personal situation that prevents you from taking the exam at the
+       scheduled time.</li>
+   <li>See your professor to discuss arrangements for proctoring an exam.<span
+       style='mso-spacerun:yes'>  </span>This means that you will take the exam
+       in TLC under the supervision of one of their employees.<span
+       style='mso-spacerun:yes'>  </span>Discuss proctoring with your professor
+       as soon as possible (at least two weeks in advance) so she or he can
+       make arrangements on your behalf.</li>
+   <li>More information about proctoring is available in your handout.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0073.html');" id=PPTL17>Part 2:<span
+  style='mso-spacerun:yes'>  </span>Grading</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0074.html');" id=PPTL18>Overview</a></font></div>
+  <div id=PPTC18 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Your grades indicate the degree of success you had in a course.<span
+       style='mso-spacerun:yes'>  </span>They are an important factor in
+       transfer applications, job applications, awards, and scholarships.</li>
+   <li>Failure to maintain passing grades could have negative consequences,
+       like the loss of financial aid, being put on academic probation, or
+       being rejected from transfer to a four year university.</li>
+   <li>Your grades are measured as an average (GPA).<span
+       style='mso-spacerun:yes'>  </span>It is in your best interest to earn
+       good grades beginning in your first semester.<span
+       style='mso-spacerun:yes'>  </span>It can be very difficult to improve a
+       low GPA later in your academic career.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0076.html');" id=PPTL19>What Do Grades Mean?</a></font></div>
+  <div id=PPTC19 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>College of the Canyons uses letters for your final grades.<span
+       style='mso-spacerun:yes'>  </span>Each letter shows the quality of your
+       work for the semester.<span style='mso-spacerun:yes'>  </span>The grade
+       is connected to a percentage that shows how well you did.</li>
+   <li>Here is the standard grading policy:</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0080.html');" id=PPTL20>Other Grade
+  Possibilities</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0079.html');" id=PPTL21>Calculating GPA</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>For every class, multiply the number of grade points by the number of
+       units a course is worth</li>
+   <li>Add the products from all of your<span style='mso-spacerun:yes'> 
+       </span>classes</li>
+   <li>Divide by the total number of units</li>
+   <li>Sample:</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0077.html');" id=PPTL22>Student Learning
+  Outcomes (SLOs)</a></font></div>
+  <div id=PPTC22 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Every class has a set of Student Learning Outcomes, which explain what
+       students should learn by the end of the semester.<span
+       style='mso-spacerun:yes'>  </span>These are major goals for the
+       semester; you will accomplish these goals through lessons and
+       assignments in the class.</li>
+   <li>Instructors use the SLOs to design their courses, including developing
+       exams and assignments for determining grades.<span
+       style='mso-spacerun:yes'>  </span>All gradable assignments in a semester
+       try to assess how successful students are in achieving the SLOs.</li>
+   <li>Be sure to read the SLOs so you will know what will be expected of you
+       over the course of the semester.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0075.html');" id=PPTL23>Graded Assignments</a></font></div>
+  <div id=PPTC23 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>In addition to exams, your instructor might grade you on a variety of
+       assignments, such as:</li>
+   <li>Essays</li>
+   <li>Research Projects</li>
+   <li>Oral Presentations or Tests</li>
+   <li>Journals</li>
+   <li>Team Projects</li>
+   <li>Review your syllabus carefully for a list of the required assignments
+       for a course.<span style='mso-spacerun:yes'>  </span>The syllabus should
+       also tell you how much each assignment is worth.<span
+       style='mso-spacerun:yes'>  </span>Each assignment will contribute to
+       your final grade in the class, so each one is important.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0078.html');" id=PPTL24>Weighted Grades</a></font></div>
+  <div id=PPTC24 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Some instructors use a system of weighting grades to make some
+       assignments worth more in the final grade than others.</li>
+   <li>Imagine you are working on two assignments—a one page journal worth 10%
+       of your grade and a test worth 40% of your grade.<span
+       style='mso-spacerun:yes'>  </span>Your professor might score both
+       assignments out of 100 points.<span style='mso-spacerun:yes'> 
+       </span>However, the assignment with the higher weighting (the test) will
+       affect your final grade more than the lower weighting (the journal).</li>
+   <li>Be sure to review your syllabus to see how much each of your assignments
+       is worth.<span style='mso-spacerun:yes'>  </span>If you are confused
+       about the grading policy, be sure to ask<span style='mso-spacerun:yes'> 
+       </span>your instructor for help.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0057.html');" id=PPTL25>If you liked this
+  lesson and would like more information, consider attending:</a></font></div>
+  <div id=PPTC25 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Cultural Expectations 1 and 2</li>
+   <li>Test Taking Strategies</li>
+   <li>Time Management</li>
+   <li>Note-Taking</li>
+   <br>
+   <br>
+   <li>Why should you come back?</li>
+   <li>Students completing Supplemental Learning Activities had a
+       10%&nbsp;higher success rate across the disciplines, a 21% higher
+       success rate in Math, and a 49% higher success rate in English courses.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master15.html></a><a href=master15.xml></a><a
+href=preview.wmf></a><a href=master33.html></a><a href=master33.xml></a><a
+href=master34.html></a><a href=master34.xml></a><a href=master35.html></a><a
+href=master35.xml></a><a href=master36.html></a><a href=master36.xml></a><a
+href=pres.xml></a><a href=slide0001.html></a><a href="master15_image001.png"></a><a
+href="slide0001_image002.jpg"></a><a href=slide0058.html></a><a
+href=slide0059.html></a><a href="master34_image003.png"></a><a
+href=slide0060.html></a><a href=slide0061.html></a><a href=slide0062.html></a><a
+href=slide0065.html></a><a href=slide0066.html></a><a href=slide0064.html></a><a
+href=slide0069.html></a><a href=slide0071.html></a><a href=slide0072.html></a><a
+href=slide0070.html></a><a href=slide0067.html></a><a href=slide0068.html></a><a
+href="slide0068_image004.png"></a><a href=slide0063.html></a><a
+href=slide0073.html></a><a href=slide0074.html></a><a href=slide0076.html></a><a
+href="slide0076_image005.png"></a><a href=slide0080.html></a><a
+href="slide0080_image006.png"></a><a href=slide0079.html></a><a
+href="slide0079_image007.png"></a><a href=slide0077.html></a><a
+href=slide0075.html></a><a href=slide0078.html></a><a href=slide0057.html></a><a
+href="slide0057_image008.jpg"></a><a href="slide0057_image009.png"></a><a
+href="master15_stylesheet.css"></a><a href="master33_stylesheet.css"></a><a
+href="master34_stylesheet.css"></a><a href="master35_stylesheet.css"></a><a
+href="master36_stylesheet.css"></a><a href=script.js></a><a
+href="../CulturalExpectations3.html"></a><a href=fullscreen.html></a><a
+href=buttons.gif></a><a href=frame.html></a><a href=outline.html></a></div>
+
+</body>
+
+</html>

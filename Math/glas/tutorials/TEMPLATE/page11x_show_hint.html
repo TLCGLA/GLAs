@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 5;
+$(".button1").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click') .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"}) 
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	if (i == x) {$('.button1').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click')  .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+	$(this).css ({"color": "red", "font-weight": "normal"})
+ 
+	});
+ 
+});
+ 
+ 
+</script>
+
+<script> 
+$(document).ready(function(){
+ 
+	//Hide (Collapse) the toggle containers on load
+	$(".toggle_container").hide(); 
+ 
+	//Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
+	$("div.trigger").click(function(){
+		$(this).toggleClass("active").next().slideToggle("slow");
+		return false; //Prevent the browser jump to the link anchor
+	});
+ 
+});
+</script>
+<style type="text/css"> 
+
+
+#questions {width: 100%; margin-bottom: 10px;}
+.item {padding-left: 10px; width: 100%; line-height: 20px;}
+.right, .wrong {cursor: pointer;}
+.right:hover, .wrong:hover {background: #ccc;}
+.letter {margin-right: 10px;}
+.turnedOff {margin-right: 10px;color: gray}
+.division tr td {line-height: 13px; font-size: 12px; text-align: center;} 
+.division {display: inline-block;}
+.button_css {
+	margin-left: 100px;
+	font: bold 12px "Helvetica Neue", Helvetica, Arial, Georgia, sans-serif;
+	letter-spacing: 1px;
+	padding:0.5em;
+	height:2.0833em;
+	border:1px solid #ccc;
+	color:#000;
+	background:#CCCCCC; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC'); /* for IE */
+	background: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#CCCCCC)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,#FFFFFF,#CCCCCC); /* for firefox 3.6+ */ 
+}
+ 
+.button_css:hover{border-color:#999;background:#f3f3f3;background-image:-moz-linear-gradient(top,#ffffff,#ebebeb);background-image:-webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#ebebeb));filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#ffffff,endColorStr=#ebebeb);outline:0;-moz-box-shadow:0 0 3px #999;-webkit-box-shadow:0 0 3px #999;box-shadow:0 0 3px #999}
+ 
+
+ 
+.toggle_container {
+	margin: 0 0 5px;
+	padding: 0;
+	border-width: 1px;
+	border-color: #BFBFBF;
+	background-color: #f0f0f0;
+	overflow: hidden;
+	clear: both;
+	
+}
+.toggle_container .block {
+	padding: 20px; /*--Padding of Container--*/
+ 
+}
+
+.trigger {
+		padding: 5px;
+		border-style: solid;
+		border-width: 1px;
+		border-color: #BFBFBF;
+		background-color: white; 
+		}
+
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	Do the following additions and subtractions on a separate piece of paper, then, click on the right answer. After you get all the correct answers, a 
+	button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page4.html"></a></td>
+	</tr>
+	</table>
+</div>
+
+<div class="exercise">
+	<table  width="100%" border="0">
+	<tr>
+	<td width="80%" valign="top"><div class="exercise_instructions">
+		Identify the <font class="correct_number">CORRECT</font> answers by clicking on them.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	</table>
+	<table width="100%" border="0"><tr><td width="80%">
+	<table id="questions">
+	<tr><td><div class="number">1.</div></td>
+	<td><div class="item">
+		<div class="trigger"><table class="division"><tr><td><u>100</u></td></tr><tr><td>80</td></tr></table> - <table class="division"><tr><td><u>100</u></td></tr><tr><td>80</td></tr></table>
+			<a href="#"><input type="button" class="button_css"   value="Show / Hide  Hint" style="width: 140px"></a>
+			
+			</div>
+	<div class="toggle_container"><div class="block">	plausible guess.</div></div>
+
+ 	<span class="letter">a.</span><span class="right">.gov<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">.com<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">.org<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">All of these<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	
+	<table id="questions">
+	<tr><td><div class="number">2.</div></td>
+	<td><div class="item">
+		<div class="trigger"><table class="division"><tr><td><u>100</u></td></tr><tr><td>80</td></tr></table> - <table class="division"><tr><td><u>100</u></td></tr><tr><td>80</td></tr></table>
+			<a href="#"><input type="button" class="button_css"   value="Show / Hide  Hint" style="width: 140px"></a>
+			
+			</div>
+	<div class="toggle_container"><div class="block">	plausible guess.</div></div>
+
+ 	<span class="letter">a.</span><span class="right">.gov<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">.com<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">.org<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">All of these<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">3.</div></td>
+	<td><div class="item">
+		<div class="trigger"><table class="division"><tr><td><u>100</u></td></tr><tr><td>80</td></tr></table> - <table class="division"><tr><td><u>100</u></td></tr><tr><td>80</td></tr></table>
+			<a href="#"><input type="button" class="button_css"   value="Show / Hide  Hint" style="width: 140px"></a>
+			
+			</div>
+	<div class="toggle_container"><div class="block">	plausible guess.</div></div>
+
+ 	<span class="letter">a.</span><span class="right">.gov<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">.com<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">.org<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">All of these<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">4.</div></td>
+	<td><div class="item">
+		<div class="trigger"><table class="division"><tr><td><u>100</u></td></tr><tr><td>80</td></tr></table> - <table class="division"><tr><td><u>100</u></td></tr><tr><td>80</td></tr></table>
+			<a href="#"><input type="button" class="button_css"   value="Show / Hide  Hint" style="width: 140px"></a>
+			
+			</div>
+	<div class="toggle_container"><div class="block">	plausible guess.</div></div>
+
+ 	<span class="letter">a.</span><span class="right">.gov<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">.com<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">.org<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">All of these<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+	<table id="questions">
+	<tr><td><div class="number">5.</div></td>
+	<td><div class="item">
+		<div class="trigger"><table class="division"><tr><td><u>100</u></td></tr><tr><td>80</td></tr></table> - <table class="division"><tr><td><u>100</u></td></tr><tr><td>80</td></tr></table>
+			<a href="#"><input type="button" class="button_css"   value="Show / Hide  Hint" style="width: 140px"></a>
+			
+			</div>
+	<div class="toggle_container"><div class="block">	plausible guess.</div></div>
+
+ 	<span class="letter">a.</span><span class="right">.gov<span id="feedback"></span> </span><br>
+	<span class="letter">b.</span><span class="wrong">.com<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">.org<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">All of these<span id="feedback"></span> </span>
+	</div></td></tr> 
+
+	</table>
+	</td>
+	
+	<td align="center"><div id="counter" class="background_score"></div></td>
+	</tr></table>
+	
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

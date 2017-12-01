@@ -1,0 +1,302 @@
+@charset "UTF-8";
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input,hr,table, td, tr, {margin:0; padding:0;}
+ul,ol {list-style-position: outside; list-style-image: none; list-style-type: none;}
+img {border:none; margin: 0;}
+fieldset,hr {border:none;}
+
+a{text-decoration: none; outline: none;}
+a{font-weight: bold; color: #0D408D;}
+a:hover {font-weight: bold; color: #0b60a9;}
+
+div, p, span, td {font-family: verdana, tahoma, georgia, sans-serif, helvetica, arial; font-size: 13px;}
+
+/* table {border-collapse:collapse; border-spacing:0;} Note: border-collapse cancels shadow in Explorer*/
+table {border-spacing:0; border-collapse: collapse;}
+td {vertical-align:top;}
+input {cursor: pointer; border: none;outline: none;}
+
+
+
+
+/* GENERAL LAYOUT STUFF */
+.heading_blue {font: 36px verdana, tahoma, georgia, sans-serif, helvetica, arial; color: #0D408D; letter-spacing: 2px;  padding-bottom: 5px; margin: 0px;}
+.heading_gray {font: 24px verdana, tahoma, georgia, sans-serif, helvetica, arial; color: #222222; letter-spacing: 1px; padding-bottom: 5px; margin: 0px;}
+
+.background_tutorial1 {background-image: url(../images/background_tutorial1.png);}
+
+
+/*TUTORIAL COVER PAGE */
+.header1 {
+	width: 100%; 
+	height: 105px;
+	margin: 0 auto; 
+	text-align: center;
+	background-image: url(../images/header_tutorial.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 0px;
+	left: 0px;
+}
+
+.wrapper1 {width: 95%;margin: 0 auto; padding-top:160px;}
+.intro {padding-top: 10px;}
+.intro p {margin: 0px; padding: 0px;}
+
+.slos p {margin: 0px; padding-bottom: 5px;}
+.slos ul {position: relative; padding: 0px; margin: 0px;}
+.slos ul li {
+	background-image: url(../images/list_item.png); 
+	background-repeat: no-repeat; 
+	background-position: 0px 4px; 
+	padding-left: 20px; 
+	line-height: 20px; 
+}
+
+.begin {padding-top: 10px;}
+.begin p {margin: 0px; padding: 0px;}
+.cover_page_table {padding-top: 10px;}
+
+.vertline {border-left: 1px solid; border-color: #BFBFBF; height:240px; margin-left: 20px; margin-top: 20px;}
+
+#rotating-item-wrapper {position: relative;	width: 452px; height: 232px;}
+.rotating-item {display: none; position: absolute; top: 0; left: 0;}
+
+/* INSTRUCTIONS PAGE */
+.wrapper_instructions {width: 95%;margin: 0 auto; padding-top: 66px;}
+.header_instructions_page {
+	width: 100%; 
+	height: 65px;
+	margin: 0 auto; 
+	text-align: center;
+	background-image: url(../images/header_tutorial_instructions.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 0px;
+	left: 0px;
+}
+.instructions {padding-top: 10px;}
+.instructions p {padding-bottom: 10px;}
+
+
+/* PAGE2 */
+.wrapper2 {width: 95%;margin: 0 auto; padding-top: 66px;}
+.header_presentation {
+	width: 65px;
+	height: 530px; 
+	float: right; 
+	background-image: url(../images/header_presentation.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: relative;
+	z-index: 1;
+}
+
+
+/*EXERCISE PAGES */
+.wrapper3 {width: 95%;margin: 0 auto; padding-top: 66px;}
+.header_tutorial_exercise {
+	width: 100%; 
+	height: 65px;
+	margin: 0 auto; 
+	text-align: center;
+	background-image: url(../images/header_tutorial_exercise.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 0px;
+	left: 0px;
+}
+.comprehension {padding-top: 10px; padding-bottom: 10px;}
+
+
+.exercise {padding: 20px; height: 100%; background-color: white; border:1px solid #BFBFBF;}
+.exercise_instructions {padding-bottom: 10px; font-size: 18px;}
+
+.questions_table {}
+.questions_table div {float:left; margin-bottom: 8px; line-height: 25px;}
+.questions_table span {display: inline-block;}
+#feedback {display: inline; float: right;}
+
+.background_score {width: 120px; height: 150px; background: url('../images/background_score.png'); }
+#counter {width: 120px; height: 150px; font-size: 80px; line-height: 120px; text-align: center;}
+.your_score {text-align: center; font-size: 18px; }
+
+
+.number { height: 25px; width: 30px; text-align: center; line-height: 25px; font-weight: 600;  background-image: url('../images/background_number.png');}
+.correct_number {font-height: 20px; color: #0D408D;  }
+
+.division tr td {line-height: 13px; font-size: 12px; text-align: center; padding-right: 2px;} 
+.division {display: inline-block;}
+.mathSign {padding-left: 3px; padding-bottom: 8px; width: 15px;}
+
+
+/* BUTTON STYLES */
+.button1 {			/*  THIS IS THE NEXT BUTTON FOR EXERCISES*/
+	display: block;
+	width: 150px;
+	height: 40px;
+	background: url('../images/button1.png');
+
+                      
+}
+.button1:hover {
+	background: url('../images/button2.png');
+}
+
+
+
+
+.button1_big {			/* THIS IS THE CONTINUE BUTTON FOR THE SLIDE VIEWER */
+	display: block;
+	width: 400px;
+	height: 80px;
+	background: url('../images/button1_big.png'); 
+	margin: 0 auto; 
+	margin-top: 380px; 
+
+
+}
+.button1_big:hover {
+	background: url('../images/button2_big.png');
+}
+
+.button1_play_video {			/* THIS IS THE PLAY VIDEO BUTTON  */
+	display: block;
+	width: 400px;
+	height: 80px;
+	background: url('../images/button1_play_video.png'); 
+	margin: 0 auto; 
+	margin-top: 380px; 
+
+
+}
+.button1_play_video:hover {
+	background: url('../images/button2_play_video.png');
+}
+
+.button_show1 {			/*  THIS IS THE SHOW BUTTON FOR EXERCISES */
+	display: inline;
+	width: 150px;
+	height: 40px;
+	background: url('../images/button_show1.png');
+              
+}
+.button_show1:hover {
+	background: url('../images/button_show2.png');
+}
+.button_hide1 {			/*  THIS IS THE HIDE BUTTON FOR EXERCISES */
+	display: inline;
+	width: 150px;
+	height: 40px;
+	background: url('../images/button_hide1.png');
+
+                      
+}
+.button_hide1:hover {
+	background: url('../images/button_hide2.png');
+}
+
+
+.button_yes1 {			/*  THIS IS THE YES BUTTON FOR EXERCISES */
+	display: inline;
+	width: 50px;
+	height: 40px;
+	background: url('../images/button_yes1.png');
+
+                      
+}
+
+.button_yes1:hover {
+	background: url('../images/button_yes2.png');
+}
+
+.button_no1 {			/*  THIS IS THE NO BUTTON FOR EXERCISES */
+	display: inline;
+	width: 50px;
+	height: 40px;
+	background: url('../images/button_no1.png');
+
+                      
+}
+
+.button_no1:hover {
+	background: url('../images/button_no2.png');
+}
+/* PROGRESS BAR HORIZONTAL*/
+.progress {padding-top: 10px;width: 960px;margin: auto;}
+.progress p {margin: 0px; padding: 0px;}
+.progress_bar {
+	background-image: url(../images/bar_back.png); 
+	background-repeat: repeat-x;  
+	width: 960px;
+	height: 20px;
+	margin: auto; 
+	position: relative;
+	}
+.progress_bar_text {
+	position: absolute; 
+	top: 0px; 
+	left: 0px; 
+	text-align: left; 
+	font-size: 11px; 
+	color: white;
+	font-weight: 400;
+	letter-spacing: 1px;
+	padding-left: 30px;
+	line-height: 20px;
+	height: 20px; 
+	background-image: url(../images/bar_front.png);
+	background-repeat: repeat-x;
+	}
+.triangle_marker {text-align: right}
+/*PROGRESS BAR VERTICAL */
+.progress2 {
+	width: 80px; 
+	height: 370px; 
+	padding-top: 20px; 
+	padding-bottom: 10px; 
+	background-image: url(../images/background_progress_bar2.png); 
+	background-repeat: no-repeat;
+	}
+
+
+.progress_bar2 {
+	background-image: url(../images/bar_front2.png); 
+	background-repeat: repeat-y;  
+	width: 30px;
+	height: 350px;
+	margin: auto; 
+	position: relative;
+	}
+.progress_bar_text2 {
+	position: absolute; 
+	top: 0px; 
+	left: 0px;
+	padding-top: 10px; 
+	width: 30px;
+	height: 350px;
+	text-align: center; 
+	font-size: 11px;
+	line-height: 30px; 
+	color: white;
+	font-weight: 400;
+	letter-spacing: 1px; 
+	}
+.triangle {position:relative; }
+.triangle_spacer {height: 165px;}
+
+/* SLIDER */
+.slider_wrapper {
+		height: 540px;
+		width: 960px;
+		background-image: url(../images/background_slider.png); 
+		margin: auto;
+		background-repeat: no-repeat;
+}
+
+.slider {padding-top: 15px;}

@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>GLA</title>
+<meta http-equiv="Content-Type" content="text/html">
+<link href="../../css/styles_tutorial.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 5;
+$(".button1").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click') .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"}) 
+	$(this).css ({"color": "#0D408D", "font-weight": "normal"})
+	if (i == x) {$('.button1').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click')  .attr ("class" , "turnedOff")
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+	$(this).css ({"color": "red", "font-weight": "normal"})
+ 
+	});
+ 
+});
+ 
+ 
+</script>
+<style type="text/css"> 
+
+#feedback {padding-right: 10px;}
+#questions {width: 100%; margin-bottom: 10px;}
+.item {padding-left: 10px; width: 100%; line-height: 20px;}
+.right, .wrong {cursor: pointer;}
+.right:hover, .wrong:hover {background: #ccc;}
+.letter {margin-right: 10px;}
+.turnedOff {margin-right: 10px;color: gray}
+#prefixes_wrapper{margin-bottom: 10px;}
+#prefixes {width: 100%; background-color: white; border: 1px solid #ccc; margin-top: 10px}
+#prefixes td {padding-right: 5px; padding-left: 5px; padding-top: 3px; padding-bottom: 3px;}
+</style>
+
+</head>
+
+<body class="background_tutorial1">
+<div class="header_tutorial_exercise"></div>
+<div class="wrapper3">
+<div class="comprehension">
+	
+	<div class="heading_gray">Comprehension Check</div>
+	<table width="100%" border="0" class="comprehension_table">
+	<tr><td width="80%">
+	Apply what you have learned about prefixes to answer the questions below. After you get all the correct answers, a 
+	button will appear on the top right corner.  Click on the button to 
+	continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+ 	</td>
+ 	<td align="center"><a class="button1" href="page8.html"></a></td>
+	</tr>
+	</table>
+</div>
+<div id="prefixes_wrapper">
+<table id="prefixes">
+<tr>
+<td>un-</td><td>=</td><td>not</td>
+<td>|</td>
+<td>pre-</td><td>=</td><td>before</td>
+<td>|</td>
+<td>ex-</td><td>=</td><td>out of</td>
+<td>|</td>
+<td>anti-</td><td>=</td><td>against</td>
+<td>|</td>
+<td>ante-</td><td>=</td><td>before</td>
+<td>|</td>
+<td>inter-</td><td>=</td><td>between</td>
+<td>|</td>
+<td>intra-</td><td>=</td><td>inside</td>
+<td>|</td>
+<td>post-</td><td>=</td><td>after</td>
+</tr>
+
+</table>
+</div>
+<div class="exercise">
+	<table  width="100%" border="0">
+	<tr>
+	<td width="80%" valign="top"><div class="exercise_instructions">
+		<font class="correct_number">MATCH</font> the definitions to the words by clicking on them.</div>
+	</td>
+	<td><div class="your_score">Your Score:</div></td>
+	</tr>
+	</table>
+	<table width="100%" border="0"><tr><td width="80%">
+	<table id="questions">
+	<tr><td width="42"><div class="number">1.</div></td>
+	<td><div class="item">Not modified by conditions or reservations<br>
+	<span class="letter">a.</span><span class="wrong">undisclosed<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">excluded<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="right">unqualified<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">exedent<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+
+	<table id="questions">
+	<tr><td width="42"><div class="number">2.</div></td>
+	<td><div class="item">A condition that must exist or be established before something can occur or be considered<br>
+	<span class="letter">a.</span><span class="wrong">synonym<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="right">prerequisite<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">definition<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">presuposition<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+
+
+	
+	<table id="questions">
+	<tr><td width="41"><div class="number">3.</div></td>
+	<td><div class="item">A smaller room serving as an entryway into a larger room<br>
+	<span class="letter">a.</span><span class="wrong">prefigure<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">antemortem<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">predestination<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="right">antechamber<span id="feedback"></span> </span>
+	</div></td></tr> 
+	</table>
+
+	
+	<table id="questions">
+	<tr><td width="41"><div class="number">4.</div></td>
+	<td><div class="item">Within or administered into a vein<br>
+	<span class="letter">a.</span><span class="wrong">intermission<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">intraocular<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="right">intravenous<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="wrong">introvert<span id="feedback"></span> </span>
+	</div></td></tr>
+	</table>
+
+	
+	<table id="questions">
+	<tr><td width="42"><div class="number">5.</div></td>
+	<td><div class="item">Existing or occurring between<br>
+	<span class="letter">a.</span><span class="wrong">intromission<span id="feedback"></span></span><br>
+	<span class="letter">b.</span><span class="wrong">intrapersonal<span id="feedback"></span> </span><br>
+	<span class="letter">c.</span><span class="wrong">introspective<span id="feedback"></span> </span><br>
+	<span class="letter">d.</span><span class="right">intermediary<span id="feedback"></span> </span>
+	</div></td></tr> 
+	</table>
+
+
+	</td>
+	
+	<td align="center"><div id="counter" class="background_score"></div></td>
+	</tr></table>
+	
+</div><!--end exercise div-->
+</div><!-- end wrapper -->
+</body>
+</html>

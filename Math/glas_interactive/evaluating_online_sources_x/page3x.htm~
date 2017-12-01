@@ -1,0 +1,270 @@
+<!DOCTYPE HTML> <html>
+<meta http-equiv="X-UA-Compatible" content="IE-9" /><title>Guided Learning Activities</title>
+<link href="../styles.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+
+
+/* PROGRESS BAR STYLES */
+.border_bar {  
+	border: 1px solid  #424242; 
+	padding: 10px;
+ 	height: 420px;
+	width: 160px;
+	background:#CCCCCC; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC'); /* for IE */
+	background: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#CCCCCC)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,#FFFFFF,#CCCCCC); /* for firefox 3.6+ */ 
+
+}
+.progress_bar {float: left;}
+
+.blue_bar {
+	height: 406px;
+	width: 6px;
+	background:#669999; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CCCCCC', endColorstr='#669999'); /* for IE */
+	background: -webkit-gradient(linear, left, right, from(#CCCCCC), to(#669999)); /* for webkit browsers */
+	background: -moz-linear-gradient(left,#CCCCCC,#669999); /* for firefox 3.6+ */ 
+}
+
+
+/* OTHER STYLES */
+.right, .wrong {cursor: pointer}
+.right:hover, .wrong:hover {background: #ccc;}
+.turnedOff {color: gray}
+.triangle {position:relative;}
+.item {float:left; font-size: 18px; padding-left: 10px;}
+.bar {display: block; height: 48px; text-align: left; font-size: 14px; font-weight: bold;}
+.bar_title {text-align: right; padding-right: 5px; font-size: 14px; font-weight: bold;}
+.number { text-align: right;  float: left; font-size: 16px; font-weight: bold; background-color:#FFC680; padding-left: 5px; padding-right: 4px; border: 1px solid #ccc;}
+.questions {border: 1px solid #ccc;	padding: 20px; background-color:#FFF; height: 100%; }
+.title {font-weight: bold; font-size: 18px; margin-bottom: 10px; border-bottom: 3px solid #FFA500;}
+.choices {padding-left: 25px;}
+span {display:inline-block;}
+
+
+
+
+</style> 
+
+
+<script type="text/javascript" src="../jquery.js"></script>
+</head>
+
+<body>
+<!-- big wrapper table -->
+<table width="100%" align="center" border="0">
+
+<tr bgcolor="#273872"><td></td><td width="960"><!-- header -->
+<div class="header">
+  		<div style="float: left; height: 73px;"><img src="../images/coc_logo1.gif" alt="College of the Canyons"  />
+      <img src="../images/coc_logo2.gif" alt="College of the Canyons" />
+      
+	  </div>
+	  <div style="float: right;"><h1 class="h1_title">Guided Learning Activities</h1></div>
+ 
+ </div>
+ <!-- end header -->
+
+</td><td></td></tr>
+<tr><td colspan="3"> <div class="gradient_horizontal" style="height:3px; break:left;"></div></td></tr>
+
+<tr><td colspan="3"> 
+
+<table width="960" align="center" border="0"> <!-- 960 px is the standard width for 1024 x 768 screens; use 90% otherwise -->
+<tr><td align="center" height="100%">
+
+<div class="page">
+<!-- top section starts here -->
+
+<div class="gla_top_section">
+
+<h1 class="h1_blue">Comprehension Questions</h1>
+
+<h1 class="h1_gray" style="padding-top: 10px;">Instructions:</h1>
+       
+</div>
+
+<table width="100%" border="0">
+<tr><td><div style="padding-right: 10px;">Click on the right answers in the multiple-choice exercise below.  You can watch your progress on the bar to the right of the statements. 
+
+You will earn one point for each correct answer and lose one point 
+for each incorrect answer.  After you get a minimum of four right answers, a button will appear on the top right corner.  Click on the button to 
+continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page.  </div></td>
+
+<td ><div class="gradient_horizontal" style="height: 38px; text-align: center; padding: 10px; margin-bottom: 5px;">
+
+<form method="link" action="page4.htm" style="display:  inline; float: right;">
+                                      <input type="submit" class="button" style="height: 35px;" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+                                    </form>
+</div></td>
+</tr>
+</table>
+<!-- end top section --> 
+		
+           
+
+<!-- wrapper lower section -->
+<div class="questions" style="padding-top: 25px; margin-top: 20px; height: 510px;" >
+<div><span style="float: left"><h1 class="title">Identify the <span class="h1_blue" style="font-size: 20px;">TRUE</span> statements by clicking on them.</h1></span>
+<span style="float: right; padding-right: 30px;"><h1 class="title">Your progress</h1></span>
+</div>
+<div  style="float: left; width: 700px; margin-top: 10px;">
+
+<table width="100%" border="0">
+<tr><td height="40"><div class="number">1.</div><div class="item">What characteristics do reliable sources have?</div>
+
+
+<table class="choices" width="100%">
+<tr>
+<td width="20%"><div class="wrong"><span id="answer">a. Authority</span><span id="feedback"></span></div></td>
+<td width="20%"><div class="wrong"><span id="answer">b. Objectivity</span><span id="feedback"></span></div></td>
+<td width="20%"><div class="wrong"><span id="answer">c. Currency</span><span id="feedback"></span></div></td>
+<td width="30%"><div class="right"><span id="answer">d. All of these (a, b, and c)</span><span id="feedback"></span></div></td>
+</tr>
+</table>
+</td></tr>
+ 
+
+
+<tr><td height="40"><div class="number">2.</div><div class="item">What kinds of things make an author an authority?</div>
+
+<table class="choices" width="100%">
+<tr><td><div class="wrong"><span id="answer">a. Writing an article for a website</span><span id="feedback"></span></div></td></tr>
+<tr><td><div class="right"><span id="answer">b. Being affiliated with a university or research institute</span><span id="feedback"></span></div></td></tr>
+<tr><td><div class="wrong"><span id="answer">c. Being famous</span><span id="feedback"></span></div></td></tr>
+<tr><td><div class="wrong"><span id="answer">d. Being quoted by someone else</span><span id="feedback"></span></div></td></tr>
+</table>
+</td></tr>
+
+
+
+
+<tr><td height="40"><div class="number">3.</div><div class="item">What should you consider when evaluating a site for objectivity?<span id="feedback"></span></div>
+
+<table class="choices" width="100%">
+<tr><td><div class="wrong"><span id="answer">a. Whether or not the site is associated with an advocacy organization</span><span id="feedback"></span></div></td></tr>
+<tr><td><div class="wrong"><span id="answer">b. Whether or not the author is expressing personal views</span><span id="feedback"></span></div></td></tr><tr>
+<tr><td><div class="wrong"><span id="answer">c. Whether the site is being used to sell a product</span><span id="feedback"></span></div></td></tr>
+<tr><td><div class="right"><span id="answer">d. All of the above</span><span id="feedback"></span></div></td></tr>
+</table>
+</td></tr>
+ 
+
+
+<tr><td height="40"><div class="number">4.</div><div class="item">What can you do if you can't find a publication or "updated on" date on a website?</div>
+
+<table class="choices" width="100%">
+<tr><td><div class="wrong"><span id="answer">a. Assume the site is current</span><span id="feedback"></span></div></td></tr>
+<tr><td><div class="wrong"><span id="answer">b. Analyze the URL</span><span id="feedback"></span></div></td></tr>
+<tr><td><div class="right"><span id="answer">c. Try to confirm the information is current through other means</span><span id="feedback"></span></div></td></tr>
+<tr><td><div class="wrong"><span id="answer">d. Automatically decide the site does not have currency</span><span id="feedback"></span></div></td></tr>
+</table>
+</td></tr>
+
+
+
+<tr><td height="40"><div class="number">5.</div><div class="item">Which of the following types of sites are generally considered to be reliable?</div>
+<table class="choices"width="100%">
+<tr>
+<td width="25%"><div class="right"><span id="answer">a. .gov</span><span id="feedback"></span></div></td>
+<td width="25%"><div class="wrong"><span id="answer">b. .com</span><span id="feedback"></span></div></td>
+<td width="25%"><div class="wrong"><span id="answer">c. .org</span><span id="feedback"></span></div></td>
+<td width="25%"><div class="wrong"><span id="answer">d. All of the above</span><span id="feedback"></span></div></td>
+</tr>
+</table>
+</td></tr>
+
+</table>
+
+</div> <!-- end left hand table div-->
+<table>
+<tr><td></td><td></td><td></td></tr>
+</table>
+<div class="border_bar" style="float: right; margin-top: 10px;"> <!-- begin div for progress bar --->
+
+
+<table width="120" border="0">
+	<tr><td >
+	<!-- progress bar -->
+
+	<table border="0" width="100%">
+
+	<tr> 
+	<td><div style="height: 188px;"></div><div style="float: right; width: 30px; text-align: right;"><img class="triangle" src="../images/triangle2.png" /></div></td>
+ 	<td><div style="float: left; border: 1px solid gray; color: gray; height: 406px; width: 6px; background-color: white; ">
+	<div class="blue_bar" style="width: 6px;"></div>
+	</div>
+
+	
+	<div class="bar_text" style="padding-left: 8px;">
+	<p class="bar"><span class="bar_title">Correct!</span></p>
+	<p class="bar">+</p>
+	<p class="bar">+</p>
+	<p class="bar">+</p>
+	<p class="bar">0</p>
+	<p class="bar">-</p>	
+	<p class="bar">-</p>
+	<p class="bar">-</p>
+
+	<p class="bar"><span class="bar_title">Oops!<span style="font-size: 16px;"></p>
+	
+	</div> 
+	</td>
+	</tr>			  
+	</table>
+</td></tr>
+</table>
+</div>
+<!-- end progress bar -->
+
+<script>
+
+$(document).ready(function(){
+		var i = 0;
+		var x = 4;
+		
+	$(".button").css ('visibility', 'hidden');	
+	$(".right").click(function(){
+	i++;
+	$(this).find ("#answer").hide ()
+
+   	$(this).unbind('click').css ("cursor" , "none")
+   	$(this).find ("#feedback").html (" Correct! ").css ({"color": "#0D408D", "font-weight": "bold"})
+   	$(".triangle").animate({"bottom": "+=30px"}, "fast")
+   	if (i == x) {$('.button').css ('visibility', 'visible')};
+	});
+
+	$(".wrong").click(function(){
+	i--;
+	$(this).find ("#answer").hide ()
+	$(this).unbind('click').css ("cursor" , "none")
+
+	$(this).find ("#feedback").html (" Ooops! ").css ({"color": "red", "font-weight": "bold"})
+  	$(".triangle").animate({"bottom": "-=30px"}, "fast");
+	});
+
+});
+</script>
+
+		
+	
+</div> <!-- end wrapper lower section -->
+	
+</div> <!-- end page -->
+
+
+ 
+</td></tr>
+</table>  <!-- end big wrapper table-->
+		
+
+  
+	  
+	  
+
+		
+
+</body>
+</html>

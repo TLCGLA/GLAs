@@ -1,0 +1,342 @@
+<!DOCTYPE HTML> <html>
+<meta http-equiv="X-UA-Compatible" content="IE-9" /><title>Guided Learning Activities</title>
+<link href="../css/styles.css" rel="stylesheet" type="text/css" />
+
+
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+
+<script>
+$(document).ready(function(){
+
+	//Hide (Collapse) the toggle containers on load
+	$(".toggle_container").hide(); 
+
+	//Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
+	$("div.trigger").click(function(){
+		$(this).toggleClass("active").next().slideToggle("slow");
+		return false; //Prevent the browser jump to the link anchor
+	});
+
+});
+</script>
+
+
+
+<style type="text/css">
+.right, .wrong {cursor: pointer}
+.right:hover, .wrong:hover {background: #ccc;}
+.number { text-align: right;  float: right; font-size: 16px; font-weight: bold; background-color:#FFC680; border: 1px solid #ccc; width: 30px; padding-right: 4px;}
+#questions_table div {float:left; font-size: 16px; margin-bottom: 8px; margin-left: 10px;}
+#questions_table span {display: inline-block;}
+#questions_table p {margin-bottom: 10px}
+.turnedOff {color: gray}
+
+.title {font-weight: bold; font-size: 18px; margin-bottom: 10px; border-bottom: 3px solid #FFA500;}
+#counter {height: 100px; width: 100px; font-size: 50px; border: 1px solid #ccc; background-color:#FFC680; padding-top: 30px; text-align: center;}
+#feedback {margin-left: 20px; display: inline;}
+</style>
+
+
+<style type="text/css"> 
+
+
+.toggle_container {
+	margin: 0 0 5px;
+	padding: 0;
+	border-width: 1px;
+	border-color: #BFBFBF;
+	background-color: #f0f0f0;
+	overflow: hidden;
+	clear: both;
+	
+}
+.toggle_container .block {
+	padding: 20px; /*--Padding of Container--*/
+
+}
+.block p {margin-bottom: 20px;}
+
+.trigger {
+		padding: 5px;
+		border-style: solid;
+		border-width: 1px;
+		border-color: #BFBFBF;
+		background-color: white;
+		/* border-bottom: 2px solid #BFBFBF;*/ 
+
+		}
+
+
+
+</style>
+
+
+
+
+</head>
+
+<body>
+
+<table width="100%" align="center" border="0">
+<tr bgcolor="#273872"><td></td><td width="960"><!-- header -->
+<div class="header">
+  		<div style="float: left; height: 73px;"><img src="../images/coc_logo1.gif" alt="College of the Canyons"  />
+      <img src="../images/coc_logo2.gif" alt="College of the Canyons" /> 
+	  </div>
+	  <div style="float: right;"><h1 class="h1_title">Guided Learning 
+		Activities</h1></div>
+ 
+ </div>
+ <!-- end header -->
+
+</td><td></td></tr>
+<tr><td colspan="3"> <div class="gradient_horizontal" style="height:3px; break:left;"></div></td></tr>
+
+<tr><td colspan="3"> 
+
+<table width="960" align="center" border="0"> <!-- 960 px is the standard width for 1024 x 768 screens; use 90% otherwise -->
+<tr><td align="center" 0%">
+
+ 
+ <!-- page starts here -->
+<div class="page">
+
+<!-- top section starts here -->
+
+<div class="gla_top_section">
+<h1 class="h1_blue">Comprehension Questions</h1>
+
+<h1 class="h1_gray" style="padding-top: 10px;">Instructions:</h1>
+       
+<table width="100%" border="0">
+<tr><td><div style="padding-right: 10px;">
+Read the following passage and answer the questions below. As you select answers, the counter to the right will show how many 
+points you earned. You will earn one point for each correct answer and lose one point 
+for each incorrect answer.  After you get at least 9 correct answers out of the total of 10, a button will appear on the top right corner.  Click on the button to 
+continue. <u>Note</u>: You can restart the exercise as many times as you want by reloading the browser page. 
+</div></td>
+
+<td ><div class="gradient_horizontal" style="height: 38px; text-align: center; padding: 10px; margin-bottom: 5px;">
+
+<form method="link" action="page5.htm" style="display:  inline; float: right;">
+                                      <input type="submit" class="button" style="height: 35px;" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+                                    </form>
+</div></td>
+</tr>
+</table>
+</div>
+<!-- end top section --> 
+
+
+<div class="trigger" style="line-height: 2em;">
+<span style="padding-right: 20px;"><strong>Reading:</strong> Click on the buttons to view the text.</span>
+<a href="#"><input type="button" class="button2"  value="Show" style="width: 80px;"></a>
+<a href="#"><input type="button" class="button2"  value="Hide" style="width: 80px;"></a>
+</div>
+
+<div class="toggle_container">
+	<div class="block">
+<p>Effective writing involves making conscious choices with words. When you prepare to sit down to write your first draft, 
+you likely have already completed some freewriting exercises, chosen your topic, developed your thesis statement, written 
+an outline, and even selected your sources. When it is time to write your first draft, start to consider which words to use 
+to best convey your ideas to the reader.</p>
+
+<p>
+Some writers are picky about word choice as they start drafting. They may practice some specific strategies, such as using 
+a dictionary and thesaurus, using words and phrases with proper connotations, and avoiding slang, clich&eacute;s, and overly general words.
+Once you understand these tricks of the trade, you can move ahead confidently in writing your assignment. Remember, the skill 
+and accuracy of your word choice is a major factor in developing your writing style. Precise selection of your words will help 
+you be more clearly understood --in both writing and speaking.</p>
+
+<p><u>Using a Dictionary and Thesaurus</u></p>
+<p>Even professional writers need help with the meanings, spellings, pronunciations, and uses of particular words. In fact, they rely on dictionaries to help them write better. No one knows every word in the English language and their multiple uses and meanings, so all writers, from novices to professionals, can benefit from the use of dictionaries.
+</p>
+<p>Most dictionaries provide the following information:
+<ul>
+<li><u>Spelling.</u> How the word and its different forms are spelled.</li>
+<li><u>Pronunciation.</u> How to say the word.</li>
+<li><u>Part of speech.</u> The function of the word.</li>
+<li><u>Definition.</u> The meaning of the word.</li>
+<li><u>Synonyms.</u> Words that have similar meanings.</li>
+<li><u>Etymology.</u> The history of the word.</li>
+</ul></p>
+<p></p>
+<p>(adapted fromcatalog.flatworldknowledge.com)</p>
+
+	</div>
+</div>
+
+<!-- begin wrapper lower section -->
+<div style="margin-top: 30px; padding:10px; border: 1px solid #ccc; background-color: white;">
+ 
+				  	
+<!-- table wrapping lower section contents -->
+
+
+
+
+
+<table width="100%" border="0">
+
+<tr>
+<td> <div><span style="float: left"><h1 class="title">Select the correct answers by clicking on them.</h1></span>
+</div></td><td><span style="float: right;  padding-right: 45px;"><h1 class="title">Your score</h1></span></div></td></tr>
+<tr> 
+<td valign="top"  height="400px">
+
+	<table id="questions_table" border=0>
+	<tr><td><div class="number">&nbsp;1.</div></td><td>
+	<div>Identify the topic sentence of the first paragraph. What is the paragraph about?<br>
+	<span class="wrong" style="width: 150px;">a. writing resources </span>
+	<span class="right" style="width: 150px;">b. word choice </span>
+	<span class="wrong" style="width: 150px;">c. your first draft </span>
+	<span class="wrong" style="width: 150px;">d. writing </span>
+	</div></td></tr>
+	<tr><td><div class="number">&nbsp;2.</div></td><td>
+	<div>One of the subtopics related to word choice strategies in the second paragraph is...<br>
+	<span class="wrong" style="width: 150px;">a. pronunciation </span>
+	<span class="wrong" style="width: 150px;">b. etymology </span>
+	<span class="wrong" style="width: 150px;">c. choosing a topic </span>
+	<span class="right" style="width: 150px;">d. avoiding slang </span>
+	</div></td></tr>
+	<tr><td><div class="number">&nbsp;3.</div></td><td>
+	<div>One of the following sentences is the conclusion of the passage.  Can you find it?<br>
+	<span style="width: 20px">a.</span><span class="wrong" style="width: 700px;">Some writers are picky about word choice as they start drafting.</span>
+	<span style="width: 20px">b.<br>&nbsp;</span><span class="wrong" style="width: 700px;">Remember, the skill and accuracy of your word choice is a major factor in developing your writing style.</span>
+	<span style="width: 20px">c.<br>&nbsp;</span><span class="right" style="width: 700px;">Precise selection of your words will help you be more clearly understood --in both writing and speaking.</span>
+	<span style="width: 20px">d.<br>&nbsp;</span><span class="wrong" style="width: 700px;">Even professional writers need help with the meanings, spellings, pronunciations, and uses of particular words.</span>
+	</div></td></tr>
+	<tr><td><div class="number">&nbsp;4.</div></td><td>
+	<div><p>How will a dictionary and thesaurus help you improve your word choice? In the paragraph below, select the sentence related 
+	to this point by clicking on it.</p><p style="border-width: 1px;	border-color: #BFBFBF;	background-color: #f0f0f0; padding: 5px;">
+	<span class="right" style="display: inline">Even professional writers need help with the meanings, spellings, pronunciations, and uses of particular words. </span>
+	<span class="wrong" style="display: inline" id="paragraph">In fact, they rely on dictionaries to help them write better. </span>
+	<span class="wrong" style="display: inline" id="paragraph">No one knows every word in the English language and their multiple uses and meanings, so all writers, from novices 
+	to professionals, can benefit from the use of dictionaries.</span>
+	</p></div></td></tr>
+	<tr><td><div class="number">&nbsp;5.</div></td><td>
+	<div>Look at the list at the end of the passage and look for keywords.  Then, click on one word from each definition 
+	that will remind you of each meaning.<br>
+	<span>a. Spelling:</span><font>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">history</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">similar</span>	
+	<span class="wrong" style="width: 70px; text-align: center; float: right;">say</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">function</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">meaning</span>
+	<span class="right" style="width: 90px; text-align: center; float: right;">spell</span>
+	</font>	
+	<br>
+		
+	<span>b. Pronunciation:</span>
+	<font>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">history</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">similar</span>	
+	<span class="right" style="width: 70px; text-align: center; float: right;">say</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">function</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">meaning</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">spell</span>
+	</font>
+	<br>
+	
+	
+	<span>c. Part of speech:</span>
+	<font>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">history</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">similar</span>	
+	<span class="wrong" style="width: 70px; text-align: center; float: right;">say</span>
+	<span class="right" style="width: 90px; text-align: center; float: right;">function</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">meaning</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">spell</span>
+	</font>
+
+	<br>
+	<span>d. Definition:</span>
+	<font>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">history</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">similar</span>	
+	<span class="wrong" style="width: 70px; text-align: center; float: right;">say</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">function</span>
+	<span class="right" style="width: 90px; text-align: center; float: right;">meaning</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">spell</span>
+	</font>
+	<br>
+	<span>e. Synonyms:</span>
+	<font>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">history</span>
+	<span class="right" style="width: 90px; text-align: center; float: right;">similar</span>	
+	<span class="wrong" style="width: 70px; text-align: center; float: right;">say</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">function</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">meaning</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">spell</span>
+	</font>
+	<br>
+	<span>f. &nbsp;Etymology:</span>
+	<font>
+	<span class="right" style="width: 90px; text-align: center; float: right;">history</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">similar</span>	
+	<span class="wrong" style="width: 70px; text-align: center; float: right;">say</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">function</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">meaning</span>
+	<span class="wrong" style="width: 90px; text-align: center; float: right;">spell</span>
+	</font>
+	</div></td></tr>
+	</table>
+
+
+</td>
+<td width="102">
+<div id="counter" class="box-shadow" style="display: block; float: right;  margin-right: 40px;"></div> 
+
+<div style="margin-top: 40px; display: block; break: left; float: right;  margin-right: 40px; width: 110px; text-align: center; float: right;"><span class="h1_blue" style="font-size: 20px;">Maximum points: 10</span></div> 
+</td>
+</tr>
+
+
+</table>
+				
+					
+				
+
+
+</div>
+<!-- end wrapper lower section -->
+</div>
+<!-- end page -->
+</td></tr>
+</table>
+
+ </td></tr>
+</table>  <!-- end big wrapper table-->
+<script>
+$(document).ready(function(){
+		var i = 0;
+		var x = 9;
+$(".button").css ('visibility', 'hidden');
+	$(".right") .click (function(){
+	i++;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click') .attr ("class" , "turnedOff") 
+	$(this).css ({"color": "#0D408D", "font-weight": "bold"})
+	if (i == x) {$('.button').css ('visibility', 'visible')};
+	});
+	
+	$(".wrong") .click (function(){
+	i--;
+	$("#counter") .html (i);
+	$(this).unbind ('click') .css ("cursor" , "none") 
+	$(this).siblings ("span") .unbind ('click')  .attr ("class" , "turnedOff")
+	$(this).css ({"color": "red", "font-weight": "bold"})
+
+	});
+
+});
+
+
+</script>
+
+	
+
+</body>
+</html>

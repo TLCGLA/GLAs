@@ -1,0 +1,356 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>humanities</title>
+<link href="../CSS/master.css" rel="stylesheet" type="text/css">
+<SCRIPT type=text/javascript src="../js/jquery.js"></SCRIPT>
+<SCRIPT type=text/javascript src="../js/jquery.animate-colors-min.js"></SCRIPT>
+ 
+<script> 
+ 
+$(document).ready(function(){
+
+ 
+ 
+$(".menu_item").hover(function(){
+	  
+    $(this).stop().animate({backgroundColor: '#0765b5'}, "7000");
+	},function(){
+    $(this).stop().animate({backgroundColor: '#02204f'}, "500");
+ 
+});
+ 
+});
+</script> 
+ 
+ 
+<!--[if lt IE 7]>
+<style>
+.gradient-ie h1 span {
+    background: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/gradient-white.png', sizingMethod='scale');
+}
+</style>
+<![endif]-->
+<!--[if gte IE 6]><link href="css/iefixes.css" rel="stylesheet" type="text/css" />
+ 
+<![endif]-->
+
+
+
+</head><body>
+<div id="wrapper">
+
+	<div id="cocheader_left"><img src="../images/header_coc_logo1.gif" alt="College of the Canyons" width="80" height="73">
+	<a href="http://www.canyons.edu/"><img src="../images/header_coc_logo2.gif" alt="College of the Canyons" width="134" height="73"></a></div>
+	
+<div id="cocheader_right">
+    	
+        <div id="cocheader_toplinks">
+        	<a href="http://www.canyons.edu/offices/PIO/keyinfo/">About Canyons</a> | <a href="http://www.cccapply.org/applications/CCCApply/apply/College_of_the_Canyons.htmll">Apply Now</a> | <a href="http://os.canyons.edu/">Register Now</a> | <a href="http://www.canyons.edu/offices/PIO/keyinfo/maps.html">Campus Maps</a>
+        </div>
+        
+        <div id="searchbox">
+        	<form name="SearchForm" id="searchbox_003275845762001569452:k1ryrig2xjk" action="http://www.canyons.edu/Search/CSEResults.html" method="get">
+						<input value="003275845762001569452:k1ryrig2xjk" name="cx" type="hidden">
+						<input value="FORID:11" name="cof" type="hidden">
+						<input id="SearchField" class="form_input" maxlength="255" size="20" name="q" type="text">
+						<input class="form_button" value="Search" name="sa" type="submit">
+			</form>
+        </div>
+    
+<ul id="cocheader_tabs">
+      <li><a href="http://www.canyons.edu/info/contact/">Contact COC</a></li>
+      <li><a href="http://www.canyons.edu/L2_DepartmentsDirectories.html">COC Directory</a></li>
+      <li><a href="http://www.canyons.edu/info/AToZIndex/Index.html">A-Z Index</a></li>
+    </ul>
+        
+    </div>
+    
+	<div id="logo">
+      <p>&nbsp;</p>
+      <table border="0" cellpadding="0" cellspacing="0" width="980">
+		<tbody><tr>
+			<td width="800"><div class="top_title">Humanities Curriculum</div></td>
+			<td width="180">
+			<div class="top_s4s_logo"><img src="../images/s4s_logo.png" /></td>
+		</tr>
+		</tbody></table></div>
+<div id="nav">
+   <ul id="dropdown">
+      <li class="menu_item"><a href="../index.html">Home</a></li>
+      <li class="menu_item"><a href="humanities.html">Humanities</a> </li>
+	  <li class="menu_item"><a href="math_science.html">Mathematics and Science</a></li>
+      <li class="menu_item" ><a href="learning_skills.html">Learning Skills</a></li>
+      
+    </ul>
+</div>
+
+<DIV class=content_top_wide></DIV>
+<DIV class=content_wide>
+<DIV class=content_contain_wide>
+<h1>English and Composition Skills</h1>
+<table class="curriculum_table">
+<tr class="tr_one">
+	<td class="td_one"><div><strong>Wksp ID</strong> </div></td>
+	<td class="td_two"><div><strong>Workshop Title</strong> </div></td>
+	<td class="td_three"><div><strong>Wksp Materials</strong> </div></td>
+	<td class="td_four"><div><strong>GLA ID</strong> </div></td>
+	<td class="td_five"><div><strong>GLA Materials</strong></div></td>
+	<td class="td_six"><div><strong>Jam ID</strong> </div></td>
+	<td class="td_seven"><div><strong>Jam Mat.</strong></div></td>
+</tr>
+
+<tr class="tr_two"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN1W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> Thesis 
+	Development </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	<a  href="workshops/thesis_development/Edit.Thesis.Development_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a  href="workshops/thesis_development/PPT_thesis_development.ppt">PowerPoint</a> </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN1G </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> <a  href="GLAs/thesis_development/GLA_thesis_development_jose.htm">GLA</a></div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>EN1J</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div><a  href="practice_jams/thesis_development/JAM_thesis_development.doc">Jam</a></div></td></tr>
+
+<tr class="tr_three"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN2W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> Paragraph Structure (Source-Based Body Par.)</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	<a  href="workshops/paragraph_structure/Edit.Paragraph.Structure_jose.doc">Wksp</a> </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	EN2G </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> <a  href="GLAs/paragraph_structure/GLA_paragraph_structure_jose.htm">GLA</a></div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>EN2J</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div><a  href="practice_jams/paragraph_structure/JAM_paragraph_structure.doc">Jam</a></div></td>
+	</tr>
+<tr class="tr_two"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN3W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> MLA Style 1 (Parenthetical Citations & Works Cited)</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> <a  href="workshops/mla1/Edit.MLA.Style.1_jose.doc">Wksp</a> </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN3G </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> <a  href="GLAs/mla1/GLA_mla_1_jose.htm">GLA</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>EN3J</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div><a  href="practice_jams/mla1/JAM_mla1.doc">Jam</a></div></td>
+	</tr>
+	
+	
+<tr class="tr_three"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN4W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> MLA Style 2 (Advanced Quoting and Citation)</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	<a  href="workshops/mla2/Edit.MLA.Style.2_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a  href="workshops/mla2/PPT_mla2.pptx">PowerPoint</a> </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	EN4G </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> <a  href="GLAs/mla2/GLA_mla_2_jose.htm">GLA</a></div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td></tr>
+
+<tr class="tr_two"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN5W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> Sentence 
+	Fragments </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	<a  href="workshops/sentence_fragments/Edit.Sentence.Fragments_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a  href="workshops/sentence_fragments/PPT_sentence_fragments.ppt">PowerPoint</a> </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	EN5G </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> <a  href="GLAs/sentence_fragments/GLA_fragments_jose.htm">GLA</a></div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>EN5J</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div><a  href="practice_jams/sentence_fragments/JAM_sentence_fragments.doc">Jam</a></div></td>
+	</tr>
+
+<tr class="tr_three"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN6W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+		Proofreading </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>
+		<a  href="workshops/proofreading/Edit.Proofreading_jose.doc">Wksp</a>
+		 &nbsp;&nbsp;<a  href="workshops/proofreading/PPT_proofreading.ppt">PowerPoint</a></div></td>
+		<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+		EN6G </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> <a  href="GLAs/proofreading/GLA_proofreading_jose.htm">GLA</a></div></td>
+		<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td></tr>
+
+<tr class="tr_two"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN7W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> Avoiding 
+	Run-on Sentences </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	<a  href="workshops/run_on_sentences/Edit.Avoiding.Run-on.Sentences_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a  href="workshops/run_on_sentences/PPT_run_on_sentences.ppt">PowerPoint</a></div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>EN7G </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> <a  href="GLAs/run_on_sentences/GLA_run_on_sentences_jose.htm">GLA</a></div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>EN7J</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div><a  href="practice_jams/run_on_sentences/JAM_run_on_sentences.doc">Jam</a></div></td>
+	</tr>
+
+
+<tr class="tr_three">
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>EN8W   </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>Apostrophes </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div><a  href="workshops/apostrophes/Edit.Apostrophes_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a  href="workshops/apostrophes/PPT_apostrophe_abuse.ppt">PP1</a> / 
+	<a  href="workshops/apostrophes/PPT_misunderstood_apostrophe.ppt">PP2</a> </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN8G </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> <a  href="GLAs/apostrophes/GLA_apostrophes_jose.htm">GLA</a></div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>
+	</tr>
+
+<tr class="tr_two">
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN9W  </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> Commas and Quotations </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div><a  href="workshops/commas_and_quotations/Edit.Commas.and.Quotations_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a  href="workshops/commas_and_quotations/PPT_commas_and_quotations.ppt">PowerPoint</a> </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN9G </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div><a  href="GLAs/commas_and_quotations/GLA_commas_and_quotations_jose.htm">GLA&nbsp;</a></div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>			
+	</tr>
+
+
+<tr class="tr_three">
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN10W </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> Vocabulary Building </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> <a  href="workshops/vocabulary_building/Edit.Vocabulary.Building_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a  href="workshops/vocabulary_building/PPT_vocabulary_building.pptx">PowerPoint </a></div></td>
+	 <td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN10G </div></td>
+	 <td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> <a  href="GLAs/vocabulary_building/GLA_vocabulary_building_jose.htm">GLA</a></div></td>
+	 <td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>EN10J</div></td>
+	 <td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div><a  href="practice_jams/vocabulary_building/JAM_vocabulary_building.docx">Jam</a></div></td>
+	 </tr>
+
+
+<tr class="tr_two"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN11W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> How to Start 
+	an Essay  </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div><a  href="workshops/starting_an_essay/Edit.How.to.Start.an.Essay_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a  href="workshops/starting_an_essay/PPT_starting_an_essay.pptx">PowerPoint</a> </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN11G </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> <a  href="GLAs/starting_an_essay/GLA_starting_an_essay_jose.htm">GLA</a></div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td></tr>
+
+
+<tr class="tr_three"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN12W  </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> Drawing 
+	Inferences </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> <a  href="workshops/drawing_inferences/Edit.Drawing.Inferences_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a  href="workshops/drawing_inferences/PPT_drawing_inferences.pptx">PowerPoint</a> </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN12G </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> <a  href="GLAs/drawing_inferences/GLA_drawing_inferences_jose.htm">GLA</a></div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>
+	</tr>
+	
+<tr class="tr_two"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN13W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	Writer&#39;s Block </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	<a  href="workshops/writers_block/Edit.Writer's.Block_jose.doc">Wksp</a>
+	 &nbsp;&nbsp;<a  href="workshops/writers_block/PPT_writers_block.ppt">PowerPoint</a> </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> EN13G </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> <a  href="GLAs/writers_block/GLA_writers_block_jose.htm">GLA</a></div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>
+	</tr>
+
+
+
+</table>
+
+
+<h1>English as a Second Language</h1>
+ 
+
+<table class="curriculum_table">
+<tr class="tr_one">
+	<td class="td_one"><div><strong>Wksp ID</strong> </div></td>
+	<td class="td_two"><div><strong>Workshop Title</strong> </div></td>
+	<td class="td_three"><div><strong>Wksp Materials</strong> </div></td>
+	<td class="td_four"><div><strong>GLA ID</strong> </div></td>
+	<td class="td_five"><div><strong>GLA Materials</strong></div></td>
+	<td class="td_six"><div><strong>Jam ID</strong> </div></td>
+	<td class="td_seven"><div><strong>Jam Mat.</strong></div></td>
+</tr>
+
+
+<tr class="tr_two"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL1W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL Cultural 
+	Expectations 1 </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	<a  href="workshops/ESL_cultural_expectations_1/Cultural%20Expectations%20I%20rev.doc">
+	Wksp</a> </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp; </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>  no GLA</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>
+	</tr>
+
+<tr class="tr_three"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL2W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL Cultural 
+	Expectations 2 </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	<a  href="workshops/ESL_cultural_expectations_2/Cultural%20Expectations%20II%20Rev.doc">
+	Wksp</a> </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp; </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>  no GLA</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>	
+	</tr>
+
+
+<tr class="tr_two"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL3W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL Grammar / 
+	Comma Splices </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	<a  href="workshops/ESL_grammar_comma_splices/ESL%20Grammar%20Comma%20Splices.pdf">	Wksp</a>&nbsp;
+	<a  href="workshops/ESL_grammar_comma_splices/ESL%20Grammar%20Comma%20Splices.ppt">	PowerPoint</a></div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp; </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>  no GLA</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>	
+	</tr>
+
+<tr class="tr_three"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL4W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL Grammar / 
+	Commas with Subordinate Conj. </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	<a  href="workshops/ESL_grammar_commas_subordinating_conjunctions/ESL%20Grammar%20Commas%20Subordinating%20Conjunctions.doc">
+	Wksp</a> </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp; </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>  no GLA</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>	
+	</tr>
+
+
+<tr class="tr_two"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL5W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL Grammar / 
+	Fragments </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	<a  href="workshops/ESL_grammar_fragments/ESL%20Grammar%20Fragments.doc">
+	Wksp</a> </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp; </div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>  no GLA</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>	
+	</tr>
+
+<tr class="tr_three"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL6W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL Grammar / 
+	Parallelism </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	<a  href="workshops/ESL_grammar_parallelism/ESL%20Grammar%20Parallelism.doc">
+	Wksp</a> </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp; 
+		</div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>  no GLA</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>		
+		</tr>
+
+<tr class="tr_two"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL7W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL Speaking 
+	Up 1 </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	<a  href="workshops/ESL_speaking_up_1through3/ESL%20Speaking%20Up%20I.doc">
+	Wksp</a> </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp; 
+		</div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>  no GLA</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>		
+		</tr>
+
+<tr class="tr_three"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL8W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL Speaking 
+	Up 2 </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	<a  href="workshops/ESL_speaking_up_1through3/ESL%20Speaking%20Up%20II.doc">
+	Wksp</a> </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp; 
+		</div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>  no GLA</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>		
+	</tr>
+
+<tr class="tr_two"><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL9W </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> ESL Speaking 
+	Up 3 </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div> 
+	<a  href="workshops/ESL_speaking_up_1through3/ESL%20Speaking%20Up%20III.doc">
+	Wksp</a> </div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp; 
+		</div></td><td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>  no GLA</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>
+	<td height="20" valign="middle" style="padding-left: 5px; padding-right: 5px"><div>&nbsp;</div></td>		
+		</tr>
+
+
+</table>
+
+</DIV></DIV>
+<DIV class=content_bot_wide></DIV>
+
+</div>
+<div id="footer">
+  <div id="footer_wrapper">
+    <div id="footer_text">
+      <div style="margin-bottom: 5px;">Valencia campus:
+        (661) 259-7800 - 26455 Rockwell Canyon Road, Santa Clarita, CA 91355</div>
+        <div style="margin-bottom: 5px;">Canyon Country campus:
+        (661) 476-3800 - 17200 Sierra Highway, Santa Clarita, CA 91351</div>
+        <div>Copyright © 2001-2008 by College of the Canyons. All rights reserved. 
+      Terms under which this service is provided to you.</div>
+    </div>
+    <a href="http://www.canyons.edu/"><img src="../images/header_coc_logo2.gif" alt="College of the Canyons" width="134" height="73"></a></div>
+</div>
+
+
+</body></html>
